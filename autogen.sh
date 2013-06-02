@@ -8,7 +8,7 @@ PKG_NAME="cinnamon-session"
 REQUIRED_AUTOMAKE_VERSION=1.10
 
 (test -f $srcdir/configure.ac \
-  && test -d $srcdir/plugins) || {
+  && test -d $srcdir/cinnamon-session) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
     echo " top-level cinnamon-session directory"
     exit 1
