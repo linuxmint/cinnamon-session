@@ -82,11 +82,11 @@ msgstr "ఈ అనువర్తనం యొక్క రూపాంతరం
 msgid "Could not display help document"
 msgstr "సహాయ పత్రమును ప్రదర్శించలేక పోయింది"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "గ్నోమ్ ఫాల్‌బ్యాక్"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

@@ -84,11 +84,11 @@ msgstr "இந்த பயன்பாட்டின் பதிப்பு 
 msgid "Could not display help document"
 msgstr "உதவி ஆவணத்தை காட்ட இயலவில்லை"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "க்னோம் பின்சார்தல்"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

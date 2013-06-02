@@ -83,11 +83,11 @@ msgstr "Versión de esta aplicación"
 msgid "Could not display help document"
 msgstr "No se pudo mostrar el documento de ayuda"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Alternativa de Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

@@ -69,11 +69,11 @@ msgstr "Версія гэтай праграмы"
 msgid "Could not display help document"
 msgstr "Не ўдалося паказаць даведачны дакумент"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Запасны рэжым Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

@@ -81,11 +81,11 @@ msgstr "此应用程序的版本"
 msgid "Could not display help document"
 msgstr "不能显示帮助文档"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon 后备模式"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

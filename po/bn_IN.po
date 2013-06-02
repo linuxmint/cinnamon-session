@@ -75,11 +75,11 @@ msgstr "অ্যাপ্লিকেশনের সংস্করণ"
 msgid "Could not display help document"
 msgstr "সহায়ক নথিপত্র প্রদর্শন করতে ব্যর্থ"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon ফল-ব্যাক"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

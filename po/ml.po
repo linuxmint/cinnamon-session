@@ -74,11 +74,11 @@ msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 msgid "Could not display help document"
 msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "ഗ്നോം ഫോള്‍ബാക്ക്"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "ഗ്നോം"
 

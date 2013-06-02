@@ -78,11 +78,11 @@ msgstr "ଏହି ପ୍ରୟୋଗର ସଂସ୍କରଣ"
 msgid "Could not display help document"
 msgstr "ସାହାଯ୍ଯ ଦଲିଲ ଦେଖାଇହେଲା ନାହିଁ"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon ଆବର୍ତ୍ତନ"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "ନୋମ"
 

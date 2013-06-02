@@ -72,11 +72,11 @@ msgstr "កំណែ​កម្មវិធី​នេះ"
 msgid "Could not display help document"
 msgstr "មិន​អាច​បង្ហាញ​ឯកសារ​ជំនួយ​បាន​ទេ"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon fallback"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

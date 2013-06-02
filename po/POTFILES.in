@@ -4,8 +4,8 @@ capplet/csm-app-dialog.c
 capplet/csm-properties-dialog.c
 capplet/csp-app.c
 capplet/main.c
-data/cinnamon-fallback.session.desktop.in.in
-data/cinnamon.session.desktop.in.in
+data/cinnamon-fallback-session.desktop.in.in
+data/cinnamon-session.desktop.in.in
 data/cinnamon.desktop.in
 [type: gettext/glade]data/csm-inhibit-dialog.ui
 data/cinnamon-session-properties.desktop.in.in

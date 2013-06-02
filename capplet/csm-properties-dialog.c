@@ -35,7 +35,7 @@
 
 #define CSM_PROPERTIES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_PROPERTIES_DIALOG, CsmPropertiesDialogPrivate))
 
-#define GTKBUILDER_FILE "session-properties.ui"
+#define GTKBUILDER_FILE "cinnamon-session-properties.ui"
 
 #define CAPPLET_TREEVIEW_WIDGET_NAME      "session_properties_treeview"
 #define CAPPLET_ADD_WIDGET_NAME           "session_properties_add_button"
@@ -46,7 +46,7 @@
 
 #define STARTUP_APP_ICON     "system-run"
 
-#define SPC_SETTINGS_SCHEMA          "org.gnome.SessionManager"
+#define SPC_SETTINGS_SCHEMA          "org.cinnamon.SessionManager"
 #define SPC_SETTINGS_AUTOSAVE_KEY    "auto-save-session"
 
 struct CsmPropertiesDialogPrivate

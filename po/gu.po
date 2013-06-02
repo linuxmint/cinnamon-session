@@ -89,11 +89,11 @@ msgstr "આ કાર્યક્રમની આવૃત્તિ"
 msgid "Could not display help document"
 msgstr "મદદ દસ્તાવેજ દર્શાવી શકાયુ નહિં"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon ફોલબેક"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

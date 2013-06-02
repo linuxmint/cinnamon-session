@@ -97,11 +97,11 @@ msgstr "Η έκδοση αυτής της εφαρμογής"
 msgid "Could not display help document"
 msgstr "Δεν είναι δυνατή η προβολή του αρχείου βοήθειας"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon εφεδρικό"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

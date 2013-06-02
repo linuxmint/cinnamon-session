@@ -71,11 +71,11 @@ msgstr "ಈ ಅನ್ವಯದ ಆವೃತ್ತಿ"
 msgid "Could not display help document"
 msgstr "ನೆರವಿನ ದಸ್ತಾವೇಜನ್ನು ತೋರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr ""
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

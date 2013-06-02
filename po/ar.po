@@ -78,11 +78,11 @@ msgstr "إصدارة هذا التطبيق"
 msgid "Could not display help document"
 msgstr "تعذّر عرض مستند المساعدة"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "جنوم (تقليدية)"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "جنوم"
 

@@ -70,12 +70,12 @@ msgstr "Wersëjô ti aplikacji"
 msgid "Could not display help document"
 msgstr "Ni mòże wëskrzënic dokùmentu pòmòcë"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 #, fuzzy
 msgid "Cinnamon fallback"
 msgstr "Cinnamon fallback (awariowi trib)"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"
 

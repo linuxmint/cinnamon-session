@@ -75,11 +75,11 @@ msgstr "Izdanje ovog programa"
 msgid "Could not display help document"
 msgstr "Ne mogu da prikažem dokument pomoći"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Prebacivanje Gnoma"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Gnom"
 

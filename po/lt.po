@@ -73,11 +73,11 @@ msgstr "Programos versija"
 msgid "Could not display help document"
 msgstr "Nepavyko parodyti žinyno dokumento"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon atsarginė veiksena"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1
 #: ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "Cinnamon"

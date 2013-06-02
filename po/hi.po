@@ -86,11 +86,11 @@ msgstr "इस अनुप्रयोग का संस्करण"
 msgid "Could not display help document"
 msgstr "मदद दस्तावेज़ नहीं दिखा सका"
 
-#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "गनोम फॉलबैक"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
 msgid "Cinnamon"
 msgstr "गनोम"
 
