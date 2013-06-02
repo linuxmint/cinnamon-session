@@ -1,6 +1,6 @@
 SUBDIRS =			\
 	egg			\
-			\
+	cinnamon-session	\
 	capplet			\
 	tools			\
 	data			\
