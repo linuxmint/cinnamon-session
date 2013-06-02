@@ -2,7 +2,7 @@ SUBDIRS = icons
 
 uidir = $(pkgdatadir)
 ui_DATA = \
-	session-properties.glade	\
+	cinnamon-session-properties.glade	\
 	csm-inhibit-dialog.glade
 
 hwcompatdir = $(pkgdatadir)
