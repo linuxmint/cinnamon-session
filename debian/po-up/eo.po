@@ -1,6 +1,6 @@
-# Esperanto translation of gnome-session
+# Esperanto translation of cinnamon-session
 # Copyright (C) 2003 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 #
 # Joël Brich <joel.brich@laposte.net>, 2003.
 # Guillaume SAVATON <llumeao@tuxfamily.org>, 2006
@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.3.6.2\n"
+"Project-Id-Version: cinnamon-session 2.3.6.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-09-25 13:45+0200\n"

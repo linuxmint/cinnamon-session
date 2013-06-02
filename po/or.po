@@ -1,4 +1,4 @@
-# translation of gnome-session.master.or.po to Oriya
+# translation of cinnamon-session.master.or.po to Oriya
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -6,9 +6,9 @@
 # Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.master.or\n"
+"Project-Id-Version: cinnamon-session.master.or\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=gnome-session&component=general\n"
+"cgi?product=cinnamon-session&component=general\n"
 "POT-Creation-Date: 2011-02-24 22:56+0000\n"
 "PO-Revision-Date: 2011-03-07 14:33+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
@@ -70,7 +70,7 @@ msgstr "କୌଣସି ନାମ ନାହିଁ"
 msgid "No description"
 msgstr "କୌଣସି ବର୍ଣ୍ଣନା ନାହିଁ"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:280
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:280
 msgid "Version of this application"
 msgstr "ଏହି ପ୍ରୟୋଗର ସଂସ୍କରଣ"
 
@@ -94,7 +94,7 @@ msgstr "ଏହି ଅଧିବେଶନ ଆପଣଙ୍କୁ ନୋମ ରେ �
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>କିଛି ପ୍ରଗ୍ରାମ ଏବେ ମଧ୍ଯ ଚାଲୁଅଛି:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:643
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -213,7 +213,7 @@ msgstr "ଅଧିବେଶନ ପରିଚାଳନା ବିକଳ୍ପଗୁ�
 msgid "Show session management options"
 msgstr "ଅଧିବେଶନ ପରିଚାଳନା ବିକଳ୍ପଗୁଡ଼ିକୁ ଦର୍ଶାନ୍ତୁ"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -222,24 +222,24 @@ msgstr ""
 "ବିନ୍ୟାସ ସର୍ଭରରେ ଗୋଟିଏ ସମସ୍ୟା ଦେଖାଦେଇଅଛି।\n"
 "(%s ପ୍ରସ୍ଥାନ କରିଥାଏ ସ୍ଥିତି %d ସହିତ)"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:252
+#: ../cinnamon-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' ଚିତ୍ରସଙ୍କେତ ମିଳିଲା ନାହଁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:591
+#: ../cinnamon-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "ଅଜଣା"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:642
+#: ../cinnamon-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "ଗୋଟିଏ ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:646
+#: ../cinnamon-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "କିଛି ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:647
+#: ../cinnamon-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -247,96 +247,96 @@ msgstr ""
 "ପ୍ରଗ୍ରାମ ସମାପ୍ତ ହେବା ପାଇଁ ଅପେକ୍ଷା କରିଅଛି।  ଏହି ପ୍ରଗ୍ରାମଗୁଡ଼ିକୁ ବାଧା ଦେବା ଦ୍ୱାରା କାର୍ଯ୍ୟ ନଷ୍ଟ "
 "ହୋଇପାରେ।"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Switch User Anyway"
 msgstr "ଚାଳକଙ୍କୁ ଯେକୌଣସି ଉପାୟରେ ବଦଳାନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 #| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ଲଗଆଉଟ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Suspend Anyway"
 msgstr "ଯେକୌଣସି ଉପାୟରେ ନିଲମ୍ବନ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Hibernate Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ସୁପ୍ତ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 #| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ବନ୍ଦ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:892
+#: ../cinnamon-session/gsm-inhibit-dialog.c:892
 msgid "Reboot Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ପୁନର୍ଚାଳନ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Lock Screen"
 msgstr "ପରଦାକୁ ତାଲା ଦେଇ ରଖନ୍ତୁ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:903
+#: ../cinnamon-session/gsm-inhibit-dialog.c:903
 msgid "Cancel"
 msgstr "ବାତିଲ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "ଆପଣଙ୍କୁ %d ସେକଣ୍ଡରେ ଆପେଆପେ ଲଗ ଆଉଟ କରାଦିଆଯିବ."
 msgstr[1] "ଆପଣଙ୍କୁ %d ସେକଣ୍ଡରେ ଆପେଆପେ ଲଗ ଆଉଟ କରାଦିଆଯିବ."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "ଏହି ତନ୍ତ୍ର %d ସେକଣ୍ଡରେ ଆପେଆପେ ବନ୍ଦ କରାଯିବ."
 msgstr[1] "ଏହି ତନ୍ତ୍ର %d ସେକଣ୍ଡରେ ଆପେଆପେ ବନ୍ଦ କରାଯିବ."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "ଆପଣ \"%s\" ପରି ଭାବରେ ବର୍ତ୍ତମାନ ଲଗଇନ ହୋଇଛନ୍ତି।"
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "ଏହି ତନ୍ତ୍ରରୁ ବର୍ତ୍ତମାନ ଲଗଆଉଟ କରିବେ କି?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ବ୍ଯବହାରକାରୀ ବଦଳାନ୍ତୁ (_S)"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-logout-dialog.c:387
 msgid "_Log Out"
 msgstr "ଲଗଆଉଟ କରନ୍ତୁ (_L)"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "ଯନ୍ତ୍ରକୁ ବର୍ତ୍ତମାନ ବନ୍ଦ କରିବେ କି?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "ନିଲମ୍ବନ କରନ୍ତୁ (_u)"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "ସୁପ୍ତ କରନ୍ତୁ (_H)"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:411
 msgid "_Restart"
 msgstr "ପୁନଃ ଚାଳନ କରନ୍ତୁ (_R)"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_S)"
 
-#: ../gnome-session/gsm-manager.c:1273
+#: ../cinnamon-session/gsm-manager.c:1273
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 ଧାରଣ କରିବାରେ ବିଫଳ"
 
-#: ../gnome-session/gsm-manager.c:1274
+#: ../cinnamon-session/gsm-manager.c:1274
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -350,79 +350,79 @@ msgstr ""
 "ସମ୍ଭବତଃ ଏହା ଅର୍ଥ ଆପଣଙ୍କର ଆଲେଖିକ ହାର୍ଡୱେର ସମ୍ପୂର୍ଣ୍ଣ GNOME 3 ଅଭିଜ୍ଞ୍ୟତାକୁ "
 "ଚଲାଇବାରେ ସକ୍ଷମ ହୋଇନଥାଏ"
 
-#: ../gnome-session/gsm-manager.c:1276
+#: ../cinnamon-session/gsm-manager.c:1276
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 ବିଷୟରେ ଅଧିକ ଜ୍ଞାନ ଆହରଣ କରନ୍ତୁ"
 
-#: ../gnome-session/gsm-manager.c:1373 ../gnome-session/gsm-manager.c:2097
+#: ../cinnamon-session/gsm-manager.c:1373 ../cinnamon-session/gsm-manager.c:2097
 msgid "Not responding"
 msgstr "ଉତ୍ତର ଦେଉନାହିଁ"
 
-#: ../gnome-session/gsm-xsmp-client.c:1187
+#: ../cinnamon-session/gsm-xsmp-client.c:1187
 #| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "ଏହି ପ୍ରଗ୍ରାମଟି ଲଗଆଉଟ ହେବାକୁ ଦେଉନାହିଁ।"
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "ନୂତନ କ୍ଲାଏଣ୍ଟ ସଂଯୋଗକୁ ମନାକରୁଅଛି କାରଣ ସେହି ଅଧିବେଶନଟି ବର୍ତ୍ତମାନ ବନ୍ଦ ହୋଇଛି\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE କୁ ମାନୁଥିବା ସକେଟ ନିର୍ମାଣ କରିପାରିଲା ନାହିଁ: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:354
+#: ../cinnamon-session/gsm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "ଲଗଇନ ଅଧିବେଶନ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ (ଏବଂ X ସର୍ଭର ସହିତ ସଂଯୋଗ ହେବାରେ ଅସମର୍ଥ)"
 
-#: ../gnome-session/main.c:276
+#: ../cinnamon-session/main.c:276
 msgid "Override standard autostart directories"
 msgstr "ମାନକ ସ୍ୱୟଂଚାଳିତ ଡିରେକ୍ଟୋରୀଗୁଡ଼ିକୁ ନବଲିଖନ କରନ୍ତୁ"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Session to use"
 msgstr "ବ୍ୟବହାର କରିବାକୁ ଥିବା ଅଧିବେଶନ"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Enable debugging code"
 msgstr "ତ୍ରୁଟି ନିବାରଣ ସଂକେତକୁ ସକ୍ରିୟ କରନ୍ତୁ"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Do not load user-specified applications"
 msgstr "ଚାଳକ ନିର୍ଦ୍ଧାରିତ ପ୍ରୟୋଗଗୁଡ଼ିକୁ ଧାରଣ କରନ୍ତୁ ନାହିଁ"
 
-#: ../gnome-session/main.c:300
+#: ../cinnamon-session/main.c:300
 msgid " - the GNOME session manager"
 msgstr " - GNOME ଅଧିବେଶନ ପରିଚାଳକ"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "ଲଗଆଉଟ୍"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "ବିଦ୍ୟୁତ ପ୍ରବାହ ବନ୍ଦ କରନ୍ତୁ"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 #| msgid "Log out, ignoring any existing inhibitors"
 msgid "Ignoring any existing inhibitors"
 msgstr "ଯେକୌଣସି ସ୍ଥିତବାନ ବାଧାବିଘ୍ନକୁ ଅମାନ୍ୟ କରୁଅଛି"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 #| msgid "Do not require confirmation"
 msgid "Don't prompt for user confirmation"
 msgstr "ଚାଳକ ପାଇଁ ନିଶ୍ଚିତକରଣ ଆବଶ୍ୟକ କରିନଥାଏ"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "ଅଧିବେଶନ ପରିଚାଳକଙ୍କ ସହିତ ସମ୍ପର୍କ ସ୍ଥାପିତ କରିପାରିଲା ନାହିଁ"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "ଦ୍ୱନ୍ଦମୟ ବିକଳ୍ପଗୁଡ଼ିକ ସହିତ ଡକାହେଉଥିବା ପ୍ରଗ୍ରାମ"
 
@@ -436,11 +436,11 @@ msgstr "ଦ୍ୱନ୍ଦମୟ ବିକଳ୍ପଗୁଡ଼ିକ ସହି�
 #~ msgstr "ଫାଇଲ ପରିଚାଳକ"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr "ଯଦି ସକ୍ରିୟ କରାଯାଇଛି, ତାହାହେଲେ ନୋମ ଅଧିବେଶନଟି ବନ୍ଦ ହେବା ପୂର୍ବରୁ ଚାଳକକୁ ପଚାରିବ। "
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "ଯଦି ସକ୍ରିୟ କରାଯାଇଛି, ତାହାହେଲେ ନୋମ ଅଧିବେଶନଟି ସ୍ବତଃ ସଂରକ୍ଷିତ ହୋଇଯିବ। ଅନ୍ଯଥା, ଲଗଆଉଟ୍ "

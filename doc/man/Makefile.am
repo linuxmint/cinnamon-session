@@ -1,7 +1,7 @@
 man_MANS =				\
-	gnome-session.1			\
-	gnome-session-properties.1	\
-	gnome-session-quit.1
+	cinnamon-session.1			\
+	cinnamon-session-properties.1	\
+	cinnamon-session-quit.1
 
 EXTRA_DIST =			\
 	$(man_MANS)

@@ -1,11 +1,11 @@
-# translation of gnome-session.HEAD.po to Kurdish
+# translation of cinnamon-session.HEAD.po to Kurdish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Erdal Ronahi <erdal.ronahi@gmail.com, pckurd@hotmail.com>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD\n"
+"Project-Id-Version: cinnamon-session.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-03-04 17:47+0100\n"

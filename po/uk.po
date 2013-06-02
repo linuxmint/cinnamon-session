@@ -6,7 +6,7 @@
 # Re. <ted.korostiled@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-21 10:11+0300\n"
 "PO-Revision-Date: 2012-09-21 10:16+0300\n"
@@ -65,7 +65,7 @@ msgstr "Без назви"
 msgid "No description"
 msgstr "Без опису"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "Версія цієї програми"
 
@@ -85,11 +85,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Це — сеанс входу в GNOME"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Деякі програми досі працюють:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -209,20 +209,20 @@ msgstr "Параметри керування сеансами:"
 msgid "Show session management options"
 msgstr "Показати параметри керування сеансами"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Піктограму «%s» не знайдено"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Невідомо"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Програма досі працює:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -230,40 +230,40 @@ msgstr ""
 "Очікування завершення роботи програм.  Переривання цих програм може привести "
 "до втрати вашої роботи."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Однаково перемикнути користувача"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Однаково вийти із системи"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Однаково призупинити систему"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Однаково приспати систему"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Однаково вимкнути систему"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Однаково перезавантажити"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Заблокувати екран"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Скасувати"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -271,7 +271,7 @@ msgstr[0] "Сеанс буде автоматично завершено чер�
 msgstr[1] "Сеанс буде автоматично завершено через %d секунди."
 msgstr[2] "Сеанс буде автоматично завершено через %d секунд."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -279,7 +279,7 @@ msgstr[0] "Систему буде вимкнено автоматично че�
 msgstr[1] "Систему буде вимкнено автоматично через %d секунди."
 msgstr[2] "Систему буде вимкнено автоматично через %d секунд."
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
@@ -287,55 +287,55 @@ msgstr[0] "Систему буде автоматично перезаванта
 msgstr[1] "Систему буде автоматично перезавантажено через %d секунди."
 msgstr[2] "Систему буде автоматично перезавантажено через %d секунд."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Ви зареєстровані у системі як користувач «%s»."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Вийти з системи зараз?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "_Перемикнути користувача"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_Завершити сеанс"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Вимкнути систему зараз?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "П_ризупинити"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "При_спати"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "Пере_завантажити"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_Вимкнути"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "Перезавантажити систему зараз?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Отакої!  Щось не так."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -343,7 +343,7 @@ msgstr ""
 "Виникла помилка і систему неможливо відновити. Будь ласка, зв'яжіться з "
 "системним адміністратором"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -351,7 +351,7 @@ msgstr ""
 "Виникла помилка і систему неможливо відновити. Всі розширення вимкнуло як "
 "запобіжний засіб."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -359,11 +359,11 @@ msgstr ""
 "Виникла помилка і систему неможливо відновити.\n"
 "Будь ласка, вийдіть і спробуйте знову."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "Не вдалось завантажити GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -377,11 +377,11 @@ msgstr ""
 "Найімовірніше, це означає, що ваша система (графічне обладнання або "
 "відеодрайвер) не підтримує роботу всіх можливостей GNOME 3."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "Докладніше про GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "Не відповідає"
 
@@ -389,89 +389,89 @@ msgstr "Не відповідає"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Запам'ятована програма"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Ця програма блокує вихід з системи."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Відхиляються нові клієнти, бо система знаходиться у стані вимкнення.\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Не вдалось створити гніздо прослуховування ICE: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Не вдалось запустити сеанс (та з'єднатися з сервером X)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "Перевизначити стандартні каталоги автозапуску"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "САМОЗАПУСКНА_ТЕКА"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "Сеанси, які використовуються"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "НАЗВА_СЕАНСУ"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "Увімкнути код зневадження"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "Не завантажувати вибрані користувачем програми"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "Показувати величезне вікно помилок для випробування "
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr " — керування сеансом GNOME"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Завершити сеанс"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "Вимкнути комп'ютер"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "Перезавантажити"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "Ігнорувати будь-які наявні перепони"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "Не вимагати підтвердження від користувача"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Не вдалось з'єднатись із менеджером сеансів"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Програму запущено з несумісними параметрами"
 
@@ -531,13 +531,13 @@ msgstr "Програму запущено з несумісними параме
 #~ msgstr "Файловий менеджер"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Якщо увімкнено, то gnome-session буде попереджувати користувача перед "
+#~ "Якщо увімкнено, то cinnamon-session буде попереджувати користувача перед "
 #~ "завершенням сеансу."
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Якщо увімкнено, то сеанс зберігатиметься автоматично. У іншому випадку, у "

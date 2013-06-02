@@ -1,15 +1,15 @@
-# translation of gnome-session.HEAD.mr.po to marathi
+# translation of cinnamon-session.HEAD.mr.po to marathi
 # THIRD AUTHOR: Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
 # FOURTH AUTHOR:Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008.
 # sandeep shedmake <sandeep.shedmake@gmail.com>, 2008.
-# Marathi translation of gnome-session-2.0
+# Marathi translation of cinnamon-session-2.0
 # Copyright (C) 2003, Jitendra Shah
 # This file is released under GPL
 # FIRST AUTHOR: Swapnil Hajare <dreamil1000a@yahoo.com>
 # SECOND AUTHOR: Pradeep Deshpande
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.mr\n"
+"Project-Id-Version: cinnamon-session.HEAD.mr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-02-18 11:45+0530\n"

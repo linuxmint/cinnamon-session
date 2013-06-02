@@ -1,5 +1,5 @@
 # translation of gl.po to Galego
-# Galician translation of gnome-session.
+# Galician translation of cinnamon-session.
 # Copyright (C) 1999-2004 Jesús Bravo Álvarez
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas

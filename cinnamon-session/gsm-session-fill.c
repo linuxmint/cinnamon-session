@@ -378,7 +378,7 @@ find_valid_session_keyfile (const char *session)
         path = NULL;
 
         for (i = 0; i < dirs->len; i++) {
-                path = g_build_filename (dirs->pdata[i], "gnome-session", "sessions", basename, NULL);
+                path = g_build_filename (dirs->pdata[i], "cinnamon-session", "sessions", basename, NULL);
                 keyfile = get_session_keyfile_if_valid (path);
                 if (keyfile != NULL)
                         break;

@@ -1,12 +1,12 @@
-# Northern Sotho translation of gnome-session.
+# Northern Sotho translation of cinnamon-session.
 # Copyright (C) 2004 Zuza Software Foundation
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 #
 # Zuza Software Foundation <info@translate.org.za>, 2004
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session HEAD\n"
+"Project-Id-Version: cinnamon-session HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2004-11-29 17:02+0200\n"

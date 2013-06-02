@@ -1,6 +1,6 @@
-# Serbian translation of gnome-session
+# Serbian translation of cinnamon-session
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Maintainer: Danilo Šegan <danilo@gnome.org>
 # Reviewed on 2005-07-10 by Danilo Šegan <danilo@gnome.org>
 # Translated on 2006-01-30 by: Slobodan D. Sredojević <slobo@akrep.be>
@@ -8,7 +8,7 @@
 # Miloš Popović <gpopac@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-07-18 11:32+0000\n"
@@ -67,7 +67,7 @@ msgstr "Bez imena"
 msgid "No description"
 msgstr "Bez opisa"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "Izdanje ovog programa"
 
@@ -87,11 +87,11 @@ msgstr "Gnom"
 msgid "This session logs you into GNOME"
 msgstr "Ova sesija vas prijavljuje u Gnom"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Neki programi su još uvek pokrenuti:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -211,20 +211,20 @@ msgstr "Mogućnosti upravljanja sesijom:"
 msgid "Show session management options"
 msgstr "Prikazuje mogućnosti upravljanja sesijom"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikonica „%s“ nije nađena"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Program je još uvek pokrenut:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -234,40 +234,40 @@ msgstr ""
 
 # Kako je potrebno da bude što kraće usudih se da promenim konstrukciju
 # „Promeni korisnika i pored toga“ u „Ipak promeni korisnika“ ~ Miloš
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Ipak promeni korisnika"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Ipak se odjavi"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Ipak obustavi rad"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Ipak zamrzni računar"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Ipak isključi računar"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Ipak ponovo pokreni"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Zaključaj ekran"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Otkaži"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -276,7 +276,7 @@ msgstr[1] "Bićete odjavljeni u roku od %d sekunde."
 msgstr[2] "Bićete odjavljeni u roku od %d sekundi."
 msgstr[3] "Bićete odjavljeni u roku od jedne sekunde."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -285,7 +285,7 @@ msgstr[1] "Računar će se sam isključiti za %d sekunde."
 msgstr[2] "Računar će se sam isključiti za %d sekundi."
 msgstr[3] "Računar će se sam isključiti za jednu sekundu."
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
@@ -294,55 +294,55 @@ msgstr[1] "Računar će se sam ponovo pokrenuti za %d sekunde."
 msgstr[2] "Računar će se sam ponovo pokrenuti za %d sekundi."
 msgstr[3] "Računar će se sam ponovo pokrenuti za jednu sekundu."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Trenutno ste prijavljeni kao „%s“."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Da li da se odjavim sa sistema?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "_Promeni korisnika"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_Odjavi me"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Da li da isključim računar?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_Obustavi"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Zamrzni"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_Ponovo pokreni"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_Isključi"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "Da li da ponovo pokrenem računar?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "O, ne!  Nešto je pošlo naopako!"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -350,7 +350,7 @@ msgstr ""
 "Došlo je do problema i sistem ne može da se oporavi. Molim obratite se "
 "administratoru sistema"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -358,7 +358,7 @@ msgstr ""
 "Došlo je do problema i sistem ne može da se oporavi. Sva proširenja su "
 "isključena zarad predostrožnosti."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -366,11 +366,11 @@ msgstr ""
 "Došlo je do problema i sistem ne može da se oporavi.\n"
 "Molim odjavite se i pokušajte opet."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "Gnom 3 nije uspeo da se učita"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -384,11 +384,11 @@ msgstr ""
 "To najverovatnije znači da vaš sistem (grafička kartica ili njen upravljački "
 "program) nije u stanju da pokrene potpuno Gnom 3 okruženje."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "Saznajte više o Gnomu 3"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "Ne daje odziv"
 
@@ -396,89 +396,89 @@ msgstr "Ne daje odziv"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Zapamćeni program"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Ovaj program onemogućava odjavu."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Odbacujem vezu sa novim klijentom jer je u toku gašenje sesije\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Ne mogu da napravim priključak ICE osluškivanja: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Ne mogu da pokrenem sesiju prijavljivanja (i ne mogu da se povežem na X server)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "Zaobilazi uobičajene direktorijume samopokretanja"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "DIREKTORIJUM SAMOPOKRETANJA"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "Sesije koje će biti korišćene"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "NAZIV_SESIJE"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "Uključuje kod za ispravljanje grešaka"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "Ne učitava programe koje je zadao korisnik"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "Prikazuje prozorče neuspeha za isprobavanje"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr " — upravnik Gnomovom sesijom"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Odjavi me"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "Ugasi"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "Ponovo pokreni"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "Zanemarujem postojeće ometače"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "Ne traži potvrdu od korisnika"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Ne mogu da se povežem sa upravnikom sesije"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Program je pozvan sa nesaglasnim mogućnostima"

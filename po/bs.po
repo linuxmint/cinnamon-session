@@ -1,13 +1,13 @@
-# translation of gnome-session.HEAD.bs.po to Bosnian
-# Bosnian translation of gnome-session.
+# translation of cinnamon-session.HEAD.bs.po to Bosnian
+# Bosnian translation of cinnamon-session.
 # Copyright (C) 2002
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Samir Marić <samir@lugbih.org>, 2002.
 # Kemal Sanjta <gomez@lugzdk.ba>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.bs\n"
+"Project-Id-Version: cinnamon-session.HEAD.bs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-11 08:59+0000\n"
 "PO-Revision-Date: 2004-07-28 02:50+0200\n"
@@ -18,165 +18,165 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#: gnome-session/gnome-session.schemas.in.h:1
+#: cinnamon-session/cinnamon-session.schemas.in.h:1
 msgid "Allow TCP connections"
 msgstr "Dozvoli TCP konekcije"
 
-#: gnome-session/gnome-session.schemas.in.h:2
+#: cinnamon-session/cinnamon-session.schemas.in.h:2
 msgid ""
 "For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), gnome-session does not listen for connections on TCP "
+"(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 "ports. This option will allow connections from (authorized) remote hosts. "
-"gnome-session must be restarted for this to take effect."
+"cinnamon-session must be restarted for this to take effect."
 msgstr ""
 "Iz sigurnosnih razloga na platformama koje imaju _IceTcpTransNoListen() "
-"(XFree86 systems), gnome-session neće slušati konekcije na TCP portovima. "
+"(XFree86 systems), cinnamon-session neće slušati konekcije na TCP portovima. "
 "Ova opcija će dozvoliti konekcije sa (autorizovane) udaljenih hostova. gnome-"
 "session mora biti ponovo pokrenut da bi ovo imalo efekta."
 
-#: gnome-session/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: cinnamon-session/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
-"Ukoliko je omogućeno, gnome-session će potstaći korisnika prije završavanja "
+"Ukoliko je omogućeno, cinnamon-session će potstaći korisnika prije završavanja "
 "sesije."
 
-#: gnome-session/gnome-session.schemas.in.h:4
+#: cinnamon-session/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
-"Ukoliko je omogućeno, gnome-session će sačuvati sesiju automatski. U "
+"Ukoliko je omogućeno, cinnamon-session će sačuvati sesiju automatski. U "
 "suprotnom, odjavni dijalog će imati opciju za spašavanje sesije."
 
-#: gnome-session/gnome-session.schemas.in.h:5
+#: cinnamon-session/cinnamon-session.schemas.in.h:5
 msgid "Logout prompt"
 msgstr "Odjavni prompt"
 
-#: gnome-session/gnome-session.schemas.in.h:6
+#: cinnamon-session/cinnamon-session.schemas.in.h:6
 msgid ""
 "Preferred Image to use for the splash screen when logging in to the GNOME "
 "Desktop"
 msgstr ""
 "Preporučena pozdravna slika za korištenje prilikom prijave na GNOME Desktop"
 
-#: gnome-session/gnome-session.schemas.in.h:7
+#: cinnamon-session/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
 msgstr "Sačuvaj sesije"
 
-#: gnome-session/gnome-session.schemas.in.h:8
+#: cinnamon-session/cinnamon-session.schemas.in.h:8
 msgid "Show the splash screen"
 msgstr "Pokaži pozdravni ekran pri prijavi"
 
-#: gnome-session/gnome-session.schemas.in.h:9
+#: cinnamon-session/cinnamon-session.schemas.in.h:9
 msgid "Show the splash screen when the session starts up"
 msgstr "Pokaži splash ekran kada se sesija pokreće"
 
-#: gnome-session/gnome-session.schemas.in.h:10
+#: cinnamon-session/cinnamon-session.schemas.in.h:10
 msgid "Splash Screen Image"
 msgstr "Splash Ekran Slika"
 
-#: gnome-session/gsm-client-editor.c:97 gnome-session/startup-programs.c:314
+#: cinnamon-session/gsm-client-editor.c:97 cinnamon-session/startup-programs.c:314
 msgid "_Order:"
 msgstr "_Poredak:"
 
-#: gnome-session/gsm-client-editor.c:99
+#: cinnamon-session/gsm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Poredak u kojem su aplikacije pokrenute u sesiji."
 
-#: gnome-session/gsm-client-editor.c:106
+#: cinnamon-session/gsm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Šta se dešava sa aplikacijom kada izlazi."
 
-#: gnome-session/gsm-client-editor.c:109
+#: cinnamon-session/gsm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Stil: "
 
-#: gnome-session/gsm-client-list.c:150
-#: gnome-session/session-properties-capplet.c:412
+#: cinnamon-session/gsm-client-list.c:150
+#: cinnamon-session/session-properties-capplet.c:412
 msgid "Order"
 msgstr "Poredak"
 
-#: gnome-session/gsm-client-list.c:155
+#: cinnamon-session/gsm-client-list.c:155
 msgid "Style"
 msgstr "Stil"
 
-#: gnome-session/gsm-client-list.c:160
+#: cinnamon-session/gsm-client-list.c:160
 msgid "State"
 msgstr "Stanje"
 
-#: gnome-session/gsm-client-list.c:165
+#: cinnamon-session/gsm-client-list.c:165
 msgid "Program"
 msgstr "Program"
 
-#: gnome-session/gsm-client-row.c:31
+#: cinnamon-session/gsm-client-row.c:31
 msgid "Inactive"
 msgstr "Neaktivan"
 
-#: gnome-session/gsm-client-row.c:32
+#: cinnamon-session/gsm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Čeka da počne, ili već završio."
 
-#: gnome-session/gsm-client-row.c:34
+#: cinnamon-session/gsm-client-row.c:34
 msgid "Starting"
 msgstr "Počinje"
 
-#: gnome-session/gsm-client-row.c:35
+#: cinnamon-session/gsm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "Pokrenut, ali nije još prijavio stanje."
 
-#: gnome-session/gsm-client-row.c:37
+#: cinnamon-session/gsm-client-row.c:37
 msgid "Running"
 msgstr "Pokrenut"
 
-#: gnome-session/gsm-client-row.c:38
+#: cinnamon-session/gsm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Normalan član sesije."
 
-#: gnome-session/gsm-client-row.c:40
+#: cinnamon-session/gsm-client-row.c:40
 msgid "Saving"
 msgstr "Snima"
 
-#: gnome-session/gsm-client-row.c:41
+#: cinnamon-session/gsm-client-row.c:41
 msgid "Saving session details."
 msgstr "Snima detalje sesije."
 
-#: gnome-session/gsm-client-row.c:43
+#: cinnamon-session/gsm-client-row.c:43
 msgid "Unknown"
 msgstr "Nepoznat"
 
-#: gnome-session/gsm-client-row.c:44
+#: cinnamon-session/gsm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Stanje nije prijavljeno u periodu timeout-a."
 
-#: gnome-session/gsm-client-row.c:50
+#: cinnamon-session/gsm-client-row.c:50
 msgid "Normal"
 msgstr "Normalan"
 
-#: gnome-session/gsm-client-row.c:51
+#: cinnamon-session/gsm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "Odjave nemaju uticaja, ali može umrijeti."
 
-#: gnome-session/gsm-client-row.c:53
+#: cinnamon-session/gsm-client-row.c:53
 msgid "Restart"
 msgstr "Ponovo pokreni"
 
-#: gnome-session/gsm-client-row.c:54
+#: cinnamon-session/gsm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Nikada ne smije umrijeti (nestati)."
 
-#: gnome-session/gsm-client-row.c:56
+#: cinnamon-session/gsm-client-row.c:56
 msgid "Trash"
 msgstr "Smeće"
 
-#: gnome-session/gsm-client-row.c:57
+#: cinnamon-session/gsm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "Zanemaren pri odjavi i može umrijeti."
 
-#: gnome-session/gsm-client-row.c:59
+#: cinnamon-session/gsm-client-row.c:59
 msgid "Settings"
 msgstr "Podešavanja"
 
-#: gnome-session/gsm-client-row.c:60
+#: cinnamon-session/gsm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Uvijek pokrenut pri svakoj prijavi (login)."
 
@@ -188,7 +188,7 @@ msgstr "Uvijek pokrenut pri svakoj prijavi (login)."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: gnome-session/gsm-gsd.c:41
+#: cinnamon-session/gsm-gsd.c:41
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -200,7 +200,7 @@ msgstr ""
 "Neke stvari, kao što su teme, zvukovi, ili osobine pozadine bi mogle raditi "
 "neispravno."
 
-#: gnome-session/gsm-gsd.c:53
+#: cinnamon-session/gsm-gsd.c:53
 msgid ""
 "\n"
 "\n"
@@ -212,7 +212,7 @@ msgstr ""
 "Zadnja poruka greške je bila:\n"
 "\n"
 
-#: gnome-session/gsm-gsd.c:58
+#: cinnamon-session/gsm-gsd.c:58
 msgid ""
 "\n"
 "\n"
@@ -223,59 +223,59 @@ msgstr ""
 "GNOME će i dalje pokušavati ponovo pokrenuti dio za podešavanje osobina "
 "sljedeći put kada se prijavite."
 
-#: gnome-session/gsm-gsd.c:115
+#: cinnamon-session/gsm-gsd.c:115
 msgid "There was an unknown activation error."
 msgstr "Postoji nepoznata aktivacijska greška."
 
-#: gnome-session/gsm-gsd.c:157
+#: cinnamon-session/gsm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
 msgstr "Dio sa Osobinama se ponovo pokrenuo previše puta."
 
-#: gnome-session/logout.c:355
+#: cinnamon-session/logout.c:355
 msgid "Are you sure you want to log out?"
 msgstr "Da li ste sigurni da se želite odjaviti?"
 
-#: gnome-session/logout.c:372
+#: cinnamon-session/logout.c:372
 msgid "_Save current setup"
 msgstr "_Snimi trenutne postavke"
 
-#: gnome-session/logout.c:393
+#: cinnamon-session/logout.c:393
 msgid "Action"
 msgstr "Akcija"
 
-#: gnome-session/logout.c:410
+#: cinnamon-session/logout.c:410
 msgid "_Log out"
 msgstr "_Odjava"
 
-#: gnome-session/logout.c:416
+#: cinnamon-session/logout.c:416
 msgid "Sh_ut down"
 msgstr "Uga_si"
 
-#: gnome-session/logout.c:423
+#: cinnamon-session/logout.c:423
 msgid "_Restart the computer"
 msgstr "_Ponovo pokreni računar"
 
-#: gnome-session/main.c:81
+#: cinnamon-session/main.c:81
 msgid "Specify a session name to load"
 msgstr "Navedi ime sesije za učitavanje"
 
-#: gnome-session/main.c:82
+#: cinnamon-session/main.c:82
 msgid "Only read saved sessions from the default.session file"
 msgstr "Čitaj snimljene sesije samo iz default.session datoteke"
 
-#: gnome-session/main.c:83
+#: cinnamon-session/main.c:83
 msgid "Millisecond period spent waiting for clients to register (0=forever)"
 msgstr "Period čekanja na registraciju klijenata u milisekundama (0=zauvijek)"
 
-#: gnome-session/main.c:84
+#: cinnamon-session/main.c:84
 msgid "Millisecond period spent waiting for clients to respond (0=forever)"
 msgstr "Period čekanja na odgovor klijenata u milisekundama (0=zauvijek)"
 
-#: gnome-session/main.c:85
+#: cinnamon-session/main.c:85
 msgid "Millisecond period spent waiting for clients to die (0=forever)"
 msgstr "Period čekanja na smrt klijenata u milisekundama (0=zauvijek)"
 
-#: gnome-session/main.c:265
+#: cinnamon-session/main.c:265
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
@@ -288,82 +288,82 @@ msgstr ""
 "Ovaj problem se može riješiti dodavanjem\n"
 "%s u datoteku /etc/hosts."
 
-#: gnome-session/main.c:272
+#: cinnamon-session/main.c:272
 msgid "Log in Anyway"
 msgstr "Prijavi se u svakom slučaju"
 
-#: gnome-session/main.c:273
+#: cinnamon-session/main.c:273
 #, fuzzy
 msgid "Try Again"
 msgstr "Pokušaj ponovo"
 
-#: gnome-session/manager.c:223
+#: cinnamon-session/manager.c:223
 msgid "Your session has been saved"
 msgstr "Vaša sesija je snimljena"
 
-#: gnome-session/manager.c:527
+#: cinnamon-session/manager.c:527
 msgid "Wait abandoned due to conflict."
 msgstr "Čekaj na napuštene zbog konflikta."
 
-#: gnome-session/manager.c:1035
+#: cinnamon-session/manager.c:1035
 #, c-format
 msgid "No response to the %s command."
 msgstr "Nema odgovora na %s komandu."
 
-#: gnome-session/manager.c:1036
+#: cinnamon-session/manager.c:1036
 msgid "The program may be slow, stopped or broken."
 msgstr "Program je možda spor, zaustavljen ili polomljen."
 
-#: gnome-session/manager.c:1037
+#: cinnamon-session/manager.c:1037
 msgid "You may wait for it to respond or remove it."
 msgstr "Možete čekati na odgovor ili ga ukloniti."
 
-#: gnome-session/manager.c:1760
+#: cinnamon-session/manager.c:1760
 #, fuzzy
 msgid "Restart abandoned due to failures."
 msgstr "Ponovo pokreni napuštene zbog grešaka."
 
-#: gnome-session/manager.c:1956
+#: cinnamon-session/manager.c:1956
 msgid "A session shutdown is in progress."
 msgstr "Zatvaranje sesije je u toku."
 
-#: gnome-session/save-session.c:46
+#: cinnamon-session/save-session.c:46
 msgid "Set the current session"
 msgstr "Podesi trenutnu sesiju"
 
-#: gnome-session/save-session.c:47
+#: cinnamon-session/save-session.c:47
 msgid "Kill session"
 msgstr "Ubij sesiju"
 
-#: gnome-session/save-session.c:48
+#: cinnamon-session/save-session.c:48
 msgid "Use dialog boxes"
 msgstr "Koristi dijalog boksove"
 
-#: gnome-session/save-session.c:146 gnome-session/save-session.c:179
+#: cinnamon-session/save-session.c:146 cinnamon-session/save-session.c:179
 msgid "Could not connect to the session manager"
 msgstr "Ne mogu se priključiti na menadžera sesije"
 
-#: gnome-session/session-names.c:143
+#: cinnamon-session/session-names.c:143
 msgid "The session name cannot be empty"
 msgstr "Ime sesije ne može biti prazno"
 
-#: gnome-session/session-names.c:154
+#: cinnamon-session/session-names.c:154
 msgid "The session name already exists"
 msgstr "Ime sesije već postoji"
 
-#: gnome-session/session-names.c:188
+#: cinnamon-session/session-names.c:188
 msgid "Add a new session"
 msgstr "Dodaj novu sesiju"
 
-#: gnome-session/session-names.c:218
+#: cinnamon-session/session-names.c:218
 msgid "Edit session name"
 msgstr "Promijeni ime sesije"
 
-#: gnome-session/session-properties-capplet.c:122
+#: cinnamon-session/session-properties-capplet.c:122
 msgid "_Edit"
 msgstr "_Izmjeni..."
 
-#: gnome-session/session-properties-capplet.c:190
+#: cinnamon-session/session-properties-capplet.c:190
 msgid ""
 "Some changes are not saved.\n"
 "Is it still OK to exit?"
@@ -371,120 +371,120 @@ msgstr ""
 "Neke promjene nisu snimljene.\n"
 "Je li još uvijek u redu da zatvorim?"
 
-#: gnome-session/session-properties-capplet.c:240
-#: gnome-session/session-properties.desktop.in.in.h:2
+#: cinnamon-session/session-properties-capplet.c:240
+#: cinnamon-session/session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Sesije"
 
-#: gnome-session/session-properties-capplet.c:273
+#: cinnamon-session/session-properties-capplet.c:273
 msgid "Show splash screen on _login"
 msgstr "Pokaži pozdravnu scenu pri _prijavi"
 
-#: gnome-session/session-properties-capplet.c:284
+#: cinnamon-session/session-properties-capplet.c:284
 #, fuzzy
 msgid "As_k on logout"
 msgstr "_Upitaj pri odjavi"
 
-#: gnome-session/session-properties-capplet.c:295
+#: cinnamon-session/session-properties-capplet.c:295
 msgid "Automatically save chan_ges to session"
 msgstr "Automatski snimi promj_ene u sesiji"
 
-#: gnome-session/session-properties-capplet.c:306
+#: cinnamon-session/session-properties-capplet.c:306
 msgid "_Sessions:"
 msgstr "_Sesije:"
 
-#: gnome-session/session-properties-capplet.c:324
+#: cinnamon-session/session-properties-capplet.c:324
 msgid "Session Name"
 msgstr "Ime sesije"
 
-#: gnome-session/session-properties-capplet.c:375
+#: cinnamon-session/session-properties-capplet.c:375
 msgid "Session Options"
 msgstr "Opcije za sesiju"
 
-#: gnome-session/session-properties-capplet.c:384
+#: cinnamon-session/session-properties-capplet.c:384
 msgid "Current Session"
 msgstr "Trenutna sesija"
 
-#: gnome-session/session-properties-capplet.c:393
+#: cinnamon-session/session-properties-capplet.c:393
 msgid "Additional startup _programs:"
 msgstr "Dodaj startup _program"
 
-#: gnome-session/session-properties-capplet.c:414
+#: cinnamon-session/session-properties-capplet.c:414
 msgid "Command"
 msgstr "Komanda"
 
-#: gnome-session/session-properties-capplet.c:446
+#: cinnamon-session/session-properties-capplet.c:446
 msgid "Startup Programs"
 msgstr "Startup programi"
 
-#: gnome-session/session-properties.c:49
+#: cinnamon-session/session-properties.c:49
 msgid "Remove the currently selected client from the session."
 msgstr "Skloni trenutno označeni klijent iz sesije."
 
-#: gnome-session/session-properties.c:55
+#: cinnamon-session/session-properties.c:55
 msgid "Apply changes to the current session"
 msgstr "Izvrši promjene u sesiji"
 
-#: gnome-session/session-properties.c:61
+#: cinnamon-session/session-properties.c:61
 msgid "The list of programs in the session."
 msgstr "Lista programa u sesiji."
 
-#: gnome-session/session-properties.c:88
+#: cinnamon-session/session-properties.c:88
 msgid "Currently running _programs:"
 msgstr "Pregledaj trenutno pokrenute _programe..."
 
-#: gnome-session/session-properties.c:104
+#: cinnamon-session/session-properties.c:104
 msgid "Initialize session settings"
 msgstr "Inicijaliziraj podešavanja sesije"
 
-#: gnome-session/session-properties.desktop.in.in.h:1
+#: cinnamon-session/session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Konfogiriši svoje sesije"
 
-#: gnome-session/splash-widget.c:43
+#: cinnamon-session/splash-widget.c:43
 msgid "Sawfish Window Manager"
 msgstr "Sawfish menadžer prozora"
 
-#: gnome-session/splash-widget.c:44
+#: cinnamon-session/splash-widget.c:44
 msgid "Metacity Window Manager"
 msgstr "Metacity Menadžer prozora"
 
-#: gnome-session/splash-widget.c:45
+#: cinnamon-session/splash-widget.c:45
 msgid "Window Manager"
 msgstr "Menadžer prozora"
 
-#: gnome-session/splash-widget.c:46
+#: cinnamon-session/splash-widget.c:46
 msgid "The Panel"
 msgstr "Panel"
 
-#: gnome-session/splash-widget.c:47
+#: cinnamon-session/splash-widget.c:47
 msgid "Session Manager Proxy"
 msgstr "Proxy menadžera sesije"
 
-#: gnome-session/splash-widget.c:48
+#: cinnamon-session/splash-widget.c:48
 msgid "Nautilus"
 msgstr "Nautilus"
 
-#: gnome-session/splash-widget.c:49
+#: cinnamon-session/splash-widget.c:49
 msgid "Desktop Settings"
 msgstr "Podešavanja Desktopa"
 
-#: gnome-session/startup-programs.c:292
+#: cinnamon-session/startup-programs.c:292
 msgid "_Startup Command:"
 msgstr "_Startup komanda"
 
-#: gnome-session/startup-programs.c:298
+#: cinnamon-session/startup-programs.c:298
 msgid "Startup Command"
 msgstr "Startup komanda"
 
-#: gnome-session/startup-programs.c:347
+#: cinnamon-session/startup-programs.c:347
 msgid "The startup command cannot be empty"
 msgstr "Startup komanda ne može biti prazna"
 
-#: gnome-session/startup-programs.c:384
+#: cinnamon-session/startup-programs.c:384
 msgid "Add Startup Program"
 msgstr "Dodaj startup program"
 
-#: gnome-session/startup-programs.c:405
+#: cinnamon-session/startup-programs.c:405
 msgid "Edit Startup Program"
 msgstr "Izmjeni startup program"

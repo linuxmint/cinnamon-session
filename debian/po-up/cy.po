@@ -1,11 +1,11 @@
-# gnome-session yn Gymraeg.
+# cinnamon-session yn Gymraeg.
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # www.gyfieithu.co.uk <kyfieithu@dotmon.com>, 2003.
 # and contributors
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-03-02 12:20-0000\n"

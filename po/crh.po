@@ -1,10 +1,10 @@
-# Qırımtatarca translation of gnome-session.
-# This file is distributed under the same license as the gnome-session package.
+# Qırımtatarca translation of cinnamon-session.
+# This file is distributed under the same license as the cinnamon-session package.
 # Reşat SABIQ <tilde.birlik@gmail.com>, 2009, 2010, 2011, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-28 00:40-0500\n"
 "PO-Revision-Date: 2012-03-28 00:41-0500\n"
@@ -60,7 +60,7 @@ msgstr "İsim yoq"
 msgid "No description"
 msgstr "Tasvirsiz"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:281
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
 msgid "Version of this application"
 msgstr "Bu uyğulamanıñ sürümi"
 
@@ -85,7 +85,7 @@ msgstr "Bu oturım sizni GNOME'ğa içeri imzalandırır"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Bazı programlar ale çapmaqta:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -206,24 +206,24 @@ msgstr "Oturım idaresi ihtiyariyatı:"
 msgid "Show session management options"
 msgstr "Oturım idaresi ihtiyariyatını köster"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' işaretçigi tapılamadı"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Bilinmey"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Bir program ale çapmaqta:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Bazı programlar ale çapmaqta:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -231,97 +231,97 @@ msgstr ""
 "Programlarnıñ tamamlanuvı içün beklene.  Bu programlarnıñ kestirilüvi yapqan "
 "olğanıñız işlerni ğayıp etüviñizge sebep olabilir."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Kene de Qullanıcını Deñiştir"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Kene de Tışarı İmzalan"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Kene de Sarqıt"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Kene de Yuqlat"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Kene de Qapat"
 
 # tüklü
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Kene de Yañıdan Başlat"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Ekrannı Kilitle"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Vazgeç"
 
 # tüklü
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:271
+#: ../cinnamon-session/gsm-logout-dialog.c:271
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "%d saniyeden soñ avtomatik olaraq tışarı imzalandırılacaqsıñız. "
 
-#: ../gnome-session/gsm-logout-dialog.c:279
+#: ../cinnamon-session/gsm-logout-dialog.c:279
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Bu sistem %d saniyeden soñ avtomatik olaraq qapatılacaq."
 
-#: ../gnome-session/gsm-logout-dialog.c:303
+#: ../cinnamon-session/gsm-logout-dialog.c:303
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Hal-hazırda \"%s\" olaraq içeri imzalanğansıñız."
 
-#: ../gnome-session/gsm-logout-dialog.c:369
+#: ../cinnamon-session/gsm-logout-dialog.c:369
 msgid "Log out of this system now?"
 msgstr "Bu sistemden şimdi çıqılsınmı?"
 
-#: ../gnome-session/gsm-logout-dialog.c:375
+#: ../cinnamon-session/gsm-logout-dialog.c:375
 msgid "_Switch User"
 msgstr "_Qullanıcı Almaştır"
 
-#: ../gnome-session/gsm-logout-dialog.c:384
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:384
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_Tışarı İmzalan"
 
-#: ../gnome-session/gsm-logout-dialog.c:390
+#: ../cinnamon-session/gsm-logout-dialog.c:390
 msgid "Shut down this system now?"
 msgstr "Bu sistem şimdi qapatılsınmı?"
 
-#: ../gnome-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-logout-dialog.c:396
 msgid "S_uspend"
 msgstr "_Sarqıt"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "_Hibernate"
 msgstr "_Yuqlat"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "_Restart"
 msgstr "_Kene Başlat"
 
-#: ../gnome-session/gsm-logout-dialog.c:418
+#: ../cinnamon-session/gsm-logout-dialog.c:418
 msgid "_Shut Down"
 msgstr "_Söndür"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Aman!  Bir şey yañlış ketkendir."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -329,7 +329,7 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay. Lütfen bir sistem memurı ile "
 "temasqa keçiñiz"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -337,7 +337,7 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay. İhtiyat olaraq eklentilerniñ "
 "hepsi ğayrıfaalleştirilgendir."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -345,26 +345,26 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay.Lütfen tışarı imzalanıp tekrar "
 "deñeñiz."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "%d kodu ile terk etti"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Signal %d tarafından öldürildi"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Signal %d tarafından toqtatıldı"
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 Yüklenmekte Muvaffaqiyetsiz Edi"
 
-#: ../gnome-session/gsm-manager.c:1397
+#: ../cinnamon-session/gsm-manager.c:1397
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -378,11 +378,11 @@ msgstr ""
 "Bu eñ muhtemelen sistemiñiz (grafikler donanımı yaki sürücisi) tolu GNOME 3 "
 "tecribesini sunmaq içün qabiliyetli degil demektir."
 
-#: ../gnome-session/gsm-manager.c:1399
+#: ../cinnamon-session/gsm-manager.c:1399
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 haqqında daha çoq ögren"
 
-#: ../gnome-session/gsm-manager.c:1496 ../gnome-session/gsm-manager.c:2269
+#: ../cinnamon-session/gsm-manager.c:1496 ../cinnamon-session/gsm-manager.c:2269
 msgid "Not responding"
 msgstr "Cevap bermey"
 
@@ -390,15 +390,15 @@ msgstr "Cevap bermey"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Hatırlanğan Uyğulama"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Bu program tışarı imzalanuvnı bloklay."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -407,74 +407,74 @@ msgstr ""
 "etile\n"
 
 # tüklü
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE diñlev oyuğı (soketi) icat etilamadı: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "İçeri imzalanuv oturımı başlatılalmay (ve X sunucısına bağlanılalmay)"
 
 # tüklü
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Override standard autostart directories"
 msgstr "Standart avto-başlanğıç fihristleriniñ üstünden ayda"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "AUTOSTART_DIR"
 msgstr "AVTOBAŞLATMA_FİHRİSTİ"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Session to use"
 msgstr "Qullanılacaq oturım"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "SESSION_NAME"
 msgstr "OTURIM_ADI"
 
 # tüklü
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Enable debugging code"
 msgstr "Arızasızlandıruv kodunı qabilleştir"
 
-#: ../gnome-session/main.c:280
+#: ../cinnamon-session/main.c:280
 msgid "Do not load user-specified applications"
 msgstr "Qullanıcı tarafından belirtilgen programlarnı yükleme"
 
 # tüklü
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:283
+#: ../cinnamon-session/main.c:283
 msgid "Show the fail whale dialog for testing"
 msgstr "Sınama içün ciddiy hata dialoğını köster"
 
-#: ../gnome-session/main.c:303
+#: ../cinnamon-session/main.c:303
 msgid " - the GNOME session manager"
 msgstr " - GNOME oturım idarecisi"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "Tışarı imzalan"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "Söndür"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Ignoring any existing inhibitors"
 msgstr "Mevcut her türlü sedlerni ihmal eterek"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Don't prompt for user confirmation"
 msgstr "Qullanıcı teyiti içün indeme"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "Oturım idarecisine bağlanılamadı"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 
@@ -496,15 +496,15 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 
 # tüklü
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Eger qabilleştirilgen ise, gnome-session bir oturımnı qapatmazdan evel "
+#~ "Eger qabilleştirilgen ise, cinnamon-session bir oturımnı qapatmazdan evel "
 #~ "qullanıcığa inder."
 
 # tüklü
-#~ msgid "If enabled, gnome-session will save the session automatically."
+#~ msgid "If enabled, cinnamon-session will save the session automatically."
 #~ msgstr ""
-#~ "Eger qabilleştirilgen ise, gnome-session oturımnı öz-özünden saqlar."
+#~ "Eger qabilleştirilgen ise, cinnamon-session oturımnı öz-özünden saqlar."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Ög-belgilengen oturımnıñ parçası olğan uyğulamalarnıñ cedveli."
@@ -602,10 +602,10 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 
 # tüklü
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Eger qabilleştirilgen ise, gnome-session oturımnı öz-özünden saqlar. Aksi "
+#~ "Eger qabilleştirilgen ise, cinnamon-session oturımnı öz-özünden saqlar. Aksi "
 #~ "taqdirde, tışarı imzalanuv dialogında oturımnı saqlav ihtiyariyatı "
 #~ "bulunır."
 

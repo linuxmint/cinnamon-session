@@ -1,6 +1,6 @@
-# Dutch translation for gnome-session
+# Dutch translation for cinnamon-session
 #
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 #
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Dirk-Jan C. Binnema <djcb@dds.nl>, 1998, 1999.
@@ -17,8 +17,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 3.0.2-4\n"
-"Report-Msgid-Bugs-To: gnome-session@packages.debian.org\n"
+"Project-Id-Version: cinnamon-session 3.0.2-4\n"
+"Report-Msgid-Bugs-To: cinnamon-session@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2011-11-17 10:39+0100\n"
 "Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"

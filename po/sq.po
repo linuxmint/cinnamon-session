@@ -1,4 +1,4 @@
-# Përkthimi i mesazheve të gnome-session në shqip
+# Përkthimi i mesazheve të cinnamon-session në shqip
 # Copyright (C) 2006 Free Software Foundation, Inc.
 # Deep_Dark <epidamus@netscape.net>, 2002.
 # Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2005, 2006.
@@ -7,7 +7,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session HEAD\n"
+"Project-Id-Version: cinnamon-session HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-05 18:51+0100\n"
 "PO-Revision-Date: 2007-02-28 17:13+0100\n"
@@ -17,61 +17,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gnome-session.schemas.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:1
 msgid "Allow TCP connections"
 msgstr "Lejo lidhjet TCP"
 
-#: ../data/gnome-session.schemas.in.h:2
+#: ../data/cinnamon-session.schemas.in.h:2
 msgid ""
 "For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), gnome-session does not listen for connections on TCP "
+"(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 "ports. This option will allow connections from (authorized) remote hosts. "
-"gnome-session must be restarted for this to take effect."
+"cinnamon-session must be restarted for this to take effect."
 msgstr ""
 "Për arësye sigurie, në piataformat që kanë _IceTcpTransNoListen() (XFree86 "
 "systems), seanca i gnome nuk pret lidhje në portat TCP. Ky opsion lejon "
 "lidhjet nga (të autorizuar) hoste në largësi. Seanca e gnome duhet të "
 "riniset për të patur këtë efekt."
 
-#: ../data/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: ../data/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
 "Nëse aktivohet, seanca e gnome do të nxjerre përdoruesin në terminal përpara "
 "se të mbarojë një seancë."
 
-#: ../data/gnome-session.schemas.in.h:4
+#: ../data/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
 "Nëse e aktivuar, seanca e gnome do të ruaj seancën automatikisht. Përndryshe "
 "pyetja për daljen përmban një opsion për ruajtjen e seancës"
 
-#: ../data/gnome-session.schemas.in.h:5
+#: ../data/cinnamon-session.schemas.in.h:5
 msgid "Logout prompt"
 msgstr "Terminali i daljes"
 
-#: ../data/gnome-session.schemas.in.h:6
+#: ../data/cinnamon-session.schemas.in.h:6
 msgid "Preferred Image to use for login splash screen"
 msgstr "Figura e preferuar për t'u përdorur tek dritarja e hyrjes"
 
-#: ../data/gnome-session.schemas.in.h:7
+#: ../data/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
 msgstr "Ruaj seancat"
 
-#: ../data/gnome-session.schemas.in.h:8
+#: ../data/cinnamon-session.schemas.in.h:8
 msgid "Selected option in the log out dialog"
 msgstr "Mundësia e zgjedhur në dialogun e daljes"
 
-#: ../data/gnome-session.schemas.in.h:9
+#: ../data/cinnamon-session.schemas.in.h:9
 msgid "Show the splash screen"
 msgstr "Trego sfondin splash"
 
-#: ../data/gnome-session.schemas.in.h:10
+#: ../data/cinnamon-session.schemas.in.h:10
 msgid "Show the splash screen when the session starts up"
 msgstr "Tregon sfondin splash kur seanca fillon"
 
-#: ../data/gnome-session.schemas.in.h:11
+#: ../data/cinnamon-session.schemas.in.h:11
 msgid ""
 "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
 "directories and image names are valid values. Changing this value will "
@@ -81,7 +81,7 @@ msgstr ""
 "dhe emrat e figurave janë vlera të pranueshme. Ndryshimi i kësaj vlere do të "
 "ketë efekt në seancën e ardhshme të hyrjes."
 
-#: ../data/gnome-session.schemas.in.h:12
+#: ../data/cinnamon-session.schemas.in.h:12
 msgid ""
 "This is the option that will be selected in the logout dialog, valid values "
 "are \"logout\" for logging out, \"shutdown\" for halting the system and "
@@ -96,11 +96,11 @@ msgid "Configure your sessions"
 msgstr "Konfiguro seancën tënde"
 
 #: ../data/session-properties.desktop.in.in.h:2
-#: ../gnome-session/session-properties-capplet.c:222
+#: ../cinnamon-session/session-properties-capplet.c:222
 msgid "Sessions"
 msgstr "Seanca"
 
-#: ../gnome-session/gsm-at-startup.c:61
+#: ../cinnamon-session/gsm-at-startup.c:61
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -111,108 +111,108 @@ msgstr ""
 "açesibilitetit nuk u gjet. Të lutem sigurohu që paketa AT-SPI është e "
 "instaluar. Seanca jote u nis pa teknologjinë mbështetëse."
 
-#: ../gnome-session/gsm-client-editor.c:97
+#: ../cinnamon-session/gsm-client-editor.c:97
 msgid "_Order:"
 msgstr "_Renditja:"
 
-#: ../gnome-session/gsm-client-editor.c:99
+#: ../cinnamon-session/gsm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Renditja me të cilën programet do të fillohen në seancë."
 
-#: ../gnome-session/gsm-client-editor.c:106
+#: ../cinnamon-session/gsm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Çfarë i ndodh programit kur mbyllet."
 
-#: ../gnome-session/gsm-client-editor.c:109
+#: ../cinnamon-session/gsm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Stili:"
 
-#: ../gnome-session/gsm-client-list.c:150
+#: ../cinnamon-session/gsm-client-list.c:150
 msgid "Order"
 msgstr "Renditja"
 
-#: ../gnome-session/gsm-client-list.c:155
+#: ../cinnamon-session/gsm-client-list.c:155
 msgid "Style"
 msgstr "Stili"
 
-#: ../gnome-session/gsm-client-list.c:160
+#: ../cinnamon-session/gsm-client-list.c:160
 msgid "State"
 msgstr "Gjendja"
 
-#: ../gnome-session/gsm-client-list.c:165
-#: ../gnome-session/session-properties-capplet.c:280
+#: ../cinnamon-session/gsm-client-list.c:165
+#: ../cinnamon-session/session-properties-capplet.c:280
 msgid "Program"
 msgstr "Programi"
 
-#: ../gnome-session/gsm-client-row.c:31
+#: ../cinnamon-session/gsm-client-row.c:31
 msgid "Inactive"
 msgstr "Jo aktiv"
 
-#: ../gnome-session/gsm-client-row.c:32
+#: ../cinnamon-session/gsm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Në pritje për të filluar ose i sapo mbaruar."
 
-#: ../gnome-session/gsm-client-row.c:34
+#: ../cinnamon-session/gsm-client-row.c:34
 msgid "Starting"
 msgstr "Duke filluar"
 
-#: ../gnome-session/gsm-client-row.c:35
+#: ../cinnamon-session/gsm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "I filluar por nuk ka akoma një gjendje raportimi."
 
-#: ../gnome-session/gsm-client-row.c:37
+#: ../cinnamon-session/gsm-client-row.c:37
 msgid "Running"
 msgstr "Në ekzekutim"
 
-#: ../gnome-session/gsm-client-row.c:38
+#: ../cinnamon-session/gsm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Një anëtar normal i seancës."
 
-#: ../gnome-session/gsm-client-row.c:40
+#: ../cinnamon-session/gsm-client-row.c:40
 msgid "Saving"
 msgstr "Duke ruajtur"
 
-#: ../gnome-session/gsm-client-row.c:41
+#: ../cinnamon-session/gsm-client-row.c:41
 msgid "Saving session details."
 msgstr "Detajet e ruajtjes së seancës."
 
-#: ../gnome-session/gsm-client-row.c:43
+#: ../cinnamon-session/gsm-client-row.c:43
 msgid "Unknown"
 msgstr "Nuk njihet"
 
-#: ../gnome-session/gsm-client-row.c:44
+#: ../cinnamon-session/gsm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Gjëndje e pa raportuar në mungesë të timeout (jashtëkohe)."
 
-#: ../gnome-session/gsm-client-row.c:50
+#: ../cinnamon-session/gsm-client-row.c:50
 msgid "Normal"
 msgstr "Normal"
 
-#: ../gnome-session/gsm-client-row.c:51
+#: ../cinnamon-session/gsm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "I pandikueshëm nga daljet por mund të mbyllet."
 
-#: ../gnome-session/gsm-client-row.c:53
+#: ../cinnamon-session/gsm-client-row.c:53
 msgid "Restart"
 msgstr "Rifillo"
 
-#: ../gnome-session/gsm-client-row.c:54
+#: ../cinnamon-session/gsm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Nuk lejohet të vdesë asnjëherë."
 
-#: ../gnome-session/gsm-client-row.c:56
+#: ../cinnamon-session/gsm-client-row.c:56
 msgid "Trash"
 msgstr "Koshi"
 
-#: ../gnome-session/gsm-client-row.c:57
+#: ../cinnamon-session/gsm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "I skartuar gjatë daljes dhe mund të mbyllet."
 
-#: ../gnome-session/gsm-client-row.c:59
+#: ../cinnamon-session/gsm-client-row.c:59
 msgid "Settings"
 msgstr "Rregullimet"
 
-#: ../gnome-session/gsm-client-row.c:60
+#: ../cinnamon-session/gsm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Fillon gjithmonë në çdo login."
 
@@ -224,7 +224,7 @@ msgstr "Fillon gjithmonë në çdo login."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../gnome-session/gsm-gsd.c:45
+#: ../cinnamon-session/gsm-gsd.c:45
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -235,7 +235,7 @@ msgstr ""
 "\n"
 "Disa gjëra si temat, zëri, ose sfondi mund të mos punojnë në mënyrë korrekte."
 
-#: ../gnome-session/gsm-gsd.c:57
+#: ../cinnamon-session/gsm-gsd.c:57
 msgid ""
 "\n"
 "\n"
@@ -247,7 +247,7 @@ msgstr ""
 "Mesazhi i fundit i gabimit ishte:\n"
 "\n"
 
-#: ../gnome-session/gsm-gsd.c:62
+#: ../cinnamon-session/gsm-gsd.c:62
 msgid ""
 "\n"
 "\n"
@@ -258,19 +258,19 @@ msgstr ""
 "Gnome do të provojë të rinisë demonin e rregullimeve herën tjetër që ju do "
 "të kryeni log-in."
 
-#: ../gnome-session/gsm-gsd.c:145
+#: ../cinnamon-session/gsm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
 msgstr "Demoni i rregullimeve u rinis tepër herë. "
 
-#: ../gnome-session/gsm-remove-client.c:46
+#: ../cinnamon-session/gsm-remove-client.c:46
 msgid "List registered clients, then exit"
 msgstr "Radhit klientët e regjistruar, pastaj dil"
 
-#: ../gnome-session/gsm-remove-client.c:48
+#: ../cinnamon-session/gsm-remove-client.c:48
 msgid "PROGRAM..."
 msgstr "PROGRAM..."
 
-#: ../gnome-session/gsm-remove-client.c:172
+#: ../cinnamon-session/gsm-remove-client.c:172
 msgid ""
 "You must specify at least one program to remove. You can list the programs "
 "with --list.\n"
@@ -278,21 +278,21 @@ msgstr ""
 "Duhet të përcaktosh të paktën një program për të hequr. Mund të radhitësh "
 "programet me --list.\n"
 
-#: ../gnome-session/gsm-remove-client.c:179
+#: ../cinnamon-session/gsm-remove-client.c:179
 msgid "Error: could not connect to the session manager\n"
 msgstr "Gabim: e pamundur lidhja me organizuesin e seancës\n"
 
-#: ../gnome-session/gsm-remove-client.c:193
+#: ../cinnamon-session/gsm-remove-client.c:193
 msgid "Currently registered clients:\n"
 msgstr "Klientët e regjistruar deri më tani:\n"
 
-#: ../gnome-session/gsm-remove-client.c:203
+#: ../cinnamon-session/gsm-remove-client.c:203
 #, c-format
 msgid "Couldn't find program %s in session\n"
 msgstr "E pamundur gjetja e progamit %s në seancë\n"
 
 #. At least try to tell the user something.
-#: ../gnome-session/ice.c:355
+#: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
 "The GNOME session manager cannot start properly.  Please report this as a "
@@ -304,7 +304,7 @@ msgstr ""
 "e gabimit:  '%s'.  Ndërkohë mund të provosh të futesh duke përdorur seancën "
 "shpëtuese."
 
-#: ../gnome-session/ice.c:510
+#: ../cinnamon-session/ice.c:510
 #, c-format
 msgid ""
 "The GNOME session manager was unable to lock the file '%s'.  Please report "
@@ -317,7 +317,7 @@ msgstr ""
 "file-t është e pashkruajtshme, mund të provosh të hysh me anë të seancës "
 "shpëtuese dhe të sigurohesh për këtë."
 
-#: ../gnome-session/ice.c:537
+#: ../cinnamon-session/ice.c:537
 #, c-format
 msgid ""
 "The GNOME session manager was unable to read the file: '%s'.  If this file "
@@ -328,7 +328,7 @@ msgstr ""
 "ekziston ai duhet të jetë i lexueshëm nga ti që GNOME të punojë siç duhet.  "
 "Provo të hysh me seancën shpëtuese dhe të heqësh këtë file."
 
-#: ../gnome-session/ice.c:582
+#: ../cinnamon-session/ice.c:582
 #, c-format
 msgid ""
 "Could not write to file '%s'.  This file must be writable in order for GNOME "
@@ -340,65 +340,65 @@ msgstr ""
 "heqësh këtë file.  Gjithashtu sigurohu që dosja e file-t është e "
 "shkruajtshme."
 
-#: ../gnome-session/logout.c:404
+#: ../cinnamon-session/logout.c:404
 msgid "Are you sure you want to log out?"
 msgstr "Jeni i sigurt që doni të dilni?"
 
-#: ../gnome-session/logout.c:421
+#: ../cinnamon-session/logout.c:421
 msgid "_Save current setup"
 msgstr "_Ruani rregullimet aktuale"
 
-#: ../gnome-session/logout.c:444
+#: ../cinnamon-session/logout.c:444
 msgid "Action"
 msgstr "Veprimi"
 
-#: ../gnome-session/logout.c:461
+#: ../cinnamon-session/logout.c:461
 msgid "_Log out"
 msgstr "_Dil jashtë"
 
-#: ../gnome-session/logout.c:468
+#: ../cinnamon-session/logout.c:468
 msgid "Sh_ut down"
 msgstr "Sh_ut down (fike)"
 
-#: ../gnome-session/logout.c:476
+#: ../cinnamon-session/logout.c:476
 msgid "_Restart the computer"
 msgstr "_Rinis kompjuterin"
 
-#: ../gnome-session/main.c:83
+#: ../cinnamon-session/main.c:83
 msgid "Specify a session name to load"
 msgstr "Specifiko emrin e seancës që duhet ngarkuar"
 
-#: ../gnome-session/main.c:83 ../gnome-session/save-session.c:49
+#: ../cinnamon-session/main.c:83 ../cinnamon-session/save-session.c:49
 msgid "NAME"
 msgstr "EMRI"
 
-#: ../gnome-session/main.c:84
+#: ../cinnamon-session/main.c:84
 msgid "Only read saved sessions from the default.session file"
 msgstr "Vetëm lexo seancat e ruajtura nga file i seancës së hapur."
 
-#: ../gnome-session/main.c:85
+#: ../cinnamon-session/main.c:85
 msgid "Millisecond period spent waiting for clients to register (0=forever)"
 msgstr ""
 "Milisekonda të shpenzuara në pritje të një klienti për t'u rregjistruar "
 "(0=përgjithmonë)"
 
-#: ../gnome-session/main.c:85 ../gnome-session/main.c:86
-#: ../gnome-session/main.c:87
+#: ../cinnamon-session/main.c:85 ../cinnamon-session/main.c:86
+#: ../cinnamon-session/main.c:87
 msgid "DELAY"
 msgstr "VONESA"
 
-#: ../gnome-session/main.c:86
+#: ../cinnamon-session/main.c:86
 msgid "Millisecond period spent waiting for clients to respond (0=forever)"
 msgstr ""
 "Milisekonda të shpenzuara në pritje të klienteve për t'u përgjigjur "
 "(0=përgjithmonë)"
 
-#: ../gnome-session/main.c:87
+#: ../cinnamon-session/main.c:87
 msgid "Millisecond period spent waiting for clients to die (0=forever)"
 msgstr ""
 "Milisekonda të shpenzuara në pritje që klienti të mbyllet (0=përgjithmonë)"
 
-#: ../gnome-session/main.c:262
+#: ../cinnamon-session/main.c:262
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
@@ -411,188 +411,188 @@ msgstr ""
 "Mund te jetë e mundur të korigjohet problemi duke shtuar\n"
 "%s tek file /etc/hosts."
 
-#: ../gnome-session/main.c:269
+#: ../cinnamon-session/main.c:269
 msgid "Log in Anyway"
 msgstr "Futu sidoqoftë"
 
-#: ../gnome-session/main.c:270
+#: ../cinnamon-session/main.c:270
 msgid "Try Again"
 msgstr "Provo përsëri"
 
-#: ../gnome-session/main.c:395
+#: ../cinnamon-session/main.c:395
 msgid "- Manage the GNOME session"
 msgstr " - Organizo seancën GNOME"
 
-#: ../gnome-session/manager.c:512
+#: ../cinnamon-session/manager.c:512
 msgid "Wait abandoned due to conflict."
 msgstr "Pritje u braktis për shkak të një konflikti."
 
-#: ../gnome-session/manager.c:1020
+#: ../cinnamon-session/manager.c:1020
 #, c-format
 msgid "No response to the %s command."
 msgstr "Asnjë përgjigje për komandën %s."
 
-#: ../gnome-session/manager.c:1021
+#: ../cinnamon-session/manager.c:1021
 msgid "The program may be slow, stopped or broken."
 msgstr "Programi mund të jetë i ngadalshëm, mund të ndalojë ose të mbyllet."
 
-#: ../gnome-session/manager.c:1022
+#: ../cinnamon-session/manager.c:1022
 msgid "You may wait for it to respond or remove it."
 msgstr "Mund të presësh përgjigjen prej tij ose mund t'a heqësh."
 
-#: ../gnome-session/manager.c:1748
+#: ../cinnamon-session/manager.c:1748
 msgid "Restart abandoned due to failures."
 msgstr "Rinisja u braktis për shkak të problemeve."
 
-#: ../gnome-session/manager.c:1944
+#: ../cinnamon-session/manager.c:1944
 msgid "A session shutdown is in progress."
 msgstr "Mbyllje seance në proçes e sipër."
 
-#: ../gnome-session/save-session.c:49
+#: ../cinnamon-session/save-session.c:49
 msgid "Set the current session name"
 msgstr "Cakto emrin e seancës aktuale"
 
-#: ../gnome-session/save-session.c:50
+#: ../cinnamon-session/save-session.c:50
 msgid "Kill session"
 msgstr "Vrit seancën"
 
-#: ../gnome-session/save-session.c:51
+#: ../cinnamon-session/save-session.c:51
 msgid "Use dialog boxes for errors"
 msgstr "Përdor kuti dialogu për gabime"
 
-#: ../gnome-session/save-session.c:52
+#: ../cinnamon-session/save-session.c:52
 msgid "Do not require confirmation"
 msgstr "Mos kërko konfirmim"
 
-#: ../gnome-session/save-session.c:150 ../gnome-session/save-session.c:187
+#: ../cinnamon-session/save-session.c:150 ../cinnamon-session/save-session.c:187
 msgid "Could not connect to the session manager"
 msgstr "E pamundur lidhja me organizuesin e seancës"
 
-#: ../gnome-session/save-session.c:173
+#: ../cinnamon-session/save-session.c:173
 msgid "- Save the current session"
 msgstr "- Ruaj seancën aktuale"
 
-#: ../gnome-session/session-properties-capplet.c:153
+#: ../cinnamon-session/session-properties-capplet.c:153
 msgid "Save changes to the current session before closing?"
 msgstr "T'i ruaj ndryshimet në seancën e tanishme përpara mbylljes?"
 
-#: ../gnome-session/session-properties-capplet.c:155
+#: ../cinnamon-session/session-properties-capplet.c:155
 msgid "If you don't save, changes will be discarded."
 msgstr "Nëse nuk e ruan, ndryshimet do të shpërfillen."
 
-#: ../gnome-session/session-properties-capplet.c:158
+#: ../cinnamon-session/session-properties-capplet.c:158
 msgid "_Close without Saving"
 msgstr "_Mbyll pa Ruajtur"
 
-#: ../gnome-session/session-properties-capplet.c:248
+#: ../cinnamon-session/session-properties-capplet.c:248
 msgid "Additional startup _programs:"
 msgstr "_Programe nisje shtesë:"
 
-#: ../gnome-session/session-properties-capplet.c:272
+#: ../cinnamon-session/session-properties-capplet.c:272
 msgid "Enabled"
 msgstr "Aktivuar"
 
-#: ../gnome-session/session-properties-capplet.c:315
+#: ../cinnamon-session/session-properties-capplet.c:315
 msgid "Startup Programs"
 msgstr "Programet e Nisjes"
 
-#: ../gnome-session/session-properties-capplet.c:321
+#: ../cinnamon-session/session-properties-capplet.c:321
 msgid "Current Session"
 msgstr "Seanca aktuale"
 
-#: ../gnome-session/session-properties-capplet.c:334
+#: ../cinnamon-session/session-properties-capplet.c:334
 msgid "Automatically save chan_ges to session"
 msgstr "Automatikisht ruaj ndryshimet e seancës"
 
-#: ../gnome-session/session-properties-capplet.c:349
+#: ../cinnamon-session/session-properties-capplet.c:349
 msgid "Save the current session"
 msgstr "Ruaj seancën aktuale"
 
-#: ../gnome-session/session-properties-capplet.c:357
+#: ../cinnamon-session/session-properties-capplet.c:357
 msgid "Session Options"
 msgstr "Opsionet e seancës"
 
-#: ../gnome-session/session-properties-capplet.c:453
+#: ../cinnamon-session/session-properties-capplet.c:453
 msgid "Your session has been saved."
 msgstr "Seanca jote u ruajt."
 
-#: ../gnome-session/session-properties-capplet.c:496
+#: ../cinnamon-session/session-properties-capplet.c:496
 msgid "could not connect to the session manager\n"
 msgstr "e pamundur lidhja me organizuesin e seancës\n"
 
-#: ../gnome-session/session-properties-capplet.c:502
+#: ../cinnamon-session/session-properties-capplet.c:502
 msgid "session manager does not support GNOME extensions\n"
 msgstr "organizuesi i seancës nuk suporton shtesat GNOME\n"
 
-#: ../gnome-session/session-properties.c:49
+#: ../cinnamon-session/session-properties.c:49
 msgid "Remove the currently selected client from the session."
 msgstr "Hiq klientin e tanishëm të zgjedhur nga seanca."
 
-#: ../gnome-session/session-properties.c:55
+#: ../cinnamon-session/session-properties.c:55
 msgid "Apply changes to the current session"
 msgstr "Apliko ndryshimet në seancën e tanishme"
 
-#: ../gnome-session/session-properties.c:61
+#: ../cinnamon-session/session-properties.c:61
 msgid "The list of programs in the session."
 msgstr "Lista e programeve në seancë"
 
-#: ../gnome-session/session-properties.c:88
+#: ../cinnamon-session/session-properties.c:88
 msgid "Currently running _programs:"
 msgstr "Programet aktualisht në ekzekutim:"
 
-#: ../gnome-session/splash-widget.c:45
+#: ../cinnamon-session/splash-widget.c:45
 msgid "Sawfish Window Manager"
 msgstr "Sawfish - Organizuesi i dritareve"
 
-#: ../gnome-session/splash-widget.c:46
+#: ../cinnamon-session/splash-widget.c:46
 msgid "Metacity Window Manager"
 msgstr "Organizuesi i dritareve Metacity"
 
-#: ../gnome-session/splash-widget.c:47
+#: ../cinnamon-session/splash-widget.c:47
 msgid "Window Manager"
 msgstr "Organizuesi i dritareve"
 
-#: ../gnome-session/splash-widget.c:48
+#: ../cinnamon-session/splash-widget.c:48
 msgid "The Panel"
 msgstr "Paneli"
 
-#: ../gnome-session/splash-widget.c:49
+#: ../cinnamon-session/splash-widget.c:49
 msgid "Nautilus"
 msgstr "Nautilus"
 
-#: ../gnome-session/splash-widget.c:50
+#: ../cinnamon-session/splash-widget.c:50
 msgid "Desktop Settings"
 msgstr "Rregullimet e Hapësirës së Punës"
 
-#: ../gnome-session/startup-programs.c:557
+#: ../cinnamon-session/startup-programs.c:557
 msgid "_Name:"
 msgstr "_Emri:"
 
-#: ../gnome-session/startup-programs.c:575
+#: ../cinnamon-session/startup-programs.c:575
 msgid "_Command:"
 msgstr "_Komanda:"
 
-#: ../gnome-session/startup-programs.c:581
+#: ../cinnamon-session/startup-programs.c:581
 msgid "Startup Command"
 msgstr "Komanda e hapjes"
 
-#: ../gnome-session/startup-programs.c:607
+#: ../cinnamon-session/startup-programs.c:607
 msgid "The name of the startup program cannot be empty"
 msgstr "Emri i progamit në hapje nuk mund të jetë bosh"
 
-#: ../gnome-session/startup-programs.c:609
+#: ../cinnamon-session/startup-programs.c:609
 msgid "The startup command cannot be empty"
 msgstr "Komanda e hapjes nuk mund të jetë bosh"
 
-#: ../gnome-session/startup-programs.c:615
+#: ../cinnamon-session/startup-programs.c:615
 msgid "The startup command is not valid"
 msgstr "Komanda e hapjes nuk është e vlefshme"
 
-#: ../gnome-session/startup-programs.c:667
+#: ../cinnamon-session/startup-programs.c:667
 msgid "New Startup Program"
 msgstr "Programet i Ri Nisjeje"
 
-#: ../gnome-session/startup-programs.c:711
+#: ../cinnamon-session/startup-programs.c:711
 msgid "Edit Startup Program"
 msgstr "Ndrysho programin hapës"
 

@@ -1,7 +1,7 @@
-# Persian translation of gnome-session.
+# Persian translation of cinnamon-session.
 # Copyright (C) 2010, 2011, Iranian Free Software Users Group (IFSUG.org)translation team.
 # Copyright (C) 2002, 2003, 2005, 2006 Sharif FarsiWeb, Inc.
-# This file is distributed under the same license as gnome-session package.
+# This file is distributed under the same license as cinnamon-session package.
 # Roozbeh Pournader <roozbeh@farsiweb.info>, 2002, 2003.
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2006.
@@ -10,7 +10,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.10.0\n"
+"Project-Id-Version: cinnamon-session 2.10.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-07-17 02:00+0000\n"
@@ -68,7 +68,7 @@ msgstr "بدون نام"
 msgid "No description"
 msgstr "بدون شرح"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "نسخه‌ی این برنامه"
 
@@ -88,11 +88,11 @@ msgstr "گنوم"
 msgid "This session logs you into GNOME"
 msgstr "این نشست شما را به گنوم وارد می‌کند."
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "چند برنامه همچنان در حال اجرا هستند:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -213,20 +213,20 @@ msgstr "گزینه‌های مدیریت نشست:"
 msgid "Show session management options"
 msgstr "گزینه‌های مدیریت نشست نمایش داده شوند"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "نقشک «%s» پیدا نشد"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "یک برنامه همچنان در حال اجرا است:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -234,54 +234,54 @@ msgstr ""
 "در حال انتظار برای برنامه‌ها که به پایان برسند. وقفه انداختن در این برنامه‌ها "
 "ممکن است باعث شود که کار شما از دست برود."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "در هر حال، تعویض کاربر انجام شود"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "در هر حال خروج از سیستم انجام شود"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "در هر حال سیستم معلق شود"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "در هر حال خواب زمستانی انجام شود"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "در هر حال خاموش کردن سیستم صورت گیرد"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "در هر حال سیستم مجددا راه‌اندازی شود"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "قفل کردن صفحه"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "انصراف"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "شما پس از %Id ثانیه خودکار از سیستم خارج خواهید شد."
 msgstr[1] "شما پس از %Id ثانیه خودکار از سیستم خارج خواهید شد."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "این سیستم پس از %Id ثانیه، خودکار خاموش خواهد شد."
 msgstr[1] "این سیستم پس از %Id ثانیه، خودکار خاموش خواهد شد."
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 #| msgid "This system will be automatically shut down in %d second."
 #| msgid_plural "This system will be automatically shut down in %d seconds."
@@ -290,56 +290,56 @@ msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "این سیستم پس از %Id ثانیه، بصورت خودکار مجددا راه‌اندازی خواهد شد."
 msgstr[1] "این سیستم پس از %Id ثانیه، بصورت خودکار مجددا راه‌اندازی خواهد شد."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "هم‌اکنون شما با عنوان «%s» وارد سیستم شده‌اید."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "هم‌اکنون از این سیستم خارج شویم؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "_تعویض کاربر"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_خروج از سیستم"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "این سیستم هم‌اکنون خاموش شود؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_تعلیق"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_خواب زمستانی"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_راه‌اندازی مجدد"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "خامو_ش کردن"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 #| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "سیستم هم‌اکنون خاموش شود؟"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "اُخ نه! یک چیزی اشتباه شد."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -347,7 +347,7 @@ msgstr ""
 "یک مشکل رُخ داده است و سیستم نمی‌تواند بازیابی شود. لطفا با یک مدیر سیستم تماس "
 "بگیرید"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -355,7 +355,7 @@ msgstr ""
 "یک مشکل رُخ داده است و سیستم نمی‌تواند بازیابی شود. تمام افزونه‌ها جهت احتیاط "
 "غیرفعال شده‌اند."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -363,11 +363,11 @@ msgstr ""
 "یک مشکل رُخ داده است و سیستم نمی‌تواند بازیابی شود.\n"
 "لطفا از سیستم خارج شوید و دوباره امتحان کنید."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "بارگیری گنوم ۳ شکست خورد"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -380,11 +380,11 @@ msgstr ""
 "این موضوع اکثرا به این علت است که سیستم شما (سخت‌افزار گرافیکی یا راه‌انداز) "
 "قابلیت ارائه‌ی کامل گنوم ۳ را ندارد."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "اطلاعات بیشتر در مورد گنوم ۳"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "نا پاسخگو"
 
@@ -392,89 +392,89 @@ msgstr "نا پاسخگو"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "بخاطر سپردن برنامه"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "این برنامه جلوی خروج از سیستم را گرفته است."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "چون سیستم در حال خاموش شدن است درخواست اتصال کارگیر رَد می‌شود\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ایجاد سوکت گوش‌کننده‌ی ICE ممکن نشد: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "ناتوان در آغاز نشست ورود به سیستم (و ناتوان در اتصال به کارگزار ایکس)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "شاخه‌های استاندارد آغاز خودکار، لغو شود"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "نشستی که استفاده شود"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "کد اشکال‌زدایی به کار انداخته شود"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "برنامه‌های مشخص شده توسط کاربر اجرا نشوند"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "نمایش بالن محاوره شکست جهت آزمایش کردن"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr " ـ مدیر نشست گنوم"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "خروج از سیستم"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "خاموش کردن"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "راه‌اندازی مجدد"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "هرگونه مهارکننده‌های خروج را نادیده بگیر"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "برای تصدیق هویت کاربر هشدار نده"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "اتصال به مدیر نشست ممکن نیست"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "برنامه با گزینه‌های ناسازگار فراخوانده شده است"
 

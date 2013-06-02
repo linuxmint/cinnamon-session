@@ -1,6 +1,6 @@
-# translation of gnome-session.master.ml.po to
-# This file is distributed under the same license as the gnome-session package.
-# Copyright (C) 2003-2008 gnome-session'S COPYRIGHT HOLDER.
+# translation of cinnamon-session.master.ml.po to
+# This file is distributed under the same license as the cinnamon-session package.
+# Copyright (C) 2003-2008 cinnamon-session'S COPYRIGHT HOLDER.
 #
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006, 2012.
@@ -8,9 +8,9 @@
 # Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.master.ml\n"
+"Project-Id-Version: cinnamon-session.master.ml\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=gnome-session&keywords=I18N+L10N&component=general\n"
+"cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-07-17 02:00+0000\n"
 "PO-Revision-Date: 2012-09-18 21:13+0000\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
@@ -66,7 +66,7 @@ msgstr "പേരില്ല"
 msgid "No description"
 msgstr "വിവരണം ഒന്നുമില്ല"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 
@@ -86,11 +86,11 @@ msgstr "ഗ്നോം"
 msgid "This session logs you into GNOME"
 msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ്നോമിലേക്ക് കയറ്റുന്നു"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -216,20 +216,20 @@ msgstr "സെഷന്‍ മാനേജ്മെന്റ ഉപാധിക�
 msgid "Show session management options"
 msgstr "സെഷന്‍ മാനേജ്മെന്റ ഉപാധികള്‍ കാണിക്കുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' ചിഹ്നം കണ്ടില്ല"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "അപരിചിതമായ"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "ഒരു പ്രയോഗം ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -237,57 +237,57 @@ msgstr ""
 "പ്രയോഗങ്ങള്‍ തീരുന്നതു് വരെ കാത്തിരിയ്ക്കുന്നു. ഈ പ്രയോഗങ്ങളെ തടസ്സപ്പെടുത്തുന്നതു് നിങ്ങള്‍ "
 "ചെയ്തുകൊണ്ടിരിയ്ക്കുന്ന പണി നഷ്ടപ്പെടുവാന്‍ കാരണമായേയ്ക്കാം."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "എന്തായാലും ഉപയോക്താവിനെ മാറ്റുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 #| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "എന്തായാലും പുറത്തിറങ്ങുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "എന്തായാലും മയങ്ങുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "എന്തായാലും ശിശിരനിദ്രയിലാഴുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 #| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "എന്തായാലും നിര്‍ത്തി വയ്ക്കുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 #| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "എന്തായാലും വീണ്ടും തുടങ്ങുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "നിങ്ങള്‍ താനെ %d സെക്കന്റില്‍ പുറത്തിറങ്ങുന്നതായിരിയ്ക്കും."
 msgstr[1] "നിങ്ങള്‍ താനെ %d സെക്കന്റില്‍ പുറത്തിറങ്ങുന്നതായിരിയ്ക്കും."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "ഈ സിസ്റ്റം തനിയെ %d സെകന്റില്‍ അടച്ചു പൂട്ടും"
 msgstr[1] "ഈ സിസ്റ്റം തനിയെ %d സെകന്റില്‍ അടച്ചു പൂട്ടും"
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 #| msgid "This system will be automatically shut down in %d second."
 #| msgid_plural "This system will be automatically shut down in %d seconds."
@@ -296,56 +296,56 @@ msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "ഈ സിസ്റ്റം തനിയെ %d സെക്കന്റില്‍ അടച്ചു പൂട്ടും."
 msgstr[1] "ഈ സിസ്റ്റം തനിയെ %d സെക്കന്റുകളില്‍ അടച്ചു പൂട്ടും."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "നിങ്ങള്‍ നിലവില്‍ \"%s\" ആയി ലോഗിന്‍ ചെയ്തിരിക്കുന്നു."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "ഈ സിസ്റ്റത്തില്‍ നിന്ന് ഇപ്പോള്‍ പുറത്തിറങ്ങണോ?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ഉപയോക്താവിനെ മാറ്റുക"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "പുറത്തിറങ്ങുക"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "ഈ സിസ്റ്റം ഇപ്പോള്‍ അടച്ചുപൂട്ടണോ ?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_മയങ്ങിക്കോട്ടെ"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_ശിശിരനിദ്ര"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "വീണ്ടും തുടങ്ങുക"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "കമ്പ്യൂട്ടര്‍ അടച്ചുപൂട്ടുക"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 #| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "ഈ സിസ്റ്റം ഇപ്പോള്‍ വീണ്ടും ആരംഭിയ്ക്കണമോ?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "എന്തോ തെറ്റു് സംഭച്ചിരിയ്ക്കുന്നു!!"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -354,7 +354,7 @@ msgstr ""
 "അഡ്മിസിസ്ട്രേറ്ററുമായി "
 "ബന്ധപ്പെടുക."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -363,7 +363,7 @@ msgstr ""
 "എക്സ്റ്റെന്‍ഷനുകളും "
 "പ്രവര്‍ത്തന രഹിതമാക്കിയിരിയ്ക്കുന്നു."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -371,11 +371,11 @@ msgstr ""
 "എന്തോ പ്രശ്നം കാരണം സിസ്റ്റം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല.\n"
 "ദയവായി പുറത്തു് കടന്നു് വീണ്ടും ശ്രമിയ്ക്കുക."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "ഗ്നോം 3 ലഭ്യമാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -389,11 +389,11 @@ msgstr ""
 "ഇതിനര്‍ത്ഥം ഒരു പക്ഷേ നിങ്ങളുടെ സിസ്റ്റം (ഗ്രാഫിക്സ് ഹാര്‍ഡ്‌വെയര്‍ അല്ലെങ്കില്‍ ഡ്രൈവര്‍) "
 "പൂര്‍ണ്ണമായി ഗ്നോം 3 ആസ്വദിയ്ക്കുന്നതിനു് അനുവദിയ്ക്കുന്നില്ല."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "ഗ്നോം 3-യെപ്പറ്റി കൂടുതല്‍ അറിയുക"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 
@@ -401,96 +401,96 @@ msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 #| msgid "_Remember Currently Running Application"
 msgid "Remembered Application"
 msgstr "ഓര്‍ത്തു് വച്ച പ്രയോഗങ്ങള്‍"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 #| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "ഈ പ്രയോഗം പുറത്തിറങ്ങുന്നതു് തടയുന്നു."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "പുതിയ ക്ലയന്റ് ബന്ധം നിരസിക്കുന്നു കാരണം പ്രവര്‍ത്തനവേള ഇപ്പോള്‍ അടച്ചു പൂട്ടൂകയാണു്\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "'ഐസ് '(ICE) കേള്‍ക്കാനുള്ള സോക്കറ്റ് ഉണ്ടാക്കാന്‍ കഴിഞ്ഞില്ല: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "അകത്തുകയറുമ്പോഴുള്ള പ്രവര്‍ത്തനവേള തുടങ്ങാന്‍ കഴിഞ്ഞില്ല (എക്സ്-സെര്‍വറിലേക്ക് ബന്ധപ്പെടാനും "
 "സാധിച്ചില്ല)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "സാധാരണയുള്ള സ്വയം തുടങ്ങാനുള്ള തട്ടുകള്‍ മറികടക്കുക"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "ഉപയോഗിയ്ക്കുവാനുള്ള സെഷന്‍"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "പിഴവു് തിരുത്താന്‍ സഹായിയ്ക്കുന്ന കോഡ് പ്രാവര്‍ത്തികമാക്കുക"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "ഉപയോക്താവ് വ്യക്തമാക്കിയ പ്രയോഗങ്ങള്‍ ലോഡ് ചെയ്യേണ്ട"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "പരീക്ഷണത്തിനായി പരാജയ ഡയലോഗ് കാണിയ്ക്കുക"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr "- GNOME പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരന്‍"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "പുറത്തിറങ്ങുക"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "പവര്‍ ഓഫ് ചെയ്യുക"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 #| msgid "Reboot Anyway"
 msgid "Reboot"
 msgstr "വീണ്ടും തുടങ്ങുക"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 #| msgid "Log out, ignoring any existing inhibitors"
 msgid "Ignoring any existing inhibitors"
 msgstr "തടസ്സമുണ്ടാക്കുന്നവരെ വക വയ്ക്കുന്നില്ല"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 #| msgid "Do not require confirmation"
 msgid "Don't prompt for user confirmation"
 msgstr "ഉറപ്പു വരുത്തുന്നതിനായി ഇനി ചോദിയ്ക്കേണ്ട"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരനുമായി ബന്ധപ്പെടാന്‍ കഴിയുന്നില്ല"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ്ങളോടെയാണു് പ്രോഗ്രാമിനെ വിളിച്ചിരിയ്ക്കുന്നതു്"
 
@@ -504,16 +504,16 @@ msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ�
 #~ msgstr "ഫയല്‍ നടത്തിപ്പുകാരന്‍"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "പ്രവര്‍ത്തന സജ്ജമാണെങ്കില്‍, പ്രവര്‍ത്തനവേള അവസാനിക്കുന്നതിനു് മുമ്പു് gnome-session "
+#~ "പ്രവര്‍ത്തന സജ്ജമാണെങ്കില്‍, പ്രവര്‍ത്തനവേള അവസാനിക്കുന്നതിനു് മുമ്പു് cinnamon-session "
 #~ "ഉപയോക്താവിനെ അറിയിക്കുന്നതാണു്."
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "പ്രവര്‍ത്തന സജ്ജമാണെങ്കില്‍, gnome-session സ്വയമേ ഈ പ്രവര്‍ത്തനവേള സൂക്ഷിക്കുന്നതാണു്. "
+#~ "പ്രവര്‍ത്തന സജ്ജമാണെങ്കില്‍, cinnamon-session സ്വയമേ ഈ പ്രവര്‍ത്തനവേള സൂക്ഷിക്കുന്നതാണു്. "
 #~ "അല്ലായെങ്കില്‍, പ്രവര്‍ത്തനവേള സൂക്ഷിക്കുവാനുളള ഐച്ഛികം, പുറത്തിറങ്ങുന്നതിനുള്ള ഡയലോഗില്‍ "
 #~ "ഉണ്ടാവുന്നതാണു്."
 

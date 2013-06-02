@@ -12,7 +12,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 1.5.0\n"
+"Project-Id-Version: cinnamon-session 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-04-01 20:45+0200\n"
 "PO-Revision-Date: 2005-04-02 00:50+0200\n"
@@ -23,58 +23,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#: gnome-session/gnome-session.schemas.in.h:1
+#: cinnamon-session/cinnamon-session.schemas.in.h:1
 msgid "Allow TCP connections"
 msgstr "Permete les raloyaedjes rantoele TCP"
 
-#: gnome-session/gnome-session.schemas.in.h:2
+#: cinnamon-session/cinnamon-session.schemas.in.h:2
 msgid ""
 "For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), gnome-session does not listen for connections on TCP "
+"(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 "ports. This option will allow connections from (authorized) remote hosts. "
-"gnome-session must be restarted for this to take effect."
+"cinnamon-session must be restarted for this to take effect."
 msgstr ""
 "Po des råjhons di såvrité, so les platfômes k' ont «_IceTcpTransNoListen"
-"()» (les sistinmes XFree86), gnome-session ni schoûte nén po les raloyaedjes "
+"()» (les sistinmes XFree86), cinnamon-session ni schoûte nén po les raloyaedjes "
 "rantoele so les pôrts TCP. Cisse tchuze chal permete les raloyaedjes a pårti "
-"di lodjoes (otorijhîs) då lon. gnome-session doet esse renondé po cisse "
+"di lodjoes (otorijhîs) då lon. cinnamon-session doet esse renondé po cisse "
 "tchuze si mete en alaedje."
 
-#: gnome-session/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: cinnamon-session/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
-"S' il est metou, gnome-session dmandrè a l' uzeu d' acertiner divant di "
+"S' il est metou, cinnamon-session dmandrè a l' uzeu d' acertiner divant di "
 "clôre li session."
 
-#: gnome-session/gnome-session.schemas.in.h:4
+#: cinnamon-session/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
-"Si metou, gnome-session schaprè otomaticmint les sessions. Ôtrumint, li "
+"Si metou, cinnamon-session schaprè otomaticmint les sessions. Ôtrumint, li "
 "purnea di dmande di dislodjaedje a-st ene tchuze po schaper l' session."
 
-#: gnome-session/gnome-session.schemas.in.h:5
+#: cinnamon-session/cinnamon-session.schemas.in.h:5
 msgid "Logout prompt"
 msgstr "Prompt di dislodjaedje"
 
-#: gnome-session/gnome-session.schemas.in.h:6
+#: cinnamon-session/cinnamon-session.schemas.in.h:6
 msgid "Preferred Image to use for login splash screen"
 msgstr "Preferêye imådje a-z eployî pol purnea di bénvnowe"
 
-#: gnome-session/gnome-session.schemas.in.h:7
+#: cinnamon-session/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
 msgstr "Schaper les sessions"
 
-#: gnome-session/gnome-session.schemas.in.h:8
+#: cinnamon-session/cinnamon-session.schemas.in.h:8
 msgid "Show the splash screen"
 msgstr "Mostrer li purnea di bénvnowe"
 
-#: gnome-session/gnome-session.schemas.in.h:9
+#: cinnamon-session/cinnamon-session.schemas.in.h:9
 msgid "Show the splash screen when the session starts up"
 msgstr "Mostrer li purnea di bénvnowe å moumint di l' elodjaedje"
 
-#: gnome-session/gnome-session.schemas.in.h:10
+#: cinnamon-session/cinnamon-session.schemas.in.h:10
 msgid ""
 "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
 "directories and image names are valid values. Changing this value will "
@@ -85,108 +85,108 @@ msgstr ""
 "valixhances valides. On candjmint del valixhance serè-st efectif a "
 "l' elodjaedje shuvant."
 
-#: gnome-session/gsm-client-editor.c:97 gnome-session/startup-programs.c:314
+#: cinnamon-session/gsm-client-editor.c:97 cinnamon-session/startup-programs.c:314
 msgid "_Order:"
 msgstr "Ô_re:"
 
-#: gnome-session/gsm-client-editor.c:99
+#: cinnamon-session/gsm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "L' ôre ki les programes sont-st enondés el session."
 
-#: gnome-session/gsm-client-editor.c:106
+#: cinnamon-session/gsm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Çou k' arive å programe cwand on cwite li session."
 
-#: gnome-session/gsm-client-editor.c:109
+#: cinnamon-session/gsm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Stîle:"
 
-#: gnome-session/gsm-client-list.c:150
-#: gnome-session/session-properties-capplet.c:412
+#: cinnamon-session/gsm-client-list.c:150
+#: cinnamon-session/session-properties-capplet.c:412
 msgid "Order"
 msgstr "Ôre"
 
-#: gnome-session/gsm-client-list.c:155
+#: cinnamon-session/gsm-client-list.c:155
 msgid "Style"
 msgstr "Stîle"
 
-#: gnome-session/gsm-client-list.c:160
+#: cinnamon-session/gsm-client-list.c:160
 msgid "State"
 msgstr "Estat"
 
-#: gnome-session/gsm-client-list.c:165
+#: cinnamon-session/gsm-client-list.c:165
 msgid "Program"
 msgstr "Programe"
 
-#: gnome-session/gsm-client-row.c:31
+#: cinnamon-session/gsm-client-row.c:31
 msgid "Inactive"
 msgstr "Essocté"
 
-#: gnome-session/gsm-client-row.c:32
+#: cinnamon-session/gsm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Ratindant po s' enonder oudonbén il a ddja fini."
 
-#: gnome-session/gsm-client-row.c:34
+#: cinnamon-session/gsm-client-row.c:34
 msgid "Starting"
 msgstr "S' enondant"
 
-#: gnome-session/gsm-client-row.c:35
+#: cinnamon-session/gsm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "Dedja enondé mins ki n' a nén co rapoirté si estat."
 
-#: gnome-session/gsm-client-row.c:37
+#: cinnamon-session/gsm-client-row.c:37
 msgid "Running"
 msgstr "En alaedje"
 
-#: gnome-session/gsm-client-row.c:38
+#: cinnamon-session/gsm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "On mimbe normå del session (programe en alaedje)."
 
-#: gnome-session/gsm-client-row.c:40
+#: cinnamon-session/gsm-client-row.c:40
 msgid "Saving"
 msgstr "Schapant"
 
-#: gnome-session/gsm-client-row.c:41
+#: cinnamon-session/gsm-client-row.c:41
 msgid "Saving session details."
 msgstr "Schapant l' apontiaedje des detays pol session."
 
-#: gnome-session/gsm-client-row.c:43
+#: cinnamon-session/gsm-client-row.c:43
 msgid "Unknown"
 msgstr "Nén cnoxhou"
 
-#: gnome-session/gsm-client-row.c:44
+#: cinnamon-session/gsm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Estat nén rapoirté et li tårdjaedje est houte."
 
-#: gnome-session/gsm-client-row.c:50
+#: cinnamon-session/gsm-client-row.c:50
 msgid "Normal"
 msgstr "Normå"
 
-#: gnome-session/gsm-client-row.c:51
+#: cinnamon-session/gsm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "Nén afecté pal fén del session, mins i pout mori."
 
-#: gnome-session/gsm-client-row.c:53
+#: cinnamon-session/gsm-client-row.c:53
 msgid "Restart"
 msgstr "Renonder"
 
-#: gnome-session/gsm-client-row.c:54
+#: cinnamon-session/gsm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Ni pout måy mori (i ravicrè)."
 
-#: gnome-session/gsm-client-row.c:56
+#: cinnamon-session/gsm-client-row.c:56
 msgid "Trash"
 msgstr "Batch"
 
-#: gnome-session/gsm-client-row.c:57
+#: cinnamon-session/gsm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "Oisté al fén del session et pout mori."
 
-#: gnome-session/gsm-client-row.c:59
+#: cinnamon-session/gsm-client-row.c:59
 msgid "Settings"
 msgstr "Apontiaedjes"
 
-#: gnome-session/gsm-client-row.c:60
+#: cinnamon-session/gsm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Tofer enondé po tchaeke session."
 
@@ -198,7 +198,7 @@ msgstr "Tofer enondé po tchaeke session."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: gnome-session/gsm-gsd.c:41
+#: cinnamon-session/gsm-gsd.c:41
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -210,7 +210,7 @@ msgstr ""
 "Sacwantès sacwès, come les tinmes, les sons, ou l' apontiaedje do fond del "
 "waitroûle, pôrént n' nén roter comifåt."
 
-#: gnome-session/gsm-gsd.c:53
+#: cinnamon-session/gsm-gsd.c:53
 msgid ""
 "\n"
 "\n"
@@ -222,7 +222,7 @@ msgstr ""
 "Li dierin messaedje d' aroke fourit:\n"
 "\n"
 
-#: gnome-session/gsm-gsd.c:58
+#: cinnamon-session/gsm-gsd.c:58
 msgid ""
 "\n"
 "\n"
@@ -233,59 +233,59 @@ msgstr ""
 "Gnome va tot l' minme rissayî d' enonder li démon d' apontiaedjes li côp ki "
 "vént k' vos vs elodjroz."
 
-#: gnome-session/gsm-gsd.c:115
+#: cinnamon-session/gsm-gsd.c:115
 msgid "There was an unknown activation error."
 msgstr "I gn a-st avou ene aroke d' activaedje nén cnoxhowe."
 
-#: gnome-session/gsm-gsd.c:157
+#: cinnamon-session/gsm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
 msgstr "Li démon d' apontiaedjes a stî renondé pår trop d' feyes."
 
-#: gnome-session/logout.c:355
+#: cinnamon-session/logout.c:355
 msgid "Are you sure you want to log out?"
 msgstr "Estoz vs seur di vs voleur dislodjî?"
 
-#: gnome-session/logout.c:372
+#: cinnamon-session/logout.c:372
 msgid "_Save current setup"
 msgstr "_Schaper l' apontiaedje do moumint"
 
-#: gnome-session/logout.c:393
+#: cinnamon-session/logout.c:393
 msgid "Action"
 msgstr "Accion"
 
-#: gnome-session/logout.c:410
+#: cinnamon-session/logout.c:410
 msgid "_Log out"
 msgstr "Si _dislodjî"
 
-#: gnome-session/logout.c:416
+#: cinnamon-session/logout.c:416
 msgid "Sh_ut down"
 msgstr "Dis_tinde l' éndjole"
 
-#: gnome-session/logout.c:423
+#: cinnamon-session/logout.c:423
 msgid "_Restart the computer"
 msgstr "_Renonder li copiutrece"
 
-#: gnome-session/main.c:81
+#: cinnamon-session/main.c:81
 msgid "Specify a session name to load"
 msgstr "Specifyî on no di session a tcherdjî"
 
-#: gnome-session/main.c:82
+#: cinnamon-session/main.c:82
 msgid "Only read saved sessions from the default.session file"
 msgstr "Èn lére les schapêyès sessions ki foû do fitchî «default.session»"
 
-#: gnome-session/main.c:83
+#: cinnamon-session/main.c:83
 msgid "Millisecond period spent waiting for clients to register (0=forever)"
 msgstr "Tins (e milisegondes) a ratinde po on cliyint s' eredjistrer (0=tofer)"
 
-#: gnome-session/main.c:84
+#: cinnamon-session/main.c:84
 msgid "Millisecond period spent waiting for clients to respond (0=forever)"
 msgstr "Tins (e milisegondes) a ratinde po on cliyint responde (0=tofer)"
 
-#: gnome-session/main.c:85
+#: cinnamon-session/main.c:85
 msgid "Millisecond period spent waiting for clients to die (0=forever)"
 msgstr "Tins (e milisegondes) a ratinde po on cliyint mori (0=tofer)"
 
-#: gnome-session/main.c:265
+#: cinnamon-session/main.c:265
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
@@ -298,81 +298,81 @@ msgstr ""
 "Si sreut possibe di coridjî l' problinme e metant\n"
 "%s el fitchî /etc/hosts."
 
-#: gnome-session/main.c:272
+#: cinnamon-session/main.c:272
 msgid "Log in Anyway"
 msgstr "S' elodjî tot l' minme"
 
-#: gnome-session/main.c:273
+#: cinnamon-session/main.c:273
 msgid "Try Again"
 msgstr "Sayîz co on côp"
 
-#: gnome-session/manager.c:223
+#: cinnamon-session/manager.c:223
 msgid "Your session has been saved"
 msgstr "Vosse session a stî schapêye"
 
-#: gnome-session/manager.c:527
+#: cinnamon-session/manager.c:527
 msgid "Wait abandoned due to conflict."
 msgstr "Dji n' ratind pus: i gn a deus sacwès ki n' vont nén eshonne"
 
-#: gnome-session/manager.c:1035
+#: cinnamon-session/manager.c:1035
 #, c-format
 msgid "No response to the %s command."
 msgstr "Nole response al comande %s."
 
-#: gnome-session/manager.c:1036
+#: cinnamon-session/manager.c:1036
 msgid "The program may be slow, stopped or broken."
 msgstr "I s' pôreut ki li programe soeye londjin, djoké ou scheté."
 
-#: gnome-session/manager.c:1037
+#: cinnamon-session/manager.c:1037
 msgid "You may wait for it to respond or remove it."
 msgstr "Vos poloz rawårder ene response - oudonbén el oister!"
 
-#: gnome-session/manager.c:1760
+#: cinnamon-session/manager.c:1760
 msgid "Restart abandoned due to failures."
 msgstr ""
 "Renonder on programe k' a stî passé houte cåze des arokes tot l' enondant."
 
-#: gnome-session/manager.c:1956
+#: cinnamon-session/manager.c:1956
 msgid "A session shutdown is in progress."
 msgstr "Li session est ki s' clôt pol moumint"
 
-#: gnome-session/save-session.c:46
+#: cinnamon-session/save-session.c:46
 msgid "Set the current session"
 msgstr "Definixh li session do moumint"
 
-#: gnome-session/save-session.c:47
+#: cinnamon-session/save-session.c:47
 msgid "Kill session"
 msgstr "Touwer li session"
 
-#: gnome-session/save-session.c:48
+#: cinnamon-session/save-session.c:48
 msgid "Use dialog boxes"
 msgstr "Eployî des purneas di messaedje"
 
-#: gnome-session/save-session.c:146 gnome-session/save-session.c:179
+#: cinnamon-session/save-session.c:146 cinnamon-session/save-session.c:179
 msgid "Could not connect to the session manager"
 msgstr "Dji n' a nén parvnou a m' adjonde å manaedjeu des sessions"
 
-#: gnome-session/session-names.c:143
+#: cinnamon-session/session-names.c:143
 msgid "The session name cannot be empty"
 msgstr "Li no del session ni pout nén esse vude"
 
-#: gnome-session/session-names.c:154
+#: cinnamon-session/session-names.c:154
 msgid "The session name already exists"
 msgstr "Ci no di session egzistêye dedja"
 
-#: gnome-session/session-names.c:188
+#: cinnamon-session/session-names.c:188
 msgid "Add a new session"
 msgstr "Radjouter ene novele session"
 
-#: gnome-session/session-names.c:218
+#: cinnamon-session/session-names.c:218
 msgid "Edit session name"
 msgstr "Candjî l' no del session"
 
-#: gnome-session/session-properties-capplet.c:122
+#: cinnamon-session/session-properties-capplet.c:122
 msgid "_Edit"
 msgstr "_Candjî..."
 
-#: gnome-session/session-properties-capplet.c:190
+#: cinnamon-session/session-properties-capplet.c:190
 msgid ""
 "Some changes are not saved.\n"
 "Is it still OK to exit?"
@@ -380,119 +380,119 @@ msgstr ""
 "Sacwants candjmints n' ont nén stî schapés.\n"
 "Estoz todi d' acoird di moussî foû?"
 
-#: gnome-session/session-properties-capplet.c:240
-#: gnome-session/session-properties.desktop.in.in.h:2
+#: cinnamon-session/session-properties-capplet.c:240
+#: cinnamon-session/session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Sessions"
 
-#: gnome-session/session-properties-capplet.c:273
+#: cinnamon-session/session-properties-capplet.c:273
 msgid "Show splash screen on _login"
 msgstr "Mostrer li purnea di bénvnowe å moumint di l' e_lodjaedje"
 
-#: gnome-session/session-properties-capplet.c:284
+#: cinnamon-session/session-properties-capplet.c:284
 msgid "As_k on logout"
 msgstr "Di_mander å moumint di s' dislodjî"
 
-#: gnome-session/session-properties-capplet.c:295
+#: cinnamon-session/session-properties-capplet.c:295
 msgid "Automatically save chan_ges to session"
 msgstr "Schaper otomaticmint les cand_jmints del session"
 
-#: gnome-session/session-properties-capplet.c:306
+#: cinnamon-session/session-properties-capplet.c:306
 msgid "_Sessions:"
 msgstr "_Sessions:"
 
-#: gnome-session/session-properties-capplet.c:324
+#: cinnamon-session/session-properties-capplet.c:324
 msgid "Session Name"
 msgstr "No del session"
 
-#: gnome-session/session-properties-capplet.c:375
+#: cinnamon-session/session-properties-capplet.c:375
 msgid "Session Options"
 msgstr "Tchuzes del session"
 
-#: gnome-session/session-properties-capplet.c:384
+#: cinnamon-session/session-properties-capplet.c:384
 msgid "Current Session"
 msgstr "Session do moumint"
 
-#: gnome-session/session-properties-capplet.c:393
+#: cinnamon-session/session-properties-capplet.c:393
 msgid "Additional startup _programs:"
 msgstr "_Programes di rawete a l' enondaedje:"
 
-#: gnome-session/session-properties-capplet.c:414
+#: cinnamon-session/session-properties-capplet.c:414
 msgid "Command"
 msgstr "Comande"
 
-#: gnome-session/session-properties-capplet.c:446
+#: cinnamon-session/session-properties-capplet.c:446
 msgid "Startup Programs"
 msgstr "Programes a l' enondaedje"
 
-#: gnome-session/session-properties.c:49
+#: cinnamon-session/session-properties.c:49
 msgid "Remove the currently selected client from the session."
 msgstr "Oister del session li cliyint tchoezi pol moumint."
 
-#: gnome-session/session-properties.c:55
+#: cinnamon-session/session-properties.c:55
 msgid "Apply changes to the current session"
 msgstr "Mete en ouve les candjmints pol session do moumint"
 
-#: gnome-session/session-properties.c:61
+#: cinnamon-session/session-properties.c:61
 msgid "The list of programs in the session."
 msgstr "Li djivêye des programes del session."
 
-#: gnome-session/session-properties.c:88
+#: cinnamon-session/session-properties.c:88
 msgid "Currently running _programs:"
 msgstr "_Programes en alaedje pol moumint:"
 
-#: gnome-session/session-properties.c:104
+#: cinnamon-session/session-properties.c:104
 msgid "Initialize session settings"
 msgstr "Dj' enonde l' apontiaedje del session"
 
-#: gnome-session/session-properties.desktop.in.in.h:1
+#: cinnamon-session/session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Apontyî vos sessions"
 
-#: gnome-session/splash-widget.c:43
+#: cinnamon-session/splash-widget.c:43
 msgid "Sawfish Window Manager"
 msgstr "Manaedjeu di purneas Sawfish"
 
-#: gnome-session/splash-widget.c:44
+#: cinnamon-session/splash-widget.c:44
 msgid "Metacity Window Manager"
 msgstr "Manaedjeu di purneas Metacity"
 
-#: gnome-session/splash-widget.c:45
+#: cinnamon-session/splash-widget.c:45
 msgid "Window Manager"
 msgstr "Manaedjeu di purneas"
 
-#: gnome-session/splash-widget.c:46
+#: cinnamon-session/splash-widget.c:46
 msgid "The Panel"
 msgstr "Li scriftôr"
 
-#: gnome-session/splash-widget.c:47
+#: cinnamon-session/splash-widget.c:47
 msgid "Session Manager Proxy"
 msgstr "Procsi pol manaedjeu di sessions"
 
-#: gnome-session/splash-widget.c:48
+#: cinnamon-session/splash-widget.c:48
 msgid "Nautilus"
 msgstr "Nautilus"
 
-#: gnome-session/splash-widget.c:49
+#: cinnamon-session/splash-widget.c:49
 msgid "Desktop Settings"
 msgstr "Apontiaedjes do scribanne"
 
-#: gnome-session/startup-programs.c:292
+#: cinnamon-session/startup-programs.c:292
 msgid "_Startup Command:"
 msgstr "Comande d' _enondaedje"
 
-#: gnome-session/startup-programs.c:298
+#: cinnamon-session/startup-programs.c:298
 msgid "Startup Command"
 msgstr "Comande d' enondaedje"
 
-#: gnome-session/startup-programs.c:347
+#: cinnamon-session/startup-programs.c:347
 msgid "The startup command cannot be empty"
 msgstr "Li cmande d' enondaedje ni pout nén esse vude"
 
-#: gnome-session/startup-programs.c:384
+#: cinnamon-session/startup-programs.c:384
 msgid "Add Startup Program"
 msgstr "Radjouter on programe d' enondaedje"
 
-#: gnome-session/startup-programs.c:405
+#: cinnamon-session/startup-programs.c:405
 msgid "Edit Startup Program"
 msgstr "Candjî on programe d' enondaedje"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=gnome-session&keywords=I18N+L10N&component=general\n"
+"cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-07-18 11:32+0000\n"
 "PO-Revision-Date: 2012-08-03 15:14+0530\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
@@ -65,7 +65,7 @@ msgid "No description"
 msgstr "বিৱৰণ নাই"
 
 #
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "এই এপ্লিকেচনৰ সংস্কৰণ"
 
@@ -85,11 +85,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "এই অধিবেশনে আপোনাক GNOME ত লগিন কৰায়"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "কিছুমান প্ৰগ্ৰাম চলি আছে:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -217,21 +217,21 @@ msgstr "অধিবেশন ব্যৱস্থাপনা বিকল্�
 msgid "Show session management options"
 msgstr "অধিবেশন ব্যৱস্থাপনা বিকল্পসমূহ দেখুৱাওক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' আইকন পোৱা নগল"
 
 #
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "অজ্ঞাত"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "এটা প্ৰগ্ৰাম বৰ্তমানে চলি আছে:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -239,115 +239,115 @@ msgstr ""
 "প্ৰগ্ৰাম সমাপ্ত হোৱাৰ বাবে অপেক্ষা কৰা হৈছে। প্ৰগ্ৰাম বিঘ্নিত হ'লে সঞ্চালিত কামৰ ফল "
 "আঁতৰুৱাৰ সম্ভাৱনা আছে।"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "তথাপিও ব্যৱহাৰকাৰী পৰিবৰ্তন কৰক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "তথাপিও লগআউট কৰক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "তথাপিও স্থগিত কৰক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "তথাপিও হাইবাৰনেইট কৰক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "তথাপিও বন্ধ কৰক"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "তথাপিও পুনৰাম্ভ কৰক"
 
 #
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "পৰ্দা লক কৰক"
 
 #
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে আপোনাক লগআউট কৰা হব।"
 msgstr[1] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে আপোনাক লগআউট কৰা হব।"
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে চিস্টেম বন্ধ কৰা হব।"
 msgstr[1] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে চিস্টেম বন্ধ কৰা হব।"
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে চিস্টেম পুনাৰম্ভ কৰা হব।"
 msgstr[1] "%d ছেকেণ্ডৰ পিছত স্বচালিতভাৱে চিস্টেম পুনাৰম্ভ কৰা হব।"
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "বৰ্তমানে আপুনি \"%s\" হিচাপে লগিন কৰিছে।"
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "এতিয়াই চিস্টেমৰ পৰা লগআউট কৰিব নে?"
 
 #
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ব্যৱহাৰকাৰী পৰিবৰ্তন কৰক (_S)"
 
 #
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "লগআউট কৰক (_L)"
 
 #
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "এই মুহূৰ্তে চিস্টেম বন্ধ কৰিব নে?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "স্থগিত কৰক (_u)"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "হাইবাৰনেইট কৰক (_H)"
 
 #
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "পুনৰাম্ভ কৰক (_R)"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "বন্ধ কৰক (_S)"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "এই চিস্টেম এতিয়া পুনৰাম্ভ কৰিব নে?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "ইচচ! কিবা এটা ভুল হৈছে।"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -355,7 +355,7 @@ msgstr ""
 "এটা সমস্যা দেখা দিছে আৰু চিস্টেমটো উদ্ধাৰ হব পৰা নাই। অনুগ্ৰহ কৰি এজন চিস্টেম "
 "প্ৰশাসকক যোগাযোগ কৰক"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -363,7 +363,7 @@ msgstr ""
 "এটা সমস্যা দেখা দিছে আৰু চিস্টেমটো উদ্ধাৰ হব পৰা নাই। সকলো সম্প্ৰসাৰন এটা সাৱধানতা "
 "হিচাপে অসামৰ্থবান কৰা হৈছে।"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -371,11 +371,11 @@ msgstr ""
 "এটা সমস্যা দেখা দিছে আৰু চিস্টেমটো উদ্ধাৰ হব পৰা নাই।\n"
 "অনুগ্ৰহ কৰি লগআউট কৰক আৰু পুনৰ চেষ্টা কৰক।"
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 ল'ড হ'বলৈ ব্যৰ্থ"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -389,11 +389,11 @@ msgstr ""
 "এইটোৱে খুব সম্ভব এয়া বুজায় যে আপোনাৰ চিস্টেম (গ্ৰাফিক্স হাৰ্ডওৱেৰ বা ড্ৰাইভাৰ) পূৰ্ণ "
 "GNOME 3 অনুভুতি চলাবলে সক্ষম নহয়।"
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 ৰ বিষয়ে অধিক জানক"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "কোনো প্ৰতিক্ৰিয়া নাই"
 
@@ -401,15 +401,15 @@ msgstr "কোনো প্ৰতিক্ৰিয়া নাই"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "মনত ৰখা এপ্লিকেচন"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "এই প্ৰগ্ৰামে লগআউট অবৰোধ কৰি আছে।"
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -417,77 +417,77 @@ msgstr ""
 "চিস্টেম বৰ্তমানে বন্ধ কৰাৰ প্ৰচেষ্টা কৰা হৈছে আৰু এই কাৰণে নতুন গ্ৰাহকৰ সৈতে সংযোগ "
 "স্থাপনৰ অনুৰোধ প্ৰত্যাখ্যান কৰা হৈছে।\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE অপেক্ষাৰ ছ'কেট নিৰ্মাণ কৰিবলৈ ব্যৰ্থ: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "লগিন অধিবেশন আৰম্ভ কৰিবলৈ ব্যৰ্থ (X চাৰ্ভাৰৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "প্ৰামাণিক স্বআৰম্ভ ডাইৰেকটৰিসমূহ অভাৰৰাইড কৰক"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "ব্যৱহাৰ হ'ব লগিয়া অধিবেশন"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
 #
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "ক'ড ডিবাগিং সামৰ্থবান কৰক"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "ব্যৱহাৰকাৰী দ্বাৰা নিৰ্ধাৰিত এপ্লিকেচনসমূহ ল'ড নকৰিব"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "পৰিক্ষণৰ বাবে ব্যৰ্থ হোৱেইল ডাইলগ দেখুৱাওক"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr "- GNOME অধিবেশন ব্যৱস্থাপক"
 
 #
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "লগআউট কৰক"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "পাওৱাৰ অফ কৰক"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "পুনৰাম্ভ কৰক"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "কোনো উপস্থিত প্ৰতিৰোধ অগ্ৰাহ্য কৰা হৈ আছে"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "ব্যৱহাৰকাৰী নিশ্চিতকৰণৰ কাৰণে প্ৰমপ্ট নকৰিব"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "অধিবেশন ব্যৱস্থাপকৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "দ্বন্দ্বযুক্ত বিকল্প সহ প্ৰগ্ৰামক কল কৰা হৈছে"
 

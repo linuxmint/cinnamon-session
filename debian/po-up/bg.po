@@ -1,4 +1,4 @@
-# Bulgarian translation of gnome-session po-file.
+# Bulgarian translation of cinnamon-session po-file.
 # Copyright (C) 2001, 2002, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Pavel Cholakov <pavel@linux.zonebg.com>, 2001.
 # Yanko Kaneti <yaneti@declera.com>, 2002.
@@ -11,7 +11,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session gnome-2-22\n"
+"Project-Id-Version: cinnamon-session gnome-2-22\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-04-22 16:41+0300\n"

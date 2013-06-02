@@ -1,11 +1,11 @@
-# Debian-specific Thai translation for gnome-session
+# Debian-specific Thai translation for cinnamon-session
 # Copyright (C) 2011 Software in the Public Interest, Inc.
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2011-11-06 16:39+0700\n"

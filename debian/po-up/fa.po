@@ -1,13 +1,13 @@
-# Persian translation of gnome-session.
+# Persian translation of cinnamon-session.
 # Copyright (C) 2002, 2003, 2005, 2006 Sharif FarsiWeb, Inc.
-# This file is distributed under the same license as gnome-session package.
+# This file is distributed under the same license as cinnamon-session package.
 # Roozbeh Pournader <roozbeh@farsiweb.info>, 2002, 2003.
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.10.0\n"
+"Project-Id-Version: cinnamon-session 2.10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-02-26 17:37+0330\n"

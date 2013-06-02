@@ -1,12 +1,12 @@
-# Uighur translation for gnome-session
+# Uighur translation for cinnamon-session
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Gheyret T.Kenji <gheyret@yahoo.com>, 2010.
 # Sahran <sahran.ug@gmail.com>, 2010
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-08-26 23:01+0000\n"
@@ -64,7 +64,7 @@ msgstr "ئاتسىز"
 msgid "No description"
 msgstr "چۈشەندۈرۈش يوق"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:282
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:282
 msgid "Version of this application"
 msgstr "بۇ پروگراممىنىڭ نەشرى"
 
@@ -88,7 +88,7 @@ msgstr "بۇ قېتىمقى ئەڭگىمە سىزنى GNOME غا ئەكىرىد�
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -208,7 +208,7 @@ msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرى:"
 msgid "Show session management options"
 msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرىنى كۆرسەت"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -217,24 +217,24 @@ msgstr ""
 "مۇلازىمېتىر سەپلەشتە خاتالىق بار.\n"
 "(%s نىڭ چېكىنىش ھالىتى %d)"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' سىنبەلگىنى تاپالمىدى"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "يوچۇن"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "پروگرامما يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -242,95 +242,95 @@ msgstr ""
 "پروگرامما تاماملىنىشنى كۈتۈۋاتىدۇ. بۇ پروگراممىنى ئۈزۈش خىزمەت نەتىجىڭىزنىڭ "
 "يوقىلىشىنى كەلتۈرۈپ چىقىرىشى مۇمكىن."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "ئىشلەتكۈچىنى مەجبۇرىي ئالماشتۇر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "تىزىمدىن چىقىۋەر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "توڭلىتىۋەر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "ئۈچەككە كىرىۋەر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "تاقاۋەر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "قايتا قوزغىتىۋەر"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "ئېكراننى قۇلۇپلا"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "ۋاز كەچ"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:275
+#: ../cinnamon-session/gsm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "%d سېكۇنتتىن كېيىن ئۆزلۈكىدىن تىزىمدىن چىقىسىز."
 
-#: ../gnome-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/gsm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "بۇ سىستېما %d سېكۇنتتىن كېيىن ئۆزلۈكىدىن تاقىلىدۇ."
 
-#: ../gnome-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "نۆۋەتتە \"%s\" سۈپىتىدە كىردىڭىز."
 
-#: ../gnome-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/gsm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "بۇ سىستېمىدىن ھازىر تىزىمدىن چىقامسىز؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "ئىشلەتكۈچى ئالماشتۇر(_S)"
 
-#: ../gnome-session/gsm-logout-dialog.c:396
-#: ../gnome-session/gsm-fail-whale-dialog.c:416
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:416
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "تىزىمدىن چىق(_L)"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "بۇ سىستېمىنى ھازىر تاقامسىز؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "توڭلات(_U)"
 
-#: ../gnome-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/gsm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "ئۈچەككە كىر(_H)"
 
-#: ../gnome-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/gsm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "قايتا قوزغات(_R)"
 
-#: ../gnome-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/gsm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "تاقا(_S)"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:374
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:374
 msgid "Oh no!  Something has gone wrong."
 msgstr "ئاپلا! خاتالىق كۆرۈلدى."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:381
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:381
 #, fuzzy
 #| msgid ""
 #| "A problem has occurred and the system can't recover.\n"
@@ -343,7 +343,7 @@ msgstr ""
 "كاشىلا كۆرۈلدى سىستېمىنى ئەسلىگە كەلتۈرەلمەيدۇ.\n"
 "تىزىمدىن چىقىپ قايتا سىناڭ."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:383
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:383
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -351,26 +351,26 @@ msgstr ""
 "كاشىلا كۆرۈلدى سىستېمىنى ئەسلىگە كەلتۈرەلمەيدۇ.\n"
 "تىزىمدىن چىقىپ قايتا سىناڭ."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "%d كودى ئىلە چېكىندى"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "سىگنال %d تەرىپىدىن ئۆلتۈرۈلدى"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "سىگنال %d تەرىپىدىن توختىتىلدى"
 
-#: ../gnome-session/gsm-manager.c:1377
+#: ../cinnamon-session/gsm-manager.c:1377
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 نى يۈكلىيەلمىدى"
 
-#: ../gnome-session/gsm-manager.c:1378
+#: ../cinnamon-session/gsm-manager.c:1378
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -380,11 +380,11 @@ msgid ""
 msgstr ""
 "ناھايىتى ئەپسۇس GNOME 3 نى توغرا يۈكلىيەلمىدى، <i>زاپاس ھالەت</i>تە قوزغاتتى."
 
-#: ../gnome-session/gsm-manager.c:1380
+#: ../cinnamon-session/gsm-manager.c:1380
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 ھەققىدە تېخىمۇ كۆپ ئۇچۇر"
 
-#: ../gnome-session/gsm-manager.c:1477 ../gnome-session/gsm-manager.c:2208
+#: ../cinnamon-session/gsm-manager.c:1477 ../cinnamon-session/gsm-manager.c:2208
 msgid "Not responding"
 msgstr "ئىنكاس يوق"
 
@@ -392,84 +392,84 @@ msgstr "ئىنكاس يوق"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "پروگراممىنى ئەستە تۇت"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "بۇ پروگرامما تىزىمدىن چىقىشنى چەكلەيدۇ."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "يېڭى ئىشلەتكۈچى باغلانىشى رەت قىلىندى. چۈنكى ئەڭگىمە تاقىلىۋاتىدۇ\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE تىڭشاش روزېتكىسى قۇرالمىدى: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "كىرىش ئەڭگىمەسىنى قوزغىتالمىدى (X مۇلازىمېتىرىغا باغلىنالمىدى)"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Override standard autostart directories"
 msgstr "كۆڭۈلدىكى ئۆزلۈكىدىن قوزغىلىش مۇندەرىجىسىنىڭ ئورنىنى ئىگىلىيەلمىدى"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Session to use"
 msgstr "ئىشلىتىدىغان ئەڭگىمە"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../gnome-session/main.c:280
+#: ../cinnamon-session/main.c:280
 msgid "Enable debugging code"
 msgstr "سازلاش كودىنى قوزغات"
 
-#: ../gnome-session/main.c:281
+#: ../cinnamon-session/main.c:281
 msgid "Do not load user-specified applications"
 msgstr "ئىشلەتكۈچى بەلگىلىگەن پروگراممىنى يۈكلىمە"
 
-#: ../gnome-session/main.c:283
+#: ../cinnamon-session/main.c:283
 msgid "Show the fail whale dialog for testing"
 msgstr ""
 
-#: ../gnome-session/main.c:303
+#: ../cinnamon-session/main.c:303
 msgid " - the GNOME session manager"
 msgstr " GNOME ئەڭگىمە باشقۇرغۇچ"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "تىزىمدىن چىق"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "توكنى ئۈز"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Ignoring any existing inhibitors"
 msgstr "نۆۋەتتىكى چەكلىمە ئامىللىرىغا پەرۋا قىلما"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Don't prompt for user confirmation"
 msgstr "ئىشلەتكۈچى جەزملەشنى كۆرسەتمە"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "ئەڭگىمە باشقۇرغۇچقا  باغلىنالمىدى"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئارا توقۇنۇشىدۇ"
 
@@ -501,11 +501,11 @@ msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئ
 #~ msgstr "ھۆججەت باشقۇرغۇ"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr "ئەگەر قوزغىتىلسا، gnome ئەڭگىمە ئاخىرلىشىشتىن ئىلگىرى ئەسكەرتىدۇ."
 
-#~ msgid "If enabled, gnome-session will save the session automatically."
-#~ msgstr "ئەگەر قوزغىتىلسا، gnome-session ئەڭگىمەنى ئۆزلۈكىدىن ساقلايدۇ."
+#~ msgid "If enabled, cinnamon-session will save the session automatically."
+#~ msgstr "ئەگەر قوزغىتىلسا، cinnamon-session ئەڭگىمەنى ئۆزلۈكىدىن ساقلايدۇ."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "كۆڭۈلدىكى ئەڭگىمە ئۆز ئىچىگە ئالغان پروگرامما تىزىملىكى."
@@ -595,10 +595,10 @@ msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئ
 #~ msgstr "بۇ ئەڭگىمە سىزنى GNOME غا ئەكىرىدۇ، باشقا پروگرامما قوزغىتىلمايدۇ"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "ئەگەر قوزغىتىلسا، gnome-session ئەڭگىمەنى ئۆزلۈكىدىن ساقلايدۇ. ياكى "
+#~ "ئەگەر قوزغىتىلسا، cinnamon-session ئەڭگىمەنى ئۆزلۈكىدىن ساقلايدۇ. ياكى "
 #~ "بولمىسا تىزىمدىن چىقىش سۆزلەشكۈسىدە ئەڭگىمە ساقلاش تاللانمىسى بار بولىدۇ."
 
 #~ msgid "Preferred Image to use for login splash screen"

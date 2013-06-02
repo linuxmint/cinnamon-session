@@ -1,7 +1,7 @@
-# Serbian translation of gnome-session
+# Serbian translation of cinnamon-session
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005, 2006, 2007.
 #
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 #
 # Maintainer: Данило Шеган <danilo@gnome.org>
 # Reviewed on 2005-07-10 by Данило Шеган <danilo@gnome.org>
@@ -9,7 +9,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-03-12 15:01+0100\n"

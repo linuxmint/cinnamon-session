@@ -1,11 +1,11 @@
-# Afrikaans translation of gnome-session.
+# Afrikaans translation of cinnamon-session.
 # Copyright (C) 2004 Zuza Software Foundation
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Zuza Software Foundation <info@translate.org.za>, 2004
 # F Wolff <friedel@translate.org.za>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.6-branch\n"
+"Project-Id-Version: cinnamon-session 2.6-branch\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-03-29 21:37+0000\n"
@@ -64,7 +64,7 @@ msgstr "Geen naam"
 msgid "No description"
 msgstr "Geen beskrywing"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:280
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:280
 msgid "Version of this application"
 msgstr "Weergawe van hierdie program"
 
@@ -88,7 +88,7 @@ msgstr "Hierdie sessie laat mens aanmeld by GNOME"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Sommige programme loop steeds:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -204,7 +204,7 @@ msgstr "Sessiebestuurkeuses:"
 msgid "Show session management options"
 msgstr "Wys keuses vir sessiebestuur"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -213,24 +213,24 @@ msgstr ""
 "Daar is 'n probleem met die opstellingbediener.\n"
 "(%s het afgesluit met status %d)"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikoon '%s' nie gevind nie"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:592
+#: ../cinnamon-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "'n Program loop steeds:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:647
+#: ../cinnamon-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Sommige programme loop steeds:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:648
+#: ../cinnamon-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -238,98 +238,98 @@ msgstr ""
 "Wag nog vir programme om te voltooi.  Onderbreking van dié programme kan "
 "veroorsaak dat werk verloor word."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:878
+#: ../cinnamon-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Wissel in elk geval van gebruiker"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:881
+#: ../cinnamon-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Meld in elk geval af"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:884
+#: ../cinnamon-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Sluimer in elk geval"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:887
+#: ../cinnamon-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Hiberneer in elk geval"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:890
+#: ../cinnamon-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Skakel in elk geval af"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:893
+#: ../cinnamon-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Herbegin in elk geval"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Sluit skerm"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Kanselleer"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:275
+#: ../cinnamon-session/gsm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "U gaan outomaties afgemeld word oor %d sekonde."
 msgstr[1] "U gaan outomaties afgemeld word oor %d sekondes."
 
-#: ../gnome-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/gsm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Dié stelsel gaan outomaties afgeskakel word oor %d sekonde."
 msgstr[1] "Dié stelsel gaan outomaties afgeskakel word oor %d sekondes."
 
-#: ../gnome-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "U is tans aangemeld as \"%s\"."
 
-#: ../gnome-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/gsm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Meld nou af van hierdie stelsel?"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "Wi_ssel gebruiker"
 
-#: ../gnome-session/gsm-logout-dialog.c:396
-#: ../gnome-session/gsm-fail-whale-dialog.c:296
-#: ../gnome-session/gsm-util.c:363
+#: ../cinnamon-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:296
+#: ../cinnamon-session/gsm-util.c:363
 msgid "_Log Out"
 msgstr "Me_ld af"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Skakel die stelsel nou af?"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "Sl_uimer"
 
-#: ../gnome-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/gsm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Hiberneer"
 
-#: ../gnome-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/gsm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "He_rbegin"
 
-#: ../gnome-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/gsm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "_Skakel af"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:276
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:276
 msgid "Oh no!  Something has gone wrong."
 msgstr "Gits!  Iets het verkeerd geloop."
 
 #. make this changable at some point
-#: ../gnome-session/gsm-fail-whale-dialog.c:283
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:283
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -337,26 +337,26 @@ msgstr ""
 "'n Fout het voorgekom en die stelsel kan nie herstel daarvan nie.\n"
 "Meld af en probeer gerus weer."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "Afgesluit met kode %d"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Afsluiting geforseer met sein %d"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Gestop met sein %d"
 
-#: ../gnome-session/gsm-manager.c:1372
+#: ../cinnamon-session/gsm-manager.c:1372
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 kon nie laai nie"
 
-#: ../gnome-session/gsm-manager.c:1373
+#: ../cinnamon-session/gsm-manager.c:1373
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -370,78 +370,78 @@ msgstr ""
 "Dit beteken waarskynlik dat die stelsel (grafikahardeware of aandrywer) nie "
 "in staat is om die volle ervaring van GNOME 3 te lewer nie."
 
-#: ../gnome-session/gsm-manager.c:1375
+#: ../cinnamon-session/gsm-manager.c:1375
 msgid "Learn more about GNOME 3"
 msgstr "Vind meer uit oor GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1472 ../gnome-session/gsm-manager.c:2203
+#: ../cinnamon-session/gsm-manager.c:1472 ../cinnamon-session/gsm-manager.c:2203
 msgid "Not responding"
 msgstr "Reageer nie"
 
-#: ../gnome-session/gsm-xsmp-client.c:1183
+#: ../cinnamon-session/gsm-xsmp-client.c:1183
 msgid "This program is blocking logout."
 msgstr "Dié program keer afmelding."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Nuwe klientverbinding word geweier omdat die sessie tans afgesluit word\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Kon nie 'n ICE-luistersok skep nie: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:347
+#: ../cinnamon-session/gsm-util.c:347
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Kon nie 'n aanmeldsessie begin nie (en kon nie aan die X-bediener koppel nie)"
 
-#: ../gnome-session/main.c:276
+#: ../cinnamon-session/main.c:276
 msgid "Override standard autostart directories"
 msgstr "Oorheers standaard outobegin gidse"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Session to use"
 msgstr "Sessie om te gebruik"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Enable debugging code"
 msgstr "Aktiveer ontfoutkode"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Do not load user-specified applications"
 msgstr "Moenie gebruiker-gespesifiseerde toepassings laai nie"
 
-#: ../gnome-session/main.c:300
+#: ../cinnamon-session/main.c:300
 msgid " - the GNOME session manager"
 msgstr " - die GNOME-sessiebestuurder"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "Meld af"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "Skakel af"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Ignoring any existing inhibitors"
 msgstr "Gaan enige bestaande inhibeerders ignoreer"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Don't prompt for user confirmation"
 msgstr "Moenie vra vir gebruikerbevestiging nie"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "Kon nie met sessiebestuurder koppel nie"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "Program geroep met konflikterende opsies"
 
@@ -450,26 +450,26 @@ msgstr "Program geroep met konflikterende opsies"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), gnome-session does not listen for connections on TCP "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 #~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "gnome-session must be restarted for this to take effect."
+#~ "cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
-#~ "Om sekuriteitsredes luister gnome-session nie uit na konneksies op TCP-"
+#~ "Om sekuriteitsredes luister cinnamon-session nie uit na konneksies op TCP-"
 #~ "poorte op platforms  met _IceTcpTransNoListen() (XFree86 systems) nie. "
 #~ "Hierdie opsie laat konneksies van (gemagtide) afgeleë gashere toe.Gnome-"
 #~ "session moet oorbegin word vir die instelling om  toegepas te word."
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Indien geaktiveer, sal gnome-session die gebruiker waarsku voordat 'n "
+#~ "Indien geaktiveer, sal cinnamon-session die gebruiker waarsku voordat 'n "
 #~ "sessie beëindig word."
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Indien geaktiveer, sal gnome-session die sessie outomaties stoor. "
+#~ "Indien geaktiveer, sal cinnamon-session die sessie outomaties stoor. "
 #~ "Andersins sal daar op die afmeldingsdialoog 'n opsie wees om die sessie "
 #~ "te stoor."
 

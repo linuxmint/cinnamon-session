@@ -1,4 +1,4 @@
-# Turkmen translation of gnome-session
+# Turkmen translation of cinnamon-session
 # Copyright (C) 2004 Free Software Foundation
 # Copyright (C) 2004 Kakilik Project <kakilik.sourceforge.net>
 # This file is distributed under the terms of GNU General Public License (GPL)
@@ -6,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session VERSION\n"
+"Project-Id-Version: cinnamon-session VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2004-08-13 03:27+0330\n"

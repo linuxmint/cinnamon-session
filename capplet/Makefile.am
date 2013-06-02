@@ -1,9 +1,9 @@
-bin_PROGRAMS = gnome-session-properties
+bin_PROGRAMS = cinnamon-session-properties
 
 AM_CPPFLAGS =						\
 	$(SESSION_PROPERTIES_CFLAGS)			\
 	$(GCONF_CFLAGS)					\
-	-I$(top_srcdir)/gnome-session			\
+	-I$(top_srcdir)/cinnamon-session			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"		\
 	$(DISABLE_DEPRECATED_CFLAGS)
@@ -25,7 +25,7 @@ gnome_session_properties_SOURCES =			\
 
 gnome_session_properties_LDADD =			\
 	$(SESSION_PROPERTIES_LIBS)			\
-	$(top_builddir)/gnome-session/libgsmutil.la 	\
+	$(top_builddir)/cinnamon-session/libgsmutil.la 	\
 	$(GCONF_LIBS)
 
 -include $(top_srcdir)/git.mk

@@ -52,7 +52,7 @@ build_triplet = @build@
 host_triplet = @host@
 subdir = doc/dbus
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(srcdir)/gnome-session.xml.in $(top_srcdir)/mkinstalldirs
+	$(srcdir)/cinnamon-session.xml.in $(top_srcdir)/mkinstalldirs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -62,7 +62,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = gnome-session.xml
+CONFIG_CLEAN_FILES = cinnamon-session.xml
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -306,7 +306,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SPEC_XML_FILES = \
-	gnome-session.xml				\
+	cinnamon-session.xml				\
 	org.gnome.SessionManager.ref.xml		\
 	org.gnome.SessionManager.Client.ref.xml		\
 	org.gnome.SessionManager.ClientPrivate.ref.xml	\
@@ -314,7 +314,7 @@ SPEC_XML_FILES = \
 	org.gnome.SessionManager.Presence.ref.xml
 
 @DOCBOOK_DOCS_ENABLED_TRUE@htmldocdir = $(docdir)/dbus
-@DOCBOOK_DOCS_ENABLED_TRUE@htmldoc_DATA = gnome-session.html
+@DOCBOOK_DOCS_ENABLED_TRUE@htmldoc_DATA = cinnamon-session.html
 BUILT_SOURCES = \
 	org.gnome.SessionManager.ref.xml \
 	org.gnome.SessionManager.Client.ref.xml \
@@ -327,7 +327,7 @@ CLEANFILES = \
 	$(htmldoc_DATA)
 
 EXTRA_DIST = \
-	gnome-session.xml.in		\
+	cinnamon-session.xml.in		\
 	config.xsl			\
 	docbook.css			\
 	dbus-introspect-docs.dtd	\
@@ -367,7 +367,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-gnome-session.xml: $(top_builddir)/config.status $(srcdir)/gnome-session.xml.in
+cinnamon-session.xml: $(top_builddir)/config.status $(srcdir)/cinnamon-session.xml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:
@@ -557,18 +557,18 @@ uninstall-am: uninstall-htmldocDATA
 	uninstall uninstall-am uninstall-htmldocDATA
 
 
-@DOCBOOK_DOCS_ENABLED_TRUE@gnome-session.html: $(SPEC_XML_FILES)
-@DOCBOOK_DOCS_ENABLED_TRUE@	$(AM_V_GEN)$(XMLTO) xhtml-nochunks -m $(top_srcdir)/doc/dbus/config.xsl gnome-session.xml
+@DOCBOOK_DOCS_ENABLED_TRUE@cinnamon-session.html: $(SPEC_XML_FILES)
+@DOCBOOK_DOCS_ENABLED_TRUE@	$(AM_V_GEN)$(XMLTO) xhtml-nochunks -m $(top_srcdir)/doc/dbus/config.xsl cinnamon-session.xml
 
-org.gnome.SessionManager.ref.xml: $(top_srcdir)/gnome-session/org.gnome.SessionManager.xml spec-to-docbook.xsl
+org.gnome.SessionManager.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Client.ref.xml: $(top_srcdir)/gnome-session/org.gnome.SessionManager.Client.xml spec-to-docbook.xsl
+org.gnome.SessionManager.Client.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Client.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.ClientPrivate.ref.xml: $(top_srcdir)/gnome-session/org.gnome.SessionManager.ClientPrivate.xml spec-to-docbook.xsl
+org.gnome.SessionManager.ClientPrivate.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.ClientPrivate.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Inhibitor.ref.xml: $(top_srcdir)/gnome-session/org.gnome.SessionManager.Inhibitor.xml spec-to-docbook.xsl
+org.gnome.SessionManager.Inhibitor.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Inhibitor.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Presence.ref.xml: $(top_srcdir)/gnome-session/org.gnome.SessionManager.Presence.xml spec-to-docbook.xsl
+org.gnome.SessionManager.Presence.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Presence.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
 
 -include $(top_srcdir)/git.mk

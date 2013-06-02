@@ -18,9 +18,6 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 gsettings_SCHEMAS = org.gnome.SessionManager.gschema.xml
 @GSETTINGS_RULES@
 
-migrationdir = $(datadir)/GConf/gsettings
-dist_migration_DATA = gnome-session.convert
-
 EXTRA_DIST =					\
 	$(gsettings_SCHEMAS:.xml=.xml.in)	\
 	$(ui_DATA)				\

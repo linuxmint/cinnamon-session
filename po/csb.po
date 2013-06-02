@@ -1,11 +1,11 @@
-# Kashubian translation for gnome-session
+# Kashubian translation for cinnamon-session
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-16 19:17+0200\n"
 "PO-Revision-Date: 2011-11-01 19:36+0000\n"
@@ -62,7 +62,7 @@ msgstr "Felëje miona"
 msgid "No description"
 msgstr "Felëje òpisënka"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:281
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
 msgid "Version of this application"
 msgstr "Wersëjô ti aplikacji"
 
@@ -88,7 +88,7 @@ msgstr "Na sesjô wlogùje Ce do Ubuntu"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Niejedné programë dali robią:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -209,24 +209,24 @@ msgstr "Òptacje sprôwianiô sesjama:"
 msgid "Show session management options"
 msgstr "Wëskrzeni optacje sprôwianiô sesjama"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ni mógł nalezc jikòny '%s'"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Nieznóny"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Program jesz chòdzy:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Niechtërné programë jesz chòdzą"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -234,40 +234,40 @@ msgstr ""
 "Żdanié na zakùńczenié dzejania programów. Òprzestanié dzejania programów "
 "mòże sprawic ùtratã niezapisóny robòtë."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Ë tak przëłączë brëkòwnika"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Ë tak wëlogùjë"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Ë tak zawieszë"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Ë tak hibernëjë"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Ë tak wëłączë"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Ë tak zrëszi znowa"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Zablokùjë ekran"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Òprzestóń"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:271
+#: ../cinnamon-session/gsm-logout-dialog.c:271
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -275,7 +275,7 @@ msgstr[0] "Bãdzesz automatno wëlogòwóny za %d  sekùndã."
 msgstr[1] "Bãdzesz automatno wëlogòwóny za %d  sekùndë."
 msgstr[2] "Bãdzesz automatno wëlogòwóny za %d  sekùndów."
 
-#: ../gnome-session/gsm-logout-dialog.c:279
+#: ../cinnamon-session/gsm-logout-dialog.c:279
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -283,50 +283,50 @@ msgstr[0] "System sã automatno wëłączi za %d sekùndã."
 msgstr[1] "System sã automatno wëłączi za %d sekùndë."
 msgstr[2] "System sã automatno wëłączi za %d sekùndów."
 
-#: ../gnome-session/gsm-logout-dialog.c:303
+#: ../cinnamon-session/gsm-logout-dialog.c:303
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Jes wlogòwóny jakno \"%s\"."
 
-#: ../gnome-session/gsm-logout-dialog.c:369
+#: ../cinnamon-session/gsm-logout-dialog.c:369
 msgid "Log out of this system now?"
 msgstr "Wëlogòwac sã z systemù?"
 
-#: ../gnome-session/gsm-logout-dialog.c:375
+#: ../cinnamon-session/gsm-logout-dialog.c:375
 msgid "_Switch User"
 msgstr "_Przełączë brëkòwnika"
 
-#: ../gnome-session/gsm-logout-dialog.c:384
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:384
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "Wë_logùjë"
 
-#: ../gnome-session/gsm-logout-dialog.c:390
+#: ../cinnamon-session/gsm-logout-dialog.c:390
 msgid "Shut down this system now?"
 msgstr "Zarô wëłączëc system?"
 
-#: ../gnome-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-logout-dialog.c:396
 msgid "S_uspend"
 msgstr "_Zawieszë"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "_Hibernate"
 msgstr "Ùs_pienié"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "_Restart"
 msgstr "Zôstne z_rëszenié"
 
-#: ../gnome-session/gsm-logout-dialog.c:418
+#: ../cinnamon-session/gsm-logout-dialog.c:418
 msgid "_Shut Down"
 msgstr "_Wëłączë kòmpùtr"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Në! Cos sã nie darzëło."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -334,7 +334,7 @@ msgstr ""
 "Pòkôza sã fela ë nie jidze przëwrócëc systemù. Proszã sparłãczëc sã ze "
 "sprôwnikã kòmpùtra."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 #, fuzzy
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
@@ -343,7 +343,7 @@ msgstr ""
 "Pòkôza sã fela ë nie jidze przëwrócëc systemù. Proszã sparłãczëc sã ze "
 "sprôwnikã kòmpùtra."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -351,26 +351,26 @@ msgstr ""
 "Pòkôza sã fela ë nie jidze przëwrócëc systemù.\n"
 "Proszã, wëlogùjë sã ë spróbùjë jesz rôz."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "Zakùńczono z kòdã %d"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Ùsëniãté przez signał %d"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Zatrzimóné przez signał %d"
 
-#: ../gnome-session/gsm-manager.c:1421
+#: ../cinnamon-session/gsm-manager.c:1421
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 sã ni mógł wladowac"
 
-#: ../gnome-session/gsm-manager.c:1422
+#: ../cinnamon-session/gsm-manager.c:1422
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -382,11 +382,11 @@ msgstr ""
 "Mòżlëwi że Twój kòmpùtr (hardwôrë graficzné abò czerowniczi) ni mòże zrëszëc "
 "GNOMA 3."
 
-#: ../gnome-session/gsm-manager.c:1424
+#: ../cinnamon-session/gsm-manager.c:1424
 msgid "Learn more about GNOME 3"
 msgstr "Wëdowiédzë sã wicy ò GNOMIE 3"
 
-#: ../gnome-session/gsm-manager.c:1521 ../gnome-session/gsm-manager.c:2267
+#: ../cinnamon-session/gsm-manager.c:1521 ../cinnamon-session/gsm-manager.c:2267
 msgid "Not responding"
 msgstr "Nie dostôł òdpòwiescy"
 
@@ -394,85 +394,85 @@ msgstr "Nie dostôł òdpòwiescy"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Spamiãtóny program"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Nen program ùniemòlëwiô wëlogòwónié."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Òdrzëcono nowé sparłãczenié bò starô sesjô jesz sã do kùńca nie zamkła\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Ni mòże stwòrzëc słëchającégò gniazda: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Ni mòże zrëszëc sesji logòwaniô (ë nie mòże sã sparłãczëc z serwerã X)"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Override standard autostart directories"
 msgstr "Òbéńdzenié sztandardowëch katalogów automatnégò zrëszaniô"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "AUTOSTART_DIR"
 msgstr "KATALOG_AUTOMATNÉGÒ_ÙRUCHAMIANIÔ"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Session to use"
 msgstr "Sesjô do ùżëcô"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "SESSION_NAME"
 msgstr "MIONO_SESJI"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Enable debugging code"
 msgstr "Włączë debùgùjący kòd"
 
-#: ../gnome-session/main.c:280
+#: ../cinnamon-session/main.c:280
 msgid "Do not load user-specified applications"
 msgstr "Nie wczëtiwôj aplikacji brëkòwnika"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:283
+#: ../cinnamon-session/main.c:283
 msgid "Show the fail whale dialog for testing"
 msgstr "Wëskrzeni òkno felów dlô testowaniégò"
 
-#: ../gnome-session/main.c:303
+#: ../cinnamon-session/main.c:303
 msgid " - the GNOME session manager"
 msgstr " - menadżer sesji GNOME"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "Wëlogùjë"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "Wëłączë"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Ignoring any existing inhibitors"
 msgstr "Jignorëjë wszëtczé wstrzimùjącé mechanizmë"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Don't prompt for user confirmation"
 msgstr "Nie pëtój ò pòtwierdzenié"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "Nie jidze sã sparłãczëc z menadzerã sesji"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "Program béł wëwołóny ze procëmnyma òptacjama"

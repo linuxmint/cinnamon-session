@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "remove" ]; then
-  update-alternatives --remove x-session-manager /usr/bin/gnome-session
+  update-alternatives --remove x-session-manager /usr/bin/cinnamon-session
 fi
 
 #DEBHELPER#

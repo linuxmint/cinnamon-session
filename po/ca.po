@@ -1,4 +1,4 @@
-# gnome-session translation to Catalan.
+# cinnamon-session translation to Catalan.
 # Copyright © 2000, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Ivan Vilata i Balaguer <ivan@selidor.net>, 2000.
 # Softcatalà <info@softcatala.org>, 2000.
@@ -9,7 +9,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.3.7\n"
+"Project-Id-Version: cinnamon-session 2.3.7\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-09-16 11:29+0000\n"
@@ -66,7 +66,7 @@ msgstr "Sense nom"
 msgid "No description"
 msgstr "Sense descripció"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "Versió d'aquesta aplicació"
 
@@ -86,11 +86,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Aquesta sessió us entra al GNOME"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Hi ha alguns programes que encara s'estan executant:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -215,20 +215,20 @@ msgstr "Opcions de gestió de la sessió:"
 msgid "Show session management options"
 msgstr "Mostra les opcions de gestió de la sessió"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "No s'ha trobat la icona «%s»"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Hi ha un programa que encara s'està executant:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -236,109 +236,109 @@ msgstr ""
 "S'està esperant que finalitzin alguns programes. Si els interrompeu és "
 "possible que perdeu les dades no desades."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Canvia d'usuari de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Surt de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Atura temporalment de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Hiberna de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Atura de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Reinicia de totes maneres"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Bloca la pantalla"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Sortireu automàticament d'aquí a %d segon."
 msgstr[1] "Sortireu automàticament d'aquí a %d segons."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Aquest sistema s'aturarà automàticament d'aquí a %d segon."
 msgstr[1] "Aquest sistema s'aturarà automàticament d'aquí a %d segons."
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "Es reiniciarà el sistema automàticament d'aquí a %d segon."
 msgstr[1] "Es reiniciarà el sistema automàticament d'aquí a %d segons."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Heu entrat com a «%s»."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Voleu sortir d'aquest sistema?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "Canvia d'_usuari"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_Surt"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Voleu aturar aquest sistema?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "A_tura temporalment"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Hiberna"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_Reinicia"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_Atura l'ordinador"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "Voleu reiniciar el sistema ara?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Alguna cosa ha fallat."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -346,7 +346,7 @@ msgstr ""
 "S'ha produït un problema i el sistema no es pot recuperar. Contacteu amb "
 "l'administrador del sistema"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -354,7 +354,7 @@ msgstr ""
 "S'ha produït un problema i el sistema no es pot recuperar. Com a mètode de "
 "precaució s'han inhabilitat totes les extensions."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -362,11 +362,11 @@ msgstr ""
 "S'ha produït un problema i el sistema no es pot recuperar.\n"
 "Sortiu i torneu-ho a provar."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "Ha fallat la càrrega del GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -380,11 +380,11 @@ msgstr ""
 "Això vol dir que segurament el vostre sistema (maquinari gràfic o "
 "controlador) no podrà proporcionar el GNOME 3 a la seva màxima capacitat."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "Descobriu més coses sobre el GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "No està responent"
 
@@ -392,15 +392,15 @@ msgstr "No està responent"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Aplicació recordada"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Aquest programa està blocant la sortida."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -408,76 +408,76 @@ msgstr ""
 "Es refusarà la connexió de client nova perquè la sessió s'està aturant\n"
 
 # Nota: ICE -> Inter-Client Exchange (http://en.wikipedia.org/wiki/X_Window_System_protocols_and_architecture#Inter-client_communication)
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "No s'ha pogut crear el sòcol ICE d'escolta: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "No s'ha pogut iniciar la sessió d'entrada (ni connectar amb el servidor X)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "Ignora els directoris estàndard d'inici automàtic"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "DIRECTORI_INICI_AUTOMÀTIC"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "Sessió que s'utilitzarà"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "NOM_DE_SESSIÓ"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "Habilita el codi de depuració"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "No carreguis les aplicacions especificades per l'usuari"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "Mostra el diàleg de la balena per fer proves"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr "- el gestor de sessions del GNOME"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Surt"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "Atura"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "Reinicia"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "S'està ignorant qualsevol inhibidor existent"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "No demanis la confirmació de l'usuari"
 
-#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "No s'ha pogut connectar al gestor de sessions"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr ""
 "El programa s'ha invocat amb opcions que entren en conflicte entre elles"
@@ -541,13 +541,13 @@ msgstr ""
 #~ msgstr "Gestor de fitxers"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Si s'habilita, el gnome-session preguntarà a l'usuari abans de finalitzar "
+#~ "Si s'habilita, el cinnamon-session preguntarà a l'usuari abans de finalitzar "
 #~ "una sessió."
 
-#~ msgid "If enabled, gnome-session will save the session automatically."
-#~ msgstr "Si s'habilita, el gnome-session desarà la sessió automàticament."
+#~ msgid "If enabled, cinnamon-session will save the session automatically."
+#~ msgstr "Si s'habilita, el cinnamon-session desarà la sessió automàticament."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Llista d'aplicacions que formen part de la sessió."
@@ -625,10 +625,10 @@ msgstr ""
 #~ msgstr "Auxiliar del dimoni dels paràmetres del GNOME"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Si s'habilita, el gnome-session desarà la sessió automàticament. D'altra "
+#~ "Si s'habilita, el cinnamon-session desarà la sessió automàticament. D'altra "
 #~ "manera, el diàleg de sortida tindrà una opció per a desar la sessió."
 
 #~ msgid "Preferred Image to use for login splash screen"
@@ -710,14 +710,14 @@ msgstr ""
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), gnome-session does not listen for connections on TCP "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 #~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "gnome-session must be restarted for this to take effect."
+#~ "cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "Per raons de seguretat, en les plataformes que tenen _IceTcpTransNoListen"
-#~ "() (sistemes XFree86), el gnome-session no escolta connexions en ports "
+#~ "() (sistemes XFree86), el cinnamon-session no escolta connexions en ports "
 #~ "TCP. Aquesta opció permetrà connexions des de màquines remotes "
-#~ "(autoritzades). S'ha de reiniciar el gnome-session perquè tingui efecte."
+#~ "(autoritzades). S'ha de reiniciar el cinnamon-session perquè tingui efecte."
 
 #~ msgid "_Order:"
 #~ msgstr "_Ordre:"
@@ -1173,7 +1173,7 @@ msgstr ""
 #~ msgstr "Realment voleu sortir?"
 
 #~ msgid ""
-#~ "Your version of libICE has a bug which causes gnome-session\n"
+#~ "Your version of libICE has a bug which causes cinnamon-session\n"
 #~ "to not function correctly.\n"
 #~ "\n"
 #~ "If you are on Solaris, you should either upgrade to Solaris patch\n"
@@ -1183,7 +1183,7 @@ msgstr ""
 #~ "\n"
 #~ "Your GNOME session will terminate after closing this dialog."
 #~ msgstr ""
-#~ "La vostra versió de libICE té un error que fa que gnome-session\n"
+#~ "La vostra versió de libICE té un error que fa que cinnamon-session\n"
 #~ "no funcione correctament.\n"
 #~ "\n"
 #~ "Si esteu en Solaris, haurieu de actualitzar al pedaç de Solaris\n"

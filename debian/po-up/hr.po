@@ -1,9 +1,9 @@
-# Translation of gnome-session to Croatiann
+# Translation of cinnamon-session to Croatiann
 # Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,Robert Sedak <robert.sedak@sk.tel.hr>,
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 0\n"
+"Project-Id-Version: cinnamon-session 0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2004-02-05 23:49+CET\n"

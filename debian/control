@@ -1,4 +1,4 @@
-Source: gnome-session
+Source: cinnamon-session
 Section: gnome
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
@@ -28,36 +28,32 @@ Build-Depends: cdbs (>= 0.4.41),
                xsltproc,
                xtrans-dev
 
-Package: gnome-session
+Package: cinnamon-session
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          dbus-x11,
          gsettings-desktop-schemas,
          upower (>= 0.9.0)
-Conflicts: gnome-session (<< 2.26.1-5)
-Description: GNOME Session Manager - Minimal runtime
- The GNOME Session Manager is in charge of starting the core components
- of the GNOME desktop, and applications that should be launched at
+Description: Cinnamon Session Manager - Minimal runtime
+ The Cinnamon Session Manager is in charge of starting the core components
+ of the Cinnamon desktop, and applications that should be launched at
  login time. It also features a way to save and restore currently
  running applications.
  .
- This package contains the binaries for the GNOME Session Manager, but
+ This package contains the binaries for the Cinnamon Session Manager, but
  no startup scripts. It is meant for those willing to start
- gnome-session by hand with the components of their choice, and for
- applications such as GDM that use gnome-session internally.
+ cinnamon-session by hand with the components of their choice, and for
+ applications such as MDM that use cinnamon-session internally.
 
-Package: gnome-session-common
+Package: cinnamon-session-common
 Architecture: all
 Depends: ${misc:Depends}
-Replaces: gnome-session (<< 3.0),
-          gnome-session-bin (<< 3.0),
-          libgnomevfs2-common (<< 1:2.24.0-3)
-Description: GNOME Session Manager - common files
- The GNOME Session Manager is in charge of starting the core components
- of the GNOME desktop, and applications that should be launched at
+Description: Cinnamon Session Manager - common files
+ The Cinnamon Session Manager is in charge of starting the core components
+ of the Cinnamon desktop, and applications that should be launched at
  login time. It also features a way to save and restore currently
  running applications.
  .
  This package contains the translations, data files and startup scripts
- which are common to the GNOME and GNOME fallback sessions.
+ which are common to the Cinnamon and Cinnamon fallback sessions.

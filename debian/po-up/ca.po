@@ -1,4 +1,4 @@
-# gnome-session translation to Catalan.
+# cinnamon-session translation to Catalan.
 # Copyright © 2000, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Ivan Vilata i Balaguer <ivan@selidor.net>, 2000.
 # Softcatalà <info@softcatala.org>, 2000.
@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.3.7\n"
+"Project-Id-Version: cinnamon-session 2.3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2011-11-04 20:31+0100\n"

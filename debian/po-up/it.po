@@ -1,11 +1,11 @@
-# Italian translation for gnome-session
+# Italian translation for cinnamon-session
 # Copyright (C) 1997-2007 Free Software Foundation, Inc.
 # Copyright (C) 1997-2002 Christopher R. Gabriel <cgabriel@pluto.linux.it>
 # Copyright (C) 2004-2008 Luca Ferretti <elle.uca@libero.it>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.21.x\n"
+"Project-Id-Version: cinnamon-session 2.21.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-03-03 21:37+0100\n"

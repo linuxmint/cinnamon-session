@@ -1,5 +1,5 @@
 # GNOME seansi eesti keele tõlge.
-# Estonian translation of gnome-session.
+# Estonian translation of cinnamon-session.
 #
 # Copyright (C) 1999, 2001, 2002, 2004–2006 Free Software Foundation, Inc.
 # Copyright (C) 2006–2011 The GNOME Project.
@@ -13,7 +13,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session MASTER\n"
+"Project-Id-Version: cinnamon-session MASTER\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-09-22 18:12+0000\n"

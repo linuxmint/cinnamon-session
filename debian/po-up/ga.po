@@ -1,4 +1,4 @@
-# Irish translations for gnome-session package.
+# Irish translations for cinnamon-session package.
 # Copyright (C) 2000, 2003, 2007 Free Software Foundation, Inc.
 # Seán Ó Ceallaigh <s_oceallaigh@yahoo.com>, 2000.
 # Paul Duffy <dubhthach@frink.nuigalway.ie>, 2003.
@@ -6,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session HEAD\n"
+"Project-Id-Version: cinnamon-session HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-12-21 10:55-0700\n"

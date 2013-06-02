@@ -1,4 +1,4 @@
-# gnome-session Finnish translation
+# cinnamon-session Finnish translation
 # Copyright (C) 2002-2008 Free Software Foundation, Inc.
 # Suomennos: http://gnome.fi/
 # Ville Hautamäki <villeh@cs.joensuu.fi>, 1998, 2000
@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-02-14 07:21+0300\n"

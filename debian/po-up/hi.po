@@ -1,4 +1,4 @@
-# translation of gnome-session.HEAD.hi.po to Hindi
+# translation of cinnamon-session.HEAD.hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006.
@@ -6,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.hi\n"
+"Project-Id-Version: cinnamon-session.HEAD.hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-08-30 17:08+0530\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Could not connect to the session bus"
 msgstr ""
 
-# gnome-session/save-session.c:112
+# cinnamon-session/save-session.c:112
 #: ../patches/10_session_save.patch:257
 msgid "Could not connect to the session manager"
 msgstr "सत्र मैनेजर से संपर्क स्थापित नहीं हो पा रहा है"

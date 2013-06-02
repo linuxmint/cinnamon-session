@@ -1,5 +1,5 @@
-# translation of gnome-session.HEAD.he.po to Hebrew
-# translation of gnome-session.gnome-2-0.po to Hebrew
+# translation of cinnamon-session.HEAD.he.po to Hebrew
+# translation of cinnamon-session.gnome-2-0.po to Hebrew
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER.
 # Gil Osher <dolfin@rpg.org.il>, 2002, 2005.
@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.he\n"
+"Project-Id-Version: cinnamon-session.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-04-27 16:44+0300\n"

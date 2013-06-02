@@ -1,4 +1,4 @@
-# Swedish messages for gnome-session.
+# Swedish messages for cinnamon-session.
 # Copyright (C) 1998-2008 Free Software Foundation, Inc.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008.
 # Martin Wahlen <mva@sbbs.se>, 1998.
@@ -9,7 +9,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-01-28 09:32+0100\n"

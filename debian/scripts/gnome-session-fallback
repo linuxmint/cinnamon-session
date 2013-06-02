@@ -1,2 +1,2 @@
 #! /bin/sh
-exec gnome-session --session gnome-fallback "$@"
+exec cinnamon-session --session gnome-fallback "$@"

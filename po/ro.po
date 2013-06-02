@@ -5,7 +5,7 @@
 # Daniel Șerbănescu <cyber19rider@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session-2.0\n"
+"Project-Id-Version: cinnamon-session-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-03-22 21:20+0000\n"
@@ -65,7 +65,7 @@ msgstr "Fără nume"
 msgid "No description"
 msgstr "Fără descriere"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:280
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:280
 msgid "Version of this application"
 msgstr "Versiunea acestei aplicații"
 
@@ -89,7 +89,7 @@ msgstr "Această sesiune vă va autentifica în GNOME"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>O parte din programe sunt încă în funcțiune:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -205,7 +205,7 @@ msgstr "Opțiuni de administrare a sesiunii:"
 msgid "Show session management options"
 msgstr "Afișează opțiunile de administrare a sesiunii"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -214,24 +214,24 @@ msgstr ""
 "Există o problemă cu serverul de configurare.\n"
 "(%s a ieșit cu starea %d)"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Iconița „%s” nu a fost găsită"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:592
+#: ../cinnamon-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "Un program este încă în funcțiune:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:647
+#: ../cinnamon-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Unele programe sunt încă în funcțiune:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:648
+#: ../cinnamon-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -239,40 +239,40 @@ msgstr ""
 "Se așteaptă terminarea programelor. Întreruperea acestora poate duce la "
 "pierderea modificărilor efectuate."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:878
+#: ../cinnamon-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Schimbă oricum utilizatorul"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:881
+#: ../cinnamon-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Închide sesiunea oricum"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:884
+#: ../cinnamon-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Suspendă oricum"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:887
+#: ../cinnamon-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Hibernează oricum"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:890
+#: ../cinnamon-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Oprește oricum"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:893
+#: ../cinnamon-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Repornește oricum"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Blochează ecranul"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Renunță"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:275
+#: ../cinnamon-session/gsm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -280,7 +280,7 @@ msgstr[0] "Sesiunea se va închide automat într-o secundă."
 msgstr[1] "Sesiunea se va închide automat în %d secunde."
 msgstr[2] "Sesiunea se va închide automat în %d de secunde."
 
-#: ../gnome-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/gsm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -288,51 +288,51 @@ msgstr[0] "Sistemul va fi oprit automat într-o secundă."
 msgstr[1] "Sistemul va fi oprit automat în %d secunde."
 msgstr[2] "Sistemul va fi oprit automat în %d de secunde."
 
-#: ../gnome-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Sunteți autentificat ca „%s”."
 
-#: ../gnome-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/gsm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Ieșiți de pe acest sistem acum?"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "_Schimbă utilizatorul"
 
-#: ../gnome-session/gsm-logout-dialog.c:396
-#: ../gnome-session/gsm-fail-whale-dialog.c:296
-#: ../gnome-session/gsm-util.c:363
+#: ../cinnamon-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:296
+#: ../cinnamon-session/gsm-util.c:363
 msgid "_Log Out"
 msgstr "_Ieșire din sesiune"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Opriți sistemul acum?"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "S_uspendă"
 
-#: ../gnome-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/gsm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Hibernează"
 
-#: ../gnome-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/gsm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "_Repornește"
 
-#: ../gnome-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/gsm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "_Oprește"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:276
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:276
 msgid "Oh no!  Something has gone wrong."
 msgstr "Oh, nu! Ceva nu a funcționat corect."
 
 #. make this changable at some point
-#: ../gnome-session/gsm-fail-whale-dialog.c:283
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:283
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -340,26 +340,26 @@ msgstr ""
 "A intervenit o problemă și sistemul nu se poate recupera.\n"
 "Ieșiți din sesiune și încercați din nou."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "A ieșit cu codul %d"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Omorât de semnalul %d"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Oprit de semnalul %d"
 
-#: ../gnome-session/gsm-manager.c:1362
+#: ../cinnamon-session/gsm-manager.c:1362
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 nu a reușit să pornească"
 
-#: ../gnome-session/gsm-manager.c:1363
+#: ../cinnamon-session/gsm-manager.c:1363
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -373,79 +373,79 @@ msgstr ""
 "Cel mai probabil aceasta înseamnă că sistemul dumneavoastră (placa grafică "
 "sau driverul acesteia) nu poate oferi o experiență GNOME 3 completă."
 
-#: ../gnome-session/gsm-manager.c:1365
+#: ../cinnamon-session/gsm-manager.c:1365
 msgid "Learn more about GNOME 3"
 msgstr "Aflați mai multe despre GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1462 ../gnome-session/gsm-manager.c:2193
+#: ../cinnamon-session/gsm-manager.c:1462 ../cinnamon-session/gsm-manager.c:2193
 msgid "Not responding"
 msgstr "Nu răspunde"
 
-#: ../gnome-session/gsm-xsmp-client.c:1183
+#: ../cinnamon-session/gsm-xsmp-client.c:1183
 msgid "This program is blocking logout."
 msgstr "Acest program blochează ieșirea din sesiune."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Se refuză conexiunea noului client deoarece sesiunea este în curs de oprire\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nu s-a putut crea socket-ul de monitorizare ICE: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:347
+#: ../cinnamon-session/gsm-util.c:347
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Nu s-a putut porni sesiunea de start (iar conexiunea la serverul X nu a "
 "putut fi realizată)"
 
-#: ../gnome-session/main.c:276
+#: ../cinnamon-session/main.c:276
 msgid "Override standard autostart directories"
 msgstr "Rescrie dosarele standard de pornire automată"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Session to use"
 msgstr "Sesiunea de utilizat"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "Enable debugging code"
 msgstr "Activează codul pentru depanare"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Do not load user-specified applications"
 msgstr "Nu încărca aplicațiile specificate de utilizator"
 
-#: ../gnome-session/main.c:300
+#: ../cinnamon-session/main.c:300
 msgid " - the GNOME session manager"
 msgstr " - Administrator de sesiune GNOME"
 
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "Închide sesiunea"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "Oprire"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Ignoring any existing inhibitors"
 msgstr "Se ignoră orice inhibator existent"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Don't prompt for user confirmation"
 msgstr "Nu solicita confirmarea utilizatorului"
 
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "Nu s-a putut realiza conectarea la administratorul de sesiuni"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "Program apelat cu opțiuni care intră în conflict"
 
@@ -456,13 +456,13 @@ msgstr "Program apelat cu opțiuni care intră în conflict"
 #~ msgstr "Administrator de fișiere"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Dacă este activat, gnome-session va anunța utilizatorul înainte de "
+#~ "Dacă este activat, cinnamon-session va anunța utilizatorul înainte de "
 #~ "terminarea sesiunii."
 
-#~ msgid "If enabled, gnome-session will save the session automatically."
-#~ msgstr "Dacă este activat, gnome-session va salva sesiunea automat."
+#~ msgid "If enabled, cinnamon-session will save the session automatically."
+#~ msgstr "Dacă este activat, cinnamon-session va salva sesiunea automat."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Lista aplicațiilor care fac parte din sesiunea implicită."
@@ -553,10 +553,10 @@ msgstr "Program apelat cu opțiuni care intră în conflict"
 #~ msgstr "Ajutor serviciu configurări GNOME"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Dacă este activat, gnome-session va salva sesiunea automat. Altfel, "
+#~ "Dacă este activat, cinnamon-session va salva sesiunea automat. Altfel, "
 #~ "dialogul de ieșire va avea o opțiune pentru salvarea sesiunii."
 
 #~ msgid "Preferred Image to use for login splash screen"

@@ -80,7 +80,7 @@ msgstr "Utan namn"
 msgid "No description"
 msgstr "Inga skildring"
 
-#: ../capplet/main.c:35 ../gnome-session/main.c:281
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
 msgid "Version of this application"
 msgstr "Versjon av dette programmet"
 
@@ -106,7 +106,7 @@ msgstr "Denne økta loggar inn i GNOME"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Nokre program køyrer enno:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -243,25 +243,25 @@ msgstr "Innstillingar for økthandsaming"
 msgid "Show session management options"
 msgstr "Vis innstillingar for økthandsaming"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Klarte ikkje finna ikonet «%s»"
 
 # gsm/gsm-client-row.c:43
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Eit program køyrer enno:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Nokre program køyrer enno:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -269,103 +269,103 @@ msgstr ""
 "Ventar på at program skal avslutta. Om du avbryt desse programma kan data gå "
 "tapt."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Byt brukar likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 #| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "Logg ut likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Gå i kvilemodus likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Gå i dvalemodus likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 #| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "Slå av likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 #| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "Start på nytt likevel"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Avbryt"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:275
+#: ../cinnamon-session/gsm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Du vert logga ut automatisk om %d sekund."
 msgstr[1] "Du vert logga ut automatisk om %d sekund."
 
-#: ../gnome-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/gsm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Systemet vert slått av automatisk om %d sekund."
 msgstr[1] "Systemet vert slått av automatisk om %d sekund."
 
-#: ../gnome-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du er logga inn som «%s»."
 
-#: ../gnome-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/gsm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Logg ut av systemet no?"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "_Byt brukar"
 
 # panel/logout.c:74 panel/menu.c:5340
-#: ../gnome-session/gsm-logout-dialog.c:396
-#: ../gnome-session/gsm-fail-whale-dialog.c:422
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:422
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_Logg ut"
 
-#: ../gnome-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/gsm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Slå av systemet no?"
 
-#: ../gnome-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/gsm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "_Kvilemodus"
 
-#: ../gnome-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/gsm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Dvalemodus"
 
 # applets/tasklist/tasklist_menu.c:258
-#: ../gnome-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/gsm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "_Start på nytt"
 
 # gsm/logout.c:250
-#: ../gnome-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/gsm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "Slå _av"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:377
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:377
 msgid "Oh no!  Something has gone wrong."
 msgstr "Å nei! Noko har gått gale."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:384
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:384
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -373,7 +373,7 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Kontakt ein "
 "systemadministrator."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:386
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:386
 msgid ""
 "A problem has occurred and the system can't recover. Some of the extensions "
 "below may have caused this.\n"
@@ -383,7 +383,7 @@ msgstr ""
 "utvidingane under kan ha medført dette.\n"
 "Prøv å slå av nokre av desse og logg ut for å prøva på nytt."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:388
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:388
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -391,26 +391,26 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta.\n"
 "Logg ut og prøv på nytt."
 
-#: ../gnome-session/gsm-process-helper.c:123
+#: ../cinnamon-session/gsm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "Avslutta med koden %d"
 
-#: ../gnome-session/gsm-process-helper.c:128
+#: ../cinnamon-session/gsm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Avslutta av signalet %d"
 
-#: ../gnome-session/gsm-process-helper.c:133
+#: ../cinnamon-session/gsm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Stoppa av signalet %d"
 
-#: ../gnome-session/gsm-manager.c:1386
+#: ../cinnamon-session/gsm-manager.c:1386
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 klarte ikkje starta"
 
-#: ../gnome-session/gsm-manager.c:1387
+#: ../cinnamon-session/gsm-manager.c:1387
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -423,11 +423,11 @@ msgstr ""
 "Sannsynlegvis klarer ikkje systemet (grafikkortet eller drivaren) å køyre "
 "GNOME 3."
 
-#: ../gnome-session/gsm-manager.c:1389
+#: ../cinnamon-session/gsm-manager.c:1389
 msgid "Learn more about GNOME 3"
 msgstr "Lær meir om GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1486 ../gnome-session/gsm-manager.c:2255
+#: ../cinnamon-session/gsm-manager.c:1486 ../cinnamon-session/gsm-manager.c:2255
 msgid "Not responding"
 msgstr "Svarer ikkje"
 
@@ -436,96 +436,96 @@ msgstr "Svarer ikkje"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 #| msgid "Remember running applications"
 msgid "Remembered Application"
 msgstr "Hugsa program"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 #| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "Dette programmet hindrar utlogging."
 
-#: ../gnome-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Avviser ny klienttilkopling fordi økta er i ferd med å avslutta\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Klarte ikkje oppretta sokkel for ICE-lytting: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Klarte ikkje starta innloggingsøkt (klarte heller ikkje å kopla til X-"
 "tenaren)"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "Override standard autostart directories"
 msgstr "Overstyr standard autostartmapper"
 
-#: ../gnome-session/main.c:277
+#: ../cinnamon-session/main.c:277
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
 # gsm/session-properties.c:272
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 #| msgid "Sessions"
 msgid "Session to use"
 msgstr "Økt som skal brukast"
 
-#: ../gnome-session/main.c:278
+#: ../cinnamon-session/main.c:278
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../gnome-session/main.c:279
+#: ../cinnamon-session/main.c:279
 msgid "Enable debugging code"
 msgstr "Aktiver feilsøkingskode"
 
-#: ../gnome-session/main.c:280
+#: ../cinnamon-session/main.c:280
 msgid "Do not load user-specified applications"
 msgstr "Ikkje last brukarvalde program"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:283
+#: ../cinnamon-session/main.c:283
 msgid "Show the fail whale dialog for testing"
 msgstr "Vis feilvindauget for testing"
 
-#: ../gnome-session/main.c:303
+#: ../cinnamon-session/main.c:303
 msgid " - the GNOME session manager"
 msgstr " – GNOME økthandsamar"
 
 # panel/logout.c:74 panel/menu.c:5340
-#: ../tools/gnome-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
 msgstr "Logg ut"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Power off"
 msgstr "Slå av"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 #| msgid "Log out, ignoring any existing inhibitors"
 msgid "Ignoring any existing inhibitors"
 msgstr "Ignorerer eventuelle hindringar"
 
 #
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 #| msgid "Do not require confirmation"
 msgid "Don't prompt for user confirmation"
 msgstr "Ikkje spør etter stadfesting"
 
 # gsm/save-session.c:92
-#: ../tools/gnome-session-quit.c:89 ../tools/gnome-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
 msgid "Could not connect to the session manager"
 msgstr "Klarte ikkje kopla til økthandsamar"
 
-#: ../tools/gnome-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:199
 msgid "Program called with conflicting options"
 msgstr "Programmet vart kalla med motstridande alternativ"
 
@@ -543,13 +543,13 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgstr "Filhandsamar"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
 #~ "Viss det er kryssa av her, vil brukaren få ein spørsmålsdialog før økta "
 #~ "vert avslutta."
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Viss det er kryssa av her, vil økta verta lagra automatisk. Elles vil "
@@ -692,13 +692,13 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), gnome-session does not listen for connections on TCP "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 #~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "gnome-session must be restarted for this to take effect."
+#~ "cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
-#~ "Av omsyn til tryggleiken vil ikkje gnome-session lytta etter tilkoplingar "
+#~ "Av omsyn til tryggleiken vil ikkje cinnamon-session lytta etter tilkoplingar "
 #~ "på TCP-portar på system som har _IceTcpTransNoListen() (XFree86-system). "
-#~ "Dette valet vil la autoriserte eksterne vertar kopla til. gnome-session "
+#~ "Dette valet vil la autoriserte eksterne vertar kopla til. cinnamon-session "
 #~ "må startast på nytt før dette valet blir aktivt."
 
 #~ msgid "Selected option in the log out dialog"

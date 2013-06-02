@@ -1,4 +1,4 @@
-# Translation of gnome-session.HEAD.az.po file to Azerbaijani Turkish
+# Translation of cinnamon-session.HEAD.az.po file to Azerbaijani Turkish
 # Copyright (C) 200 Free Software Foundation, Inc.
 # Vasif Ismailoglu MD <azerb_linux@hotmail.com>, 2000, 2001, 2002.
 # Mətin Əmirov <metin@karegen.com>, 2002, 2003, 2004

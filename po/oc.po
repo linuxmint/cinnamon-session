@@ -1,7 +1,7 @@
 # Translation of oc.po to Occitan
-# Occitan translation of gnome-session.
+# Occitan translation of cinnamon-session.
 # Copyright (C) 2007 Free Software Foundation, Inc.
-# This file is released under the same license as the gnome-session package.
+# This file is released under the same license as the cinnamon-session package.
 #
 # Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
 msgid ""
@@ -17,60 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../data/gnome-session.schemas.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:1
 msgid "Allow TCP connections"
 msgstr "Autorisar las connexions TCP"
 
-#: ../data/gnome-session.schemas.in.h:2
+#: ../data/cinnamon-session.schemas.in.h:2
 msgid ""
 "For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), gnome-session does not listen for connections on TCP "
+"(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 "ports. This option will allow connections from (authorized) remote hosts. "
-"gnome-session must be restarted for this to take effect."
+"cinnamon-session must be restarted for this to take effect."
 msgstr ""
 "Per rasons de seguritat, sus la plataformas qu'an _IceTcpTransNoListen() "
-"(sistèmas XFree86), gnome-session susvelha pas las connexions als pòrts TCP. "
+"(sistèmas XFree86), cinnamon-session susvelha pas las connexions als pòrts TCP. "
 "Aquesta opcion permetrà de connexions d'òstes TCP (autorisats). Debètz "
-"tornar aviar gnome-session per que foncione."
+"tornar aviar cinnamon-session per que foncione."
 
-#: ../data/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: ../data/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:4
+#: ../data/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
-"S'es activat, gnome-session enregistrarà automaticament la session. "
+"S'es activat, cinnamon-session enregistrarà automaticament la session. "
 "Autrament, la boita de dialòg de desconnexion prepausarà una opcion per "
 "enregistrar la sesilha."
 
-#: ../data/gnome-session.schemas.in.h:5
+#: ../data/cinnamon-session.schemas.in.h:5
 msgid "Logout prompt"
 msgstr "Indicador de sortida"
 
-#: ../data/gnome-session.schemas.in.h:6
+#: ../data/cinnamon-session.schemas.in.h:6
 msgid "Preferred Image to use for login splash screen"
 msgstr "Imatges preferits per l'ecran d'acuèlh"
 
-#: ../data/gnome-session.schemas.in.h:7
+#: ../data/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
 msgstr "Enregistrar las sessions"
 
-#: ../data/gnome-session.schemas.in.h:8
+#: ../data/cinnamon-session.schemas.in.h:8
 msgid "Selected option in the log out dialog"
 msgstr "Opcion seleccionada a la bosta de dialòg de sortida"
 
-#: ../data/gnome-session.schemas.in.h:9
+#: ../data/cinnamon-session.schemas.in.h:9
 msgid "Show the splash screen"
 msgstr "Visualizar l'ecran d'acuèlh"
 
-#: ../data/gnome-session.schemas.in.h:10
+#: ../data/cinnamon-session.schemas.in.h:10
 msgid "Show the splash screen when the session starts up"
 msgstr "Visualizar l'ecran d'acuèlh al iniciar la session"
 
-#: ../data/gnome-session.schemas.in.h:11
+#: ../data/cinnamon-session.schemas.in.h:11
 msgid ""
 "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
 "directories and image names are valid values. Changing this value will "
@@ -80,7 +80,7 @@ msgstr ""
 "sosrepertòris e los noms d'imatges son de valors valablas. Se càmbiatz "
 "aquesta valor, aquò prendrà efècte a la debuta de la sesilha venenta."
 
-#: ../data/gnome-session.schemas.in.h:12
+#: ../data/cinnamon-session.schemas.in.h:12
 msgid ""
 "This is the option that will be selected in the logout dialog, valid values "
 "are \"logout\" for logging out, \"shutdown\" for halting the system and "
@@ -106,7 +106,7 @@ msgstr "Configurar vòstras sesilhas"
 msgid "Sessions"
 msgstr "Sessions"
 
-#: ../gnome-session/gsm-at-startup.c:39
+#: ../cinnamon-session/gsm-at-startup.c:39
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -114,110 +114,110 @@ msgid ""
 "support."
 msgstr ""
 
-#: ../gnome-session/gsm-client-editor.c:123
+#: ../cinnamon-session/gsm-client-editor.c:123
 msgid "_Order:"
 msgstr "_Òrdre :"
 
-#: ../gnome-session/gsm-client-editor.c:125
+#: ../cinnamon-session/gsm-client-editor.c:125
 msgid "The order in which applications are started in the session."
 msgstr "Òrdre d'aviada de las aplicacions de la sesilha."
 
-#: ../gnome-session/gsm-client-editor.c:133
+#: ../cinnamon-session/gsm-client-editor.c:133
 msgid "What happens to the application when it exits."
 msgstr "Qu'arriba passa amb lo logicial quand se quita."
 
-#: ../gnome-session/gsm-client-editor.c:134
+#: ../cinnamon-session/gsm-client-editor.c:134
 msgid "_Style:"
 msgstr "_Estil :"
 
-#: ../gnome-session/gsm-client-list.c:44
+#: ../cinnamon-session/gsm-client-list.c:44
 msgid "Inactive"
 msgstr "Inactiu"
 
-#: ../gnome-session/gsm-client-list.c:44
+#: ../cinnamon-session/gsm-client-list.c:44
 msgid "Waiting to start or already finished."
 msgstr "En espera de se lançar o lançament ja acabat."
 
-#: ../gnome-session/gsm-client-list.c:46
+#: ../cinnamon-session/gsm-client-list.c:46
 msgid "Starting"
 msgstr "Aviada"
 
-#: ../gnome-session/gsm-client-list.c:46
+#: ../cinnamon-session/gsm-client-list.c:46
 msgid "Started but has not yet reported state."
 msgstr "Lançat mas pas encara de rapòrt de son estat."
 
-#: ../gnome-session/gsm-client-list.c:48
+#: ../cinnamon-session/gsm-client-list.c:48
 msgid "Running"
 msgstr "En foncionament"
 
-#: ../gnome-session/gsm-client-list.c:48
+#: ../cinnamon-session/gsm-client-list.c:48
 msgid "A normal member of the session."
 msgstr "Un utilizaire normal de la sesilha."
 
-#: ../gnome-session/gsm-client-list.c:50
+#: ../cinnamon-session/gsm-client-list.c:50
 msgid "Saving"
 msgstr "A enregistrar"
 
-#: ../gnome-session/gsm-client-list.c:50
+#: ../cinnamon-session/gsm-client-list.c:50
 msgid "Saving session details."
 msgstr "A enregistrar los detalhs de la sesilha."
 
 #. FIXME find better icon
-#: ../gnome-session/gsm-client-list.c:53
+#: ../cinnamon-session/gsm-client-list.c:53
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../gnome-session/gsm-client-list.c:53
+#: ../cinnamon-session/gsm-client-list.c:53
 msgid "State not reported within timeout."
 msgstr "L'estat es pas estat reportat pendent lo relambi autorizat."
 
 #. FIXME find icon
-#: ../gnome-session/gsm-client-list.c:60
+#: ../cinnamon-session/gsm-client-list.c:60
 msgid "Normal"
 msgstr "Normal"
 
-#: ../gnome-session/gsm-client-list.c:60
+#: ../cinnamon-session/gsm-client-list.c:60
 msgid "Unaffected by logouts but can die."
 msgstr "Las sortidas l'afectan pas mas pòt morir."
 
-#: ../gnome-session/gsm-client-list.c:62
+#: ../cinnamon-session/gsm-client-list.c:62
 msgid "Restart"
 msgstr "Tornar lançar"
 
-#: ../gnome-session/gsm-client-list.c:62
+#: ../cinnamon-session/gsm-client-list.c:62
 msgid "Never allowed to die."
 msgstr "Permetre pas jamai que morisca."
 
-#: ../gnome-session/gsm-client-list.c:64
+#: ../cinnamon-session/gsm-client-list.c:64
 msgid "Trash"
 msgstr "Banasta"
 
-#: ../gnome-session/gsm-client-list.c:64
+#: ../cinnamon-session/gsm-client-list.c:64
 msgid "Discarded on logout and can die."
 msgstr "Escartat a la sortida, pòt morir."
 
-#: ../gnome-session/gsm-client-list.c:66
+#: ../cinnamon-session/gsm-client-list.c:66
 msgid "Settings"
 msgstr "Paramètres"
 
-#: ../gnome-session/gsm-client-list.c:66
+#: ../cinnamon-session/gsm-client-list.c:66
 msgid "Always started on every login."
 msgstr "Lançat a cada intrada de sesilha."
 
-#: ../gnome-session/gsm-client-list.c:190
+#: ../cinnamon-session/gsm-client-list.c:190
 msgid "Order"
 msgstr "Òrdre"
 
-#: ../gnome-session/gsm-client-list.c:197
+#: ../cinnamon-session/gsm-client-list.c:197
 msgid "Style"
 msgstr "Estil"
 
-#: ../gnome-session/gsm-client-list.c:204
+#: ../cinnamon-session/gsm-client-list.c:204
 msgid "State"
 msgstr "Estat"
 
-#: ../gnome-session/gsm-client-list.c:211
-#: ../gnome-session/session-properties-capplet.c:284
+#: ../cinnamon-session/gsm-client-list.c:211
+#: ../cinnamon-session/session-properties-capplet.c:284
 msgid "Program"
 msgstr "Programa"
 
@@ -229,7 +229,7 @@ msgstr "Programa"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../gnome-session/gsm-gsd.c:47
+#: ../cinnamon-session/gsm-gsd.c:47
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -242,7 +242,7 @@ msgstr ""
 "Se pòt que d'unas causas, coma los tèmas, los sons o los paramètres de fond "
 "foncionen pas correctament."
 
-#: ../gnome-session/gsm-gsd.c:59
+#: ../cinnamon-session/gsm-gsd.c:59
 msgid ""
 "\n"
 "\n"
@@ -254,7 +254,7 @@ msgstr ""
 "Lo darrièr messatge d'error èra :\n"
 "\n"
 
-#: ../gnome-session/gsm-gsd.c:64
+#: ../cinnamon-session/gsm-gsd.c:64
 msgid ""
 "\n"
 "\n"
@@ -265,47 +265,47 @@ msgstr ""
 "GNOME ensajarà de tornar lançar lo programa de configuracion a lançament de "
 "vòstra sesilha venenta."
 
-#: ../gnome-session/gsm-gsd.c:162
+#: ../cinnamon-session/gsm-gsd.c:162
 msgid "The Settings Daemon restarted too many times."
 msgstr "Lo programa de configuracion se tornèt lançar de tròp."
 
 #. Name is mandatory and might not be set by the caller
-#: ../gnome-session/gsm-keyfile.c:43
+#: ../cinnamon-session/gsm-keyfile.c:43
 msgid "No Name"
 msgstr ""
 
-#: ../gnome-session/gnome-session-remove.c:50
+#: ../cinnamon-session/cinnamon-session-remove.c:50
 msgid "List registered clients, then exit"
 msgstr ""
 
-#: ../gnome-session/gnome-session-remove.c:52
+#: ../cinnamon-session/cinnamon-session-remove.c:52
 msgid "PROGRAM..."
 msgstr "PROGRAMA..."
 
-#: ../gnome-session/gnome-session-remove.c:176
+#: ../cinnamon-session/cinnamon-session-remove.c:176
 #, c-format
 msgid ""
 "You must specify at least one program to remove. You can list the programs "
 "with --list.\n"
 msgstr ""
 
-#: ../gnome-session/gnome-session-remove.c:183
+#: ../cinnamon-session/cinnamon-session-remove.c:183
 #, c-format
 msgid "Error: could not connect to the session manager\n"
 msgstr ""
 
-#: ../gnome-session/gnome-session-remove.c:197
+#: ../cinnamon-session/cinnamon-session-remove.c:197
 #, c-format
 msgid "Currently registered clients:\n"
 msgstr ""
 
-#: ../gnome-session/gnome-session-remove.c:207
+#: ../cinnamon-session/cinnamon-session-remove.c:207
 #, c-format
 msgid "Couldn't find program %s in session\n"
 msgstr ""
 
 #. At least try to tell the user something.
-#: ../gnome-session/ice.c:355
+#: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
 "The GNOME session manager cannot start properly.  Please report this as a "
@@ -313,7 +313,7 @@ msgid ""
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
 
-#: ../gnome-session/ice.c:514
+#: ../cinnamon-session/ice.c:514
 #, c-format
 msgid ""
 "The GNOME session manager was unable to lock the file '%s'.  Please report "
@@ -322,7 +322,7 @@ msgid ""
 "ensuring that it is."
 msgstr ""
 
-#: ../gnome-session/ice.c:541
+#: ../cinnamon-session/ice.c:541
 #, c-format
 msgid ""
 "The GNOME session manager was unable to read the file: '%s'.  If this file "
@@ -330,7 +330,7 @@ msgid ""
 "in with the failsafe session and removing this file."
 msgstr ""
 
-#: ../gnome-session/ice.c:586
+#: ../cinnamon-session/ice.c:586
 #, c-format
 msgid ""
 "Could not write to file '%s'.  This file must be writable in order for GNOME "
@@ -338,80 +338,80 @@ msgid ""
 "this file.  Also make sure that the file's directory is writable."
 msgstr ""
 
-#: ../gnome-session/logout.c:392
+#: ../cinnamon-session/logout.c:392
 msgid "Are you sure you want to log out?"
 msgstr ""
 
-#: ../gnome-session/logout.c:409
+#: ../cinnamon-session/logout.c:409
 msgid "Remember running applications"
 msgstr ""
 
-#: ../gnome-session/logout.c:432
+#: ../cinnamon-session/logout.c:432
 msgid "Action"
 msgstr "Accion"
 
-#: ../gnome-session/logout.c:449
+#: ../cinnamon-session/logout.c:449
 msgid "_Log out"
 msgstr ""
 
-#: ../gnome-session/logout.c:456
+#: ../cinnamon-session/logout.c:456
 msgid "Sh_ut down"
 msgstr ""
 
-#: ../gnome-session/logout.c:464
+#: ../cinnamon-session/logout.c:464
 msgid "_Restart the computer"
 msgstr "_Tornar aviar l'ordenador"
 
-#: ../gnome-session/main.c:86
+#: ../cinnamon-session/main.c:86
 msgid "Specify a session name to load"
 msgstr "Especifica lo nom de la sesilha de cargar"
 
-#: ../gnome-session/main.c:86 ../gnome-session/gnome-session-save.c:48
+#: ../cinnamon-session/main.c:86 ../cinnamon-session/cinnamon-session-save.c:48
 msgid "NAME"
 msgstr "NOM"
 
-#: ../gnome-session/main.c:87
+#: ../cinnamon-session/main.c:87
 msgid "Only read saved sessions from the default.session file"
 msgstr "Legir sonque las sesilhas salvadas al fichièr default.session"
 
-#: ../gnome-session/main.c:88
+#: ../cinnamon-session/main.c:88
 msgid "Millisecond period spent waiting for clients to register (0=forever)"
 msgstr ""
 "Relambi d'espèra, en millisegondas, per que los clients se registren "
 "(0=indefiniament)"
 
-#: ../gnome-session/main.c:88 ../gnome-session/main.c:89
-#: ../gnome-session/main.c:90
+#: ../cinnamon-session/main.c:88 ../cinnamon-session/main.c:89
+#: ../cinnamon-session/main.c:90
 msgid "DELAY"
 msgstr ""
 
-#: ../gnome-session/main.c:89
+#: ../cinnamon-session/main.c:89
 msgid "Millisecond period spent waiting for clients to respond (0=forever)"
 msgstr ""
 "Relambi d'espèra, en millisegondas, per que los clients respondan "
 "(0=indefiniament)"
 
-#: ../gnome-session/main.c:90
+#: ../cinnamon-session/main.c:90
 msgid "Millisecond period spent waiting for clients to die (0=forever)"
 msgstr ""
 "Relambi d'espèra, en millisegondas, per que los clients moriscan "
 "(0=indefiniament)"
 
-#: ../gnome-session/main.c:166
+#: ../cinnamon-session/main.c:166
 msgid "This session is running as a privileged user"
 msgstr ""
 
-#: ../gnome-session/main.c:168
+#: ../cinnamon-session/main.c:168
 msgid ""
 "Running a session as a privileged user should be avoided for security "
 "reasons. If possible, you should log in as a normal user."
 msgstr ""
 
-#: ../gnome-session/main.c:172
+#: ../cinnamon-session/main.c:172
 msgid "_Continue"
 msgstr "_Contunhar"
 
-#: ../gnome-session/main.c:256
+#: ../cinnamon-session/main.c:256
 #, c-format
 msgid ""
 "The session might encounter issues if the computer clock is not properly "
@@ -420,24 +420,24 @@ msgid ""
 "Current date is <b>%s</b>."
 msgstr ""
 
-#: ../gnome-session/main.c:375
+#: ../cinnamon-session/main.c:375
 #, c-format
 msgid "Failed to launch time configuration tool: %s"
 msgstr "Impossible d'executar l'esplech de configuracion de l'ora : %s"
 
-#: ../gnome-session/main.c:406
+#: ../cinnamon-session/main.c:406
 msgid "The computer clock appears to be wrong"
 msgstr ""
 
-#: ../gnome-session/main.c:413
+#: ../cinnamon-session/main.c:413
 msgid "_Ignore"
 msgstr "_Ignorar"
 
-#: ../gnome-session/main.c:414
+#: ../cinnamon-session/main.c:414
 msgid "_Adjust the Clock"
 msgstr ""
 
-#: ../gnome-session/main.c:551
+#: ../cinnamon-session/main.c:551
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
@@ -450,208 +450,208 @@ msgstr ""
 "Se pòt benlèu adobar aqueste problèma en apondre\n"
 "%s al fichièr /etc/hosts."
 
-#: ../gnome-session/main.c:558
+#: ../cinnamon-session/main.c:558
 msgid "Log in Anyway"
 msgstr "Se connectar ça que la"
 
-#: ../gnome-session/main.c:559
+#: ../cinnamon-session/main.c:559
 msgid "Try Again"
 msgstr "Tornar ensajar"
 
-#: ../gnome-session/main.c:693
+#: ../cinnamon-session/main.c:693
 msgid "- Manage the GNOME session"
 msgstr "- Gerir la sesilha GNOME"
 
-#: ../gnome-session/manager.c:513
+#: ../cinnamon-session/manager.c:513
 msgid "Wait abandoned due to conflict."
 msgstr "L'espera s'es arrestada per causa d'un conflicte."
 
-#: ../gnome-session/manager.c:1021
+#: ../cinnamon-session/manager.c:1021
 #, c-format
 msgid "No response to the %s command."
 msgstr "Pas cap de responsa a la comanda %s."
 
-#: ../gnome-session/manager.c:1022
+#: ../cinnamon-session/manager.c:1022
 msgid "The program may be slow, stopped or broken."
 msgstr "Se pòt que lo programa siá alentit, arrestat o degalhat."
 
-#: ../gnome-session/manager.c:1023
+#: ../cinnamon-session/manager.c:1023
 msgid "You may wait for it to respond or remove it."
 msgstr "Podètz esperar sa responsa o lo suprimir."
 
-#: ../gnome-session/manager.c:1749
+#: ../cinnamon-session/manager.c:1749
 msgid "Restart abandoned due to failures."
 msgstr "Se tornèt pas lançar pr'amor d'errors."
 
-#: ../gnome-session/manager.c:1945
+#: ../cinnamon-session/manager.c:1945
 msgid "A session shutdown is in progress."
 msgstr "Sesilha a se tampar."
 
-#: ../gnome-session/gnome-session-save.c:48
+#: ../cinnamon-session/cinnamon-session-save.c:48
 msgid "Set the current session name"
 msgstr "Definir lo nom de la session activa"
 
-#: ../gnome-session/gnome-session-save.c:49
+#: ../cinnamon-session/cinnamon-session-save.c:49
 msgid "Kill session"
 msgstr "Tuar la sesilha"
 
-#: ../gnome-session/gnome-session-save.c:50
+#: ../cinnamon-session/cinnamon-session-save.c:50
 msgid "Use dialog boxes for errors"
 msgstr ""
 
-#: ../gnome-session/gnome-session-save.c:51
+#: ../cinnamon-session/cinnamon-session-save.c:51
 msgid "Do not require confirmation"
 msgstr "Demandar pas de confirmacion"
 
-#: ../gnome-session/gnome-session-save.c:149
-#: ../gnome-session/gnome-session-save.c:187
+#: ../cinnamon-session/cinnamon-session-save.c:149
+#: ../cinnamon-session/cinnamon-session-save.c:187
 msgid "Could not connect to the session manager"
 msgstr "Impossible de se connectar al gestionari de sesilhas"
 
-#: ../gnome-session/gnome-session-save.c:172
+#: ../cinnamon-session/cinnamon-session-save.c:172
 msgid "- Save the current session"
 msgstr "- Enregistrar la session activa"
 
-#: ../gnome-session/session-properties-capplet.c:154
+#: ../cinnamon-session/session-properties-capplet.c:154
 msgid "Save changes to the current session before closing?"
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:156
+#: ../cinnamon-session/session-properties-capplet.c:156
 msgid "If you don't save, changes will be discarded."
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:159
+#: ../cinnamon-session/session-properties-capplet.c:159
 msgid "_Close without Saving"
 msgstr "_Tampar sens enregistrar"
 
-#: ../gnome-session/session-properties-capplet.c:224
+#: ../cinnamon-session/session-properties-capplet.c:224
 msgid "Sessions Preferences"
 msgstr ""
 
 #. non-session managed startup programs
-#: ../gnome-session/session-properties-capplet.c:250
+#: ../cinnamon-session/session-properties-capplet.c:250
 msgid "Additional startup _programs:"
 msgstr "Programas adicionals de lançament :"
 
-#: ../gnome-session/session-properties-capplet.c:275
+#: ../cinnamon-session/session-properties-capplet.c:275
 msgid "Enabled"
 msgstr "Activat"
 
-#: ../gnome-session/session-properties-capplet.c:319
+#: ../cinnamon-session/session-properties-capplet.c:319
 msgid "Startup Programs"
 msgstr "Programas de lançament"
 
-#: ../gnome-session/session-properties-capplet.c:326
+#: ../cinnamon-session/session-properties-capplet.c:326
 msgid "Current Session"
 msgstr "Sesilha en cors"
 
 #. Autosave
-#: ../gnome-session/session-properties-capplet.c:337
+#: ../cinnamon-session/session-properties-capplet.c:337
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:353
+#: ../cinnamon-session/session-properties-capplet.c:353
 msgid "_Remember Currently Running Applications"
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:361
+#: ../cinnamon-session/session-properties-capplet.c:361
 msgid "Session Options"
 msgstr "Opcions de la sesilha"
 
-#: ../gnome-session/session-properties-capplet.c:457
+#: ../cinnamon-session/session-properties-capplet.c:457
 msgid "Your session has been saved."
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:500
+#: ../cinnamon-session/session-properties-capplet.c:500
 #, c-format
 msgid "could not connect to the session manager\n"
 msgstr ""
 
-#: ../gnome-session/session-properties-capplet.c:506
+#: ../cinnamon-session/session-properties-capplet.c:506
 #, c-format
 msgid "session manager does not support GNOME extensions\n"
 msgstr ""
 
-#: ../gnome-session/session-properties.c:51
+#: ../cinnamon-session/session-properties.c:51
 msgid "Remove the currently selected client from the session."
 msgstr "Suprimir lo client seleccionat de la sesilha."
 
-#: ../gnome-session/session-properties.c:57
+#: ../cinnamon-session/session-properties.c:57
 msgid "Apply changes to the current session"
 msgstr "Aplicar las modificacions a la sesilha en cors"
 
-#: ../gnome-session/session-properties.c:63
+#: ../cinnamon-session/session-properties.c:63
 msgid "The list of programs in the session."
 msgstr "La lista dels programas de la sesilha."
 
-#: ../gnome-session/session-properties.c:89
+#: ../cinnamon-session/session-properties.c:89
 msgid "Currently running _programs:"
 msgstr "_Programas en cors d'execucion :"
 
-#: ../gnome-session/splash-widget.c:44
+#: ../cinnamon-session/splash-widget.c:44
 msgid "Sawfish Window Manager"
 msgstr "Gestionari de fenèstras Sawfish"
 
-#: ../gnome-session/splash-widget.c:45
+#: ../cinnamon-session/splash-widget.c:45
 msgid "Metacity Window Manager"
 msgstr "Gestionari de fenèstras Metacity"
 
-#: ../gnome-session/splash-widget.c:46
+#: ../cinnamon-session/splash-widget.c:46
 msgid "Window Manager"
 msgstr "Gestionari de fenèstras"
 
-#: ../gnome-session/splash-widget.c:47
+#: ../cinnamon-session/splash-widget.c:47
 msgid "The Panel"
 msgstr "Lo panèl"
 
-#: ../gnome-session/splash-widget.c:48
+#: ../cinnamon-session/splash-widget.c:48
 msgid "Nautilus"
 msgstr "Nautilus"
 
-#: ../gnome-session/splash-widget.c:49
+#: ../cinnamon-session/splash-widget.c:49
 msgid "Desktop Settings"
 msgstr "Paramètres del burèu"
 
-#: ../gnome-session/startup-programs.c:348
+#: ../cinnamon-session/startup-programs.c:348
 msgid "No description"
 msgstr "Pas de descripcion"
 
-#: ../gnome-session/startup-programs.c:409
+#: ../cinnamon-session/startup-programs.c:409
 msgid "Select Command"
 msgstr ""
 
-#: ../gnome-session/startup-programs.c:471
+#: ../cinnamon-session/startup-programs.c:471
 msgid "_Name:"
 msgstr "_Nom :"
 
-#: ../gnome-session/startup-programs.c:486
+#: ../cinnamon-session/startup-programs.c:486
 msgid "Co_mmand:"
 msgstr "_Comanda :"
 
-#: ../gnome-session/startup-programs.c:498
+#: ../cinnamon-session/startup-programs.c:498
 msgid "_Browse..."
 msgstr "_Examinar..."
 
-#: ../gnome-session/startup-programs.c:510
+#: ../cinnamon-session/startup-programs.c:510
 msgid "Comm_ent:"
 msgstr "Co_mentari :"
 
-#: ../gnome-session/startup-programs.c:538
+#: ../cinnamon-session/startup-programs.c:538
 msgid "The name of the startup program cannot be empty"
 msgstr ""
 
-#: ../gnome-session/startup-programs.c:540
+#: ../cinnamon-session/startup-programs.c:540
 msgid "The startup command cannot be empty"
 msgstr "La comanda de lançament pòt pas èsser voida"
 
-#: ../gnome-session/startup-programs.c:546
+#: ../cinnamon-session/startup-programs.c:546
 msgid "The startup command is not valid"
 msgstr ""
 
-#: ../gnome-session/startup-programs.c:603
+#: ../cinnamon-session/startup-programs.c:603
 msgid "Add Startup Program"
 msgstr ""
 
-#: ../gnome-session/startup-programs.c:647
+#: ../cinnamon-session/startup-programs.c:647
 msgid "Edit Startup Program"
 msgstr "Editar lo programa de lançament"

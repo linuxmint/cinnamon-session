@@ -1,6 +1,6 @@
-# translation of gnome-session.HEAD.ne.po to Nepali
-# Nepali translation of gnome-session
-# This file is distributed under the same license as the gnome-session package.
+# translation of cinnamon-session.HEAD.ne.po to Nepali
+# Nepali translation of cinnamon-session
+# This file is distributed under the same license as the cinnamon-session package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Pawan Chitrakar <pawan@nplinux.org>, 2004.
@@ -8,7 +8,7 @@
 # Nabin Gautam <nabin@mpp.org.np>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.ne\n"
+"Project-Id-Version: cinnamon-session.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-11-08 11:10+0545\n"

@@ -12,13 +12,13 @@ data/session-properties.desktop.in.in
 [type: gettext/glade]data/session-properties.ui
 egg/eggdesktopfile.c
 egg/eggsmclient.c
-gnome-session/gsm-inhibit-dialog.c
-gnome-session/gsm-logout-dialog.c
-gnome-session/gsm-fail-whale-dialog.c
-gnome-session/gsm-process-helper.c
-gnome-session/gsm-manager.c
-gnome-session/gsm-xsmp-client.c
-gnome-session/gsm-xsmp-server.c
-gnome-session/gsm-util.c
-gnome-session/main.c
-tools/gnome-session-quit.c
+cinnamon-session/gsm-inhibit-dialog.c
+cinnamon-session/gsm-logout-dialog.c
+cinnamon-session/gsm-fail-whale-dialog.c
+cinnamon-session/gsm-process-helper.c
+cinnamon-session/gsm-manager.c
+cinnamon-session/gsm-xsmp-client.c
+cinnamon-session/gsm-xsmp-server.c
+cinnamon-session/gsm-util.c
+cinnamon-session/main.c
+tools/cinnamon-session-quit.c

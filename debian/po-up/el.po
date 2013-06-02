@@ -1,5 +1,5 @@
 # translation of el.po to Greek
-# gnome-session Greek PO file.
+# cinnamon-session Greek PO file.
 # Copyright (C) 1999, 2000, 2001, 2002, 2003, 2005, 2006 Free Software Foundation, Inc.
 #
 # Comment: Most of the work done by Spiros (around 600 messages).
@@ -10,7 +10,7 @@
 # Comment: Simos did 2 new/unfuzzy 8.
 # Comment: Simos did 6 new/unfuzzy 8.
 # Comment: Simos did 2 new/unfuzzy 5.
-# Split from gnome-core as gnome-session.
+# Split from gnome-core as cinnamon-session.
 # kostas: 10Dec2002, updated translation for Gnome 2.1x
 # kostas: 26Jan2003, one more update.
 # kostas:03Aug2003, updated translation for Gnome2.4

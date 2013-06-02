@@ -1,4 +1,4 @@
-# translation of gnome-session.HEAD.mk.po to Macedonian
+# translation of cinnamon-session.HEAD.mk.po to Macedonian
 # Copyright (C) 2002, 2006, 2007, 2008 Free Software Foundation, Inc.
 #
 # Ivan Stojmirov<stojmir@linux.net.mk>, 2002.
@@ -7,7 +7,7 @@
 # Arangel Angov <arangel@linux.net.mk>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.mk\n"
+"Project-Id-Version: cinnamon-session.HEAD.mk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-03 23:20+0000\n"
 "PO-Revision-Date: 2008-09-25 18:28+0200\n"
@@ -64,7 +64,7 @@ msgstr "Програма"
 msgid "Sessions Preferences"
 msgstr "Преференци за сесијата"
 
-#: ../capplet/main.c:37 ../gnome-session/main.c:501
+#: ../capplet/main.c:37 ../cinnamon-session/main.c:501
 msgid "Version of this application"
 msgstr "Верзија на апликацијата"
 
@@ -100,33 +100,33 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Оваа сесија Ве најавува во GNOME"
 
-#: ../data/gnome-session.schemas.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
 msgstr "Стандардна сесија"
 
-#: ../data/gnome-session.schemas.in.h:2
+#: ../data/cinnamon-session.schemas.in.h:2
 msgid "File Manager"
 msgstr "Менаџер за датотеки"
 
-#: ../data/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: ../data/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
-"Доколку е вклучено, gnome-session ќе го извести корисникот пред да ја "
+"Доколку е вклучено, cinnamon-session ќе го извести корисникот пред да ја "
 "прекине сесијата."
 
-#: ../data/gnome-session.schemas.in.h:4
+#: ../data/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
-"Доколку е вклучено, gnome-session ќе ја зачува сесијата автоматски. Инаку, "
+"Доколку е вклучено, cinnamon-session ќе ја зачува сесијата автоматски. Инаку, "
 "дијалогот за одјавување ќе има опција за зачувување на сесијата."
 
-#: ../data/gnome-session.schemas.in.h:5
+#: ../data/cinnamon-session.schemas.in.h:5
 msgid "List of applications that are part of the default session."
 msgstr "Листа на апликации кои што се дел од стандардната сесија."
 
-#: ../data/gnome-session.schemas.in.h:6
+#: ../data/cinnamon-session.schemas.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/desktop/gnome/session/required-components\".) The "
@@ -140,41 +140,41 @@ msgstr ""
 "компоненти од сесијата и менаџерот за сесии автоматски ги додава "
 "компонентите назад во сесијата ако истите бидат отстранети."
 
-#: ../data/gnome-session.schemas.in.h:7
+#: ../data/cinnamon-session.schemas.in.h:7
 msgid "Logout prompt"
 msgstr "Дијалог за одјавување"
 
-#: ../data/gnome-session.schemas.in.h:8
+#: ../data/cinnamon-session.schemas.in.h:8
 msgid "Panel"
 msgstr "Панел"
 
-#: ../data/gnome-session.schemas.in.h:9
+#: ../data/cinnamon-session.schemas.in.h:9
 msgid "Preferred Image to use for login splash screen"
 msgstr ""
 "Преферирана слика која ќе се користи за поздравниот екран при најава во "
 "работната околина GNOME"
 
-#: ../data/gnome-session.schemas.in.h:10
+#: ../data/cinnamon-session.schemas.in.h:10
 msgid "Required session components"
 msgstr "Потребни компоненти за сесијата"
 
-#: ../data/gnome-session.schemas.in.h:11
+#: ../data/cinnamon-session.schemas.in.h:11
 msgid "Save sessions"
 msgstr "Зачувај сесии"
 
-#: ../data/gnome-session.schemas.in.h:12
+#: ../data/cinnamon-session.schemas.in.h:12
 msgid "Selected option in the log out dialog"
 msgstr "Одбрана опција во дијалогот за одјава"
 
-#: ../data/gnome-session.schemas.in.h:13
+#: ../data/cinnamon-session.schemas.in.h:13
 msgid "Show the splash screen"
 msgstr "Прикажи го поздравниот екран"
 
-#: ../data/gnome-session.schemas.in.h:14
+#: ../data/cinnamon-session.schemas.in.h:14
 msgid "Show the splash screen when the session starts up"
 msgstr "Прикажи го поздравниот екран при стартување на сесијата"
 
-#: ../data/gnome-session.schemas.in.h:15
+#: ../data/cinnamon-session.schemas.in.h:15
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -182,7 +182,7 @@ msgstr ""
 "Менаџерот за датотеки нуди икони за работната површина и ви дозволува да "
 "работите со Вашите зачувани датотеки."
 
-#: ../data/gnome-session.schemas.in.h:16
+#: ../data/cinnamon-session.schemas.in.h:16
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -190,7 +190,7 @@ msgstr ""
 "Панелот нуди лента на врвот и дното на екранот која што содржи менија, листа "
 "со прозорци, икони за статус, часовник итн."
 
-#: ../data/gnome-session.schemas.in.h:17
+#: ../data/cinnamon-session.schemas.in.h:17
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -199,7 +199,7 @@ msgstr ""
 "границите околу прозорците, и дозволува да го поместувата и да им ја "
 "менувате големината на прозорците."
 
-#: ../data/gnome-session.schemas.in.h:18
+#: ../data/cinnamon-session.schemas.in.h:18
 msgid ""
 "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
 "directories and image names are valid values. Changing this value will "
@@ -210,7 +210,7 @@ msgstr ""
 "Доколку ја промените оваа вредност, промените ќе се одразат при наредното "
 "најавување."
 
-#: ../data/gnome-session.schemas.in.h:19
+#: ../data/cinnamon-session.schemas.in.h:19
 msgid ""
 "This is the option that will be selected in the logout dialog, valid values "
 "are \"logout\" for logging out, \"shutdown\" for halting the system and "
@@ -220,7 +220,7 @@ msgstr ""
 "вредностисе „одјава“ за одјава, „исклучи“ за исклучување на системот и "
 "„рестартирај“ за рестартирање на системот."
 
-#: ../data/gnome-session.schemas.in.h:20 ../data/gnome-wm.desktop.in.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:20 ../data/gnome-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Менаџер за прозорци"
 
@@ -229,7 +229,7 @@ msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Некои програми сè уште работат:</b>"
 
 #: ../data/gsm-inhibit-dialog.glade.h:2
-#: ../gnome-session/gsm-inhibit-dialog.c:628
+#: ../cinnamon-session/gsm-inhibit-dialog.c:628
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
@@ -354,7 +354,7 @@ msgstr "Опции на менаџментот за сесии"
 msgid "Show Session Management options"
 msgstr "Покажи опции за менаџмент сесии"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -363,24 +363,24 @@ msgstr ""
 "Се појави проблем со серверот за конфигурација.\n"
 "(%s се исклучи со статус %d)"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:256
+#: ../cinnamon-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Иконата %s не е најдена"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:579
+#: ../cinnamon-session/gsm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "Непознато"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:627
+#: ../cinnamon-session/gsm-inhibit-dialog.c:627
 msgid "A program is still running:"
 msgstr "Програма сè уште работи:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:631
+#: ../cinnamon-session/gsm-inhibit-dialog.c:631
 msgid "Some programs are still running:"
 msgstr "Некои програми сè уште работат:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:632
+#: ../cinnamon-session/gsm-inhibit-dialog.c:632
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -388,39 +388,39 @@ msgstr ""
 "Чекам да завршат програми.  Прекинувањето на овие програми може да "
 "предизвика загуба на податоци."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:860
+#: ../cinnamon-session/gsm-inhibit-dialog.c:860
 msgid "Switch User Anyway"
 msgstr "Сепак смени корисник"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:863
+#: ../cinnamon-session/gsm-inhibit-dialog.c:863
 msgid "Logout Anyway"
 msgstr "Сепак одјави ме"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:866
+#: ../cinnamon-session/gsm-inhibit-dialog.c:866
 msgid "Suspend Anyway"
 msgstr "Сепак суспендирај"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:869
+#: ../cinnamon-session/gsm-inhibit-dialog.c:869
 msgid "Hibernate Anyway"
 msgstr "Сепак хибернирај"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:872
+#: ../cinnamon-session/gsm-inhibit-dialog.c:872
 msgid "Shutdown Anyway"
 msgstr "Сепак исклучи"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:875
+#: ../cinnamon-session/gsm-inhibit-dialog.c:875
 msgid "Reboot Anyway"
 msgstr "Сепак рестартирај"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Lock Screen"
 msgstr "Заклучи екран"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Cancel"
 msgstr "Откажи"
 
-#: ../gnome-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/gsm-logout-dialog.c:283
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -438,7 +438,7 @@ msgstr[2] ""
 "Моментално сте најавени како \"%s\".\n"
 "Ќе бидете автоматски одјавени за %d секунди."
 
-#: ../gnome-session/gsm-logout-dialog.c:295
+#: ../cinnamon-session/gsm-logout-dialog.c:295
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -456,134 +456,134 @@ msgstr[2] ""
 "Моментално сте најавени како \"%s\".\n"
 "Овој систем автоматски ќе се исклучи за %d секунди."
 
-#: ../gnome-session/gsm-logout-dialog.c:371
+#: ../cinnamon-session/gsm-logout-dialog.c:371
 msgid "Log out of this system now?"
 msgstr "Да се одјавам од системот веднаш?"
 
-#: ../gnome-session/gsm-logout-dialog.c:377
+#: ../cinnamon-session/gsm-logout-dialog.c:377
 msgid "_Switch User"
 msgstr "_Смени корисник"
 
-#: ../gnome-session/gsm-logout-dialog.c:386
+#: ../cinnamon-session/gsm-logout-dialog.c:386
 msgid "_Log Out"
 msgstr "_Одјава"
 
-#: ../gnome-session/gsm-logout-dialog.c:392
+#: ../cinnamon-session/gsm-logout-dialog.c:392
 msgid "Shut down this system now?"
 msgstr "Да го исклучам системот веднаш?"
 
-#: ../gnome-session/gsm-logout-dialog.c:398
+#: ../cinnamon-session/gsm-logout-dialog.c:398
 msgid "S_uspend"
 msgstr "С_успендирај"
 
-#: ../gnome-session/gsm-logout-dialog.c:404
+#: ../cinnamon-session/gsm-logout-dialog.c:404
 msgid "_Hibernate"
 msgstr "_Хибернирај"
 
-#: ../gnome-session/gsm-logout-dialog.c:410
+#: ../cinnamon-session/gsm-logout-dialog.c:410
 msgid "_Restart"
 msgstr "_Рестартирај"
 
-#: ../gnome-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/gsm-logout-dialog.c:420
 msgid "_Shut Down"
 msgstr "_Исклучи"
 
-#: ../gnome-session/gsm-manager.c:923 ../gnome-session/gsm-manager.c:1539
+#: ../cinnamon-session/gsm-manager.c:923 ../cinnamon-session/gsm-manager.c:1539
 msgid "Not responding"
 msgstr "Не реагира"
 
-#: ../gnome-session/gsm-xsmp-client.c:975
+#: ../cinnamon-session/gsm-xsmp-client.c:975
 msgid "This program is blocking log out."
 msgstr "Оваа програма ја блокира одјавата."
 
-#: ../gnome-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/gsm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Одбивам нови врски од клиенти бидејќи сесијата се гаси\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/gsm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Не можам да креирак socket за ICE: %s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:139
+#: ../cinnamon-session/gsm-util.c:139
 #, c-format
 msgid "Unable to start login session (and unable connect to the X server)"
 msgstr ""
 "Не успеав да ја започнам сесијата за најава (и не успеав да се поврзам за X "
 "серверот)"
 
-#: ../gnome-session/main.c:497
+#: ../cinnamon-session/main.c:497
 msgid "Override standard autostart directories"
 msgstr "Запиши врз стандардните директориуми за автоматско стартување"
 
-#: ../gnome-session/main.c:498
+#: ../cinnamon-session/main.c:498
 msgid "GConf key used to lookup default session"
 msgstr "GConf клучот кој се користи за барање на стандардна сесија"
 
-#: ../gnome-session/main.c:499
+#: ../cinnamon-session/main.c:499
 msgid "Enable debugging code"
 msgstr "Вклучи код за дебагирање"
 
-#: ../gnome-session/main.c:500
+#: ../cinnamon-session/main.c:500
 msgid "Do not load user-specified applications"
 msgstr "Не вчитувај апликации одредени од корисникот"
 
-#: ../gnome-session/main.c:521
+#: ../cinnamon-session/main.c:521
 msgid " - the GNOME session manager"
 msgstr "- Менаџер за сесии за GNOME"
 
-#: ../splash/gnome-session-splash.c:291
+#: ../splash/cinnamon-session-splash.c:291
 msgid "- GNOME Splash Screen"
 msgstr "- Поздравен екран за GNOME"
 
-#: ../splash/gnome-session-splash.desktop.in.in.in.h:1
+#: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
 msgid "GNOME Splash Screen"
 msgstr "Поздравен екран за GNOME"
 
-#: ../tools/gnome-session-save.c:65
+#: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"
 msgstr "Постави го името на тековната сесија"
 
-#: ../tools/gnome-session-save.c:65
+#: ../tools/cinnamon-session-save.c:65
 msgid "NAME"
 msgstr "NAME"
 
-#: ../tools/gnome-session-save.c:66
+#: ../tools/cinnamon-session-save.c:66
 msgid "Log out"
 msgstr "Одјава"
 
-#: ../tools/gnome-session-save.c:67
+#: ../tools/cinnamon-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Одјави се со игнорирање на сите постоечки инхибитори"
 
-#: ../tools/gnome-session-save.c:68
+#: ../tools/cinnamon-session-save.c:68
 msgid "Show logout dialog"
 msgstr "Покажи дијалог за одјавување"
 
-#: ../tools/gnome-session-save.c:69
+#: ../tools/cinnamon-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "Покажи дијалог за исклучување"
 
-#: ../tools/gnome-session-save.c:70
+#: ../tools/cinnamon-session-save.c:70
 msgid "Kill session"
 msgstr "Отстрани сесија"
 
-#: ../tools/gnome-session-save.c:71
+#: ../tools/cinnamon-session-save.c:71
 msgid "Use dialog boxes for errors"
 msgstr "Користи дијалог полиња за грешки"
 
-#: ../tools/gnome-session-save.c:72
+#: ../tools/cinnamon-session-save.c:72
 msgid "Do not require confirmation"
 msgstr "Не барај потврда"
 
-#: ../tools/gnome-session-save.c:120 ../tools/gnome-session-save.c:130
+#: ../tools/cinnamon-session-save.c:120 ../tools/cinnamon-session-save.c:130
 msgid "Could not connect to the session manager"
 msgstr "Не може да се приклучи на менаџерот за сесии."
 
-#: ../tools/gnome-session-save.c:273
+#: ../tools/cinnamon-session-save.c:273
 msgid "Program called with conflicting options"
 msgstr "Програмата се повика со конфлитни опции"
 

@@ -6,7 +6,7 @@ if [ "$BASESTARTUP" = x-session-manager ]; then
     BASESTARTUP=$(basename $(readlink /etc/alternatives/x-session-manager))
 fi
 case "$BASESTARTUP" in
-  gnome-session*)
+  cinnamon-session*)
     GNOMERC=$HOME/.gnomerc
     if [ -r "$GNOMERC" ]; then
       . "$GNOMERC"

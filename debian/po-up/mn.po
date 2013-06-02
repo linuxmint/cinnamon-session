@@ -1,7 +1,7 @@
-# translation of gnome-session.gnome-2-4.po to Mongolian
-# translation of gnome-session.HEAD.po to Mongolian
+# translation of cinnamon-session.gnome-2-4.po to Mongolian
+# translation of cinnamon-session.HEAD.po to Mongolian
 # translation of mn.po to Mongolian
-# translation of gnome-session.HEAD.mn.po to Mongolian
+# translation of cinnamon-session.HEAD.mn.po to Mongolian
 # This file is distributed under the same license as the PACKAGE package.
 # SukhOchir <sukhochir@csms.edu.mn>,
 # Bayarsaihan <bijinhenemongol@yahoo.com>
@@ -12,7 +12,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.gnome-2-4\n"
+"Project-Id-Version: cinnamon-session.gnome-2-4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2003-12-26 22:00+0100\n"

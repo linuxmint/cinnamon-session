@@ -516,7 +516,7 @@ sm_client_xsmp_end_session (EggSMClient         *client,
     }
 
   /* xfce4-session will do the wrong thing if we pass SmSaveGlobal and
-   * the user chooses to save the session. But gnome-session will do
+   * the user chooses to save the session. But cinnamon-session will do
    * the wrong thing if we pass SmSaveBoth and the user chooses NOT to
    * save the session... Sigh.
    */

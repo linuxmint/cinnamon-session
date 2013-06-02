@@ -2,9 +2,9 @@
 # Taneem Ahmed <taneem@bengalinux.org>, 2003.
 # Khandakar Mujahidul Islam <suzan229@yahoo.com>, 2003-2005.
 # Runa Bhattacharjee <runab@fedoraproject.org>, 2008.
-# Bengali India translation of gnome-session.
+# Bengali India translation of cinnamon-session.
 # Copyright (C) 2003, 2006, 2008 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"

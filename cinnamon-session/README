@@ -11,7 +11,7 @@ represents an app resumed from the previous saved session.)
 
 Startup is divided into 6 phases (GsmSessionPhase):
 
-    * GSM_SESSION_PHASE_STARTUP covers gnome-session's internal
+    * GSM_SESSION_PHASE_STARTUP covers cinnamon-session's internal
       startup, which also includes starting gconfd and dbus-daemon (if
       it's not already running). Gnome-session starts up those
       explicitly because it needs them for its own purposes.
@@ -24,7 +24,7 @@ Startup is divided into 6 phases (GsmSessionPhase):
 
       Apps in this phase can make use of a D-Bus interface
       (org.gnome.SessionManager.Setenv) to set environment variables
-      in gnome-session's environment. This can be used for things like
+      in cinnamon-session's environment. This can be used for things like
       $GTK_MODULES, $GNOME_KEYRING_SOCKET, etc
 
     * GSM_SESSION_PHASE_WINDOW_MANAGER includes window managers and
@@ -54,7 +54,7 @@ of resumed apps.
 Running/Shutdown
 ----------------
 
-GSM_SESSION_PHASE_RUNNING is pretty similar to the old gnome-session;
+GSM_SESSION_PHASE_RUNNING is pretty similar to the old cinnamon-session;
 mostly it just tracks XSMP clients, and watches for
 SmRestartImmediately clients exiting (NOTE: THIS DOESN'T HAPPEN YET).
 

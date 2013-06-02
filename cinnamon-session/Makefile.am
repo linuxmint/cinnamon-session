@@ -1,4 +1,4 @@
-bin_PROGRAMS = gnome-session
+bin_PROGRAMS = cinnamon-session
 noinst_LTLIBRARIES = libgsmutil.la
 noinst_PROGRAMS = 		\
 	test-client-dbus	\
@@ -76,7 +76,7 @@ gnome_session_CPPFLAGS =			\
 	$(SYSTEMD_CFLAGS)			\
 	-I$(top_srcdir)/egg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
-	-DDATA_DIR=\""$(datadir)/gnome-session"\" \
+	-DDATA_DIR=\""$(datadir)/cinnamon-session"\" \
 	-DLIBEXECDIR=\"$(libexecdir)\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"	\
 	-DGCONF_SANITY_CHECK=\""$(GCONF_SANITY_CHECK)"\" \

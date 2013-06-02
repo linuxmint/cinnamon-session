@@ -1,7 +1,7 @@
 # Translation of oc.po to Occitan
-# Occitan translation of gnome-session.
+# Occitan translation of cinnamon-session.
 # Copyright (C) 2007 Free Software Foundation, Inc.
-# This file is released under the same license as the gnome-session package.
+# This file is released under the same license as the cinnamon-session package.
 #
 # Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
 msgid ""

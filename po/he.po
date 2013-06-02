@@ -1,5 +1,5 @@
-# translation of gnome-session.HEAD.he.po to Hebrew
-# translation of gnome-session.gnome-2-0.po to Hebrew
+# translation of cinnamon-session.HEAD.he.po to Hebrew
+# translation of cinnamon-session.gnome-2-0.po to Hebrew
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER.
 # Gil Osher <dolfin@rpg.org.il>, 2002, 2005.
@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.he\n"
+"Project-Id-Version: cinnamon-session.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 22:32+0300\n"
 "PO-Revision-Date: 2012-07-24 22:34+0200\n"
@@ -64,7 +64,7 @@ msgid "No description"
 msgstr "ללא תיאור"
 
 #: ../capplet/main.c:35
-#: ../gnome-session/main.c:294
+#: ../cinnamon-session/main.c:294
 msgid "Version of this application"
 msgstr "Version of this application"
 
@@ -86,12 +86,12 @@ msgid "This session logs you into GNOME"
 msgstr "הפעלה זאת מחברת אותך לשולחן העבודה GNOME"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
-#: ../gnome-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/gsm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ישנן תכניות שעדיין רצות:"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2
-#: ../gnome-session/gsm-inhibit-dialog.c:640
+#: ../cinnamon-session/gsm-inhibit-dialog.c:640
 msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
 msgstr "בהמתנה לסיום התכנית. הפרעה לתכנית עלולה לגרום לאבדן העבודה שלך."
 
@@ -207,134 +207,134 @@ msgstr "Session management options:"
 msgid "Show session management options"
 msgstr "Show session management options"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/gsm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "הסמל '%s' לא נמצא"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/gsm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/gsm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "ישנה תכנית שעדיין רצה:"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/gsm-inhibit-dialog.c:644
 msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
 msgstr "בהמתנה לסיום התכניות. הפרעה לתכניות עלולה לגרום לאיבוד העבודה שלך."
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "ה_חלפת משתמש בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "יציאה בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "השהייה בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/gsm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "מעבר למצב שינה בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/gsm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "כיבוי בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/gsm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "הפעלה מחדש בכל מקרה"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/gsm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "נעילת המסך"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/gsm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "ביטול"
 
 #. This string is shared with gsm-fail-whale-dialog.c
-#: ../gnome-session/gsm-logout-dialog.c:266
+#: ../cinnamon-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "בעוד שנייה אחת יתרחש ניתוק אוטומטי."
 msgstr[1] "בעוד %d שניות יתרחש ניתוק אוטומטי."
 
-#: ../gnome-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "בעוד שנייה אחת המערכת תכבה אוטומטית."
 msgstr[1] "המערכת תכבה אוטומטית בעוד %d שניות."
 
-#: ../gnome-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/gsm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "בעוד שנייה אחת המערכת תופעל מחדש אוטומטית."
 msgstr[1] "המערכת תופעל מחדש אוטומטית בעוד %d שניות."
 
-#: ../gnome-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "כרגע נכנסת תחת השם \"%s\"."
 
-#: ../gnome-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "האם להתנתק מהמערכת?"
 
-#: ../gnome-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ה_חלפת משתמש"
 
-#: ../gnome-session/gsm-logout-dialog.c:387
-#: ../gnome-session/gsm-fail-whale-dialog.c:337
-#: ../gnome-session/gsm-util.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
+#: ../cinnamon-session/gsm-util.c:389
 msgid "_Log Out"
 msgstr "_ניתוק"
 
-#: ../gnome-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "האם לכבות את המערכת כעת?"
 
-#: ../gnome-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "ה_שהייה"
 
-#: ../gnome-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "מ_צב שינה"
 
-#: ../gnome-session/gsm-logout-dialog.c:411
-#: ../gnome-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/gsm-logout-dialog.c:411
+#: ../cinnamon-session/gsm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "הפעלה מ_חדש"
 
-#: ../gnome-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_כיבוי"
 
-#: ../gnome-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/gsm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "האם להפעיל את המערכת מחדש כעת?"
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "אבוי!  משהו השתבש."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
 msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
 msgstr "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. נא ליצור קשר עם מנהל המערכת."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
 msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
 msgstr "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. ליתר ביטחון נוטרלו כל ההרחבות."
 
-#: ../gnome-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -342,11 +342,11 @@ msgstr ""
 "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה.\n"
 "נא לצאת ולנסות שוב."
 
-#: ../gnome-session/gsm-manager.c:1393
+#: ../cinnamon-session/gsm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "טעינת GNOME 3 נכשלה"
 
-#: ../gnome-session/gsm-manager.c:1394
+#: ../cinnamon-session/gsm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
@@ -356,12 +356,12 @@ msgstr ""
 "\n"
 "תקלה זו אירעה כפי הנראה כיוון שהמערכת שלך (או מנהל ההתקן של חומרת הגרפיקה שלך) אינה מסוגלת להפעיל את חווית GNOME 3 במלואה."
 
-#: ../gnome-session/gsm-manager.c:1396
+#: ../cinnamon-session/gsm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "מידע נוסף על אודות GNOME 3"
 
-#: ../gnome-session/gsm-manager.c:1493
-#: ../gnome-session/gsm-manager.c:2234
+#: ../cinnamon-session/gsm-manager.c:1493
+#: ../cinnamon-session/gsm-manager.c:2234
 msgid "Not responding"
 msgstr "אין תגובה"
 
@@ -369,88 +369,88 @@ msgstr "אין תגובה"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../gnome-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/gsm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "יישום השמור בזיכרון"
 
-#: ../gnome-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/gsm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "תכנית זו מונעת את היציאה."
 
-#: ../gnome-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/gsm-xsmp-server.c:326
 msgid "Refusing new client connection because the session is currently being shut down\n"
 msgstr "מסרב לחיבור לקוח חדש מכיון שההפעלה נמצאת במהלך כיבוי\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/gsm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "לא ניתן ליצור שקע ICE: ‏%s"
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:373
+#: ../cinnamon-session/gsm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Unable to start login session (and unable to connect to the X server)"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "Override standard autostart directories"
 msgstr "Override standard autostart directories"
 
-#: ../gnome-session/main.c:290
+#: ../cinnamon-session/main.c:290
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "Session to use"
 msgstr "הפעלה לשימוש"
 
-#: ../gnome-session/main.c:291
+#: ../cinnamon-session/main.c:291
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../gnome-session/main.c:292
+#: ../cinnamon-session/main.c:292
 msgid "Enable debugging code"
 msgstr "Enable debugging code"
 
-#: ../gnome-session/main.c:293
+#: ../cinnamon-session/main.c:293
 msgid "Do not load user-specified applications"
 msgstr "Do not load user-specified applications"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../gnome-session/main.c:296
+#: ../cinnamon-session/main.c:296
 msgid "Show the fail whale dialog for testing"
 msgstr "הצגת דו־שיח 'לוויתן הכשל'  לבדיקה"
 
-#: ../gnome-session/main.c:316
+#: ../cinnamon-session/main.c:316
 msgid " - the GNOME session manager"
 msgstr " - the GNOME session manager"
 
-#: ../tools/gnome-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Log out"
 
-#: ../tools/gnome-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "כיבוי"
 
-#: ../tools/gnome-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:55
 msgid "Reboot"
 msgstr "הפעלה מחדש"
 
-#: ../tools/gnome-session-quit.c:56
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "תוך התעלמות ממעקבים קיימים"
 
-#: ../tools/gnome-session-quit.c:57
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "אין לבקש אישור מהמשתמש"
 
-#: ../tools/gnome-session-quit.c:91
-#: ../tools/gnome-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91
+#: ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "לא ניתן להתחבר למנהל ההפעלה"
 
-#: ../tools/gnome-session-quit.c:203
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "התכנית נקראה עם אפשרויות סותרות"
 
@@ -513,12 +513,12 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgstr "File Manager"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
 
-#~ msgid "If enabled, gnome-session will save the session automatically."
-#~ msgstr "If enabled, gnome-session will save the session automatically."
+#~ msgid "If enabled, cinnamon-session will save the session automatically."
+#~ msgstr "If enabled, cinnamon-session will save the session automatically."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "List of applications that are part of the default session."
@@ -612,10 +612,10 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgstr "GNOME Splash Screen"
 
 #~ msgid ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "If enabled, gnome-session will save the session automatically. Otherwise, "
+#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 #~ "the logout dialog will have an option to save the session."
 
 #~ msgid ""
@@ -662,10 +662,10 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgstr "GNOME GUI Library + EggSMClient"
 
 #~ msgid ""
-#~ "The Window manager that gnome-session will start. Valid values are "
+#~ "The Window manager that cinnamon-session will start. Valid values are "
 #~ "\"metacity\" and \"compiz\"."
 #~ msgstr ""
-#~ "The Window manager that gnome-session will start. Valid values are "
+#~ "The Window manager that cinnamon-session will start. Valid values are "
 #~ "\"metacity\" and \"compiz\"."
 
 #~ msgid "Window Manager to start"
@@ -691,14 +691,14 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), gnome-session does not listen for connections on TCP "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 #~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "gnome-session must be restarted for this to take effect."
+#~ "cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), gnome-session does not listen for connections on TCP "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
 #~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "gnome-session must be restarted for this to take effect."
+#~ "cinnamon-session must be restarted for this to take effect."
 
 #~ msgid "_Order:"
 #~ msgstr "_סדר:"

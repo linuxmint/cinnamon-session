@@ -50,7 +50,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = gnome-session-properties$(EXEEXT)
+bin_PROGRAMS = cinnamon-session-properties$(EXEEXT)
 subdir = capplet
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/depcomp $(top_srcdir)/mkinstalldirs
@@ -75,7 +75,7 @@ gnome_session_properties_OBJECTS =  \
 	$(am_gnome_session_properties_OBJECTS)
 am__DEPENDENCIES_1 =
 gnome_session_properties_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-	$(top_builddir)/gnome-session/libgsmutil.la \
+	$(top_builddir)/cinnamon-session/libgsmutil.la \
 	$(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -320,7 +320,7 @@ top_srcdir = @top_srcdir@
 AM_CPPFLAGS = \
 	$(SESSION_PROPERTIES_CFLAGS)			\
 	$(GCONF_CFLAGS)					\
-	-I$(top_srcdir)/gnome-session			\
+	-I$(top_srcdir)/cinnamon-session			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"		\
 	$(DISABLE_DEPRECATED_CFLAGS)
@@ -341,7 +341,7 @@ gnome_session_properties_SOURCES = \
 
 gnome_session_properties_LDADD = \
 	$(SESSION_PROPERTIES_LIBS)			\
-	$(top_builddir)/gnome-session/libgsmutil.la 	\
+	$(top_builddir)/cinnamon-session/libgsmutil.la 	\
 	$(GCONF_LIBS)
 
 all: all-am
@@ -424,8 +424,8 @@ clean-binPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-gnome-session-properties$(EXEEXT): $(gnome_session_properties_OBJECTS) $(gnome_session_properties_DEPENDENCIES) $(EXTRA_gnome_session_properties_DEPENDENCIES) 
-	@rm -f gnome-session-properties$(EXEEXT)
+cinnamon-session-properties$(EXEEXT): $(gnome_session_properties_OBJECTS) $(gnome_session_properties_DEPENDENCIES) $(EXTRA_gnome_session_properties_DEPENDENCIES) 
+	@rm -f cinnamon-session-properties$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(gnome_session_properties_OBJECTS) $(gnome_session_properties_LDADD) $(LIBS)
 
 mostlyclean-compile:

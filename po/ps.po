@@ -1,10 +1,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Zabeeh Khan <zabeehkhan@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.head\n"
+"Project-Id-Version: cinnamon-session.head\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "session&component=general\n"
 "POT-Creation-Date: 2009-03-10 22:16+0000\n"
@@ -62,7 +62,7 @@ msgstr "کړنلار"
 msgid "Startup Applications Preferences"
 msgstr ""
 
-#: ../capplet/main.c:37 ../gnome-session/main.c:440
+#: ../capplet/main.c:37 ../cinnamon-session/main.c:440
 msgid "Version of this application"
 msgstr ""
 
@@ -90,29 +90,29 @@ msgstr "ګنوم"
 msgid "This session logs you into GNOME"
 msgstr "دا ناسته تاسو ګنوم ته ننباسي"
 
-#: ../data/gnome-session.schemas.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
 msgstr "تلواله ناسته"
 
-#: ../data/gnome-session.schemas.in.h:2
+#: ../data/cinnamon-session.schemas.in.h:2
 msgid "File Manager"
 msgstr "دوتنه سمبالګر"
 
-#: ../data/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: ../data/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:4
+#: ../data/cinnamon-session.schemas.in.h:4
 msgid ""
-"If enabled, gnome-session will save the session automatically. Otherwise, "
+"If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:5
+#: ../data/cinnamon-session.schemas.in.h:5
 msgid "List of applications that are part of the default session."
 msgstr ".د هغو کاريالونو لړ چې د تلوالې ناستې برخه دي"
 
-#: ../data/gnome-session.schemas.in.h:6
+#: ../data/cinnamon-session.schemas.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/desktop/gnome/session/required_components\"). The "
@@ -122,69 +122,69 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:7
+#: ../data/cinnamon-session.schemas.in.h:7
 msgid "Logout prompt"
 msgstr "وتون پارليکه"
 
-#: ../data/gnome-session.schemas.in.h:8
+#: ../data/cinnamon-session.schemas.in.h:8
 msgid "Panel"
 msgstr "پاڼه"
 
-#: ../data/gnome-session.schemas.in.h:9
+#: ../data/cinnamon-session.schemas.in.h:9
 msgid "Preferred Image to use for login splash screen"
 msgstr "د ننوتون پېلوونکې پردې لپاره د خوښې انځور"
 
-#: ../data/gnome-session.schemas.in.h:10
+#: ../data/cinnamon-session.schemas.in.h:10
 msgid "Required session components"
 msgstr "د ناستې اړين رغتوکي"
 
-#: ../data/gnome-session.schemas.in.h:11
+#: ../data/cinnamon-session.schemas.in.h:11
 msgid "Save sessions"
 msgstr "ناستې ساتل"
 
-#: ../data/gnome-session.schemas.in.h:12
+#: ../data/cinnamon-session.schemas.in.h:12
 msgid "Show the splash screen"
 msgstr "پېلوونکې پرده ښودل"
 
-#: ../data/gnome-session.schemas.in.h:13
+#: ../data/cinnamon-session.schemas.in.h:13
 msgid "Show the splash screen when the session starts up"
 msgstr "د ناستې د پېلېدو پر مهال پېلوونکې پرده ښودل"
 
-#: ../data/gnome-session.schemas.in.h:14
+#: ../data/cinnamon-session.schemas.in.h:14
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:15
+#: ../data/cinnamon-session.schemas.in.h:15
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:16
+#: ../data/cinnamon-session.schemas.in.h:16
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:17
+#: ../data/cinnamon-session.schemas.in.h:17
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:18
+#: ../data/cinnamon-session.schemas.in.h:18
 msgid ""
 "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
 "directories and image names are valid values. Changing this value will "
 "effect the next session login."
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:19
+#: ../data/cinnamon-session.schemas.in.h:19
 msgid "Time before session is considered idle"
 msgstr ""
 
-#: ../data/gnome-session.schemas.in.h:20 ../data/gnome-wm.desktop.in.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:20 ../data/gnome-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "کړکۍ سمبالګر"
 
@@ -193,7 +193,7 @@ msgid "<b>Some programs are still running:</b>"
 msgstr ""
 
 #: ../data/gsm-inhibit-dialog.glade.h:2
-#: ../gnome-session/gsm-inhibit-dialog.c:633
+#: ../cinnamon-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
@@ -310,213 +310,213 @@ msgstr "د ناستې سمبالونې غوراوي"
 msgid "Show Session Management options"
 msgstr "د ناستې سمبالونې غوراوي ښودل"
 
-#: ../gnome-session/gsm-gconf.c:106
+#: ../cinnamon-session/gsm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
 "(%s exited with status %d)"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:256
+#: ../cinnamon-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "انځورن ونه موندل شو '%s'"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:581
+#: ../cinnamon-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "ناپېژندلی"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:632
+#: ../cinnamon-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:636
+#: ../cinnamon-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:637
+#: ../cinnamon-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:865
+#: ../cinnamon-session/gsm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:868
+#: ../cinnamon-session/gsm-inhibit-dialog.c:868
 msgid "Logout Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:871
+#: ../cinnamon-session/gsm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/gsm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/gsm-inhibit-dialog.c:877
 msgid "Shutdown Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/gsm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr ""
 
-#: ../gnome-session/gsm-inhibit-dialog.c:888
+#: ../cinnamon-session/gsm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "پرده کولپول"
 
-#: ../gnome-session/gsm-inhibit-dialog.c:891
+#: ../cinnamon-session/gsm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "بندول"
 
-#: ../gnome-session/gsm-logout-dialog.c:284
+#: ../cinnamon-session/gsm-logout-dialog.c:284
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../gnome-session/gsm-logout-dialog.c:292
+#: ../cinnamon-session/gsm-logout-dialog.c:292
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../gnome-session/gsm-logout-dialog.c:324
+#: ../cinnamon-session/gsm-logout-dialog.c:324
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr ""
 
-#: ../gnome-session/gsm-logout-dialog.c:389
+#: ../cinnamon-session/gsm-logout-dialog.c:389
 msgid "Log out of this system now?"
 msgstr "دې غونډال نه دستي وتل غواړئ؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/gsm-logout-dialog.c:395
 msgid "_Switch User"
 msgstr "کارن ونجول_"
 
-#: ../gnome-session/gsm-logout-dialog.c:404
+#: ../cinnamon-session/gsm-logout-dialog.c:404
 msgid "_Log Out"
 msgstr "وتل_"
 
-#: ../gnome-session/gsm-logout-dialog.c:410
+#: ../cinnamon-session/gsm-logout-dialog.c:410
 msgid "Shut down this system now?"
 msgstr "دا غونډال دستي ګلول غواړئ؟"
 
-#: ../gnome-session/gsm-logout-dialog.c:416
+#: ../cinnamon-session/gsm-logout-dialog.c:416
 msgid "S_uspend"
 msgstr ""
 
-#: ../gnome-session/gsm-logout-dialog.c:422
+#: ../cinnamon-session/gsm-logout-dialog.c:422
 msgid "_Hibernate"
 msgstr "پرکالول_"
 
-#: ../gnome-session/gsm-logout-dialog.c:428
+#: ../cinnamon-session/gsm-logout-dialog.c:428
 msgid "_Restart"
 msgstr "بياپېلول_"
 
-#: ../gnome-session/gsm-logout-dialog.c:438
+#: ../cinnamon-session/gsm-logout-dialog.c:438
 msgid "_Shut Down"
 msgstr "ګلول_"
 
-#: ../gnome-session/gsm-manager.c:948 ../gnome-session/gsm-manager.c:1634
+#: ../cinnamon-session/gsm-manager.c:948 ../cinnamon-session/gsm-manager.c:1634
 msgid "Not responding"
 msgstr ""
 
-#: ../gnome-session/gsm-xsmp-client.c:1149
+#: ../cinnamon-session/gsm-xsmp-client.c:1149
 msgid "This program is blocking log out."
 msgstr ""
 
-#: ../gnome-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/gsm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "د نوي پېرن نښلېدنه نه منل کيږي ځکه چې ناسته اوس ګليږي\n"
 
-#: ../gnome-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/gsm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../gnome-session/gsm-util.c:282
+#: ../cinnamon-session/gsm-util.c:282
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 
-#: ../gnome-session/main.c:436
+#: ../cinnamon-session/main.c:436
 msgid "Override standard autostart directories"
 msgstr ""
 
-#: ../gnome-session/main.c:437
+#: ../cinnamon-session/main.c:437
 msgid "GConf key used to lookup default session"
 msgstr ""
 
-#: ../gnome-session/main.c:438
+#: ../cinnamon-session/main.c:438
 msgid "Enable debugging code"
 msgstr ""
 
-#: ../gnome-session/main.c:439
+#: ../cinnamon-session/main.c:439
 msgid "Do not load user-specified applications"
 msgstr "کارن-پېژندلي کاريالونه نه پرانيستل"
 
-#: ../gnome-session/main.c:460
+#: ../cinnamon-session/main.c:460
 msgid " - the GNOME session manager"
 msgstr "د ګنوم ناستې سمبالګر - "
 
-#: ../splash/gnome-session-splash.c:315
+#: ../splash/cinnamon-session-splash.c:315
 msgid "- GNOME Splash Screen"
 msgstr "د ګنوم پېلوونکې پرده - "
 
-#: ../splash/gnome-session-splash.desktop.in.in.in.h:1
+#: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
 msgid "GNOME Splash Screen"
 msgstr "د ګنوم پېلوونکې پرده"
 
-#: ../tools/gnome-session-save.c:65
+#: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"
 msgstr "د اوسنۍ ناستې نوم امستل"
 
-#: ../tools/gnome-session-save.c:65
+#: ../tools/cinnamon-session-save.c:65
 msgid "NAME"
 msgstr "نوم"
 
-#: ../tools/gnome-session-save.c:66
+#: ../tools/cinnamon-session-save.c:66
 msgid "Log out"
 msgstr "وتل"
 
-#: ../tools/gnome-session-save.c:67
+#: ../tools/cinnamon-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr ""
 
-#: ../tools/gnome-session-save.c:68
+#: ../tools/cinnamon-session-save.c:68
 msgid "Show logout dialog"
 msgstr ""
 
-#: ../tools/gnome-session-save.c:69
+#: ../tools/cinnamon-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr ""
 
-#: ../tools/gnome-session-save.c:70
+#: ../tools/cinnamon-session-save.c:70
 msgid "Kill session"
 msgstr "ناسته وژل"
 
-#: ../tools/gnome-session-save.c:71
+#: ../tools/cinnamon-session-save.c:71
 msgid "Use dialog boxes for errors"
 msgstr "د تېروتنو لپاره کړکۍ کارول"
 
-#: ../tools/gnome-session-save.c:72
+#: ../tools/cinnamon-session-save.c:72
 msgid "Do not require confirmation"
 msgstr "باوريينه نه غوښتل"
 
-#: ../tools/gnome-session-save.c:121 ../tools/gnome-session-save.c:131
+#: ../tools/cinnamon-session-save.c:121 ../tools/cinnamon-session-save.c:131
 msgid "Could not connect to the session manager"
 msgstr "ناسته سمبالګر سره نه شي نښلېدی"
 
-#: ../tools/gnome-session-save.c:274
+#: ../tools/cinnamon-session-save.c:274
 msgid "Program called with conflicting options"
 msgstr ""
 

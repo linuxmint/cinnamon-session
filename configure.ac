@@ -1,6 +1,6 @@
 AC_INIT([gnome-session],
         [3.6.2],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-session])
+        [https://github.com/linuxmint/cinnamon-session/issues])
 
 AC_CONFIG_SRCDIR([gnome-session])
 AC_CONFIG_HEADERS([config.h])

@@ -9,7 +9,7 @@ export GNOME_DESKTOP_SESSION_ID
 emits desktop-start
 emits desktop-end
 
-exec gnome-session --session=$DESKTOP_SESSION
+exec cinnamon-session --session=$DESKTOP_SESSION
 
 post-start exec initctl emit desktop-start DESKTOP_SESSION=$DESKTOP_SESSION
 

@@ -122,7 +122,7 @@ gsm_util_get_empty_tmp_session_dir (void)
         gboolean exists;
 
         tmp = g_build_filename (g_get_user_config_dir (),
-                                "gnome-session",
+                                "cinnamon-session",
                                 "saved-session.new",
                                 NULL);
 
@@ -159,7 +159,7 @@ gsm_util_get_saved_session_dir (void)
 
                 _saved_session_dir =
                         g_build_filename (g_get_user_config_dir (),
-                                          "gnome-session",
+                                          "cinnamon-session",
                                           "saved-session",
                                           NULL);
 
@@ -340,7 +340,7 @@ gsm_util_get_current_desktop ()
         static char *current_desktop = NULL;
 
         /* Support XDG_CURRENT_DESKTOP environment variable; this can be used
-         * to abuse gnome-session in non-GNOME desktops. */
+         * to abuse cinnamon-session in non-Cinnamon desktops. */
         if (!current_desktop) {
                 const char *desktop;
 
@@ -580,7 +580,7 @@ gsm_util_get_computer_fail_icon_size (void)
         static GtkIconSize icon_size = 0;
 
         if (icon_size == 0)
-                icon_size = gtk_icon_size_register ("gnome-session-computer-fail", 128, 128);
+                icon_size = gtk_icon_size_register ("cinnamon-session-computer-fail", 128, 128);
 
         return icon_size;
 }

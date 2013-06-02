@@ -51,10 +51,10 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = gnome-session$(EXEEXT)
+bin_PROGRAMS = cinnamon-session$(EXEEXT)
 noinst_PROGRAMS = test-client-dbus$(EXEEXT) test-inhibit$(EXEEXT) \
 	test-process-helper$(EXEEXT)
-subdir = gnome-session
+subdir = cinnamon-session
 DIST_COMMON = README $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/depcomp $(top_srcdir)/mkinstalldirs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -433,7 +433,7 @@ gnome_session_CPPFLAGS = \
 	$(SYSTEMD_CFLAGS)			\
 	-I$(top_srcdir)/egg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
-	-DDATA_DIR=\""$(datadir)/gnome-session"\" \
+	-DDATA_DIR=\""$(datadir)/cinnamon-session"\" \
 	-DLIBEXECDIR=\"$(libexecdir)\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"	\
 	-DGCONF_SANITY_CHECK=\""$(GCONF_SANITY_CHECK)"\" \
@@ -501,9 +501,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu gnome-session/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu cinnamon-session/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu gnome-session/Makefile
+	  $(AUTOMAKE) --gnu cinnamon-session/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -590,8 +590,8 @@ clean-noinstPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-gnome-session$(EXEEXT): $(gnome_session_OBJECTS) $(gnome_session_DEPENDENCIES) $(EXTRA_gnome_session_DEPENDENCIES) 
-	@rm -f gnome-session$(EXEEXT)
+cinnamon-session$(EXEEXT): $(gnome_session_OBJECTS) $(gnome_session_DEPENDENCIES) $(EXTRA_gnome_session_DEPENDENCIES) 
+	@rm -f cinnamon-session$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(gnome_session_OBJECTS) $(gnome_session_LDADD) $(LIBS)
 test-client-dbus$(EXEEXT): $(test_client_dbus_OBJECTS) $(test_client_dbus_DEPENDENCIES) $(EXTRA_test_client_dbus_DEPENDENCIES) 
 	@rm -f test-client-dbus$(EXEEXT)

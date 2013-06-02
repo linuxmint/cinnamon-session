@@ -1,11 +1,11 @@
-# Bangla translation of gnome-session.
+# Bangla translation of cinnamon-session.
 # Copyright (C) 2003 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Taneem Ahmed <taneem@bengalinux.org>, 2003.
 # Khandakar Mujahidul Islam <suzan229@yahoo.com>, 2003-2005.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session\n"
+"Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2006-08-08 01:29+0600\n"

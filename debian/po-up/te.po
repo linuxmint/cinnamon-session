@@ -1,13 +1,13 @@
-# Telugu translation of gnome-session.
+# Telugu translation of cinnamon-session.
 # Copyright (C) 2007 Swecha Telugu Localisation team <localisation@swecha.org>
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Pavan Kumar <pavanpreetam@gmail.com>, 2007
 # Y.Kiran Chandra <kiran@swecha.net>, 2007
 # J.Bharat Kumar <jonnalagaddabharat@gmail.com>, 2007
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.x\n"
+"Project-Id-Version: cinnamon-session 2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2007-07-19 13:59+0530\n"

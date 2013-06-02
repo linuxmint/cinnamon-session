@@ -1,13 +1,13 @@
-# translation of gnome-session.HEAD.bs.po to Bosnian
-# Bosnian translation of gnome-session.
+# translation of cinnamon-session.HEAD.bs.po to Bosnian
+# Bosnian translation of cinnamon-session.
 # Copyright (C) 2002
-# This file is distributed under the same license as the gnome-session package.
+# This file is distributed under the same license as the cinnamon-session package.
 # Samir Marić <samir@lugbih.org>, 2002.
 # Kemal Sanjta <gomez@lugzdk.ba>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.bs\n"
+"Project-Id-Version: cinnamon-session.HEAD.bs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2004-07-28 02:50+0200\n"

@@ -1,12 +1,12 @@
-# Slovak translations for gnome-session package
-# Slovenské preklady pre balík gnome-session.
-# Copyright (C) 2011 THE gnome-session'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-session package.
+# Slovak translations for cinnamon-session package
+# Slovenské preklady pre balík cinnamon-session.
+# Copyright (C) 2011 THE cinnamon-session'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cinnamon-session package.
 # Slavko <linux@slavino.sk>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 3.0.2-4\n"
+"Project-Id-Version: cinnamon-session 3.0.2-4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2011-11-08 17:18+0100\n"

@@ -15,5 +15,5 @@ DEB_CONFIGURE_EXTRA_FLAGS += --localstatedir=/var/lib \
 
 LDFLAGS += -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
 
-install/gnome-session::
-	install -m 644 -D debian/gnome-session.user-session.upstart debian/gnome-session/usr/share/upstart/sessions/gnome-session.conf
+install/cinnamon-session::
+	install -m 644 -D debian/cinnamon-session.user-session.upstart debian/cinnamon-session/usr/share/upstart/sessions/cinnamon-session.conf

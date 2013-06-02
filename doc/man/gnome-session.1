@@ -1,15 +1,15 @@
 .\"
-.\" gnome-session manual page.
+.\" cinnamon-session manual page.
 .\" (C) 2000 Miguel de Icaza (miguel@helixcode.com)
 .\" (C) 2009-2010 Vincent Untz (vuntz@gnome.org)
 .\"
 .TH GNOME-SESSION 1 "GNOME"
 .SH NAME
-gnome-session \- Start the GNOME desktop environment
+cinnamon-session \- Start the GNOME desktop environment
 .SH SYNOPSIS
-.B gnome-session [\-a|\-\-autostart=DIR] [\-\-session=SESSION] [\-\-failsafe|\-f] [\-\-debug] [\-\-whale]
+.B cinnamon-session [\-a|\-\-autostart=DIR] [\-\-session=SESSION] [\-\-failsafe|\-f] [\-\-debug] [\-\-whale]
 .SH DESCRIPTION
-The \fIgnome-session\fP program starts up the GNOME desktop
+The \fIcinnamon-session\fP program starts up the GNOME desktop
 environment. This command is typically executed by your login manager
 (either gdm, xdm, or from your X startup scripts). It will load
 either your saved session, or it will provide a default session for the
@@ -18,15 +18,15 @@ installation on your system).
 .PP
 The default session is defined in \fBgnome.session\fP, a .desktop-like
 file that is looked for in
-\fB$XDG_CONFIG_HOME/gnome-session/sessions\fP,
-\fB$XDG_CONFIG_DIRS/gnome-session/sessions\fP and
-\fB$XDG_DATA_DIRS/gnome-session/sessions\fP.
+\fB$XDG_CONFIG_HOME/cinnamon-session/sessions\fP,
+\fB$XDG_CONFIG_DIRS/cinnamon-session/sessions\fP and
+\fB$XDG_DATA_DIRS/cinnamon-session/sessions\fP.
 .PP
-When saving a session, \fIgnome-session\fP saves the currently running
-applications in the \fB$XDG_CONFIG_HOME/gnome-session/saved-session\fP
+When saving a session, \fIcinnamon-session\fP saves the currently running
+applications in the \fB$XDG_CONFIG_HOME/cinnamon-session/saved-session\fP
 directory.
 .PP
-\fIgnome-session\fP is an X11R6 session manager. It can manage GNOME
+\fIcinnamon-session\fP is an X11R6 session manager. It can manage GNOME
 applications as well as any X11R6 SM compliant application.
 .SH OPTIONS
 The following options are supported:
@@ -77,24 +77,24 @@ DefaultProvider-notifications=notification-daemon
 .fi
 .PP
 The \fB.session\fP files are looked for in
-\fB$XDG_CONFIG_HOME/gnome-session/sessions\fP,
-\fB$XDG_CONFIG_DIRS/gnome-session/sessions\fP and
-\fB$XDG_DATA_DIRS/gnome-session/sessions\fP.
+\fB$XDG_CONFIG_HOME/cinnamon-session/sessions\fP,
+\fB$XDG_CONFIG_DIRS/cinnamon-session/sessions\fP and
+\fB$XDG_DATA_DIRS/cinnamon-session/sessions\fP.
 .SH ENVIRONMENT
-\fIgnome-session\fP sets several environment variables for the use of
+\fIcinnamon-session\fP sets several environment variables for the use of
 its child processes:
 .PP
 .B SESSION_MANAGER
 .IP
 This variable is used by session-manager aware clients to contact
-gnome-session.
+cinnamon-session.
 .PP
 .B DISPLAY
 .IP
 This variable is set to the X display being used by
-\fIgnome-session\fP. Note that if the \fI--display\fP option is used
+\fIcinnamon-session\fP. Note that if the \fI--display\fP option is used
 this might be different from the setting of the environment variable
-when gnome-session is invoked.
+when cinnamon-session is invoked.
 .SH FILES
 .PP
 .B $XDG_CONFIG_HOME/config/autostart
@@ -102,21 +102,18 @@ when gnome-session is invoked.
 .B /usr/share/gnome/autostart
 .IP
 The applications defined in those directories will be started on login.
-\fIgnome-session-properties(1)\fP can be used to easily configure them.
+\fIcinnamon-session-properties(1)\fP can be used to easily configure them.
 .PP
-.B $XDG_CONFIG_HOME/gnome-session/sessions
-.B $XDG_CONFIG_DIRS/gnome-session/sessions
-.B $XDG_DATA_DIRS/gnome-session/sessions
+.B $XDG_CONFIG_HOME/cinnamon-session/sessions
+.B $XDG_CONFIG_DIRS/cinnamon-session/sessions
+.B $XDG_DATA_DIRS/cinnamon-session/sessions
 .IP
 These directories contain the \fB.session\fP files that can be used
 with the \fI--session\fP option.
 .PP
-.B $XDG_CONFIG_HOME/gnome-session/saved-session
+.B $XDG_CONFIG_HOME/cinnamon-session/saved-session
 .IP
 This directory contains the list of applications of the saved session.
-.SH BUGS
-If you find bugs in the \fIgnome-session\fP program, please report
-these on https://bugzilla.gnome.org.
 .SH SEE ALSO
-.BR gnome-session-properties(1)
-.BR gnome-session-quit(1)
+.BR cinnamon-session-properties(1)
+.BR cinnamon-session-quit(1)

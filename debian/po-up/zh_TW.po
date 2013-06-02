@@ -1,18 +1,18 @@
-# Chinese (Taiwan) translation of gnome-session.
+# Chinese (Taiwan) translation of cinnamon-session.
 # Copyright (C) 1999, 2000, 2001, 2002, 2003 Free Software Foundation, Inc.
 # gnome-core:
 # Yuan-Chung Cheng <platin@linux.org.tw>, 1999.
 # Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000.
 # Chih-Wei Huang <cwhuang@linux.org.tw>, 2000.
 # Abel Cheung <abel@oaka.org>, 2001-2002.
-# gnome-session:
+# cinnamon-session:
 # Abel Cheung <abel@oaka.org>, 2002-2003.
 # Woodman Tuen <wmtuen@gmail.coim>, 2005-006.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2.21.91\n"
+"Project-Id-Version: cinnamon-session 2.21.91\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-02-07 22:52+0800\n"

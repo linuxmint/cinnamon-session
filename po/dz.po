@@ -1,10 +1,10 @@
-# Dzongkha translation of gnome-session
+# Dzongkha translation of cinnamon-session
 # Copyright @ 2006 Free Software Foundation, Inc.
 # Mindu Dorji
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 2-14 dz\n"
+"Project-Id-Version: cinnamon-session 2-14 dz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-25 04:22+0000\n"
 "PO-Revision-Date: 2008-09-25 12:24+0530\n"
@@ -18,51 +18,51 @@ msgstr ""
 "X-Poedit-Country: BHUTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../data/gnome-session.schemas.in.h:1
+#: ../data/cinnamon-session.schemas.in.h:1
 msgid "Allow TCP connections"
 msgstr "ཊི་སི་པི་ མཐུད་ལམ་འབད་བཅུག།"
 
-#: ../data/gnome-session.schemas.in.h:2
-msgid "For security reasons, on platforms which have _IceTcpTransNoListen() (XFree86 systems), gnome-session does not listen for connections on TCP ports. This option will allow connections from (authorized) remote hosts. gnome-session must be restarted for this to take effect."
+#: ../data/cinnamon-session.schemas.in.h:2
+msgid "For security reasons, on platforms which have _IceTcpTransNoListen() (XFree86 systems), cinnamon-session does not listen for connections on TCP ports. This option will allow connections from (authorized) remote hosts. cinnamon-session must be restarted for this to take effect."
 msgstr "སྲུང་སྐྱོབ་ཀྱི་རྒྱུ་མཚན་ལུ་བརྟེན་ཏེ་ _IceTcpTransNoListen() (XFree86 systems) ཡོད་པའི་ས་སྒོ་ཚུ་ནང་ ཇི་ནོམ་-ལཱ་ཐུན་གྱིས་ ཊི་སི་པི་འདྲེན་ལམ་གུ་ མཐུད་ནི་ལུ་ཉན་མི་བཏུབ། གདམ་ཁ་འདི་གིས་ ཐག་རིང་གི་ཧོསིཊི་ (གནང་བ་མེདཔ) ཚུ་ལས་ མཐུད་བཅུགཔ་ཨིན། འདི་ལུ་ནུས་པ་འཐོབ་བཅུག་ནི་ལུ་ ཇི་ནོམ་-ལཱ་ཡུན་དེ་ ལོག་འགོ་བཙུགས་དགོ།"
 
-#: ../data/gnome-session.schemas.in.h:3
-msgid "If enabled, gnome-session will prompt the user before ending a session."
+#: ../data/cinnamon-session.schemas.in.h:3
+msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr "ལྕོགས་ཅན་བཟོ་བ་ཅིན་ ཇི་ནོམ་ལཱ་ཡུན་གྱིས་ ལཱ་ཡུན་ཅིག་མཇུག་མ་བསྡུ་བའི་ཧེ་མར་ ལག་ལེན་པ་ལུ་ ནུས་སྤེལ་བྱིནམ་ཨིན།"
 
-#: ../data/gnome-session.schemas.in.h:4
-msgid "If enabled, gnome-session will save the session automatically. Otherwise, the logout dialog will have an option to save the session."
+#: ../data/cinnamon-session.schemas.in.h:4
+msgid "If enabled, cinnamon-session will save the session automatically. Otherwise, the logout dialog will have an option to save the session."
 msgstr "ལྕོགས་ཅན་བཟོ་བ་ཅིན་ ཇི་ནོམ་ལཱ་ཡུན་གྱིས་ ལཱ་ཡུན་དེ་རང་བཞིན་གྱིས་ སྲུངམ་ཨིན། དེ་མིན་པ་ཅིན་ ཕྱིར་བསྐྱོད་ཌའི་ལོག་དེ་ལུ་ ལཱ་ཡུན་འདི་ བསྲུང་ནིའི་་གདམ་ཁ་ཡོད།"
 
-#: ../data/gnome-session.schemas.in.h:5
+#: ../data/cinnamon-session.schemas.in.h:5
 msgid "Logout prompt"
 msgstr "ཕྱིར་བསྐྱོད་ཀྱི་ནུས་སྤེལ།"
 
-#: ../data/gnome-session.schemas.in.h:6
+#: ../data/cinnamon-session.schemas.in.h:6
 msgid "Preferred Image to use for login splash screen"
 msgstr "ནང་བསྐྱོད་ཀྱི་ སི་པེལེཤ་གསལ་གཞིའི་དོན་ལུ་ ལག་ལེན་འཐབ་ནིའི་ དགའ་གདམ་ཅན་གྱི་གཟུགས་བརྙན།"
 
-#: ../data/gnome-session.schemas.in.h:7
+#: ../data/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
 msgstr "ལཱ་ཡུན་ཚུ་སྲུངས།"
 
-#: ../data/gnome-session.schemas.in.h:8
+#: ../data/cinnamon-session.schemas.in.h:8
 msgid "Selected option in the log out dialog"
 msgstr "ཕྱིར་བསྐྱོད་ཌའི་ལོག་ནང་ སེལ་འཐུ་འབད་མི་གདམ་ཁ།"
 
-#: ../data/gnome-session.schemas.in.h:9
+#: ../data/cinnamon-session.schemas.in.h:9
 msgid "Show the splash screen"
 msgstr "སི་པེལེཤ་གསལ་གཞི་སྟོན།"
 
-#: ../data/gnome-session.schemas.in.h:10
+#: ../data/cinnamon-session.schemas.in.h:10
 msgid "Show the splash screen when the session starts up"
 msgstr "ལཱ་ཡུན་དེ་འགོ་བཙུགས་སྐབས་ སི་པེལེཤ་གསལ་གཞི་དེ་སྟོན།"
 
-#: ../data/gnome-session.schemas.in.h:11
+#: ../data/cinnamon-session.schemas.in.h:11
 msgid "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-directories and image names are valid values. Changing this value will effect the next session login."
 msgstr "འདི་$datadir/pixmaps/ སྣོད་ཐོ་ལུ་མ་བརྟེན་པའི་ འབྲེལ་ཡོད་འགྲུལ་ལམ་གྱི་བེ་ལུ་ཅིག་ཨིན། བེ་ལུ་འདི་བསྒྱུར་བཅོས་འབད་བ་ཅིན་ ལཱ་ཡུན་ཤུལ་མམ་ ནང་བསྐྱོད་འབད་ནི་ལུ་ ནུས་པ་འཐོབ་ཨིན།"
 
-#: ../data/gnome-session.schemas.in.h:12
+#: ../data/cinnamon-session.schemas.in.h:12
 msgid "This is the option that will be selected in the logout dialog, valid values are \"logout\" for logging out, \"shutdown\" for halting the system and \"restart\" for restarting the system."
 msgstr "འདི་ཕྱིར་བསྐྱོད་ཌའི་ལོག་ནང་ སེལ་འཐུ་འབད་ནིའི་ གདམ་ཁ་ཨིན། ནུས་ཅན་བེ་ལུསི་ཚུ་ ཕྱིར་བསྐྱོད་དོན་ལུ་ \"logout\" དང་ མཚམས་འཇོག་དོན་ལུ་\"shutdown\" དེ་ལས་ རིམ་ལུགས་ལོག་འགོ་བཙུགས་ནིའི་དོན་ལུ་\"shutdown\" ཨིན།"
 
@@ -82,114 +82,114 @@ msgstr "ཁྱོན་རའི་ལཱ་ཡུན་ རིམ་སྒྲ�
 msgid "Sessions"
 msgstr "ལཱ་ཡུན་ཚུ།"
 
-#: ../gnome-session/gsm-at-startup.c:39
+#: ../cinnamon-session/gsm-at-startup.c:39
 msgid "Assistive technology support has been requested for this session, but the accessibility registry was not found. Please ensure that the AT-SPI package is installed. Your session has been started without assistive technology support."
 msgstr "ཕན་ཐབས་ཅན་འཕྲུལ་རིག་རྒྱབ་སྐྱོར་འདི་ འ་ནི་ལཱ་ཡུན་གྱི་དོན་ལུ་ ཞུ་བ་འབད་ཡོད་ དེ་འབདཝ་ད་ འཛུལ་སྤྱོད་ཐོ་འགོད་འདི་ འཚོལ་མ་འཐོབ། ཨེ་ཊི་-ཨེསི་པི་ཨའི་ཐུམ་སྒྲིལ་འདི་ གཞི་བཙུགས་མ་འབདཝ་ཨིནམ་སྦེ་ ངེས་གཏན་བཟོ་གནང་། ཁྱོད་ཀྱི་ལཱ་ཡུན་འདི་ ཕན་ཐབས་ཅན་འཕྲུལ་རིག་རྒྱབསྐྱོར་མེད་པར་ འགོ་བཙུགས་ཡོད།"
 
-#: ../gnome-session/gsm-client-editor.c:123
+#: ../cinnamon-session/gsm-client-editor.c:123
 msgid "_Order:"
 msgstr "གོ་རིམ་:(_O)"
 
-#: ../gnome-session/gsm-client-editor.c:125
+#: ../cinnamon-session/gsm-client-editor.c:125
 msgid "The order in which applications are started in the session."
 msgstr "ལཱ་ཡུན་དེ་ནང་ གློག་རིམ་ཚུ་འགོ་བཙུགས་ཡོད་པའི་གོ་རིམ།"
 
-#: ../gnome-session/gsm-client-editor.c:133
+#: ../cinnamon-session/gsm-client-editor.c:133
 msgid "What happens to the application when it exits."
 msgstr "གློག་རིམ་ཕྱིར་ཐོན་འགྱོཝ་ད་ ག་ཅི་འབདཝ་འོང་།"
 
-#: ../gnome-session/gsm-client-editor.c:134
+#: ../cinnamon-session/gsm-client-editor.c:134
 msgid "_Style:"
 msgstr "བཟོ་རྣམ་:(_S)"
 
-#: ../gnome-session/gsm-client-list.c:44
+#: ../cinnamon-session/gsm-client-list.c:44
 msgid "Inactive"
 msgstr "ཤུགས་མེད།"
 
-#: ../gnome-session/gsm-client-list.c:44
+#: ../cinnamon-session/gsm-client-list.c:44
 msgid "Waiting to start or already finished."
 msgstr "འགོ་བཙུགས་ནི་ལུ་བསྒུག་བཞིན་པ་ ཡང་ན་ ཧེ་མ་ལས་རྫོགས་པ།།"
 
-#: ../gnome-session/gsm-client-list.c:46
+#: ../cinnamon-session/gsm-client-list.c:46
 msgid "Starting"
 msgstr "འགོ་བཙུགས་པའི་བསྒང་།"
 
-#: ../gnome-session/gsm-client-list.c:46
+#: ../cinnamon-session/gsm-client-list.c:46
 msgid "Started but has not yet reported state."
 msgstr "འགོ་བཙུགས་ནུག དེ་འབདཝ་ད་ ད་ཚུན་གནས་ལུགས་སྙན་ཞུ་མ་འབད་བས།"
 
-#: ../gnome-session/gsm-client-list.c:48
+#: ../cinnamon-session/gsm-client-list.c:48
 msgid "Running"
 msgstr "གཡོག་བཀོལ་དོ།"
 
-#: ../gnome-session/gsm-client-list.c:48
+#: ../cinnamon-session/gsm-client-list.c:48
 msgid "A normal member of the session."
 msgstr "ལཱ་ཡུན་གྱི་སྤྱིར་བཏང་འཐུས་མི།"
 
-#: ../gnome-session/gsm-client-list.c:50
+#: ../cinnamon-session/gsm-client-list.c:50
 msgid "Saving"
 msgstr "སྲུང་དོ།"
 
-#: ../gnome-session/gsm-client-list.c:50
+#: ../cinnamon-session/gsm-client-list.c:50
 msgid "Saving session details."
 msgstr "ལཱ་ཡུན་གྱི་རྒྱས་བཤད་ཚུ་སྲུང་དོ།"
 
 #. FIXME find better icon
-#: ../gnome-session/gsm-client-list.c:53
+#: ../cinnamon-session/gsm-client-list.c:53
 msgid "Unknown"
 msgstr "མ་ཤེསཔ།"
 
-#: ../gnome-session/gsm-client-list.c:53
+#: ../cinnamon-session/gsm-client-list.c:53
 msgid "State not reported within timeout."
 msgstr "ངལ་མཚམས་ནང་འཁོད་ གནས་ལུགས་སྙན་ཞུ་མ་འབདཝ།"
 
 #. FIXME find icon
-#: ../gnome-session/gsm-client-list.c:60
+#: ../cinnamon-session/gsm-client-list.c:60
 msgid "Normal"
 msgstr "སྤྱིར་བཏང་།"
 
-#: ../gnome-session/gsm-client-list.c:60
+#: ../cinnamon-session/gsm-client-list.c:60
 msgid "Unaffected by logouts but can die."
 msgstr "ཕྱིར་བསྐྱོད་ཀྱིས་གནོད་སྐྱོན་མ་བྱུང་། དེ་འབདཝ་ད་ ཤི་ནིའི་ཉེན་ཁ་ཡོད།"
 
-#: ../gnome-session/gsm-client-list.c:62
+#: ../cinnamon-session/gsm-client-list.c:62
 msgid "Restart"
 msgstr "ལོག་འགོ་བཙུགས།"
 
-#: ../gnome-session/gsm-client-list.c:62
+#: ../cinnamon-session/gsm-client-list.c:62
 msgid "Never allowed to die."
 msgstr "ནམ་ཡང་ཤི་མ་བཅུག"
 
-#: ../gnome-session/gsm-client-list.c:64
+#: ../cinnamon-session/gsm-client-list.c:64
 msgid "Trash"
 msgstr "ཕྱགས་ཧོད།"
 
-#: ../gnome-session/gsm-client-list.c:64
+#: ../cinnamon-session/gsm-client-list.c:64
 msgid "Discarded on logout and can die."
 msgstr "ཕྱིར་བསྐྱོད་སྐབས་ བཏོན་བཀོག་བ་ཅིན་ཤི་འོང་།"
 
-#: ../gnome-session/gsm-client-list.c:66
+#: ../cinnamon-session/gsm-client-list.c:66
 msgid "Settings"
 msgstr "གཞི་སྒྲིག་ཚུ།"
 
-#: ../gnome-session/gsm-client-list.c:66
+#: ../cinnamon-session/gsm-client-list.c:66
 msgid "Always started on every login."
 msgstr "ནང་བསྐྱོད་འབད་རེ་འབད་ཚེ་ ཨ་རྟག་རང་འགོ་བཙུགས།"
 
-#: ../gnome-session/gsm-client-list.c:190
+#: ../cinnamon-session/gsm-client-list.c:190
 msgid "Order"
 msgstr "གོ་རིམ།"
 
-#: ../gnome-session/gsm-client-list.c:197
+#: ../cinnamon-session/gsm-client-list.c:197
 msgid "Style"
 msgstr "བཟོ་རྣམ།"
 
-#: ../gnome-session/gsm-client-list.c:204
+#: ../cinnamon-session/gsm-client-list.c:204
 msgid "State"
 msgstr "གནས་ལུགས།"
 
-#: ../gnome-session/gsm-client-list.c:211
-#: ../gnome-session/session-properties-capplet.c:284
+#: ../cinnamon-session/gsm-client-list.c:211
+#: ../cinnamon-session/session-properties-capplet.c:284
 msgid "Program"
 msgstr "ལས་རིམ།"
 
@@ -201,7 +201,7 @@ msgstr "ལས་རིམ།"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../gnome-session/gsm-gsd.c:47
+#: ../cinnamon-session/gsm-gsd.c:47
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -211,7 +211,7 @@ msgstr ""
 "\n"
 "བརྗོད་དོན་དང་ སྒྲ་སྐད་ ཡང་ན་ རྒྱབ་གཞིའི་གཞི་སྒྲིག་ཚུ་བཟུམ་ ལ་ལོ་ཅིག་ ངེས་བདེན་སྦེ་ ལཱ་འབད་མི་བཏུབ་འོང་།"
 
-#: ../gnome-session/gsm-gsd.c:59
+#: ../cinnamon-session/gsm-gsd.c:59
 msgid ""
 "\n"
 "\n"
@@ -223,7 +223,7 @@ msgstr ""
 "འཛོལ་བ་མཐའ་མའི་འཕྲིན་དོན་དེ་ཨིན་པས: \n"
 "\n"
 
-#: ../gnome-session/gsm-gsd.c:64
+#: ../cinnamon-session/gsm-gsd.c:64
 msgid ""
 "\n"
 "\n"
@@ -233,132 +233,132 @@ msgstr ""
 "\n"
 "ཇི་ནོམ་གྱིས་ ཤུལ་ལས་ཁྱོད་ཀྱིས་ ནང་བསྐྱོད་འབདཝ་ད་ ད་རུང་ཡང་ གཞི་སྒྲིག་ཌེ་མཱོན་དེ་ ལོག་འགོ་བཙུགས་ནི་ལུ་ འབད་རྩོལ་བསྐྱེད་འོང་།"
 
-#: ../gnome-session/gsm-gsd.c:162
+#: ../cinnamon-session/gsm-gsd.c:162
 msgid "The Settings Daemon restarted too many times."
 msgstr "གཞི་སྒྲིག་ཌེ་མཱོན་དེ་ ལན་ཐེངས་མང་རབས་ཅིག་ ལོག་འགོ་བཙུགས་ནུག"
 
 #. Name is mandatory and might not be set by the caller
-#: ../gnome-session/gsm-keyfile.c:43
+#: ../cinnamon-session/gsm-keyfile.c:43
 msgid "No Name"
 msgstr "མིང་མིན་འདུག།"
 
-#: ../gnome-session/gnome-session-remove.c:50
+#: ../cinnamon-session/cinnamon-session-remove.c:50
 msgid "List registered clients, then exit"
 msgstr "ཐོ་བཀོད་འབད་ཡོད་མི་ཞབས་ཏོག་སྤྱོད་མི་ཚུ་ ཐོ་བཀོད་འབད་ དེ་ལས་ཕྱིར་ཐོན་འབད་"
 
-#: ../gnome-session/gnome-session-remove.c:52
+#: ../cinnamon-session/cinnamon-session-remove.c:52
 msgid "PROGRAM..."
 msgstr "ལས་རིམ་..."
 
-#: ../gnome-session/gnome-session-remove.c:176
+#: ../cinnamon-session/cinnamon-session-remove.c:176
 #, c-format
 msgid "You must specify at least one program to remove. You can list the programs with --list.\n"
 msgstr "ཁྱོད་ཀྱིས་རྩ་བསྐྲད་གཏང་ནིའི་དོན་ལས་ ཉུང་མཐའ་ལས་རིམ་གཅིག་ གསལ་བཀོད་འབད་དགོ  ཁྱོད་ཀྱིས་ལས་རིམ་ཚུ་ --ཐོ་ཡིག་དང་གཅིག་ཁར་ཐོ་བཀོད་འབད་ཚུགས།\n"
 
-#: ../gnome-session/gnome-session-remove.c:183
+#: ../cinnamon-session/cinnamon-session-remove.c:183
 #, c-format
 msgid "Error: could not connect to the session manager\n"
 msgstr "འཛོལ་བ་:ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་ལུ་མཐུད་མ་ཚུགས་\n"
 
-#: ../gnome-session/gnome-session-remove.c:197
+#: ../cinnamon-session/cinnamon-session-remove.c:197
 #, c-format
 msgid "Currently registered clients:\n"
 msgstr "ད་ལྟོ་ཐོ་བཀོད་འབད་ཡོད་མི་ཞབས་ཏོག་སྤྱོད་མི་ཚུ་:\n"
 
-#: ../gnome-session/gnome-session-remove.c:207
+#: ../cinnamon-session/cinnamon-session-remove.c:207
 #, c-format
 msgid "Couldn't find program %s in session\n"
 msgstr "ལཱ་ཡུན་ནང་ ལས་རིམ་ %s འཚོལ་མ་འཐོབ་\n"
 
 #. At least try to tell the user something.
-#: ../gnome-session/ice.c:355
+#: ../cinnamon-session/ice.c:355
 #, c-format
 msgid "The GNOME session manager cannot start properly.  Please report this as a GNOME bug. Please include this ICE failure message in the bug report:  '%s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་ ཚུལ་ལྡན་སྦེ་འགོ་བཙུགས་མི་ཚུགས། འ་ནི་འདི་ ཇི་ནོམ་རྐྱེན་ཅིག་སྦེ་སྙན་ཞུ་འབད་གནང་། '%s' : རྐྱེན་གྱི་སྙན་ཞུ་འདི་ནང་ འ་ནི་ཨའི་སི་ཨི་འཐུས་ཤོར་འཕྲིན་དོན་འདི་ གྲངས་སུ་བཙུགས་གནང། དེ་སྐབས་ ཁྱོད་ཀྱིས་འཐུས་ཤོར་ཉེན་སྲུང་ལག་ལེན་འཐབ་ཐོག་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོར་བསྐྱེད།"
 
-#: ../gnome-session/ice.c:514
+#: ../cinnamon-session/ice.c:514
 #, c-format
 msgid "The GNOME session manager was unable to lock the file '%s'.  Please report this as a GNOME bug.  Sometimes this error may occur if the file's directory is unwritable, you could try logging in via the failsafe session and ensuring that it is."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་གིས་ ཡིག་སྣོད་ '%s' ལྡེ་མིག་རྐྱབས་མ་ཚུགས། འ་ནི་འདི་ཇི་ནོམ་རྐྱེན་སྦེ་སྙན་ཞུ་འབད་གནང་། རེ་ཅིག་སྐབས་འ་ནི་འཛོལ་བ་འདི་ ཡིག་སྣོད་ཀྱི་སྣོད་ཐོ་འདི་འབྲི་མ་བཏུབ་ཨིན་པའི་སྐབས་ འབྱུང་འོང་  ཁྱོད་ཀྱིས་ངེས་གཏན་བཟོ་ཞིནམ་དང་ འཐུས་ཤོར་ཉེན་སྲུང་ལཱ་ཡུན་འདི་བརྒྱུད་དེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱེད་བཏུབ།"
 
-#: ../gnome-session/ice.c:541
+#: ../cinnamon-session/ice.c:541
 #, c-format
 msgid "The GNOME session manager was unable to read the file: '%s'.  If this file exists it must be readable by you for GNOME to work properly.  Try logging in with the failsafe session and removing this file."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་གིས་ ཡིག་སྣོད་ལྷག་མ་ཚུགས་: '%s'  འ་ནི་ཡིག་སྣོད་འདི་ཡོདཔ་ཨིན་པ་ཅིན་ ཚུལ་ལྡན་སྦེ་ལཱ་འབད་ནིའི་དོན་ལས་ ཇི་ནོམ་གྱི་དོན་ལུ་ ཁྱོད་ཀྱིས་ལྷག་བཏུབ་དགོ  འ་ནི་ཡིག་སྣོད་རྩ་བསྐྲད་གཏང་ཐོག་དང་ འཐུས་ཤོར་ཉེན་སྲུང་གིས་སྦེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱེད།"
 
-#: ../gnome-session/ice.c:586
+#: ../cinnamon-session/ice.c:586
 #, c-format
 msgid "Could not write to file '%s'.  This file must be writable in order for GNOME to function properly.  Try logging in with the failsafe session and removing this file.  Also make sure that the file's directory is writable."
 msgstr "ཡིག་སྣོད་ '%s' ལུ་འབྲི་མ་ཚུགས། འ་ནི་ཡིག་སྣོད་འདི་ ཇི་ནོམ་གྱི་དོན་ལུ་ཚུལ་ལྡན་ལཱ་འབད་ནིའི་དོན་ལས་ འབྲི་བཏུབ་དགོ  འ་ནི་ཡིག་སྣོད་རྩ་བསྐྲད་གཏང་ཐོག་དང་ འཐུས་ཤོར་ཉེན་སྲུང་ལཱ་ཡུན་གྱིས་སྦེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱོད། ཡིག་སྣོད་ཀྱི་སྣོད་ཐོ་འདི་ འབྲི་བཏུབ་ཨིནམ་ཡང་ངེས་གཏན་བཟོ།"
 
-#: ../gnome-session/logout.c:392
+#: ../cinnamon-session/logout.c:392
 msgid "Are you sure you want to log out?"
 msgstr "ཁྱོད་ཀྱིས་ངེས་པར་དུ་ ཕྱིར་བསྐྱོད་འབད་ནི་ཨིན་ན།"
 
-#: ../gnome-session/logout.c:409
+#: ../cinnamon-session/logout.c:409
 msgid "Remember running applications"
 msgstr "གཡོག་བཀོལ་བའི་བསྒང་གི་འཇུག་སྤྱོད་ཚུ་སེམས་ཁར་བཞག"
 
-#: ../gnome-session/logout.c:432
+#: ../cinnamon-session/logout.c:432
 msgid "Action"
 msgstr "བྱ་བ།"
 
-#: ../gnome-session/logout.c:449
+#: ../cinnamon-session/logout.c:449
 msgid "_Log out"
 msgstr "ཕྱིར་བསྐྱོད།(_L)"
 
-#: ../gnome-session/logout.c:456
+#: ../cinnamon-session/logout.c:456
 msgid "Sh_ut down"
 msgstr "སྒོ་བསྡམས།(_u)"
 
-#: ../gnome-session/logout.c:464
+#: ../cinnamon-session/logout.c:464
 msgid "_Restart the computer"
 msgstr "གློག་རིག་ལོག་འགོ་བཙུགས།(_R)"
 
-#: ../gnome-session/main.c:86
+#: ../cinnamon-session/main.c:86
 msgid "Specify a session name to load"
 msgstr "མངོན་གསལ་འབད་ནིའི་ ལཱ་ཡུན་གྱི་མིང་ཅིག་ གསལ་བཀོད་འབད།"
 
-#: ../gnome-session/main.c:86
-#: ../gnome-session/gnome-session-save.c:48
+#: ../cinnamon-session/main.c:86
+#: ../cinnamon-session/cinnamon-session-save.c:48
 msgid "NAME"
 msgstr "མིང་།"
 
-#: ../gnome-session/main.c:87
+#: ../cinnamon-session/main.c:87
 msgid "Only read saved sessions from the default.session file"
 msgstr "སྔོན་སྒྲིག་ལཱ་ཡུན་ཡིག་སྣོད་ནང་ལས་ སྲུང་བཞག་འབད་མི་ ལཱ་ཡུན་རྐྱངམ་གཅིག་ལྷག"
 
-#: ../gnome-session/main.c:88
+#: ../cinnamon-session/main.c:88
 msgid "Millisecond period spent waiting for clients to register (0=forever)"
 msgstr "ཡོངས་འབྲེལ་ཡན་ལག་ཚུ་གིས་ ཐོ་བཀོད་འབད་ནིའི་དོན་ལུ་ རྫོགས་ཡོད་པའི་དུས་ཡུན་ མི་ལི་སྐར་ཆ། (༠=རྟག་པར)"
 
-#: ../gnome-session/main.c:88
-#: ../gnome-session/main.c:89
-#: ../gnome-session/main.c:90
+#: ../cinnamon-session/main.c:88
+#: ../cinnamon-session/main.c:89
+#: ../cinnamon-session/main.c:90
 msgid "DELAY"
 msgstr "ཕྱིར་འགྱངས།"
 
-#: ../gnome-session/main.c:89
+#: ../cinnamon-session/main.c:89
 msgid "Millisecond period spent waiting for clients to respond (0=forever)"
 msgstr "ཡོངས་འབྲེལ་ཡན་ལག་ཚུ་གིས་ ངོས་ལན་བྱིན་ནིའི་དོན་ལུ་ རྫོགས་ཡོད་པའི་དུས་ཡུན་ མི་ལི་སྐར་ཆ། (༠=རྟག་པར)"
 
-#: ../gnome-session/main.c:90
+#: ../cinnamon-session/main.c:90
 msgid "Millisecond period spent waiting for clients to die (0=forever)"
 msgstr "ཡོངས་འབྲེལ་ཡན་ལག་ཚུ་ ཤི་བཅུག་ནིའི་དོན་ལུ་ རྫོགས་ཡོད་པའི་དུས་ཡུན་ མི་ལི་སྐར་ཆ། (༠=རྟག་པར)"
 
-#: ../gnome-session/main.c:166
+#: ../cinnamon-session/main.c:166
 msgid "This session is running as a privileged user"
 msgstr "ལཱ་ཡུན་འདི་ཁེ་དབང་ལག་ལེན་པ་སྦེ་འཇུག་སྤྱོད་འབད་དོ"
 
-#: ../gnome-session/main.c:168
+#: ../cinnamon-session/main.c:168
 msgid "Running a session as a privileged user should be avoided for security reasons. If possible, you should log in as a normal user."
 msgstr "ལཱ་ཡུན་ཁེ་དབང་ལག་ལེན་པ་སྦེ་འཇུག་སྤྱོད་སྲུང་སྐྱོབ་ཀྱི་རྒྱུ་མཚན་གི་དོན་ལུ་ཟུར་། གལ་སྲིད་ཚགས་པ་ཅིན་ ཁྱོད་སྤྱིར་གཏང་ལག་ལེན་སྦེ་ནང་བསྐྱོད་འབད།"
 
-#: ../gnome-session/main.c:172
+#: ../cinnamon-session/main.c:172
 msgid "_Continue"
 msgstr "འཕྲོ་མཐུད(_C)"
 
-#: ../gnome-session/main.c:256
+#: ../cinnamon-session/main.c:256
 #, c-format
 msgid ""
 "The session might encounter issues if the computer clock is not properly configured. Please consider adjusting it.\n"
@@ -369,24 +369,24 @@ msgstr ""
 "\n"
 "ད་ལྟོའི་ཚེས་གྲངས་འདི <b>%s</b>."
 
-#: ../gnome-session/main.c:375
+#: ../cinnamon-session/main.c:375
 #, c-format
 msgid "Failed to launch time configuration tool: %s"
 msgstr "ལག་ཆས་རིམ་སྒྲིག་ གསར་བཙུགས་འབད་བའི་སྐབས་འཐུས་ཤོར་བྱུང་ཡོདཔ: %s"
 
-#: ../gnome-session/main.c:406
+#: ../cinnamon-session/main.c:406
 msgid "The computer clock appears to be wrong"
 msgstr "གློག་རིག་ཆེ་འཁོར་འཛོལ་བ་འབྱུང་ནི་བཟུམ་འདུག།"
 
-#: ../gnome-session/main.c:413
+#: ../cinnamon-session/main.c:413
 msgid "_Ignore"
 msgstr "སྣང་མེད་སྦེ་བཞག(_I)"
 
-#: ../gnome-session/main.c:414
+#: ../cinnamon-session/main.c:414
 msgid "_Adjust the Clock"
 msgstr "ཆེ་འཁོར་བདེ་སྒྲིག་འབད(_A)"
 
-#: ../gnome-session/main.c:551
+#: ../cinnamon-session/main.c:551
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
@@ -399,209 +399,209 @@ msgstr ""
 "ཡིག་སྣོད་དང་ ཧོསིཊི་ལ་སོགས་པ་ལུ་%sཁ་སྐོང་བརྐྱབས་པའི་ཐོག་ལས་ \n"
 " དཀའ་ངལ་འདི་སེལ་ཚུགསཔ་འོང་།"
 
-#: ../gnome-session/main.c:558
+#: ../cinnamon-session/main.c:558
 msgid "Log in Anyway"
 msgstr "གང་རུང་སྦེ་ ནང་བསྐྱོད་འབད།"
 
-#: ../gnome-session/main.c:559
+#: ../cinnamon-session/main.c:559
 msgid "Try Again"
 msgstr "ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།"
 
-#: ../gnome-session/main.c:693
+#: ../cinnamon-session/main.c:693
 msgid "- Manage the GNOME session"
 msgstr "- ཇི་ནོམ་ལཱ་ཡུན་ འཛིན་སྐྱོང་འཐབ།"
 
-#: ../gnome-session/manager.c:513
+#: ../cinnamon-session/manager.c:513
 msgid "Wait abandoned due to conflict."
 msgstr "འཐབ་འཁྲུག་ལུ་བརྟེན་ཏེ་ བསྒུག་སྡོད་ནི་ འདོར་བཞག་ནུག"
 
-#: ../gnome-session/manager.c:1021
+#: ../cinnamon-session/manager.c:1021
 #, c-format
 msgid "No response to the %s command."
 msgstr "བརྡ་བཀོད་%s ལུ་ ལན་གསལ་མིན་འདུག"
 
-#: ../gnome-session/manager.c:1022
+#: ../cinnamon-session/manager.c:1022
 msgid "The program may be slow, stopped or broken."
 msgstr "ལས་རིམ་དེ་ ལྷོད་ཆ་ཞུགས་པའམ་ མཚམས་འཇོག་སོང་བ་ ཡང་ན་ རྒྱུན་ཆད་སོངཔ་འོང་ནི་མས།"
 
-#: ../gnome-session/manager.c:1023
+#: ../cinnamon-session/manager.c:1023
 msgid "You may wait for it to respond or remove it."
 msgstr "ཁྱོད་ཀྱིས་དེ་གི་ལན་གསལ་གྱི་དོན་ལུ་ བསྒུག་དགོཔ་འོང་། ཡང་ན་ རྩ་བསྐྲད་གཏང་།"
 
-#: ../gnome-session/manager.c:1749
+#: ../cinnamon-session/manager.c:1749
 msgid "Restart abandoned due to failures."
 msgstr "འཐུས་ཤོར་ལུ་བརྟེན་ཏེ་ ལོག་འགོ་བཙུགས་ནི་ འདོར་བཞག་ནུག"
 
-#: ../gnome-session/manager.c:1945
+#: ../cinnamon-session/manager.c:1945
 msgid "A session shutdown is in progress."
 msgstr "ལཱ་ཡུན་ཅིག་ སྒོ་བསྡམ་པའི་བསྒང་ཡོད།"
 
-#: ../gnome-session/gnome-session-save.c:48
+#: ../cinnamon-session/cinnamon-session-save.c:48
 msgid "Set the current session name"
 msgstr "ད་ལྟོའི་ལཱ་ཡུན་དེ་གི་མིང་ གཞི་སྒྲིག་འབད།"
 
-#: ../gnome-session/gnome-session-save.c:49
+#: ../cinnamon-session/cinnamon-session-save.c:49
 msgid "Kill session"
 msgstr "ལཱ་ཡུན་བསད།"
 
-#: ../gnome-session/gnome-session-save.c:50
+#: ../cinnamon-session/cinnamon-session-save.c:50
 msgid "Use dialog boxes for errors"
 msgstr "འཛོལ་བ་ཚུ་གི་དོན་ལུ་ ཌའི་ལོག་སྒྲོམ་ཚུ་ ལག་ལེན་འཐབ་"
 
-#: ../gnome-session/gnome-session-save.c:51
+#: ../cinnamon-session/cinnamon-session-save.c:51
 msgid "Do not require confirmation"
 msgstr "ངེས་དཔྱད་དགོས་མཁོ་མེད་"
 
-#: ../gnome-session/gnome-session-save.c:149
-#: ../gnome-session/gnome-session-save.c:187
+#: ../cinnamon-session/cinnamon-session-save.c:149
+#: ../cinnamon-session/cinnamon-session-save.c:187
 msgid "Could not connect to the session manager"
 msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་དང་གཅིག་ཁར་ མཐུད་མ་ཚུགས།"
 
-#: ../gnome-session/gnome-session-save.c:172
+#: ../cinnamon-session/cinnamon-session-save.c:172
 msgid "- Save the current session"
 msgstr "- ད་ལྟོའི་ལཱ་ཡུན་དེ་སྲུངས།"
 
-#: ../gnome-session/session-properties-capplet.c:154
+#: ../cinnamon-session/session-properties-capplet.c:154
 msgid "Save changes to the current session before closing?"
 msgstr "ཁ་མ་བསྡམ་པའི་ཧེ་མ་ ད་ལྟོའི་ལཱ་ཡུན་དེ་ལུ་ བསྒྱུར་བཅོས་ཚུ་ སྲུང་བཞག་འབད?"
 
-#: ../gnome-session/session-properties-capplet.c:156
+#: ../cinnamon-session/session-properties-capplet.c:156
 msgid "If you don't save, changes will be discarded."
 msgstr "ཁྱོད་ཀྱིས་སྲུང་བཞག་མ་འབད་བ་ཅིན་ བསྒྱུར་བཅོས་ཚུ་བཏོན་བཀོག་འོང་།"
 
-#: ../gnome-session/session-properties-capplet.c:159
+#: ../cinnamon-session/session-properties-capplet.c:159
 msgid "_Close without Saving"
 msgstr "སྲུང་བཞག་མ་འབད་བར་ཁ་བསྡམ་(_C)"
 
-#: ../gnome-session/session-properties-capplet.c:224
+#: ../cinnamon-session/session-properties-capplet.c:224
 msgid "Sessions Preferences"
 msgstr "ལཱ་ཡུན་གྱི་ དགའ་གདམ་ཚུ་ "
 
 #. non-session managed startup programs
-#: ../gnome-session/session-properties-capplet.c:250
+#: ../cinnamon-session/session-properties-capplet.c:250
 msgid "Additional startup _programs:"
 msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ཁ་སྐོང་།(_p)"
 
-#: ../gnome-session/session-properties-capplet.c:275
+#: ../cinnamon-session/session-properties-capplet.c:275
 msgid "Enabled"
 msgstr "ལྕོགས་ཅན་བཟོ་ཡོདཔ་"
 
-#: ../gnome-session/session-properties-capplet.c:319
+#: ../cinnamon-session/session-properties-capplet.c:319
 msgid "Startup Programs"
 msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ཚུ།"
 
-#: ../gnome-session/session-properties-capplet.c:326
+#: ../cinnamon-session/session-properties-capplet.c:326
 msgid "Current Session"
 msgstr "ད་ལྟོའི་ལཱ་ཡུན།"
 
 #. Autosave
-#: ../gnome-session/session-properties-capplet.c:337
+#: ../cinnamon-session/session-properties-capplet.c:337
 msgid "_Automatically remember running applications when logging out"
 msgstr "ཕྱིར་བསྐྱོད་འབད་བའི་སྐབས་ རང་བཞིན་གྱི་གཡོག་བཀོལ་བའི་སྒང་གི་འཇུག་སྤྱོད་སེམ་ཁར་བཞག(_A)"
 
-#: ../gnome-session/session-properties-capplet.c:353
+#: ../cinnamon-session/session-properties-capplet.c:353
 msgid "_Remember Currently Running Applications"
 msgstr "ད་ལྟོ་ གཡོག་བཀོལ་བའི་བསྒང་ཡོད་པའི་ འཇུག་སྤྱོད་ཚུ་སེམས་ཁར་བཞག་ "
 
-#: ../gnome-session/session-properties-capplet.c:361
+#: ../cinnamon-session/session-properties-capplet.c:361
 msgid "Session Options"
 msgstr "ལཱ་ཡུན་གྱི་གདམ་ཁ་ཚུ།"
 
-#: ../gnome-session/session-properties-capplet.c:457
+#: ../cinnamon-session/session-properties-capplet.c:457
 msgid "Your session has been saved."
 msgstr "ཁྱོད་ཀྱི་ལཱ་ཡུན་དེ་ སྲུང་བཞག་འབད་ཡོད།"
 
-#: ../gnome-session/session-properties-capplet.c:500
+#: ../cinnamon-session/session-properties-capplet.c:500
 #, c-format
 msgid "could not connect to the session manager\n"
 msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་ལུ་ མཐུད་མ་ཚུགས་\n"
 
-#: ../gnome-session/session-properties-capplet.c:506
+#: ../cinnamon-session/session-properties-capplet.c:506
 #, c-format
 msgid "session manager does not support GNOME extensions\n"
 msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་གིས་ ཇི་ནོམ་རྒྱ་བསྐྱེད་རྒྱབ་སྐྱོར་མི་འབད་\n"
 
-#: ../gnome-session/session-properties.c:51
+#: ../cinnamon-session/session-properties.c:51
 msgid "Remove the currently selected client from the session."
 msgstr "ད་ལྟོ་སེལ་འཐུ་འབད་ཡོད་མི་ ཡོངས་འབྲེལ་ཡན་ལག་དེ་ ལཱ་ཡུན་ནང་ལས་ རྩ་བསྐྲད་གཏང་།"
 
-#: ../gnome-session/session-properties.c:57
+#: ../cinnamon-session/session-properties.c:57
 msgid "Apply changes to the current session"
 msgstr "ད་ལྟོའི་ལཱ་ཡུན་དེ་ལུ་ བསྒྱུར་བཅོས་ཚུ་ ལག་ལེན་འཐབ།"
 
-#: ../gnome-session/session-properties.c:63
+#: ../cinnamon-session/session-properties.c:63
 msgid "The list of programs in the session."
 msgstr "ལཱ་ཡུན་ནང་གི་ ལས་རིམ་ཚུ་གི་ཐོ་ཡིག"
 
-#: ../gnome-session/session-properties.c:89
+#: ../cinnamon-session/session-properties.c:89
 msgid "Currently running _programs:"
 msgstr "ད་ལྟོ་གཡོག་བཀོལ་བའི་བསྒང་ཡོད་མི་ ལས་རིམ་ཚུ་:(_p)"
 
-#: ../gnome-session/splash-widget.c:44
+#: ../cinnamon-session/splash-widget.c:44
 msgid "Sawfish Window Manager"
 msgstr "སཱ་ཕིཤ་ སྒོ་སྒྲིག་འཛིན་སྐྱོང་པ།"
 
-#: ../gnome-session/splash-widget.c:45
+#: ../cinnamon-session/splash-widget.c:45
 msgid "Metacity Window Manager"
 msgstr "མེ་ཊ་སི་ཊི་ སྒོ་སྒྲིག་འཛིན་སྐྱོང་པ།"
 
-#: ../gnome-session/splash-widget.c:46
+#: ../cinnamon-session/splash-widget.c:46
 msgid "Window Manager"
 msgstr "སྒོ་སྒྲིག་འཛིན་སྐྱོང་པ།"
 
-#: ../gnome-session/splash-widget.c:47
+#: ../cinnamon-session/splash-widget.c:47
 msgid "The Panel"
 msgstr "པེ་ནཱལ།"
 
-#: ../gnome-session/splash-widget.c:48
+#: ../cinnamon-session/splash-widget.c:48
 msgid "Nautilus"
 msgstr "ནའུ་ཊི་ལཱསི།"
 
-#: ../gnome-session/splash-widget.c:49
+#: ../cinnamon-session/splash-widget.c:49
 msgid "Desktop Settings"
 msgstr "ཌེཀསི་ཊོཔ་གི་གཞི་སྒྲིག་ཚུ།"
 
-#: ../gnome-session/startup-programs.c:348
+#: ../cinnamon-session/startup-programs.c:348
 msgid "No description"
 msgstr "འགྲེལ་བཤད་མེད"
 
-#: ../gnome-session/startup-programs.c:409
+#: ../cinnamon-session/startup-programs.c:409
 msgid "Select Command"
 msgstr "བརྡ་བཀོད་ སེལ་འཐུ་འབད་ "
 
-#: ../gnome-session/startup-programs.c:471
+#: ../cinnamon-session/startup-programs.c:471
 msgid "_Name:"
 msgstr "མིང་:(_N)"
 
-#: ../gnome-session/startup-programs.c:486
+#: ../cinnamon-session/startup-programs.c:486
 msgid "Co_mmand:"
 msgstr "བརྡ་བཀོད་:(_M)"
 
-#: ../gnome-session/startup-programs.c:498
+#: ../cinnamon-session/startup-programs.c:498
 msgid "_Browse..."
 msgstr "བརྡ་འཚོལ(_B)"
 
-#: ../gnome-session/startup-programs.c:510
+#: ../cinnamon-session/startup-programs.c:510
 msgid "Comm_ent:"
 msgstr "བས་བཀོད་:(_E)"
 
-#: ../gnome-session/startup-programs.c:538
+#: ../cinnamon-session/startup-programs.c:538
 msgid "The name of the startup program cannot be empty"
 msgstr "འགོ་བཙུགས་ལས་རིམ་འདི་གི་མིང་ སྟོངམ་སྦེ་མི་བཏུབ་"
 
-#: ../gnome-session/startup-programs.c:540
+#: ../cinnamon-session/startup-programs.c:540
 msgid "The startup command cannot be empty"
 msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་བརྡ་བཀོད་དེ་ སྟོངམ་བཏོན་མི་ཚུགས་པས།"
 
-#: ../gnome-session/startup-programs.c:546
+#: ../cinnamon-session/startup-programs.c:546
 msgid "The startup command is not valid"
 msgstr "འགོ་བཙུགས་བརྡ་བཀོད་དེ་ ནུས་ལྡན་མེན་པས་"
 
-#: ../gnome-session/startup-programs.c:603
+#: ../cinnamon-session/startup-programs.c:603
 msgid "Add Startup Program"
 msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ ཁ་སྐོང་རྐྱབས།"
 
-#: ../gnome-session/startup-programs.c:647
+#: ../cinnamon-session/startup-programs.c:647
 msgid "Edit Startup Program"
 msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ ཞུན་དག་རྐྱབས།"
 

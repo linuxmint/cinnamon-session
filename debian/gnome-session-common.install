@@ -1,5 +1,5 @@
 usr/share/applications
 usr/share/icons
 usr/share/locale
-debian/55gnome-session_gnomerc etc/X11/Xsession.d
+debian/55cinnamon-session_gnomerc etc/X11/Xsession.d
 #debian/defaults.list etc/gnome

@@ -1,4 +1,4 @@
-# German translation file for gnome-session.
+# German translation file for cinnamon-session.
 # Copyright (C) 1998-2002, 2007 Free Software Foundation, Inc.
 # Carsten Schaar <nhadcasc@fs-maphy.uni-hannover.de>, 1998.
 # Matthias Warkus <mawa@iname.com>, 1999-2001,
@@ -15,8 +15,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session 3.0.2-4\n"
-"Report-Msgid-Bugs-To: gnome-session@packages.debian.org\n"
+"Project-Id-Version: cinnamon-session 3.0.2-4\n"
+"Report-Msgid-Bugs-To: cinnamon-session@packages.debian.org\n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2011-11-07 22:29-0200\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"

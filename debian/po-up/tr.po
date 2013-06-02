@@ -1,4 +1,4 @@
-# translation of gnome-session.HEAD.tr.po to Turkish
+# translation of cinnamon-session.HEAD.tr.po to Turkish
 # Turkish translation of gnome-core.
 # Copyright (C) 2001-2003, 2004, 2008 Free Software Foundation, Inc.
 #
@@ -10,7 +10,7 @@
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-session.HEAD.tr\n"
+"Project-Id-Version: cinnamon-session.HEAD.tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-04 20:12+0100\n"
 "PO-Revision-Date: 2008-02-02 13:22+0200\n"

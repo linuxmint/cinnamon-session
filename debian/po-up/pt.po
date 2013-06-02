@@ -1,6 +1,6 @@
-# gnome-session's Portuguese translation
-# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 gnome-session
-# Distributed under the same licence as the gnome-session package
+# cinnamon-session's Portuguese translation
+# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 cinnamon-session
+# Distributed under the same licence as the cinnamon-session package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008.
 #
