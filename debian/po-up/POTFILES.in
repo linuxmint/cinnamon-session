@@ -1,0 +1,2 @@
+[type: gettext/ini]patches/02_fallback_desktop.patch
+patches/10_session_save.patch

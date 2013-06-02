@@ -1,0 +1,24 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+capplet/gsm-app-dialog.c
+capplet/gsm-properties-dialog.c
+capplet/gsp-app.c
+capplet/main.c
+data/gnome-fallback.session.desktop.in.in
+data/gnome.session.desktop.in.in
+data/gnome.desktop.in
+[type: gettext/glade]data/gsm-inhibit-dialog.ui
+data/session-properties.desktop.in.in
+[type: gettext/glade]data/session-properties.ui
+egg/eggdesktopfile.c
+egg/eggsmclient.c
+gnome-session/gsm-inhibit-dialog.c
+gnome-session/gsm-logout-dialog.c
+gnome-session/gsm-fail-whale-dialog.c
+gnome-session/gsm-process-helper.c
+gnome-session/gsm-manager.c
+gnome-session/gsm-xsmp-client.c
+gnome-session/gsm-xsmp-server.c
+gnome-session/gsm-util.c
+gnome-session/main.c
+tools/gnome-session-quit.c

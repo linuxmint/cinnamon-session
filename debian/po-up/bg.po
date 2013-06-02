@@ -1,0 +1,48 @@
+# Bulgarian translation of gnome-session po-file.
+# Copyright (C) 2001, 2002, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Pavel Cholakov <pavel@linux.zonebg.com>, 2001.
+# Yanko Kaneti <yaneti@declera.com>, 2002.
+# Alexander Shopov <ash@contact.bg>, 2002, 2005, 2006, 2007.
+# Vladimir  Petkov <vpetkov@i-space.org>, 2004
+# Peter Slavov <pslavov@i-space.org>, 2004
+# Vladimir "Kaladan" Petkov <vpetkov@i-space.org>, 2005.
+# Yavor Doganov <yavor@gnu.org>, 2008.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session gnome-2-22\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2008-04-22 16:41+0300\n"
+"Last-Translator: Yavor Doganov <yavor@gnu.org>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Сесията ви е запазена."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Свързването с мениджъра на сесии е неуспешно"

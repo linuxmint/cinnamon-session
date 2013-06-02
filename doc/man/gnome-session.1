@@ -1,0 +1,122 @@
+.\"
+.\" gnome-session manual page.
+.\" (C) 2000 Miguel de Icaza (miguel@helixcode.com)
+.\" (C) 2009-2010 Vincent Untz (vuntz@gnome.org)
+.\"
+.TH GNOME-SESSION 1 "GNOME"
+.SH NAME
+gnome-session \- Start the GNOME desktop environment
+.SH SYNOPSIS
+.B gnome-session [\-a|\-\-autostart=DIR] [\-\-session=SESSION] [\-\-failsafe|\-f] [\-\-debug] [\-\-whale]
+.SH DESCRIPTION
+The \fIgnome-session\fP program starts up the GNOME desktop
+environment. This command is typically executed by your login manager
+(either gdm, xdm, or from your X startup scripts). It will load
+either your saved session, or it will provide a default session for the
+user as defined by the system administrator (or the default GNOME
+installation on your system).
+.PP
+The default session is defined in \fBgnome.session\fP, a .desktop-like
+file that is looked for in
+\fB$XDG_CONFIG_HOME/gnome-session/sessions\fP,
+\fB$XDG_CONFIG_DIRS/gnome-session/sessions\fP and
+\fB$XDG_DATA_DIRS/gnome-session/sessions\fP.
+.PP
+When saving a session, \fIgnome-session\fP saves the currently running
+applications in the \fB$XDG_CONFIG_HOME/gnome-session/saved-session\fP
+directory.
+.PP
+\fIgnome-session\fP is an X11R6 session manager. It can manage GNOME
+applications as well as any X11R6 SM compliant application.
+.SH OPTIONS
+The following options are supported:
+.TP
+.I "--autostart=DIR"
+Start all applications defined in \fIDIR\fP, instead of starting the
+applications defined in \fBgnome.session\fP, or via the \fI--session\fP
+option. Multiple \fI--autostart\fP options can be passed.
+.TP
+.I "--session=SESSION"
+Use the applications defined in \fBSESSION.session\fP. If not specified,
+\fBgnome.session\fP will be used.
+.TP
+.I "--failsafe"
+Run in fail-safe mode. User-specified applications will not be started.
+.TP
+.I "--debug"
+Enable debugging code.
+.TP
+.I "--whale"
+Show the fail whale in a dialog for debugging it.
+.SH SESSION DEFINITION
+Sessions are defined in \fB.session\fP files, that are using a .desktop-like
+format, with the following keys in the \fBGNOME Session\fP group:
+.TP
+.I Name
+Name of the session. This can be localized.
+.TP
+.I RequiredComponents
+List of component identifiers (desktop files) that are required by the session. The required components will always run in the session.
+.TP
+.I RequiredProviders
+List of task providers that are required by the session. A default provider for each task has to be defined with a \fIDefaultProvider-TASK\fP key; the provider can be overridden by required components, the saved session or autostart applications. The task providers will always run in the session.
+.TP
+.I DefaultProvider-TASK
+Identifier (desktop file) of the default provider for \fBTASK\fP. If no provider for \fBTASK\fP is found in the required components, the saved session and in the autostart applications, the default provider will be started.
+.PP
+Here is an example of a session definition:
+.PP
+.in +4n
+.nf
+[GNOME Session]
+Name=GNOME fallback
+RequiredComponents=gnome-panel;metacity;gnome-settings-daemon;
+RequiredProviders=notifications;
+DefaultProvider-notifications=notification-daemon
+.in
+.fi
+.PP
+The \fB.session\fP files are looked for in
+\fB$XDG_CONFIG_HOME/gnome-session/sessions\fP,
+\fB$XDG_CONFIG_DIRS/gnome-session/sessions\fP and
+\fB$XDG_DATA_DIRS/gnome-session/sessions\fP.
+.SH ENVIRONMENT
+\fIgnome-session\fP sets several environment variables for the use of
+its child processes:
+.PP
+.B SESSION_MANAGER
+.IP
+This variable is used by session-manager aware clients to contact
+gnome-session.
+.PP
+.B DISPLAY
+.IP
+This variable is set to the X display being used by
+\fIgnome-session\fP. Note that if the \fI--display\fP option is used
+this might be different from the setting of the environment variable
+when gnome-session is invoked.
+.SH FILES
+.PP
+.B $XDG_CONFIG_HOME/config/autostart
+.B $XDG_CONFIG_DIRS/config/autostart
+.B /usr/share/gnome/autostart
+.IP
+The applications defined in those directories will be started on login.
+\fIgnome-session-properties(1)\fP can be used to easily configure them.
+.PP
+.B $XDG_CONFIG_HOME/gnome-session/sessions
+.B $XDG_CONFIG_DIRS/gnome-session/sessions
+.B $XDG_DATA_DIRS/gnome-session/sessions
+.IP
+These directories contain the \fB.session\fP files that can be used
+with the \fI--session\fP option.
+.PP
+.B $XDG_CONFIG_HOME/gnome-session/saved-session
+.IP
+This directory contains the list of applications of the saved session.
+.SH BUGS
+If you find bugs in the \fIgnome-session\fP program, please report
+these on https://bugzilla.gnome.org.
+.SH SEE ALSO
+.BR gnome-session-properties(1)
+.BR gnome-session-quit(1)

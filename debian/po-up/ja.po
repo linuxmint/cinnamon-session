@@ -1,0 +1,49 @@
+# gnome-session ja.po.
+# Copyright (C) 1998-2008 Free Software Foundation, Inc.
+# Yukihiro Nakai <Nakai@abricot.co.jp>, 1998
+# Yasuyuki Furukawa <yasu@on.cs.keio.ac.jp>, 1999
+# Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 1999-2002
+# Yuusuke Tahara <tahara@gnome.gr.jp>, 2000
+# Shingo Akagaki <dora@kondara.org>, 2000
+# Akira TAGOH <tagoh@gnome.gr.jp>, 2001
+# Ryoichi INAGAKI <ryo1@bc.wakwak.com>, 2002
+# Satoru SATOH <ss@gnome.gr.jp>, 2006.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003-2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2008-02-28 23:36+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "セッションを保存しました。"
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "セッション・マネージャに接続できませんでした。"

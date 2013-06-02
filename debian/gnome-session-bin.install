@@ -1,0 +1,7 @@
+usr/bin/gnome-session*
+usr/lib/gnome-session*
+usr/share/gnome-session/*.ui
+usr/share/gnome-session/hardware-compatibility
+usr/share/man/man1
+usr/share/glib-2.0/schemas
+usr/share/GConf/gsettings

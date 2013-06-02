@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  configure|upgrade)
+    if [ -x /usr/lib/lightdm/lightdm-set-defaults ] ; then
+        /usr/lib/lightdm/lightdm-set-defaults --keep-old --session=ubuntu || true
+    fi
+  ;;
+esac
+
+#DEBHELPER#

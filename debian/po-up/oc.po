@@ -1,0 +1,43 @@
+# Translation of oc.po to Occitan
+# Occitan translation of gnome-session.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is released under the same license as the gnome-session package.
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: oc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2008-02-26 23:10+0100\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr ""
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Impossible de se connectar al gestionari de sesilhas"

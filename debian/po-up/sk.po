@@ -1,0 +1,43 @@
+# Slovak translations for gnome-session package
+# Slovenské preklady pre balík gnome-session.
+# Copyright (C) 2011 THE gnome-session'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-session package.
+# Slavko <linux@slavino.sk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session 3.0.2-4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2011-11-08 17:18+0100\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: slovenčina <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr "GNOME Klasické"
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr "Táto relácia vás prihlási do GNOME"
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Vaša relácia bola uložená."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr "Zlyhalo uloženie relácie"
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr "Nemožno sa pripojiť k zbernici relácie"
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Nemožno sa pripojiť so správcom relácie"

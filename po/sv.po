@@ -1,0 +1,544 @@
+# Swedish messages for gnome-session.
+# Copyright (C) 1998-2012 Free Software Foundation, Inc.
+# Martin Wahlen <mva@sbbs.se>, 1998.
+# Anders Carlsson <anders.carlsson@tordata.se>, 1999.
+# Andreas Hyden  <a.hyden@cyberpoint.se>, 2000.
+# Martin Norbäck <d95mback@dtek.chalmers.se>, 2000, 2001.
+# Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-02 20:52+0200\n"
+"PO-Revision-Date: 2012-09-02 20:54+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+
+#: ../capplet/gsm-app-dialog.c:120
+msgid "Select Command"
+msgstr "Välj kommando"
+
+#: ../capplet/gsm-app-dialog.c:193
+msgid "Add Startup Program"
+msgstr "Lägg till uppstartsprogram"
+
+#: ../capplet/gsm-app-dialog.c:197
+msgid "Edit Startup Program"
+msgstr "Redigera uppstartsprogram"
+
+#: ../capplet/gsm-app-dialog.c:484
+msgid "The startup command cannot be empty"
+msgstr "Uppstartsprogrammets kommando får inte vara tomt"
+
+#: ../capplet/gsm-app-dialog.c:490
+msgid "The startup command is not valid"
+msgstr "Uppstartsprogrammets kommando är inte giltigt"
+
+#: ../capplet/gsm-properties-dialog.c:518
+msgid "Enabled"
+msgstr "Aktiverat"
+
+#: ../capplet/gsm-properties-dialog.c:530
+msgid "Icon"
+msgstr "Ikon"
+
+#: ../capplet/gsm-properties-dialog.c:542
+msgid "Program"
+msgstr "Program"
+
+#: ../capplet/gsm-properties-dialog.c:746
+msgid "Startup Applications Preferences"
+msgstr "Inställningar för uppstartsprogram"
+
+#: ../capplet/gsp-app.c:274
+msgid "No name"
+msgstr "Inget namn"
+
+#: ../capplet/gsp-app.c:280
+msgid "No description"
+msgstr "Ingen beskrivning"
+
+#: ../capplet/main.c:35
+#: ../gnome-session/main.c:294
+msgid "Version of this application"
+msgstr "Version av detta program"
+
+#: ../capplet/main.c:61
+msgid "Could not display help document"
+msgstr "Kunde inte visa hjälpdokumentet"
+
+#: ../data/gnome-fallback.session.desktop.in.in.h:1
+msgid "GNOME fallback"
+msgstr "Fall tillbaka på GNOME"
+
+#: ../data/gnome.session.desktop.in.in.h:1
+#: ../data/gnome.desktop.in.h:1
+msgid "GNOME"
+msgstr "GNOME"
+
+#: ../data/gnome.desktop.in.h:2
+msgid "This session logs you into GNOME"
+msgstr "Denna session loggar in dig i GNOME"
+
+#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../gnome-session/gsm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr "Några program körs fortfarande:"
+
+#: ../data/gsm-inhibit-dialog.ui.h:2
+#: ../gnome-session/gsm-inhibit-dialog.c:640
+msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
+msgstr "Väntar på att programmet ska köras färdigt.  Avbryta programmet kan innebära att du förlorar data."
+
+#: ../data/session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr "Uppstartsprogram"
+
+#: ../data/session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Välj vilka program att starta när du loggar in"
+
+#: ../data/session-properties.ui.h:1
+msgid "Additional startup _programs:"
+msgstr "Ytterligare start_program:"
+
+#: ../data/session-properties.ui.h:2
+msgid "Startup Programs"
+msgstr "Uppstartsprogram"
+
+#: ../data/session-properties.ui.h:3
+msgid "_Automatically remember running applications when logging out"
+msgstr "Kom _automatiskt ihåg körande program vid utloggning"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Remember Currently Running Applications"
+msgstr "_Kom ihåg för närvarande körande program"
+
+#: ../data/session-properties.ui.h:5
+msgid "Options"
+msgstr "Alternativ"
+
+#: ../data/session-properties.ui.h:6
+msgid "Browse…"
+msgstr "Bläddra..."
+
+#: ../data/session-properties.ui.h:7
+msgid "Comm_ent:"
+msgstr "Komm_entar:"
+
+#: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr "Ko_mmando:"
+
+#: ../data/session-properties.ui.h:9
+msgid "_Name:"
+msgstr "_Namn:"
+
+#: ../egg/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "Filen är inte en giltig .desktop-fil"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Okänd version i skrivbordsfil \"%s\""
+
+#: ../egg/eggdesktopfile.c:974
+#, c-format
+msgid "Starting %s"
+msgstr "Startar %s"
+
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Programmet tar inte emot dokument på kommandoraden"
+
+#: ../egg/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Okänt startalternativ: %d"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "Kan inte skicka dokument-URI:er till en \"Type=Link\"-skrivbordspost"
+
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr "Inte ett startbart objekt"
+
+#: ../egg/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr "Inaktivera anslutning till sessionshanterare"
+
+#: ../egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr "Ange fil som innehåller sparad konfiguration"
+
+#: ../egg/eggsmclient.c:229
+msgid "FILE"
+msgstr "FIL"
+
+#: ../egg/eggsmclient.c:232
+msgid "Specify session management ID"
+msgstr "Ange sessionshanterings-id"
+
+#: ../egg/eggsmclient.c:232
+msgid "ID"
+msgstr "ID"
+
+#: ../egg/eggsmclient.c:253
+msgid "Session management options:"
+msgstr "Flaggor för sessionshantering:"
+
+#: ../egg/eggsmclient.c:254
+msgid "Show session management options"
+msgstr "Visa flaggor för sessionshantering"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr "Ikonen \"%s\" hittades inte"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr "Okänt"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr "Ett program körs fortfarande:"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:644
+msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
+msgstr "Väntar på att programmen ska köras färdigt.  Avbryta dessa program kan innebära att du förlorar data."
+
+#: ../gnome-session/gsm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr "Växla användare ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:877
+msgid "Log Out Anyway"
+msgstr "Logga ut ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr "Försätt i vänteläge ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:883
+msgid "Hibernate Anyway"
+msgstr "Försätt i viloläge ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:886
+msgid "Shut Down Anyway"
+msgstr "Stäng av ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:889
+msgid "Restart Anyway"
+msgstr "Starta om ändå"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr "Lås skärmen"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. This string is shared with gsm-fail-whale-dialog.c
+#: ../gnome-session/gsm-logout-dialog.c:266
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] "Du kommer automatiskt att loggas ut om %d sekund."
+msgstr[1] "Du kommer automatiskt att loggas ut om %d sekunder."
+
+#: ../gnome-session/gsm-logout-dialog.c:274
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] "Systemet kommer automatiskt att stängas av om %d sekund."
+msgstr[1] "Systemet kommer automatiskt att stängas av om %d sekunder."
+
+#: ../gnome-session/gsm-logout-dialog.c:282
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] "Detta system kommer om %d sekund att automatiskt startas om."
+msgstr[1] "Detta system kommer om %d sekunder att automatiskt startas om."
+
+#: ../gnome-session/gsm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr "Du är för närvarande inloggad som \"%s\"."
+
+#: ../gnome-session/gsm-logout-dialog.c:372
+msgid "Log out of this system now?"
+msgstr "Logga ut ur detta system nu?"
+
+#: ../gnome-session/gsm-logout-dialog.c:378
+msgid "_Switch User"
+msgstr "_Växla användare"
+
+#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../gnome-session/gsm-fail-whale-dialog.c:337
+#: ../gnome-session/gsm-util.c:389
+msgid "_Log Out"
+msgstr "_Logga ut"
+
+#: ../gnome-session/gsm-logout-dialog.c:393
+msgid "Shut down this system now?"
+msgstr "Stäng av detta system nu?"
+
+#: ../gnome-session/gsm-logout-dialog.c:399
+msgid "S_uspend"
+msgstr "Vä_nteläge"
+
+#: ../gnome-session/gsm-logout-dialog.c:405
+msgid "_Hibernate"
+msgstr "Vilolä_ge"
+
+#: ../gnome-session/gsm-logout-dialog.c:411
+#: ../gnome-session/gsm-logout-dialog.c:437
+msgid "_Restart"
+msgstr "Starta _om"
+
+#: ../gnome-session/gsm-logout-dialog.c:421
+msgid "_Shut Down"
+msgstr "St_äng av"
+
+#: ../gnome-session/gsm-logout-dialog.c:427
+msgid "Restart this system now?"
+msgstr "Starta om detta system nu?"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:311
+msgid "Oh no!  Something has gone wrong."
+msgstr "Åh nej! Någonting har gått fel."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:318
+msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
+msgstr "Ett problem har inträffat och systemet kan inte återhämta sig. Kontakta en systemadministratör"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:320
+msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
+msgstr "Ett problem har inträffat och systemet kan inte återhämta sig. Alla tillägg har inaktiverats som en förebyggande åtgärd."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:322
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+"Ett problem har inträffat och systemet kan inte återhämta sig.\n"
+"Logga ut och försök igen."
+
+#: ../gnome-session/gsm-manager.c:1393
+msgid "GNOME 3 Failed to Load"
+msgstr "GNOME 3 kunde inte läsas in"
+
+#: ../gnome-session/gsm-manager.c:1394
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+msgstr ""
+"Tyvärr gick det inte att starta GNOME 3 korrekt och startas därför i <i>fallback-läge</i>.\n"
+"\n"
+"Detta betyder oftast att ditt system (grafikmaskinvara eller drivrutin) inte kan dra nytta av den kompletta GNOME 3-upplevelsen."
+
+#: ../gnome-session/gsm-manager.c:1396
+msgid "Learn more about GNOME 3"
+msgstr "Lär dig mer om GNOME 3"
+
+#: ../gnome-session/gsm-manager.c:1493
+#: ../gnome-session/gsm-manager.c:2234
+msgid "Not responding"
+msgstr "Svarar inte"
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../gnome-session/gsm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr "Ihågkomna program"
+
+#: ../gnome-session/gsm-xsmp-client.c:1197
+msgid "This program is blocking logout."
+msgstr "Detta program blockerar utloggningen."
+
+#: ../gnome-session/gsm-xsmp-server.c:326
+msgid "Refusing new client connection because the session is currently being shut down\n"
+msgstr "Avvisar ny klientanslutning på grund av att sessionen är på väg att stängas av\n"
+
+#: ../gnome-session/gsm-xsmp-server.c:595
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr "Kunde inte skapa lyssnande ICE-uttag: %s"
+
+#. Oh well, no X for you!
+#: ../gnome-session/gsm-util.c:373
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr "Kunde inte starta inloggningssession (och kan inte ansluta till X-servern)"
+
+#: ../gnome-session/main.c:290
+msgid "Override standard autostart directories"
+msgstr "Åsidosätt standardkataloger för automatisk start"
+
+#: ../gnome-session/main.c:290
+msgid "AUTOSTART_DIR"
+msgstr "AUTOSTART_DIR"
+
+#: ../gnome-session/main.c:291
+msgid "Session to use"
+msgstr "Session att använda"
+
+#: ../gnome-session/main.c:291
+msgid "SESSION_NAME"
+msgstr "SESSION_NAME"
+
+#: ../gnome-session/main.c:292
+msgid "Enable debugging code"
+msgstr "Aktivera felsökningskod"
+
+#: ../gnome-session/main.c:293
+msgid "Do not load user-specified applications"
+msgstr "Läs inte in användarspecifika program"
+
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../gnome-session/main.c:296
+msgid "Show the fail whale dialog for testing"
+msgstr "Visa den \"felande valen\" för testning "
+
+#: ../gnome-session/main.c:316
+msgid " - the GNOME session manager"
+msgstr "- GNOME-sessionshanteraren"
+
+#: ../tools/gnome-session-quit.c:53
+msgid "Log out"
+msgstr "Logga ut"
+
+#: ../tools/gnome-session-quit.c:54
+msgid "Power off"
+msgstr "Stäng av"
+
+#: ../tools/gnome-session-quit.c:55
+msgid "Reboot"
+msgstr "Starta om"
+
+#: ../tools/gnome-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
+msgstr "Ignorera allt som förhindrar det"
+
+#: ../tools/gnome-session-quit.c:57
+msgid "Don't prompt for user confirmation"
+msgstr "Fråga inte efter användarbekräftelse"
+
+#: ../tools/gnome-session-quit.c:91
+#: ../tools/gnome-session-quit.c:101
+msgid "Could not connect to the session manager"
+msgstr "Kunde inte ansluta till sessionshanteraren"
+
+#: ../tools/gnome-session-quit.c:203
+msgid "Program called with conflicting options"
+msgstr "Program anropat med motsägande flaggor"
+
+#~ msgid "<b>Some programs are still running:</b>"
+#~ msgstr "<b>Några program är fortfarande igång:</b>"
+
+#~ msgid "Exited with code %d"
+#~ msgstr "Avslutades med kod %d"
+
+#~ msgid "Killed by signal %d"
+#~ msgstr "Dödad av signal %d"
+
+#~ msgid "Stopped by signal %d"
+#~ msgstr "Stoppad av signal %d"
+
+#~ msgid ""
+#~ "A problem has occurred and the system can't recover. Some of the "
+#~ "extensions below may have caused this.\n"
+#~ "Please try disabling some of these, and then log out and try again."
+#~ msgstr ""
+#~ "Ett problem har inträffat och systemet kan inte återhämta sig. Några av "
+#~ "utökningarna nedan kan ha orsakat detta.\n"
+#~ "Prova att inaktivera några av dessa. Logga sedan ut och försök igen."
+
+#~ msgid ""
+#~ "There is a problem with the configuration server.\n"
+#~ "(%s exited with status %d)"
+#~ msgstr ""
+#~ "Det finns ett problem med konfigurationsservern.\n"
+#~ "(%s avslutades med status %d)"
+
+#~ msgid "Try _Recovery"
+#~ msgstr "Försök att _återhämta"
+
+#~ msgid "A system error has occurred: %s"
+#~ msgstr "Ett systemfel har inträffat: %s"
+
+#~ msgid "A fatal system error has occurred: %s"
+#~ msgstr "Ett ödesdigert systemfel har inträffat: %s"
+
+#~ msgid "Component '%s': %s"
+#~ msgstr "Komponent \"%s\": %s"
+
+#~ msgid "Killed by signal"
+#~ msgstr "Dödad av signal"
+
+#~ msgid "Timed out"
+#~ msgstr "Tidsgränsen överstegs"
+
+#~ msgid "Show logout dialog"
+#~ msgstr "Visa utloggningsdialogrutan"
+
+#~ msgid "Show shutdown dialog"
+#~ msgstr "Visa avstängningsdialogrutan"
+
+#~ msgid "Use dialog boxes for errors"
+#~ msgstr "Använd dialogrutor för fel"
+
+#~ msgid "Set the current session name"
+#~ msgstr "Ange det aktuella sessionsnamnet"
+
+#~ msgid "NAME"
+#~ msgstr "NAMN"
+
+#~ msgid "Kill session"
+#~ msgstr "Döda session"
+
+#~ msgid "Classic GNOME"
+#~ msgstr "Klassisk GNOME"
+
+#~ msgid "Window Manager"
+#~ msgstr "Fönsterhanterare"
+
+#~ msgid "Default session"
+#~ msgstr "Standardsession"
+
+#~ msgid "File Manager"
+#~ msgstr "Filhanterare"
+
+#~ msgid ""
+#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ msgstr ""
+#~ "Om detta är aktiverat kommer gnome-session att fråga användaren innan en "
+#~ "session avslutas."
+
+#~ msgid "If enabled, gnome-session will save the session automatically."
+#~ msgstr ""
+#~ "Om detta är aktiverat kommer gnome-session att spara sessionen "
+#~ "automatiskt."

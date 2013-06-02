@@ -1,0 +1,45 @@
+# translation of gnome-session.HEAD.po to Basque
+# Copyright (C) 1999, 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Joseba Bidaurrazaga van Dierdonck <gcpbivaj@lg.ehu.es>, 2000.
+# Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2005, 2006, 2007, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2008-01-22 19:37+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Zure saioa gorde da."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Ezin izan da saio-kudeatzailearekin konektatu"

@@ -1,0 +1,699 @@
+Description: change the logout dialog to the opensuse proposal.
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=507101
+Author: Vincent Untz
+
+Index: gnome-session-3.0.0/gnome-session/gsm-manager.c
+===================================================================
+--- gnome-session-3.0.0.orig/gnome-session/gsm-manager.c	2011-05-24 10:17:22.244968980 +0200
++++ gnome-session-3.0.0/gnome-session/gsm-manager.c	2011-05-24 10:17:22.284969173 +0200
+@@ -3050,7 +3050,8 @@
+ 
+         display = gtk_widget_get_display (GTK_WIDGET (logout_dialog));
+ 
+-        gtk_widget_destroy (GTK_WIDGET (logout_dialog));
++        if (response_id != GTK_RESPONSE_HELP)
++                gtk_widget_destroy (GTK_WIDGET (logout_dialog));
+ 
+         /* In case of dialog cancel, switch user, hibernate and
+          * suspend, we just perform the respective action and return,
+@@ -3060,6 +3061,10 @@
+         case GTK_RESPONSE_NONE:
+         case GTK_RESPONSE_DELETE_EVENT:
+                 break;
++        case GTK_RESPONSE_HELP:
++                gsm_util_help_display (GTK_WINDOW (logout_dialog),
++                                       "gosgetstarted-73");
++                break;
+         case GSM_LOGOUT_RESPONSE_SWITCH_USER:
+                 request_switch_user (display, manager);
+                 break;
+Index: gnome-session-3.0.0/gnome-session/gsm-util.c
+===================================================================
+--- gnome-session-3.0.0.orig/gnome-session/gsm-util.c	2011-03-22 21:31:43.000000000 +0100
++++ gnome-session-3.0.0/gnome-session/gsm-util.c	2011-05-24 10:17:22.284969173 +0200
+@@ -21,6 +21,7 @@
+ #include <config.h>
+ #include <stdlib.h>
+ #include <ctype.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <sys/time.h>
+@@ -519,3 +520,86 @@
+ 
+         return icon_size;
+ }
++
++void
++gsm_util_help_display (GtkWindow  *parent,
++                       const char *link_id)
++{
++        GError *error = NULL;
++        const char *lang;
++        char *uri = NULL;
++        gboolean found;
++
++        int i;
++
++        const char * const * langs = g_get_language_names ();
++
++        uri = NULL;
++        found = FALSE;
++
++        for (i = 0; langs[i]; i++) {
++                lang = langs[i];
++                if (strchr (lang, '.')) {
++                        continue;
++                }
++
++                uri = g_build_filename (DATADIR,
++                                        "/gnome/help/user-guide/",
++                                        lang,
++                                        "/user-guide.xml",
++                                        NULL);
++
++                if (g_file_test (uri, G_FILE_TEST_EXISTS)) {
++                        found = TRUE;
++                        break;
++                }
++        }
++
++        if (found) {
++		GAppInfo *app_info;
++        	char *command;
++
++                if (link_id) {
++                        command = g_strconcat ("gnome-open ghelp://", uri, "?", link_id, NULL);
++                } else {
++                        command = g_strconcat ("gnome-open ghelp://", uri,  NULL);
++                }
++
++		app_info = g_app_info_create_from_commandline (command, "gnome-open",G_APP_INFO_CREATE_NONE, &error);
++		g_free (command);
++
++		if (error == NULL && app_info != NULL) {
++			GdkScreen *screen;
++			GdkAppLaunchContext *context;
++
++			screen = gtk_widget_get_screen (GTK_WIDGET (parent));
++			context = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
++			g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (context), &error);
++
++			g_object_unref (context);
++			g_object_unref (app_info);
++		}
++	}
++
++        if (!found || error != NULL) {
++                GtkWidget *d;
++                const char *errmsg;
++
++                if (!found)
++                        errmsg = _("Cannot find help.");
++                else {
++                        errmsg = error->message;
++                        g_error_free (error);
++                }
++
++                d = gtk_message_dialog_new (parent,
++                                            GTK_DIALOG_MODAL|GTK_DIALOG_DESTROY_WITH_PARENT,
++                                            GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
++                                            "%s", errmsg);
++                gtk_widget_show (GTK_WIDGET (d));
++                g_signal_connect (d, "response",
++                                  G_CALLBACK (gtk_widget_destroy), NULL);
++        }
++
++        g_free (uri);
++}
+Index: gnome-session-3.0.0/gnome-session/Makefile.am
+===================================================================
+--- gnome-session-3.0.0.orig/gnome-session/Makefile.am	2011-03-22 21:36:21.000000000 +0100
++++ gnome-session-3.0.0/gnome-session/Makefile.am	2011-05-24 10:17:22.288969198 +0200
+@@ -94,6 +94,10 @@
+ 	gsm-util.c				\
+ 	gsm-util.h
+ 
++libgsmutil_la_CPPFLAGS =			\
++	$(AM_CPPFLAGS)				\
++	-DDATADIR=\""$(datadir)"\"
++
+ libgsmutil_la_LIBADD = 				\
+ 	$(GNOME_SESSION_LIBS)
+ 
+Index: gnome-session-3.0.0/gnome-session/gsm-logout-dialog.c
+===================================================================
+--- gnome-session-3.0.0.orig/gnome-session/gsm-logout-dialog.c	2011-03-22 21:31:43.000000000 +0100
++++ gnome-session-3.0.0/gnome-session/gsm-logout-dialog.c	2011-05-24 10:29:39.732625980 +0200
+@@ -43,6 +43,14 @@
+ #define LOCKDOWN_SCHEMA            "org.gnome.desktop.lockdown"
+ #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
+ 
++#define GSM_ICON_LOGOUT    "system-log-out"
++#define GSM_ICON_SWITCH    "system-users"
++#define GSM_ICON_SHUTDOWN  "system-shutdown"
++#define GSM_ICON_REBOOT    "view-refresh"
++/* TODO: use gpm icons? */
++#define GSM_ICON_HIBERNATE "drive-harddisk"
++#define GSM_ICON_SLEEP     "gnome-session-sleep"
++
+ typedef enum {
+         GSM_DIALOG_LOGOUT_TYPE_LOGOUT,
+         GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN
+@@ -50,11 +58,12 @@
+ 
+ struct _GsmLogoutDialogPrivate
+ {
+-        GsmDialogLogoutType  type;
+-
+         UpClient            *up_client;
+         GsmConsolekit       *consolekit;
+ 
++        GtkWidget           *info_label;
++        GtkWidget           *cancel_button;
++
+         int                  timeout;
+         unsigned int         timeout_id;
+ 
+@@ -63,7 +72,8 @@
+ 
+ static GsmLogoutDialog *current_dialog = NULL;
+ 
+-static void gsm_logout_dialog_set_timeout  (GsmLogoutDialog *logout_dialog);
++static void gsm_logout_dialog_set_timeout  (GsmLogoutDialog *logout_dialog,
++                                            int              seconds);
+ 
+ static void gsm_logout_dialog_destroy  (GsmLogoutDialog *logout_dialog,
+                                         gpointer         data);
+@@ -71,43 +81,10 @@
+ static void gsm_logout_dialog_show     (GsmLogoutDialog *logout_dialog,
+                                         gpointer         data);
+ 
+-enum {
+-        PROP_0,
+-        PROP_MESSAGE_TYPE
+-};
+-
+-G_DEFINE_TYPE (GsmLogoutDialog, gsm_logout_dialog, GTK_TYPE_MESSAGE_DIALOG);
+-
+-static void
+-gsm_logout_dialog_set_property (GObject      *object,
+-                                guint         prop_id,
+-                                const GValue *value,
+-                                GParamSpec   *pspec)
+-{
+-        switch (prop_id) {
+-        case PROP_MESSAGE_TYPE:
+-                break;
+-        default:
+-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+-                break;
+-        }
+-}
++static void gsm_logout_set_info_text   (GsmLogoutDialog *logout_dialog,
++                                        int              seconds);
+ 
+-static void
+-gsm_logout_dialog_get_property (GObject     *object,
+-                                guint        prop_id,
+-                                GValue      *value,
+-                                GParamSpec  *pspec)
+-{
+-        switch (prop_id) {
+-        case PROP_MESSAGE_TYPE:
+-                g_value_set_enum (value, GTK_MESSAGE_WARNING);
+-                break;
+-        default:
+-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+-                break;
+-        }
+-}
++G_DEFINE_TYPE (GsmLogoutDialog, gsm_logout_dialog, GTK_TYPE_DIALOG);
+ 
+ static void
+ gsm_logout_dialog_class_init (GsmLogoutDialogClass *klass)
+@@ -116,18 +93,6 @@
+ 
+         gobject_class = G_OBJECT_CLASS (klass);
+ 
+-        /* This is a workaround to avoid a stupid crash: libgnomeui
+-         * listens for the "show" signal on all GtkMessageDialog and
+-         * gets the "message-type" of the dialogs. We will crash when
+-         * it accesses this property if we don't override it since we
+-         * didn't define it. */
+-        gobject_class->set_property = gsm_logout_dialog_set_property;
+-        gobject_class->get_property = gsm_logout_dialog_get_property;
+-
+-        g_object_class_override_property (gobject_class,
+-                                          PROP_MESSAGE_TYPE,
+-                                          "message-type");
+-
+         g_type_class_add_private (klass, sizeof (GsmLogoutDialogPrivate));
+ }
+ 
+@@ -139,11 +104,22 @@
+         logout_dialog->priv->timeout_id = 0;
+         logout_dialog->priv->timeout = 0;
+         logout_dialog->priv->default_response = GTK_RESPONSE_CANCEL;
++        logout_dialog->priv->info_label = NULL;
+ 
+-        gtk_window_set_skip_taskbar_hint (GTK_WINDOW (logout_dialog), TRUE);
++        gtk_window_set_resizable (GTK_WINDOW (logout_dialog), FALSE);
+         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
+         gtk_window_stick (GTK_WINDOW (logout_dialog));
+ 
++        /* use HIG spacings */
++        gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), 12);
++        gtk_container_set_border_width (GTK_CONTAINER (logout_dialog), 6);
++
++        gtk_dialog_add_button (GTK_DIALOG (logout_dialog), GTK_STOCK_HELP,
++                               GTK_RESPONSE_HELP);
++        logout_dialog->priv->cancel_button =
++                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
++                                       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
++
+         logout_dialog->priv->up_client = up_client_new ();
+ 
+         logout_dialog->priv->consolekit = gsm_get_consolekit ();
+@@ -239,38 +215,26 @@
+ static void
+ gsm_logout_dialog_show (GsmLogoutDialog *logout_dialog, gpointer user_data)
+ {
+-        gsm_logout_dialog_set_timeout (logout_dialog);
+-}
++        gsm_logout_set_info_text (logout_dialog, AUTOMATIC_ACTION_TIMEOUT);
+ 
+-static gboolean
+-gsm_logout_dialog_timeout (gpointer data)
+-{
+-        GsmLogoutDialog *logout_dialog;
+-        char            *seconds_warning;
+-        char            *secondary_text;
+-        int              seconds_to_show;
+-        static char     *session_type = NULL;
+-
+-        logout_dialog = (GsmLogoutDialog *) data;
+-
+-        if (!logout_dialog->priv->timeout) {
+-                gtk_dialog_response (GTK_DIALOG (logout_dialog),
+-                                     logout_dialog->priv->default_response);
+-
+-                return FALSE;
+-        }
++        if (logout_dialog->priv->default_response != GTK_RESPONSE_CANCEL)
++                gsm_logout_dialog_set_timeout (logout_dialog,
++                                               AUTOMATIC_ACTION_TIMEOUT);
++}
+ 
+-        if (logout_dialog->priv->timeout <= 30) {
+-                seconds_to_show = logout_dialog->priv->timeout;
+-        } else {
+-                seconds_to_show = (logout_dialog->priv->timeout/10) * 10;
+ 
+-                if (logout_dialog->priv->timeout % 10)
+-                        seconds_to_show += 10;
+-        }
++static void
++gsm_logout_set_info_text (GsmLogoutDialog *logout_dialog,
++                          int              seconds_to_show)
++{
++        const char  *seconds_warning;
++        char        *secondary_text;
++        char        *buf;
++        char        *markup;
++        static char *session_type = NULL;
+ 
+-        switch (logout_dialog->priv->type) {
+-        case GSM_DIALOG_LOGOUT_TYPE_LOGOUT:
++        switch (logout_dialog->priv->default_response) {
++        case GSM_LOGOUT_RESPONSE_LOGOUT:
+                 /* This string is shared with gsm-fail-whale-dialog.c */
+                 seconds_warning = ngettext ("You will be automatically logged "
+                                             "out in %d second.",
+@@ -279,7 +243,7 @@
+                                             seconds_to_show);
+                 break;
+ 
+-        case GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
++        case GSM_LOGOUT_RESPONSE_SHUTDOWN:
+                 seconds_warning = ngettext ("This system will be automatically "
+                                             "shut down in %d second.",
+                                             "This system will be automatically "
+@@ -287,6 +251,10 @@
+                                             seconds_to_show);
+                 break;
+ 
++        case GTK_RESPONSE_CANCEL:
++                seconds_warning = "";
++                break;
++
+         default:
+                 g_assert_not_reached ();
+         }
+@@ -321,25 +289,50 @@
+ 		secondary_text = g_strdup (seconds_warning);
+ 	}
+ 
+-        gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (logout_dialog),
+-                                                  secondary_text,
+-                                                  seconds_to_show,
+-                                                  NULL);
++        buf = g_strdup_printf (secondary_text, seconds_to_show);
++        markup = g_markup_printf_escaped ("<i>%s</i>", buf);
++        g_free (buf);
++        gtk_label_set_markup (GTK_LABEL (logout_dialog->priv->info_label),
++                              markup);
++        g_free (markup);
++}
+ 
+-        logout_dialog->priv->timeout--;
++static gboolean
++gsm_logout_dialog_timeout (gpointer data)
++{
++        GsmLogoutDialog *logout_dialog;
++        int              seconds_to_show;
++
++        logout_dialog = (GsmLogoutDialog *) data;
++
++        if (!logout_dialog->priv->timeout) {
++                gtk_dialog_response (GTK_DIALOG (logout_dialog),
++                                     logout_dialog->priv->default_response);
++
++                return FALSE;
++        }
++
++        if (logout_dialog->priv->timeout <= 30) {
++                seconds_to_show = logout_dialog->priv->timeout;
++        } else {
++                seconds_to_show = (logout_dialog->priv->timeout/10) * 10;
++
++                if (logout_dialog->priv->timeout % 10)
++                        seconds_to_show += 10;
++        }
+ 
+-        g_free (secondary_text);
++        gsm_logout_set_info_text (logout_dialog, seconds_to_show);
++
++        logout_dialog->priv->timeout--;
+ 
+         return TRUE;
+ }
+ 
+ static void
+-gsm_logout_dialog_set_timeout (GsmLogoutDialog *logout_dialog)
++gsm_logout_dialog_set_timeout (GsmLogoutDialog *logout_dialog,
++                               int              seconds)
+ {
+-        logout_dialog->priv->timeout = AUTOMATIC_ACTION_TIMEOUT;
+-
+-        /* Sets the secondary text */
+-        gsm_logout_dialog_timeout (logout_dialog);
++        logout_dialog->priv->timeout = seconds;
+ 
+         if (logout_dialog->priv->timeout_id != 0) {
+                 g_source_remove (logout_dialog->priv->timeout_id);
+@@ -351,14 +344,120 @@
+ }
+ 
+ static GtkWidget *
++gsm_logout_tile_new (const char *icon_name,
++                     const char *title,
++                     const char *description)
++{
++        GtkWidget *button;
++        GtkWidget *alignment;
++        GtkWidget *hbox;
++        GtkWidget *vbox;
++        GtkWidget *image;
++        GtkWidget *label;
++        char      *markup;
++
++        g_assert (title != NULL);
++
++        button = GTK_WIDGET (gtk_button_new ());
++        gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
++
++        alignment = gtk_alignment_new (0, 0.5, 0, 0);
++        gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 6, 6);
++        gtk_container_add (GTK_CONTAINER (button), alignment);
++
++        hbox = gtk_hbox_new (FALSE, 12);
++        gtk_container_add (GTK_CONTAINER (alignment), hbox);
++        if (icon_name != NULL) {
++                image = gtk_image_new_from_icon_name (icon_name,
++                                                      GTK_ICON_SIZE_DIALOG);
++                gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
++        }
++
++        vbox = gtk_vbox_new (FALSE, 2);
++
++        markup = g_markup_printf_escaped ("<span weight=\"bold\">%s</span>",
++                                          title);
++        label = gtk_label_new (markup);
++        g_free (markup);
++
++        gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
++        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
++        gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
++
++        gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
++
++        if (description != NULL) {
++                gchar     *markup;
++                GdkColor  *color;
++                GtkWidget *label;
++                GtkStyle  *style;
++
++                style = gtk_widget_get_style (GTK_WIDGET (button));
++                color = &style->fg[GTK_STATE_INSENSITIVE];
++                markup = g_markup_printf_escaped ("<span size=\"small\" foreground=\"#%.2x%.2x%.2x\">%s</span>",
++                                                  color->red,
++                                                  color->green,
++                                                  color->blue,
++                                                  description);
++                label = gtk_label_new (markup);
++                g_free (markup);
++
++                gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
++                gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
++                gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
++                gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
++
++                gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
++        }
++
++        gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
++
++        return button;
++}
++
++static void
++gsm_logout_tile_clicked (GtkWidget *tile,
++                         gpointer   response_p)
++{
++        GtkWidget *dialog;
++
++        dialog = gtk_widget_get_toplevel (tile);
++        g_assert (GTK_IS_DIALOG (dialog));
++        gtk_dialog_response (GTK_DIALOG (dialog),
++                             GPOINTER_TO_UINT (response_p));
++}
++
++static GtkWidget *
++gsm_logout_append_tile (GtkWidget    *vbox,
++                        unsigned int  response,
++                        const char   *icon_name,
++                        const char   *title,
++                        const char   *description)
++{
++        GtkWidget *tile;
++
++        tile = gsm_logout_tile_new (icon_name, title, description);
++        gtk_box_pack_start (GTK_BOX (vbox), tile, TRUE, TRUE, 0);
++        gtk_widget_show_all (tile);
++
++        g_signal_connect (tile,
++                          "clicked",
++                          G_CALLBACK (gsm_logout_tile_clicked),
++                          GUINT_TO_POINTER (response));
++
++        return tile;
++}
++
++static GtkWidget *
+ gsm_get_dialog (GsmDialogLogoutType type,
+                 GdkScreen          *screen,
+                 guint32             activate_time)
+ {
+         GsmLogoutDialog *logout_dialog;
+-        GtkWidget       *dialog_image;
+-        const char      *primary_text;
++        GtkWidget       *vbox;
++        GtkWidget       *tile;
+         const char      *icon_name;
++        const char      *title;
+ 
+         if (current_dialog != NULL) {
+                 gtk_widget_destroy (GTK_WIDGET (current_dialog));
+@@ -368,83 +467,119 @@
+ 
+         current_dialog = logout_dialog;
+ 
+-        gtk_window_set_title (GTK_WINDOW (logout_dialog), "");
+-
+-        logout_dialog->priv->type = type;
++        vbox = gtk_vbox_new (FALSE, 12);
++        gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), vbox,
++                            FALSE, FALSE, 0);
++        gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
++        gtk_widget_show (vbox);
+ 
+         icon_name = NULL;
+-        primary_text = NULL;
++        title = NULL;
+ 
+         switch (type) {
+         case GSM_DIALOG_LOGOUT_TYPE_LOGOUT:
+                 icon_name    = GSM_ICON_LOGOUT;
+-                primary_text = _("Log out of this system now?");
++                title        = _("Log Out of the Session");
+ 
+                 logout_dialog->priv->default_response = GSM_LOGOUT_RESPONSE_LOGOUT;
+ 
+-                if (gsm_logout_supports_switch_user (logout_dialog)) {
+-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
++
++                gsm_logout_append_tile (vbox, GSM_LOGOUT_RESPONSE_LOGOUT,
++                                        GSM_ICON_LOGOUT, _("_Log Out"),
++                                        _("Ends your session and logs you "
++                                          "out."));
++
++                tile = gsm_logout_append_tile (vbox,
++                                               GSM_LOGOUT_RESPONSE_SWITCH_USER,
++                                               GSM_ICON_SWITCH,
+                                                _("_Switch User"),
+-                                               GSM_LOGOUT_RESPONSE_SWITCH_USER);
++                                               _("Suspends your session, "
++                                                 "allowing another user to "
++                                                 "log in and use the "
++                                                 "computer."));
++                if (!gsm_logout_supports_switch_user (logout_dialog)) {
++                        gtk_widget_set_sensitive (tile, FALSE);
+                 }
+ 
+-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                       GTK_STOCK_CANCEL,
+-                                       GTK_RESPONSE_CANCEL);
+-
+-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                       _("_Log Out"),
+-                                       GSM_LOGOUT_RESPONSE_LOGOUT);
+-
+                 break;
+         case GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
+                 icon_name    = GSM_ICON_SHUTDOWN;
+-                primary_text = _("Shut down this system now?");
++                title        = _("Shut Down the Computer");
+ 
+                 logout_dialog->priv->default_response = GSM_LOGOUT_RESPONSE_SHUTDOWN;
+ 
+-                if (gsm_logout_supports_system_suspend (logout_dialog)) {
+-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                               _("S_uspend"),
+-                                               GSM_LOGOUT_RESPONSE_SLEEP);
++                tile = gsm_logout_append_tile (vbox,
++                                               GSM_LOGOUT_RESPONSE_SHUTDOWN,
++                                               GSM_ICON_SHUTDOWN,
++                                               _("_Shut Down"),
++                                               _("Ends your session and turns "
++                                                 "off the computer."));
++                if (!gsm_logout_supports_shutdown (logout_dialog)) {
++                        gtk_widget_set_sensitive (tile, FALSE);
++                        /* If shutdown is not available, let's just fallback
++                         * on cancel as the default action. We could fallback
++                         * on reboot first, then suspend and then hibernate
++                         * but it's not that useful, really */
++                        logout_dialog->priv->default_response = GTK_RESPONSE_CANCEL;
+                 }
+ 
+-                if (gsm_logout_supports_system_hibernate (logout_dialog)) {
+-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                               _("_Hibernate"),
+-                                               GSM_LOGOUT_RESPONSE_HIBERNATE);
++                tile = gsm_logout_append_tile (vbox,
++                                               GSM_LOGOUT_RESPONSE_REBOOT,
++                                               GSM_ICON_REBOOT, _("_Restart"),
++                                               _("Ends your session and "
++                                                 "restarts the computer."));
++                if (!gsm_logout_supports_reboot (logout_dialog)) {
++                        gtk_widget_set_sensitive (tile, FALSE);
+                 }
+ 
+-                if (gsm_logout_supports_reboot (logout_dialog)) {
+-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                               _("_Restart"),
+-                                               GSM_LOGOUT_RESPONSE_REBOOT);
++                /* We don't set those options insensitive if they are no
++                 * supported (like we do for shutdown/restart) since some
++                 * hardware just don't support suspend/hibernate. So we
++                 * don't show those options in this case. */
++                if (gsm_logout_supports_system_suspend (logout_dialog)) {
++                        gsm_logout_append_tile (vbox,
++                                                GSM_LOGOUT_RESPONSE_SLEEP,
++                                                GSM_ICON_SLEEP, _("S_uspend"),
++                                                _("Suspends your session "
++                                                  "quickly, using minimal "
++                                                  "power while the computer "
++                                                  "stands by."));
+                 }
+ 
+-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                       GTK_STOCK_CANCEL,
+-                                       GTK_RESPONSE_CANCEL);
+-
+-                if (gsm_logout_supports_shutdown (logout_dialog)) {
+-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+-                                               _("_Shut Down"),
+-                                               GSM_LOGOUT_RESPONSE_SHUTDOWN);
++                if (gsm_logout_supports_system_hibernate (logout_dialog)) {
++                        gsm_logout_append_tile (vbox,
++                                                GSM_LOGOUT_RESPONSE_HIBERNATE,
++                                                GSM_ICON_HIBERNATE,
++                                                _("_Hibernate"),
++                                                _("Suspends your session, "
++                                                  "using no power until the "
++                                                  "computer is restarted."));
+                 }
++
+                 break;
+         default:
+                 g_assert_not_reached ();
+         }
+ 
+-        dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
++        logout_dialog->priv->info_label = gtk_label_new ("");
++        gtk_label_set_line_wrap (GTK_LABEL (logout_dialog->priv->info_label),
++                                 TRUE);
++        gtk_box_pack_start (GTK_BOX (vbox), logout_dialog->priv->info_label,
++                            TRUE, TRUE, 0);
++        gtk_widget_show (logout_dialog->priv->info_label);
+ 
+-        gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
+-                                      icon_name, GTK_ICON_SIZE_DIALOG);
+         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
+-        gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER_ALWAYS);
+-        gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
++        gtk_window_set_title (GTK_WINDOW (logout_dialog), title);
++        gtk_window_set_position (GTK_WINDOW (logout_dialog),
++                                 GTK_WIN_POS_CENTER_ALWAYS);
+ 
+         gtk_dialog_set_default_response (GTK_DIALOG (logout_dialog),
+                                          logout_dialog->priv->default_response);
++        /* Note that focus is on the widget for the default response by default
++         * (since they're the first widget, except when it's Cancel */
++        if (logout_dialog->priv->default_response == GTK_RESPONSE_CANCEL)
++                gtk_window_set_focus (GTK_WINDOW (logout_dialog),
++                                      logout_dialog->priv->cancel_button);
+ 
+         gtk_window_set_screen (GTK_WINDOW (logout_dialog), screen);
+ 

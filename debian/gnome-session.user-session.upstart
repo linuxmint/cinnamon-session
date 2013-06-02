@@ -1,0 +1,19 @@
+description "Gnome Session itself"
+author "Stéphane Graber <stgraber@ubuntu.com>"
+
+start on started dbus and xsession SESSION=ubuntu
+
+env GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+export GNOME_DESKTOP_SESSION_ID
+
+emits desktop-start
+emits desktop-end
+
+exec gnome-session --session=$DESKTOP_SESSION
+
+post-start exec initctl emit desktop-start DESKTOP_SESSION=$DESKTOP_SESSION
+
+# Don't wait to avoid blocking the session from ending.
+pre-stop exec initctl emit --no-wait desktop-end DESKTOP_SESSION=$DESKTOP_SESSION
+
+post-stop exec dbus-send --type=method_call --address=$UPSTART_SESSION /com/ubuntu/Upstart com.ubuntu.Upstart0_6.EndSession

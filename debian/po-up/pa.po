@@ -1,0 +1,49 @@
+# translation of gnome-session.HEAD.po to Punjabi
+# Copyright (C) 2004 THE gnome-session'S COPYRIGHT HOLDER
+#
+#
+# Amanpreet Singh Alam <amanliunx@netscapet.net>, 2004.
+# Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
+# A S Alam <apbrar@gmail.com>, 2006.
+# A S Alam <aalam@users.sf.net>, 2007.
+# ASB <aalam@users.sf.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2007-09-13 08:17+0530\n"
+"Last-Translator: ASB <aalam@users.sf.net>\n"
+"Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+# gnome-session/save-session.c:160
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "ਤੁਹਾਡਾ ਸ਼ੈਸ਼ਨ ਸੰਭਾਲਿਆ ਗਿਆ।"
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+# gnome-session/save-session.c:112
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "ਸ਼ੈਸ਼ਨ ਮੈਨੇਜਰ ਨਾਲ ਜੁੜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"

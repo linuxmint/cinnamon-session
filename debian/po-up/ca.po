@@ -1,0 +1,43 @@
+# gnome-session translation to Catalan.
+# Copyright © 2000, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+# Ivan Vilata i Balaguer <ivan@selidor.net>, 2000.
+# Softcatalà <info@softcatala.org>, 2000.
+# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Josep Puigdemont <josep.puigdemont@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session 2.3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2011-11-04 20:31+0100\n"
+"Last-Translator: Jordi Mallach <jordi@sindominio.net>\n"
+"Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr "GNOME clàssic"
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr "Aquesta sessió entra al GNOME"
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "S'ha desat la sessió."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr "No s'ha pogut desar la sessió"
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr "No s'ha pogut connectar al bus de la sessió"
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "No s'ha pogut connectar al gestor de sessions"

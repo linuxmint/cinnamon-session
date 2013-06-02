@@ -1,0 +1,576 @@
+# Esperanto translation for gnome-session.
+# Copyright (C) 2003-2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-session package.
+# Joël BRICH <joel.brich@laposte.net>, 2003.
+# Guillaume SAVATON <llumeao@tuxfamily.org>, 2006
+# Dominique PELLÉ <dominique.pelle@free.fr>, 2006
+# Joop EGGEN <joop_eggen@yahoo.de>, 2008.
+# Chris PAVLINA <Pavlina.Chris@gmail.com>, 2008.
+# Michael MORONI, <haikara90@gmail.com >, 2009.
+# Donald ROGERS, <dero2648@clear.net.nz>, 2009.
+# Benno SCHULENBERG <bensberg@justemail.net>, 2010
+# Tiffany Antopolski <tiffany.antopolski@gmail.com>, 2011.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2009, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session 2.3.6.2\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-session&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-10-25 19:38+0000\n"
+"PO-Revision-Date: 2011-11-13 16:42+0100\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Language-Team: Esperanto <ubuntu-l10n-eo@lists.launchpad.net>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2011-11-13 15:32+0000\n"
+"X-Generator: Launchpad (build 14277)\n"
+"X-Project-Style: gnome\n"
+
+#: ../capplet/gsm-app-dialog.c:120
+msgid "Select Command"
+msgstr "Elekti komandon"
+
+#: ../capplet/gsm-app-dialog.c:193
+msgid "Add Startup Program"
+msgstr "Aldoni lanĉan programon"
+
+#: ../capplet/gsm-app-dialog.c:197
+msgid "Edit Startup Program"
+msgstr "Redakti lanĉan programon"
+
+#: ../capplet/gsm-app-dialog.c:484
+msgid "The startup command cannot be empty"
+msgstr "La lanĉa komando ne povas esti malplena"
+
+#: ../capplet/gsm-app-dialog.c:490
+msgid "The startup command is not valid"
+msgstr "La lanĉa komando ne estas valida"
+
+#: ../capplet/gsm-properties-dialog.c:518
+msgid "Enabled"
+msgstr "Enŝaltite"
+
+#: ../capplet/gsm-properties-dialog.c:530
+msgid "Icon"
+msgstr "Piktogramo"
+
+#: ../capplet/gsm-properties-dialog.c:542
+msgid "Program"
+msgstr "Programo"
+
+#: ../capplet/gsm-properties-dialog.c:746
+msgid "Startup Applications Preferences"
+msgstr "Agordoj de startaj aplikaĵoj"
+
+#: ../capplet/gsp-app.c:274
+msgid "No name"
+msgstr "Neniu nomo"
+
+#: ../capplet/gsp-app.c:280
+msgid "No description"
+msgstr "Neniu priskribo"
+
+#: ../capplet/main.c:35
+#: ../gnome-session/main.c:281
+msgid "Version of this application"
+msgstr "Versio de ĉi tiu aplikaĵo"
+
+#: ../capplet/main.c:61
+msgid "Could not display help document"
+msgstr "Ne eblis montri helpdokumenton"
+
+#: ../data/gnome-fallback.session.desktop.in.in.h:1
+msgid "GNOME fallback"
+msgstr "Retropaŝa GNOME-reĝimo"
+
+#: ../data/gnome.session.desktop.in.in.h:1
+#: ../data/gnome.desktop.in.h:1
+msgid "GNOME"
+msgstr "GNOME"
+
+#: ../data/gnome.desktop.in.h:2
+msgid "This session logs you into GNOME"
+msgstr "Ĉi tiu seanco ensalutas vin en GNOME"
+
+#: ../data/gsm-inhibit-dialog.ui.h:1
+msgid "<b>Some programs are still running:</b>"
+msgstr "<b>Kelkaj programoj ankoraŭ rulas:</b>"
+
+#: ../data/gsm-inhibit-dialog.ui.h:2
+#: ../gnome-session/gsm-inhibit-dialog.c:640
+msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
+msgstr "Atendante ĝis la programo finiĝi. Se vi interrompas ĉi tiun programon, via laboro povus perdiĝi."
+
+#: ../data/session-properties.desktop.in.in.h:1
+msgid "Choose what applications to start when you log in"
+msgstr "Elektu kiujn aplikaĵojn startigi kiam vi ensalutas"
+
+#: ../data/session-properties.desktop.in.in.h:2
+msgid "Startup Applications"
+msgstr "Lanĉaj aplikaĵoj"
+
+#: ../data/session-properties.ui.h:1
+msgid "Additional startup _programs:"
+msgstr "Pli lanĉaj a_plikaĵoj:"
+
+#: ../data/session-properties.ui.h:2
+msgid "Browse…"
+msgstr "Foliumi…"
+
+#: ../data/session-properties.ui.h:3
+msgid "Co_mmand:"
+msgstr "Ko_mando:"
+
+#: ../data/session-properties.ui.h:4
+msgid "Comm_ent:"
+msgstr "Kom_entaro:"
+
+#: ../data/session-properties.ui.h:5
+msgid "Options"
+msgstr "Opcioj"
+
+#: ../data/session-properties.ui.h:6
+msgid "Startup Programs"
+msgstr "Lanĉaj aplikaĵoj"
+
+#: ../data/session-properties.ui.h:7
+msgid "_Automatically remember running applications when logging out"
+msgstr "_Memori aŭtomate jam lanĉitajn aplikaĵojn kiam vi elsalutas"
+
+#: ../data/session-properties.ui.h:8
+msgid "_Name:"
+msgstr "_Nomo:"
+
+#: ../data/session-properties.ui.h:9
+msgid "_Remember Currently Running Application"
+msgstr "_Memorigi nun rulantan aplikaĵon"
+
+#: ../egg/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "Dosiero ne estas valida .desktop-dosiero"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Nerekonata versio '%s' de labortabla dosiero"
+
+#: ../egg/eggdesktopfile.c:974
+#, c-format
+msgid "Starting %s"
+msgstr "Lanĉas %s"
+
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Aplikaĵo ne akceptas dokumentojn per komandlinio"
+
+#: ../egg/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Nerekonata lanĉo-opcio: %d"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "Ne eblas transdoni dokumento-URI-ojn al labortabla elemento 'Type=Link'"
+
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr "Nelanĉebla ero"
+
+#: ../egg/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr "Elŝalti la konekton al la seancoadministrilo"
+
+#: ../egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr "Specifi dosieron kiu enhavas konservitan agordon"
+
+#: ../egg/eggsmclient.c:229
+msgid "FILE"
+msgstr "DOSIERO"
+
+#: ../egg/eggsmclient.c:232
+msgid "Specify session management ID"
+msgstr "Specifi identigilon de la seancoadministrilo"
+
+#: ../egg/eggsmclient.c:232
+msgid "ID"
+msgstr "Identigilon"
+
+#: ../egg/eggsmclient.c:253
+msgid "Session management options:"
+msgstr "Opcioj de la seancoadministrilo:"
+
+#: ../egg/eggsmclient.c:254
+msgid "Show session management options"
+msgstr "Montri opciojn de la seancoadministrilo"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr "Piktogramo '%s' ne trovita"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr "Nekonate"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr "Programo ankoraŭ rulas:"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr "Iuj programoj ankoraŭ rulas:"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:644
+msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
+msgstr "Atendas ĝis programoj finiĝas.  Vian laboran povus perdigota se vi interrompas ĉi tiuj programoj."
+
+#: ../gnome-session/gsm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr "Ŝanĝi uzanton ĉiukaze"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:877
+msgid "Log Out Anyway"
+msgstr "Elsaluti tamen"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr "Prokrasti ĉiukaze"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:883
+msgid "Hibernate Anyway"
+msgstr "Pasivumigi ĉiukaze"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:886
+msgid "Shut Down Anyway"
+msgstr "Elŝalti ĉiukaze"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:889
+msgid "Restart Anyway"
+msgstr "Restartigi ĉiukaze"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr "Ŝlosi la ekranon"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr "Nuligi"
+
+#. This string is shared with gsm-fail-whale-dialog.c
+#: ../gnome-session/gsm-logout-dialog.c:275
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] "Vi estos aŭtomate malkonektata post %d sekundo."
+msgstr[1] "Vi estos aŭtomate malkonektata post %d sekundoj."
+
+#: ../gnome-session/gsm-logout-dialog.c:283
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] "Ĉi tiu sistemo aŭtomate haltos post %d sekundo."
+msgstr[1] "Ĉi tiu sistemo aŭtomate haltos post %d sekundoj."
+
+#: ../gnome-session/gsm-logout-dialog.c:315
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr "Vi ensalutis kiel \"%s\"."
+
+#: ../gnome-session/gsm-logout-dialog.c:381
+msgid "Log out of this system now?"
+msgstr "Ĉu elsaluti el la sistemo nun?"
+
+#: ../gnome-session/gsm-logout-dialog.c:387
+msgid "_Switch User"
+msgstr "Ŝangi la _uzanton"
+
+#: ../gnome-session/gsm-logout-dialog.c:396
+#: ../gnome-session/gsm-fail-whale-dialog.c:422
+#: ../gnome-session/gsm-util.c:389
+msgid "_Log Out"
+msgstr "E_lsaluti"
+
+#: ../gnome-session/gsm-logout-dialog.c:402
+msgid "Shut down this system now?"
+msgstr "Ĉu elŝalti ĉi tiun sistemon nun?"
+
+#: ../gnome-session/gsm-logout-dialog.c:408
+msgid "S_uspend"
+msgstr "_Prokrasti"
+
+#: ../gnome-session/gsm-logout-dialog.c:414
+msgid "_Hibernate"
+msgstr "_Pasivumigi"
+
+#: ../gnome-session/gsm-logout-dialog.c:420
+msgid "_Restart"
+msgstr "_Restartigi"
+
+#: ../gnome-session/gsm-logout-dialog.c:430
+msgid "_Shut Down"
+msgstr "_Elŝalti"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:377
+msgid "Oh no!  Something has gone wrong."
+msgstr "Ho ne! Io fiaskis."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:384
+msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
+msgstr "Problemo okazis kaj la sistemo ne eblis retrovi. Bonvole kontaktu sistemadministranton"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:386
+msgid ""
+"A problem has occurred and the system can't recover. Some of the extensions below may have caused this.\n"
+"Please try disabling some of these, and then log out and try again."
+msgstr ""
+"Problemo okazis kaj la sistemo ne eblis retrovi.  Iuj kromprogramoj kiuj subitajestus kaŭzito de ĉi tiu.\n"
+"Bonvole provu elŝalti iujn de la kromprogramoj kaj provu denove."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:388
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+"Problemo okazis kaj la sistemo ne eblas restaŭri.\n"
+"Bonvolu elsaluti kaj provi denove."
+
+#: ../gnome-session/gsm-process-helper.c:123
+#, c-format
+msgid "Exited with code %d"
+msgstr "Elirate kun kodo %d"
+
+#: ../gnome-session/gsm-process-helper.c:128
+#, c-format
+msgid "Killed by signal %d"
+msgstr "Mortigis per signalo %d"
+
+#: ../gnome-session/gsm-process-helper.c:133
+#, c-format
+msgid "Stopped by signal %d"
+msgstr "Haltigis per signalo %d"
+
+#: ../gnome-session/gsm-manager.c:1386
+msgid "GNOME 3 Failed to Load"
+msgstr "Ŝargo de GNOME 3 fiaskis"
+
+#: ../gnome-session/gsm-manager.c:1387
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+msgstr ""
+"Bedaŭrinde korekta startado de GNOME 3 fiaskis kaj startis per la <i>fallback mode</i> (retropaŝa reĝimo).\n"
+"\n"
+"La kompleta sperto de GNOME 3 ne disponeblas por via sistemo. (La grafika aparato aŭ pelilo ne kapablas lanĉi la plenan GNOME 3)."
+
+#: ../gnome-session/gsm-manager.c:1389
+msgid "Learn more about GNOME 3"
+msgstr "Lernu plu pri GNOME 3"
+
+#: ../gnome-session/gsm-manager.c:1486
+#: ../gnome-session/gsm-manager.c:2255
+msgid "Not responding"
+msgstr "Ne respondas"
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../gnome-session/gsm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr "Memorigitaj aplikaĵoj"
+
+#: ../gnome-session/gsm-xsmp-client.c:1197
+msgid "This program is blocking logout."
+msgstr "Ĉi tiu programaro blokas ensaluton."
+
+#: ../gnome-session/gsm-xsmp-server.c:325
+msgid "Refusing new client connection because the session is currently being shut down\n"
+msgstr "Rifuzas novan klientkonekton ĉar la seanco estas nun elsalutata.\n"
+
+#: ../gnome-session/gsm-xsmp-server.c:587
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr "Ne eblis krei ICE-aŭskultantan kontaktoskatolon: %s"
+
+#. Oh well, no X for you!
+#: ../gnome-session/gsm-util.c:373
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr "Ne eblas lanĉi ensalutan seancon (kaj ne eblas konekti al la X-servilo)"
+
+#: ../gnome-session/main.c:277
+msgid "Override standard autostart directories"
+msgstr "Transiri normajn aŭtomatajn startdosierujojn"
+
+#: ../gnome-session/main.c:277
+msgid "AUTOSTART_DIR"
+msgstr "AUTOSTART_DIR"
+
+#: ../gnome-session/main.c:278
+msgid "Session to use"
+msgstr "Uzenda seanco"
+
+#: ../gnome-session/main.c:278
+msgid "SESSION_NAME"
+msgstr "SESSION_NAME"
+
+#: ../gnome-session/main.c:279
+msgid "Enable debugging code"
+msgstr "Enŝalti sencimigan kodon"
+
+#: ../gnome-session/main.c:280
+msgid "Do not load user-specified applications"
+msgstr "Ne ŝargi propre specifitajn aplikaĵojn"
+
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../gnome-session/main.c:283
+msgid "Show the fail whale dialog for testing"
+msgstr "Montri la paneo-dialogo por testado"
+
+#: ../gnome-session/main.c:303
+msgid " - the GNOME session manager"
+msgstr " - la seancadministrilo de GNOME"
+
+#: ../tools/gnome-session-quit.c:52
+msgid "Log out"
+msgstr "Elsaluti"
+
+#: ../tools/gnome-session-quit.c:53
+msgid "Power off"
+msgstr "Elŝalti"
+
+#: ../tools/gnome-session-quit.c:54
+msgid "Ignoring any existing inhibitors"
+msgstr "Ignori ĉiujn ajn ekzistantajn malebligilojn"
+
+#: ../tools/gnome-session-quit.c:55
+msgid "Don't prompt for user confirmation"
+msgstr "Ne postuli konfirmon de la uzanto"
+
+#: ../tools/gnome-session-quit.c:89
+#: ../tools/gnome-session-quit.c:99
+msgid "Could not connect to the session manager"
+msgstr "Ne eblis konekti al la seancoadministrilo"
+
+#: ../tools/gnome-session-quit.c:199
+msgid "Program called with conflicting options"
+msgstr "Programo vokata kun konfliktaj parametroj"
+
+
+#~ msgid ""
+#~ "Suspends your session, using no power until the computer is restarted."
+#~ msgstr ""
+#~ "Interrompas vian seancon, uzante neniun elektron ĝis kiam la komputilo "
+#~ "estas restartigata."
+
+#~ msgid ""
+#~ "Suspends your session quickly, using minimal power while the computer "
+#~ "stands by."
+#~ msgstr ""
+#~ "Rapide interrompas vian seancon, uzante minimuman elektron dum kiam la "
+#~ "komputilo atendas."
+
+#~ msgid ""
+#~ "There is a problem with the configuration server.\n"
+#~ "(%s exited with status %d)"
+#~ msgstr ""
+#~ "Ekzistas problemo pri la konfigura servilo.\n"
+#~ "(%s eliris kun stato %d)"
+
+#~ msgid "Window Manager"
+#~ msgstr "Fenestradministrilo"
+
+#~ msgid "NAME"
+#~ msgstr "NOMO"
+
+#~ msgid "Save sessions"
+#~ msgstr "Konservi seancojn"
+
+#~ msgid "Log Out of the Session"
+#~ msgstr "Elsaluti el la seanco"
+
+#~ msgid "Ends your session and logs you out."
+#~ msgstr "Finas vian seancon kaj elsalutas vin."
+
+#~ msgid "Hiber_nate"
+#~ msgstr "_Pasivumigi"
+
+#~ msgid "Shut Down the Computer"
+#~ msgstr "Elŝalti la komputilon"
+
+#~ msgid "Use dialog boxes for errors"
+#~ msgstr "Uzi dialogkestojn por eraroj"
+
+#~ msgid ""
+#~ "Suspends your session, allowing another user to log in and use the "
+#~ "computer."
+#~ msgstr ""
+#~ "Interrompas vian seancon, permesante al alia uzanto ensaluti kaj uzi la "
+#~ "komputilon."
+
+#~ msgid "Ends your session and turns off the computer."
+#~ msgstr "Finas vian seancon kaj elŝaltas la komputilon."
+
+#~ msgid "Ends your session and restarts the computer."
+#~ msgstr "Finas vian seancon kaj restartigas la komputilon."
+
+#~ msgid "Logout prompt"
+#~ msgstr "Elsalut-demando"
+
+#~ msgid ""
+#~ "If enabled, gnome-session will prompt the user before ending a session."
+#~ msgstr ""
+#~ "Se enŝaltite, gnome-session demandos la uzanton antaŭ ol fini seancon."
+
+#~ msgid "If enabled, gnome-session will save the session automatically."
+#~ msgstr "Se aktivigita, gnome-session konservos la sesion aŭtomate."
+
+#~ msgid "This session logs you into GNOME without user applications"
+#~ msgstr "Ĉi tiu seanco ensalutas vin en GNOMEon sen uzantaj apliakĵoj"
+
+#~ msgid ""
+#~ "The number of minutes of inactivity before the session is considered idle."
+#~ msgstr ""
+#~ "La nombro da minutoj de senaktiveco antaŭ ol konsideri la seancon kiel "
+#~ "senokupe."
+
+#~ msgid "Time before session is considered idle"
+#~ msgstr "La tempo antaŭ ol konsideri la seancon senokupe"
+
+#~ msgid "Unable to connect to the X server"
+#~ msgstr "Ne eblas konekti al la X-servilo"
+
+#~ msgid "Cannot find help."
+#~ msgstr "Ne eblas trovi helpon."
+
+#~ msgid "Do not require confirmation"
+#~ msgstr "Ne postulas konfirmon"
+
+#~ msgid "Kill session"
+#~ msgstr "Mortigi la seancon"
+
+#~ msgid "Show shutdown dialog"
+#~ msgstr "Montri la elŝaltodialogon"
+
+#~ msgid "Show logout dialog"
+#~ msgstr "Montri la elsalutdialogon"
+
+#~ msgid "Log out, ignoring any existing inhibitors"
+#~ msgstr "Elsaluti ignorante ĉiujn ajn ekzistantajn preventojn"
+
+#~ msgid "Set the current session name"
+#~ msgstr "Agordi la aktualansenaconomon"

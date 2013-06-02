@@ -1,0 +1,48 @@
+# translation of gnome-session.HEAD.tr.po to Turkish
+# Turkish translation of gnome-core.
+# Copyright (C) 2001-2003, 2004, 2008 Free Software Foundation, Inc.
+#
+# Sinan İmamoğlu <sinan@myrealbox.com>, 2002-2003.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Fatih Demir <kabalak@kabalak.net>, 2000.
+# Görkem Cetin <gorkem@gelecek.com.tr>, 2001.
+# Arman Aksoy <armish@linux-sevenler.de>, 2003.
+# Baris Cicek <baris@teamforce.name.tr>, 2004, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session.HEAD.tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2008-02-02 13:22+0200\n"
+"Last-Translator: Baris Cicek <baris@teamforce.name.tr>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Oturumunuz kaydedildi."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Oturum yöneticisine bağlanılamadı"

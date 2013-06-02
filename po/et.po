@@ -1,0 +1,385 @@
+# GNOME seansi eesti keele tõlge.
+# Estonian translation of gnome-session.
+#
+# Copyright (C) 1999, 2001, 2002, 2004–2006 Free Software Foundation, Inc.
+# Copyright (C) 2006–2011 The GNOME Project.
+#
+# Lauris Kaplinski <lauris@ariman.ee>, 1999.
+# Ilmar Kerm <ikerm@hot.ee>, 2001, 2002.
+# Tõivo Leedjärv <toivo@linux.ee>, 2002.
+# Priit Laes <amd@store20.com>, 2004–2006.
+# Ivar Smolin <okul@linux.ee>, 2005–2011.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session MASTER\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"session&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-22 18:12+0000\n"
+"PO-Revision-Date: 2012-09-23 09:54+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Select Command"
+msgstr "Käsu valimine"
+
+msgid "Add Startup Program"
+msgstr "Automaatselt käivituva rakenduse lisamine"
+
+msgid "Edit Startup Program"
+msgstr "Automaatselt käivituva rakenduse muutmine"
+
+msgid "The startup command cannot be empty"
+msgstr "Käivituskäsku ei tohi tühjaks jätta"
+
+msgid "The startup command is not valid"
+msgstr "Käivituskäsk pole korrektne"
+
+msgid "Enabled"
+msgstr "Lubatud"
+
+msgid "Icon"
+msgstr "Ikoon"
+
+msgid "Program"
+msgstr "Rakendus"
+
+msgid "Startup Applications Preferences"
+msgstr "Automaatselt käivitatavate rakenduste eelistused"
+
+msgid "No name"
+msgstr "Nimi puudub"
+
+msgid "No description"
+msgstr "Kirjeldus puudub"
+
+msgid "Version of this application"
+msgstr "Rakenduse versioon"
+
+msgid "Could not display help document"
+msgstr "Abidokumenti pole võimalik kuvada"
+
+msgid "GNOME fallback"
+msgstr "GNOME varurežiim"
+
+msgid "GNOME"
+msgstr "GNOME"
+
+msgid "This session logs you into GNOME"
+msgstr "Selle seansiga logitakse sind GNOME keskkonda sisse"
+
+msgid "Some programs are still running:"
+msgstr "Mõned rakendused töötavad ikka veel:"
+
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"Oodatakse rakenduse töö lõpetamist.  Rakenduse katkestamine võib põhjustada "
+"Sinu (salvestamata) tööde kaotsimineku."
+
+msgid "Startup Applications"
+msgstr "Automaatselt käivitatavad rakendused"
+
+msgid "Choose what applications to start when you log in"
+msgstr "Sisselogimisel käivitatavate rakenduste valimine"
+
+msgid "Additional startup _programs:"
+msgstr "Täiendavad automaatselt käivituvad _rakendused:"
+
+msgid "Startup Programs"
+msgstr "Automaatselt käivituvad rakendused"
+
+msgid "_Automatically remember running applications when logging out"
+msgstr "Väljalogimisel _jäetakse töötavad rakendused meelde"
+
+msgid "_Remember Currently Running Applications"
+msgstr "_Jäta hetkel töötavad rakendused meelde"
+
+msgid "Options"
+msgstr "Valikud"
+
+msgid "Browse…"
+msgstr "Sirvi…"
+
+msgid "Comm_ent:"
+msgstr "Komm_entaar:"
+
+msgid "Co_mmand:"
+msgstr "_Käsk:"
+
+msgid "_Name:"
+msgstr "_Nimi:"
+
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "Fail pole korrektne .desktop fail"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Töölauafailis tundmatu \"Version '%s'\""
+
+#, c-format
+msgid "Starting %s"
+msgstr "Käivitamine: %s"
+
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Rakendus ei toeta käsurealt määratavaid dokumente"
+
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Tundmatu käivitusvalik: %d"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+"Dokumendi URI-sid pole võimalik 'Type=Link' tüüpi töölauakirjetele edastada"
+
+#, c-format
+msgid "Not a launchable item"
+msgstr "Pole käivitatav kirje"
+
+msgid "Disable connection to session manager"
+msgstr "Seansihalduriga ühendumise keelamine"
+
+msgid "Specify file containing saved configuration"
+msgstr "Salvestatud seadistusi sisaldava faili määramine"
+
+msgid "FILE"
+msgstr "FAIL"
+
+msgid "Specify session management ID"
+msgstr "Seansihalduse ID määramine"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Session management options:"
+msgstr "Seansihalduse valikud:"
+
+msgid "Show session management options"
+msgstr "Seansihalduse valikute näitamine"
+
+#, c-format
+msgid "Icon '%s' not found"
+msgstr "Ikooni '%s' ei leitud"
+
+msgid "Unknown"
+msgstr "Tundmatu"
+
+msgid "A program is still running:"
+msgstr "Üks rakendus töötab ikka veel:"
+
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"Rakenduse töö lõpetamise järel ootamine.  Nende rakenduste katkestamine võib "
+"põhjustada (salvestamata) tööde kaotsimineku."
+
+msgid "Switch User Anyway"
+msgstr "Vaheta ikkagi kasutajat"
+
+msgid "Log Out Anyway"
+msgstr "Logi ikkagi välja"
+
+msgid "Suspend Anyway"
+msgstr "Alusta ikkagi uinakut"
+
+msgid "Hibernate Anyway"
+msgstr "Alusta ikkagi talveund"
+
+msgid "Shut Down Anyway"
+msgstr "Lülita ikkagi välja"
+
+msgid "Restart Anyway"
+msgstr "Taaskäivita ikkagi"
+
+msgid "Lock Screen"
+msgstr "Lukusta ekraan"
+
+msgid "Cancel"
+msgstr "Tühista"
+
+#. This string is shared with gsm-fail-whale-dialog.c
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] "Sind logitakse %d sekundi pärast automaatselt välja."
+msgstr[1] "Sind logitakse %d sekundi pärast automaatselt välja."
+
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] "See arvuti lülitatakse %d sekundi pärast automaatselt välja."
+msgstr[1] "See arvuti lülitatakse %d sekundi pärast automaatselt välja."
+
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] "See arvuti taaskäivitatakse %d sekundi pärast automaatselt."
+msgstr[1] "See arvuti taaskäivitatakse %d sekundi pärast automaatselt."
+
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr "Sa oled sisse logitud kasutajana \"%s\"."
+
+msgid "Log out of this system now?"
+msgstr "Kas logida arvutist välja?"
+
+msgid "_Switch User"
+msgstr "_Vaheta kasutajat"
+
+msgid "_Log Out"
+msgstr "Logi _välja"
+
+msgid "Shut down this system now?"
+msgstr "Kas lülitada arvuti välja?"
+
+msgid "S_uspend"
+msgstr "_Alusta uinakut"
+
+msgid "_Hibernate"
+msgstr "_Alusta talveund"
+
+msgid "_Restart"
+msgstr "_Taaskäivita"
+
+msgid "_Shut Down"
+msgstr "Lülita _välja"
+
+msgid "Restart this system now?"
+msgstr "Kas taaskäivitada arvuti kohe?"
+
+msgid "Oh no!  Something has gone wrong."
+msgstr "Oo ei! Miski läks nihu."
+
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+"Esines viga ja süsteem ei suuda taastuda. Palun võta ühendust "
+"süsteemihalduriga."
+
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"Esines viga ja süsteem ei suuda taastuda. Ettevaatusabinõuna keelati kõik "
+"laiendused."
+
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+"Esines viga ja süsteem ei suuda taastuda.\n"
+"Logi välja ja proovi uuesti."
+
+msgid "GNOME 3 Failed to Load"
+msgstr "GNOME 3 laadimine nurjus"
+
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+"Kahjuks polnud GNOME 3 võimalik õigesti käivituda ja kasutatakse "
+"<i>varurežiimi</i>.\n"
+"\n"
+"Kõige tõenäolisemalt on probleemide allikaks sinu videokaart või selle "
+"draiver."
+
+msgid "Learn more about GNOME 3"
+msgstr "Õpi GNOME 3 rohkem tundma"
+
+msgid "Not responding"
+msgstr "Ei vasta"
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+msgid "Remembered Application"
+msgstr "Meelde jäetud rakendus"
+
+msgid "This program is blocking logout."
+msgstr "See rakendus takistab väljalogimist."
+
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+"Uue kliendi ühendus lükati tagasi, kuna hetkel jäetakse seanss seisma\n"
+
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr "ICE kuulamissoklit pole võimalik luua: %s"
+
+#. Oh well, no X for you!
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+"Sisselogimise seanssi pole võimalik käivitada (ja X-serveriga pole võimalik "
+"ühenduda)"
+
+msgid "Override standard autostart directories"
+msgstr ""
+"Standardsete automaatkäivituse kataloogide asemel muude kataloogide "
+"kasutamine"
+
+msgid "AUTOSTART_DIR"
+msgstr "AUTOMAATKÄIVITUS_KAUST"
+
+msgid "Session to use"
+msgstr "Kasutatav seanss"
+
+msgid "SESSION_NAME"
+msgstr "SEANSI_NIMI"
+
+msgid "Enable debugging code"
+msgstr "Silumiskoodi lubamine"
+
+msgid "Do not load user-specified applications"
+msgstr "Kasutaja määratud rakendusi ei laadita"
+
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+msgid "Show the fail whale dialog for testing"
+msgstr "Testimise jaoks kuvatakse nurjumise dialoogi"
+
+msgid " - the GNOME session manager"
+msgstr " - GNOME seansihaldur"
+
+msgid "Log out"
+msgstr "Väljalogimine"
+
+msgid "Power off"
+msgstr "Väljalülitamine"
+
+msgid "Reboot"
+msgstr "Taaskäivita"
+
+msgid "Ignoring any existing inhibitors"
+msgstr "Kõiki olemasolevaid piiranguid eiratakse"
+
+msgid "Don't prompt for user confirmation"
+msgstr "Kinnitust pole vaja küsida"
+
+msgid "Could not connect to the session manager"
+msgstr "Seansihalduriga pole võimalik ühenduda"
+
+msgid "Program called with conflicting options"
+msgstr "Rakendus kutsuti välja vastuoluliste parameetritega"

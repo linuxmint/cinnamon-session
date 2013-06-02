@@ -1,0 +1,7 @@
+[Desktop Entry]
+_Name=Ubuntu
+_Comment=This session logs you into Ubuntu
+Exec=gnome-session --session=ubuntu
+TryExec=unity
+Icon=
+Type=Application

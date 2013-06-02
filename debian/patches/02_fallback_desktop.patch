@@ -1,0 +1,12 @@
+Index: gnome-session-3.0.2/data/gnome-fallback.desktop.in
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ gnome-session-3.0.2/data/gnome-fallback.desktop.in	2011-11-04 20:06:03.653307488 +0100
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++_Name=GNOME Classic
++_Comment=This session logs you into GNOME
++Exec=gnome-session-fallback
++TryExec=gnome-session
++Icon=
++Type=Application

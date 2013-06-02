@@ -1,0 +1,27 @@
+Debian #572085
+
+Don’t fall back to GDM when ConsoleKit fails. If CK is not available, it 
+will not be attempted anyway.
+
+Index: gnome-session-3.5.4/gnome-session/gsm-manager.c
+===================================================================
+--- gnome-session-3.5.4.orig/gnome-session/gsm-manager.c	2012-07-19 13:41:23.511406643 +1200
++++ gnome-session-3.5.4/gnome-session/gsm-manager.c	2012-07-19 13:41:50.227405715 +1200
+@@ -492,7 +492,7 @@
+                 g_signal_connect (manager->priv->system,
+                                   "request-completed",
+                                   G_CALLBACK (quit_request_completed),
+-                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_REBOOT));
++                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_NONE));
+                 gsm_system_attempt_restart (manager->priv->system);
+                 break;
+         case GSM_MANAGER_LOGOUT_REBOOT_GDM:
+@@ -506,7 +506,7 @@
+                 g_signal_connect (manager->priv->system,
+                                   "request-completed",
+                                   G_CALLBACK (quit_request_completed),
+-                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_SHUTDOWN));
++                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_NONE));
+                 gsm_system_attempt_stop (manager->priv->system);
+                 break;
+         case GSM_MANAGER_LOGOUT_SHUTDOWN_GDM:

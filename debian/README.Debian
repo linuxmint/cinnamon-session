@@ -1,0 +1,51 @@
+gnome-session for Debian
+========================
+
+GNOME 3 / GNOME Fallback
+------------------------
+
+The gnome-session package provides the standard GNOME 3 session, which 
+is based on the GNOME Shell. The gnome-session-fallback package provides 
+a “fallback” session which is based on the GNOME panel and Metacity. You 
+can choose them in the display manager (typically GDM).
+
+If no suitable 3D acceleration is detected, the fallback session will be 
+launched in both cases.
+
+
+Changing the window manager
+---------------------------
+
+The GNOME Shell requires mutter and cannot run with another window 
+manager.
+
+If you want to use an alternative window manager (such as compiz or 
+openbox), you need to select the fallback session. Then, put in your 
+.gnomerc file the following:
+    WINDOW_MANAGER=my_wonderful_wm
+    export WINDOW_MANAGER
+
+
+Applications at startup
+-----------------------
+
+Upon startup, gnome-session starts the following applications:
+ - Saved session: if you have saved a session, it is located in 
+   ~/.config/gnome-session/saved-session/. You can enable automatic 
+   session saving or manually save it in the "Startup Applications" 
+   configuration applet.
+ - Autostart applications: applications shipping a .desktop file in 
+   /usr/share/gnome/autostart or /etc/xdg/autostart. This includes the 
+   keyring manager, the settings daemon, nautilus and the power 
+   manager. They can be selectively disabled in the configuration 
+   applet.
+ - Required components: they are listed in the 
+   /usr/share/gnome-session/sessions/*.desktop file corresponding to the 
+   current session (gnome or gnome-fallback).
+
+
+Splash screen
+-------------
+
+Displaying a splash screen implies a noticeable delay in login for most users,
+hence it's entirely disabled now.

@@ -1,0 +1,6 @@
+# List of source files containing translatable strings that should not be
+# translated.
+# Please keep this file sorted alphabetically.
+data/gnome-session.schemas.in
+data/gnome-wm.desktop.in
+data/session-properties.desktop.in

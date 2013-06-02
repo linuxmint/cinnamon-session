@@ -1,0 +1,53 @@
+# Dutch translation for gnome-session
+#
+# This file is distributed under the same license as the gnome-session package.
+#
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Dirk-Jan C. Binnema <djcb@dds.nl>, 1998, 1999.
+# Dennis Smit <synap@area101.penguin.nl>, 2000.
+# Almer S. Tigelaar <almer1@dds.nl>, 2000.
+# Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu>, 2001.
+# Huib Kleinhout <huib@stack.nl>, 2002.
+# Ronald Hummelink <ronald@hummelink.xs4all.nl>, 2002.
+# Jeroen van der Vegt <A.J.vanderVegt@ITS.TUDelft.nl>, 2002.
+# Reinout van Schouwen <reinout@cs.vu.nl>, 2003
+# Tino Meinen <a.t.meinen@chello.nl> 2005, 2006.
+# Wouter Bolsterlee <wbolster@gnome.org>, 2007, 2008.
+# Jeroen Schot <schot@a-eskwadraat.nl>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session 3.0.2-4\n"
+"Report-Msgid-Bugs-To: gnome-session@packages.debian.org\n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2011-11-17 10:39+0100\n"
+"Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
+"Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr "Klassieke Gnome"
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr "Deze sessie laat u in Gnome inloggen"
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Uw sessie is opgeslagen"
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr "Het opslaan van de sessie is mislukt"
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr "Kan geen verbinding maken met de sessiebus"
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Kan geen verbinding maken met het sessiebeheer"

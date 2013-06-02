@@ -1,0 +1,501 @@
+# Brazilian Portuguese translation of gnome-session.
+# Copyright (C) 1999-2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-session package.
+# Elvis Pfützenreuter <epx@netville.com.br>
+# Sandro Nunes Henrique <sandro@conectiva.com.br>
+# Rodrigo Stulzer Lopes <rodrigo@conectiva.com.br>
+# Ricardo Soares Guimarães <ricardo@conectiva.com.br>
+# Gustavo Maciel Dias Vieira <gustavo@sagui.org>, 2000-2001.
+# Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2002-2005.
+# Og Maciel <ogmaciel@ubuntu.com>, 2007-2009.
+# Vladimir Melo <vmelo@gnome.org>, 2008.
+# Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2008.
+# Djavan Fagundes <dnoway@gmail.com>, 2008.
+# André Gondim <In Memorian>, 2009.
+# Flamarion Jorge <jorge.flamarion@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-04 08:51-0400\n"
+"PO-Revision-Date: 2012-09-03 23:00-0300\n"
+"Last-Translator: Fábio Nogueira <fnogueira@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../capplet/gsm-app-dialog.c:120
+msgid "Select Command"
+msgstr "Selecionar comando"
+
+#: ../capplet/gsm-app-dialog.c:193
+msgid "Add Startup Program"
+msgstr "Adicionar programa inicial"
+
+#: ../capplet/gsm-app-dialog.c:197
+msgid "Edit Startup Program"
+msgstr "Editar programa inicial"
+
+#: ../capplet/gsm-app-dialog.c:484
+msgid "The startup command cannot be empty"
+msgstr "O comando inicial não pode ser vazio"
+
+#: ../capplet/gsm-app-dialog.c:490
+msgid "The startup command is not valid"
+msgstr "O comando inicial não é válido"
+
+#: ../capplet/gsm-properties-dialog.c:518
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: ../capplet/gsm-properties-dialog.c:530
+msgid "Icon"
+msgstr "Ícone"
+
+#: ../capplet/gsm-properties-dialog.c:542
+msgid "Program"
+msgstr "Programa"
+
+#: ../capplet/gsm-properties-dialog.c:746
+msgid "Startup Applications Preferences"
+msgstr "Preferências dos aplicativos de sessão"
+
+#: ../capplet/gsp-app.c:274
+msgid "No name"
+msgstr "Sem nome:"
+
+#: ../capplet/gsp-app.c:280
+msgid "No description"
+msgstr "Nenhuma descrição"
+
+#: ../capplet/main.c:35 ../gnome-session/main.c:294
+msgid "Version of this application"
+msgstr "Versão deste aplicativo"
+
+#: ../capplet/main.c:61
+msgid "Could not display help document"
+msgstr "Não é possível exibir documento de ajuda"
+
+#: ../data/gnome-fallback.session.desktop.in.in.h:1
+msgid "GNOME fallback"
+msgstr "GNOME reserva"
+
+#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+msgid "GNOME"
+msgstr "GNOME"
+
+#: ../data/gnome.desktop.in.h:2
+msgid "This session logs you into GNOME"
+msgstr "Essa sessão o leva ao GNOME"
+
+#: ../data/gsm-inhibit-dialog.ui.h:1 ../gnome-session/gsm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr "Alguns programas ainda estão em execução:"
+
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../gnome-session/gsm-inhibit-dialog.c:640
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"Aguardando a finalização do programa. A interrupção deste programa pode "
+"ocasionar em perda de trabalho."
+
+#: ../data/session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr "Aplicativos de sessão"
+
+#: ../data/session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Escolha quais os aplicativos que irão iniciar quando você logar-se"
+
+#: ../data/session-properties.ui.h:1
+msgid "Additional startup _programs:"
+msgstr "_Programas iniciais adicionais:"
+
+#: ../data/session-properties.ui.h:2
+msgid "Startup Programs"
+msgstr "Programas iniciais"
+
+#: ../data/session-properties.ui.h:3
+msgid "_Automatically remember running applications when logging out"
+msgstr ""
+"_Automaticamente lembrar aplicativos em execução quando encerrar da sessão"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Remember Currently Running Applications"
+msgstr "_Lembrar dos aplicativos atualmente em execução"
+
+#: ../data/session-properties.ui.h:5
+msgid "Options"
+msgstr "Opções"
+
+#: ../data/session-properties.ui.h:6
+msgid "Browse…"
+msgstr "Navegar…"
+
+#: ../data/session-properties.ui.h:7
+msgid "Comm_ent:"
+msgstr "Com_entário:"
+
+#: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr "Co_mando:"
+
+#: ../data/session-properties.ui.h:9
+msgid "_Name:"
+msgstr "_Nome:"
+
+#: ../egg/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "O arquivo não é um arquivo .desktop válido"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Versão do arquivo da área de trabalho \"%s\" não reconhecida"
+
+#: ../egg/eggdesktopfile.c:974
+#, c-format
+msgid "Starting %s"
+msgstr "Iniciando %s"
+
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "O aplicativo não aceita documentos na linha de comando"
+
+#: ../egg/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Opção de lançamento não reconhecida: %d"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+"Não foi possível passar as URIs dos documentos para uma entrada de área de "
+"trabalho 'Type=Link'"
+
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr "Não é um item lançável"
+
+#: ../egg/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr "Desabilitar conexão para o gerenciador de sessões"
+
+#: ../egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr "Especificar o arquivo que contém a configuração salva"
+
+#: ../egg/eggsmclient.c:229
+msgid "FILE"
+msgstr "ARQUIVO"
+
+#: ../egg/eggsmclient.c:232
+msgid "Specify session management ID"
+msgstr "Especificar o ID de gerenciamento de sessão"
+
+#: ../egg/eggsmclient.c:232
+msgid "ID"
+msgstr "ID"
+
+#: ../egg/eggsmclient.c:253
+msgid "Session management options:"
+msgstr "Opções de gerenciamento de sessão:"
+
+#: ../egg/eggsmclient.c:254
+msgid "Show session management options"
+msgstr "Mostra as opções de gerenciamento de sessão"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr "Ícone \"%s\" não localizado"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr "Um programa ainda está em execução:"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:644
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"Aguardando os programas para finalizar. A interrupção destes programas pode "
+"ocasionar em perda de trabalho."
+
+#: ../gnome-session/gsm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr "Trocar usuário mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:877
+msgid "Log Out Anyway"
+msgstr "Encerrar mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr "Suspender mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:883
+msgid "Hibernate Anyway"
+msgstr "Hibernar mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:886
+msgid "Shut Down Anyway"
+msgstr "Desligar mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:889
+msgid "Restart Anyway"
+msgstr "Reiniciar mesmo assim"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr "Bloquear tela"
+
+#: ../gnome-session/gsm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. This string is shared with gsm-fail-whale-dialog.c
+#: ../gnome-session/gsm-logout-dialog.c:266
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] "Essa sessão será encerrada automaticamente em %d segundo."
+msgstr[1] "Essa sessão será encerrada automaticamente em %d segundos."
+
+#: ../gnome-session/gsm-logout-dialog.c:274
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] "Este sistema será automaticamente desligado em %d segundo."
+msgstr[1] "Este sistema será automaticamente desligado em %d segundos."
+
+#: ../gnome-session/gsm-logout-dialog.c:282
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] "Este sistema será automaticamente reiniciado em %d segundo."
+msgstr[1] "Este sistema será automaticamente reiniciado em %d segundos."
+
+#: ../gnome-session/gsm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr "Você está logado atualmente como \"%s\"."
+
+#: ../gnome-session/gsm-logout-dialog.c:372
+msgid "Log out of this system now?"
+msgstr "Desligar este sistema agora?"
+
+#: ../gnome-session/gsm-logout-dialog.c:378
+msgid "_Switch User"
+msgstr "_Trocar usuário"
+
+#: ../gnome-session/gsm-logout-dialog.c:387
+#: ../gnome-session/gsm-fail-whale-dialog.c:337
+#: ../gnome-session/gsm-util.c:389
+msgid "_Log Out"
+msgstr "_Encerrar sessão"
+
+#: ../gnome-session/gsm-logout-dialog.c:393
+msgid "Shut down this system now?"
+msgstr "Desligar este sistema agora?"
+
+#: ../gnome-session/gsm-logout-dialog.c:399
+msgid "S_uspend"
+msgstr "S_uspender"
+
+#: ../gnome-session/gsm-logout-dialog.c:405
+msgid "_Hibernate"
+msgstr "_Hibernar"
+
+#: ../gnome-session/gsm-logout-dialog.c:411
+#: ../gnome-session/gsm-logout-dialog.c:437
+msgid "_Restart"
+msgstr "_Reiniciar"
+
+#: ../gnome-session/gsm-logout-dialog.c:421
+msgid "_Shut Down"
+msgstr "_Desligar"
+
+#: ../gnome-session/gsm-logout-dialog.c:427
+msgid "Restart this system now?"
+msgstr "Reiniciar este sistema agora?"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:311
+msgid "Oh no!  Something has gone wrong."
+msgstr "Oh não! Alguma coisa está errada."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:318
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+"Ocorreu um problema e o sistema não pôde ser recuperado. Por favor, entre em "
+"contato com um administrador de sistemas"
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:320
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"Ocorreu um problema e o sistema não pôde ser recuperado. Todas as "
+"extensõesforam desativadas por precaução."
+
+#: ../gnome-session/gsm-fail-whale-dialog.c:322
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+"Ocorreu um problema e o sistema não pôde ser recuperado.\n"
+"Por favor encerre a sessão e tente novamente."
+
+#: ../gnome-session/gsm-manager.c:1393
+msgid "GNOME 3 Failed to Load"
+msgstr "Falha ao carregar o GNOME 3"
+
+#: ../gnome-session/gsm-manager.c:1394
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+"Infelizmente o GNOME 3 falhou ao inicializar corretamente e inicializou em "
+"<i>modo reserva</i>.\n"
+"\n"
+"Isto provavelmente significa que o seu sistema (hardware de gráficos ou "
+"driver) não é capaz de obter a experiência completa do GNOME 3."
+
+#: ../gnome-session/gsm-manager.c:1396
+msgid "Learn more about GNOME 3"
+msgstr "Aprender mais sobre o GNOME 3"
+
+#: ../gnome-session/gsm-manager.c:1493 ../gnome-session/gsm-manager.c:2234
+msgid "Not responding"
+msgstr "Não respondendo"
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../gnome-session/gsm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr "Lembrar dos aplicativos"
+
+#: ../gnome-session/gsm-xsmp-client.c:1197
+msgid "This program is blocking logout."
+msgstr "Este programa está bloqueando o encerramento da sessão."
+
+#: ../gnome-session/gsm-xsmp-server.c:326
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+"Recusando a nova conexão do cliente porque a sessão está sendo desligada "
+"neste momento\n"
+
+#: ../gnome-session/gsm-xsmp-server.c:595
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr "Não foi possível criar o soquete de escuta ICE: %s"
+
+#. Oh well, no X for you!
+#: ../gnome-session/gsm-util.c:373
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+"Não foi possível iniciar a sessão de login (e não foi possível conectar ao "
+"servidor X)"
+
+#: ../gnome-session/main.c:290
+msgid "Override standard autostart directories"
+msgstr "Substituir os diretórios padrões de início automático"
+
+#: ../gnome-session/main.c:290
+msgid "AUTOSTART_DIR"
+msgstr "AUTOSTART_DIR"
+
+#: ../gnome-session/main.c:291
+msgid "Session to use"
+msgstr "Sessões para usar"
+
+#: ../gnome-session/main.c:291
+msgid "SESSION_NAME"
+msgstr "SESSION_NAME"
+
+#: ../gnome-session/main.c:292
+msgid "Enable debugging code"
+msgstr "Habilitar código de depuração"
+
+#: ../gnome-session/main.c:293
+msgid "Do not load user-specified applications"
+msgstr "Não carregar aplicativos especificados pelo usuário"
+
+# Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong. http://is.gd/Q4XOeq
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../gnome-session/main.c:296
+msgid "Show the fail whale dialog for testing"
+msgstr "Mostrar o diálogo da \"falha da baleia\" para teste"
+
+#: ../gnome-session/main.c:316
+msgid " - the GNOME session manager"
+msgstr "- gerenciador de sessões do GNOME"
+
+#: ../tools/gnome-session-quit.c:53
+msgid "Log out"
+msgstr "Encerrar sessão"
+
+#: ../tools/gnome-session-quit.c:54
+msgid "Power off"
+msgstr "Desligar"
+
+#: ../tools/gnome-session-quit.c:55
+msgid "Reboot"
+msgstr "Reiniciar"
+
+#: ../tools/gnome-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
+msgstr "Ignorar qualquer um inibidor existente"
+
+#: ../tools/gnome-session-quit.c:57
+msgid "Don't prompt for user confirmation"
+msgstr "Não pedir configuração do usuário"
+
+#: ../tools/gnome-session-quit.c:91 ../tools/gnome-session-quit.c:101
+msgid "Could not connect to the session manager"
+msgstr "Não foi possível conectar ao gerenciador de sessões"
+
+#: ../tools/gnome-session-quit.c:203
+msgid "Program called with conflicting options"
+msgstr "Programa chamado com opções conflitantes"
+
+#~ msgid "Exited with code %d"
+#~ msgstr "Saiu com o código %d"
+
+#~ msgid "Killed by signal %d"
+#~ msgstr "Morto pelo sinal %d"
+
+#~ msgid "Stopped by signal %d"
+#~ msgstr "Parado pelo sinal %d"
+
+#~ msgid "<b>Some programs are still running:</b>"
+#~ msgstr "<b>Alguns programas ainda estão em execução:</b>"

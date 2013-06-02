@@ -1,0 +1,41 @@
+# Debian-specific Thai translation for gnome-session
+# Copyright (C) 2011 Software in the Public Interest, Inc.
+# This file is distributed under the same license as the gnome-session package.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2011-11-06 16:39+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr "GNOME ดั้งเดิม"
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr "วาระนี้จะเข้าสู่ GNOME"
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "บันทึกวาระของคุณเรียบร้อย"
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr "บันทึกวาระไม่สำเร็จ"
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr "ไม่สามารถเชื่อมต่อไปยังบัสวาระ"
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "ไม่สามารถเชื่อมต่อไปยังโปรแกรมจัดการวาระ"

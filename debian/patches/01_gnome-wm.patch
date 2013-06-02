@@ -1,0 +1,11 @@
+Index: gnome-session-3.0.0/data/gnome-fallback.session.desktop.in.in
+===================================================================
+--- gnome-session-3.0.0.orig/data/gnome-fallback.session.desktop.in.in	2011-04-20 21:19:19.751604438 +0200
++++ gnome-session-3.0.0/data/gnome-fallback.session.desktop.in.in	2011-04-20 21:19:24.495627620 +0200
+@@ -2,5 +2,5 @@
+ _Name=GNOME fallback
+ RequiredComponents=gnome-panel;gnome-settings-daemon;
+ RequiredProviders=windowmanager;notifications;
+-DefaultProvider-windowmanager=metacity
++DefaultProvider-windowmanager=gnome-wm
+ DefaultProvider-notifications=notification-daemon

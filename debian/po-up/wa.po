@@ -1,0 +1,49 @@
+# Traduction into the walloon language.
+#
+# Si vos voloz donner on côp di spale pol ratournaedje di Gnome (ou des
+# ôtes libes programes) sicrijhoz-mu a l' adresse emile
+# <srtxg@chanae.alphanet.ch>; nos avons co bråmint di l' ovraedje a fé.
+#
+# Copyright (C) 1999,2002 Free Software Foundation, Inc.
+# Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999-2002
+# Lucyin Mahin, 2000
+# Lorint Hendschel <LorintHendschel@skynet.be>, 1999-2000.
+# Pablo Saratxaga <pablo@walon.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session 1.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2005-04-02 00:50+0200\n"
+"Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr ""
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr ""
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr ""
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr ""
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr ""
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Dji n' a nén parvnou a m' adjonde å manaedjeu des sessions"

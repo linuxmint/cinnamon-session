@@ -1,0 +1,40 @@
+Description: Don't register a handler for SIGSEGV. We want Apport to catch
+these crashes so that users can submit useful crash reports.
+Forwarded: Not Needed
+Author: Chris Coulson <chrisccoulson@ubuntu.com>
+
+Index: ubuntu/gnome-session/gdm-signal-handler.c
+===================================================================
+--- ubuntu.orig/gnome-session/gdm-signal-handler.c	2012-06-11 12:21:16.229219782 +0100
++++ ubuntu/gnome-session/gdm-signal-handler.c	2012-06-11 12:21:59.897217861 +0100
+@@ -348,7 +348,7 @@
+ 
+         gdm_signal_handler_add (handler, SIGILL, NULL, NULL);
+         gdm_signal_handler_add (handler, SIGBUS, NULL, NULL);
+-        gdm_signal_handler_add (handler, SIGSEGV, NULL, NULL);
++        /* gdm_signal_handler_add (handler, SIGSEGV, NULL, NULL); */
+         gdm_signal_handler_add (handler, SIGABRT, NULL, NULL);
+         gdm_signal_handler_add (handler, SIGTRAP, NULL, NULL);
+ }
+Index: ubuntu/gnome-session/main.c
+===================================================================
+--- ubuntu.orig/gnome-session/main.c	2012-06-11 12:21:16.229219782 +0100
++++ ubuntu/gnome-session/main.c	2012-06-11 12:21:59.897217861 +0100
+@@ -358,7 +358,7 @@
+         }
+ 
+         manager = gsm_manager_new (client_store, failsafe);
+-
++        /*
+         signal_handler = gdm_signal_handler_new ();
+         gdm_signal_handler_add_fatal (signal_handler);
+         gdm_signal_handler_add (signal_handler, SIGFPE, signal_cb, NULL);
+@@ -367,7 +367,7 @@
+         gdm_signal_handler_add (signal_handler, SIGTERM, signal_cb, manager);
+         gdm_signal_handler_add (signal_handler, SIGINT, signal_cb, manager);
+         gdm_signal_handler_set_fatal_func (signal_handler, shutdown_cb, manager);
+-
++        */
+         if (IS_STRING_EMPTY (session_name))
+                 session_name = _gsm_manager_get_default_session (manager);
+ 

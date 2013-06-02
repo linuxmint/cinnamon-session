@@ -1,0 +1,42 @@
+# Danish translation of gnome-session.
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-session package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-session\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-04 20:12+0100\n"
+"PO-Revision-Date: 2011-11-06 21:52+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../patches/02_fallback_desktop.patch.h:1
+msgid "GNOME Classic"
+msgstr "GNOME-klassisk"
+
+#: ../patches/02_fallback_desktop.patch.h:2
+msgid "This session logs you into GNOME"
+msgstr "Denne session logger dig ind i GNOME"
+
+#: ../patches/10_session_save.patch:237
+msgid "Your session has been saved."
+msgstr "Din session er blevet gemt."
+
+#: ../patches/10_session_save.patch:239 ../patches/10_session_save.patch:263
+msgid "Failed to save session"
+msgstr "Kunne ikke gemme session"
+
+#: ../patches/10_session_save.patch:251
+msgid "Could not connect to the session bus"
+msgstr "Kunne ikke forbinde til sessionsbussen"
+
+#: ../patches/10_session_save.patch:257
+msgid "Could not connect to the session manager"
+msgstr "Kunne ikke tilkoble til sessionshåndteringen"

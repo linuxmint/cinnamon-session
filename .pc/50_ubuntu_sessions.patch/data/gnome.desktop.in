@@ -1,0 +1,7 @@
+[Desktop Entry]
+_Name=GNOME
+_Comment=This session logs you into GNOME
+Exec=gnome-session
+TryExec=gnome-session
+Icon=
+Type=Application
