@@ -31,25 +31,25 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 
-#include "gsm-app-dialog.h"
-#include "gsm-properties-dialog.h"
-#include "gsm-util.h"
-#include "gsp-app-manager.h"
-#include "gsp-keyfile.h"
+#include "csm-app-dialog.h"
+#include "csm-properties-dialog.h"
+#include "csm-util.h"
+#include "csp-app-manager.h"
+#include "csp-keyfile.h"
 
-#include "gsp-app.h"
+#include "csp-app.h"
 
-#define GSP_APP_SAVE_DELAY 2
+#define CSP_APP_SAVE_DELAY 2
 
-#define GSP_ASP_SAVE_MASK_HIDDEN     0x0001
-#define GSP_ASP_SAVE_MASK_ENABLED    0x0002
-#define GSP_ASP_SAVE_MASK_NAME       0x0004
-#define GSP_ASP_SAVE_MASK_EXEC       0x0008
-#define GSP_ASP_SAVE_MASK_COMMENT    0x0010
-#define GSP_ASP_SAVE_MASK_NO_DISPLAY 0x0020
-#define GSP_ASP_SAVE_MASK_ALL        0xffff
+#define CSP_ASP_SAVE_MASK_HIDDEN     0x0001
+#define CSP_ASP_SAVE_MASK_ENABLED    0x0002
+#define CSP_ASP_SAVE_MASK_NAME       0x0004
+#define CSP_ASP_SAVE_MASK_EXEC       0x0008
+#define CSP_ASP_SAVE_MASK_COMMENT    0x0010
+#define CSP_ASP_SAVE_MASK_NO_DISPLAY 0x0020
+#define CSP_ASP_SAVE_MASK_ALL        0xffff
 
-struct _GspAppPrivate {
+struct _CspAppPrivate {
         char         *basename;
         char         *path;
 
@@ -82,7 +82,7 @@ struct _GspAppPrivate {
         gboolean      skip_next_monitor_event;
 };
 
-#define GSP_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSP_TYPE_APP, GspAppPrivate))
+#define CSP_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSP_TYPE_APP, CspAppPrivate))
 
 
 enum {
@@ -91,18 +91,18 @@ enum {
         LAST_SIGNAL
 };
 
-static guint gsp_app_signals[LAST_SIGNAL] = { 0 };
+static guint csp_app_signals[LAST_SIGNAL] = { 0 };
 
 
-G_DEFINE_TYPE (GspApp, gsp_app, G_TYPE_OBJECT)
+G_DEFINE_TYPE (CspApp, csp_app, G_TYPE_OBJECT)
 
-static void     gsp_app_dispose  (GObject *object);
-static void     gsp_app_finalize (GObject *object);
-static gboolean _gsp_app_save    (gpointer data);
+static void     csp_app_dispose  (GObject *object);
+static void     csp_app_finalize (GObject *object);
+static gboolean _csp_app_save    (gpointer data);
 
 
 static gboolean
-_gsp_str_equal (const char *a,
+_csp_str_equal (const char *a,
                 const char *b)
 {
         if (g_strcmp0 (a, b) == 0) {
@@ -122,50 +122,50 @@ _gsp_str_equal (const char *a,
 
 
 static void
-gsp_app_class_init (GspAppClass *class)
+csp_app_class_init (CspAppClass *class)
 {
         GObjectClass *gobject_class = G_OBJECT_CLASS (class);
 
-        gobject_class->dispose  = gsp_app_dispose;
-        gobject_class->finalize = gsp_app_finalize;
+        gobject_class->dispose  = csp_app_dispose;
+        gobject_class->finalize = csp_app_finalize;
 
-        gsp_app_signals[CHANGED] =
+        csp_app_signals[CHANGED] =
                 g_signal_new ("changed",
                               G_TYPE_FROM_CLASS (gobject_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GspAppClass,
+                              G_STRUCT_OFFSET (CspAppClass,
                                                changed),
                               NULL,
                               NULL,
                               g_cclosure_marshal_VOID__VOID,
                               G_TYPE_NONE, 0);
 
-        gsp_app_signals[REMOVED] =
+        csp_app_signals[REMOVED] =
                 g_signal_new ("removed",
                               G_TYPE_FROM_CLASS (gobject_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GspAppClass,
+                              G_STRUCT_OFFSET (CspAppClass,
                                                removed),
                               NULL,
                               NULL,
                               g_cclosure_marshal_VOID__VOID,
                               G_TYPE_NONE, 0);
 
-        g_type_class_add_private (class, sizeof (GspAppPrivate));
+        g_type_class_add_private (class, sizeof (CspAppPrivate));
 }
 
 static void
-gsp_app_init (GspApp *app)
+csp_app_init (CspApp *app)
 {
-        app->priv = GSP_APP_GET_PRIVATE (app);
+        app->priv = CSP_APP_GET_PRIVATE (app);
 
-        memset (app->priv, 0, sizeof (GspAppPrivate));
+        memset (app->priv, 0, sizeof (CspAppPrivate));
         app->priv->xdg_position        = G_MAXUINT;
         app->priv->xdg_system_position = G_MAXUINT;
 }
 
 static void
-_gsp_app_free_reusable_data (GspApp *app)
+_csp_app_free_reusable_data (CspApp *app)
 {
         if (app->priv->path) {
                 g_free (app->priv->path);
@@ -209,74 +209,74 @@ _gsp_app_free_reusable_data (GspApp *app)
 }
 
 static void
-gsp_app_dispose (GObject *object)
+csp_app_dispose (GObject *object)
 {
-        GspApp *app;
+        CspApp *app;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSP_IS_APP (object));
+        g_return_if_fail (CSP_IS_APP (object));
 
-        app = GSP_APP (object);
+        app = CSP_APP (object);
 
-        /* we save in dispose since we might need to reference GspAppManager */
+        /* we save in dispose since we might need to reference CspAppManager */
         if (app->priv->save_timeout) {
                 g_source_remove (app->priv->save_timeout);
                 app->priv->save_timeout = 0;
 
                 /* save now */
-                _gsp_app_save (app);
+                _csp_app_save (app);
         }
 
-        G_OBJECT_CLASS (gsp_app_parent_class)->dispose (object);
+        G_OBJECT_CLASS (csp_app_parent_class)->dispose (object);
 }
 
 static void
-gsp_app_finalize (GObject *object)
+csp_app_finalize (GObject *object)
 {
-        GspApp *app;
+        CspApp *app;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSP_IS_APP (object));
+        g_return_if_fail (CSP_IS_APP (object));
 
-        app = GSP_APP (object);
+        app = CSP_APP (object);
 
         if (app->priv->basename) {
                 g_free (app->priv->basename);
                 app->priv->basename = NULL;
         }
 
-        _gsp_app_free_reusable_data (app);
+        _csp_app_free_reusable_data (app);
 
-        G_OBJECT_CLASS (gsp_app_parent_class)->finalize (object);
+        G_OBJECT_CLASS (csp_app_parent_class)->finalize (object);
 }
 
 static void
-_gsp_app_emit_changed (GspApp *app)
+_csp_app_emit_changed (CspApp *app)
 {
-        g_signal_emit (G_OBJECT (app), gsp_app_signals[CHANGED], 0);
+        g_signal_emit (G_OBJECT (app), csp_app_signals[CHANGED], 0);
 }
 
 static void
-_gsp_app_emit_removed (GspApp *app)
+_csp_app_emit_removed (CspApp *app)
 {
-        g_signal_emit (G_OBJECT (app), gsp_app_signals[REMOVED], 0);
+        g_signal_emit (G_OBJECT (app), csp_app_signals[REMOVED], 0);
 }
 
 static void
-_gsp_app_update_description (GspApp *app)
+_csp_app_update_description (CspApp *app)
 {
         const char *primary;
         const char *secondary;
 
-        if (!gsm_util_text_is_blank (app->priv->name)) {
+        if (!csm_util_text_is_blank (app->priv->name)) {
                 primary = app->priv->name;
-        } else if (!gsm_util_text_is_blank (app->priv->exec)) {
+        } else if (!csm_util_text_is_blank (app->priv->exec)) {
                 primary = app->priv->exec;
         } else {
                 primary = _("No name");
         }
 
-        if (!gsm_util_text_is_blank (app->priv->comment)) {
+        if (!csm_util_text_is_blank (app->priv->comment)) {
                 secondary = app->priv->comment;
         } else {
                 secondary = _("No description");
@@ -293,7 +293,7 @@ _gsp_app_update_description (GspApp *app)
  */
 
 static void
-_gsp_ensure_user_autostart_dir (void)
+_csp_ensure_user_autostart_dir (void)
 {
         char *dir;
 
@@ -304,17 +304,17 @@ _gsp_ensure_user_autostart_dir (void)
 }
 
 static gboolean
-_gsp_app_user_equal_system (GspApp  *app,
+_csp_app_user_equal_system (CspApp  *app,
                             char   **system_path)
 {
-        GspAppManager *manager;
+        CspAppManager *manager;
         const char    *system_dir;
         char          *path;
         char          *str;
         GKeyFile      *keyfile;
 
-        manager = gsp_app_manager_get ();
-        system_dir = gsp_app_manager_get_dir (manager,
+        manager = csp_app_manager_get ();
+        system_dir = csp_app_manager_get_dir (manager,
                                               app->priv->xdg_system_position);
         g_object_unref (manager);
         if (!system_dir) {
@@ -330,20 +330,20 @@ _gsp_app_user_equal_system (GspApp  *app,
                 return FALSE;
         }
 
-        if (gsp_key_file_get_boolean (keyfile,
+        if (csp_key_file_get_boolean (keyfile,
                                       G_KEY_FILE_DESKTOP_KEY_HIDDEN,
                                       FALSE) != app->priv->hidden ||
-            gsp_key_file_get_boolean (keyfile,
-                                      GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
+            csp_key_file_get_boolean (keyfile,
+                                      CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
                                       TRUE) != app->priv->enabled ||
-            gsp_key_file_get_shown (keyfile,
-                                    gsm_util_get_current_desktop ()) != app->priv->shown) {
+            csp_key_file_get_shown (keyfile,
+                                    csm_util_get_current_desktop ()) != app->priv->shown) {
                 g_free (path);
                 g_key_file_free (keyfile);
                 return FALSE;
         }
 
-        if (gsp_key_file_get_boolean (keyfile,
+        if (csp_key_file_get_boolean (keyfile,
                                       G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY,
                                       FALSE) != app->priv->no_display) {
                 g_free (path);
@@ -351,9 +351,9 @@ _gsp_app_user_equal_system (GspApp  *app,
                 return FALSE;
         }
 
-        str = gsp_key_file_get_locale_string (keyfile,
+        str = csp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_NAME);
-        if (!_gsp_str_equal (str, app->priv->name)) {
+        if (!_csp_str_equal (str, app->priv->name)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -361,9 +361,9 @@ _gsp_app_user_equal_system (GspApp  *app,
         }
         g_free (str);
 
-        str = gsp_key_file_get_locale_string (keyfile,
+        str = csp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_COMMENT);
-        if (!_gsp_str_equal (str, app->priv->comment)) {
+        if (!_csp_str_equal (str, app->priv->comment)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -371,9 +371,9 @@ _gsp_app_user_equal_system (GspApp  *app,
         }
         g_free (str);
 
-        str = gsp_key_file_get_string (keyfile,
+        str = csp_key_file_get_string (keyfile,
                                        G_KEY_FILE_DESKTOP_KEY_EXEC);
-        if (!_gsp_str_equal (str, app->priv->exec)) {
+        if (!_csp_str_equal (str, app->priv->exec)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -381,9 +381,9 @@ _gsp_app_user_equal_system (GspApp  *app,
         }
         g_free (str);
 
-        str = gsp_key_file_get_locale_string (keyfile,
+        str = csp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_ICON);
-        if (!_gsp_str_equal (str, app->priv->icon)) {
+        if (!_csp_str_equal (str, app->priv->icon)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -399,7 +399,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 }
 
 static inline void
-_gsp_app_save_done_success (GspApp *app)
+_csp_app_save_done_success (CspApp *app)
 {
         app->priv->save_mask = 0;
 
@@ -410,19 +410,19 @@ _gsp_app_save_done_success (GspApp *app)
 }
 
 static gboolean
-_gsp_app_save (gpointer data)
+_csp_app_save (gpointer data)
 {
-        GspApp   *app;
+        CspApp   *app;
         char     *use_path;
         GKeyFile *keyfile;
         GError   *error;
 
-        app = GSP_APP (data);
+        app = CSP_APP (data);
 
         /* first check if removing the data from the user dir and using the
          * data from the system dir is enough -- this helps us keep clean the
          * user config dir by removing unneeded files */
-        if (_gsp_app_user_equal_system (app, &use_path)) {
+        if (_csp_app_user_equal_system (app, &use_path)) {
                 if (g_file_test (app->priv->path, G_FILE_TEST_EXISTS)) {
                         g_remove (app->priv->path);
                 }
@@ -432,7 +432,7 @@ _gsp_app_save (gpointer data)
 
                 app->priv->xdg_position = app->priv->xdg_system_position;
 
-                _gsp_app_save_done_success (app);
+                _csp_app_save_done_success (app);
                 return FALSE;
         }
 
@@ -450,51 +450,51 @@ _gsp_app_save (gpointer data)
 
         if (error) {
                 g_error_free (error);
-                gsp_key_file_populate (keyfile);
+                csp_key_file_populate (keyfile);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_HIDDEN) {
-                gsp_key_file_set_boolean (keyfile,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_HIDDEN) {
+                csp_key_file_set_boolean (keyfile,
                                           G_KEY_FILE_DESKTOP_KEY_HIDDEN,
                                           app->priv->hidden);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_NO_DISPLAY) {
-                gsp_key_file_set_boolean (keyfile,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_NO_DISPLAY) {
+                csp_key_file_set_boolean (keyfile,
                                           G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY,
                                           app->priv->no_display);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_ENABLED) {
-                gsp_key_file_set_boolean (keyfile,
-                                          GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_ENABLED) {
+                csp_key_file_set_boolean (keyfile,
+                                          CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
                                           app->priv->enabled);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_NAME) {
-                gsp_key_file_set_locale_string (keyfile,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_NAME) {
+                csp_key_file_set_locale_string (keyfile,
                                                 G_KEY_FILE_DESKTOP_KEY_NAME,
                                                 app->priv->name);
-                gsp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_NAME);
+                csp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_NAME);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_COMMENT) {
-                gsp_key_file_set_locale_string (keyfile,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_COMMENT) {
+                csp_key_file_set_locale_string (keyfile,
                                                 G_KEY_FILE_DESKTOP_KEY_COMMENT,
                                                 app->priv->comment);
-                gsp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_COMMENT);
+                csp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_COMMENT);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_EXEC) {
-                gsp_key_file_set_string (keyfile,
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_EXEC) {
+                csp_key_file_set_string (keyfile,
                                          G_KEY_FILE_DESKTOP_KEY_EXEC,
                                          app->priv->exec);
         }
 
-        _gsp_ensure_user_autostart_dir ();
-        if (gsp_key_file_to_file (keyfile, app->priv->path, NULL)) {
+        _csp_ensure_user_autostart_dir ();
+        if (csp_key_file_to_file (keyfile, app->priv->path, NULL)) {
                 app->priv->skip_next_monitor_event = TRUE;
-                _gsp_app_save_done_success (app);
+                _csp_app_save_done_success (app);
         } else {
                 g_warning ("Could not save %s file", app->priv->path);
         }
@@ -506,7 +506,7 @@ _gsp_app_save (gpointer data)
 }
 
 static void
-_gsp_app_queue_save (GspApp *app)
+_csp_app_queue_save (CspApp *app)
 {
         if (app->priv->save_timeout) {
                 g_source_remove (app->priv->save_timeout);
@@ -530,8 +530,8 @@ _gsp_app_queue_save (GspApp *app)
                                                     app->priv->basename, NULL);
         }
 
-        app->priv->save_timeout = g_timeout_add_seconds (GSP_APP_SAVE_DELAY,
-                                                         _gsp_app_save,
+        app->priv->save_timeout = g_timeout_add_seconds (CSP_APP_SAVE_DELAY,
+                                                         _csp_app_save,
                                                          app);
 }
 
@@ -540,98 +540,98 @@ _gsp_app_queue_save (GspApp *app)
  */
 
 const char *
-gsp_app_get_basename (GspApp *app)
+csp_app_get_basename (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->basename;
 }
 
 const char *
-gsp_app_get_path (GspApp *app)
+csp_app_get_path (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->path;
 }
 
 gboolean
-gsp_app_get_hidden (GspApp *app)
+csp_app_get_hidden (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
+        g_return_val_if_fail (CSP_IS_APP (app), FALSE);
 
         return app->priv->hidden;
 }
 
 gboolean
-gsp_app_get_display (GspApp *app)
+csp_app_get_display (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
+        g_return_val_if_fail (CSP_IS_APP (app), FALSE);
 
         return !app->priv->no_display;
 }
 
 gboolean
-gsp_app_get_enabled (GspApp *app)
+csp_app_get_enabled (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
+        g_return_val_if_fail (CSP_IS_APP (app), FALSE);
 
         return app->priv->enabled;
 }
 
 void
-gsp_app_set_enabled (GspApp   *app,
+csp_app_set_enabled (CspApp   *app,
                      gboolean  enabled)
 {
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP (app));
 
         if (enabled == app->priv->enabled) {
                 return;
         }
 
         app->priv->enabled = enabled;
-        app->priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
+        app->priv->save_mask |= CSP_ASP_SAVE_MASK_ENABLED;
 
-        _gsp_app_queue_save (app);
-        _gsp_app_emit_changed (app);
+        _csp_app_queue_save (app);
+        _csp_app_emit_changed (app);
 }
 
 gboolean
-gsp_app_get_shown (GspApp *app)
+csp_app_get_shown (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
+        g_return_val_if_fail (CSP_IS_APP (app), FALSE);
 
         return app->priv->shown;
 }
 
 const char *
-gsp_app_get_name (GspApp *app)
+csp_app_get_name (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->name;
 }
 
 const char *
-gsp_app_get_exec (GspApp *app)
+csp_app_get_exec (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->exec;
 }
 
 const char *
-gsp_app_get_comment (GspApp *app)
+csp_app_get_comment (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->comment;
 }
 
 GIcon *
-gsp_app_get_icon (GspApp *app)
+csp_app_get_icon (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         if (app->priv->gicon) {
                 return g_object_ref (app->priv->gicon);
@@ -641,34 +641,34 @@ gsp_app_get_icon (GspApp *app)
 }
 
 unsigned int
-gsp_app_get_xdg_position (GspApp *app)
+csp_app_get_xdg_position (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), G_MAXUINT);
+        g_return_val_if_fail (CSP_IS_APP (app), G_MAXUINT);
 
         return app->priv->xdg_position;
 }
 
 unsigned int
-gsp_app_get_xdg_system_position (GspApp *app)
+csp_app_get_xdg_system_position (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), G_MAXUINT);
+        g_return_val_if_fail (CSP_IS_APP (app), G_MAXUINT);
 
         return app->priv->xdg_system_position;
 }
 
 void
-gsp_app_set_xdg_system_position (GspApp       *app,
+csp_app_set_xdg_system_position (CspApp       *app,
                                  unsigned int  position)
 {
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP (app));
 
         app->priv->xdg_system_position = position;
 }
 
 const char *
-gsp_app_get_description (GspApp *app)
+csp_app_get_description (CspApp *app)
 {
-        g_return_val_if_fail (GSP_IS_APP (app), NULL);
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
 
         return app->priv->description;
 }
@@ -678,52 +678,52 @@ gsp_app_get_description (GspApp *app)
  */
 
 void
-gsp_app_update (GspApp     *app,
+csp_app_update (CspApp     *app,
                 const char *name,
                 const char *comment,
                 const char *exec)
 {
         gboolean    changed;
 
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP (app));
 
         changed = FALSE;
 
-        if (!_gsp_str_equal (name, app->priv->name)) {
+        if (!_csp_str_equal (name, app->priv->name)) {
                 changed = TRUE;
                 g_free (app->priv->name);
                 app->priv->name = g_strdup (name);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_NAME;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_NAME;
         }
 
-        if (!_gsp_str_equal (comment, app->priv->comment)) {
+        if (!_csp_str_equal (comment, app->priv->comment)) {
                 changed = TRUE;
                 g_free (app->priv->comment);
                 app->priv->comment = g_strdup (comment);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_COMMENT;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_COMMENT;
         }
 
         if (changed) {
-                _gsp_app_update_description (app);
+                _csp_app_update_description (app);
         }
 
-        if (!_gsp_str_equal (exec, app->priv->exec)) {
+        if (!_csp_str_equal (exec, app->priv->exec)) {
                 changed = TRUE;
                 g_free (app->priv->exec);
                 app->priv->exec = g_strdup (exec);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_EXEC;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_EXEC;
         }
 
         if (changed) {
-                _gsp_app_queue_save (app);
-                _gsp_app_emit_changed (app);
+                _csp_app_queue_save (app);
+                _csp_app_emit_changed (app);
         }
 }
 
 void
-gsp_app_delete (GspApp *app)
+csp_app_delete (CspApp *app)
 {
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP (app));
 
         if (app->priv->xdg_position == 0 &&
             app->priv->xdg_system_position == G_MAXUINT) {
@@ -739,17 +739,17 @@ gsp_app_delete (GspApp *app)
 
                 /* for extra safety */
                 app->priv->hidden = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_HIDDEN;
 
-                _gsp_app_emit_removed (app);
+                _csp_app_emit_removed (app);
         } else {
                 /* also exists in system directory, so we have to keep a file
                  * in the user directory */
                 app->priv->hidden = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_HIDDEN;
 
-                _gsp_app_queue_save (app);
-                _gsp_app_emit_changed (app);
+                _csp_app_queue_save (app);
+                _csp_app_emit_changed (app);
         }
 }
 
@@ -758,30 +758,30 @@ gsp_app_delete (GspApp *app)
  */
 
 void
-gsp_app_reload_at (GspApp       *app,
+csp_app_reload_at (CspApp       *app,
                    const char   *path,
                    unsigned int  xdg_position)
 {
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP (app));
 
         app->priv->xdg_position = G_MAXUINT;
-        gsp_app_new (path, xdg_position);
+        csp_app_new (path, xdg_position);
 }
 
-GspApp *
-gsp_app_new (const char   *path,
+CspApp *
+csp_app_new (const char   *path,
              unsigned int  xdg_position)
 {
-        GspAppManager *manager;
-        GspApp        *app;
+        CspAppManager *manager;
+        CspApp        *app;
         GKeyFile      *keyfile;
         char          *basename;
         gboolean       new;
 
         basename = g_path_get_basename (path);
 
-        manager = gsp_app_manager_get ();
-        app = gsp_app_manager_find_app_with_basename (manager, basename);
+        manager = csp_app_manager_get ();
+        app = csp_app_manager_find_app_with_basename (manager, basename);
         g_object_unref (manager);
 
         new = (app == NULL);
@@ -817,40 +817,40 @@ gsp_app_new (const char   *path,
         }
 
         if (new) {
-                app = g_object_new (GSP_TYPE_APP, NULL);
+                app = g_object_new (CSP_TYPE_APP, NULL);
                 app->priv->basename = basename;
         } else {
                 g_free (basename);
-                _gsp_app_free_reusable_data (app);
+                _csp_app_free_reusable_data (app);
         }
 
         app->priv->path = g_strdup (path);
 
-        app->priv->hidden = gsp_key_file_get_boolean (keyfile,
+        app->priv->hidden = csp_key_file_get_boolean (keyfile,
                                                       G_KEY_FILE_DESKTOP_KEY_HIDDEN,
                                                       FALSE);
-        app->priv->no_display = gsp_key_file_get_boolean (keyfile,
+        app->priv->no_display = csp_key_file_get_boolean (keyfile,
                                                           G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY,
                                                           FALSE);
-        app->priv->enabled = gsp_key_file_get_boolean (keyfile,
-                                                       GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
+        app->priv->enabled = csp_key_file_get_boolean (keyfile,
+                                                       CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
                                                        TRUE);
-        app->priv->shown = gsp_key_file_get_shown (keyfile,
-                                                   gsm_util_get_current_desktop ());
+        app->priv->shown = csp_key_file_get_shown (keyfile,
+                                                   csm_util_get_current_desktop ());
 
-        app->priv->name = gsp_key_file_get_locale_string (keyfile,
+        app->priv->name = csp_key_file_get_locale_string (keyfile,
                                                           G_KEY_FILE_DESKTOP_KEY_NAME);
-        app->priv->exec = gsp_key_file_get_string (keyfile,
+        app->priv->exec = csp_key_file_get_string (keyfile,
                                                    G_KEY_FILE_DESKTOP_KEY_EXEC);
-        app->priv->comment = gsp_key_file_get_locale_string (keyfile,
+        app->priv->comment = csp_key_file_get_locale_string (keyfile,
                                                              G_KEY_FILE_DESKTOP_KEY_COMMENT);
 
-        if (gsm_util_text_is_blank (app->priv->name)) {
+        if (csm_util_text_is_blank (app->priv->name)) {
                 g_free (app->priv->name);
                 app->priv->name = g_strdup (app->priv->exec);
         }
 
-        app->priv->icon = gsp_key_file_get_locale_string (keyfile,
+        app->priv->icon = csp_key_file_get_locale_string (keyfile,
                                                           G_KEY_FILE_DESKTOP_KEY_ICON);
 
         if (app->priv->icon) {
@@ -870,7 +870,7 @@ gsp_app_new (const char   *path,
 
         g_key_file_free (keyfile);
 
-        _gsp_app_update_description (app);
+        _csp_app_update_description (app);
 
         if (xdg_position > 0) {
                 g_assert (xdg_position <= app->priv->xdg_system_position);
@@ -885,16 +885,16 @@ gsp_app_new (const char   *path,
         app->priv->skip_next_monitor_event = FALSE;
 
         if (!new) {
-                _gsp_app_emit_changed (app);
+                _csp_app_emit_changed (app);
         }
 
         return app;
 }
 
 static char *
-_gsp_find_free_basename (const char *suggested_basename)
+_csp_find_free_basename (const char *suggested_basename)
 {
-        GspAppManager *manager;
+        CspAppManager *manager;
         char          *base_path;
         char          *filename;
         char          *basename;
@@ -918,14 +918,14 @@ _gsp_find_free_basename (const char *suggested_basename)
         filename = g_strdup_printf ("%s.desktop", base_path);
         basename = g_path_get_basename (filename);
 
-        manager = gsp_app_manager_get ();
+        manager = csp_app_manager_get ();
 
         i = 1;
-#define _GSP_FIND_MAX_TRY 10000
-        while (gsp_app_manager_find_app_with_basename (manager,
+#define _CSP_FIND_MAX_TRY 10000
+        while (csp_app_manager_find_app_with_basename (manager,
                                                        basename) != NULL &&
                g_file_test (filename, G_FILE_TEST_EXISTS) &&
-               i < _GSP_FIND_MAX_TRY) {
+               i < _CSP_FIND_MAX_TRY) {
                 g_free (filename);
                 g_free (basename);
 
@@ -940,7 +940,7 @@ _gsp_find_free_basename (const char *suggested_basename)
         g_free (base_path);
         g_free (filename);
 
-        if (i == _GSP_FIND_MAX_TRY) {
+        if (i == _CSP_FIND_MAX_TRY) {
                 g_free (basename);
                 return NULL;
         }
@@ -949,29 +949,29 @@ _gsp_find_free_basename (const char *suggested_basename)
 }
 
 void
-gsp_app_create (const char *name,
+csp_app_create (const char *name,
                 const char *comment,
                 const char *exec)
 {
-        GspAppManager  *manager;
-        GspApp         *app;
+        CspAppManager  *manager;
+        CspApp         *app;
         char           *basename;
         char          **argv;
         int             argc;
 
-        g_return_if_fail (!gsm_util_text_is_blank (exec));
+        g_return_if_fail (!csm_util_text_is_blank (exec));
 
         if (!g_shell_parse_argv (exec, &argc, &argv, NULL)) {
                 return;
         }
 
-        basename = _gsp_find_free_basename (argv[0]);
+        basename = _csp_find_free_basename (argv[0]);
         g_strfreev (argv);
         if (basename == NULL) {
                 return;
         }
 
-        app = g_object_new (GSP_TYPE_APP, NULL);
+        app = g_object_new (CSP_TYPE_APP, NULL);
 
         app->priv->basename = basename;
         app->priv->path = g_build_filename (g_get_user_config_dir (),
@@ -983,7 +983,7 @@ gsp_app_create (const char *name,
         app->priv->enabled = TRUE;
         app->priv->shown = TRUE;
 
-        if (!gsm_util_text_is_blank (name)) {
+        if (!csm_util_text_is_blank (name)) {
                 app->priv->name = g_strdup (name);
         } else {
                 app->priv->name = g_strdup (exec);
@@ -993,30 +993,30 @@ gsp_app_create (const char *name,
         app->priv->icon = NULL;
 
         app->priv->gicon = NULL;
-        _gsp_app_update_description (app);
+        _csp_app_update_description (app);
 
         /* by definition */
         app->priv->xdg_position = 0;
         app->priv->xdg_system_position = G_MAXUINT;
 
         app->priv->save_timeout = 0;
-        app->priv->save_mask |= GSP_ASP_SAVE_MASK_ALL;
+        app->priv->save_mask |= CSP_ASP_SAVE_MASK_ALL;
         app->priv->old_system_path = NULL;
         app->priv->skip_next_monitor_event = FALSE;
 
-        _gsp_app_queue_save (app);
+        _csp_app_queue_save (app);
 
-        manager = gsp_app_manager_get ();
-        gsp_app_manager_add (manager, app);
+        manager = csp_app_manager_get ();
+        csp_app_manager_add (manager, app);
         g_object_unref (app);
         g_object_unref (manager);
 }
 
 gboolean
-gsp_app_copy_desktop_file (const char *uri)
+csp_app_copy_desktop_file (const char *uri)
 {
-        GspAppManager *manager;
-        GspApp        *app;
+        CspAppManager *manager;
+        CspApp        *app;
         GFile         *src_file;
         char          *src_basename;
         char          *dst_basename;
@@ -1034,7 +1034,7 @@ gsp_app_copy_desktop_file (const char *uri)
                 return FALSE;
         }
 
-        dst_basename = _gsp_find_free_basename (src_basename);
+        dst_basename = _csp_find_free_basename (src_basename);
         g_free (src_basename);
 
         if (dst_basename == NULL) {
@@ -1049,7 +1049,7 @@ gsp_app_copy_desktop_file (const char *uri)
 
         dst_file = g_file_new_for_path (dst_path);
 
-        _gsp_ensure_user_autostart_dir ();
+        _csp_ensure_user_autostart_dir ();
         if (!g_file_copy (src_file, dst_file, G_FILE_COPY_NONE,
                           NULL, NULL, NULL, NULL)) {
                 g_object_unref (src_file);
@@ -1061,7 +1061,7 @@ gsp_app_copy_desktop_file (const char *uri)
         g_object_unref (src_file);
         g_object_unref (dst_file);
 
-        app = gsp_app_new (dst_path, 0);
+        app = csp_app_new (dst_path, 0);
         if (!app) {
                 g_remove (dst_path);
                 g_free (dst_path);
@@ -1074,27 +1074,27 @@ gsp_app_copy_desktop_file (const char *uri)
         if (app->priv->hidden) {
                 changed = TRUE;
                 app->priv->hidden = FALSE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_HIDDEN;
         }
 
         if (app->priv->no_display) {
                 changed = TRUE;
                 app->priv->no_display = FALSE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_NO_DISPLAY;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_NO_DISPLAY;
         }
 
         if (!app->priv->enabled) {
                 changed = TRUE;
                 app->priv->enabled = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_ENABLED;
         }
 
         if (changed) {
-                _gsp_app_queue_save (app);
+                _csp_app_queue_save (app);
         }
 
-        manager = gsp_app_manager_get ();
-        gsp_app_manager_add (manager, app);
+        manager = csp_app_manager_get ();
+        csp_app_manager_add (manager, app);
         g_object_unref (app);
         g_object_unref (manager);
 

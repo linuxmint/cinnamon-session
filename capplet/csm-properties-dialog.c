@@ -27,13 +27,13 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "gsm-properties-dialog.h"
-#include "gsm-app-dialog.h"
-#include "gsm-util.h"
-#include "gsp-app.h"
-#include "gsp-app-manager.h"
+#include "csm-properties-dialog.h"
+#include "csm-app-dialog.h"
+#include "csm-util.h"
+#include "csp-app.h"
+#include "csp-app-manager.h"
 
-#define GSM_PROPERTIES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialogPrivate))
+#define CSM_PROPERTIES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_PROPERTIES_DIALOG, CsmPropertiesDialogPrivate))
 
 #define GTKBUILDER_FILE "session-properties.ui"
 
@@ -49,7 +49,7 @@
 #define SPC_SETTINGS_SCHEMA          "org.gnome.SessionManager"
 #define SPC_SETTINGS_AUTOSAVE_KEY    "auto-save-session"
 
-struct GsmPropertiesDialogPrivate
+struct CsmPropertiesDialogPrivate
 {
         GtkBuilder        *xml;
         GtkListStore      *list_store;
@@ -62,7 +62,7 @@ struct GsmPropertiesDialogPrivate
 
         GSettings         *settings;
 
-        GspAppManager     *manager;
+        CspAppManager     *manager;
 };
 
 enum {
@@ -75,18 +75,18 @@ enum {
         NUMBER_OF_COLUMNS
 };
 
-static void     gsm_properties_dialog_class_init  (GsmPropertiesDialogClass *klass);
-static void     gsm_properties_dialog_init        (GsmPropertiesDialog      *properties_dialog);
-static void     gsm_properties_dialog_finalize    (GObject                  *object);
+static void     csm_properties_dialog_class_init  (CsmPropertiesDialogClass *klass);
+static void     csm_properties_dialog_init        (CsmPropertiesDialog      *properties_dialog);
+static void     csm_properties_dialog_finalize    (GObject                  *object);
 
-G_DEFINE_TYPE (GsmPropertiesDialog, gsm_properties_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE (CsmPropertiesDialog, csm_properties_dialog, GTK_TYPE_DIALOG)
 
 static gboolean
 find_by_app (GtkTreeModel *model,
              GtkTreeIter  *iter,
-             GspApp       *app)
+             CspApp       *app)
 {
-        GspApp *iter_app = NULL;
+        CspApp *iter_app = NULL;
 
         if (!gtk_tree_model_get_iter_first (model, iter)) {
                 return FALSE;
@@ -109,7 +109,7 @@ find_by_app (GtkTreeModel *model,
 static void
 _fill_iter_from_app (GtkListStore *list_store,
                      GtkTreeIter  *iter,
-                     GspApp       *app)
+                     CspApp       *app)
 {
         gboolean    hidden;
         gboolean    display;
@@ -119,13 +119,13 @@ _fill_iter_from_app (GtkListStore *list_store,
         const char *description;
         const char *app_name;
 
-        hidden      = gsp_app_get_hidden (app);
-        display     = gsp_app_get_display (app);
-        enabled     = gsp_app_get_enabled (app);
-        shown       = gsp_app_get_shown (app);
-        icon        = gsp_app_get_icon (app);
-        description = gsp_app_get_description (app);
-        app_name    = gsp_app_get_name (app);
+        hidden      = csp_app_get_hidden (app);
+        display     = csp_app_get_display (app);
+        enabled     = csp_app_get_enabled (app);
+        shown       = csp_app_get_shown (app);
+        icon        = csp_app_get_icon (app);
+        description = csp_app_get_description (app);
+        app_name    = csp_app_get_name (app);
 
         if (G_IS_THEMED_ICON (icon)) {
                 GtkIconTheme       *theme;
@@ -164,8 +164,8 @@ _fill_iter_from_app (GtkListStore *list_store,
 }
 
 static void
-_app_changed (GsmPropertiesDialog *dialog,
-              GspApp              *app)
+_app_changed (CsmPropertiesDialog *dialog,
+              CspApp              *app)
 {
         GtkTreeIter iter;
 
@@ -178,8 +178,8 @@ _app_changed (GsmPropertiesDialog *dialog,
 }
 
 static void
-append_app (GsmPropertiesDialog *dialog,
-            GspApp              *app)
+append_app (CsmPropertiesDialog *dialog,
+            CspApp              *app)
 {
         GtkTreeIter   iter;
 
@@ -191,17 +191,17 @@ append_app (GsmPropertiesDialog *dialog,
 }
 
 static void
-_app_added (GsmPropertiesDialog *dialog,
-            GspApp              *app,
-            GspAppManager       *manager)
+_app_added (CsmPropertiesDialog *dialog,
+            CspApp              *app,
+            CspAppManager       *manager)
 {
         append_app (dialog, app);
 }
 
 static void
-_app_removed (GsmPropertiesDialog *dialog,
-              GspApp              *app,
-              GspAppManager       *manager)
+_app_removed (CsmPropertiesDialog *dialog,
+              CspApp              *app,
+              CspAppManager       *manager)
 {
         GtkTreeIter iter;
 
@@ -217,21 +217,21 @@ _app_removed (GsmPropertiesDialog *dialog,
 }
 
 static void
-populate_model (GsmPropertiesDialog *dialog)
+populate_model (CsmPropertiesDialog *dialog)
 {
         GSList *apps;
         GSList *l;
 
-        apps = gsp_app_manager_get_apps (dialog->priv->manager);
+        apps = csp_app_manager_get_apps (dialog->priv->manager);
         for (l = apps; l != NULL; l = l->next) {
-                append_app (dialog, GSP_APP (l->data));
+                append_app (dialog, CSP_APP (l->data));
         }
         g_slist_free (apps);
 }
 
 static void
 on_selection_changed (GtkTreeSelection    *selection,
-                      GsmPropertiesDialog *dialog)
+                      CsmPropertiesDialog *dialog)
 {
         gboolean sel;
 
@@ -244,10 +244,10 @@ on_selection_changed (GtkTreeSelection    *selection,
 static void
 on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
                             char                  *path,
-                            GsmPropertiesDialog   *dialog)
+                            CsmPropertiesDialog   *dialog)
 {
         GtkTreeIter iter;
-        GspApp     *app;
+        CspApp     *app;
         gboolean    active;
 
         if (!gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (dialog->priv->tree_filter),
@@ -265,7 +265,7 @@ on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
         active = !active;
 
         if (app) {
-                gsp_app_set_enabled (app, active);
+                csp_app_set_enabled (app, active);
                 g_object_unref (app);
         }
 }
@@ -278,7 +278,7 @@ on_drag_data_received (GtkWidget           *widget,
                        GtkSelectionData    *data,
                        guint                info,
                        guint                time,
-                       GsmPropertiesDialog *dialog)
+                       CsmPropertiesDialog *dialog)
 {
         gboolean dnd_success;
 
@@ -293,7 +293,7 @@ on_drag_data_received (GtkWidget           *widget,
                 for (i = 0; filenames[i] && filenames[i][0]; i++) {
                         /* Return success if at least one file succeeded */
                         gboolean file_success;
-                        file_success = gsp_app_copy_desktop_file (filenames[i]);
+                        file_success = csp_app_copy_desktop_file (filenames[i]);
                         dnd_success = dnd_success || file_success;
                 }
 
@@ -307,11 +307,11 @@ on_drag_data_received (GtkWidget           *widget,
 static void
 on_drag_begin (GtkWidget           *widget,
                GdkDragContext      *context,
-               GsmPropertiesDialog *dialog)
+               CsmPropertiesDialog *dialog)
 {
         GtkTreePath *path;
         GtkTreeIter  iter;
-        GspApp      *app;
+        CspApp      *app;
 
         gtk_tree_view_get_cursor (GTK_TREE_VIEW (widget), &path, NULL);
         gtk_tree_model_get_iter (GTK_TREE_MODEL (dialog->priv->tree_filter),
@@ -324,7 +324,7 @@ on_drag_begin (GtkWidget           *widget,
                             -1);
 
         if (app) {
-                g_object_set_data_full (G_OBJECT (context), "gsp-app",
+                g_object_set_data_full (G_OBJECT (context), "csp-app",
                                         g_object_ref (app), g_object_unref);
                 g_object_unref (app);
         }
@@ -337,16 +337,16 @@ on_drag_data_get (GtkWidget           *widget,
                   GtkSelectionData    *selection_data,
                   guint                info,
                   guint                time,
-                  GsmPropertiesDialog *dialog)
+                  CsmPropertiesDialog *dialog)
 {
-        GspApp *app;
+        CspApp *app;
 
-        app = g_object_get_data (G_OBJECT (context), "gsp-app");
+        app = g_object_get_data (G_OBJECT (context), "csp-app");
         if (app) {
                 const char *uris[2];
                 char       *uri;
 
-                uri = g_filename_to_uri (gsp_app_get_path (app), NULL, NULL);
+                uri = g_filename_to_uri (csp_app_get_path (app), NULL, NULL);
 
                 uris[0] = uri;
                 uris[1] = NULL;
@@ -358,20 +358,20 @@ on_drag_data_get (GtkWidget           *widget,
 
 static void
 on_add_app_clicked (GtkWidget           *widget,
-                    GsmPropertiesDialog *dialog)
+                    CsmPropertiesDialog *dialog)
 {
         GtkWidget  *add_dialog;
         char       *name;
         char       *exec;
         char       *comment;
 
-        add_dialog = gsm_app_dialog_new (NULL, NULL, NULL);
+        add_dialog = csm_app_dialog_new (NULL, NULL, NULL);
         gtk_window_set_transient_for (GTK_WINDOW (add_dialog),
                                       GTK_WINDOW (dialog));
 
-        if (gsm_app_dialog_run (GSM_APP_DIALOG (add_dialog),
+        if (csm_app_dialog_run (CSM_APP_DIALOG (add_dialog),
                                 &name, &exec, &comment)) {
-                gsp_app_create (name, comment, exec);
+                csp_app_create (name, comment, exec);
                 g_free (name);
                 g_free (exec);
                 g_free (comment);
@@ -380,11 +380,11 @@ on_add_app_clicked (GtkWidget           *widget,
 
 static void
 on_delete_app_clicked (GtkWidget           *widget,
-                       GsmPropertiesDialog *dialog)
+                       CsmPropertiesDialog *dialog)
 {
         GtkTreeSelection *selection;
         GtkTreeIter       iter;
-        GspApp           *app;
+        CspApp           *app;
 
         selection = gtk_tree_view_get_selection (dialog->priv->treeview);
 
@@ -399,18 +399,18 @@ on_delete_app_clicked (GtkWidget           *widget,
                             -1);
 
         if (app) {
-                gsp_app_delete (app);
+                csp_app_delete (app);
                 g_object_unref (app);
         }
 }
 
 static void
 on_edit_app_clicked (GtkWidget           *widget,
-                     GsmPropertiesDialog *dialog)
+                     CsmPropertiesDialog *dialog)
 {
         GtkTreeSelection *selection;
         GtkTreeIter       iter;
-        GspApp           *app;
+        CspApp           *app;
 
         selection = gtk_tree_view_get_selection (dialog->priv->treeview);
 
@@ -430,15 +430,15 @@ on_edit_app_clicked (GtkWidget           *widget,
                 char       *exec;
                 char       *comment;
 
-                edit_dialog = gsm_app_dialog_new (gsp_app_get_name (app),
-                                                  gsp_app_get_exec (app),
-                                                  gsp_app_get_comment (app));
+                edit_dialog = csm_app_dialog_new (csp_app_get_name (app),
+                                                  csp_app_get_exec (app),
+                                                  csp_app_get_comment (app));
                 gtk_window_set_transient_for (GTK_WINDOW (edit_dialog),
                                               GTK_WINDOW (dialog));
 
-                if (gsm_app_dialog_run (GSM_APP_DIALOG (edit_dialog),
+                if (csm_app_dialog_run (CSM_APP_DIALOG (edit_dialog),
                                         &name, &exec, &comment)) {
-                        gsp_app_update (app, name, comment, exec);
+                        csp_app_update (app, name, comment, exec);
                         g_free (name);
                         g_free (exec);
                         g_free (comment);
@@ -452,20 +452,20 @@ static void
 on_row_activated (GtkTreeView         *tree_view,
                   GtkTreePath         *path,
                   GtkTreeViewColumn   *column,
-                  GsmPropertiesDialog *dialog)  
+                  CsmPropertiesDialog *dialog)  
 {
         on_edit_app_clicked (NULL, dialog);
 }
 
 static void
 on_save_session_clicked (GtkWidget           *widget,
-                         GsmPropertiesDialog *dialog)
+                         CsmPropertiesDialog *dialog)
 {
         g_debug ("Session saving is not implemented yet!");
 }
 
 static void
-setup_dialog (GsmPropertiesDialog *dialog)
+setup_dialog (CsmPropertiesDialog *dialog)
 {
         GtkTreeView       *treeview;
         GtkWidget         *button;
@@ -534,7 +534,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                                            "sensitive", STORE_COL_ENABLED,
                                                            NULL);
         g_object_set (renderer,
-                      "stock-size", GSM_PROPERTIES_ICON_SIZE,
+                      "stock-size", CSM_PROPERTIES_ICON_SIZE,
                       NULL);
         gtk_tree_view_append_column (treeview, column);
 
@@ -636,8 +636,8 @@ setup_dialog (GsmPropertiesDialog *dialog)
                           G_CALLBACK (on_save_session_clicked),
                           dialog);
 
-        dialog->priv->manager = gsp_app_manager_get ();
-        gsp_app_manager_fill (dialog->priv->manager);
+        dialog->priv->manager = csp_app_manager_get ();
+        csp_app_manager_fill (dialog->priv->manager);
         g_signal_connect_swapped (dialog->priv->manager, "added",
                                   G_CALLBACK (_app_added), dialog);
         g_signal_connect_swapped (dialog->priv->manager, "removed",
@@ -647,13 +647,13 @@ setup_dialog (GsmPropertiesDialog *dialog)
 }
 
 static GObject *
-gsm_properties_dialog_constructor (GType                  type,
+csm_properties_dialog_constructor (GType                  type,
                                 guint                  n_construct_properties,
                                 GObjectConstructParam *construct_properties)
 {
-        GsmPropertiesDialog *dialog;
+        CsmPropertiesDialog *dialog;
 
-        dialog = GSM_PROPERTIES_DIALOG (G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->constructor (type,
+        dialog = CSM_PROPERTIES_DIALOG (G_OBJECT_CLASS (csm_properties_dialog_parent_class)->constructor (type,
                                                                                                                   n_construct_properties,
                                                                                                                   construct_properties));
 
@@ -665,14 +665,14 @@ gsm_properties_dialog_constructor (GType                  type,
 }
 
 static void
-gsm_properties_dialog_dispose (GObject *object)
+csm_properties_dialog_dispose (GObject *object)
 {
-        GsmPropertiesDialog *dialog;
+        CsmPropertiesDialog *dialog;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSM_IS_PROPERTIES_DIALOG (object));
+        g_return_if_fail (CSM_IS_PROPERTIES_DIALOG (object));
 
-        dialog = GSM_PROPERTIES_DIALOG (object);
+        dialog = CSM_PROPERTIES_DIALOG (object);
 
         if (dialog->priv->xml != NULL) {
                 g_object_unref (dialog->priv->xml);
@@ -684,11 +684,11 @@ gsm_properties_dialog_dispose (GObject *object)
                 dialog->priv->settings = NULL;
         }
 
-        G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->dispose (object);
+        G_OBJECT_CLASS (csm_properties_dialog_parent_class)->dispose (object);
 
         /* it's important to do this after chaining to the parent dispose
          * method because we want to make sure the treeview has been disposed
-         * and removed all its references to GspApp objects */
+         * and removed all its references to CspApp objects */
         if (dialog->priv->manager != NULL) {
                 g_object_unref (dialog->priv->manager);
                 dialog->priv->manager = NULL;
@@ -696,25 +696,25 @@ gsm_properties_dialog_dispose (GObject *object)
 }
 
 static void
-gsm_properties_dialog_class_init (GsmPropertiesDialogClass *klass)
+csm_properties_dialog_class_init (CsmPropertiesDialogClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->constructor = gsm_properties_dialog_constructor;
-        object_class->dispose = gsm_properties_dialog_dispose;
-        object_class->finalize = gsm_properties_dialog_finalize;
+        object_class->constructor = csm_properties_dialog_constructor;
+        object_class->dispose = csm_properties_dialog_dispose;
+        object_class->finalize = csm_properties_dialog_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsmPropertiesDialogPrivate));
+        g_type_class_add_private (klass, sizeof (CsmPropertiesDialogPrivate));
 }
 
 static void
-gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
+csm_properties_dialog_init (CsmPropertiesDialog *dialog)
 {
         GtkWidget   *content_area;
         GtkWidget   *widget;
         GError      *error;
 
-        dialog->priv = GSM_PROPERTIES_DIALOG_GET_PRIVATE (dialog);
+        dialog->priv = CSM_PROPERTIES_DIALOG_GET_PRIVATE (dialog);
 
         dialog->priv->settings = g_settings_new (SPC_SETTINGS_SCHEMA);
 
@@ -748,26 +748,26 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
 }
 
 static void
-gsm_properties_dialog_finalize (GObject *object)
+csm_properties_dialog_finalize (GObject *object)
 {
-        GsmPropertiesDialog *dialog;
+        CsmPropertiesDialog *dialog;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSM_IS_PROPERTIES_DIALOG (object));
+        g_return_if_fail (CSM_IS_PROPERTIES_DIALOG (object));
 
-        dialog = GSM_PROPERTIES_DIALOG (object);
+        dialog = CSM_PROPERTIES_DIALOG (object);
 
         g_return_if_fail (dialog->priv != NULL);
 
-        G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->finalize (object);
+        G_OBJECT_CLASS (csm_properties_dialog_parent_class)->finalize (object);
 }
 
 GtkWidget *
-gsm_properties_dialog_new (void)
+csm_properties_dialog_new (void)
 {
         GObject *object;
 
-        object = g_object_new (GSM_TYPE_PROPERTIES_DIALOG,
+        object = g_object_new (CSM_TYPE_PROPERTIES_DIALOG,
                                NULL);
 
         return GTK_WIDGET (object);

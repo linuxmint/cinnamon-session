@@ -27,7 +27,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "gsm-properties-dialog.h"
+#include "csm-properties-dialog.h"
 
 static gboolean    show_version     = FALSE;
 
@@ -37,7 +37,7 @@ static GOptionEntry options[] = {
 };
 
 static void
-dialog_response (GsmPropertiesDialog *dialog,
+dialog_response (CsmPropertiesDialog *dialog,
                  guint                response_id,
                  gpointer             data)
 {
@@ -95,7 +95,7 @@ main (int argc, char *argv[])
                 return 0;
         }
 
-        dialog = gsm_properties_dialog_new ();
+        dialog = csm_properties_dialog_new ();
         g_signal_connect (dialog,
                           "response",
                           G_CALLBACK (dialog_response),

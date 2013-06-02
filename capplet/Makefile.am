@@ -12,20 +12,20 @@ AM_CFLAGS = $(WARN_CFLAGS)
 
 gnome_session_properties_SOURCES =			\
 	main.c						\
-	gsm-properties-dialog.h				\
-	gsm-properties-dialog.c				\
-	gsm-app-dialog.h				\
-	gsm-app-dialog.c				\
-	gsp-app.h					\
-	gsp-app.c					\
-	gsp-app-manager.h				\
-	gsp-app-manager.c				\
-	gsp-keyfile.h					\
-	gsp-keyfile.c
+	csm-properties-dialog.h				\
+	csm-properties-dialog.c				\
+	csm-app-dialog.h				\
+	csm-app-dialog.c				\
+	csp-app.h					\
+	csp-app.c					\
+	csp-app-manager.h				\
+	csp-app-manager.c				\
+	csp-keyfile.h					\
+	csp-keyfile.c
 
 gnome_session_properties_LDADD =			\
 	$(SESSION_PROPERTIES_LIBS)			\
-	$(top_builddir)/cinnamon-session/libgsmutil.la 	\
+	$(top_builddir)/cinnamon-session/libcsmutil.la 	\
 	$(GCONF_LIBS)
 
 -include $(top_srcdir)/git.mk

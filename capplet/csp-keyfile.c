@@ -1,5 +1,5 @@
 /*
- * gsp-keyfile.c: GKeyFile extensions
+ * csp-keyfile.c: GKeyFile extensions
  *
  * Copyright (C) 2008, 2009 Novell, Inc.
  *
@@ -28,23 +28,23 @@
 
 #include <glib.h>
 
-#include "gsp-keyfile.h"
+#include "csp-keyfile.h"
 
 void
-gsp_key_file_populate (GKeyFile *keyfile)
+csp_key_file_populate (GKeyFile *keyfile)
 {
-        gsp_key_file_set_string (keyfile,
+        csp_key_file_set_string (keyfile,
                                  G_KEY_FILE_DESKTOP_KEY_TYPE,
                                  "Application");
 
-        gsp_key_file_set_string (keyfile,
+        csp_key_file_set_string (keyfile,
                                  G_KEY_FILE_DESKTOP_KEY_EXEC,
                                  "/bin/false");
 }
 
 //FIXME: kill this when bug #309224 is fixed
 gboolean
-gsp_key_file_to_file (GKeyFile     *keyfile,
+csp_key_file_to_file (GKeyFile     *keyfile,
                       const gchar  *path,
                       GError      **error)
 {
@@ -76,7 +76,7 @@ gsp_key_file_to_file (GKeyFile     *keyfile,
 }
 
 gboolean
-gsp_key_file_get_boolean (GKeyFile    *keyfile,
+csp_key_file_get_boolean (GKeyFile    *keyfile,
                           const gchar *key,
                           gboolean     default_value)
 {
@@ -95,7 +95,7 @@ gsp_key_file_get_boolean (GKeyFile    *keyfile,
 }
 
 gboolean
-gsp_key_file_get_shown (GKeyFile   *keyfile,
+csp_key_file_get_shown (GKeyFile   *keyfile,
                         const char *current_desktop)
 {
         char     **only_show_in, **not_show_in;
@@ -147,7 +147,7 @@ gsp_key_file_get_shown (GKeyFile   *keyfile,
 }
 
 void
-gsp_key_file_set_locale_string (GKeyFile    *keyfile,
+csp_key_file_set_locale_string (GKeyFile    *keyfile,
                                 const gchar *key,
                                 const gchar *value)
 {
@@ -179,7 +179,7 @@ gsp_key_file_set_locale_string (GKeyFile    *keyfile,
 }
 
 void
-gsp_key_file_ensure_C_key (GKeyFile   *keyfile,
+csp_key_file_ensure_C_key (GKeyFile   *keyfile,
                            const char *key)
 {
         char *C_value;
@@ -189,11 +189,11 @@ gsp_key_file_ensure_C_key (GKeyFile   *keyfile,
          * This is so that if the user logs into another locale they get their
          * own description there rather then empty. It is not the C locale
          * however, but the user created this entry herself so it's OK */
-        C_value = gsp_key_file_get_string (keyfile, key);
+        C_value = csp_key_file_get_string (keyfile, key);
         if (C_value == NULL || C_value [0] == '\0') {
-                buffer = gsp_key_file_get_locale_string (keyfile, key);
+                buffer = csp_key_file_get_locale_string (keyfile, key);
                 if (buffer) {
-                        gsp_key_file_set_string (keyfile, key, buffer);
+                        csp_key_file_set_string (keyfile, key, buffer);
                         g_free (buffer);
                 }
         }

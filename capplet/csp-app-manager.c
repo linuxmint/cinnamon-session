@@ -23,25 +23,25 @@
 
 #include <string.h>
 
-#include "gsm-util.h"
-#include "gsp-app.h"
+#include "csm-util.h"
+#include "csp-app.h"
 
-#include "gsp-app-manager.h"
+#include "csp-app-manager.h"
 
-static GspAppManager *manager = NULL;
+static CspAppManager *manager = NULL;
 
 typedef struct {
         char         *dir;
         int           index;
         GFileMonitor *monitor;
-} GspXdgDir;
+} CspXdgDir;
 
-struct _GspAppManagerPrivate {
+struct _CspAppManagerPrivate {
         GSList *apps;
         GSList *dirs;
 };
 
-#define GSP_APP_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSP_TYPE_APP_MANAGER, GspAppManagerPrivate))
+#define CSP_APP_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSP_TYPE_APP_MANAGER, CspAppManagerPrivate))
 
 
 enum {
@@ -50,25 +50,25 @@ enum {
         LAST_SIGNAL
 };
 
-static guint gsp_app_manager_signals[LAST_SIGNAL] = { 0 };
+static guint csp_app_manager_signals[LAST_SIGNAL] = { 0 };
 
 
-G_DEFINE_TYPE (GspAppManager, gsp_app_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (CspAppManager, csp_app_manager, G_TYPE_OBJECT)
 
-static void     gsp_app_manager_dispose      (GObject       *object);
-static void     gsp_app_manager_finalize     (GObject       *object);
-static void     _gsp_app_manager_app_unref   (GspApp        *app,
-                                              GspAppManager *manager);
-static void     _gsp_app_manager_app_removed (GspAppManager *manager,
-                                              GspApp        *app);
+static void     csp_app_manager_dispose      (GObject       *object);
+static void     csp_app_manager_finalize     (GObject       *object);
+static void     _csp_app_manager_app_unref   (CspApp        *app,
+                                              CspAppManager *manager);
+static void     _csp_app_manager_app_removed (CspAppManager *manager,
+                                              CspApp        *app);
 
-static GspXdgDir *
-_gsp_xdg_dir_new (const char *dir,
+static CspXdgDir *
+_csp_xdg_dir_new (const char *dir,
                   int         index)
 {
-        GspXdgDir *xdgdir;
+        CspXdgDir *xdgdir;
 
-        xdgdir = g_slice_new (GspXdgDir);
+        xdgdir = g_slice_new (CspXdgDir);
 
         xdgdir->dir = g_strdup (dir);
         xdgdir->index = index;
@@ -78,7 +78,7 @@ _gsp_xdg_dir_new (const char *dir,
 }
 
 static void
-_gsp_xdg_dir_free (GspXdgDir *xdgdir)
+_csp_xdg_dir_free (CspXdgDir *xdgdir)
 {
         if (xdgdir->dir) {
                 g_free (xdgdir->dir);
@@ -91,103 +91,103 @@ _gsp_xdg_dir_free (GspXdgDir *xdgdir)
                 xdgdir->monitor = NULL;
         }
 
-        g_slice_free (GspXdgDir, xdgdir);
+        g_slice_free (CspXdgDir, xdgdir);
 }
 
 static void
-gsp_app_manager_class_init (GspAppManagerClass *class)
+csp_app_manager_class_init (CspAppManagerClass *class)
 {
         GObjectClass *gobject_class = G_OBJECT_CLASS (class);
 
-        gobject_class->dispose  = gsp_app_manager_dispose;
-        gobject_class->finalize = gsp_app_manager_finalize;
+        gobject_class->dispose  = csp_app_manager_dispose;
+        gobject_class->finalize = csp_app_manager_finalize;
 
-        gsp_app_manager_signals[ADDED] =
+        csp_app_manager_signals[ADDED] =
                 g_signal_new ("added",
                               G_TYPE_FROM_CLASS (gobject_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GspAppManagerClass,
+                              G_STRUCT_OFFSET (CspAppManagerClass,
                                                added),
                               NULL,
                               NULL,
                               g_cclosure_marshal_VOID__OBJECT,
                               G_TYPE_NONE, 1, G_TYPE_OBJECT);
 
-        gsp_app_manager_signals[REMOVED] =
+        csp_app_manager_signals[REMOVED] =
                 g_signal_new ("removed",
                               G_TYPE_FROM_CLASS (gobject_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GspAppManagerClass,
+                              G_STRUCT_OFFSET (CspAppManagerClass,
                                                removed),
                               NULL,
                               NULL,
                               g_cclosure_marshal_VOID__OBJECT,
                               G_TYPE_NONE, 1, G_TYPE_OBJECT);
 
-        g_type_class_add_private (class, sizeof (GspAppManagerPrivate));
+        g_type_class_add_private (class, sizeof (CspAppManagerPrivate));
 }
 
 static void
-gsp_app_manager_init (GspAppManager *manager)
+csp_app_manager_init (CspAppManager *manager)
 {
-        manager->priv = GSP_APP_MANAGER_GET_PRIVATE (manager);
+        manager->priv = CSP_APP_MANAGER_GET_PRIVATE (manager);
 
-        memset (manager->priv, 0, sizeof (GspAppManagerPrivate));
+        memset (manager->priv, 0, sizeof (CspAppManagerPrivate));
 }
 
 static void
-gsp_app_manager_dispose (GObject *object)
+csp_app_manager_dispose (GObject *object)
 {
-        GspAppManager *manager;
+        CspAppManager *manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSP_IS_APP_MANAGER (object));
+        g_return_if_fail (CSP_IS_APP_MANAGER (object));
 
-        manager = GSP_APP_MANAGER (object);
+        manager = CSP_APP_MANAGER (object);
 
-        /* we unref GspApp objects in dispose since they might need to
+        /* we unref CspApp objects in dispose since they might need to
          * reference us during their dispose/finalize */
         g_slist_foreach (manager->priv->apps,
-                         (GFunc) _gsp_app_manager_app_unref, manager);
+                         (GFunc) _csp_app_manager_app_unref, manager);
         g_slist_free (manager->priv->apps);
         manager->priv->apps = NULL;
 
-        G_OBJECT_CLASS (gsp_app_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (csp_app_manager_parent_class)->dispose (object);
 }
 
 static void
-gsp_app_manager_finalize (GObject *object)
+csp_app_manager_finalize (GObject *object)
 {
-        GspAppManager *manager;
+        CspAppManager *manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSP_IS_APP_MANAGER (object));
+        g_return_if_fail (CSP_IS_APP_MANAGER (object));
 
-        manager = GSP_APP_MANAGER (object);
+        manager = CSP_APP_MANAGER (object);
 
         g_slist_foreach (manager->priv->dirs,
-                         (GFunc) _gsp_xdg_dir_free, NULL);
+                         (GFunc) _csp_xdg_dir_free, NULL);
         g_slist_free (manager->priv->dirs);
         manager->priv->dirs = NULL;
 
-        G_OBJECT_CLASS (gsp_app_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (csp_app_manager_parent_class)->finalize (object);
 
         manager = NULL;
 }
 
 static void
-_gsp_app_manager_emit_added (GspAppManager *manager,
-                             GspApp        *app)
+_csp_app_manager_emit_added (CspAppManager *manager,
+                             CspApp        *app)
 {
-        g_signal_emit (G_OBJECT (manager), gsp_app_manager_signals[ADDED],
+        g_signal_emit (G_OBJECT (manager), csp_app_manager_signals[ADDED],
                        0, app);
 }
 
 static void
-_gsp_app_manager_emit_removed (GspAppManager *manager,
-                               GspApp        *app)
+_csp_app_manager_emit_removed (CspAppManager *manager,
+                               CspApp        *app)
 {
-        g_signal_emit (G_OBJECT (manager), gsp_app_manager_signals[REMOVED],
+        g_signal_emit (G_OBJECT (manager), csp_app_manager_signals[REMOVED],
                        0, app);
 }
 
@@ -196,13 +196,13 @@ _gsp_app_manager_emit_removed (GspAppManager *manager,
  */
 
 static int
-gsp_app_manager_get_dir_index (GspAppManager *manager,
+csp_app_manager_get_dir_index (CspAppManager *manager,
                                const char    *dir)
 {
         GSList    *l;
-        GspXdgDir *xdgdir;
+        CspXdgDir *xdgdir;
 
-        g_return_val_if_fail (GSP_IS_APP_MANAGER (manager), -1);
+        g_return_val_if_fail (CSP_IS_APP_MANAGER (manager), -1);
         g_return_val_if_fail (dir != NULL, -1);
 
         for (l = manager->priv->dirs; l != NULL; l = l->next) {
@@ -216,13 +216,13 @@ gsp_app_manager_get_dir_index (GspAppManager *manager,
 }
 
 const char *
-gsp_app_manager_get_dir (GspAppManager *manager,
+csp_app_manager_get_dir (CspAppManager *manager,
                          unsigned int   index)
 {
         GSList    *l;
-        GspXdgDir *xdgdir;
+        CspXdgDir *xdgdir;
 
-        g_return_val_if_fail (GSP_IS_APP_MANAGER (manager), NULL);
+        g_return_val_if_fail (CSP_IS_APP_MANAGER (manager), NULL);
 
         for (l = manager->priv->dirs; l != NULL; l = l->next) {
                 xdgdir = l->data;
@@ -235,12 +235,12 @@ gsp_app_manager_get_dir (GspAppManager *manager,
 }
 
 static int
-_gsp_app_manager_find_dir_with_basename (GspAppManager *manager,
+_csp_app_manager_find_dir_with_basename (CspAppManager *manager,
                                          const char    *basename,
                                          int            minimum_index)
 {
         GSList    *l;
-        GspXdgDir *xdgdir;
+        CspXdgDir *xdgdir;
         char      *path;
         GKeyFile  *keyfile;
         int        result = -1;
@@ -281,16 +281,16 @@ _gsp_app_manager_find_dir_with_basename (GspAppManager *manager,
 }
 
 static void
-_gsp_app_manager_handle_delete (GspAppManager *manager,
-                                GspApp        *app,
+_csp_app_manager_handle_delete (CspAppManager *manager,
+                                CspApp        *app,
                                 const char    *basename,
                                 int            index)
 {
         unsigned int position;
         unsigned int system_position;
 
-        position = gsp_app_get_xdg_position (app);
-        system_position = gsp_app_get_xdg_system_position (app);
+        position = csp_app_get_xdg_position (app);
+        system_position = csp_app_get_xdg_system_position (app);
 
         if (system_position < index) {
                 /* it got deleted, but we don't even care about it */
@@ -310,23 +310,23 @@ _gsp_app_manager_handle_delete (GspAppManager *manager,
             (system_position == index || system_position == G_MAXUINT)) {
                 /* the file used by the user was deleted, and there's no other
                  * file in system directories. So it really got deleted. */
-                _gsp_app_manager_app_removed (manager, app);
+                _csp_app_manager_app_removed (manager, app);
                 return;
         }
 
         if (system_position == index) {
                 /* then we know that position != index; we just hae to tell
-                 * GspApp if there's still a system directory containing this
+                 * CspApp if there's still a system directory containing this
                  * basename */
                 int new_system;
 
-                new_system = _gsp_app_manager_find_dir_with_basename (manager,
+                new_system = _csp_app_manager_find_dir_with_basename (manager,
                                                                       basename,
                                                                       index);
                 if (new_system < 0) {
-                        gsp_app_set_xdg_system_position (app, G_MAXUINT);
+                        csp_app_set_xdg_system_position (app, G_MAXUINT);
                 } else {
-                        gsp_app_set_xdg_system_position (app, new_system);
+                        csp_app_set_xdg_system_position (app, new_system);
                 }
 
                 return;
@@ -334,19 +334,19 @@ _gsp_app_manager_handle_delete (GspAppManager *manager,
 
         if (position == index) {
                 /* then we know that system_position != G_MAXUINT; we need to
-                 * tell GspApp to change position to system_position */
+                 * tell CspApp to change position to system_position */
                 const char *dir;
 
-                dir = gsp_app_manager_get_dir (manager, system_position);
+                dir = csp_app_manager_get_dir (manager, system_position);
                 if (dir) {
                         char *path;
 
                         path = g_build_filename (dir, basename, NULL);
-                        gsp_app_reload_at (app, path,
+                        csp_app_reload_at (app, path,
                                            (unsigned int) system_position);
                         g_free (path);
                 } else {
-                        _gsp_app_manager_app_removed (manager, app);
+                        _csp_app_manager_app_removed (manager, app);
                 }
 
                 return;
@@ -356,22 +356,22 @@ _gsp_app_manager_handle_delete (GspAppManager *manager,
 }
 
 static gboolean
-gsp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
+csp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
                                  GFile             *child,
                                  GFile             *other_file,
                                  GFileMonitorEvent  flags,
                                  gpointer           data)
 {
-        GspAppManager *manager;
-        GspApp        *old_app;
-        GspApp        *app;
+        CspAppManager *manager;
+        CspApp        *old_app;
+        CspApp        *app;
         GFile         *parent;
         char          *basename;
         char          *dir;
         char          *path;
         int            index;
 
-        manager = GSP_APP_MANAGER (data);
+        manager = CSP_APP_MANAGER (data);
 
         basename = g_file_get_basename (child);
         if (!g_str_has_suffix (basename, ".desktop")) {
@@ -379,13 +379,13 @@ gsp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
                 g_free (basename);
                 return TRUE;
         }
-        old_app = gsp_app_manager_find_app_with_basename (manager, basename);
+        old_app = csp_app_manager_find_app_with_basename (manager, basename);
 
         parent = g_file_get_parent (child);
         dir = g_file_get_path (parent);
         g_object_unref (parent);
 
-        index = gsp_app_manager_get_dir_index (manager, dir);
+        index = csp_app_manager_get_dir_index (manager, dir);
         if (index < 0) {
                 /* not a directory we know; should never happen, though */
                 g_free (dir);
@@ -397,16 +397,16 @@ gsp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
         switch (flags) {
         case G_FILE_MONITOR_EVENT_CHANGED:
         case G_FILE_MONITOR_EVENT_CREATED:
-                /* we just do as if it was a new file: GspApp is clever enough
+                /* we just do as if it was a new file: CspApp is clever enough
                  * to do the right thing */
-                app = gsp_app_new (path, (unsigned int) index);
+                app = csp_app_new (path, (unsigned int) index);
 
                 /* we didn't have this app before, so add it */
                 if (old_app == NULL && app != NULL) {
-                        gsp_app_manager_add (manager, app);
+                        csp_app_manager_add (manager, app);
                         g_object_unref (app);
                 }
-                /* else: it was just updated, GspApp took care of
+                /* else: it was just updated, CspApp took care of
                  * sending the event */
                 break;
         case G_FILE_MONITOR_EVENT_DELETED:
@@ -416,7 +416,7 @@ gsp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
                         break;
                 }
 
-                _gsp_app_manager_handle_delete (manager, old_app,
+                _csp_app_manager_handle_delete (manager, old_app,
                                                 basename, index);
                 break;
         default:
@@ -435,8 +435,8 @@ gsp_app_manager_xdg_dir_monitor (GFileMonitor      *monitor,
  */
 
 static void
-_gsp_app_manager_fill_from_dir (GspAppManager *manager,
-                                GspXdgDir     *xdgdir)
+_csp_app_manager_fill_from_dir (CspAppManager *manager,
+                                CspXdgDir     *xdgdir)
 {
         GFile      *file;
         GDir       *dir;
@@ -449,7 +449,7 @@ _gsp_app_manager_fill_from_dir (GspAppManager *manager,
 
         if (xdgdir->monitor) {
                 g_signal_connect (xdgdir->monitor, "changed",
-                                  G_CALLBACK (gsp_app_manager_xdg_dir_monitor),
+                                  G_CALLBACK (csp_app_manager_xdg_dir_monitor),
                                   manager);
         }
 
@@ -459,7 +459,7 @@ _gsp_app_manager_fill_from_dir (GspAppManager *manager,
         }
 
         while ((name = g_dir_read_name (dir))) {
-                GspApp *app;
+                CspApp *app;
                 char   *desktop_file_path;
 
                 if (!g_str_has_suffix (name, ".desktop")) {
@@ -467,10 +467,10 @@ _gsp_app_manager_fill_from_dir (GspAppManager *manager,
                 }
 
                 desktop_file_path = g_build_filename (xdgdir->dir, name, NULL);
-                app = gsp_app_new (desktop_file_path, xdgdir->index);
+                app = csp_app_new (desktop_file_path, xdgdir->index);
 
                 if (app != NULL) {
-                        gsp_app_manager_add (manager, app);
+                        csp_app_manager_add (manager, app);
                         g_object_unref (app);
                 }
 
@@ -481,7 +481,7 @@ _gsp_app_manager_fill_from_dir (GspAppManager *manager,
 }
 
 void
-gsp_app_manager_fill (GspAppManager *manager)
+csp_app_manager_fill (CspAppManager *manager)
 {
         char **autostart_dirs;
         int    i;
@@ -489,24 +489,24 @@ gsp_app_manager_fill (GspAppManager *manager)
         if (manager->priv->apps != NULL)
                 return;
 
-        autostart_dirs = gsm_util_get_autostart_dirs ();
+        autostart_dirs = csm_util_get_autostart_dirs ();
         /* we always assume that the first directory is the user one */
         g_assert (g_str_has_prefix (autostart_dirs[0],
                                     g_get_user_config_dir ()));
 
         for (i = 0; autostart_dirs[i] != NULL; i++) {
-                GspXdgDir *xdgdir;
+                CspXdgDir *xdgdir;
 
-                if (gsp_app_manager_get_dir_index (manager,
+                if (csp_app_manager_get_dir_index (manager,
                                                    autostart_dirs[i]) >= 0) {
                         continue;
                 }
 
-                xdgdir = _gsp_xdg_dir_new (autostart_dirs[i], i);
+                xdgdir = _csp_xdg_dir_new (autostart_dirs[i], i);
                 manager->priv->dirs = g_slist_prepend (manager->priv->dirs,
                                                        xdgdir);
 
-                _gsp_app_manager_fill_from_dir (manager, xdgdir);
+                _csp_app_manager_fill_from_dir (manager, xdgdir);
         }
 
         g_strfreev (autostart_dirs);
@@ -517,52 +517,52 @@ gsp_app_manager_fill (GspAppManager *manager)
  */
 
 static void
-_gsp_app_manager_app_unref (GspApp        *app,
-                            GspAppManager *manager)
+_csp_app_manager_app_unref (CspApp        *app,
+                            CspAppManager *manager)
 {
         g_signal_handlers_disconnect_by_func (app,
-                                              _gsp_app_manager_app_removed,
+                                              _csp_app_manager_app_removed,
                                               manager);
         g_object_unref (app);
 }
 
 static void
-_gsp_app_manager_app_removed (GspAppManager *manager,
-                              GspApp        *app)
+_csp_app_manager_app_removed (CspAppManager *manager,
+                              CspApp        *app)
 {
-        _gsp_app_manager_emit_removed (manager, app);
+        _csp_app_manager_emit_removed (manager, app);
         manager->priv->apps = g_slist_remove (manager->priv->apps, app);
-        _gsp_app_manager_app_unref (app, manager);
+        _csp_app_manager_app_unref (app, manager);
 }
 
 void
-gsp_app_manager_add (GspAppManager *manager,
-                     GspApp        *app)
+csp_app_manager_add (CspAppManager *manager,
+                     CspApp        *app)
 {
-        g_return_if_fail (GSP_IS_APP_MANAGER (manager));
-        g_return_if_fail (GSP_IS_APP (app));
+        g_return_if_fail (CSP_IS_APP_MANAGER (manager));
+        g_return_if_fail (CSP_IS_APP (app));
 
         manager->priv->apps = g_slist_prepend (manager->priv->apps,
                                                g_object_ref (app));
         g_signal_connect_swapped (app, "removed",
-                                  G_CALLBACK (_gsp_app_manager_app_removed),
+                                  G_CALLBACK (_csp_app_manager_app_removed),
                                   manager);
-        _gsp_app_manager_emit_added (manager, app);
+        _csp_app_manager_emit_added (manager, app);
 }
 
-GspApp *
-gsp_app_manager_find_app_with_basename (GspAppManager *manager,
+CspApp *
+csp_app_manager_find_app_with_basename (CspAppManager *manager,
                                         const char    *basename)
 {
         GSList *l;
-        GspApp *app;
+        CspApp *app;
 
-        g_return_val_if_fail (GSP_IS_APP_MANAGER (manager), NULL);
+        g_return_val_if_fail (CSP_IS_APP_MANAGER (manager), NULL);
         g_return_val_if_fail (basename != NULL, NULL);
 
         for (l = manager->priv->apps; l != NULL; l = l->next) {
-                app = GSP_APP (l->data);
-                if (strcmp (basename, gsp_app_get_basename (app)) == 0)
+                app = CSP_APP (l->data);
+                if (strcmp (basename, csp_app_get_basename (app)) == 0)
                         return app;
         }
 
@@ -573,11 +573,11 @@ gsp_app_manager_find_app_with_basename (GspAppManager *manager,
  * Singleton
  */
 
-GspAppManager *
-gsp_app_manager_get (void)
+CspAppManager *
+csp_app_manager_get (void)
 {
         if (manager == NULL) {
-                manager = g_object_new (GSP_TYPE_APP_MANAGER, NULL);
+                manager = g_object_new (CSP_TYPE_APP_MANAGER, NULL);
                 return manager;
         } else {
                 return g_object_ref (manager);
@@ -585,9 +585,9 @@ gsp_app_manager_get (void)
 }
 
 GSList *
-gsp_app_manager_get_apps (GspAppManager *manager)
+csp_app_manager_get_apps (CspAppManager *manager)
 {
-        g_return_val_if_fail (GSP_IS_APP_MANAGER (manager), NULL);
+        g_return_val_if_fail (CSP_IS_APP_MANAGER (manager), NULL);
 
         return g_slist_copy (manager->priv->apps);
 }

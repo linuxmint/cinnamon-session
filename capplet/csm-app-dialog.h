@@ -18,49 +18,49 @@
  *
  */
 
-#ifndef __GSM_APP_DIALOG_H
-#define __GSM_APP_DIALOG_H
+#ifndef __CSM_APP_DIALOG_H
+#define __CSM_APP_DIALOG_H
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-#define GSM_TYPE_APP_DIALOG         (gsm_app_dialog_get_type ())
-#define GSM_APP_DIALOG(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSM_TYPE_APP_DIALOG, GsmAppDialog))
-#define GSM_APP_DIALOG_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSM_TYPE_APP_DIALOG, GsmAppDialogClass))
-#define GSM_IS_APP_DIALOG(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSM_TYPE_APP_DIALOG))
-#define GSM_IS_APP_DIALOG_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSM_TYPE_APP_DIALOG))
-#define GSM_APP_DIALOG_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSM_TYPE_APP_DIALOG, GsmAppDialogClass))
+#define CSM_TYPE_APP_DIALOG         (csm_app_dialog_get_type ())
+#define CSM_APP_DIALOG(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), CSM_TYPE_APP_DIALOG, CsmAppDialog))
+#define CSM_APP_DIALOG_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), CSM_TYPE_APP_DIALOG, CsmAppDialogClass))
+#define CSM_IS_APP_DIALOG(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CSM_TYPE_APP_DIALOG))
+#define CSM_IS_APP_DIALOG_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CSM_TYPE_APP_DIALOG))
+#define CSM_APP_DIALOG_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CSM_TYPE_APP_DIALOG, CsmAppDialogClass))
 
-typedef struct GsmAppDialogPrivate GsmAppDialogPrivate;
+typedef struct CsmAppDialogPrivate CsmAppDialogPrivate;
 
 typedef struct
 {
         GtkDialog            parent;
-        GsmAppDialogPrivate *priv;
-} GsmAppDialog;
+        CsmAppDialogPrivate *priv;
+} CsmAppDialog;
 
 typedef struct
 {
         GtkDialogClass   parent_class;
-} GsmAppDialogClass;
+} CsmAppDialogClass;
 
-GType                  gsm_app_dialog_get_type           (void);
+GType                  csm_app_dialog_get_type           (void);
 
-GtkWidget            * gsm_app_dialog_new                (const char   *name,
+GtkWidget            * csm_app_dialog_new                (const char   *name,
                                                           const char   *command,
                                                           const char   *comment);
 
-gboolean               gsm_app_dialog_run               (GsmAppDialog  *dialog,
+gboolean               csm_app_dialog_run               (CsmAppDialog  *dialog,
                                                          char         **name_p,
                                                          char         **command_p,
                                                          char         **comment_p);
 
-const char *           gsm_app_dialog_get_name           (GsmAppDialog *dialog);
-const char *           gsm_app_dialog_get_command        (GsmAppDialog *dialog);
-const char *           gsm_app_dialog_get_comment        (GsmAppDialog *dialog);
+const char *           csm_app_dialog_get_name           (CsmAppDialog *dialog);
+const char *           csm_app_dialog_get_command        (CsmAppDialog *dialog);
+const char *           csm_app_dialog_get_comment        (CsmAppDialog *dialog);
 
 G_END_DECLS
 
-#endif /* __GSM_APP_DIALOG_H */
+#endif /* __CSM_APP_DIALOG_H */
