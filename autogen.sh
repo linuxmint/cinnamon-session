@@ -4,13 +4,13 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="cinnamon-settings-daemon"
+PKG_NAME="cinnamon-session"
 REQUIRED_AUTOMAKE_VERSION=1.10
 
 (test -f $srcdir/configure.ac \
   && test -d $srcdir/plugins) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
-    echo " top-level cinnamon-settings-daemon directory"
+    echo " top-level cinnamon-session directory"
     exit 1
 }
 
