@@ -1,3 +1,0 @@
-#!/bin/bash
-xgettext --keyword=_ --output=cinnamon-session.pot capplet/*.c cinnamon-session/*.c data/cinnamon-session-properties.desktop.in.in data/cinnamon-session-properties.glade data/csm-inhibit-dialog.glade tools/*.c 
-
