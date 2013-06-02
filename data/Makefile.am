@@ -3,19 +3,19 @@ SUBDIRS = icons
 uidir = $(pkgdatadir)
 ui_DATA = \
 	session-properties.ui	\
-	gsm-inhibit-dialog.ui
+	csm-inhibit-dialog.ui
 
 hwcompatdir = $(pkgdatadir)
 hwcompat_DATA = hardware-compatibility
 
 desktopdir = $(datadir)/applications
-desktop_in_files = session-properties.desktop.in
+desktop_in_files = cinnamon-session-properties.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 @INTLTOOL_XML_NOMERGE_RULE@
 
-gsettings_SCHEMAS = org.gnome.SessionManager.gschema.xml
+gsettings_SCHEMAS = org.cinnamon.SessionManager.gschema.xml
 @GSETTINGS_RULES@
 
 EXTRA_DIST =					\

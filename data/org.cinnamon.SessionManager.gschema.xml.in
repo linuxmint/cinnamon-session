@@ -1,5 +1,5 @@
 <schemalist gettext-domain="cinnamon-session-3.0">
-  <schema id="org.gnome.SessionManager" path="/org/gnome/cinnamon-session/">
+  <schema id="org.cinnamon.SessionManager" path="/org/cinnamon/cinnamon-session/">
     <key name="auto-save-session" type="b">
       <default>false</default>
       <summary>Save sessions</summary>
