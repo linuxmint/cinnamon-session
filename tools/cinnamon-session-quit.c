@@ -33,14 +33,14 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#define GSM_SERVICE_DBUS   "org.gnome.SessionManager"
-#define GSM_PATH_DBUS      "/org/gnome/SessionManager"
-#define GSM_INTERFACE_DBUS "org.gnome.SessionManager"
+#define CSM_SERVICE_DBUS   "org.cinnamon.SessionManager"
+#define CSM_PATH_DBUS      "/org.cinnamon/SessionManager"
+#define CSM_INTERFACE_DBUS "org.cinnamon.SessionManager"
 
 enum {
-        GSM_LOGOUT_MODE_NORMAL = 0,
-        GSM_LOGOUT_MODE_NO_CONFIRMATION,
-        GSM_LOGOUT_MODE_FORCE
+        CSM_LOGOUT_MODE_NORMAL = 0,
+        CSM_LOGOUT_MODE_NO_CONFIRMATION,
+        CSM_LOGOUT_MODE_FORCE
 };
 
 static gboolean opt_logout = FALSE;
@@ -93,9 +93,9 @@ get_sm_proxy (void)
         }
 
         sm_proxy = dbus_g_proxy_new_for_name (connection,
-                                               GSM_SERVICE_DBUS,
-                                               GSM_PATH_DBUS,
-                                               GSM_INTERFACE_DBUS);
+                                               CSM_SERVICE_DBUS,
+                                               CSM_PATH_DBUS,
+                                               CSM_INTERFACE_DBUS);
 
         if (sm_proxy == NULL) {
                 display_error (_("Could not connect to the session manager"));
@@ -210,11 +210,11 @@ main (int argc, char *argv[])
                 /* default to logout */
 
                 if (opt_force)
-                        do_logout (GSM_LOGOUT_MODE_FORCE);
+                        do_logout (CSM_LOGOUT_MODE_FORCE);
                 else if (opt_no_prompt)
-                        do_logout (GSM_LOGOUT_MODE_NO_CONFIRMATION);
+                        do_logout (CSM_LOGOUT_MODE_NO_CONFIRMATION);
                 else
-                        do_logout (GSM_LOGOUT_MODE_NORMAL);
+                        do_logout (CSM_LOGOUT_MODE_NORMAL);
         }
 
         return 0;

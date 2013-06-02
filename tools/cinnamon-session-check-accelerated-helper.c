@@ -1,4 +1,4 @@
-/* gcc -o gnome-session-accelerated `pkg-config --cflags --libs xcomposite gl` -Wall gnome-session-is-accelerated.c */
+/* gcc -o cinnamon-session-accelerated `pkg-config --cflags --libs xcomposite gl` -Wall cinnamon-session-is-accelerated.c */
 
 /*
  * Copyright (C) 2010      Novell, Inc.
@@ -50,7 +50,7 @@
  *
  *  * Buggy GL. This isn't possible to detect. Except for the case where
  *    all GL programs crash. For that reason, we probably don't want
- *    gnome-session to directly try and do any GL detection; better to
+ *    cinnamon-session to directly try and do any GL detection; better to
  *    use a helper binary.
  *
  *  * Horribly slow hardware GL. We could theoretically develop some sort
@@ -87,7 +87,7 @@ static int max_texture_size = 0;
 static inline void
 _print_error (const char *str)
 {
-        fprintf (stderr, "gnome-session-is-accelerated: %s\n", str);
+        fprintf (stderr, "cinnamon-session-is-accelerated: %s\n", str);
 }
 
 static int

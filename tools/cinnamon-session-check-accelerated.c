@@ -101,7 +101,7 @@ main (int argc, char **argv)
 {
         GdkDisplay *display = NULL;
         int estatus;
-        char *child_argv[] = { LIBEXECDIR "/gnome-session-check-accelerated-helper", NULL };
+        char *child_argv[] = { LIBEXECDIR "/cinnamon-session-check-accelerated-helper", NULL };
         Window rootwin;
         glong is_accelerated;
         GError *error = NULL;
@@ -160,12 +160,12 @@ main (int argc, char **argv)
         if (!g_spawn_sync (NULL, (char**)child_argv, NULL, 0,
                            NULL, NULL, NULL, NULL, &estatus, &error)) {
                 is_accelerated = FALSE;
-                g_printerr ("gnome-session-check-accelerated: Failed to run helper: %s\n", error->message);
+                g_printerr ("cinnamon-session-check-accelerated: Failed to run helper: %s\n", error->message);
                 g_clear_error (&error);
         } else {
                 is_accelerated = (estatus == 0);
                 if (!is_accelerated)
-                        g_printerr ("gnome-session-check-accelerated: Helper exited with code %d\n", estatus);
+                        g_printerr ("cinnamon-session-check-accelerated: Helper exited with code %d\n", estatus);
         }
 
         XChangeProperty (GDK_DISPLAY_XDISPLAY (display),

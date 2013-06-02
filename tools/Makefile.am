@@ -1,12 +1,12 @@
-bin_PROGRAMS = gnome-session-quit
-libexec_PROGRAMS = gnome-session-check-accelerated gnome-session-check-accelerated-helper
+bin_PROGRAMS = cinnamon-session-quit
+libexec_PROGRAMS = cinnamon-session-check-accelerated cinnamon-session-check-accelerated-helper
 
 AM_CPPFLAGS =
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
 gnome_session_quit_SOURCES =			\
-	gnome-session-quit.c
+	cinnamon-session-quit.c
 
 gnome_session_quit_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
@@ -24,7 +24,7 @@ gnome_session_quit_LDADD =			\
 	$(GCONF_LIBS)
 
 gnome_session_check_accelerated_helper_SOURCES = 		\
-	gnome-session-check-accelerated-helper.c
+	cinnamon-session-check-accelerated-helper.c
 
 gnome_session_check_accelerated_helper_CPPFLAGS =	\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"		\
@@ -35,7 +35,7 @@ gnome_session_check_accelerated_helper_LDADD = 		\
 	$(X_LIBS)
 
 gnome_session_check_accelerated_SOURCES =       \
-	gnome-session-check-accelerated.c
+	cinnamon-session-check-accelerated.c
 
 gnome_session_check_accelerated_CPPFLAGS =      \
 	-DLIBEXECDIR=\""$(libexecdir)"\"	\
