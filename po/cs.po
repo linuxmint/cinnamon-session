@@ -80,7 +80,7 @@ msgstr "Verze této aplikace"
 msgid "Could not display help document"
 msgstr "Nelze zobrazit dokument nápovědy"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Záložní prostředí GNOME"
 

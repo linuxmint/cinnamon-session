@@ -73,7 +73,7 @@ msgstr "এই এপ্লিকেচনৰ সংস্কৰণ"
 msgid "Could not display help document"
 msgstr "সহায় দস্তাবেজ প্ৰদৰ্শন কৰিবলৈ ব্যৰ্থ"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME ফলবেক"
 

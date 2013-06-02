@@ -69,7 +69,7 @@ msgstr "Версія гэтай праграмы"
 msgid "Could not display help document"
 msgstr "Не ўдалося паказаць даведачны дакумент"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Запасны рэжым GNOME"
 

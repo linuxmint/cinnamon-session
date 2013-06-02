@@ -71,7 +71,7 @@ msgstr "Phiên bản của ứng dụng"
 msgid "Could not display help document"
 msgstr "Không thể hiện tài liệu trợ giúp"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME phòng bị"
 

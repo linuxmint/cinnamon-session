@@ -78,7 +78,7 @@ msgstr "Версията на тази програма"
 msgid "Could not display help document"
 msgstr "Документът от помощта не може да бъде показан"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Резервен вариант за GNOME"
 

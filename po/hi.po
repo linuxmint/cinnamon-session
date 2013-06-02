@@ -86,7 +86,7 @@ msgstr "इस अनुप्रयोग का संस्करण"
 msgid "Could not display help document"
 msgstr "मदद दस्तावेज़ नहीं दिखा सका"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "गनोम फॉलबैक"
 

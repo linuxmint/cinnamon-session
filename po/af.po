@@ -72,7 +72,7 @@ msgstr "Weergawe van hierdie program"
 msgid "Could not display help document"
 msgstr "Kon nie hulpdokument vertoon nie"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME (terugval)"
 

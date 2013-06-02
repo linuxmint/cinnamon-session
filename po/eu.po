@@ -73,7 +73,7 @@ msgstr "Aplikazio honen bertsioa"
 msgid "Could not display help document"
 msgstr "Ezin izan da laguntzako dokumentua bistaratu"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME ordezkoa"
 

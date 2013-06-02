@@ -78,7 +78,7 @@ msgstr "Bu uygulamanın sürümü"
 msgid "Could not display help document"
 msgstr "Yardım belgesi görüntülenemedi"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME korumalı"
 

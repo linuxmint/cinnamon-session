@@ -75,7 +75,7 @@ msgstr "Versi aplikasi ini"
 msgid "Could not display help document"
 msgstr "Tidak dapat membuka dokumen bantuan"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Pengalasan GNOME"
 

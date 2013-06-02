@@ -75,7 +75,7 @@ msgstr "या अनुप्रयोगाची आवृत्ती"
 msgid "Could not display help document"
 msgstr "मदत दस्तऐवज दाखवण्यास अशक्य"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME फॉलबॅक"
 

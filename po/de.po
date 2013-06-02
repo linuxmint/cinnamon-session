@@ -84,7 +84,7 @@ msgstr "Version dieser Anwendung"
 msgid "Could not display help document"
 msgstr "Die Hilfeseite konnte nicht angezeigt werden"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME-Ausweichmodus"
 

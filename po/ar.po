@@ -78,7 +78,7 @@ msgstr "إصدارة هذا التطبيق"
 msgid "Could not display help document"
 msgstr "تعذّر عرض مستند المساعدة"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "جنوم (تقليدية)"
 

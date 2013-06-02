@@ -82,7 +82,7 @@ msgstr "Versio de ĉi tiu aplikaĵo"
 msgid "Could not display help document"
 msgstr "Ne eblis montri helpdokumenton"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Retropaŝa GNOME-reĝimo"
 

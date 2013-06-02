@@ -82,7 +82,7 @@ msgstr "ఈ అనువర్తనం యొక్క రూపాంతరం
 msgid "Could not display help document"
 msgstr "సహాయ పత్రమును ప్రదర్శించలేక పోయింది"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "గ్నోమ్ ఫాల్‌బ్యాక్"
 

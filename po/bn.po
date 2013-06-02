@@ -75,7 +75,7 @@ msgstr "এই অ্যাপ্লিকেশনের সংস্করণ"
 msgid "Could not display help document"
 msgstr "সহায়তা নথি প্রদর্শন করতে ব্যর্থ"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "জিনোম ফলব্যাক"
 

@@ -77,7 +77,7 @@ msgstr "Tämän ohjelman versio"
 msgid "Could not display help document"
 msgstr "Ohjetta ei voitu näyttää"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Gnome-vara"
 

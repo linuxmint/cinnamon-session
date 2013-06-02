@@ -78,7 +78,7 @@ msgstr "ଏହି ପ୍ରୟୋଗର ସଂସ୍କରଣ"
 msgid "Could not display help document"
 msgstr "ସାହାଯ୍ଯ ଦଲିଲ ଦେଖାଇହେଲା ନାହିଁ"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME ଆବର୍ତ୍ତନ"
 

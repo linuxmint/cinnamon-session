@@ -75,7 +75,7 @@ msgstr "Različica programa"
 msgid "Could not display help document"
 msgstr "Ni mogoče prikazati dokumenta pomoči"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Povratni nabor GNOME"
 

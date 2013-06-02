@@ -74,7 +74,7 @@ msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 msgid "Could not display help document"
 msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "ഗ്നോം ഫോള്‍ബാക്ക്"
 

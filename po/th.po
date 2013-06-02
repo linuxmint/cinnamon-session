@@ -73,7 +73,7 @@ msgstr "รุ่นของโปรแกรมนี้"
 msgid "Could not display help document"
 msgstr "ไม่สามารถแสดงเอกสารวิธีใช้"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME แบบสำรอง"
 

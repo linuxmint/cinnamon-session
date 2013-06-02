@@ -77,7 +77,7 @@ msgstr "Lietotnes versija"
 msgid "Could not display help document"
 msgstr "Nevar parādīt palīdzības dokumentu"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME atkāpšanās"
 

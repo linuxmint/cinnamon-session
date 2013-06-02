@@ -72,7 +72,7 @@ msgstr "이 프로그램의 버전"
 msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "그놈 대체"
 

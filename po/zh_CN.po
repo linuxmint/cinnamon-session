@@ -81,7 +81,7 @@ msgstr "此应用程序的版本"
 msgid "Could not display help document"
 msgstr "不能显示帮助文档"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME 后备模式"
 

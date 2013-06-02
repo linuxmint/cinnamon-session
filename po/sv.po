@@ -74,7 +74,7 @@ msgstr "Version av detta program"
 msgid "Could not display help document"
 msgstr "Kunde inte visa hjälpdokumentet"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "Fall tillbaka på GNOME"
 

@@ -72,7 +72,7 @@ msgstr "កំណែ​កម្មវិធី​នេះ"
 msgid "Could not display help document"
 msgstr "មិន​អាច​បង្ហាញ​ឯកសារ​ជំនួយ​បាន​ទេ"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME fallback"
 

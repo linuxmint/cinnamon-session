@@ -81,7 +81,7 @@ msgstr "このアプリケーションのバージョンを表示する"
 msgid "Could not display help document"
 msgstr "ヘルプのドキュメントを表示できませんでした"
 
-#: ../data/gnome-fallback.session.desktop.in.in.h:1
+#: ../data/cinnamon-fallback.session.desktop.in.in.h:1
 msgid "GNOME fallback"
 msgstr "GNOME フォールバック"
 
