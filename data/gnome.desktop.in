@@ -1,7 +1,0 @@
-[Desktop Entry]
-_Name=GNOME
-_Comment=This session logs you into GNOME
-Exec=gnome-session --session=gnome
-TryExec=gnome-shell
-Icon=
-Type=Application

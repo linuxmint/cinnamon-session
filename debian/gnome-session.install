@@ -1,5 +1,7 @@
-usr/share/doc
-usr/share/xsessions/gnome.desktop
-usr/share/xsessions/ubuntu.desktop
-usr/share/gnome-session/sessions/gnome.session
-usr/share/gnome-session/sessions/ubuntu.session
+usr/bin/gnome-session*
+usr/lib/gnome-session*
+usr/share/gnome-session/*.ui
+usr/share/gnome-session/hardware-compatibility
+usr/share/man/man1
+usr/share/glib-2.0/schemas
+usr/share/GConf/gsettings

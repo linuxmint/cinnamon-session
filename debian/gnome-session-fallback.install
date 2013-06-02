@@ -1,7 +1,0 @@
-debian/scripts/gnome-session-fallback /usr/bin
-debian/scripts/gnome-wm /usr/bin
-debian/gnome-wm.desktop /usr/share/applications
-usr/share/xsessions/gnome-fallback.desktop
-usr/share/xsessions/gnome-fallback-compiz.desktop
-usr/share/gnome-session/sessions/gnome-fallback.session
-usr/share/gnome-session/sessions/gnome-fallback-compiz.session

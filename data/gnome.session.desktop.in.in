@@ -1,6 +1,0 @@
-[GNOME Session]
-_Name=GNOME
-RequiredComponents=gnome-shell;gnome-settings-daemon;
-IsRunnableHelper=@LIBEXECDIR@/gnome-session-check-accelerated
-FallbackSession=gnome-fallback
-DesktopName=GNOME

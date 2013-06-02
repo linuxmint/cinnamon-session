@@ -1,7 +1,0 @@
-[Desktop Entry]
-_Name=GNOME Fallback
-_Comment=This session logs you into GNOME with the traditional panel
-Exec=gnome-session --session=gnome-fallback-compiz
-TryExec=gnome-session
-Icon=
-Type=Application
