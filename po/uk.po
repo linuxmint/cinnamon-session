@@ -85,11 +85,11 @@ msgstr "Cinnamon"
 msgid "This session logs you into Cinnamon"
 msgstr "Це — сеанс входу в Cinnamon"
 
-#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Деякі програми досі працюють:"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -105,39 +105,39 @@ msgstr "Початкові програми"
 msgid "Choose what applications to start when you log in"
 msgstr "Виберіть програми, що запускаються при вході в сеанс"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "Додаткові по_чаткові програми для запуску:"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Startup Programs"
 msgstr "Початкові програми"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Автоматично запам'ятовувати запущені програми при завершенні"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "_Запам'ятати поточно запущені програми"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "Параметри"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Browse…"
 msgstr "Огляд…"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "Comm_ent:"
 msgstr "Ко_ментар:"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "Co_mmand:"
 msgstr "_Команда:"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Name:"
 msgstr "_Назва:"
 

@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2012-07-25 12:56+0200\n"
 "PO-Revision-Date: 2012-07-25 12:57+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.gladeo.no>\n"
 "Language: no\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,11 +81,11 @@ msgstr "Cinnamon"
 msgid "This session logs you into Cinnamon"
 msgstr "Denne økten logger inn i Cinnamon"
 
-#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Noen programmer kjører fremdeles:"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -101,39 +101,39 @@ msgstr "Oppstartsprogrammer"
 msgid "Choose what applications to start when you log in"
 msgstr "Velg programmer som skal startes når du logger inn"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "Flere oppstarts_programmer:"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Startup Programs"
 msgstr "Oppstartsprogrammer"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "Husk kjørende programmer _automatisk når du logger ut"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "Husk kjø_rende programmer"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "Alternativer"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Browse…"
 msgstr "Bla gjennom …"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "Comm_ent:"
 msgstr "Komm_entar:"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "Co_mmand:"
 msgstr "Ko_mmando:"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Name:"
 msgstr "_Navn:"
 

@@ -86,11 +86,11 @@ msgstr "ഗ്നോം"
 msgid "This session logs you into Cinnamon"
 msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ്നോമിലേക്ക് കയറ്റുന്നു"
 
-#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -109,41 +109,41 @@ msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍"
 msgid "Choose what applications to start when you log in"
 msgstr "നിങ്ങള്‍ ലോഗിന്‍ ചെയ്യുമ്പോള്‍ ആരംഭിക്കേണ്ട പ്രയോഗങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "കൂടുതല്‍ പ്രാരംഭ _പ്രയോഗങ്ങള്‍:"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Startup Programs"
 msgstr "പ്രാരംഭ പ്രോഗ്രാമുകള്‍"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "പുറത്തിറങ്ങുമ്പോള്‍ പ്രവര്‍ത്തിയ്ക്കുന്ന പ്രയോഗങ്ങള്‍ ഓര്‍ത്തിരിയ്ക്കുക."
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 #| msgid "_Remember Currently Running Application"
 msgid "_Remember Currently Running Applications"
 msgstr "ഇപ്പോള്‍ പ്രവര്‍ത്തിക്കുന്ന പ്രയോഗങ്ങള്‍ _ഓര്‍ക്കുക"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "ഐച്ഛികങ്ങള്‍"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 #| msgid "Browse..."
 msgid "Browse…"
 msgstr "പരതുക..."
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "Comm_ent:"
 msgstr "അഭിപ്രായം:"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "Co_mmand:"
 msgstr "_ആജ്ഞ:"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Name:"
 msgstr "_പേരു്:"
 

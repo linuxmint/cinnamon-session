@@ -174,11 +174,11 @@ msgstr "Amzer a chom a-raok an estez e vo e-giz dioberiant"
 msgid "Window Manager"
 msgstr "ardoer prenestroù"
 
-#: ../data/csm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Arloadoù a lobour c'hoazh:</b>"
 
-#: ../data/csm-inhibit-dialog.ui.h:2
+#: ../data/csm-inhibit-dialog.glade.h:2
 #: ../cinnamon-session/csm-inhibit-dialog.c:667
 msgid "Waiting for program to finish.  Interrupting program may cause you to lose work."
 msgstr "Gortoz arload echu. Un arsav a riskle da goll roadennoù bennak."
@@ -191,40 +191,40 @@ msgstr "Diuziñ arloadoù da lañsañ er gevreadur"
 msgid "Startup Applications"
 msgstr "Arloadoù loc'hañ"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "_Goulevioù loc'hañ ouzhpenn :"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Browse..."
 msgstr "Furchal..."
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "Co_mmand:"
 msgstr "A_rc'had :"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Comm_ent:"
 msgstr "As_kelenn :"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "Dibarzhioù"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Startup Programs"
 msgstr "Meziantoù loc'hañ"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 #, fuzzy
 msgid "_Automatically remember running applications when logging out"
 msgstr "_En em soñjañ emgefreek arloadoù e-pad an dilogadur"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "_Name:"
 msgstr "A_nv :"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Remember Currently Running Application"
 msgstr "E_n em soñjañ arloadoù o labourat"
 

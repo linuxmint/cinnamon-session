@@ -2,8 +2,8 @@ SUBDIRS = icons
 
 uidir = $(pkgdatadir)
 ui_DATA = \
-	session-properties.ui	\
-	csm-inhibit-dialog.ui
+	session-properties.glade	\
+	csm-inhibit-dialog.glade
 
 hwcompatdir = $(pkgdatadir)
 hwcompat_DATA = hardware-compatibility

@@ -90,11 +90,11 @@ msgstr "جنوم"
 msgid "This session logs you into Cinnamon"
 msgstr "تولجك هذه الجلسة في جنوم"
 
-#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ما زالت بعض البرامج تعمل:"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -108,39 +108,39 @@ msgstr "تطبيقات بدء التشغيل"
 msgid "Choose what applications to start when you log in"
 msgstr "اختر التطبيقات التي تريد تشغيلها عند ولوجك"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "برامج بدء الت_شغيل الإضافية:"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Startup Programs"
 msgstr "برامج بدء التشغيل"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ت_ذكّر تلقائيا التطبيقات المشغلة عند تسجيل الخروج"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "_تذكّر التطبيقات المشغلة حاليًا"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "الخيارات"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Browse…"
 msgstr "تصفّح…"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "Comm_ent:"
 msgstr "ال_تعليق:"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "Co_mmand:"
 msgstr "الأ_مر:"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Name:"
 msgstr "الا_سم:"
 

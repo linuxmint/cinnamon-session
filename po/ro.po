@@ -85,11 +85,11 @@ msgstr "Cinnamon"
 msgid "This session logs you into Cinnamon"
 msgstr "Această sesiune vă va autentifica în Cinnamon"
 
-#: ../data/csm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>O parte din programe sunt încă în funcțiune:</b>"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:644
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -105,39 +105,39 @@ msgstr "Alegeți aplicațiile ce vor porni după ce vă autentificați"
 msgid "Startup Applications"
 msgstr "Aplicații pornite după autentificare"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "_Programe suplimentare de pornit:"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Browse…"
 msgstr "Navighează…"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "Co_mmand:"
 msgstr "Co_mandă:"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Comm_ent:"
 msgstr "Com_entariu:"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "Opțiuni"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Startup Programs"
 msgstr "Programe de pornit"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Memorează _automat la ieșire aplicațiile ce rulează"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "_Name:"
 msgstr "_Nume:"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Remember Currently Running Application"
 msgstr "Memo_rează aplicațiile ce rulează în acest moment"
 

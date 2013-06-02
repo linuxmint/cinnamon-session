@@ -28,7 +28,7 @@
 
 #include "csm-app-dialog.h"
 
-#define GTKBUILDER_FILE "session-properties.ui"
+#define GTKBUILDER_FILE "session-properties.glade"
 
 #define CAPPLET_NAME_ENTRY_WIDGET_NAME    "session_properties_name_entry"
 #define CAPPLET_COMMAND_ENTRY_WIDGET_NAME "session_properties_command_entry"

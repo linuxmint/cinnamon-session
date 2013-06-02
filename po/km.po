@@ -84,11 +84,11 @@ msgstr "Cinnamon"
 msgid "This session logs you into Cinnamon"
 msgstr "សម័យ​នេះ​ជា​កំណត់​ហេតុ​ដែល​អ្នក​ទៅ​កាន់ Cinnamon"
 
-#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "កម្មវិធី​មួយ​ចំនួន​នៅ​តែ​កំពុង​ដំណើរ​ការ ៖"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -102,39 +102,39 @@ msgstr "កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើ
 msgid "Choose what applications to start when you log in"
 msgstr "ជ្រើស​កម្មវិធី​ត្រូវ​ចាប់ផ្ដើម​នៅ​ពេល​ចូល"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "កម្មវិធី​ចាប់ផ្ដើម​បន្ថែម ៖"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "Startup Programs"
 msgstr "ចាប់ផ្ដើម​កម្មវិធី"
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ចងចាំ​កម្មវិធី​ដែល​កំពុង​ដំណើរការ​ដោយ​ស្វ័យ​ប្រវត្តិ នៅ​ពេល​ចេញ"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "ចងចាំ​ការ​ដំណើរការ​កម្មវិធី​បច្ចុប្បន្ន"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "ជម្រើស"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Browse…"
 msgstr "រក​មើល..."
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "Comm_ent:"
 msgstr "មតិយោបល់ ៖"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "Co_mmand:"
 msgstr "ពាក្យ​បញ្ជា ៖"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Name:"
 msgstr "ឈ្មោះ ៖"
 

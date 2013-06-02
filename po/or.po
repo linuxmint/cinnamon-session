@@ -90,11 +90,11 @@ msgstr "ନୋମ"
 msgid "This session logs you into Cinnamon"
 msgstr "ଏହି ଅଧିବେଶନ ଆପଣଙ୍କୁ ନୋମ ରେ ଲଗ କରାଇଥାଏ"
 
-#: ../data/csm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>କିଛି ପ୍ରଗ୍ରାମ ଏବେ ମଧ୍ଯ ଚାଲୁଅଛି:</b>"
 
-#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:643
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -113,40 +113,40 @@ msgstr "ଆପଣ ଲଗଇନ ହେବା ସମୟରେ କେଉଁ ପ୍�
 msgid "Startup Applications"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗଗୁଡ଼ିକ"
 
-#: ../data/cinnamon-session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "ଅତିରିକ୍ତ ବ୍ଯବସ୍ଥାପକ ପ୍ରୋଗ୍ରାମ (_p):"
 
-#: ../data/cinnamon-session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.glade.h:2
 #| msgid "Browse..."
 msgid "Browse…"
 msgstr "ବ୍ରାଉଜ କରନ୍ତୁ..."
 
-#: ../data/cinnamon-session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "Co_mmand:"
 msgstr "ନିର୍ଦ୍ଦେଶ (_m):"
 
-#: ../data/cinnamon-session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Comm_ent:"
 msgstr "ମନ୍ତବ୍ୟ (_e):"
 
-#: ../data/cinnamon-session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Options"
 msgstr "ବିକଳ୍ପଗୁଡ଼ିକ"
 
-#: ../data/cinnamon-session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Startup Programs"
 msgstr "ବ୍ଯବସ୍ଥାପକ ପ୍ରୋଗ୍ରାମ"
 
-#: ../data/cinnamon-session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "ଲଗଆଉଟ ହେବା ସମୟରେ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ମନେରଖନ୍ତୁ (_A)"
 
-#: ../data/cinnamon-session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.glade.h:8
 msgid "_Name:"
 msgstr "ନାମ (_N):"
 
-#: ../data/cinnamon-session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.glade.h:9
 msgid "_Remember Currently Running Application"
 msgstr "ବର୍ତ୍ତମାନ ଚାଲୁଥିବା ପ୍ରୟୋଗଗୁଡ଼ିକୁ ମନେରଖନ୍ତୁ (_R)"
 

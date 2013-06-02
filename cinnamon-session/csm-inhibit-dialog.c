@@ -46,7 +46,7 @@
 
 #define CSM_INHIBIT_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_INHIBIT_DIALOG, CsmInhibitDialogPrivate))
 
-#define GTKBUILDER_FILE "csm-inhibit-dialog.ui"
+#define GTKBUILDER_FILE "csm-inhibit-dialog.glade"
 
 #ifndef DEFAULT_ICON_SIZE
 #define DEFAULT_ICON_SIZE 32
