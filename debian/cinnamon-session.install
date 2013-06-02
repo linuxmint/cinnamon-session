@@ -4,4 +4,4 @@ usr/share/cinnamon-session/*.glade
 usr/share/cinnamon-session/hardware-compatibility
 usr/share/man/man1
 usr/share/glib-2.0/schemas
-usr/share/GConf/gsettings
+
