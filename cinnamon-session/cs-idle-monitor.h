@@ -20,52 +20,52 @@
  *
  */
 
-#ifndef __GS_IDLE_MONITOR_H
-#define __GS_IDLE_MONITOR_H
+#ifndef __CS_IDLE_MONITOR_H
+#define __CS_IDLE_MONITOR_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GS_TYPE_IDLE_MONITOR         (gs_idle_monitor_get_type ())
-#define GS_IDLE_MONITOR(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitor))
-#define GS_IDLE_MONITOR_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GS_TYPE_IDLE_MONITOR, GSIdleMonitorClass))
-#define GS_IS_IDLE_MONITOR(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GS_TYPE_IDLE_MONITOR))
-#define GS_IS_IDLE_MONITOR_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GS_TYPE_IDLE_MONITOR))
-#define GS_IDLE_MONITOR_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitorClass))
+#define CS_TYPE_IDLE_MONITOR         (cs_idle_monitor_get_type ())
+#define CS_IDLE_MONITOR(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), CS_TYPE_IDLE_MONITOR, CSIdleMonitor))
+#define CS_IDLE_MONITOR_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), CS_TYPE_IDLE_MONITOR, CSIdleMonitorClass))
+#define CS_IS_IDLE_MONITOR(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CS_TYPE_IDLE_MONITOR))
+#define CS_IS_IDLE_MONITOR_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CS_TYPE_IDLE_MONITOR))
+#define CS_IDLE_MONITOR_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CS_TYPE_IDLE_MONITOR, CSIdleMonitorClass))
 
-typedef struct GSIdleMonitorPrivate GSIdleMonitorPrivate;
+typedef struct CSIdleMonitorPrivate CSIdleMonitorPrivate;
 
 typedef struct
 {
         GObject               parent;
-        GSIdleMonitorPrivate *priv;
-} GSIdleMonitor;
+        CSIdleMonitorPrivate *priv;
+} CSIdleMonitor;
 
 typedef struct
 {
         GObjectClass          parent_class;
-} GSIdleMonitorClass;
+} CSIdleMonitorClass;
 
-typedef gboolean (*GSIdleMonitorWatchFunc) (GSIdleMonitor *monitor,
+typedef gboolean (*CSIdleMonitorWatchFunc) (CSIdleMonitor *monitor,
                                             guint          id,
                                             gboolean       condition,
                                             gpointer       user_data);
 
-GType           gs_idle_monitor_get_type       (void);
+GType           cs_idle_monitor_get_type       (void);
 
-GSIdleMonitor * gs_idle_monitor_new            (void);
+CSIdleMonitor * cs_idle_monitor_new            (void);
 
-guint           gs_idle_monitor_add_watch      (GSIdleMonitor         *monitor,
+guint           cs_idle_monitor_add_watch      (CSIdleMonitor         *monitor,
                                                 guint                  interval,
-                                                GSIdleMonitorWatchFunc callback,
+                                                CSIdleMonitorWatchFunc callback,
                                                 gpointer               user_data);
 
-void            gs_idle_monitor_remove_watch   (GSIdleMonitor         *monitor,
+void            cs_idle_monitor_remove_watch   (CSIdleMonitor         *monitor,
                                                 guint                  id);
-void            gs_idle_monitor_reset          (GSIdleMonitor         *monitor);
+void            cs_idle_monitor_reset          (CSIdleMonitor         *monitor);
 
 
 G_END_DECLS
 
-#endif /* __GS_IDLE_MONITOR_H */
+#endif /* __CS_IDLE_MONITOR_H */

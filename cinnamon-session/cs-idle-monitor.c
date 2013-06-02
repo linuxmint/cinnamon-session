@@ -37,15 +37,15 @@
 #include <gdk/gdkx.h>
 #include <gdk/gdk.h>
 
-#include "gs-idle-monitor.h"
+#include "cs-idle-monitor.h"
 
-static void gs_idle_monitor_class_init (GSIdleMonitorClass *klass);
-static void gs_idle_monitor_init       (GSIdleMonitor      *idle_monitor);
-static void gs_idle_monitor_finalize   (GObject             *object);
+static void cs_idle_monitor_class_init (CSIdleMonitorClass *klass);
+static void cs_idle_monitor_init       (CSIdleMonitor      *idle_monitor);
+static void cs_idle_monitor_finalize   (GObject             *object);
 
-#define GS_IDLE_MONITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitorPrivate))
+#define CS_IDLE_MONITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CS_TYPE_IDLE_MONITOR, CSIdleMonitorPrivate))
 
-struct GSIdleMonitorPrivate
+struct CSIdleMonitorPrivate
 {
         Display     *display;
 
@@ -65,15 +65,15 @@ typedef struct
         Display               *display;
         guint                  id;
         XSyncValue             interval;
-        GSIdleMonitorWatchFunc callback;
+        CSIdleMonitorWatchFunc callback;
         gpointer               user_data;
         XSyncAlarm             xalarm_positive;
         XSyncAlarm             xalarm_negative;
-} GSIdleMonitorWatch;
+} CSIdleMonitorWatch;
 
 static guint32 watch_serial = 1;
 
-G_DEFINE_TYPE (GSIdleMonitor, gs_idle_monitor, G_TYPE_OBJECT)
+G_DEFINE_TYPE (CSIdleMonitor, cs_idle_monitor, G_TYPE_OBJECT)
 
 static gint64
 _xsyncvalue_to_int64 (XSyncValue value)
@@ -93,25 +93,25 @@ _int64_to_xsyncvalue (gint64 value)
 }
 
 static void
-gs_idle_monitor_dispose (GObject *object)
+cs_idle_monitor_dispose (GObject *object)
 {
-        GSIdleMonitor *monitor;
+        CSIdleMonitor *monitor;
 
-        g_return_if_fail (GS_IS_IDLE_MONITOR (object));
+        g_return_if_fail (CS_IS_IDLE_MONITOR (object));
 
-        monitor = GS_IDLE_MONITOR (object);
+        monitor = CS_IDLE_MONITOR (object);
 
         if (monitor->priv->watches != NULL) {
                 g_hash_table_destroy (monitor->priv->watches);
                 monitor->priv->watches = NULL;
         }
 
-        G_OBJECT_CLASS (gs_idle_monitor_parent_class)->dispose (object);
+        G_OBJECT_CLASS (cs_idle_monitor_parent_class)->dispose (object);
 }
 
 static gboolean
 _find_alarm (gpointer            key,
-             GSIdleMonitorWatch *watch,
+             CSIdleMonitorWatch *watch,
              XSyncAlarm         *alarm)
 {
         g_debug ("Searching for %d in %d,%d", (int)*alarm, (int)watch->xalarm_positive, (int)watch->xalarm_negative);
@@ -122,11 +122,11 @@ _find_alarm (gpointer            key,
         return FALSE;
 }
 
-static GSIdleMonitorWatch *
-find_watch_for_alarm (GSIdleMonitor *monitor,
+static CSIdleMonitorWatch *
+find_watch_for_alarm (CSIdleMonitor *monitor,
                       XSyncAlarm     alarm)
 {
-        GSIdleMonitorWatch *watch;
+        CSIdleMonitorWatch *watch;
 
         watch = g_hash_table_find (monitor->priv->watches,
                                    (GHRFunc)_find_alarm,
@@ -136,13 +136,13 @@ find_watch_for_alarm (GSIdleMonitor *monitor,
 
 #ifdef HAVE_XTEST
 static gboolean
-send_fake_event (GSIdleMonitor *monitor)
+send_fake_event (CSIdleMonitor *monitor)
 {
         if (! monitor->priv->have_xtest) {
                 return FALSE;
         }
 
-        g_debug ("GSIdleMonitor: sending fake key");
+        g_debug ("CSIdleMonitor: sending fake key");
 
         XLockDisplay (monitor->priv->display);
         XTestFakeKeyEvent (monitor->priv->display,
@@ -167,9 +167,9 @@ send_fake_event (GSIdleMonitor *monitor)
 #endif /* HAVE_XTEST */
 
 void
-gs_idle_monitor_reset (GSIdleMonitor *monitor)
+cs_idle_monitor_reset (CSIdleMonitor *monitor)
 {
-        g_return_if_fail (GS_IS_IDLE_MONITOR (monitor));
+        g_return_if_fail (CS_IS_IDLE_MONITOR (monitor));
 
 #ifdef HAVE_XTEST
         /* FIXME: is there a better way to reset the IDLETIME? */
@@ -178,10 +178,10 @@ gs_idle_monitor_reset (GSIdleMonitor *monitor)
 }
 
 static void
-handle_alarm_notify_event (GSIdleMonitor         *monitor,
+handle_alarm_notify_event (CSIdleMonitor         *monitor,
                            XSyncAlarmNotifyEvent *alarm_event)
 {
-        GSIdleMonitorWatch *watch;
+        CSIdleMonitorWatch *watch;
         gboolean            res;
         gboolean            condition;
 
@@ -216,15 +216,15 @@ handle_alarm_notify_event (GSIdleMonitor         *monitor,
 
         if (! res) {
                 /* reset all timers */
-                g_debug ("GSIdleMonitor: callback returned FALSE; resetting idle time");
-                gs_idle_monitor_reset (monitor);
+                g_debug ("CSIdleMonitor: callback returned FALSE; resetting idle time");
+                cs_idle_monitor_reset (monitor);
         }
 }
 
 static GdkFilterReturn
 xevent_filter (GdkXEvent     *xevent,
                GdkEvent      *event,
-               GSIdleMonitor *monitor)
+               CSIdleMonitor *monitor)
 {
         XEvent                *ev;
         XSyncAlarmNotifyEvent *alarm_event;
@@ -242,7 +242,7 @@ xevent_filter (GdkXEvent     *xevent,
 }
 
 static gboolean
-init_xsync (GSIdleMonitor *monitor)
+init_xsync (CSIdleMonitor *monitor)
 {
         int                 sync_error_base;
         int                 res;
@@ -256,13 +256,13 @@ init_xsync (GSIdleMonitor *monitor)
                                    &monitor->priv->sync_event_base,
                                    &sync_error_base);
         if (! res) {
-                g_warning ("GSIdleMonitor: Sync extension not present");
+                g_warning ("CSIdleMonitor: Sync extension not present");
                 return FALSE;
         }
 
         res = XSyncInitialize (monitor->priv->display, &major, &minor);
         if (! res) {
-                g_warning ("GSIdleMonitor: Unable to initialize Sync extension");
+                g_warning ("CSIdleMonitor: Unable to initialize Sync extension");
                 return FALSE;
         }
 
@@ -277,7 +277,7 @@ init_xsync (GSIdleMonitor *monitor)
         XSyncFreeSystemCounterList (counters);
 
         if (monitor->priv->counter == None) {
-                g_warning ("GSIdleMonitor: IDLETIME counter not found");
+                g_warning ("CSIdleMonitor: IDLETIME counter not found");
                 return FALSE;
         }
 
@@ -287,7 +287,7 @@ init_xsync (GSIdleMonitor *monitor)
 }
 
 static void
-_init_xtest (GSIdleMonitor *monitor)
+_init_xtest (CSIdleMonitor *monitor)
 {
 #ifdef HAVE_XTEST
         int a, b, c, d;
@@ -313,13 +313,13 @@ _init_xtest (GSIdleMonitor *monitor)
 }
 
 static GObject *
-gs_idle_monitor_constructor (GType                  type,
+cs_idle_monitor_constructor (GType                  type,
                              guint                  n_construct_properties,
                              GObjectConstructParam *construct_properties)
 {
-        GSIdleMonitor *monitor;
+        CSIdleMonitor *monitor;
 
-        monitor = GS_IDLE_MONITOR (G_OBJECT_CLASS (gs_idle_monitor_parent_class)->constructor (type,
+        monitor = CS_IDLE_MONITOR (G_OBJECT_CLASS (cs_idle_monitor_parent_class)->constructor (type,
                                                                                                n_construct_properties,
                                                                                                construct_properties));
 
@@ -335,15 +335,15 @@ gs_idle_monitor_constructor (GType                  type,
 }
 
 static void
-gs_idle_monitor_class_init (GSIdleMonitorClass *klass)
+cs_idle_monitor_class_init (CSIdleMonitorClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->finalize = gs_idle_monitor_finalize;
-        object_class->dispose = gs_idle_monitor_dispose;
-        object_class->constructor = gs_idle_monitor_constructor;
+        object_class->finalize = cs_idle_monitor_finalize;
+        object_class->dispose = cs_idle_monitor_dispose;
+        object_class->constructor = cs_idle_monitor_constructor;
 
-        g_type_class_add_private (klass, sizeof (GSIdleMonitorPrivate));
+        g_type_class_add_private (klass, sizeof (CSIdleMonitorPrivate));
 }
 
 static guint32
@@ -362,12 +362,12 @@ get_next_watch_serial (void)
         return serial;
 }
 
-static GSIdleMonitorWatch *
+static CSIdleMonitorWatch *
 idle_monitor_watch_new (guint interval)
 {
-        GSIdleMonitorWatch *watch;
+        CSIdleMonitorWatch *watch;
 
-        watch = g_slice_new0 (GSIdleMonitorWatch);
+        watch = g_slice_new0 (CSIdleMonitorWatch);
         watch->interval = _int64_to_xsyncvalue ((gint64)interval);
         watch->id = get_next_watch_serial ();
         watch->xalarm_positive = None;
@@ -377,7 +377,7 @@ idle_monitor_watch_new (guint interval)
 }
 
 static void
-idle_monitor_watch_free (GSIdleMonitorWatch *watch)
+idle_monitor_watch_free (CSIdleMonitorWatch *watch)
 {
         if (watch == NULL) {
                 return;
@@ -388,13 +388,13 @@ idle_monitor_watch_free (GSIdleMonitorWatch *watch)
         if (watch->xalarm_negative != None) {
                 XSyncDestroyAlarm (watch->display, watch->xalarm_negative);
         }
-        g_slice_free (GSIdleMonitorWatch, watch);
+        g_slice_free (CSIdleMonitorWatch, watch);
 }
 
 static void
-gs_idle_monitor_init (GSIdleMonitor *monitor)
+cs_idle_monitor_init (CSIdleMonitor *monitor)
 {
-        monitor->priv = GS_IDLE_MONITOR_GET_PRIVATE (monitor);
+        monitor->priv = CS_IDLE_MONITOR_GET_PRIVATE (monitor);
 
         monitor->priv->watches = g_hash_table_new_full (NULL,
                                                         NULL,
@@ -405,34 +405,34 @@ gs_idle_monitor_init (GSIdleMonitor *monitor)
 }
 
 static void
-gs_idle_monitor_finalize (GObject *object)
+cs_idle_monitor_finalize (GObject *object)
 {
-        GSIdleMonitor *idle_monitor;
+        CSIdleMonitor *idle_monitor;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GS_IS_IDLE_MONITOR (object));
+        g_return_if_fail (CS_IS_IDLE_MONITOR (object));
 
-        idle_monitor = GS_IDLE_MONITOR (object);
+        idle_monitor = CS_IDLE_MONITOR (object);
 
         g_return_if_fail (idle_monitor->priv != NULL);
 
-        G_OBJECT_CLASS (gs_idle_monitor_parent_class)->finalize (object);
+        G_OBJECT_CLASS (cs_idle_monitor_parent_class)->finalize (object);
 }
 
-GSIdleMonitor *
-gs_idle_monitor_new (void)
+CSIdleMonitor *
+cs_idle_monitor_new (void)
 {
         GObject *idle_monitor;
 
-        idle_monitor = g_object_new (GS_TYPE_IDLE_MONITOR,
+        idle_monitor = g_object_new (CS_TYPE_IDLE_MONITOR,
                                      NULL);
 
-        return GS_IDLE_MONITOR (idle_monitor);
+        return CS_IDLE_MONITOR (idle_monitor);
 }
 
 static gboolean
-_xsync_alarm_set (GSIdleMonitor      *monitor,
-                  GSIdleMonitorWatch *watch)
+_xsync_alarm_set (CSIdleMonitor      *monitor,
+                  CSIdleMonitorWatch *watch)
 {
         XSyncAlarmAttributes attr;
         XSyncValue           delta;
@@ -454,11 +454,11 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
 
         attr.trigger.test_type = XSyncPositiveTransition;
         if (watch->xalarm_positive != None) {
-                g_debug ("GSIdleMonitor: updating alarm for positive transition wait=%" G_GINT64_FORMAT,
+                g_debug ("CSIdleMonitor: updating alarm for positive transition wait=%" G_GINT64_FORMAT,
                          _xsyncvalue_to_int64 (attr.trigger.wait_value));
                 XSyncChangeAlarm (monitor->priv->display, watch->xalarm_positive, flags, &attr);
         } else {
-                g_debug ("GSIdleMonitor: creating new alarm for positive transition wait=%" G_GINT64_FORMAT,
+                g_debug ("CSIdleMonitor: creating new alarm for positive transition wait=%" G_GINT64_FORMAT,
                          _xsyncvalue_to_int64 (attr.trigger.wait_value));
                 watch->xalarm_positive = XSyncCreateAlarm (monitor->priv->display, flags, &attr);
         }
@@ -466,11 +466,11 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
         attr.trigger.wait_value = _int64_to_xsyncvalue (_xsyncvalue_to_int64 (watch->interval) - 1);
         attr.trigger.test_type = XSyncNegativeTransition;
         if (watch->xalarm_negative != None) {
-                g_debug ("GSIdleMonitor: updating alarm for negative transition wait=%" G_GINT64_FORMAT,
+                g_debug ("CSIdleMonitor: updating alarm for negative transition wait=%" G_GINT64_FORMAT,
                          _xsyncvalue_to_int64 (attr.trigger.wait_value));
                 XSyncChangeAlarm (monitor->priv->display, watch->xalarm_negative, flags, &attr);
         } else {
-                g_debug ("GSIdleMonitor: creating new alarm for negative transition wait=%" G_GINT64_FORMAT,
+                g_debug ("CSIdleMonitor: creating new alarm for negative transition wait=%" G_GINT64_FORMAT,
                          _xsyncvalue_to_int64 (attr.trigger.wait_value));
                 watch->xalarm_negative = XSyncCreateAlarm (monitor->priv->display, flags, &attr);
         }
@@ -479,14 +479,14 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
 }
 
 guint
-gs_idle_monitor_add_watch (GSIdleMonitor         *monitor,
+cs_idle_monitor_add_watch (CSIdleMonitor         *monitor,
                            guint                  interval,
-                           GSIdleMonitorWatchFunc callback,
+                           CSIdleMonitorWatchFunc callback,
                            gpointer               user_data)
 {
-        GSIdleMonitorWatch *watch;
+        CSIdleMonitorWatch *watch;
 
-        g_return_val_if_fail (GS_IS_IDLE_MONITOR (monitor), 0);
+        g_return_val_if_fail (CS_IS_IDLE_MONITOR (monitor), 0);
         g_return_val_if_fail (callback != NULL, 0);
 
         watch = idle_monitor_watch_new (interval);
@@ -503,10 +503,10 @@ gs_idle_monitor_add_watch (GSIdleMonitor         *monitor,
 }
 
 void
-gs_idle_monitor_remove_watch (GSIdleMonitor *monitor,
+cs_idle_monitor_remove_watch (CSIdleMonitor *monitor,
                               guint          id)
 {
-        g_return_if_fail (GS_IS_IDLE_MONITOR (monitor));
+        g_return_if_fail (CS_IS_IDLE_MONITOR (monitor));
 
         g_hash_table_remove (monitor->priv->watches,
                              GUINT_TO_POINTER (id));

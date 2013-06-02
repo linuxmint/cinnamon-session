@@ -37,8 +37,8 @@ cinnamon_session_SOURCES =				\
 	csm-icon-names.h			\
 	csm-inhibit-dialog.h			\
 	csm-inhibit-dialog.c			\
-	gs-idle-monitor.h			\
-	gs-idle-monitor.c			\
+	cs-idle-monitor.h			\
+	cs-idle-monitor.c			\
 	csm-presence.h				\
 	csm-presence.c				\
 	gdm.h					\
