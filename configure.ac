@@ -1,8 +1,8 @@
-AC_INIT([gnome-session],
-        [3.6.2],
+AC_INIT([cinnamon-session],
+        [1.9.0],
         [https://github.com/linuxmint/cinnamon-session/issues])
 
-AC_CONFIG_SRCDIR([gnome-session])
+AC_CONFIG_SRCDIR([cinnamon-session])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -163,7 +163,7 @@ fi
 
 AC_CHECK_LIB(Xau, XauFileName, [X_LIBS="$X_LIBS -lXau"],
              [AC_MSG_ERROR([
-*** Can't find the Xauth library. It is needed to compile gnome-session.])],
+*** Can't find the Xauth library. It is needed to compile cinnamon-session.])],
 	     $X_LIBS)
 
 AC_SUBST(X_LIBS)
@@ -246,7 +246,7 @@ dnl Language Support
 dnl ====================================================================
 IT_PROG_INTLTOOL([0.40.6])
 
-GETTEXT_PACKAGE=gnome-session-3.0
+GETTEXT_PACKAGE=cinnamon-session-3.0
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
                    [The gettext translation domain])
 AC_SUBST(GETTEXT_PACKAGE)
@@ -331,7 +331,7 @@ Makefile
 capplet/Makefile
 doc/Makefile
 doc/dbus/Makefile
-doc/dbus/gnome-session.xml
+doc/dbus/cinnamon-session.xml
 doc/man/Makefile
 data/Makefile
 data/session-properties.desktop.in
@@ -344,7 +344,7 @@ data/icons/32x32/Makefile
 data/icons/48x48/Makefile
 data/icons/scalable/Makefile
 egg/Makefile
-gnome-session/Makefile
+cinnamon-session/Makefile
 tools/Makefile
 po/Makefile.in
 ])
@@ -355,8 +355,8 @@ dnl - Show summary
 dnl ---------------------------------------------------------------------------
 
 echo "
-              gnome-session $VERSION
-              `echo gnome-session $VERSION | sed "s/./=/g"`
+              cinnamon-session $VERSION
+              `echo cinnamon-session $VERSION | sed "s/./=/g"`
 
         prefix:                   ${prefix}
         exec_prefix:              ${exec_prefix}
