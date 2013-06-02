@@ -30,9 +30,9 @@
 #include <gdk/gdkx.h>
 #include <dbus/dbus-glib.h>
 
-#define SM_DBUS_NAME      "org.gnome.SessionManager"
-#define SM_DBUS_PATH      "/org/gnome/SessionManager"
-#define SM_DBUS_INTERFACE "org.gnome.SessionManager"
+#define SM_DBUS_NAME      "org.cinnamon.SessionManager"
+#define SM_DBUS_PATH      "/org/cinnamon/SessionManager"
+#define SM_DBUS_INTERFACE "org.cinnamon.SessionManager"
 
 static DBusGConnection *bus_connection = NULL;
 static DBusGProxy      *sm_proxy = NULL;
@@ -63,10 +63,10 @@ session_manager_connect (void)
 }
 
 typedef enum {
-        GSM_INHIBITOR_FLAG_LOGOUT      = 1 << 0,
-        GSM_INHIBITOR_FLAG_SWITCH_USER = 1 << 1,
-        GSM_INHIBITOR_FLAG_SUSPEND     = 1 << 2
-} GsmInhibitFlag;
+        CSM_INHIBITOR_FLAG_LOGOUT      = 1 << 0,
+        CSM_INHIBITOR_FLAG_SWITCH_USER = 1 << 1,
+        CSM_INHIBITOR_FLAG_SUSPEND     = 1 << 2
+} CsmInhibitFlag;
 
 static gboolean
 do_inhibit_for_window (GdkWindow *window)
@@ -86,9 +86,9 @@ do_inhibit_for_window (GdkWindow *window)
         reason = "A file transfer is in progress.";
 #endif
         toplevel_xid = gdk_x11_window_get_xid (window);
-        flags = GSM_INHIBITOR_FLAG_LOGOUT
-                | GSM_INHIBITOR_FLAG_SWITCH_USER
-                | GSM_INHIBITOR_FLAG_SUSPEND;
+        flags = CSM_INHIBITOR_FLAG_LOGOUT
+                | CSM_INHIBITOR_FLAG_SWITCH_USER
+                | CSM_INHIBITOR_FLAG_SUSPEND;
 
         error = NULL;
         res = dbus_g_proxy_call (sm_proxy,

@@ -40,15 +40,15 @@
 #include "gdm-signal-handler.h"
 #include "gdm-log.h"
 
-#include "gsm-util.h"
-#include "gsm-manager.h"
-#include "gsm-session-fill.h"
-#include "gsm-store.h"
-#include "gsm-system.h"
-#include "gsm-xsmp-server.h"
-#include "gsm-fail-whale-dialog.h"
+#include "csm-util.h"
+#include "csm-manager.h"
+#include "csm-session-fill.h"
+#include "csm-store.h"
+#include "csm-system.h"
+#include "csm-xsmp-server.h"
+#include "csm-fail-whale-dialog.h"
 
-#define GSM_DBUS_NAME "org.gnome.SessionManager"
+#define CSM_DBUS_NAME "org.cinnamon.SessionManager"
 
 static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
@@ -139,7 +139,7 @@ acquire_name (void)
         error = NULL;
         connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
         if (connection == NULL) {
-                gsm_util_init_error (TRUE,
+                csm_util_init_error (TRUE,
                                      "Could not connect to session bus: %s",
                                      error->message);
                 return FALSE;
@@ -151,7 +151,7 @@ acquire_name (void)
                                                      DBUS_INTERFACE_DBUS,
                                                      &error);
         if (error != NULL) {
-                gsm_util_init_error (TRUE,
+                csm_util_init_error (TRUE,
                                      "Could not connect to session bus: %s",
                                      error->message);
                 return FALSE;
@@ -162,8 +162,8 @@ acquire_name (void)
                                   G_CALLBACK (shutdown_cb),
                                   NULL);
 
-        if (! acquire_name_on_proxy (bus_proxy, GSM_DBUS_NAME) ) {
-                gsm_util_init_error (TRUE,
+        if (! acquire_name_on_proxy (bus_proxy, CSM_DBUS_NAME) ) {
+                csm_util_init_error (TRUE,
                                      "%s",
                                      "Could not acquire name on session bus");
                 return FALSE;
@@ -177,7 +177,7 @@ signal_cb (int      signo,
            gpointer data)
 {
         int ret;
-        GsmManager *manager;
+        CsmManager *manager;
 
         g_debug ("Got callback for signal %d", signo);
 
@@ -192,8 +192,8 @@ signal_cb (int      signo,
                 break;
         case SIGINT:
         case SIGTERM:
-                manager = (GsmManager *)data;
-                gsm_manager_logout (manager, GSM_MANAGER_LOGOUT_MODE_FORCE, NULL);
+                manager = (CsmManager *)data;
+                csm_manager_logout (manager, CSM_MANAGER_LOGOUT_MODE_FORCE, NULL);
 
                 /* let the fatal signals interrupt us */
                 g_debug ("Caught signal %d, shutting down normally.", signo);
@@ -221,16 +221,16 @@ signal_cb (int      signo,
 static void
 shutdown_cb (gpointer data)
 {
-        GsmManager *manager = (GsmManager *)data;
+        CsmManager *manager = (CsmManager *)data;
         g_debug ("Calling shutdown callback function");
 
         /*
          * When the signal handler gets a shutdown signal, it calls
-         * this function to inform GsmManager to not restart
+         * this function to inform CsmManager to not restart
          * applications in the off chance a handler is already queued
          * to dispatch following the below call to gtk_main_quit.
          */
-        gsm_manager_set_phase (manager, GSM_MANAGER_PHASE_EXIT);
+        csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
 
         gtk_main_quit ();
 }
@@ -281,9 +281,9 @@ main (int argc, char **argv)
         struct sigaction  sa;
         GError           *error;
         char             *display_str;
-        GsmManager       *manager;
-        GsmStore         *client_store;
-        GsmXsmpServer    *xsmp_server;
+        CsmManager       *manager;
+        CsmStore         *client_store;
+        CsmXsmpServer    *xsmp_server;
         GdmSignalHandler *signal_handler;
         static char     **override_autostart_dirs = NULL;
         static char      *session_name = NULL;
@@ -300,7 +300,7 @@ main (int argc, char **argv)
 
         /* Make sure that we have a session bus */
         if (!require_dbus_session (argc, argv, &error)) {
-                gsm_util_init_error (TRUE, "%s", error->message);
+                csm_util_init_error (TRUE, "%s", error->message);
         }
 
         bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
@@ -328,7 +328,7 @@ main (int argc, char **argv)
         }
 
         if (please_fail) {
-                gsm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
+                csm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
                 gtk_main ();
                 exit (1);
         }
@@ -340,32 +340,32 @@ main (int argc, char **argv)
          * was specified on the command line.
          */
         display_str = gdk_get_display ();
-        gsm_util_setenv ("DISPLAY", display_str);
+        csm_util_setenv ("DISPLAY", display_str);
         g_free (display_str);
 
         /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
          * detect if GNOME is running. We keep this for compatibility reasons.
          */
-        gsm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
+        csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
 
-        client_store = gsm_store_new ();
+        client_store = csm_store_new ();
 
         /* Talk to logind before acquiring a name, since it does synchronous
          * calls at initialization time that invoke a main loop and if we
          * already owned a name, then we would service too early during
          * that main loop.
          */
-        g_object_unref (gsm_get_system ());
+        g_object_unref (csm_get_system ());
 
-        xsmp_server = gsm_xsmp_server_new (client_store);
+        xsmp_server = csm_xsmp_server_new (client_store);
 
         if (!acquire_name ()) {
-                gsm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
+                csm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
                 gtk_main ();
                 exit (1);
         }
 
-        manager = gsm_manager_new (client_store, failsafe);
+        manager = csm_manager_new (client_store, failsafe);
         /*
         signal_handler = gdm_signal_handler_new ();
         gdm_signal_handler_add_fatal (signal_handler);
@@ -377,16 +377,16 @@ main (int argc, char **argv)
         gdm_signal_handler_set_fatal_func (signal_handler, shutdown_cb, manager);
         */
         if (IS_STRING_EMPTY (session_name))
-                session_name = _gsm_manager_get_default_session (manager);
+                session_name = _csm_manager_get_default_session (manager);
 
-        gsm_util_set_autostart_dirs (override_autostart_dirs);
+        csm_util_set_autostart_dirs (override_autostart_dirs);
 
-        if (!gsm_session_fill (manager, session_name)) {
-                gsm_util_init_error (TRUE, "Failed to load session \"%s\"", session_name ? session_name : "(null)");
+        if (!csm_session_fill (manager, session_name)) {
+                csm_util_init_error (TRUE, "Failed to load session \"%s\"", session_name ? session_name : "(null)");
         }
 
-        gsm_xsmp_server_start (xsmp_server);
-        gsm_manager_start (manager);
+        csm_xsmp_server_start (xsmp_server);
+        csm_manager_start (manager);
 
         gtk_main ();
 

@@ -23,7 +23,7 @@
 
 #include <stdlib.h>
 
-#include "gsm-process-helper.h"
+#include "csm-process-helper.h"
 
 int
 main (int   argc,
@@ -47,7 +47,7 @@ main (int   argc,
                         timeout = i;
         }
 
-        if (!gsm_process_helper (command_line, timeout, &error)) {
+        if (!csm_process_helper (command_line, timeout, &error)) {
                 g_warning ("%s", error->message);
                 g_clear_error (&error);
         } else {

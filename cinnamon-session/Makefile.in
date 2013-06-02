@@ -70,43 +70,43 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-libgsmutil_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
-am_libgsmutil_la_OBJECTS = gsm-util.lo
-libgsmutil_la_OBJECTS = $(am_libgsmutil_la_OBJECTS)
+libcsmutil_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+am_libcsmutil_la_OBJECTS = csm-util.lo
+libcsmutil_la_OBJECTS = $(am_libcsmutil_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
-am_gnome_session_OBJECTS = gnome_session-gsm-app.$(OBJEXT) \
-	gnome_session-gsm-autostart-app.$(OBJEXT) \
-	gnome_session-gsm-client.$(OBJEXT) \
-	gnome_session-gsm-xsmp-client.$(OBJEXT) \
-	gnome_session-gsm-dbus-client.$(OBJEXT) \
-	gnome_session-gsm-fail-whale-dialog.$(OBJEXT) \
-	gnome_session-gsm-marshal.$(OBJEXT) \
-	gnome_session-gsm-system.$(OBJEXT) \
-	gnome_session-gsm-consolekit.$(OBJEXT) \
-	gnome_session-gsm-systemd.$(OBJEXT) \
-	gnome_session-gsm-logout-dialog.$(OBJEXT) \
-	gnome_session-gsm-inhibit-dialog.$(OBJEXT) \
+am_gnome_session_OBJECTS = gnome_session-csm-app.$(OBJEXT) \
+	gnome_session-csm-autostart-app.$(OBJEXT) \
+	gnome_session-csm-client.$(OBJEXT) \
+	gnome_session-csm-xsmp-client.$(OBJEXT) \
+	gnome_session-csm-dbus-client.$(OBJEXT) \
+	gnome_session-csm-fail-whale-dialog.$(OBJEXT) \
+	gnome_session-csm-marshal.$(OBJEXT) \
+	gnome_session-csm-system.$(OBJEXT) \
+	gnome_session-csm-consolekit.$(OBJEXT) \
+	gnome_session-csm-systemd.$(OBJEXT) \
+	gnome_session-csm-logout-dialog.$(OBJEXT) \
+	gnome_session-csm-inhibit-dialog.$(OBJEXT) \
 	gnome_session-gs-idle-monitor.$(OBJEXT) \
-	gnome_session-gsm-presence.$(OBJEXT) \
+	gnome_session-csm-presence.$(OBJEXT) \
 	gnome_session-gdm.$(OBJEXT) \
 	gnome_session-gdm-signal-handler.$(OBJEXT) \
 	gnome_session-gdm-log.$(OBJEXT) gnome_session-main.$(OBJEXT) \
-	gnome_session-gsm-store.$(OBJEXT) \
-	gnome_session-gsm-inhibitor.$(OBJEXT) \
-	gnome_session-gsm-manager.$(OBJEXT) \
-	gnome_session-gsm-process-helper.$(OBJEXT) \
-	gnome_session-gsm-session-fill.$(OBJEXT) \
-	gnome_session-gsm-session-save.$(OBJEXT) \
-	gnome_session-gsm-shell-extensions.$(OBJEXT) \
-	gnome_session-gsm-shell.$(OBJEXT) \
-	gnome_session-gsm-xsmp-server.$(OBJEXT)
+	gnome_session-csm-store.$(OBJEXT) \
+	gnome_session-csm-inhibitor.$(OBJEXT) \
+	gnome_session-csm-manager.$(OBJEXT) \
+	gnome_session-csm-process-helper.$(OBJEXT) \
+	gnome_session-csm-session-fill.$(OBJEXT) \
+	gnome_session-csm-session-save.$(OBJEXT) \
+	gnome_session-csm-shell-extensions.$(OBJEXT) \
+	gnome_session-csm-shell.$(OBJEXT) \
+	gnome_session-csm-xsmp-server.$(OBJEXT)
 gnome_session_OBJECTS = $(am_gnome_session_OBJECTS)
-gnome_session_DEPENDENCIES = libgsmutil.la \
+gnome_session_DEPENDENCIES = libcsmutil.la \
 	$(top_builddir)/egg/libeggdesktopfile.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -119,7 +119,7 @@ am_test_inhibit_OBJECTS = test-inhibit.$(OBJEXT)
 test_inhibit_OBJECTS = $(am_test_inhibit_OBJECTS)
 test_inhibit_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am_test_process_helper_OBJECTS = test-process-helper.$(OBJEXT) \
-	gsm-process-helper.$(OBJEXT)
+	csm-process-helper.$(OBJEXT)
 test_process_helper_OBJECTS = $(am_test_process_helper_OBJECTS)
 test_process_helper_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -156,10 +156,10 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libgsmutil_la_SOURCES) $(gnome_session_SOURCES) \
+SOURCES = $(libcsmutil_la_SOURCES) $(gnome_session_SOURCES) \
 	$(test_client_dbus_SOURCES) $(test_inhibit_SOURCES) \
 	$(test_process_helper_SOURCES)
-DIST_SOURCES = $(libgsmutil_la_SOURCES) $(gnome_session_SOURCES) \
+DIST_SOURCES = $(libcsmutil_la_SOURCES) $(gnome_session_SOURCES) \
 	$(test_client_dbus_SOURCES) $(test_inhibit_SOURCES) \
 	$(test_process_helper_SOURCES)
 am__can_run_installinfo = \
@@ -362,42 +362,42 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-noinst_LTLIBRARIES = libgsmutil.la
+noinst_LTLIBRARIES = libcsmutil.la
 AM_CPPFLAGS = \
 	$(GNOME_SESSION_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
 gnome_session_SOURCES = \
-	gsm-app.h				\
-	gsm-app.c				\
-	gsm-autostart-app.h			\
-	gsm-autostart-app.c			\
-	gsm-client.c				\
-	gsm-client.h				\
-	gsm-xsmp-client.h			\
-	gsm-xsmp-client.c			\
-	gsm-dbus-client.h			\
-	gsm-dbus-client.c			\
-	gsm-fail-whale-dialog.h			\
-	gsm-fail-whale-dialog.c			\
-	gsm-marshal.h				\
-	gsm-marshal.c				\
-	gsm-system.h				\
-	gsm-system.c				\
-	gsm-consolekit.c			\
-	gsm-consolekit.h			\
-	gsm-systemd.h				\
-	gsm-systemd.c				\
-	gsm-logout-dialog.h			\
-	gsm-logout-dialog.c			\
-	gsm-icon-names.h			\
-	gsm-inhibit-dialog.h			\
-	gsm-inhibit-dialog.c			\
+	csm-app.h				\
+	csm-app.c				\
+	csm-autostart-app.h			\
+	csm-autostart-app.c			\
+	csm-client.c				\
+	csm-client.h				\
+	csm-xsmp-client.h			\
+	csm-xsmp-client.c			\
+	csm-dbus-client.h			\
+	csm-dbus-client.c			\
+	csm-fail-whale-dialog.h			\
+	csm-fail-whale-dialog.c			\
+	csm-marshal.h				\
+	csm-marshal.c				\
+	csm-system.h				\
+	csm-system.c				\
+	csm-consolekit.c			\
+	csm-consolekit.h			\
+	csm-systemd.h				\
+	csm-systemd.c				\
+	csm-logout-dialog.h			\
+	csm-logout-dialog.c			\
+	csm-icon-names.h			\
+	csm-inhibit-dialog.h			\
+	csm-inhibit-dialog.c			\
 	gs-idle-monitor.h			\
 	gs-idle-monitor.c			\
-	gsm-presence.h				\
-	gsm-presence.c				\
+	csm-presence.h				\
+	csm-presence.c				\
 	gdm.h					\
 	gdm.c					\
 	gdm-signal-handler.h			\
@@ -405,24 +405,24 @@ gnome_session_SOURCES = \
 	gdm-log.h				\
 	gdm-log.c				\
 	main.c					\
-	gsm-store.h				\
-	gsm-store.c				\
-	gsm-inhibitor.h				\
-	gsm-inhibitor.c				\
-	gsm-manager.c				\
-	gsm-manager.h				\
-	gsm-process-helper.c			\
-	gsm-process-helper.h			\
-	gsm-session-fill.c			\
-	gsm-session-fill.h			\
-	gsm-session-save.c			\
-	gsm-session-save.h			\
-	gsm-shell-extensions.c			\
-	gsm-shell-extensions.h			\
-	gsm-shell.c				\
-	gsm-shell.h				\
-	gsm-xsmp-server.c			\
-	gsm-xsmp-server.h
+	csm-store.h				\
+	csm-store.c				\
+	csm-inhibitor.h				\
+	csm-inhibitor.c				\
+	csm-manager.c				\
+	csm-manager.h				\
+	csm-process-helper.c			\
+	csm-process-helper.h			\
+	csm-session-fill.c			\
+	csm-session-fill.h			\
+	csm-session-save.c			\
+	csm-session-save.h			\
+	csm-shell-extensions.c			\
+	csm-shell-extensions.h			\
+	csm-shell.c				\
+	csm-shell.h				\
+	csm-xsmp-server.c			\
+	csm-xsmp-server.h
 
 gnome_session_CPPFLAGS = \
 	$(AM_CPPFLAGS)				\
@@ -440,7 +440,7 @@ gnome_session_CPPFLAGS = \
 	-DGCONFTOOL_CMD=\"$(GCONFTOOL)\"
 
 gnome_session_LDADD = \
-	libgsmutil.la 				\
+	libcsmutil.la 				\
 	$(top_builddir)/egg/libeggdesktopfile.la \
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
@@ -452,37 +452,37 @@ gnome_session_LDADD = \
 	$(SYSTEMD_LIBS)				\
 	$(EXECINFO_LIBS)
 
-libgsmutil_la_SOURCES = \
-	gsm-util.c				\
-	gsm-util.h
+libcsmutil_la_SOURCES = \
+	csm-util.c				\
+	csm-util.h
 
-libgsmutil_la_LIBADD = \
+libcsmutil_la_LIBADD = \
 	$(GNOME_SESSION_LIBS)
 
 test_inhibit_SOURCES = test-inhibit.c
 test_inhibit_LDADD = $(GNOME_SESSION_LIBS)
 test_client_dbus_SOURCES = test-client-dbus.c
 test_client_dbus_LDADD = $(DBUS_GLIB_LIBS)
-test_process_helper_SOURCES = test-process-helper.c gsm-process-helper.c gsm-process-helper.h
+test_process_helper_SOURCES = test-process-helper.c csm-process-helper.c csm-process-helper.h
 test_process_helper_LDADD = $(DBUS_GLIB_LIBS)
 BUILT_SOURCES = \
-	gsm-marshal.c		\
-	gsm-marshal.h		\
-	gsm-manager-glue.h	\
-	gsm-presence-glue.h	\
-	gsm-inhibitor-glue.h	\
-	gsm-client-glue.h	\
-	gsm-app-glue.h
+	csm-marshal.c		\
+	csm-marshal.h		\
+	csm-manager-glue.h	\
+	csm-presence-glue.h	\
+	csm-inhibitor-glue.h	\
+	csm-client-glue.h	\
+	csm-app-glue.h
 
 EXTRA_DIST = \
 	README						\
-	gsm-marshal.list				\
-	org.gnome.SessionManager.xml			\
-	org.gnome.SessionManager.App.xml		\
-	org.gnome.SessionManager.Client.xml		\
-	org.gnome.SessionManager.ClientPrivate.xml	\
-	org.gnome.SessionManager.Inhibitor.xml		\
-	org.gnome.SessionManager.Presence.xml
+	csm-marshal.list				\
+	org.cinnamon.SessionManager.xml			\
+	org.cinnamon.SessionManager.App.xml		\
+	org.cinnamon.SessionManager.Client.xml		\
+	org.cinnamon.SessionManager.ClientPrivate.xml	\
+	org.cinnamon.SessionManager.Inhibitor.xml		\
+	org.cinnamon.SessionManager.Presence.xml
 
 CLEANFILES = \
 	$(BUILT_SOURCES)
@@ -533,8 +533,8 @@ clean-noinstLTLIBRARIES:
 	  echo rm -f $${locs}; \
 	  rm -f $${locs}; \
 	}
-libgsmutil.la: $(libgsmutil_la_OBJECTS) $(libgsmutil_la_DEPENDENCIES) $(EXTRA_libgsmutil_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(LINK)  $(libgsmutil_la_OBJECTS) $(libgsmutil_la_LIBADD) $(LIBS)
+libcsmutil.la: $(libcsmutil_la_OBJECTS) $(libcsmutil_la_DEPENDENCIES) $(EXTRA_libcsmutil_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(LINK)  $(libcsmutil_la_OBJECTS) $(libcsmutil_la_LIBADD) $(LIBS)
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
@@ -613,31 +613,31 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gdm-signal-handler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gdm.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gs-idle-monitor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-app.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-autostart-app.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-client.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-consolekit.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-dbus-client.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-inhibit-dialog.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-inhibitor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-logout-dialog.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-manager.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-marshal.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-presence.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-process-helper.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-session-fill.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-session-save.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-shell-extensions.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-shell.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-store.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-system.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-systemd.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-xsmp-client.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-gsm-xsmp-server.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-app.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-autostart-app.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-client.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-consolekit.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-dbus-client.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-fail-whale-dialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-inhibit-dialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-inhibitor.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-logout-dialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-manager.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-marshal.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-presence.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-process-helper.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-session-fill.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-session-save.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-shell-extensions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-shell.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-store.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-system.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-systemd.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-xsmp-client.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-csm-xsmp-server.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gnome_session-main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-process-helper.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-util.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/csm-process-helper.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/csm-util.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-client-dbus.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inhibit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-process-helper.Po@am__quote@
@@ -663,173 +663,173 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-gnome_session-gsm-app.o: gsm-app.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-app.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-app.Tpo -c -o gnome_session-gsm-app.o `test -f 'gsm-app.c' || echo '$(srcdir)/'`gsm-app.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-app.Tpo $(DEPDIR)/gnome_session-gsm-app.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-app.c' object='gnome_session-gsm-app.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-app.o: csm-app.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-app.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-app.Tpo -c -o gnome_session-csm-app.o `test -f 'csm-app.c' || echo '$(srcdir)/'`csm-app.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-app.Tpo $(DEPDIR)/gnome_session-csm-app.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-app.c' object='gnome_session-csm-app.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-app.o `test -f 'gsm-app.c' || echo '$(srcdir)/'`gsm-app.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-app.o `test -f 'csm-app.c' || echo '$(srcdir)/'`csm-app.c
 
-gnome_session-gsm-app.obj: gsm-app.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-app.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-app.Tpo -c -o gnome_session-gsm-app.obj `if test -f 'gsm-app.c'; then $(CYGPATH_W) 'gsm-app.c'; else $(CYGPATH_W) '$(srcdir)/gsm-app.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-app.Tpo $(DEPDIR)/gnome_session-gsm-app.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-app.c' object='gnome_session-gsm-app.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-app.obj: csm-app.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-app.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-app.Tpo -c -o gnome_session-csm-app.obj `if test -f 'csm-app.c'; then $(CYGPATH_W) 'csm-app.c'; else $(CYGPATH_W) '$(srcdir)/csm-app.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-app.Tpo $(DEPDIR)/gnome_session-csm-app.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-app.c' object='gnome_session-csm-app.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-app.obj `if test -f 'gsm-app.c'; then $(CYGPATH_W) 'gsm-app.c'; else $(CYGPATH_W) '$(srcdir)/gsm-app.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-app.obj `if test -f 'csm-app.c'; then $(CYGPATH_W) 'csm-app.c'; else $(CYGPATH_W) '$(srcdir)/csm-app.c'; fi`
 
-gnome_session-gsm-autostart-app.o: gsm-autostart-app.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-autostart-app.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-autostart-app.Tpo -c -o gnome_session-gsm-autostart-app.o `test -f 'gsm-autostart-app.c' || echo '$(srcdir)/'`gsm-autostart-app.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-autostart-app.Tpo $(DEPDIR)/gnome_session-gsm-autostart-app.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-autostart-app.c' object='gnome_session-gsm-autostart-app.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-autostart-app.o: csm-autostart-app.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-autostart-app.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-autostart-app.Tpo -c -o gnome_session-csm-autostart-app.o `test -f 'csm-autostart-app.c' || echo '$(srcdir)/'`csm-autostart-app.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-autostart-app.Tpo $(DEPDIR)/gnome_session-csm-autostart-app.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-autostart-app.c' object='gnome_session-csm-autostart-app.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-autostart-app.o `test -f 'gsm-autostart-app.c' || echo '$(srcdir)/'`gsm-autostart-app.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-autostart-app.o `test -f 'csm-autostart-app.c' || echo '$(srcdir)/'`csm-autostart-app.c
 
-gnome_session-gsm-autostart-app.obj: gsm-autostart-app.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-autostart-app.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-autostart-app.Tpo -c -o gnome_session-gsm-autostart-app.obj `if test -f 'gsm-autostart-app.c'; then $(CYGPATH_W) 'gsm-autostart-app.c'; else $(CYGPATH_W) '$(srcdir)/gsm-autostart-app.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-autostart-app.Tpo $(DEPDIR)/gnome_session-gsm-autostart-app.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-autostart-app.c' object='gnome_session-gsm-autostart-app.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-autostart-app.obj: csm-autostart-app.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-autostart-app.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-autostart-app.Tpo -c -o gnome_session-csm-autostart-app.obj `if test -f 'csm-autostart-app.c'; then $(CYGPATH_W) 'csm-autostart-app.c'; else $(CYGPATH_W) '$(srcdir)/csm-autostart-app.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-autostart-app.Tpo $(DEPDIR)/gnome_session-csm-autostart-app.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-autostart-app.c' object='gnome_session-csm-autostart-app.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-autostart-app.obj `if test -f 'gsm-autostart-app.c'; then $(CYGPATH_W) 'gsm-autostart-app.c'; else $(CYGPATH_W) '$(srcdir)/gsm-autostart-app.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-autostart-app.obj `if test -f 'csm-autostart-app.c'; then $(CYGPATH_W) 'csm-autostart-app.c'; else $(CYGPATH_W) '$(srcdir)/csm-autostart-app.c'; fi`
 
-gnome_session-gsm-client.o: gsm-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-client.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-client.Tpo -c -o gnome_session-gsm-client.o `test -f 'gsm-client.c' || echo '$(srcdir)/'`gsm-client.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-client.Tpo $(DEPDIR)/gnome_session-gsm-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-client.c' object='gnome_session-gsm-client.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-client.o: csm-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-client.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-client.Tpo -c -o gnome_session-csm-client.o `test -f 'csm-client.c' || echo '$(srcdir)/'`csm-client.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-client.Tpo $(DEPDIR)/gnome_session-csm-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-client.c' object='gnome_session-csm-client.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-client.o `test -f 'gsm-client.c' || echo '$(srcdir)/'`gsm-client.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-client.o `test -f 'csm-client.c' || echo '$(srcdir)/'`csm-client.c
 
-gnome_session-gsm-client.obj: gsm-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-client.Tpo -c -o gnome_session-gsm-client.obj `if test -f 'gsm-client.c'; then $(CYGPATH_W) 'gsm-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-client.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-client.Tpo $(DEPDIR)/gnome_session-gsm-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-client.c' object='gnome_session-gsm-client.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-client.obj: csm-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-client.Tpo -c -o gnome_session-csm-client.obj `if test -f 'csm-client.c'; then $(CYGPATH_W) 'csm-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-client.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-client.Tpo $(DEPDIR)/gnome_session-csm-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-client.c' object='gnome_session-csm-client.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-client.obj `if test -f 'gsm-client.c'; then $(CYGPATH_W) 'gsm-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-client.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-client.obj `if test -f 'csm-client.c'; then $(CYGPATH_W) 'csm-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-client.c'; fi`
 
-gnome_session-gsm-xsmp-client.o: gsm-xsmp-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-xsmp-client.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-xsmp-client.Tpo -c -o gnome_session-gsm-xsmp-client.o `test -f 'gsm-xsmp-client.c' || echo '$(srcdir)/'`gsm-xsmp-client.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-xsmp-client.Tpo $(DEPDIR)/gnome_session-gsm-xsmp-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-xsmp-client.c' object='gnome_session-gsm-xsmp-client.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-xsmp-client.o: csm-xsmp-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-xsmp-client.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-xsmp-client.Tpo -c -o gnome_session-csm-xsmp-client.o `test -f 'csm-xsmp-client.c' || echo '$(srcdir)/'`csm-xsmp-client.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-xsmp-client.Tpo $(DEPDIR)/gnome_session-csm-xsmp-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-xsmp-client.c' object='gnome_session-csm-xsmp-client.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-xsmp-client.o `test -f 'gsm-xsmp-client.c' || echo '$(srcdir)/'`gsm-xsmp-client.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-xsmp-client.o `test -f 'csm-xsmp-client.c' || echo '$(srcdir)/'`csm-xsmp-client.c
 
-gnome_session-gsm-xsmp-client.obj: gsm-xsmp-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-xsmp-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-xsmp-client.Tpo -c -o gnome_session-gsm-xsmp-client.obj `if test -f 'gsm-xsmp-client.c'; then $(CYGPATH_W) 'gsm-xsmp-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-xsmp-client.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-xsmp-client.Tpo $(DEPDIR)/gnome_session-gsm-xsmp-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-xsmp-client.c' object='gnome_session-gsm-xsmp-client.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-xsmp-client.obj: csm-xsmp-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-xsmp-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-xsmp-client.Tpo -c -o gnome_session-csm-xsmp-client.obj `if test -f 'csm-xsmp-client.c'; then $(CYGPATH_W) 'csm-xsmp-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-xsmp-client.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-xsmp-client.Tpo $(DEPDIR)/gnome_session-csm-xsmp-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-xsmp-client.c' object='gnome_session-csm-xsmp-client.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-xsmp-client.obj `if test -f 'gsm-xsmp-client.c'; then $(CYGPATH_W) 'gsm-xsmp-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-xsmp-client.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-xsmp-client.obj `if test -f 'csm-xsmp-client.c'; then $(CYGPATH_W) 'csm-xsmp-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-xsmp-client.c'; fi`
 
-gnome_session-gsm-dbus-client.o: gsm-dbus-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-dbus-client.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-dbus-client.Tpo -c -o gnome_session-gsm-dbus-client.o `test -f 'gsm-dbus-client.c' || echo '$(srcdir)/'`gsm-dbus-client.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-dbus-client.Tpo $(DEPDIR)/gnome_session-gsm-dbus-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-dbus-client.c' object='gnome_session-gsm-dbus-client.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-dbus-client.o: csm-dbus-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-dbus-client.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-dbus-client.Tpo -c -o gnome_session-csm-dbus-client.o `test -f 'csm-dbus-client.c' || echo '$(srcdir)/'`csm-dbus-client.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-dbus-client.Tpo $(DEPDIR)/gnome_session-csm-dbus-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-dbus-client.c' object='gnome_session-csm-dbus-client.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-dbus-client.o `test -f 'gsm-dbus-client.c' || echo '$(srcdir)/'`gsm-dbus-client.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-dbus-client.o `test -f 'csm-dbus-client.c' || echo '$(srcdir)/'`csm-dbus-client.c
 
-gnome_session-gsm-dbus-client.obj: gsm-dbus-client.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-dbus-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-dbus-client.Tpo -c -o gnome_session-gsm-dbus-client.obj `if test -f 'gsm-dbus-client.c'; then $(CYGPATH_W) 'gsm-dbus-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-dbus-client.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-dbus-client.Tpo $(DEPDIR)/gnome_session-gsm-dbus-client.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-dbus-client.c' object='gnome_session-gsm-dbus-client.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-dbus-client.obj: csm-dbus-client.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-dbus-client.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-dbus-client.Tpo -c -o gnome_session-csm-dbus-client.obj `if test -f 'csm-dbus-client.c'; then $(CYGPATH_W) 'csm-dbus-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-dbus-client.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-dbus-client.Tpo $(DEPDIR)/gnome_session-csm-dbus-client.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-dbus-client.c' object='gnome_session-csm-dbus-client.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-dbus-client.obj `if test -f 'gsm-dbus-client.c'; then $(CYGPATH_W) 'gsm-dbus-client.c'; else $(CYGPATH_W) '$(srcdir)/gsm-dbus-client.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-dbus-client.obj `if test -f 'csm-dbus-client.c'; then $(CYGPATH_W) 'csm-dbus-client.c'; else $(CYGPATH_W) '$(srcdir)/csm-dbus-client.c'; fi`
 
-gnome_session-gsm-fail-whale-dialog.o: gsm-fail-whale-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-fail-whale-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Tpo -c -o gnome_session-gsm-fail-whale-dialog.o `test -f 'gsm-fail-whale-dialog.c' || echo '$(srcdir)/'`gsm-fail-whale-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Tpo $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-fail-whale-dialog.c' object='gnome_session-gsm-fail-whale-dialog.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-fail-whale-dialog.o: csm-fail-whale-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-fail-whale-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Tpo -c -o gnome_session-csm-fail-whale-dialog.o `test -f 'csm-fail-whale-dialog.c' || echo '$(srcdir)/'`csm-fail-whale-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Tpo $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-fail-whale-dialog.c' object='gnome_session-csm-fail-whale-dialog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-fail-whale-dialog.o `test -f 'gsm-fail-whale-dialog.c' || echo '$(srcdir)/'`gsm-fail-whale-dialog.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-fail-whale-dialog.o `test -f 'csm-fail-whale-dialog.c' || echo '$(srcdir)/'`csm-fail-whale-dialog.c
 
-gnome_session-gsm-fail-whale-dialog.obj: gsm-fail-whale-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-fail-whale-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Tpo -c -o gnome_session-gsm-fail-whale-dialog.obj `if test -f 'gsm-fail-whale-dialog.c'; then $(CYGPATH_W) 'gsm-fail-whale-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-fail-whale-dialog.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Tpo $(DEPDIR)/gnome_session-gsm-fail-whale-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-fail-whale-dialog.c' object='gnome_session-gsm-fail-whale-dialog.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-fail-whale-dialog.obj: csm-fail-whale-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-fail-whale-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Tpo -c -o gnome_session-csm-fail-whale-dialog.obj `if test -f 'csm-fail-whale-dialog.c'; then $(CYGPATH_W) 'csm-fail-whale-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-fail-whale-dialog.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Tpo $(DEPDIR)/gnome_session-csm-fail-whale-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-fail-whale-dialog.c' object='gnome_session-csm-fail-whale-dialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-fail-whale-dialog.obj `if test -f 'gsm-fail-whale-dialog.c'; then $(CYGPATH_W) 'gsm-fail-whale-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-fail-whale-dialog.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-fail-whale-dialog.obj `if test -f 'csm-fail-whale-dialog.c'; then $(CYGPATH_W) 'csm-fail-whale-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-fail-whale-dialog.c'; fi`
 
-gnome_session-gsm-marshal.o: gsm-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-marshal.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-marshal.Tpo -c -o gnome_session-gsm-marshal.o `test -f 'gsm-marshal.c' || echo '$(srcdir)/'`gsm-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-marshal.Tpo $(DEPDIR)/gnome_session-gsm-marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-marshal.c' object='gnome_session-gsm-marshal.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-marshal.o: csm-marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-marshal.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-marshal.Tpo -c -o gnome_session-csm-marshal.o `test -f 'csm-marshal.c' || echo '$(srcdir)/'`csm-marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-marshal.Tpo $(DEPDIR)/gnome_session-csm-marshal.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-marshal.c' object='gnome_session-csm-marshal.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-marshal.o `test -f 'gsm-marshal.c' || echo '$(srcdir)/'`gsm-marshal.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-marshal.o `test -f 'csm-marshal.c' || echo '$(srcdir)/'`csm-marshal.c
 
-gnome_session-gsm-marshal.obj: gsm-marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-marshal.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-marshal.Tpo -c -o gnome_session-gsm-marshal.obj `if test -f 'gsm-marshal.c'; then $(CYGPATH_W) 'gsm-marshal.c'; else $(CYGPATH_W) '$(srcdir)/gsm-marshal.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-marshal.Tpo $(DEPDIR)/gnome_session-gsm-marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-marshal.c' object='gnome_session-gsm-marshal.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-marshal.obj: csm-marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-marshal.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-marshal.Tpo -c -o gnome_session-csm-marshal.obj `if test -f 'csm-marshal.c'; then $(CYGPATH_W) 'csm-marshal.c'; else $(CYGPATH_W) '$(srcdir)/csm-marshal.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-marshal.Tpo $(DEPDIR)/gnome_session-csm-marshal.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-marshal.c' object='gnome_session-csm-marshal.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-marshal.obj `if test -f 'gsm-marshal.c'; then $(CYGPATH_W) 'gsm-marshal.c'; else $(CYGPATH_W) '$(srcdir)/gsm-marshal.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-marshal.obj `if test -f 'csm-marshal.c'; then $(CYGPATH_W) 'csm-marshal.c'; else $(CYGPATH_W) '$(srcdir)/csm-marshal.c'; fi`
 
-gnome_session-gsm-system.o: gsm-system.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-system.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-system.Tpo -c -o gnome_session-gsm-system.o `test -f 'gsm-system.c' || echo '$(srcdir)/'`gsm-system.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-system.Tpo $(DEPDIR)/gnome_session-gsm-system.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-system.c' object='gnome_session-gsm-system.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-system.o: csm-system.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-system.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-system.Tpo -c -o gnome_session-csm-system.o `test -f 'csm-system.c' || echo '$(srcdir)/'`csm-system.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-system.Tpo $(DEPDIR)/gnome_session-csm-system.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-system.c' object='gnome_session-csm-system.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-system.o `test -f 'gsm-system.c' || echo '$(srcdir)/'`gsm-system.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-system.o `test -f 'csm-system.c' || echo '$(srcdir)/'`csm-system.c
 
-gnome_session-gsm-system.obj: gsm-system.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-system.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-system.Tpo -c -o gnome_session-gsm-system.obj `if test -f 'gsm-system.c'; then $(CYGPATH_W) 'gsm-system.c'; else $(CYGPATH_W) '$(srcdir)/gsm-system.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-system.Tpo $(DEPDIR)/gnome_session-gsm-system.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-system.c' object='gnome_session-gsm-system.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-system.obj: csm-system.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-system.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-system.Tpo -c -o gnome_session-csm-system.obj `if test -f 'csm-system.c'; then $(CYGPATH_W) 'csm-system.c'; else $(CYGPATH_W) '$(srcdir)/csm-system.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-system.Tpo $(DEPDIR)/gnome_session-csm-system.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-system.c' object='gnome_session-csm-system.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-system.obj `if test -f 'gsm-system.c'; then $(CYGPATH_W) 'gsm-system.c'; else $(CYGPATH_W) '$(srcdir)/gsm-system.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-system.obj `if test -f 'csm-system.c'; then $(CYGPATH_W) 'csm-system.c'; else $(CYGPATH_W) '$(srcdir)/csm-system.c'; fi`
 
-gnome_session-gsm-consolekit.o: gsm-consolekit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-consolekit.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-consolekit.Tpo -c -o gnome_session-gsm-consolekit.o `test -f 'gsm-consolekit.c' || echo '$(srcdir)/'`gsm-consolekit.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-consolekit.Tpo $(DEPDIR)/gnome_session-gsm-consolekit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-consolekit.c' object='gnome_session-gsm-consolekit.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-consolekit.o: csm-consolekit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-consolekit.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-consolekit.Tpo -c -o gnome_session-csm-consolekit.o `test -f 'csm-consolekit.c' || echo '$(srcdir)/'`csm-consolekit.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-consolekit.Tpo $(DEPDIR)/gnome_session-csm-consolekit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-consolekit.c' object='gnome_session-csm-consolekit.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-consolekit.o `test -f 'gsm-consolekit.c' || echo '$(srcdir)/'`gsm-consolekit.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-consolekit.o `test -f 'csm-consolekit.c' || echo '$(srcdir)/'`csm-consolekit.c
 
-gnome_session-gsm-consolekit.obj: gsm-consolekit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-consolekit.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-consolekit.Tpo -c -o gnome_session-gsm-consolekit.obj `if test -f 'gsm-consolekit.c'; then $(CYGPATH_W) 'gsm-consolekit.c'; else $(CYGPATH_W) '$(srcdir)/gsm-consolekit.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-consolekit.Tpo $(DEPDIR)/gnome_session-gsm-consolekit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-consolekit.c' object='gnome_session-gsm-consolekit.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-consolekit.obj: csm-consolekit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-consolekit.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-consolekit.Tpo -c -o gnome_session-csm-consolekit.obj `if test -f 'csm-consolekit.c'; then $(CYGPATH_W) 'csm-consolekit.c'; else $(CYGPATH_W) '$(srcdir)/csm-consolekit.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-consolekit.Tpo $(DEPDIR)/gnome_session-csm-consolekit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-consolekit.c' object='gnome_session-csm-consolekit.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-consolekit.obj `if test -f 'gsm-consolekit.c'; then $(CYGPATH_W) 'gsm-consolekit.c'; else $(CYGPATH_W) '$(srcdir)/gsm-consolekit.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-consolekit.obj `if test -f 'csm-consolekit.c'; then $(CYGPATH_W) 'csm-consolekit.c'; else $(CYGPATH_W) '$(srcdir)/csm-consolekit.c'; fi`
 
-gnome_session-gsm-systemd.o: gsm-systemd.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-systemd.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-systemd.Tpo -c -o gnome_session-gsm-systemd.o `test -f 'gsm-systemd.c' || echo '$(srcdir)/'`gsm-systemd.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-systemd.Tpo $(DEPDIR)/gnome_session-gsm-systemd.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-systemd.c' object='gnome_session-gsm-systemd.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-systemd.o: csm-systemd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-systemd.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-systemd.Tpo -c -o gnome_session-csm-systemd.o `test -f 'csm-systemd.c' || echo '$(srcdir)/'`csm-systemd.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-systemd.Tpo $(DEPDIR)/gnome_session-csm-systemd.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-systemd.c' object='gnome_session-csm-systemd.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-systemd.o `test -f 'gsm-systemd.c' || echo '$(srcdir)/'`gsm-systemd.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-systemd.o `test -f 'csm-systemd.c' || echo '$(srcdir)/'`csm-systemd.c
 
-gnome_session-gsm-systemd.obj: gsm-systemd.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-systemd.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-systemd.Tpo -c -o gnome_session-gsm-systemd.obj `if test -f 'gsm-systemd.c'; then $(CYGPATH_W) 'gsm-systemd.c'; else $(CYGPATH_W) '$(srcdir)/gsm-systemd.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-systemd.Tpo $(DEPDIR)/gnome_session-gsm-systemd.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-systemd.c' object='gnome_session-gsm-systemd.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-systemd.obj: csm-systemd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-systemd.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-systemd.Tpo -c -o gnome_session-csm-systemd.obj `if test -f 'csm-systemd.c'; then $(CYGPATH_W) 'csm-systemd.c'; else $(CYGPATH_W) '$(srcdir)/csm-systemd.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-systemd.Tpo $(DEPDIR)/gnome_session-csm-systemd.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-systemd.c' object='gnome_session-csm-systemd.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-systemd.obj `if test -f 'gsm-systemd.c'; then $(CYGPATH_W) 'gsm-systemd.c'; else $(CYGPATH_W) '$(srcdir)/gsm-systemd.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-systemd.obj `if test -f 'csm-systemd.c'; then $(CYGPATH_W) 'csm-systemd.c'; else $(CYGPATH_W) '$(srcdir)/csm-systemd.c'; fi`
 
-gnome_session-gsm-logout-dialog.o: gsm-logout-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-logout-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-logout-dialog.Tpo -c -o gnome_session-gsm-logout-dialog.o `test -f 'gsm-logout-dialog.c' || echo '$(srcdir)/'`gsm-logout-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-logout-dialog.Tpo $(DEPDIR)/gnome_session-gsm-logout-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-logout-dialog.c' object='gnome_session-gsm-logout-dialog.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-logout-dialog.o: csm-logout-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-logout-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-logout-dialog.Tpo -c -o gnome_session-csm-logout-dialog.o `test -f 'csm-logout-dialog.c' || echo '$(srcdir)/'`csm-logout-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-logout-dialog.Tpo $(DEPDIR)/gnome_session-csm-logout-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-logout-dialog.c' object='gnome_session-csm-logout-dialog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-logout-dialog.o `test -f 'gsm-logout-dialog.c' || echo '$(srcdir)/'`gsm-logout-dialog.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-logout-dialog.o `test -f 'csm-logout-dialog.c' || echo '$(srcdir)/'`csm-logout-dialog.c
 
-gnome_session-gsm-logout-dialog.obj: gsm-logout-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-logout-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-logout-dialog.Tpo -c -o gnome_session-gsm-logout-dialog.obj `if test -f 'gsm-logout-dialog.c'; then $(CYGPATH_W) 'gsm-logout-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-logout-dialog.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-logout-dialog.Tpo $(DEPDIR)/gnome_session-gsm-logout-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-logout-dialog.c' object='gnome_session-gsm-logout-dialog.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-logout-dialog.obj: csm-logout-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-logout-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-logout-dialog.Tpo -c -o gnome_session-csm-logout-dialog.obj `if test -f 'csm-logout-dialog.c'; then $(CYGPATH_W) 'csm-logout-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-logout-dialog.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-logout-dialog.Tpo $(DEPDIR)/gnome_session-csm-logout-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-logout-dialog.c' object='gnome_session-csm-logout-dialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-logout-dialog.obj `if test -f 'gsm-logout-dialog.c'; then $(CYGPATH_W) 'gsm-logout-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-logout-dialog.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-logout-dialog.obj `if test -f 'csm-logout-dialog.c'; then $(CYGPATH_W) 'csm-logout-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-logout-dialog.c'; fi`
 
-gnome_session-gsm-inhibit-dialog.o: gsm-inhibit-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-inhibit-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Tpo -c -o gnome_session-gsm-inhibit-dialog.o `test -f 'gsm-inhibit-dialog.c' || echo '$(srcdir)/'`gsm-inhibit-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Tpo $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-inhibit-dialog.c' object='gnome_session-gsm-inhibit-dialog.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-inhibit-dialog.o: csm-inhibit-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-inhibit-dialog.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-inhibit-dialog.Tpo -c -o gnome_session-csm-inhibit-dialog.o `test -f 'csm-inhibit-dialog.c' || echo '$(srcdir)/'`csm-inhibit-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-inhibit-dialog.Tpo $(DEPDIR)/gnome_session-csm-inhibit-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-inhibit-dialog.c' object='gnome_session-csm-inhibit-dialog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-inhibit-dialog.o `test -f 'gsm-inhibit-dialog.c' || echo '$(srcdir)/'`gsm-inhibit-dialog.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-inhibit-dialog.o `test -f 'csm-inhibit-dialog.c' || echo '$(srcdir)/'`csm-inhibit-dialog.c
 
-gnome_session-gsm-inhibit-dialog.obj: gsm-inhibit-dialog.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-inhibit-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Tpo -c -o gnome_session-gsm-inhibit-dialog.obj `if test -f 'gsm-inhibit-dialog.c'; then $(CYGPATH_W) 'gsm-inhibit-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-inhibit-dialog.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Tpo $(DEPDIR)/gnome_session-gsm-inhibit-dialog.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-inhibit-dialog.c' object='gnome_session-gsm-inhibit-dialog.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-inhibit-dialog.obj: csm-inhibit-dialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-inhibit-dialog.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-inhibit-dialog.Tpo -c -o gnome_session-csm-inhibit-dialog.obj `if test -f 'csm-inhibit-dialog.c'; then $(CYGPATH_W) 'csm-inhibit-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-inhibit-dialog.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-inhibit-dialog.Tpo $(DEPDIR)/gnome_session-csm-inhibit-dialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-inhibit-dialog.c' object='gnome_session-csm-inhibit-dialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-inhibit-dialog.obj `if test -f 'gsm-inhibit-dialog.c'; then $(CYGPATH_W) 'gsm-inhibit-dialog.c'; else $(CYGPATH_W) '$(srcdir)/gsm-inhibit-dialog.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-inhibit-dialog.obj `if test -f 'csm-inhibit-dialog.c'; then $(CYGPATH_W) 'csm-inhibit-dialog.c'; else $(CYGPATH_W) '$(srcdir)/csm-inhibit-dialog.c'; fi`
 
 gnome_session-gs-idle-monitor.o: gs-idle-monitor.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gs-idle-monitor.o -MD -MP -MF $(DEPDIR)/gnome_session-gs-idle-monitor.Tpo -c -o gnome_session-gs-idle-monitor.o `test -f 'gs-idle-monitor.c' || echo '$(srcdir)/'`gs-idle-monitor.c
@@ -845,19 +845,19 @@ gnome_session-gs-idle-monitor.obj: gs-idle-monitor.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gs-idle-monitor.obj `if test -f 'gs-idle-monitor.c'; then $(CYGPATH_W) 'gs-idle-monitor.c'; else $(CYGPATH_W) '$(srcdir)/gs-idle-monitor.c'; fi`
 
-gnome_session-gsm-presence.o: gsm-presence.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-presence.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-presence.Tpo -c -o gnome_session-gsm-presence.o `test -f 'gsm-presence.c' || echo '$(srcdir)/'`gsm-presence.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-presence.Tpo $(DEPDIR)/gnome_session-gsm-presence.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-presence.c' object='gnome_session-gsm-presence.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-presence.o: csm-presence.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-presence.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-presence.Tpo -c -o gnome_session-csm-presence.o `test -f 'csm-presence.c' || echo '$(srcdir)/'`csm-presence.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-presence.Tpo $(DEPDIR)/gnome_session-csm-presence.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-presence.c' object='gnome_session-csm-presence.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-presence.o `test -f 'gsm-presence.c' || echo '$(srcdir)/'`gsm-presence.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-presence.o `test -f 'csm-presence.c' || echo '$(srcdir)/'`csm-presence.c
 
-gnome_session-gsm-presence.obj: gsm-presence.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-presence.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-presence.Tpo -c -o gnome_session-gsm-presence.obj `if test -f 'gsm-presence.c'; then $(CYGPATH_W) 'gsm-presence.c'; else $(CYGPATH_W) '$(srcdir)/gsm-presence.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-presence.Tpo $(DEPDIR)/gnome_session-gsm-presence.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-presence.c' object='gnome_session-gsm-presence.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-presence.obj: csm-presence.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-presence.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-presence.Tpo -c -o gnome_session-csm-presence.obj `if test -f 'csm-presence.c'; then $(CYGPATH_W) 'csm-presence.c'; else $(CYGPATH_W) '$(srcdir)/csm-presence.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-presence.Tpo $(DEPDIR)/gnome_session-csm-presence.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-presence.c' object='gnome_session-csm-presence.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-presence.obj `if test -f 'gsm-presence.c'; then $(CYGPATH_W) 'gsm-presence.c'; else $(CYGPATH_W) '$(srcdir)/gsm-presence.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-presence.obj `if test -f 'csm-presence.c'; then $(CYGPATH_W) 'csm-presence.c'; else $(CYGPATH_W) '$(srcdir)/csm-presence.c'; fi`
 
 gnome_session-gdm.o: gdm.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gdm.o -MD -MP -MF $(DEPDIR)/gnome_session-gdm.Tpo -c -o gnome_session-gdm.o `test -f 'gdm.c' || echo '$(srcdir)/'`gdm.c
@@ -915,131 +915,131 @@ gnome_session-main.obj: main.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
-gnome_session-gsm-store.o: gsm-store.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-store.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-store.Tpo -c -o gnome_session-gsm-store.o `test -f 'gsm-store.c' || echo '$(srcdir)/'`gsm-store.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-store.Tpo $(DEPDIR)/gnome_session-gsm-store.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-store.c' object='gnome_session-gsm-store.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-store.o: csm-store.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-store.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-store.Tpo -c -o gnome_session-csm-store.o `test -f 'csm-store.c' || echo '$(srcdir)/'`csm-store.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-store.Tpo $(DEPDIR)/gnome_session-csm-store.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-store.c' object='gnome_session-csm-store.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-store.o `test -f 'gsm-store.c' || echo '$(srcdir)/'`gsm-store.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-store.o `test -f 'csm-store.c' || echo '$(srcdir)/'`csm-store.c
 
-gnome_session-gsm-store.obj: gsm-store.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-store.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-store.Tpo -c -o gnome_session-gsm-store.obj `if test -f 'gsm-store.c'; then $(CYGPATH_W) 'gsm-store.c'; else $(CYGPATH_W) '$(srcdir)/gsm-store.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-store.Tpo $(DEPDIR)/gnome_session-gsm-store.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-store.c' object='gnome_session-gsm-store.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-store.obj: csm-store.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-store.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-store.Tpo -c -o gnome_session-csm-store.obj `if test -f 'csm-store.c'; then $(CYGPATH_W) 'csm-store.c'; else $(CYGPATH_W) '$(srcdir)/csm-store.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-store.Tpo $(DEPDIR)/gnome_session-csm-store.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-store.c' object='gnome_session-csm-store.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-store.obj `if test -f 'gsm-store.c'; then $(CYGPATH_W) 'gsm-store.c'; else $(CYGPATH_W) '$(srcdir)/gsm-store.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-store.obj `if test -f 'csm-store.c'; then $(CYGPATH_W) 'csm-store.c'; else $(CYGPATH_W) '$(srcdir)/csm-store.c'; fi`
 
-gnome_session-gsm-inhibitor.o: gsm-inhibitor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-inhibitor.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-inhibitor.Tpo -c -o gnome_session-gsm-inhibitor.o `test -f 'gsm-inhibitor.c' || echo '$(srcdir)/'`gsm-inhibitor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-inhibitor.Tpo $(DEPDIR)/gnome_session-gsm-inhibitor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-inhibitor.c' object='gnome_session-gsm-inhibitor.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-inhibitor.o: csm-inhibitor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-inhibitor.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-inhibitor.Tpo -c -o gnome_session-csm-inhibitor.o `test -f 'csm-inhibitor.c' || echo '$(srcdir)/'`csm-inhibitor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-inhibitor.Tpo $(DEPDIR)/gnome_session-csm-inhibitor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-inhibitor.c' object='gnome_session-csm-inhibitor.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-inhibitor.o `test -f 'gsm-inhibitor.c' || echo '$(srcdir)/'`gsm-inhibitor.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-inhibitor.o `test -f 'csm-inhibitor.c' || echo '$(srcdir)/'`csm-inhibitor.c
 
-gnome_session-gsm-inhibitor.obj: gsm-inhibitor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-inhibitor.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-inhibitor.Tpo -c -o gnome_session-gsm-inhibitor.obj `if test -f 'gsm-inhibitor.c'; then $(CYGPATH_W) 'gsm-inhibitor.c'; else $(CYGPATH_W) '$(srcdir)/gsm-inhibitor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-inhibitor.Tpo $(DEPDIR)/gnome_session-gsm-inhibitor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-inhibitor.c' object='gnome_session-gsm-inhibitor.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-inhibitor.obj: csm-inhibitor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-inhibitor.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-inhibitor.Tpo -c -o gnome_session-csm-inhibitor.obj `if test -f 'csm-inhibitor.c'; then $(CYGPATH_W) 'csm-inhibitor.c'; else $(CYGPATH_W) '$(srcdir)/csm-inhibitor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-inhibitor.Tpo $(DEPDIR)/gnome_session-csm-inhibitor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-inhibitor.c' object='gnome_session-csm-inhibitor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-inhibitor.obj `if test -f 'gsm-inhibitor.c'; then $(CYGPATH_W) 'gsm-inhibitor.c'; else $(CYGPATH_W) '$(srcdir)/gsm-inhibitor.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-inhibitor.obj `if test -f 'csm-inhibitor.c'; then $(CYGPATH_W) 'csm-inhibitor.c'; else $(CYGPATH_W) '$(srcdir)/csm-inhibitor.c'; fi`
 
-gnome_session-gsm-manager.o: gsm-manager.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-manager.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-manager.Tpo -c -o gnome_session-gsm-manager.o `test -f 'gsm-manager.c' || echo '$(srcdir)/'`gsm-manager.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-manager.Tpo $(DEPDIR)/gnome_session-gsm-manager.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-manager.c' object='gnome_session-gsm-manager.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-manager.o: csm-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-manager.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-manager.Tpo -c -o gnome_session-csm-manager.o `test -f 'csm-manager.c' || echo '$(srcdir)/'`csm-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-manager.Tpo $(DEPDIR)/gnome_session-csm-manager.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-manager.c' object='gnome_session-csm-manager.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-manager.o `test -f 'gsm-manager.c' || echo '$(srcdir)/'`gsm-manager.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-manager.o `test -f 'csm-manager.c' || echo '$(srcdir)/'`csm-manager.c
 
-gnome_session-gsm-manager.obj: gsm-manager.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-manager.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-manager.Tpo -c -o gnome_session-gsm-manager.obj `if test -f 'gsm-manager.c'; then $(CYGPATH_W) 'gsm-manager.c'; else $(CYGPATH_W) '$(srcdir)/gsm-manager.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-manager.Tpo $(DEPDIR)/gnome_session-gsm-manager.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-manager.c' object='gnome_session-gsm-manager.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-manager.obj: csm-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-manager.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-manager.Tpo -c -o gnome_session-csm-manager.obj `if test -f 'csm-manager.c'; then $(CYGPATH_W) 'csm-manager.c'; else $(CYGPATH_W) '$(srcdir)/csm-manager.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-manager.Tpo $(DEPDIR)/gnome_session-csm-manager.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-manager.c' object='gnome_session-csm-manager.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-manager.obj `if test -f 'gsm-manager.c'; then $(CYGPATH_W) 'gsm-manager.c'; else $(CYGPATH_W) '$(srcdir)/gsm-manager.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-manager.obj `if test -f 'csm-manager.c'; then $(CYGPATH_W) 'csm-manager.c'; else $(CYGPATH_W) '$(srcdir)/csm-manager.c'; fi`
 
-gnome_session-gsm-process-helper.o: gsm-process-helper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-process-helper.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-process-helper.Tpo -c -o gnome_session-gsm-process-helper.o `test -f 'gsm-process-helper.c' || echo '$(srcdir)/'`gsm-process-helper.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-process-helper.Tpo $(DEPDIR)/gnome_session-gsm-process-helper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-process-helper.c' object='gnome_session-gsm-process-helper.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-process-helper.o: csm-process-helper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-process-helper.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-process-helper.Tpo -c -o gnome_session-csm-process-helper.o `test -f 'csm-process-helper.c' || echo '$(srcdir)/'`csm-process-helper.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-process-helper.Tpo $(DEPDIR)/gnome_session-csm-process-helper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-process-helper.c' object='gnome_session-csm-process-helper.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-process-helper.o `test -f 'gsm-process-helper.c' || echo '$(srcdir)/'`gsm-process-helper.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-process-helper.o `test -f 'csm-process-helper.c' || echo '$(srcdir)/'`csm-process-helper.c
 
-gnome_session-gsm-process-helper.obj: gsm-process-helper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-process-helper.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-process-helper.Tpo -c -o gnome_session-gsm-process-helper.obj `if test -f 'gsm-process-helper.c'; then $(CYGPATH_W) 'gsm-process-helper.c'; else $(CYGPATH_W) '$(srcdir)/gsm-process-helper.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-process-helper.Tpo $(DEPDIR)/gnome_session-gsm-process-helper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-process-helper.c' object='gnome_session-gsm-process-helper.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-process-helper.obj: csm-process-helper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-process-helper.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-process-helper.Tpo -c -o gnome_session-csm-process-helper.obj `if test -f 'csm-process-helper.c'; then $(CYGPATH_W) 'csm-process-helper.c'; else $(CYGPATH_W) '$(srcdir)/csm-process-helper.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-process-helper.Tpo $(DEPDIR)/gnome_session-csm-process-helper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-process-helper.c' object='gnome_session-csm-process-helper.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-process-helper.obj `if test -f 'gsm-process-helper.c'; then $(CYGPATH_W) 'gsm-process-helper.c'; else $(CYGPATH_W) '$(srcdir)/gsm-process-helper.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-process-helper.obj `if test -f 'csm-process-helper.c'; then $(CYGPATH_W) 'csm-process-helper.c'; else $(CYGPATH_W) '$(srcdir)/csm-process-helper.c'; fi`
 
-gnome_session-gsm-session-fill.o: gsm-session-fill.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-session-fill.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-session-fill.Tpo -c -o gnome_session-gsm-session-fill.o `test -f 'gsm-session-fill.c' || echo '$(srcdir)/'`gsm-session-fill.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-session-fill.Tpo $(DEPDIR)/gnome_session-gsm-session-fill.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-session-fill.c' object='gnome_session-gsm-session-fill.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-session-fill.o: csm-session-fill.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-session-fill.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-session-fill.Tpo -c -o gnome_session-csm-session-fill.o `test -f 'csm-session-fill.c' || echo '$(srcdir)/'`csm-session-fill.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-session-fill.Tpo $(DEPDIR)/gnome_session-csm-session-fill.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-session-fill.c' object='gnome_session-csm-session-fill.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-session-fill.o `test -f 'gsm-session-fill.c' || echo '$(srcdir)/'`gsm-session-fill.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-session-fill.o `test -f 'csm-session-fill.c' || echo '$(srcdir)/'`csm-session-fill.c
 
-gnome_session-gsm-session-fill.obj: gsm-session-fill.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-session-fill.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-session-fill.Tpo -c -o gnome_session-gsm-session-fill.obj `if test -f 'gsm-session-fill.c'; then $(CYGPATH_W) 'gsm-session-fill.c'; else $(CYGPATH_W) '$(srcdir)/gsm-session-fill.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-session-fill.Tpo $(DEPDIR)/gnome_session-gsm-session-fill.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-session-fill.c' object='gnome_session-gsm-session-fill.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-session-fill.obj: csm-session-fill.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-session-fill.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-session-fill.Tpo -c -o gnome_session-csm-session-fill.obj `if test -f 'csm-session-fill.c'; then $(CYGPATH_W) 'csm-session-fill.c'; else $(CYGPATH_W) '$(srcdir)/csm-session-fill.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-session-fill.Tpo $(DEPDIR)/gnome_session-csm-session-fill.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-session-fill.c' object='gnome_session-csm-session-fill.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-session-fill.obj `if test -f 'gsm-session-fill.c'; then $(CYGPATH_W) 'gsm-session-fill.c'; else $(CYGPATH_W) '$(srcdir)/gsm-session-fill.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-session-fill.obj `if test -f 'csm-session-fill.c'; then $(CYGPATH_W) 'csm-session-fill.c'; else $(CYGPATH_W) '$(srcdir)/csm-session-fill.c'; fi`
 
-gnome_session-gsm-session-save.o: gsm-session-save.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-session-save.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-session-save.Tpo -c -o gnome_session-gsm-session-save.o `test -f 'gsm-session-save.c' || echo '$(srcdir)/'`gsm-session-save.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-session-save.Tpo $(DEPDIR)/gnome_session-gsm-session-save.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-session-save.c' object='gnome_session-gsm-session-save.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-session-save.o: csm-session-save.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-session-save.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-session-save.Tpo -c -o gnome_session-csm-session-save.o `test -f 'csm-session-save.c' || echo '$(srcdir)/'`csm-session-save.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-session-save.Tpo $(DEPDIR)/gnome_session-csm-session-save.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-session-save.c' object='gnome_session-csm-session-save.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-session-save.o `test -f 'gsm-session-save.c' || echo '$(srcdir)/'`gsm-session-save.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-session-save.o `test -f 'csm-session-save.c' || echo '$(srcdir)/'`csm-session-save.c
 
-gnome_session-gsm-session-save.obj: gsm-session-save.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-session-save.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-session-save.Tpo -c -o gnome_session-gsm-session-save.obj `if test -f 'gsm-session-save.c'; then $(CYGPATH_W) 'gsm-session-save.c'; else $(CYGPATH_W) '$(srcdir)/gsm-session-save.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-session-save.Tpo $(DEPDIR)/gnome_session-gsm-session-save.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-session-save.c' object='gnome_session-gsm-session-save.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-session-save.obj: csm-session-save.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-session-save.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-session-save.Tpo -c -o gnome_session-csm-session-save.obj `if test -f 'csm-session-save.c'; then $(CYGPATH_W) 'csm-session-save.c'; else $(CYGPATH_W) '$(srcdir)/csm-session-save.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-session-save.Tpo $(DEPDIR)/gnome_session-csm-session-save.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-session-save.c' object='gnome_session-csm-session-save.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-session-save.obj `if test -f 'gsm-session-save.c'; then $(CYGPATH_W) 'gsm-session-save.c'; else $(CYGPATH_W) '$(srcdir)/gsm-session-save.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-session-save.obj `if test -f 'csm-session-save.c'; then $(CYGPATH_W) 'csm-session-save.c'; else $(CYGPATH_W) '$(srcdir)/csm-session-save.c'; fi`
 
-gnome_session-gsm-shell-extensions.o: gsm-shell-extensions.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-shell-extensions.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-shell-extensions.Tpo -c -o gnome_session-gsm-shell-extensions.o `test -f 'gsm-shell-extensions.c' || echo '$(srcdir)/'`gsm-shell-extensions.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-shell-extensions.Tpo $(DEPDIR)/gnome_session-gsm-shell-extensions.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-shell-extensions.c' object='gnome_session-gsm-shell-extensions.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-shell-extensions.o: csm-shell-extensions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-shell-extensions.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-shell-extensions.Tpo -c -o gnome_session-csm-shell-extensions.o `test -f 'csm-shell-extensions.c' || echo '$(srcdir)/'`csm-shell-extensions.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-shell-extensions.Tpo $(DEPDIR)/gnome_session-csm-shell-extensions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-shell-extensions.c' object='gnome_session-csm-shell-extensions.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-shell-extensions.o `test -f 'gsm-shell-extensions.c' || echo '$(srcdir)/'`gsm-shell-extensions.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-shell-extensions.o `test -f 'csm-shell-extensions.c' || echo '$(srcdir)/'`csm-shell-extensions.c
 
-gnome_session-gsm-shell-extensions.obj: gsm-shell-extensions.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-shell-extensions.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-shell-extensions.Tpo -c -o gnome_session-gsm-shell-extensions.obj `if test -f 'gsm-shell-extensions.c'; then $(CYGPATH_W) 'gsm-shell-extensions.c'; else $(CYGPATH_W) '$(srcdir)/gsm-shell-extensions.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-shell-extensions.Tpo $(DEPDIR)/gnome_session-gsm-shell-extensions.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-shell-extensions.c' object='gnome_session-gsm-shell-extensions.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-shell-extensions.obj: csm-shell-extensions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-shell-extensions.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-shell-extensions.Tpo -c -o gnome_session-csm-shell-extensions.obj `if test -f 'csm-shell-extensions.c'; then $(CYGPATH_W) 'csm-shell-extensions.c'; else $(CYGPATH_W) '$(srcdir)/csm-shell-extensions.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-shell-extensions.Tpo $(DEPDIR)/gnome_session-csm-shell-extensions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-shell-extensions.c' object='gnome_session-csm-shell-extensions.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-shell-extensions.obj `if test -f 'gsm-shell-extensions.c'; then $(CYGPATH_W) 'gsm-shell-extensions.c'; else $(CYGPATH_W) '$(srcdir)/gsm-shell-extensions.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-shell-extensions.obj `if test -f 'csm-shell-extensions.c'; then $(CYGPATH_W) 'csm-shell-extensions.c'; else $(CYGPATH_W) '$(srcdir)/csm-shell-extensions.c'; fi`
 
-gnome_session-gsm-shell.o: gsm-shell.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-shell.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-shell.Tpo -c -o gnome_session-gsm-shell.o `test -f 'gsm-shell.c' || echo '$(srcdir)/'`gsm-shell.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-shell.Tpo $(DEPDIR)/gnome_session-gsm-shell.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-shell.c' object='gnome_session-gsm-shell.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-shell.o: csm-shell.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-shell.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-shell.Tpo -c -o gnome_session-csm-shell.o `test -f 'csm-shell.c' || echo '$(srcdir)/'`csm-shell.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-shell.Tpo $(DEPDIR)/gnome_session-csm-shell.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-shell.c' object='gnome_session-csm-shell.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-shell.o `test -f 'gsm-shell.c' || echo '$(srcdir)/'`gsm-shell.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-shell.o `test -f 'csm-shell.c' || echo '$(srcdir)/'`csm-shell.c
 
-gnome_session-gsm-shell.obj: gsm-shell.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-shell.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-shell.Tpo -c -o gnome_session-gsm-shell.obj `if test -f 'gsm-shell.c'; then $(CYGPATH_W) 'gsm-shell.c'; else $(CYGPATH_W) '$(srcdir)/gsm-shell.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-shell.Tpo $(DEPDIR)/gnome_session-gsm-shell.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-shell.c' object='gnome_session-gsm-shell.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-shell.obj: csm-shell.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-shell.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-shell.Tpo -c -o gnome_session-csm-shell.obj `if test -f 'csm-shell.c'; then $(CYGPATH_W) 'csm-shell.c'; else $(CYGPATH_W) '$(srcdir)/csm-shell.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-shell.Tpo $(DEPDIR)/gnome_session-csm-shell.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-shell.c' object='gnome_session-csm-shell.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-shell.obj `if test -f 'gsm-shell.c'; then $(CYGPATH_W) 'gsm-shell.c'; else $(CYGPATH_W) '$(srcdir)/gsm-shell.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-shell.obj `if test -f 'csm-shell.c'; then $(CYGPATH_W) 'csm-shell.c'; else $(CYGPATH_W) '$(srcdir)/csm-shell.c'; fi`
 
-gnome_session-gsm-xsmp-server.o: gsm-xsmp-server.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-xsmp-server.o -MD -MP -MF $(DEPDIR)/gnome_session-gsm-xsmp-server.Tpo -c -o gnome_session-gsm-xsmp-server.o `test -f 'gsm-xsmp-server.c' || echo '$(srcdir)/'`gsm-xsmp-server.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-xsmp-server.Tpo $(DEPDIR)/gnome_session-gsm-xsmp-server.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-xsmp-server.c' object='gnome_session-gsm-xsmp-server.o' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-xsmp-server.o: csm-xsmp-server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-xsmp-server.o -MD -MP -MF $(DEPDIR)/gnome_session-csm-xsmp-server.Tpo -c -o gnome_session-csm-xsmp-server.o `test -f 'csm-xsmp-server.c' || echo '$(srcdir)/'`csm-xsmp-server.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-xsmp-server.Tpo $(DEPDIR)/gnome_session-csm-xsmp-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-xsmp-server.c' object='gnome_session-csm-xsmp-server.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-xsmp-server.o `test -f 'gsm-xsmp-server.c' || echo '$(srcdir)/'`gsm-xsmp-server.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-xsmp-server.o `test -f 'csm-xsmp-server.c' || echo '$(srcdir)/'`csm-xsmp-server.c
 
-gnome_session-gsm-xsmp-server.obj: gsm-xsmp-server.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-gsm-xsmp-server.obj -MD -MP -MF $(DEPDIR)/gnome_session-gsm-xsmp-server.Tpo -c -o gnome_session-gsm-xsmp-server.obj `if test -f 'gsm-xsmp-server.c'; then $(CYGPATH_W) 'gsm-xsmp-server.c'; else $(CYGPATH_W) '$(srcdir)/gsm-xsmp-server.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-gsm-xsmp-server.Tpo $(DEPDIR)/gnome_session-gsm-xsmp-server.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gsm-xsmp-server.c' object='gnome_session-gsm-xsmp-server.obj' libtool=no @AMDEPBACKSLASH@
+gnome_session-csm-xsmp-server.obj: csm-xsmp-server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gnome_session-csm-xsmp-server.obj -MD -MP -MF $(DEPDIR)/gnome_session-csm-xsmp-server.Tpo -c -o gnome_session-csm-xsmp-server.obj `if test -f 'csm-xsmp-server.c'; then $(CYGPATH_W) 'csm-xsmp-server.c'; else $(CYGPATH_W) '$(srcdir)/csm-xsmp-server.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gnome_session-csm-xsmp-server.Tpo $(DEPDIR)/gnome_session-csm-xsmp-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='csm-xsmp-server.c' object='gnome_session-csm-xsmp-server.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-gsm-xsmp-server.obj `if test -f 'gsm-xsmp-server.c'; then $(CYGPATH_W) 'gsm-xsmp-server.c'; else $(CYGPATH_W) '$(srcdir)/gsm-xsmp-server.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gnome_session_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gnome_session-csm-xsmp-server.obj `if test -f 'csm-xsmp-server.c'; then $(CYGPATH_W) 'csm-xsmp-server.c'; else $(CYGPATH_W) '$(srcdir)/csm-xsmp-server.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1273,27 +1273,27 @@ uninstall-am: uninstall-binPROGRAMS
 	tags uninstall uninstall-am uninstall-binPROGRAMS
 
 
-gsm-marshal.c: gsm-marshal.list
-	$(AM_V_GEN)echo "#include \"gsm-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --body >> $@
+csm-marshal.c: csm-marshal.list
+	$(AM_V_GEN)echo "#include \"csm-marshal.h\"" > $@ && \
+	$(GLIB_GENMARSHAL) $< --prefix=csm_marshal --body >> $@
 
-gsm-marshal.h: gsm-marshal.list
-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --header > $@
+csm-marshal.h: csm-marshal.list
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --prefix=csm_marshal --header > $@
 
-gsm-manager-glue.h: org.gnome.SessionManager.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_manager --mode=glib-server --output=gsm-manager-glue.h $(srcdir)/org.gnome.SessionManager.xml
+csm-manager-glue.h: org.cinnamon.SessionManager.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=csm_manager --mode=glib-server --output=csm-manager-glue.h $(srcdir)/org.cinnamon.SessionManager.xml
 
-gsm-client-glue.h: org.gnome.SessionManager.Client.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_client --mode=glib-server --output=gsm-client-glue.h $(srcdir)/org.gnome.SessionManager.Client.xml
+csm-client-glue.h: org.cinnamon.SessionManager.Client.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=csm_client --mode=glib-server --output=csm-client-glue.h $(srcdir)/org.cinnamon.SessionManager.Client.xml
 
-gsm-app-glue.h: org.gnome.SessionManager.App.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_app --mode=glib-server --output=gsm-app-glue.h $(srcdir)/org.gnome.SessionManager.App.xml
+csm-app-glue.h: org.cinnamon.SessionManager.App.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=csm_app --mode=glib-server --output=csm-app-glue.h $(srcdir)/org.cinnamon.SessionManager.App.xml
 
-gsm-inhibitor-glue.h: org.gnome.SessionManager.Inhibitor.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_inhibitor --mode=glib-server --output=gsm-inhibitor-glue.h $(srcdir)/org.gnome.SessionManager.Inhibitor.xml
+csm-inhibitor-glue.h: org.cinnamon.SessionManager.Inhibitor.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=csm_inhibitor --mode=glib-server --output=csm-inhibitor-glue.h $(srcdir)/org.cinnamon.SessionManager.Inhibitor.xml
 
-gsm-presence-glue.h: org.gnome.SessionManager.Presence.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_presence --mode=glib-server --output=gsm-presence-glue.h $(srcdir)/org.gnome.SessionManager.Presence.xml
+csm-presence-glue.h: org.cinnamon.SessionManager.Presence.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=csm_presence --mode=glib-server --output=csm-presence-glue.h $(srcdir)/org.cinnamon.SessionManager.Presence.xml
 
 -include $(top_srcdir)/git.mk
 
