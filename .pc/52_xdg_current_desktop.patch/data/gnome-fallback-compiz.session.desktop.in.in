@@ -1,8 +1,0 @@
-[GNOME Session]
-_Name=GNOME Fallback
-RequiredComponents=gnome-panel;gnome-settings-daemon;
-RequiredProviders=windowmanager;
-DefaultProvider-windowmanager=gnome-wm
-DefaultProvider-notifications=notify-osd
-IsRunnableHelper=@LIBEXECDIR@/gnome-session-check-accelerated
-FallbackSession=gnome-fallback

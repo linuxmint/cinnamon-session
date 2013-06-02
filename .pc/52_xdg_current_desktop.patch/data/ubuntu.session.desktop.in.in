@@ -1,6 +1,0 @@
-[GNOME Session]
-_Name=Ubuntu
-RequiredComponents=gnome-settings-daemon;
-RequiredProviders=windowmanager;panel;
-DefaultProvider-windowmanager=compiz
-DefaultProvider-panel=compiz
