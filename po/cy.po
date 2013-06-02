@@ -90,107 +90,107 @@ msgstr ""
 "\"logout\" ar gyfer allgofnodi, \"shutdown\" ar gyfer atal system ac "
 "\"restart\" i ail gychwyn y system."
 
-#: ../cinnamon-session/gsm-client-editor.c:97
+#: ../cinnamon-session/csm-client-editor.c:97
 msgid "_Order:"
 msgstr "_Trefn:"
 
-#: ../cinnamon-session/gsm-client-editor.c:99
+#: ../cinnamon-session/csm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Y drefn mae rhaglenni yn cael eu dechrau ynddi yn y sesiwn."
 
-#: ../cinnamon-session/gsm-client-editor.c:106
+#: ../cinnamon-session/csm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Beth sy'n digwydd i'r rhaglen pan mae'n terfynu."
 
-#: ../cinnamon-session/gsm-client-editor.c:109
+#: ../cinnamon-session/csm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Arddull:"
 
-#: ../cinnamon-session/gsm-client-list.c:150
+#: ../cinnamon-session/csm-client-list.c:150
 msgid "Order"
 msgstr "Trefn"
 
-#: ../cinnamon-session/gsm-client-list.c:155
+#: ../cinnamon-session/csm-client-list.c:155
 msgid "Style"
 msgstr "Arddull"
 
-#: ../cinnamon-session/gsm-client-list.c:160
+#: ../cinnamon-session/csm-client-list.c:160
 msgid "State"
 msgstr "Cyflwr"
 
-#: ../cinnamon-session/gsm-client-list.c:165
+#: ../cinnamon-session/csm-client-list.c:165
 msgid "Program"
 msgstr "Rhaglen"
 
-#: ../cinnamon-session/gsm-client-row.c:31
+#: ../cinnamon-session/csm-client-row.c:31
 msgid "Inactive"
 msgstr "Anweithredol"
 
-#: ../cinnamon-session/gsm-client-row.c:32
+#: ../cinnamon-session/csm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Aros i gychwyn neu wedi gorffen."
 
-#: ../cinnamon-session/gsm-client-row.c:34
+#: ../cinnamon-session/csm-client-row.c:34
 msgid "Starting"
 msgstr "Wedi dechrau"
 
-#: ../cinnamon-session/gsm-client-row.c:35
+#: ../cinnamon-session/csm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "Wedi dechrau ond heb adroddi ei gyflwr eto."
 
-#: ../cinnamon-session/gsm-client-row.c:37
+#: ../cinnamon-session/csm-client-row.c:37
 msgid "Running"
 msgstr "Gweithredu"
 
-#: ../cinnamon-session/gsm-client-row.c:38
+#: ../cinnamon-session/csm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Aelod arferol o'r sesiwn."
 
-#: ../cinnamon-session/gsm-client-row.c:40
+#: ../cinnamon-session/csm-client-row.c:40
 msgid "Saving"
 msgstr "Wrthi'n Cadw"
 
-#: ../cinnamon-session/gsm-client-row.c:41
+#: ../cinnamon-session/csm-client-row.c:41
 msgid "Saving session details."
 msgstr "Wrthi'n cadw manylion y sesiwn."
 
-#: ../cinnamon-session/gsm-client-row.c:43
+#: ../cinnamon-session/csm-client-row.c:43
 msgid "Unknown"
 msgstr "Anhysbys"
 
-#: ../cinnamon-session/gsm-client-row.c:44
+#: ../cinnamon-session/csm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Ni adroddwyd y cyflwr o fewn y terfyn amser."
 
-#: ../cinnamon-session/gsm-client-row.c:50
+#: ../cinnamon-session/csm-client-row.c:50
 msgid "Normal"
 msgstr "Arferol"
 
-#: ../cinnamon-session/gsm-client-row.c:51
+#: ../cinnamon-session/csm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "Heb ei effeithio gan allgofnodi ond caiff derfynu."
 
-#: ../cinnamon-session/gsm-client-row.c:53
+#: ../cinnamon-session/csm-client-row.c:53
 msgid "Restart"
 msgstr "Ailgychwyn"
 
-#: ../cinnamon-session/gsm-client-row.c:54
+#: ../cinnamon-session/csm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Ni chaiff derfynu."
 
-#: ../cinnamon-session/gsm-client-row.c:56
+#: ../cinnamon-session/csm-client-row.c:56
 msgid "Trash"
 msgstr "Sbwriel"
 
-#: ../cinnamon-session/gsm-client-row.c:57
+#: ../cinnamon-session/csm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "Gwaredir wrth allgofnodi a chaiff derfynu."
 
-#: ../cinnamon-session/gsm-client-row.c:59
+#: ../cinnamon-session/csm-client-row.c:59
 msgid "Settings"
 msgstr "Gosodiadau"
 
-#: ../cinnamon-session/gsm-client-row.c:60
+#: ../cinnamon-session/csm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Caiff ei gychwyn ar bob mewngofnodiad."
 
@@ -202,7 +202,7 @@ msgstr "Caiff ei gychwyn ar bob mewngofnodiad."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:41
+#: ../cinnamon-session/csm-gsd.c:41
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -214,7 +214,7 @@ msgstr ""
 "Efallai na fydd rhai pethau (megis themâu, seiniau a chefndir) yn gweithio'n "
 "gywir."
 
-#: ../cinnamon-session/gsm-gsd.c:53
+#: ../cinnamon-session/csm-gsd.c:53
 msgid ""
 "\n"
 "\n"
@@ -227,7 +227,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:58
+#: ../cinnamon-session/csm-gsd.c:58
 msgid ""
 "\n"
 "\n"
@@ -238,11 +238,11 @@ msgstr ""
 "Bydd GNOME o hyd yn ceisio ailgychwyn y Daemon Gosodiadau y tro nesaf i chi "
 "fewngofnodi."
 
-#: ../cinnamon-session/gsm-gsd.c:115
+#: ../cinnamon-session/csm-gsd.c:115
 msgid "There was an unknown activation error."
 msgstr "Roedd gwall cychwyn anhysbys."
 
-#: ../cinnamon-session/gsm-gsd.c:157
+#: ../cinnamon-session/csm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
 msgstr "Fe ailgychwynnodd Daemon Gosodiadau GNOME gormod o weithiau."
 
@@ -396,7 +396,7 @@ msgstr ""
 "Ydy hi'n iawn i derfynu fodd bynnag?"
 
 #: ../cinnamon-session/session-properties-capplet.c:263
-#: ../cinnamon-session/session-properties.desktop.in.in.h:2
+#: ../cinnamon-session/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Sesiynau"
 
@@ -460,7 +460,7 @@ msgstr "_Rhaglenni sy'n rhedeg ar hyn o bryd:"
 msgid "Initialize session settings"
 msgstr "Cychwyn gosodiadau'r sesiwn"
 
-#: ../cinnamon-session/session-properties.desktop.in.in.h:1
+#: ../cinnamon-session/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Ffurfweddu eich sesiynau"
 

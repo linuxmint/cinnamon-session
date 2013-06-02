@@ -74,121 +74,121 @@ msgstr "ཇི་ནོམ་ "
 msgid "This session logs you into GNOME"
 msgstr "ལཱ་ཡུན་འདི་གིས་ ཁྱོད་ ཇི་ནོམ་ནང་ལུ་ ནང་བསྐྱོད་འབདཝ་ཨིན་ "
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "ཁྱོན་རའི་ལཱ་ཡུན་ རིམ་སྒྲིག་འབད།"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "ལཱ་ཡུན་ཚུ།"
 
-#: ../cinnamon-session/gsm-at-startup.c:39
+#: ../cinnamon-session/csm-at-startup.c:39
 msgid "Assistive technology support has been requested for this session, but the accessibility registry was not found. Please ensure that the AT-SPI package is installed. Your session has been started without assistive technology support."
 msgstr "ཕན་ཐབས་ཅན་འཕྲུལ་རིག་རྒྱབ་སྐྱོར་འདི་ འ་ནི་ལཱ་ཡུན་གྱི་དོན་ལུ་ ཞུ་བ་འབད་ཡོད་ དེ་འབདཝ་ད་ འཛུལ་སྤྱོད་ཐོ་འགོད་འདི་ འཚོལ་མ་འཐོབ། ཨེ་ཊི་-ཨེསི་པི་ཨའི་ཐུམ་སྒྲིལ་འདི་ གཞི་བཙུགས་མ་འབདཝ་ཨིནམ་སྦེ་ ངེས་གཏན་བཟོ་གནང་། ཁྱོད་ཀྱི་ལཱ་ཡུན་འདི་ ཕན་ཐབས་ཅན་འཕྲུལ་རིག་རྒྱབསྐྱོར་མེད་པར་ འགོ་བཙུགས་ཡོད།"
 
-#: ../cinnamon-session/gsm-client-editor.c:123
+#: ../cinnamon-session/csm-client-editor.c:123
 msgid "_Order:"
 msgstr "གོ་རིམ་:(_O)"
 
-#: ../cinnamon-session/gsm-client-editor.c:125
+#: ../cinnamon-session/csm-client-editor.c:125
 msgid "The order in which applications are started in the session."
 msgstr "ལཱ་ཡུན་དེ་ནང་ གློག་རིམ་ཚུ་འགོ་བཙུགས་ཡོད་པའི་གོ་རིམ།"
 
-#: ../cinnamon-session/gsm-client-editor.c:133
+#: ../cinnamon-session/csm-client-editor.c:133
 msgid "What happens to the application when it exits."
 msgstr "གློག་རིམ་ཕྱིར་ཐོན་འགྱོཝ་ད་ ག་ཅི་འབདཝ་འོང་།"
 
-#: ../cinnamon-session/gsm-client-editor.c:134
+#: ../cinnamon-session/csm-client-editor.c:134
 msgid "_Style:"
 msgstr "བཟོ་རྣམ་:(_S)"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Inactive"
 msgstr "ཤུགས་མེད།"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Waiting to start or already finished."
 msgstr "འགོ་བཙུགས་ནི་ལུ་བསྒུག་བཞིན་པ་ ཡང་ན་ ཧེ་མ་ལས་རྫོགས་པ།།"
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Starting"
 msgstr "འགོ་བཙུགས་པའི་བསྒང་།"
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Started but has not yet reported state."
 msgstr "འགོ་བཙུགས་ནུག དེ་འབདཝ་ད་ ད་ཚུན་གནས་ལུགས་སྙན་ཞུ་མ་འབད་བས།"
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "Running"
 msgstr "གཡོག་བཀོལ་དོ།"
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "A normal member of the session."
 msgstr "ལཱ་ཡུན་གྱི་སྤྱིར་བཏང་འཐུས་མི།"
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving"
 msgstr "སྲུང་དོ།"
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving session details."
 msgstr "ལཱ་ཡུན་གྱི་རྒྱས་བཤད་ཚུ་སྲུང་དོ།"
 
 #. FIXME find better icon
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "Unknown"
 msgstr "མ་ཤེསཔ།"
 
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "State not reported within timeout."
 msgstr "ངལ་མཚམས་ནང་འཁོད་ གནས་ལུགས་སྙན་ཞུ་མ་འབདཝ།"
 
 #. FIXME find icon
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Normal"
 msgstr "སྤྱིར་བཏང་།"
 
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Unaffected by logouts but can die."
 msgstr "ཕྱིར་བསྐྱོད་ཀྱིས་གནོད་སྐྱོན་མ་བྱུང་། དེ་འབདཝ་ད་ ཤི་ནིའི་ཉེན་ཁ་ཡོད།"
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Restart"
 msgstr "ལོག་འགོ་བཙུགས།"
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Never allowed to die."
 msgstr "ནམ་ཡང་ཤི་མ་བཅུག"
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Trash"
 msgstr "ཕྱགས་ཧོད།"
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Discarded on logout and can die."
 msgstr "ཕྱིར་བསྐྱོད་སྐབས་ བཏོན་བཀོག་བ་ཅིན་ཤི་འོང་།"
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Settings"
 msgstr "གཞི་སྒྲིག་ཚུ།"
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Always started on every login."
 msgstr "ནང་བསྐྱོད་འབད་རེ་འབད་ཚེ་ ཨ་རྟག་རང་འགོ་བཙུགས།"
 
-#: ../cinnamon-session/gsm-client-list.c:190
+#: ../cinnamon-session/csm-client-list.c:190
 msgid "Order"
 msgstr "གོ་རིམ།"
 
-#: ../cinnamon-session/gsm-client-list.c:197
+#: ../cinnamon-session/csm-client-list.c:197
 msgid "Style"
 msgstr "བཟོ་རྣམ།"
 
-#: ../cinnamon-session/gsm-client-list.c:204
+#: ../cinnamon-session/csm-client-list.c:204
 msgid "State"
 msgstr "གནས་ལུགས།"
 
-#: ../cinnamon-session/gsm-client-list.c:211
+#: ../cinnamon-session/csm-client-list.c:211
 #: ../cinnamon-session/session-properties-capplet.c:284
 msgid "Program"
 msgstr "ལས་རིམ།"
@@ -201,7 +201,7 @@ msgstr "ལས་རིམ།"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:47
+#: ../cinnamon-session/csm-gsd.c:47
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -211,7 +211,7 @@ msgstr ""
 "\n"
 "བརྗོད་དོན་དང་ སྒྲ་སྐད་ ཡང་ན་ རྒྱབ་གཞིའི་གཞི་སྒྲིག་ཚུ་བཟུམ་ ལ་ལོ་ཅིག་ ངེས་བདེན་སྦེ་ ལཱ་འབད་མི་བཏུབ་འོང་།"
 
-#: ../cinnamon-session/gsm-gsd.c:59
+#: ../cinnamon-session/csm-gsd.c:59
 msgid ""
 "\n"
 "\n"
@@ -223,7 +223,7 @@ msgstr ""
 "འཛོལ་བ་མཐའ་མའི་འཕྲིན་དོན་དེ་ཨིན་པས: \n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:64
+#: ../cinnamon-session/csm-gsd.c:64
 msgid ""
 "\n"
 "\n"
@@ -233,12 +233,12 @@ msgstr ""
 "\n"
 "ཇི་ནོམ་གྱིས་ ཤུལ་ལས་ཁྱོད་ཀྱིས་ ནང་བསྐྱོད་འབདཝ་ད་ ད་རུང་ཡང་ གཞི་སྒྲིག་ཌེ་མཱོན་དེ་ ལོག་འགོ་བཙུགས་ནི་ལུ་ འབད་རྩོལ་བསྐྱེད་འོང་།"
 
-#: ../cinnamon-session/gsm-gsd.c:162
+#: ../cinnamon-session/csm-gsd.c:162
 msgid "The Settings Daemon restarted too many times."
 msgstr "གཞི་སྒྲིག་ཌེ་མཱོན་དེ་ ལན་ཐེངས་མང་རབས་ཅིག་ ལོག་འགོ་བཙུགས་ནུག"
 
 #. Name is mandatory and might not be set by the caller
-#: ../cinnamon-session/gsm-keyfile.c:43
+#: ../cinnamon-session/csm-keyfile.c:43
 msgid "No Name"
 msgstr "མིང་མིན་འདུག།"
 

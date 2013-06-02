@@ -26,53 +26,53 @@ msgstr ""
 "X-Generator: Lokalize 1.1\n"
 
 # gsm/session-properties-capplet.c:292
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "கட்டளையை தேர்ந்தெடு"
 
 # gsm/startup-programs.c:391
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "துவக்க நிரலுக்கு சேர் "
 
 # gsm/startup-programs.c:391
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "துவக்க நிரலை தொகு"
 
 # gsm/startup-programs.c:333
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "துவக்க கட்டளை காலியாக இருக்க முடியாது"
 
 # gsm/startup-programs.c:333
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "துவக்க கட்டளை செல்லுபடியாகாதது"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "செயலாக்கப்பட்டது"
 
 # gsm/logout.c:240
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "சின்னம்"
 
-# gsm/gsm-client-list.c:112
-#: ../capplet/gsm-properties-dialog.c:542
+# gsm/csm-client-list.c:112
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "நிரல்"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "துவக்க பயன்பாடுகள் விருப்பங்கள்"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "பெயர் இல்லை"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "விவரணம் இல்லை"
 
@@ -88,7 +88,7 @@ msgstr "உதவி ஆவணத்தை காட்ட இயலவில்
 msgid "GNOME fallback"
 msgstr "க்னோம் பின்சார்தல்"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -96,11 +96,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "இந்த அமர்வு க்நோம் இல் உங்களை நுழைக்கும் "
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "நிரல்கள் சில இன்னும் ஒடுகின்றன:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -108,52 +108,52 @@ msgstr ""
 "நிரல் இயங்கி முடிய காத்திருக்கிறது. நிரல் இயக்கத்தை தடை செய்வது உங்கள் வேலையை "
 "சேமிக்காமல் போகச் செய்யும்."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "நீங்கள் புகுபதிவு செய்யும் போது எந்த பயன்பாடுகள் தேர்ந்தெடுக்கப்படவேண்டும்"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "துவக்க பயன்பாடுகள்"
 
 # gsm/startup-programs.c:373
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "மேலும்சில தொடங்க _நிரல்கள்:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "உலாவு... "
 
 # gsm/session-properties-capplet.c:292
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "(_m) கட்டளை:"
 
 # gsm/session-properties-capplet.c:292
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "(_e) குறிப்புரை:"
 
 # gsm/session-properties-capplet.c:262
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "தேர்வுகள்"
 
 # gsm/session-properties-capplet.c:330
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "தொடங்கும் போது இயக்கும் நிரல்கள்"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "தானியங்கியாக வெளியேறும் போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "பெயர்: (_N)"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Applications"
 msgstr "(_R) இப்போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
 
@@ -170,7 +170,7 @@ msgstr "கோப்பு செல்லுபடியாகும்  (.desk
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "இனம் காணா மேல்மேசை கோப்பு பதிப்பு  '%s'"
 
-# gsm/gsm-client-row.c:36
+# gsm/csm-client-row.c:36
 #: ../egg/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
@@ -230,138 +230,138 @@ msgstr "அமர்வு மேலாண்மை தேர்வுகள்:
 msgid "Show session management options"
 msgstr "அமர்வு மேலாண்மை தேர்வுகளை காட்டுக"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' சின்னம் காணப்படவில்லை"
 
-# gsm/gsm-client-row.c:45
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+# gsm/csm-client-row.c:45
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "தெரியாத"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "ஒரு நிரல் இன்னும்  ஒடுகிறது:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr " காத்திருத்தல் க்கு  வரை முடி நிரல்கள் வரை."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "எப்படியும் பயனரை மாற்று"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "எப்படி இருந்தாலும் வெளியேறுக."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "எப்படியும் இடை நிறுத்தம் செய்க"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "எப்படி இருந்தாலும் உள்நுழையவும்."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "எப்படி இருந்தாலும் கணினியை நிறுத்தவும்"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "எப்படி இருந்தாலும் மீள்துவக்கவும்"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "திரையைப் பூட்டுக."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "ரத்து செய்க"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:266
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "நீங்கள் தானாக %d வினாடியில் வெளியேற்றப்படுவீர்கள்."
 msgstr[1] "நீங்கள் தானாக %d வினாடிகளில் வெளியேற்றப்படுவீர்கள்."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "இந்த கணினி தானாக %d வினாடியில் பணி நிறுத்தம் செய்யும்."
 msgstr[1] "இந்த கணினி தானாக %d வினாடிகளில் பணி நிறுத்தம் செய்யும்."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "இந்த கணினி தானியங்கியாக %d வினாடியில் மீள் துவக்கம் செய்யும்."
 msgstr[1] "இந்த கணினி தானியங்கியாக %d வினாடிகளில் மீள் துவக்கம் செய்யும்."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "நீங்கள் தற்போது \"%s\" ஆக புகுபதிவு செய்துள்ளீர்கள்."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "கணினியிலிருந்து இப்போது வெளிச்செல்லவா? "
 
-#: ../cinnamon-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "(_S) பயனரை மாற்றுக"
 
 # panel/logout.c:73 panel/menu.c:5339
-#: ../cinnamon-session/gsm-logout-dialog.c:387
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "(_L) விலகவும்"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "இப்போது இந்த கணினியை நிறுத்தவா? "
 
-#: ../cinnamon-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "இடை நிறுத்தம் (_u)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "செயலற்றிருத்தல் (_H)"
 
 # applets/tasklist/tasklist_menu.c:258
-#: ../cinnamon-session/gsm-logout-dialog.c:411
-#: ../cinnamon-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "(_R) மீட்டமை"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "(_S) பணி நிறுத்தம் செய்யவும்"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/csm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "இப்போது இந்த கணினியை மீண்டும் துவக்கவா? "
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "அடடா! ஏதோ தவறு நிகழ்ந்துவிட்டது"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
 msgstr ""
 "ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது. ஒரு கணினி மேலாளரை தொடர்பு கொள்ளவும்."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -369,7 +369,7 @@ msgstr ""
 "ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது. முன் எச்சரிக்கையாக எல்லா நீட்சிகளும் "
 "செயல் இழக்கப்பட்டுள்ளன."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -377,11 +377,11 @@ msgstr ""
 "ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது.\n"
 "வெளியேறி மீண்டும் முயற்சிக்கவும்"
 
-#: ../cinnamon-session/gsm-manager.c:1393
+#: ../cinnamon-session/csm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "க்னோம் 3 ஏற்றத்தில் தோல்வியுற்றது"
 
-#: ../cinnamon-session/gsm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -395,11 +395,11 @@ msgstr ""
 "அனேகமாக இதன் பொரூல் என்னவென்றால் உங்கள் கணினி (வரைகலை வன்பொருள் அல்லது இயக்கி) முழு "
 "க்னோம் 3 அனுபவத்தை தர பொருத்தமில்லை."
 
-#: ../cinnamon-session/gsm-manager.c:1396
+#: ../cinnamon-session/csm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "மேலும் க்னோம் 3 பற்றி"
 
-#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
 msgstr "பதிலளிக்க இல்லை"
 
@@ -407,27 +407,27 @@ msgstr "பதிலளிக்க இல்லை"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "நினைவில் கொண்ட பயன்பாடு"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "இந்த நிரல் வெளியேறுவதை தடுக்கிறது"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "புதிய சார்ந்தோன் இணைப்பை மறுக்கிறது; ஏனெனில் இப்போதைய அமர்வு மூடப்படுகிறது\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ஐஸ் கேட்கும் பொருத்துவாயை உருவாக்க முடியவில்லை : %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -544,14 +544,14 @@ msgstr "நிரல் முரணான தேர்வுகளை அழை
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "அமர்வின் பாகமாக அவசியம் இருக்க வேண்டிய உருப்புகளின் பட்டியல். (ஒவ்வொரு உருப்படியும் "
-#~ "\"/desktop/gnome/session/required-components\" இன் கீழ் ஒரு விசையை "
+#~ "\"/desktop/cinnamon/session/required-components\" இன் கீழ் ஒரு விசையை "
 #~ "குறிக்கிறது. அமர்வு தேர்வுகள் சாதாரணமாக பயனர்களை அவசியம் வேன்டிய உருப்படியை நீக்க "
 #~ "அனுமதிக்காது. அப்படி நீக்கினால் மீண்டும் அமர்வு மேலாளரால் அவை தானியங்கியாக "
 #~ "சேர்க்கப்படும்."

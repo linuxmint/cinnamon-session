@@ -16,47 +16,47 @@ msgstr ""
 "Content-Transfer-Encoding: UTF-8\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Emir Sayla"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Başlanğıç Programı Ekle"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Başlanğıç Programı Tahrir Et"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "Başlanğıç emri boş olalmaz"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "Başlanğıç emri keçerli degil"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Qabilleştirilgen"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "İşaretçik"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "Başlanğıç Uyğulamaları Tercihleri"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "İsim yoq"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "Tasvirsiz"
 
@@ -72,7 +72,7 @@ msgstr "Yardım vesiqası kösterilamadı"
 msgid "GNOME fallback"
 msgstr "GNOME ricatı"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -81,11 +81,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Bu oturım sizni GNOME'ğa içeri imzalandırır"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Bazı programlar ale çapmaqta:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -93,47 +93,47 @@ msgstr ""
 "Programnıñ tamamlanuvı içün beklene.  Bu programnı inqıtağa oğratuv emekni "
 "ğayıp etüviñizge sebep olabilir."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "İçeri imzalanğan soñ başlatılacaq uyğulamalarnı saylañız"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Başlanğıç Uyğulamaları"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Ek başlanğıç _programları:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "Kezin…"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "_Emir:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "_Şerh:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "İhtiyariyat"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Başlanğıç Uyğulamaları"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Tışarı imzalanğanda çapmaqta olğan uyğulamalarnı _öz-özünden hatırla"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_İsim:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "_Hal-hazırda Çapmaqta Olğan Uyğulamanı Hatırla"
 
@@ -206,24 +206,24 @@ msgstr "Oturım idaresi ihtiyariyatı:"
 msgid "Show session management options"
 msgstr "Oturım idaresi ihtiyariyatını köster"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' işaretçigi tapılamadı"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Bilinmey"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Bir program ale çapmaqta:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Bazı programlar ale çapmaqta:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -231,97 +231,97 @@ msgstr ""
 "Programlarnıñ tamamlanuvı içün beklene.  Bu programlarnıñ kestirilüvi yapqan "
 "olğanıñız işlerni ğayıp etüviñizge sebep olabilir."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Kene de Qullanıcını Deñiştir"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Kene de Tışarı İmzalan"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Kene de Sarqıt"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Kene de Yuqlat"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Kene de Qapat"
 
 # tüklü
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Kene de Yañıdan Başlat"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Ekrannı Kilitle"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Vazgeç"
 
 # tüklü
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:271
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:271
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "%d saniyeden soñ avtomatik olaraq tışarı imzalandırılacaqsıñız. "
 
-#: ../cinnamon-session/gsm-logout-dialog.c:279
+#: ../cinnamon-session/csm-logout-dialog.c:279
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Bu sistem %d saniyeden soñ avtomatik olaraq qapatılacaq."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:303
+#: ../cinnamon-session/csm-logout-dialog.c:303
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Hal-hazırda \"%s\" olaraq içeri imzalanğansıñız."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:369
+#: ../cinnamon-session/csm-logout-dialog.c:369
 msgid "Log out of this system now?"
 msgstr "Bu sistemden şimdi çıqılsınmı?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:375
+#: ../cinnamon-session/csm-logout-dialog.c:375
 msgid "_Switch User"
 msgstr "_Qullanıcı Almaştır"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:384
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:384
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "_Tışarı İmzalan"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:390
+#: ../cinnamon-session/csm-logout-dialog.c:390
 msgid "Shut down this system now?"
 msgstr "Bu sistem şimdi qapatılsınmı?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:396
+#: ../cinnamon-session/csm-logout-dialog.c:396
 msgid "S_uspend"
 msgstr "_Sarqıt"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:402
 msgid "_Hibernate"
 msgstr "_Yuqlat"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:408
 msgid "_Restart"
 msgstr "_Kene Başlat"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:418
+#: ../cinnamon-session/csm-logout-dialog.c:418
 msgid "_Shut Down"
 msgstr "_Söndür"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Aman!  Bir şey yañlış ketkendir."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -329,7 +329,7 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay. Lütfen bir sistem memurı ile "
 "temasqa keçiñiz"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -337,7 +337,7 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay. İhtiyat olaraq eklentilerniñ "
 "hepsi ğayrıfaalleştirilgendir."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -345,26 +345,26 @@ msgstr ""
 "Bir mesele hasıl oldı ve sistem toparlanalmay.Lütfen tışarı imzalanıp tekrar "
 "deñeñiz."
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "%d kodu ile terk etti"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Signal %d tarafından öldürildi"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Signal %d tarafından toqtatıldı"
 
-#: ../cinnamon-session/gsm-manager.c:1396
+#: ../cinnamon-session/csm-manager.c:1396
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 Yüklenmekte Muvaffaqiyetsiz Edi"
 
-#: ../cinnamon-session/gsm-manager.c:1397
+#: ../cinnamon-session/csm-manager.c:1397
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -378,11 +378,11 @@ msgstr ""
 "Bu eñ muhtemelen sistemiñiz (grafikler donanımı yaki sürücisi) tolu GNOME 3 "
 "tecribesini sunmaq içün qabiliyetli degil demektir."
 
-#: ../cinnamon-session/gsm-manager.c:1399
+#: ../cinnamon-session/csm-manager.c:1399
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 haqqında daha çoq ögren"
 
-#: ../cinnamon-session/gsm-manager.c:1496 ../cinnamon-session/gsm-manager.c:2269
+#: ../cinnamon-session/csm-manager.c:1496 ../cinnamon-session/csm-manager.c:2269
 msgid "Not responding"
 msgstr "Cevap bermey"
 
@@ -390,15 +390,15 @@ msgstr "Cevap bermey"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Hatırlanğan Uyğulama"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Bu program tışarı imzalanuvnı bloklay."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -407,13 +407,13 @@ msgstr ""
 "etile\n"
 
 # tüklü
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE diñlev oyuğı (soketi) icat etilamadı: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "İçeri imzalanuv oturımı başlatılalmay (ve X sunucısına bağlanılalmay)"
@@ -511,14 +511,14 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Oturımnıñ parçası olaraq şart olğan komponentlerniñ cedveli. (Her unsur "
-#~ "\"/desktop/gnome/session/required_components\" altındaki bir anahtarnı "
+#~ "\"/desktop/cinnamon/session/required_components\" altındaki bir anahtarnı "
 #~ "isimlendirir.) Başlanğıç Uyğulamaları tercihleri aleti normal olaraq "
 #~ "qullanıcılarnıñ oturımdan şart olğan bir komponentni çetleştirüvine izin "
 #~ "bermez ve şart olğan komponentler çetleştirilgen olsa da oturım idarecisi "

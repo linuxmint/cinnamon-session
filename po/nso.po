@@ -76,108 +76,108 @@ msgstr "Bontšha seširo sa go tlampuletša ge lenaneo le thoma"
 msgid "Splash Screen Image"
 msgstr "Seswantšho sa Sekirini sa go Tlampuletša"
 
-#: cinnamon-session/gsm-client-editor.c:97 cinnamon-session/startup-programs.c:314
+#: cinnamon-session/csm-client-editor.c:97 cinnamon-session/startup-programs.c:314
 msgid "_Order:"
 msgstr "_Tatelano:"
 
-#: cinnamon-session/gsm-client-editor.c:99
+#: cinnamon-session/csm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Tatelano yeo ditirišo di thongwago ka yona lenaneong le."
 
-#: cinnamon-session/gsm-client-editor.c:106
+#: cinnamon-session/csm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Go direga'ng tirišong ge e tšwa."
 
-#: cinnamon-session/gsm-client-editor.c:109
+#: cinnamon-session/csm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Setaele:"
 
-#: cinnamon-session/gsm-client-list.c:150
+#: cinnamon-session/csm-client-list.c:150
 #: cinnamon-session/session-properties-capplet.c:412
 msgid "Order"
 msgstr "Tatelano"
 
-#: cinnamon-session/gsm-client-list.c:155
+#: cinnamon-session/csm-client-list.c:155
 msgid "Style"
 msgstr "Setaele"
 
-#: cinnamon-session/gsm-client-list.c:160
+#: cinnamon-session/csm-client-list.c:160
 msgid "State"
 msgstr "Boemo"
 
-#: cinnamon-session/gsm-client-list.c:165
+#: cinnamon-session/csm-client-list.c:165
 msgid "Program"
 msgstr "Lenaneo"
 
-#: cinnamon-session/gsm-client-row.c:31
+#: cinnamon-session/csm-client-row.c:31
 msgid "Inactive"
 msgstr "Ga e šome"
 
-#: cinnamon-session/gsm-client-row.c:32
+#: cinnamon-session/csm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "E emetše go thoma goba e šetše e feditše."
 
-#: cinnamon-session/gsm-client-row.c:34
+#: cinnamon-session/csm-client-row.c:34
 msgid "Starting"
 msgstr "E a thoma"
 
-#: cinnamon-session/gsm-client-row.c:35
+#: cinnamon-session/csm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "E thomile eupja ga se ya hlwa e bega boemo bjo e lego go bjona."
 
-#: cinnamon-session/gsm-client-row.c:37
+#: cinnamon-session/csm-client-row.c:37
 msgid "Running"
 msgstr "E a šoma"
 
-#: cinnamon-session/gsm-client-row.c:38
+#: cinnamon-session/csm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Leloko le tlwaelegilego la lenaneo."
 
-#: cinnamon-session/gsm-client-row.c:40
+#: cinnamon-session/csm-client-row.c:40
 msgid "Saving"
 msgstr "E a boloka"
 
-#: cinnamon-session/gsm-client-row.c:41
+#: cinnamon-session/csm-client-row.c:41
 msgid "Saving session details."
 msgstr "E boloka dintlha tša lenaneo."
 
-#: cinnamon-session/gsm-client-row.c:43
+#: cinnamon-session/csm-client-row.c:43
 msgid "Unknown"
 msgstr "Ga e tsebje"
 
-#: cinnamon-session/gsm-client-row.c:44
+#: cinnamon-session/csm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Boemo ga se bja begwa nakong ya ge go tlogetšwe go šoma."
 
-#: cinnamon-session/gsm-client-row.c:50
+#: cinnamon-session/csm-client-row.c:50
 msgid "Normal"
 msgstr "Tlwaelegile"
 
-#: cinnamon-session/gsm-client-row.c:51
+#: cinnamon-session/csm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "Ga se ya kgongwa ke go tšwa eupša e ka hwa."
 
-#: cinnamon-session/gsm-client-row.c:53
+#: cinnamon-session/csm-client-row.c:53
 msgid "Restart"
 msgstr "Thoma ka leswa"
 
-#: cinnamon-session/gsm-client-row.c:54
+#: cinnamon-session/csm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Ga se ya dumelelwa go hwa."
 
-#: cinnamon-session/gsm-client-row.c:56
+#: cinnamon-session/csm-client-row.c:56
 msgid "Trash"
 msgstr "Ditlakala"
 
-#: cinnamon-session/gsm-client-row.c:57
+#: cinnamon-session/csm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "E lahlilwe go tšweng gomme e ka hwa."
 
-#: cinnamon-session/gsm-client-row.c:59
+#: cinnamon-session/csm-client-row.c:59
 msgid "Settings"
 msgstr "Dipeakanyo"
 
-#: cinnamon-session/gsm-client-row.c:60
+#: cinnamon-session/csm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Ka mehla e thomile go go tsena go gongwe le go gongwe."
 
@@ -189,7 +189,7 @@ msgstr "Ka mehla e thomile go go tsena go gongwe le go gongwe."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: cinnamon-session/gsm-gsd.c:41
+#: cinnamon-session/csm-gsd.c:41
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -201,7 +201,7 @@ msgstr ""
 "Dilo tše dingwe, tše bjalo ka dihlogo, medumo goba dipeakanyo tše bonagalago "
 "ka morago di ka no se šome gabotse."
 
-#: cinnamon-session/gsm-gsd.c:53
+#: cinnamon-session/csm-gsd.c:53
 msgid ""
 "\n"
 "\n"
@@ -213,7 +213,7 @@ msgstr ""
 "Molaetša wa mafelelo wa phošo e be e le:\n"
 "\n"
 
-#: cinnamon-session/gsm-gsd.c:58
+#: cinnamon-session/csm-gsd.c:58
 msgid ""
 "\n"
 "\n"
@@ -224,11 +224,11 @@ msgstr ""
 "GNOME e sa dutše e tla leka go thoma Daemon ya Dipeakanyo ka leswa nakong e "
 "tlago ge o tsena."
 
-#: cinnamon-session/gsm-gsd.c:115
+#: cinnamon-session/csm-gsd.c:115
 msgid "There was an unknown activation error."
 msgstr "Go bile le phošo e sa tsebjego ya go diragatša."
 
-#: cinnamon-session/gsm-gsd.c:157
+#: cinnamon-session/csm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
 msgstr "Daemon ya Dipeakanyo e thomile ka leswa gantši kudu."
 
@@ -378,7 +378,7 @@ msgstr ""
 "Go sa dutše Go Lokile go tšwa?"
 
 #: cinnamon-session/session-properties-capplet.c:240
-#: cinnamon-session/session-properties.desktop.in.in.h:2
+#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Mananeo"
 
@@ -443,7 +443,7 @@ msgstr "Mananeo ao a šomago gona _bjale:"
 msgid "Initialize session settings"
 msgstr "Thoma dipeakanyo tša lenaneo"
 
-#: cinnamon-session/session-properties.desktop.in.in.h:1
+#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Fetola sebopego sa mananeo a gago"
 

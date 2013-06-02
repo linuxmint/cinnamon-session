@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n%"
 "10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Roghnaigh Ordú"
 
-#: ../capplet/gsm-app-dialog.c:192
+#: ../capplet/csm-app-dialog.c:192
 msgid "Add Startup Program"
 msgstr "Cuir Ríomhchlár Tosaithe Leis"
 
-#: ../capplet/gsm-app-dialog.c:196
+#: ../capplet/csm-app-dialog.c:196
 msgid "Edit Startup Program"
 msgstr "Cuir Ríomhchlár Tosaithe in Eagar"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr ""
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/csm-properties-dialog.c:555
 msgid "Enabled"
 msgstr "Cumasaithe"
 
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/csm-properties-dialog.c:567
 msgid "Icon"
 msgstr "Deilbhín"
 
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/csm-properties-dialog.c:579
 msgid "Program"
 msgstr "Ríomhchlár"
 
-#: ../capplet/gsm-properties-dialog.c:790
+#: ../capplet/csm-properties-dialog.c:790
 msgid "Startup Applications Preferences"
 msgstr "Sainroghanna Feidhmchlár Tosaithe"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "Gan ainm"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "Gan cur síos"
 
@@ -120,7 +120,7 @@ msgstr ""
 #: ../data/cinnamon-session.schemas.in.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required_components\"). The "
+"names a key under \"/desktop/cinnamon/session/required_components\"). The "
 "Startup Applications preferences tool will not normally allow users to "
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
@@ -193,57 +193,57 @@ msgstr ""
 msgid "Window Manager"
 msgstr "Bainisteoir Fuinneoga"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Tá ríomhcláir éigin ag rith fós:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:667
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:667
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Roghnaigh na feidhmchláir le tosú agus ag logáil isteach"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Feidhmchláir Tosaithe"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "_Ríomhchláir tosaithe breise:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse..."
 msgstr "Brábhsáil..."
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "_Ordú:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "_Nóta:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Roghanna"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Ríomhchláir Tosaithe"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Meabhraigh feidhmchláir á rith go huathoibríoch agus ag logáil amach"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Ainm:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "_Meabhraigh Feidhmchlár á Rith Faoi Láthair"
 
@@ -310,7 +310,7 @@ msgstr "Roghanna bainistíochta seisiún:"
 msgid "Show session management options"
 msgstr "Taispeáin roghanna bainistíochta seisiún"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -319,62 +319,62 @@ msgstr ""
 "Tá fadhb ann leis an bhfreastalaí cumraíochta.\n"
 "(Chríochnaigh %s le stádas %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:255
+#: ../cinnamon-session/csm-inhibit-dialog.c:255
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Deilbhín '%s' gan aimsiú"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:615
+#: ../cinnamon-session/csm-inhibit-dialog.c:615
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:666
+#: ../cinnamon-session/csm-inhibit-dialog.c:666
 msgid "A program is still running:"
 msgstr "Tá feidhmchlár á rith fós:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:670
+#: ../cinnamon-session/csm-inhibit-dialog.c:670
 msgid "Some programs are still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:671
+#: ../cinnamon-session/csm-inhibit-dialog.c:671
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/csm-inhibit-dialog.c:901
 msgid "Switch User Anyway"
 msgstr "Aistrigh Úsáideoir Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/csm-inhibit-dialog.c:904
 msgid "Logout Anyway"
 msgstr "Logáil Amach Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:907
+#: ../cinnamon-session/csm-inhibit-dialog.c:907
 msgid "Suspend Anyway"
 msgstr "Cuir ar Fionraí Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:910
+#: ../cinnamon-session/csm-inhibit-dialog.c:910
 msgid "Hibernate Anyway"
 msgstr "Geimhrigh Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:913
+#: ../cinnamon-session/csm-inhibit-dialog.c:913
 msgid "Shutdown Anyway"
 msgstr "Múch Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:916
+#: ../cinnamon-session/csm-inhibit-dialog.c:916
 msgid "Reboot Anyway"
 msgstr "Atosaigh Mar Sin Féin"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:924
+#: ../cinnamon-session/csm-inhibit-dialog.c:924
 msgid "Lock Screen"
 msgstr "Cuir Scáileáin Faoi Ghlas"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:927
+#: ../cinnamon-session/csm-inhibit-dialog.c:927
 msgid "Cancel"
 msgstr "Cealaigh"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -384,7 +384,7 @@ msgstr[2] "Logálfar thú amach go huathoibríoch i gceann %d shoicind."
 msgstr[3] "Logálfar thú amach go huathoibríoch i gceann %d soicind."
 msgstr[4] "Logálfar thú amach go huathoibríoch i gceann %d soicind."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -394,64 +394,64 @@ msgstr[2] "Múchfar an córas seo go huathoibríoch i gceann %d shoicind."
 msgstr[3] "Múchfar an córas seo go huathoibríoch i gceann %d soicind."
 msgstr[4] "Múchfar an córas seo go huathoibríoch i gceann %d soicind."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:314
+#: ../cinnamon-session/csm-logout-dialog.c:314
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Tá tú logáilte isteach mar \"%s\"."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:379
+#: ../cinnamon-session/csm-logout-dialog.c:379
 msgid "Log out of this system now?"
 msgstr "Logáil amach as an gcóras seo anois?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:385
+#: ../cinnamon-session/csm-logout-dialog.c:385
 msgid "_Switch User"
 msgstr "_Switch User"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:394
+#: ../cinnamon-session/csm-logout-dialog.c:394
 msgid "_Log Out"
 msgstr "_Lógáil Amach"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:400
+#: ../cinnamon-session/csm-logout-dialog.c:400
 msgid "Shut down this system now?"
 msgstr "Múch an córas seo anois?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:406
+#: ../cinnamon-session/csm-logout-dialog.c:406
 msgid "S_uspend"
 msgstr "_Cuir ar Fionraí"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:412
+#: ../cinnamon-session/csm-logout-dialog.c:412
 msgid "_Hibernate"
 msgstr "_Geimhrigh"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:418
+#: ../cinnamon-session/csm-logout-dialog.c:418
 msgid "_Restart"
 msgstr "_Atosaigh"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:428
+#: ../cinnamon-session/csm-logout-dialog.c:428
 msgid "_Shut Down"
 msgstr "_Múch"
 
-#: ../cinnamon-session/gsm-manager.c:1158 ../cinnamon-session/gsm-manager.c:1850
+#: ../cinnamon-session/csm-manager.c:1158 ../cinnamon-session/csm-manager.c:1850
 msgid "Not responding"
 msgstr "Gan fhreagairt"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1206
+#: ../cinnamon-session/csm-xsmp-client.c:1206
 msgid "This program is blocking log out."
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:354
+#: ../cinnamon-session/csm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""

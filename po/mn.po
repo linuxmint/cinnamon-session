@@ -78,108 +78,108 @@ msgstr "Суулт эхлэхэд дэлгэцэнд харуулах өнгө"
 msgid "Splash Screen Image"
 msgstr "Дэлгэцэнд тавих зураг"
 
-#: cinnamon-session/gsm-client-editor.c:97 cinnamon-session/startup-programs.c:314
+#: cinnamon-session/csm-client-editor.c:97 cinnamon-session/startup-programs.c:314
 msgid "_Order:"
 msgstr "Цуваа"
 
-#: cinnamon-session/gsm-client-editor.c:99
+#: cinnamon-session/csm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Суултанд эхэлсэн програмын цуваа"
 
-#: cinnamon-session/gsm-client-editor.c:106
+#: cinnamon-session/csm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Програмаас гарах үед юу болов"
 
-#: cinnamon-session/gsm-client-editor.c:109
+#: cinnamon-session/csm-client-editor.c:109
 msgid "_Style:"
 msgstr "Загвар"
 
-#: cinnamon-session/gsm-client-list.c:150
+#: cinnamon-session/csm-client-list.c:150
 #: cinnamon-session/session-properties-capplet.c:412
 msgid "Order"
 msgstr "Цуваа"
 
-#: cinnamon-session/gsm-client-list.c:155
+#: cinnamon-session/csm-client-list.c:155
 msgid "Style"
 msgstr "Загвар"
 
-#: cinnamon-session/gsm-client-list.c:160
+#: cinnamon-session/csm-client-list.c:160
 msgid "State"
 msgstr "Хэсэг"
 
-#: cinnamon-session/gsm-client-list.c:165
+#: cinnamon-session/csm-client-list.c:165
 msgid "Program"
 msgstr "Програм"
 
-#: cinnamon-session/gsm-client-row.c:31
+#: cinnamon-session/csm-client-row.c:31
 msgid "Inactive"
 msgstr "Идэвхигүй"
 
-#: cinnamon-session/gsm-client-row.c:32
+#: cinnamon-session/csm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Бүүр дуусгах эсвэл эхлүүлэхийг хүлээж байна"
 
-#: cinnamon-session/gsm-client-row.c:34
+#: cinnamon-session/csm-client-row.c:34
 msgid "Starting"
 msgstr "Эхэлж байна"
 
-#: cinnamon-session/gsm-client-row.c:35
+#: cinnamon-session/csm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "Эхлэнэ, гэхдээ төлвийг дамжуулахгүй"
 
-#: cinnamon-session/gsm-client-row.c:37
+#: cinnamon-session/csm-client-row.c:37
 msgid "Running"
 msgstr "Ажиллуулж байна"
 
-#: cinnamon-session/gsm-client-row.c:38
+#: cinnamon-session/csm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Суултын энгийн гишүүн "
 
-#: cinnamon-session/gsm-client-row.c:40
+#: cinnamon-session/csm-client-row.c:40
 msgid "Saving"
 msgstr "Хадгалж байна"
 
-#: cinnamon-session/gsm-client-row.c:41
+#: cinnamon-session/csm-client-row.c:41
 msgid "Saving session details."
 msgstr "Суултыг нарийвчлан хадгалж байна"
 
-#: cinnamon-session/gsm-client-row.c:43
+#: cinnamon-session/csm-client-row.c:43
 msgid "Unknown"
 msgstr "Тодорхойлогдоогүй"
 
-#: cinnamon-session/gsm-client-row.c:44
+#: cinnamon-session/csm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Тасарсан учир тодорхойлогдсонгүй"
 
-#: cinnamon-session/gsm-client-row.c:50
+#: cinnamon-session/csm-client-row.c:50
 msgid "Normal"
 msgstr "Хэвийн"
 
-#: cinnamon-session/gsm-client-row.c:51
+#: cinnamon-session/csm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "Гаралтаар хандалтгүй болох боловч устана"
 
-#: cinnamon-session/gsm-client-row.c:53
+#: cinnamon-session/csm-client-row.c:53
 msgid "Restart"
 msgstr "Дахин эхлэх"
 
-#: cinnamon-session/gsm-client-row.c:54
+#: cinnamon-session/csm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Устахыг хэзээ ч зөвшөөрөхгүй"
 
-#: cinnamon-session/gsm-client-row.c:56
+#: cinnamon-session/csm-client-row.c:56
 msgid "Trash"
 msgstr "Хогийн сав"
 
-#: cinnamon-session/gsm-client-row.c:57
+#: cinnamon-session/csm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "Гаралтаар ажиллагаа зогсож,устана"
 
-#: cinnamon-session/gsm-client-row.c:59
+#: cinnamon-session/csm-client-row.c:59
 msgid "Settings"
 msgstr "Тохиргоо"
 
-#: cinnamon-session/gsm-client-row.c:60
+#: cinnamon-session/csm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Горим руу орох бүрд эхлэх"
 
@@ -191,7 +191,7 @@ msgstr "Горим руу орох бүрд эхлэх"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: cinnamon-session/gsm-gsd.c:41
+#: cinnamon-session/csm-gsd.c:41
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -202,7 +202,7 @@ msgstr ""
 "\n"
 "Яригч, дэвсгэр зэрэг зарим зүйлсийн тохиргоо зөв ажиллагаагүй байна."
 
-#: cinnamon-session/gsm-gsd.c:53
+#: cinnamon-session/csm-gsd.c:53
 msgid ""
 "\n"
 "\n"
@@ -214,7 +214,7 @@ msgstr ""
 "Сүүлийн алдааны мэдээлэл нь:\n"
 "\n"
 
-#: cinnamon-session/gsm-gsd.c:58
+#: cinnamon-session/csm-gsd.c:58
 msgid ""
 "\n"
 "\n"
@@ -225,11 +225,11 @@ msgstr ""
 "Таныг эргэж нэвтрэхэд ГНОМЕ тохируулгын программыг дахин эхлүүлэхийг "
 "оролдоно."
 
-#: cinnamon-session/gsm-gsd.c:115
+#: cinnamon-session/csm-gsd.c:115
 msgid "There was an unknown activation error."
 msgstr "Алдаа тодорхойгүй байна"
 
-#: cinnamon-session/gsm-gsd.c:157
+#: cinnamon-session/csm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
 msgstr "Тохируулгын програм хэтэрхий олон удаа ачаалагдсан байна"
 
@@ -371,7 +371,7 @@ msgstr ""
 "Тэгсэн ч гэсэн гарах уу?"
 
 #: cinnamon-session/session-properties-capplet.c:240
-#: cinnamon-session/session-properties.desktop.in.in.h:2
+#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Суултууд"
 
@@ -436,7 +436,7 @@ msgstr "Одоогоор ажиллаж буй програмууд"
 msgid "Initialize session settings"
 msgstr "Суултын тохируулгыг эхлүүлэх"
 
-#: cinnamon-session/session-properties.desktop.in.in.h:1
+#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Суултаа тохируулах"
 

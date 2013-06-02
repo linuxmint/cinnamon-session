@@ -32,47 +32,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.5\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Startbefehl auswählen"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Startprogramm hinzufügen"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Startprogramm bearbeiten"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "Der Startbefehl darf nicht leer sein"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "Der Startbefehl ist ungültig"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "Programm"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "Startprogrammeinstellungen"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "Namenlos"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "Keine Beschreibung"
 
@@ -88,7 +88,7 @@ msgstr "Die Hilfeseite konnte nicht angezeigt werden"
 msgid "GNOME fallback"
 msgstr "GNOME-Ausweichmodus"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -96,11 +96,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Diese Sitzung meldet Sie bei GNOME an"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Einige Anwendungen laufen noch:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -108,48 +108,48 @@ msgstr ""
 "Warten auf Beenden der Anwendung. Durch Abbruch der Anwendung könnten "
 "Änderungen verloren gehen."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
 msgstr "Startprogramme"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr ""
 "Wählen Sie, welche Anwendungen gestartet werden, wenn Sie sich anmelden"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "_Zusätzliche Startprogramme:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Startup Programs"
 msgstr "Startprogramme"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Automatisch die laufenden Programme beim Abmelden merken"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "Momentan laufende Programme _merken"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Optionen"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Browse…"
 msgstr "Durchsuchen …"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "Comm_ent:"
 msgstr "Ko_mmentar:"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "Co_mmand:"
 msgstr "_Befehl:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Name:"
 msgstr "_Name:"
 
@@ -221,20 +221,20 @@ msgstr "Sitzungsoptionen:"
 msgid "Show session management options"
 msgstr "Sitzungsoptionen anzeigen"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Symbol »%s« konnte nicht gefunden werden"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Eine Anwendung läuft noch:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -242,109 +242,109 @@ msgstr ""
 "Warten auf das Beenden der Anwendungen. Durch Abbruch der Anwendungen "
 "könnten Änderungen verlorengehen."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Trotzdem Benutzer wechseln"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Trotzdem abmelden"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Trotzdem in Bereitschaftsmodus gehen"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Trotzdem in Ruhezustand gehen"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Trotzdem ausschalten"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Trotzdem neu starten"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:266
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Sie werden in %d Sekunde automatisch abgemeldet."
 msgstr[1] "Sie werden in %d Sekunden automatisch abgemeldet."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Der Rechner wird in %d Sekunde automatisch ausgeschaltet."
 msgstr[1] "Der Rechner wird in %d Sekunden automatisch ausgeschaltet."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "Der Rechner wird in %d Sekunde automatisch neu gestartet."
 msgstr[1] "Der Rechner wird in %d Sekunden automatisch neu gestartet."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Sie sind zurzeit als »%s« angemeldet."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Jetzt vom System abmelden?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "Benutzer _wechseln"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "Benutzer ab_melden"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Möchten Sie den Rechner jetzt ausschalten?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_Bereitschaft"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Ruhezustand"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:411
-#: ../cinnamon-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_Neu starten"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "Rechner a_usschalten"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/csm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "Möchten Sie den Rechner jetzt neustarten?"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Leider ist ein Problem aufgetreten."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -352,7 +352,7 @@ msgstr ""
 "Ein Problem ist aufgetreten, welches vom System nicht behoben werden kann. "
 "Bitte kontaktieren Sie den Systemverwalter."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -360,7 +360,7 @@ msgstr ""
 "Ein Problem ist aufgetreten, welches vom System nicht behoben werden kann. "
 "Als Vorsichtsmaßnahme sind alle Erweiterungen deaktiviert worden."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -368,11 +368,11 @@ msgstr ""
 "Ein Problem ist aufgetreten, welches vom System nicht behoben werden kann.\n"
 "Bitte melden Sie sich ab und versuchen Sie es erneut."
 
-#: ../cinnamon-session/gsm-manager.c:1393
+#: ../cinnamon-session/csm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "Das Laden von GNOME 3 schlug fehl"
 
-#: ../cinnamon-session/gsm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -386,11 +386,11 @@ msgstr ""
 "Das bedeutet sehr wahrscheinlich, dass Ihre Grafik-Hardware nicht für die "
 "vollständige GNOME-3-Umgebung geeignet ist."
 
-#: ../cinnamon-session/gsm-manager.c:1396
+#: ../cinnamon-session/csm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "Erfahren Sie mehr über GNOME 3"
 
-#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
 msgstr "Keine Antwort"
 
@@ -398,15 +398,15 @@ msgstr "Keine Antwort"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Gemerkte Anwendung"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Dieses Programm blockiert die Abmeldung."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -414,13 +414,13 @@ msgstr ""
 "Neue Client-Verbindung wurde abgelehnt, weil die aktuelle Sitzung "
 "gegenwärtig beendet wird\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE-Listening-Socket konnte nicht erzeugt werden: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -537,14 +537,14 @@ msgstr "Programm wurde mit Optionen aufgerufen, die zu einem Konflikt führen"
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Liste der Komponenten, die als Teil der Sitzung erforderlich sind. (Jedes "
-#~ "Element bezeichnet einen Schlüssel unter »/desktop/gnome/session/"
+#~ "Element bezeichnet einen Schlüssel unter »/desktop/cinnamon/session/"
 #~ "required_components«). Das Programm zur Verwaltung der "
 #~ "Startprogrammeinstellungen erlaubt gewöhnlichen Benutzern nicht, "
 #~ "benötigte Komponenten aus der Sitzung zu entfernen. Diese werden bei "

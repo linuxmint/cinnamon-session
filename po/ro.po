@@ -20,48 +20,48 @@ msgstr ""
 "20)) ? 1 : 2);;\n"
 "X-Generator: Virtaal 0.6.1\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Alegere comandă"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Adaugă un program de pornit"
 
 # LG: aici e vorba de titlul unei ferestre.
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Editare program de pornit"
 
-#: ../capplet/gsm-app-dialog.c:485
+#: ../capplet/csm-app-dialog.c:485
 msgid "The startup command cannot be empty"
 msgstr "Comanda de pornire nu poate fi nulă"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/csm-app-dialog.c:491
 msgid "The startup command is not valid"
 msgstr "Comanda de start nu este validă"
 
-#: ../capplet/gsm-properties-dialog.c:517
+#: ../capplet/csm-properties-dialog.c:517
 msgid "Enabled"
 msgstr "Activat"
 
-#: ../capplet/gsm-properties-dialog.c:529
+#: ../capplet/csm-properties-dialog.c:529
 msgid "Icon"
 msgstr "Iconiță"
 
-#: ../capplet/gsm-properties-dialog.c:541
+#: ../capplet/csm-properties-dialog.c:541
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:745
+#: ../capplet/csm-properties-dialog.c:745
 msgid "Startup Applications Preferences"
 msgstr "Preferințe aplicații la pornire"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "Fără nume"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "Fără descriere"
 
@@ -77,7 +77,7 @@ msgstr "Nu se poate afișa documentul de ajutor"
 msgid "GNOME fallback"
 msgstr "Versiunea GNOME de rezervă"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -85,11 +85,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Această sesiune vă va autentifica în GNOME"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>O parte din programe sunt încă în funcțiune:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -97,47 +97,47 @@ msgstr ""
 "Se așteaptă terminarea programului. Întreruperea lui poate duce la pierderea "
 "modificărilor efectuate."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Alegeți aplicațiile ce vor porni după ce vă autentificați"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Aplicații pornite după autentificare"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "_Programe suplimentare de pornit:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "Navighează…"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "Co_mandă:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "Com_entariu:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Opțiuni"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Programe de pornit"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Memorează _automat la ieșire aplicațiile ce rulează"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Nume:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "Memo_rează aplicațiile ce rulează în acest moment"
 
@@ -205,7 +205,7 @@ msgstr "Opțiuni de administrare a sesiunii:"
 msgid "Show session management options"
 msgstr "Afișează opțiunile de administrare a sesiunii"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -214,24 +214,24 @@ msgstr ""
 "Există o problemă cu serverul de configurare.\n"
 "(%s a ieșit cu starea %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Iconița „%s” nu a fost găsită"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:592
+#: ../cinnamon-session/csm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "Un program este încă în funcțiune:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:647
+#: ../cinnamon-session/csm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Unele programe sunt încă în funcțiune:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:648
+#: ../cinnamon-session/csm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -239,40 +239,40 @@ msgstr ""
 "Se așteaptă terminarea programelor. Întreruperea acestora poate duce la "
 "pierderea modificărilor efectuate."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:878
+#: ../cinnamon-session/csm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Schimbă oricum utilizatorul"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:881
+#: ../cinnamon-session/csm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Închide sesiunea oricum"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:884
+#: ../cinnamon-session/csm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Suspendă oricum"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:887
+#: ../cinnamon-session/csm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Hibernează oricum"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:890
+#: ../cinnamon-session/csm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Oprește oricum"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:893
+#: ../cinnamon-session/csm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Repornește oricum"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/csm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Blochează ecranul"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/csm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Renunță"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:275
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
@@ -280,7 +280,7 @@ msgstr[0] "Sesiunea se va închide automat într-o secundă."
 msgstr[1] "Sesiunea se va închide automat în %d secunde."
 msgstr[2] "Sesiunea se va închide automat în %d de secunde."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
@@ -288,51 +288,51 @@ msgstr[0] "Sistemul va fi oprit automat într-o secundă."
 msgstr[1] "Sistemul va fi oprit automat în %d secunde."
 msgstr[2] "Sistemul va fi oprit automat în %d de secunde."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Sunteți autentificat ca „%s”."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Ieșiți de pe acest sistem acum?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "_Schimbă utilizatorul"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:396
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:296
-#: ../cinnamon-session/gsm-util.c:363
+#: ../cinnamon-session/csm-logout-dialog.c:396
+#: ../cinnamon-session/csm-fail-whale-dialog.c:296
+#: ../cinnamon-session/csm-util.c:363
 msgid "_Log Out"
 msgstr "_Ieșire din sesiune"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Opriți sistemul acum?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "S_uspendă"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Hibernează"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "_Repornește"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "_Oprește"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:276
+#: ../cinnamon-session/csm-fail-whale-dialog.c:276
 msgid "Oh no!  Something has gone wrong."
 msgstr "Oh, nu! Ceva nu a funcționat corect."
 
 #. make this changable at some point
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:283
+#: ../cinnamon-session/csm-fail-whale-dialog.c:283
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -340,26 +340,26 @@ msgstr ""
 "A intervenit o problemă și sistemul nu se poate recupera.\n"
 "Ieșiți din sesiune și încercați din nou."
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "A ieșit cu codul %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Omorât de semnalul %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Oprit de semnalul %d"
 
-#: ../cinnamon-session/gsm-manager.c:1362
+#: ../cinnamon-session/csm-manager.c:1362
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 nu a reușit să pornească"
 
-#: ../cinnamon-session/gsm-manager.c:1363
+#: ../cinnamon-session/csm-manager.c:1363
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -373,32 +373,32 @@ msgstr ""
 "Cel mai probabil aceasta înseamnă că sistemul dumneavoastră (placa grafică "
 "sau driverul acesteia) nu poate oferi o experiență GNOME 3 completă."
 
-#: ../cinnamon-session/gsm-manager.c:1365
+#: ../cinnamon-session/csm-manager.c:1365
 msgid "Learn more about GNOME 3"
 msgstr "Aflați mai multe despre GNOME 3"
 
-#: ../cinnamon-session/gsm-manager.c:1462 ../cinnamon-session/gsm-manager.c:2193
+#: ../cinnamon-session/csm-manager.c:1462 ../cinnamon-session/csm-manager.c:2193
 msgid "Not responding"
 msgstr "Nu răspunde"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1183
+#: ../cinnamon-session/csm-xsmp-client.c:1183
 msgid "This program is blocking logout."
 msgstr "Acest program blochează ieșirea din sesiune."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Se refuză conexiunea noului client deoarece sesiunea este în curs de oprire\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nu s-a putut crea socket-ul de monitorizare ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:347
+#: ../cinnamon-session/csm-util.c:347
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -469,14 +469,14 @@ msgstr "Program apelat cu opțiuni care intră în conflict"
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Lista componentelor care sunt necesare ca parte a sesiunii. (Fiecare "
-#~ "element numește o cheie din „/desktop/gnome/session/required_components"
+#~ "element numește o cheie din „/desktop/cinnamon/session/required_components"
 #~ "\".) Preferințele aplicațiilor de la pornire nu vor permite în mod normal "
 #~ "ca utilizatorii să șteargă o componentă necesară din sesiune, iar "
 #~ "administratorul sesiunii va adăuga automat componentele necesare în cazul "

@@ -213,7 +213,7 @@ msgstr "Lukusta ekraan"
 msgid "Cancel"
 msgstr "Tühista"
 
-#. This string is shared with gsm-fail-whale-dialog.c
+#. This string is shared with csm-fail-whale-dialog.c
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."

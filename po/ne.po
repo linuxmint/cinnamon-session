@@ -86,16 +86,16 @@ msgstr ""
 "लगिङआउटका लागि \"लगआउट\" , प्रणाली रोक्न \"बन्द गर्नुहोस्\" र प्रणाली सुरु गर्न"
 "\"फेरि सुरु गर्नुहोस्\" हुन् ।"
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "तपाईँको सत्र कन्फिगर गर्नुहोस्"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 #: ../cinnamon-session/session-properties-capplet.c:224
 msgid "Sessions"
 msgstr "सत्र"
 
-#: ../cinnamon-session/gsm-at-startup.c:39
+#: ../cinnamon-session/csm-at-startup.c:39
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -103,109 +103,109 @@ msgid ""
 "support."
 msgstr "यस सत्रका लागि मद्दत प्रविधि समर्थन अनुरोध गरिएको छ, तर मद्दत पहुँच दर्ता फेला परेन । कृपया AT-SPI प्याकेज स्थापना भएको निश्चित गर्नुहोस् । तपाईँको सत्र मद्दत प्रविधि समर्थन बिना सुरु भएको छ ।"
 
-#: ../cinnamon-session/gsm-client-editor.c:123
+#: ../cinnamon-session/csm-client-editor.c:123
 msgid "_Order:"
 msgstr "आदेश:"
 
-#: ../cinnamon-session/gsm-client-editor.c:125
+#: ../cinnamon-session/csm-client-editor.c:125
 msgid "The order in which applications are started in the session."
 msgstr "सत्रमा अनुप्रयोग सुरुआत गर्ने आदेश ।"
 
-#: ../cinnamon-session/gsm-client-editor.c:133
+#: ../cinnamon-session/csm-client-editor.c:133
 msgid "What happens to the application when it exits."
 msgstr "यो अवस्थित हुदा अनुप्रयोगमा के देखापर्दछ ।"
 
-#: ../cinnamon-session/gsm-client-editor.c:134
+#: ../cinnamon-session/csm-client-editor.c:134
 msgid "_Style:"
 msgstr "शैली:"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Inactive"
 msgstr "निस्क्रिय"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Waiting to start or already finished."
 msgstr "सुरुआतका लागि प्रतिक्षा गर्दैछ वा पहिले नै पूरा भएको छ ।"
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Starting"
 msgstr "सुरुआत"
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Started but has not yet reported state."
 msgstr "सुरुआत भएको छ तर स्थिति हालसम्म प्रतिवेदन गरिएको छैन ।"
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "Running"
 msgstr "चलिरहेको"
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "A normal member of the session."
 msgstr "सत्रको साधारण सदस्य ।"
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving"
 msgstr "बचत"
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving session details."
 msgstr "सत्र विवरण बचत ।"
 
 #. FIXME find better icon
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "State not reported within timeout."
 msgstr "म्याद समाप्तीमा स्थिति प्रतिवेदन गरिएको छैन ।"
 
 #. FIXME find icon
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Normal"
 msgstr "साधारण"
 
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Unaffected by logouts but can die."
 msgstr "लगआउटद्वारा प्रभावित भएन तर अन्त्य हुनसक्छ ।"
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Restart"
 msgstr "फेरि सुरु गर्नुहोस्"
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Never allowed to die."
 msgstr "अन्त्य गर्न कहिले पनि अनुमति नदिनुहोस् ।"
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Trash"
 msgstr "रद्दीटोकरी"
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Discarded on logout and can die."
 msgstr "लगआउट अस्वीकार गरियो र अन्त्य हुनसक्छ ।"
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Settings"
 msgstr "सेटिङ"
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Always started on every login."
 msgstr "सधैँ प्रत्येक लगइनमा सुरु गरिन्छ ।"
 
-#: ../cinnamon-session/gsm-client-list.c:190
+#: ../cinnamon-session/csm-client-list.c:190
 msgid "Order"
 msgstr "आदेश"
 
-#: ../cinnamon-session/gsm-client-list.c:197
+#: ../cinnamon-session/csm-client-list.c:197
 msgid "Style"
 msgstr "शैली"
 
-#: ../cinnamon-session/gsm-client-list.c:204
+#: ../cinnamon-session/csm-client-list.c:204
 msgid "State"
 msgstr "स्थिति"
 
-#: ../cinnamon-session/gsm-client-list.c:211
+#: ../cinnamon-session/csm-client-list.c:211
 #: ../cinnamon-session/session-properties-capplet.c:283
 msgid "Program"
 msgstr "कार्यक्रम"
@@ -218,7 +218,7 @@ msgstr "कार्यक्रम"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:45
+#: ../cinnamon-session/csm-gsd.c:45
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -229,7 +229,7 @@ msgstr ""
 "\n"
 "केही विषयहरू, जस्तै; ध्वनि, वा पृष्टभूमि सेटिङले ठीक रूपमा कार्य नगर्न सक्छन् ।"
 
-#: ../cinnamon-session/gsm-gsd.c:57
+#: ../cinnamon-session/csm-gsd.c:57
 msgid ""
 "\n"
 "\n"
@@ -241,7 +241,7 @@ msgstr ""
 "अन्तिम त्रुटि सन्देश यसरूपमा थियो:\n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:62
+#: ../cinnamon-session/csm-gsd.c:62
 msgid ""
 "\n"
 "\n"
@@ -251,12 +251,12 @@ msgstr ""
 "\n"
 "तपाईँले फेरि पछि लगइन गर्दा जिनोमले सेटिङ डेइमोन फेरि सुरु गर्ने प्रयास गर्नेछ ।"
 
-#: ../cinnamon-session/gsm-gsd.c:145
+#: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
 msgstr "सेटिङ डेइमोन फेरि धेरै पटक सुरु हुनेछ ।"
 
 #. Name is mandatory and might not be set by the caller
-#: ../cinnamon-session/gsm-keyfile.c:43
+#: ../cinnamon-session/csm-keyfile.c:43
 msgid "No Name"
 msgstr "नाम छैन"
 

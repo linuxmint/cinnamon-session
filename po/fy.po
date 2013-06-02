@@ -20,47 +20,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-07-17 22:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Kommando selektearje"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Opstartprogramma tafoegje"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Opstartprogramma bewurkje"
 
-#: ../capplet/gsm-app-dialog.c:485
+#: ../capplet/csm-app-dialog.c:485
 msgid "The startup command cannot be empty"
 msgstr "It opstartkommando kin net leech wêze"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/csm-app-dialog.c:491
 msgid "The startup command is not valid"
 msgstr "It opstartkommando is net jildich"
 
-#: ../capplet/gsm-properties-dialog.c:517
+#: ../capplet/csm-properties-dialog.c:517
 msgid "Enabled"
 msgstr "Ynskeakele"
 
-#: ../capplet/gsm-properties-dialog.c:529
+#: ../capplet/csm-properties-dialog.c:529
 msgid "Icon"
 msgstr "Ikoan"
 
-#: ../capplet/gsm-properties-dialog.c:541
+#: ../capplet/csm-properties-dialog.c:541
 msgid "Program"
 msgstr "Programma"
 
-#: ../capplet/gsm-properties-dialog.c:745
+#: ../capplet/csm-properties-dialog.c:745
 msgid "Startup Applications Preferences"
 msgstr "Ynstellingen foar opstarttapassingen"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "Gjin namme"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "Gjin beskriuwing"
 
@@ -76,7 +76,7 @@ msgstr "Koe it help dokumint net werjaan"
 msgid "GNOME fallback"
 msgstr "Gnome weromfal"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "Gnome"
 
@@ -84,11 +84,11 @@ msgstr "Gnome"
 msgid "This session logs you into GNOME"
 msgstr "Dizze sesje meld jo oan by Gnome"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Sommiche tapassingen rinne noch:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -96,47 +96,47 @@ msgstr ""
 "Oan it wachtsjen oant it programma ôfrin is. It programma ûnderbrekke kin jo "
 "wurk fuort meitsje."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Kies hokker tapassingen start wurden by it oanmelde"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Opstarttapassingen"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Ekstra opstart_programma's:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "Blêdzje…"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "Ko_mmando:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "Taljochting:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Opsjes"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Opstartprogramma's"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Ûnthâld rinnende tapassingen _automatysk by ôfmelde"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Namme:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "Ûnthâld _rinnende tapassingen"
 
@@ -203,7 +203,7 @@ msgstr "Sesjebehearopsjes:"
 msgid "Show session management options"
 msgstr "Sesjebehearopsjes sjen litte"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -212,24 +212,24 @@ msgstr ""
 "Der is in probleem mei de konfiguraasjetsjinner.\n"
 "(%s útgongen mei status %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:252
+#: ../cinnamon-session/csm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikoan '%s' net fûn"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:591
+#: ../cinnamon-session/csm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "Ûnbekend"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:642
+#: ../cinnamon-session/csm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "In programma rint noch:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:646
+#: ../cinnamon-session/csm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "Guon programma's rinne noch:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:647
+#: ../cinnamon-session/csm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -237,144 +237,144 @@ msgstr ""
 "Wachtsjen op it einigjen fan programma's. Ûnderbrekken fan dizze programma's "
 "kin jo wurk kwyt meitsje."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Switch User Anyway"
 msgstr "Brûker dochs wikselje"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Log Out Anyway"
 msgstr "Dochs ôfmelde"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Suspend Anyway"
 msgstr "Dochs ûnderbrekke"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Hibernate Anyway"
 msgstr "Dochs sliepe"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Shut Down Anyway"
 msgstr "Dochs ôfslute"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:892
+#: ../cinnamon-session/csm-inhibit-dialog.c:892
 msgid "Reboot Anyway"
 msgstr "Dochs opnij starte"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Lock Screen"
 msgstr "Skerm skoattelje"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:903
+#: ../cinnamon-session/csm-inhibit-dialog.c:903
 msgid "Cancel"
 msgstr "Ôfbrekke"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#. This string is shared with gsm-logout-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:268
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:209
+#. This string is shared with csm-fail-whale-dialog.c
+#. This string is shared with csm-logout-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:268
+#: ../cinnamon-session/csm-fail-whale-dialog.c:209
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Jo wurde automatysk ôfmelde yn %d sekonde."
 msgstr[1] "Jo wurde automatysk ôfmelde yn %d sekonde."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:276
+#: ../cinnamon-session/csm-logout-dialog.c:276
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Dit systeem sil automatysk ôfsluten wurde yn %d sekonde."
 msgstr[1] "Dit systeem sil automatysk ôfsluten wurde yn %d sekonde."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:308
+#: ../cinnamon-session/csm-logout-dialog.c:308
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Jo binne no oanmeld as \"%s\""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:374
+#: ../cinnamon-session/csm-logout-dialog.c:374
 msgid "Log out of this system now?"
 msgstr "No ôfmelde fan dit systeem?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:380
+#: ../cinnamon-session/csm-logout-dialog.c:380
 msgid "_Switch User"
 msgstr "Brûker _skeakelje?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:389
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:290
+#: ../cinnamon-session/csm-logout-dialog.c:389
+#: ../cinnamon-session/csm-fail-whale-dialog.c:290
 msgid "_Log Out"
 msgstr "Ôfme_lde"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/csm-logout-dialog.c:395
 msgid "Shut down this system now?"
 msgstr "Dit systeem no ôfslúte?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:401
+#: ../cinnamon-session/csm-logout-dialog.c:401
 msgid "S_uspend"
 msgstr "Ûnderbrekke"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:407
+#: ../cinnamon-session/csm-logout-dialog.c:407
 msgid "_Hibernate"
 msgstr "Sliepe"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:413
+#: ../cinnamon-session/csm-logout-dialog.c:413
 msgid "_Restart"
 msgstr "Opnij sta_rte"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:423
+#: ../cinnamon-session/csm-logout-dialog.c:423
 msgid "_Shut Down"
 msgstr "Ôf_slúte"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:277
+#: ../cinnamon-session/csm-fail-whale-dialog.c:277
 msgid "Try _Recovery"
 msgstr "Fe_rhelp besykje"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:279
+#: ../cinnamon-session/csm-fail-whale-dialog.c:279
 #, c-format
 msgid "A system error has occurred: %s"
 msgstr "In systeemflater is bard: %s"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:282
+#: ../cinnamon-session/csm-fail-whale-dialog.c:282
 #, c-format
 msgid "A fatal system error has occurred: %s"
 msgstr "In fatale systeemflater is bart: %s"
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "Útgean mei koade %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Ôfbrutsen troch sinjaal %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Stoppet troch signaal %d"
 
 #. Translators: This will look like: Component 'gnome-shell.desktop': Killed by signal 9.
 #. * It is admittedly mostly technical goop.
-#: ../cinnamon-session/gsm-manager.c:260
+#: ../cinnamon-session/csm-manager.c:260
 #, c-format
 msgid "Component '%s': %s"
 msgstr "Komponint '%s': %s"
 
-#: ../cinnamon-session/gsm-manager.c:561
+#: ../cinnamon-session/csm-manager.c:561
 msgid "Killed by signal"
 msgstr "Ôfbrutsen troch sinjaal"
 
 #. Translators: "Timed out" refers to a non-responsive application not answering.
 #. In case the string is problematic it might be translated to the noun "Timeout".
-#: ../cinnamon-session/gsm-manager.c:619
+#: ../cinnamon-session/csm-manager.c:619
 msgid "Timed out"
 msgstr "Wachttiid ferstriken"
 
-#: ../cinnamon-session/gsm-manager.c:1332
+#: ../cinnamon-session/csm-manager.c:1332
 msgid "GNOME 3 Failed to Load"
 msgstr "Gnome 3 koe net laden wurde"
 
-#: ../cinnamon-session/gsm-manager.c:1333
+#: ../cinnamon-session/csm-manager.c:1333
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -388,31 +388,31 @@ msgstr ""
 "Dit betsjut wierskynlik dat jo systeem (grafyske hardware of "
 "stjoerprogramma) net de hiele Gnome 3 ûnderfining kin bringe."
 
-#: ../cinnamon-session/gsm-manager.c:1335
+#: ../cinnamon-session/csm-manager.c:1335
 msgid "Learn more about GNOME 3"
 msgstr "Mear ynformaasje oer Gnome 3"
 
-#: ../cinnamon-session/gsm-manager.c:1432 ../cinnamon-session/gsm-manager.c:2156
+#: ../cinnamon-session/csm-manager.c:1432 ../cinnamon-session/csm-manager.c:2156
 msgid "Not responding"
 msgstr "Reagearret net"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1187
+#: ../cinnamon-session/csm-xsmp-client.c:1187
 msgid "This program is blocking logout."
 msgstr "Dit programma hâldt it ôfmelde tsjin"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Weigert nije ferbining mei klant omdat de sesje no ôfsluten wurd\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Koe net ICE-lústerjende hâlder oanmeitsje: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:354
+#: ../cinnamon-session/csm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -482,14 +482,14 @@ msgstr "Programma oanroppen mei stridige opsjes"
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Lyst fan komponinten dy't nedich binne as in part fan de sesje. (Elts "
-#~ "elemint neamt in kaai ûnder \"/desktop/gnome/session/required_components"
+#~ "elemint neamt in kaai ûnder \"/desktop/cinnamon/session/required_components"
 #~ "\"). It Start Applikaasje ynstellings ark lit brûkers gjin easke "
 #~ "komponinten út de sesje fuortsmite, en de sesje behearder sil automatysk "
 #~ "de easke komponinten by it oanmelden wer tafoegje oan de sesje wannear't "

@@ -20,47 +20,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Dibabit un arc'had"
 
-#: ../capplet/gsm-app-dialog.c:194
+#: ../capplet/csm-app-dialog.c:194
 msgid "Add Startup Program"
 msgstr "Ouzhpennañ ur goulev-loc'hañ"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/csm-app-dialog.c:198
 msgid "Edit Startup Program"
 msgstr "Kemmañ ar goulev-loc'hañ"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/csm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "N'hell ket an arc'had-loc'hañ bezañ goullo"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/csm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "N'eo ket talvoudek an arc'had loc'hañ"
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/csm-properties-dialog.c:555
 msgid "Enabled"
 msgstr "Gweredekaet"
 
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/csm-properties-dialog.c:567
 msgid "Icon"
 msgstr "Arlun"
 
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/csm-properties-dialog.c:579
 msgid "Program"
 msgstr "Goulev"
 
-#: ../capplet/gsm-properties-dialog.c:792
+#: ../capplet/csm-properties-dialog.c:792
 msgid "Startup Applications Preferences"
 msgstr "Gwellvezioù an arloadoù loc'hañ"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "Anv ebet"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "Deskrivadur ebet"
 
@@ -114,8 +114,8 @@ msgid "List of applications that are part of the default session."
 msgstr "Listennad an arloadoù liammet en estez dre ziouer."
 
 #: ../data/cinnamon-session.schemas.in.in.h:6
-msgid "List of components that are required as part of the session. (Each element names a key under \"/desktop/gnome/session/required_components\"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed."
-msgstr "Roll ar parzhioù a ret bezañ e-barzh an estez. (Pep elfenn en deus un alc'hwez anvet dindan \"/desktop/gnome/session/required_components\"). Da gustum n'eo ket aotret prenestr dibarzhioù arloadoù loc'hañ an arveriaded da zilemel ur parzh ret evit an estez ha war an tu ur parzh e vefe dilemel, ouzhpenne anezhañ an ardoer estezioù emgefreek e-lec'h ma vo digennasket."
+msgid "List of components that are required as part of the session. (Each element names a key under \"/desktop/cinnamon/session/required_components\"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed."
+msgstr "Roll ar parzhioù a ret bezañ e-barzh an estez. (Pep elfenn en deus un alc'hwez anvet dindan \"/desktop/cinnamon/session/required_components\"). Da gustum n'eo ket aotret prenestr dibarzhioù arloadoù loc'hañ an arveriaded da zilemel ur parzh ret evit an estez ha war an tu ur parzh e vefe dilemel, ouzhpenne anezhañ an ardoer estezioù emgefreek e-lec'h ma vo digennasket."
 
 #: ../data/cinnamon-session.schemas.in.in.h:7
 msgid "Logout prompt"
@@ -174,57 +174,57 @@ msgstr "Amzer a chom a-raok an estez e vo e-giz dioberiant"
 msgid "Window Manager"
 msgstr "ardoer prenestroù"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Arloadoù a lobour c'hoazh:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2
-#: ../cinnamon-session/gsm-inhibit-dialog.c:667
+#: ../data/csm-inhibit-dialog.ui.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:667
 msgid "Waiting for program to finish.  Interrupting program may cause you to lose work."
 msgstr "Gortoz arload echu. Un arsav a riskle da goll roadennoù bennak."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Diuziñ arloadoù da lañsañ er gevreadur"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Arloadoù loc'hañ"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "_Goulevioù loc'hañ ouzhpenn :"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse..."
 msgstr "Furchal..."
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "A_rc'had :"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "As_kelenn :"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Dibarzhioù"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Meziantoù loc'hañ"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 #, fuzzy
 msgid "_Automatically remember running applications when logging out"
 msgstr "_En em soñjañ emgefreek arloadoù e-pad an dilogadur"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "A_nv :"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "E_n em soñjañ arloadoù o labourat"
 
@@ -291,7 +291,7 @@ msgstr "Dibarzhioù ardeiñ an estez :"
 msgid "Show session management options"
 msgstr "Diskouez dibarzhioù ardeiñ an estez"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -300,130 +300,130 @@ msgstr ""
 "Ur gudenn zo gant an dafariad kefluniadur.\n"
 "(Kuitaet en deus %s gant ar stad %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:255
+#: ../cinnamon-session/csm-inhibit-dialog.c:255
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "N'eo ket bet kavet an arlun '%s'"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:615
+#: ../cinnamon-session/csm-inhibit-dialog.c:615
 msgid "Unknown"
 msgstr "Dianav"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:666
+#: ../cinnamon-session/csm-inhibit-dialog.c:666
 msgid "A program is still running:"
 msgstr "Ur goulev a labour c'hoazh:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:670
+#: ../cinnamon-session/csm-inhibit-dialog.c:670
 msgid "Some programs are still running:"
 msgstr "Gouleviù a labour c'hoazh:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:671
+#: ../cinnamon-session/csm-inhibit-dialog.c:671
 msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
 msgstr "Gortoz arload echu. Un arsav a riskle da goll roadennoù bennak."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/csm-inhibit-dialog.c:901
 msgid "Switch User Anyway"
 msgstr "Kemmañ an arveriad memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/csm-inhibit-dialog.c:904
 msgid "Logout Anyway"
 msgstr "Dilugañ memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:907
+#: ../cinnamon-session/csm-inhibit-dialog.c:907
 msgid "Suspend Anyway"
 msgstr "Lakaat da gousket memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:910
+#: ../cinnamon-session/csm-inhibit-dialog.c:910
 msgid "Hibernate Anyway"
 msgstr "Goañviñ memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:913
+#: ../cinnamon-session/csm-inhibit-dialog.c:913
 msgid "Shutdown Anyway"
 msgstr "Lazhañ memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:916
+#: ../cinnamon-session/csm-inhibit-dialog.c:916
 msgid "Reboot Anyway"
 msgstr "Adloc'hañ memes tra"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:924
+#: ../cinnamon-session/csm-inhibit-dialog.c:924
 msgid "Lock Screen"
 msgstr "Prennañ ar skramm"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:927
+#: ../cinnamon-session/csm-inhibit-dialog.c:927
 msgid "Cancel"
 msgstr "Nullañ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "C'hwi a vo diweredekaet emgefre en %d eilenn."
 msgstr[1] "C'hwi a vo diweredekaet emgefre en %d eilenn."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "An urzhiataer a lazho emgefre en %d eilenn."
 msgstr[1] "An urzhiataer a lazho emgefre en %d eilenn."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:314
+#: ../cinnamon-session/csm-logout-dialog.c:314
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Kennasket oc'h emgefre a-vremañ e-giz \"%s\"."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:380
+#: ../cinnamon-session/csm-logout-dialog.c:380
 msgid "Log out of this system now?"
 msgstr "En em dilugañ eus ar reizhiad bremañ ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:386
+#: ../cinnamon-session/csm-logout-dialog.c:386
 msgid "_Switch User"
 msgstr "_Kemmañ an arveriad"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/csm-logout-dialog.c:395
 msgid "_Log Out"
 msgstr "Di_lugañ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:401
+#: ../cinnamon-session/csm-logout-dialog.c:401
 msgid "Shut down this system now?"
 msgstr "Lazhañ ar reizhiad bremañ ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:407
+#: ../cinnamon-session/csm-logout-dialog.c:407
 msgid "S_uspend"
 msgstr "L_akaat da gousket"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:413
+#: ../cinnamon-session/csm-logout-dialog.c:413
 msgid "_Hibernate"
 msgstr "_Goañviñ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:419
+#: ../cinnamon-session/csm-logout-dialog.c:419
 msgid "_Restart"
 msgstr "_Adloc'hañ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:429
+#: ../cinnamon-session/csm-logout-dialog.c:429
 msgid "_Shut Down"
 msgstr "_Lazhañ"
 
-#: ../cinnamon-session/gsm-manager.c:1158
-#: ../cinnamon-session/gsm-manager.c:1850
+#: ../cinnamon-session/csm-manager.c:1158
+#: ../cinnamon-session/csm-manager.c:1850
 msgid "Not responding"
 msgstr "Respont ebet"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1206
+#: ../cinnamon-session/csm-xsmp-client.c:1206
 msgid "This program is blocking log out."
 msgstr "Bloket eo an digevreadur gant ar goulev-se."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid "Refusing new client connection because the session is currently being shut down\n"
 msgstr "N'eo ket aotret ar c'hennask nevez arval rak eo an estez a-vremañ o serriñ\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "N'eus ket tu da grouiñ ur soked selaou ICE : %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:354
+#: ../cinnamon-session/csm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "N'eus ket tu da lañsañ an estez (ha kennaskañ ouzh an dafariad X)"

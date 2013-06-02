@@ -97,15 +97,15 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Cheste session ti puartarâ dentri GNOME"
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Configure lis sessions"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Sessions"
 
-#: ../cinnamon-session/gsm-at-startup.c:39
+#: ../cinnamon-session/csm-at-startup.c:39
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -117,109 +117,109 @@ msgstr ""
 "AT-SPI al è stât instalât. La session a je stade inviade cence il supuart a "
 "lis tecnologie assistive."
 
-#: ../cinnamon-session/gsm-client-editor.c:123
+#: ../cinnamon-session/csm-client-editor.c:123
 msgid "_Order:"
 msgstr "_Ordin:"
 
-#: ../cinnamon-session/gsm-client-editor.c:125
+#: ../cinnamon-session/csm-client-editor.c:125
 msgid "The order in which applications are started in the session."
 msgstr "L'ordin di inviament da lis aplicazions ta session."
 
-#: ../cinnamon-session/gsm-client-editor.c:133
+#: ../cinnamon-session/csm-client-editor.c:133
 msgid "What happens to the application when it exits."
 msgstr "Ce sucedial a l'aplicazion cuant ch'a finis."
 
-#: ../cinnamon-session/gsm-client-editor.c:134
+#: ../cinnamon-session/csm-client-editor.c:134
 msgid "_Style:"
 msgstr "_Stîl:"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Inactive"
 msgstr "Inatîf"
 
-#: ../cinnamon-session/gsm-client-list.c:44
+#: ../cinnamon-session/csm-client-list.c:44
 msgid "Waiting to start or already finished."
 msgstr "Al spiete di jessi inviât opûr al à finît."
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Starting"
 msgstr "Inviament in côrs"
 
-#: ../cinnamon-session/gsm-client-list.c:46
+#: ../cinnamon-session/csm-client-list.c:46
 msgid "Started but has not yet reported state."
 msgstr "Inviât, ma nol à ancjemò ripuartât il stât."
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "Running"
 msgstr "In esecuzion"
 
-#: ../cinnamon-session/gsm-client-list.c:48
+#: ../cinnamon-session/csm-client-list.c:48
 msgid "A normal member of the session."
 msgstr "Un membro normâl da session."
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving"
 msgstr "Salvatagjio"
 
-#: ../cinnamon-session/gsm-client-list.c:50
+#: ../cinnamon-session/csm-client-list.c:50
 msgid "Saving session details."
 msgstr "Salvatagjio dai datos da session."
 
 #. FIXME find better icon
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "Unknown"
 msgstr "Scognossût"
 
-#: ../cinnamon-session/gsm-client-list.c:53
+#: ../cinnamon-session/csm-client-list.c:53
 msgid "State not reported within timeout."
 msgstr "Stât no ripuartât in timp util."
 
 #. FIXME find icon
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Normal"
 msgstr "Normâl"
 
-#: ../cinnamon-session/gsm-client-list.c:60
+#: ../cinnamon-session/csm-client-list.c:60
 msgid "Unaffected by logouts but can die."
 msgstr "No afiet dal finiment da session, ma al pos finî."
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Restart"
 msgstr "Torne a inviâ"
 
-#: ../cinnamon-session/gsm-client-list.c:62
+#: ../cinnamon-session/csm-client-list.c:62
 msgid "Never allowed to die."
 msgstr "No stâ finî mai."
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Trash"
 msgstr "Scovazzes"
 
-#: ../cinnamon-session/gsm-client-list.c:64
+#: ../cinnamon-session/csm-client-list.c:64
 msgid "Discarded on logout and can die."
 msgstr "Lassât sta al finiment da session e al pos finî."
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Settings"
 msgstr "Impostazions"
 
-#: ../cinnamon-session/gsm-client-list.c:66
+#: ../cinnamon-session/csm-client-list.c:66
 msgid "Always started on every login."
 msgstr "Inviât a ogni login."
 
-#: ../cinnamon-session/gsm-client-list.c:190
+#: ../cinnamon-session/csm-client-list.c:190
 msgid "Order"
 msgstr "Ordin"
 
-#: ../cinnamon-session/gsm-client-list.c:197
+#: ../cinnamon-session/csm-client-list.c:197
 msgid "Style"
 msgstr "Stîl"
 
-#: ../cinnamon-session/gsm-client-list.c:204
+#: ../cinnamon-session/csm-client-list.c:204
 msgid "State"
 msgstr "Stât"
 
-#: ../cinnamon-session/gsm-client-list.c:211
+#: ../cinnamon-session/csm-client-list.c:211
 #: ../cinnamon-session/session-properties-capplet.c:284
 msgid "Program"
 msgstr "Programe"
@@ -232,7 +232,7 @@ msgstr "Programe"
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:45
+#: ../cinnamon-session/csm-gsd.c:45
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -245,7 +245,7 @@ msgstr ""
 "Cualchi aspiet come temis, sûns o impostazions dal fondâl a podaressin no "
 "funzionâ tal mût coret."
 
-#: ../cinnamon-session/gsm-gsd.c:57
+#: ../cinnamon-session/csm-gsd.c:57
 msgid ""
 "\n"
 "\n"
@@ -257,7 +257,7 @@ msgstr ""
 "L'ultim messaç di erôr al è stât:\n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:62
+#: ../cinnamon-session/csm-gsd.c:62
 msgid ""
 "\n"
 "\n"
@@ -267,12 +267,12 @@ msgstr ""
 "\n"
 "GNOME al provarâ a tornâ a inviâ il demoni des impostazions al prossim login."
 
-#: ../cinnamon-session/gsm-gsd.c:145
+#: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
 msgstr "Il demoni des impostazions al è stât inviât masse voltis."
 
 #. Name is mandatory and might not be set by the caller
-#: ../cinnamon-session/gsm-keyfile.c:43
+#: ../cinnamon-session/csm-keyfile.c:43
 msgid "No Name"
 msgstr "Nissun nom"
 

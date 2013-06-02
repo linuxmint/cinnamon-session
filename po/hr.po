@@ -18,47 +18,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-05-28 02:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/gsm-app-dialog.c:126
+#: ../capplet/csm-app-dialog.c:126
 msgid "Select Command"
 msgstr "Odaberite naredbu"
 
-#: ../capplet/gsm-app-dialog.c:187
+#: ../capplet/csm-app-dialog.c:187
 msgid "Add Startup Program"
 msgstr "Dodaj progam za pokretanje pri podizanju"
 
-#: ../capplet/gsm-app-dialog.c:191
+#: ../capplet/csm-app-dialog.c:191
 msgid "Edit Startup Program"
 msgstr "Uređivanje programa koji se pokreću prilikom pokretanja"
 
-#: ../capplet/gsm-properties-dialog.c:132
+#: ../capplet/csm-properties-dialog.c:132
 msgid "No description"
 msgstr "Bez opisa"
 
-#: ../capplet/gsm-properties-dialog.c:977
+#: ../capplet/csm-properties-dialog.c:977
 msgid "The name of the startup program cannot be empty"
 msgstr "Ime programa ne može biti prazno"
 
-#: ../capplet/gsm-properties-dialog.c:981
+#: ../capplet/csm-properties-dialog.c:981
 msgid "The startup command cannot be empty"
 msgstr "Naredba pri pokretanju ne može biti prazna"
 
-#: ../capplet/gsm-properties-dialog.c:987
+#: ../capplet/csm-properties-dialog.c:987
 msgid "The startup command is not valid"
 msgstr "Naredba nije ispravna"
 
-#: ../capplet/gsm-properties-dialog.c:1291
+#: ../capplet/csm-properties-dialog.c:1291
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: ../capplet/gsm-properties-dialog.c:1304
+#: ../capplet/csm-properties-dialog.c:1304
 msgid "Icon"
 msgstr ""
 
-#: ../capplet/gsm-properties-dialog.c:1315
+#: ../capplet/csm-properties-dialog.c:1315
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:1464
+#: ../capplet/csm-properties-dialog.c:1464
 #: ../data/session-properties.glade.h:6
 msgid "Sessions Preferences"
 msgstr "Postavke prijave"
@@ -130,7 +130,7 @@ msgstr "Poredak po kojem se programi pokreću nakon prijave."
 #: ../data/cinnamon-session.schemas.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required-components\".) The "
+"names a key under \"/desktop/cinnamon/session/required-components\".) The "
 "Session Preferences will not normally allow users to remove a required "
 "component from the session, and the session manager will automatically add "
 "the required components back to the session if they do get removed."
@@ -211,22 +211,22 @@ msgstr ""
 msgid "Window Manager"
 msgstr "Upravitelj prozora"
 
-#: ../data/gsm-inhibit-dialog.glade.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr ""
 
-#: ../data/gsm-inhibit-dialog.glade.h:2
-#: ../cinnamon-session/gsm-inhibit-dialog.c:628
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:628
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Podešavanje prijave"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Prijave"
 
@@ -340,76 +340,76 @@ msgstr "Odrednice prijave"
 msgid "Show Session Management options"
 msgstr "Odrednice prijave"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
 "(%s exited with status %d)"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:256
+#: ../cinnamon-session/csm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:579
+#: ../cinnamon-session/csm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "Napoznato"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:627
+#: ../cinnamon-session/csm-inhibit-dialog.c:627
 msgid "A program is still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:631
+#: ../cinnamon-session/csm-inhibit-dialog.c:631
 msgid "Some programs are still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:632
+#: ../cinnamon-session/csm-inhibit-dialog.c:632
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:860
+#: ../cinnamon-session/csm-inhibit-dialog.c:860
 #, fuzzy
 msgid "Switch User Anyway"
 msgstr "_Promjena korisnika"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:863
+#: ../cinnamon-session/csm-inhibit-dialog.c:863
 #, fuzzy
 msgid "Logout Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:866
+#: ../cinnamon-session/csm-inhibit-dialog.c:866
 #, fuzzy
 msgid "Suspend Anyway"
 msgstr "Sus_pendiranje"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:869
+#: ../cinnamon-session/csm-inhibit-dialog.c:869
 #, fuzzy
 msgid "Hibernate Anyway"
 msgstr "_Hibernacija"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:872
+#: ../cinnamon-session/csm-inhibit-dialog.c:872
 #, fuzzy
 msgid "Shutdown Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:875
+#: ../cinnamon-session/csm-inhibit-dialog.c:875
 #, fuzzy
 msgid "Reboot Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 #, fuzzy
 msgid "Lock Screen"
 msgstr "_Zaključavanje zaslona"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Cancel"
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -420,7 +420,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:295
+#: ../cinnamon-session/csm-logout-dialog.c:295
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -431,61 +431,61 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:371
+#: ../cinnamon-session/csm-logout-dialog.c:371
 msgid "Log out of this system now?"
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:377
+#: ../cinnamon-session/csm-logout-dialog.c:377
 #, fuzzy
 msgid "_Switch User"
 msgstr "_Promjena korisnika"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:386
+#: ../cinnamon-session/csm-logout-dialog.c:386
 msgid "_Log Out"
 msgstr "_Odjava"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:392
+#: ../cinnamon-session/csm-logout-dialog.c:392
 msgid "Shut down this system now?"
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:398
+#: ../cinnamon-session/csm-logout-dialog.c:398
 #, fuzzy
 msgid "S_uspend"
 msgstr "Sus_pendiranje"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:404
+#: ../cinnamon-session/csm-logout-dialog.c:404
 msgid "_Hibernate"
 msgstr "_Hibernacija"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:410
+#: ../cinnamon-session/csm-logout-dialog.c:410
 msgid "_Restart"
 msgstr "Po_novno pokretanje"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:420
 msgid "_Shut Down"
 msgstr "_Gašenje"
 
-#: ../cinnamon-session/gsm-manager.c:923 ../cinnamon-session/gsm-manager.c:1539
+#: ../cinnamon-session/csm-manager.c:923 ../cinnamon-session/csm-manager.c:1539
 msgid "Not responding"
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-client.c:975
+#: ../cinnamon-session/csm-xsmp-client.c:975
 msgid "This program is blocking log out."
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:139
+#: ../cinnamon-session/csm-util.c:139
 msgid "Unable to start login session (and unable connect to the X server)"
 msgstr ""
 

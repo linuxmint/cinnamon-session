@@ -20,47 +20,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-08-10 08:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "بۇيرۇق تاللا"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "قوزغىلىش پروگراممىسى قوش"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "قوزغىلىش پروگرامما تەھرىر"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "قوزغىلىش بۇيرۇقى بوش قالسا بولمايدۇ."
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "قوزغىلىش بۇيرۇقى ئىناۋەتسىز"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "قوزغىتىلغان"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "سىنبەلگە"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "پروگرامما"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "قوزغىلىش پروگرامما مايىللىقى"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "ئاتسىز"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "چۈشەندۈرۈش يوق"
 
@@ -76,7 +76,7 @@ msgstr "ياردەم پۈتۈكىنى كۆرسەتكىلى بولمىدى"
 msgid "GNOME fallback"
 msgstr "GNOME زاپاس ھالىتى"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -84,11 +84,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "بۇ قېتىمقى ئەڭگىمە سىزنى GNOME غا ئەكىرىدۇ."
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -96,47 +96,47 @@ msgstr ""
 "پروگرامما تاماملىنىشنى كۈتۈۋاتىدۇ. پروگرامما توختىتىلسا خىزمەت نەتىجىڭىزنىڭ "
 "يوقىلىشىنى كەلتۈرۈپ چىقىرىدۇ."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "سىز تىزىمغا كىرگەندىن كېيىن قوزغىتىدىغان پروگراممىنى تاللاڭ"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "قوزغىتىش پروگراممىلىرى"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "قوشۇمچە قوزغىلىش پروگراممىلىرى(_P):"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "كۆز يۈگۈرت…"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "بۇيرۇق(_M):"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "ئىزاھات(_E):"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "تاللانما"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "قوزغىلىش پروگراممىسى"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "تىزىمدىن چىققاندا ئىجرا قىلغان پروگراممىنى ئۆزلۈكىدىن ئەستە تۇت(_A)"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "ئاتى(_N):"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "نۆۋەتتە ئىجرا قىلىنغان پروگراممىنى ئەستە تۇت(_R)"
 
@@ -208,7 +208,7 @@ msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرى:"
 msgid "Show session management options"
 msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرىنى كۆرسەت"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -217,24 +217,24 @@ msgstr ""
 "مۇلازىمېتىر سەپلەشتە خاتالىق بار.\n"
 "(%s نىڭ چېكىنىش ھالىتى %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' سىنبەلگىنى تاپالمىدى"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "يوچۇن"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "پروگرامما يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -242,95 +242,95 @@ msgstr ""
 "پروگرامما تاماملىنىشنى كۈتۈۋاتىدۇ. بۇ پروگراممىنى ئۈزۈش خىزمەت نەتىجىڭىزنىڭ "
 "يوقىلىشىنى كەلتۈرۈپ چىقىرىشى مۇمكىن."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "ئىشلەتكۈچىنى مەجبۇرىي ئالماشتۇر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "تىزىمدىن چىقىۋەر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "توڭلىتىۋەر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "ئۈچەككە كىرىۋەر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "تاقاۋەر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "قايتا قوزغىتىۋەر"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "ئېكراننى قۇلۇپلا"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "ۋاز كەچ"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:275
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "%d سېكۇنتتىن كېيىن ئۆزلۈكىدىن تىزىمدىن چىقىسىز."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "بۇ سىستېما %d سېكۇنتتىن كېيىن ئۆزلۈكىدىن تاقىلىدۇ."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "نۆۋەتتە \"%s\" سۈپىتىدە كىردىڭىز."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "بۇ سىستېمىدىن ھازىر تىزىمدىن چىقامسىز؟"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "ئىشلەتكۈچى ئالماشتۇر(_S)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:396
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:416
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:396
+#: ../cinnamon-session/csm-fail-whale-dialog.c:416
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "تىزىمدىن چىق(_L)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "بۇ سىستېمىنى ھازىر تاقامسىز؟"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "توڭلات(_U)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "ئۈچەككە كىر(_H)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "قايتا قوزغات(_R)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "تاقا(_S)"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:374
+#: ../cinnamon-session/csm-fail-whale-dialog.c:374
 msgid "Oh no!  Something has gone wrong."
 msgstr "ئاپلا! خاتالىق كۆرۈلدى."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:381
+#: ../cinnamon-session/csm-fail-whale-dialog.c:381
 #, fuzzy
 #| msgid ""
 #| "A problem has occurred and the system can't recover.\n"
@@ -343,7 +343,7 @@ msgstr ""
 "كاشىلا كۆرۈلدى سىستېمىنى ئەسلىگە كەلتۈرەلمەيدۇ.\n"
 "تىزىمدىن چىقىپ قايتا سىناڭ."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:383
+#: ../cinnamon-session/csm-fail-whale-dialog.c:383
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -351,26 +351,26 @@ msgstr ""
 "كاشىلا كۆرۈلدى سىستېمىنى ئەسلىگە كەلتۈرەلمەيدۇ.\n"
 "تىزىمدىن چىقىپ قايتا سىناڭ."
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "%d كودى ئىلە چېكىندى"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "سىگنال %d تەرىپىدىن ئۆلتۈرۈلدى"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "سىگنال %d تەرىپىدىن توختىتىلدى"
 
-#: ../cinnamon-session/gsm-manager.c:1377
+#: ../cinnamon-session/csm-manager.c:1377
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 نى يۈكلىيەلمىدى"
 
-#: ../cinnamon-session/gsm-manager.c:1378
+#: ../cinnamon-session/csm-manager.c:1378
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -380,11 +380,11 @@ msgid ""
 msgstr ""
 "ناھايىتى ئەپسۇس GNOME 3 نى توغرا يۈكلىيەلمىدى، <i>زاپاس ھالەت</i>تە قوزغاتتى."
 
-#: ../cinnamon-session/gsm-manager.c:1380
+#: ../cinnamon-session/csm-manager.c:1380
 msgid "Learn more about GNOME 3"
 msgstr "GNOME 3 ھەققىدە تېخىمۇ كۆپ ئۇچۇر"
 
-#: ../cinnamon-session/gsm-manager.c:1477 ../cinnamon-session/gsm-manager.c:2208
+#: ../cinnamon-session/csm-manager.c:1477 ../cinnamon-session/csm-manager.c:2208
 msgid "Not responding"
 msgstr "ئىنكاس يوق"
 
@@ -392,27 +392,27 @@ msgstr "ئىنكاس يوق"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "پروگراممىنى ئەستە تۇت"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "بۇ پروگرامما تىزىمدىن چىقىشنى چەكلەيدۇ."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "يېڭى ئىشلەتكۈچى باغلانىشى رەت قىلىندى. چۈنكى ئەڭگىمە تاقىلىۋاتىدۇ\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE تىڭشاش روزېتكىسى قۇرالمىدى: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "كىرىش ئەڭگىمەسىنى قوزغىتالمىدى (X مۇلازىمېتىرىغا باغلىنالمىدى)"
@@ -512,14 +512,14 @@ msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئ
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "ئەڭگىمە ئۆز ئىچىگە ئالغان زۆرۈر بۆلەكلەرنى تىزىپ كۆرسىتىدۇ. (ھەر بىر "
-#~ "ئېلېمېنت \"/desktop/gnome/session/required_components\" نىڭ بىر كۇنۇپكا "
+#~ "ئېلېمېنت \"/desktop/cinnamon/session/required_components\" نىڭ بىر كۇنۇپكا "
 #~ "قىممىتىگە ۋەكىللىك قىلىدۇ.) پروگراممىنىڭ مايىللىقى قوزغىتىلسا ئادەتتىكى "
 #~ "ئەھۋالدا ئىشلەتكۈچىنىڭ ئەڭگىمەدىن زۆرۈر بۆلەكنى چىقىرىۋېتىشىگە يول "
 #~ "قويمايدۇ، ئەڭگىمە باشقۇرغۇچ زۆرۈر بۆلەك خاتا چىقىرىۋېتىلگەندە بۇ بۆلەكنى "

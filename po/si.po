@@ -88,16 +88,16 @@ msgstr ""
 "ඉවත්වි යාම සඳහා \"ඉවත් වන්න\", පද්ධතිය නැවැත්වීම සඳහා \"නැවැත් වීම\"සහ "
 "පද්ධතිය නැවත ආරම්භය සඳහා  \"ප්‍රති-ආරම්භය\"."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "ඔබගේ සැසියන් සුසර කරන්න"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 #: ../cinnamon-session/session-properties-capplet.c:222
 msgid "Sessions"
 msgstr "සැසියන්"
 
-#: ../cinnamon-session/gsm-at-startup.c:39
+#: ../cinnamon-session/csm-at-startup.c:39
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -108,108 +108,108 @@ msgstr ""
 "ස්තානය සොයාගත නොහැකි විය. කරුණාකර AT-SPI ඇසුරුම ස්ථාපනය කර ඇතිදැයි "
 "සැකහැර දැන ගන්න. ඔබගේ සැසිය උපකාරක තාක්‍ෂණ සහාය නොමැතිව ආරම්භවි ඇත."
 
-#: ../cinnamon-session/gsm-client-editor.c:102
+#: ../cinnamon-session/csm-client-editor.c:102
 msgid "_Order:"
 msgstr "පිළිවෙළ: (_O)"
 
-#: ../cinnamon-session/gsm-client-editor.c:104
+#: ../cinnamon-session/csm-client-editor.c:104
 msgid "The order in which applications are started in the session."
 msgstr "සැසිය තුල යෙදුම් ආරම්භවන පිළිවෙළ."
 
-#: ../cinnamon-session/gsm-client-editor.c:111
+#: ../cinnamon-session/csm-client-editor.c:111
 msgid "What happens to the application when it exits."
 msgstr "යෙදුම ඉවත්වීමේදී එයට කුමක් සිදුවේයිද."
 
-#: ../cinnamon-session/gsm-client-editor.c:114
+#: ../cinnamon-session/csm-client-editor.c:114
 msgid "_Style:"
 msgstr "රටාව: (_S)"
 
-#: ../cinnamon-session/gsm-client-list.c:153
+#: ../cinnamon-session/csm-client-list.c:153
 msgid "Order"
 msgstr "පිළිවෙල"
 
-#: ../cinnamon-session/gsm-client-list.c:158
+#: ../cinnamon-session/csm-client-list.c:158
 msgid "Style"
 msgstr "විලාශය"
 
-#: ../cinnamon-session/gsm-client-list.c:163
+#: ../cinnamon-session/csm-client-list.c:163
 msgid "State"
 msgstr "පවත්නා තත්වය"
 
-#: ../cinnamon-session/gsm-client-list.c:168
+#: ../cinnamon-session/csm-client-list.c:168
 #: ../cinnamon-session/session-properties-capplet.c:280
 msgid "Program"
 msgstr "ක්‍රමලේඛය"
 
-#: ../cinnamon-session/gsm-client-row.c:33
+#: ../cinnamon-session/csm-client-row.c:33
 msgid "Inactive"
 msgstr "අක්‍රිය"
 
-#: ../cinnamon-session/gsm-client-row.c:34
+#: ../cinnamon-session/csm-client-row.c:34
 msgid "Waiting to start or already finished."
 msgstr "ආරම්භවිමට රැදිසිටී හෝ කාර්‍ය අවසන්කර ඇත."
 
-#: ../cinnamon-session/gsm-client-row.c:36
+#: ../cinnamon-session/csm-client-row.c:36
 msgid "Starting"
 msgstr "ආරම්භවෙමින්"
 
-#: ../cinnamon-session/gsm-client-row.c:37
+#: ../cinnamon-session/csm-client-row.c:37
 msgid "Started but has not yet reported state."
 msgstr "ආරම්භවුවත් තවම ස්වභාවය වාර්තාකර නැත."
 
-#: ../cinnamon-session/gsm-client-row.c:39
+#: ../cinnamon-session/csm-client-row.c:39
 msgid "Running"
 msgstr "ක්‍රියාත්මක වෙමින්"
 
-#: ../cinnamon-session/gsm-client-row.c:40
+#: ../cinnamon-session/csm-client-row.c:40
 msgid "A normal member of the session."
 msgstr "සැසියෙ සාමාන්‍ය සාමාජිකයෙක්."
 
-#: ../cinnamon-session/gsm-client-row.c:42
+#: ../cinnamon-session/csm-client-row.c:42
 msgid "Saving"
 msgstr "සුරකිමින්"
 
-#: ../cinnamon-session/gsm-client-row.c:43
+#: ../cinnamon-session/csm-client-row.c:43
 msgid "Saving session details."
 msgstr "සැසියෙ තොරතුරු සුරකින්න."
 
-#: ../cinnamon-session/gsm-client-row.c:45
+#: ../cinnamon-session/csm-client-row.c:45
 msgid "Unknown"
 msgstr "නොදන්නා"
 
-#: ../cinnamon-session/gsm-client-row.c:46
+#: ../cinnamon-session/csm-client-row.c:46
 msgid "State not reported within timeout."
 msgstr "කාළ සීමාව තුලදි පවත්නා තත්වය වාර්තාකර නැත."
 
-#: ../cinnamon-session/gsm-client-row.c:52
+#: ../cinnamon-session/csm-client-row.c:52
 msgid "Normal"
 msgstr "සාමාන්‍ය"
 
-#: ../cinnamon-session/gsm-client-row.c:53
+#: ../cinnamon-session/csm-client-row.c:53
 msgid "Unaffected by logouts but can die."
 msgstr "ඉවත්ව යාමෙන් බලපැමක් නොවුනි නමුත් අවසන් විය හැක."
 
-#: ../cinnamon-session/gsm-client-row.c:55
+#: ../cinnamon-session/csm-client-row.c:55
 msgid "Restart"
 msgstr "නැවත-අරභමින්"
 
-#: ../cinnamon-session/gsm-client-row.c:56
+#: ../cinnamon-session/csm-client-row.c:56
 msgid "Never allowed to die."
 msgstr "කිසිවිටක අවසන් වීමට අනුමත කරනැත."
 
-#: ../cinnamon-session/gsm-client-row.c:58
+#: ../cinnamon-session/csm-client-row.c:58
 msgid "Trash"
 msgstr "නොවැදගත්"
 
-#: ../cinnamon-session/gsm-client-row.c:59
+#: ../cinnamon-session/csm-client-row.c:59
 msgid "Discarded on logout and can die."
 msgstr "ඉවත්වීමෙදි විනාශකරණලද අතර අවසන් විය හැක."
 
-#: ../cinnamon-session/gsm-client-row.c:61
+#: ../cinnamon-session/csm-client-row.c:61
 msgid "Settings"
 msgstr "සැකසුම්"
 
-#: ../cinnamon-session/gsm-client-row.c:62
+#: ../cinnamon-session/csm-client-row.c:62
 msgid "Always started on every login."
 msgstr "සෑම පිවිසුමකදීම සෑමවිටම ආරම්භ කරන්න."
 
@@ -221,7 +221,7 @@ msgstr "සෑම පිවිසුමකදීම සෑමවිටම ආර
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:45
+#: ../cinnamon-session/csm-gsd.c:45
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -232,7 +232,7 @@ msgstr ""
 "\n"
 "තේමා, ශබ්ද, හෝ පසුතල සැකසුම් වැනි දෙයක් නිසියාකාරව ක්‍රියාත්මක නොවිය හැක."
 
-#: ../cinnamon-session/gsm-gsd.c:57
+#: ../cinnamon-session/csm-gsd.c:57
 msgid ""
 "\n"
 "\n"
@@ -244,7 +244,7 @@ msgstr ""
 "අවසාන දෝෂ පනිවිඩය වුයේ:\n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:62
+#: ../cinnamon-session/csm-gsd.c:62
 msgid ""
 "\n"
 "\n"
@@ -254,19 +254,19 @@ msgstr ""
 "\n"
 "ඔබගේ මිළඟ පිවිසුම් වාරයේදි GNOME තවමත් සැකසුම් විබුද්ධයා නැවත ආරම්භ කිරිමට උත්සාහ ගනිමින් සිටී ."
 
-#: ../cinnamon-session/gsm-gsd.c:145
+#: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
 msgstr "සැකසුම් විබුද්ධයා බොහොවාරයක් නැවත ආරම්භවිය."
 
-#: ../cinnamon-session/gsm-remove-client.c:49
+#: ../cinnamon-session/csm-remove-client.c:49
 msgid "List registered clients, then exit"
 msgstr "ලියායාපදිංචසේවා ග්‍රාහකයින් දක්වා, පසුව ඉවත්නන්නි "
 
-#: ../cinnamon-session/gsm-remove-client.c:51
+#: ../cinnamon-session/csm-remove-client.c:51
 msgid "PROGRAM..."
 msgstr "ක්‍රමලේඛය..."
 
-#: ../cinnamon-session/gsm-remove-client.c:175
+#: ../cinnamon-session/csm-remove-client.c:175
 msgid ""
 "You must specify at least one program to remove. You can list the programs "
 "with --list.\n"
@@ -274,15 +274,15 @@ msgstr ""
 "ඔබ විසින් අනිවාර්යෙන්ම අවම වශයෙන් එක් යෙදුමක් හෝ ඉවත් කිරීම සඳහා දැක්විය යුතුවෙයි. "
 "ඔබට  --list මඟින් යෙදුම් ලැයිස්තුව දැකගත හැක.\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:182
+#: ../cinnamon-session/csm-remove-client.c:182
 msgid "Error: could not connect to the session manager\n"
 msgstr "දෝෂය:සැසි-කළමණාකරු සමඟ සම්බන්ධ විය නොහැක\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:196
+#: ../cinnamon-session/csm-remove-client.c:196
 msgid "Currently registered clients:\n"
 msgstr "දැනට ලියාපදිංචි වූ සේව්‍යයන්:\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:206
+#: ../cinnamon-session/csm-remove-client.c:206
 #, c-format
 msgid "Couldn't find program %s in session\n"
 msgstr "සැසිය තුළ වූු %s ක්‍රමලේඛය සොයාගත නොහැක\n"

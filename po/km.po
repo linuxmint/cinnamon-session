@@ -20,47 +20,47 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "ជ្រើសរើសពាក្យបញ្ជា"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "បន្ថែម​​កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "កែសម្រួល​កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "ពាក្យ​បញ្ជា​ចាប់ផ្ដើម​មិន​អាច​ទទេ​ឡើយ"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "ពាក្យ​បញ្ជា​ចាប់ផ្ដើម​មិន​ត្រឹមត្រូវ​ទេ"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "បាន​បើក"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "រូបតំណាង"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "កម្មវិធី"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "ចំណូល​ចិត្ត​កម្មវិធី​ចាប់ផ្ដើម"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "គ្មាន​ឈ្មោះ"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "គ្មាន​សេចក្ដី​ពិពណ៌នា"
 
@@ -76,7 +76,7 @@ msgstr "មិន​អាច​បង្ហាញ​ឯកសារ​ជំន
 msgid "GNOME fallback"
 msgstr "GNOME fallback"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -84,57 +84,57 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "សម័យ​នេះ​ជា​កំណត់​ហេតុ​ដែល​អ្នក​ទៅ​កាន់ GNOME"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "កម្មវិធី​មួយ​ចំនួន​នៅ​តែ​កំពុង​ដំណើរ​ការ ៖"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "រង់ចាំ​ឲ្យ​កម្មវិធី​ចប់ ។ ការ​ផ្អាក​កម្មវិធី​អាច​បណ្ដាល​ឲ្យ​បាត់បង់កិច្ចការ ។"
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
 msgstr "កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "ជ្រើស​កម្មវិធី​ត្រូវ​ចាប់ផ្ដើម​នៅ​ពេល​ចូល"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "កម្មវិធី​ចាប់ផ្ដើម​បន្ថែម ៖"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Startup Programs"
 msgstr "ចាប់ផ្ដើម​កម្មវិធី"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ចងចាំ​កម្មវិធី​ដែល​កំពុង​ដំណើរការ​ដោយ​ស្វ័យ​ប្រវត្តិ នៅ​ពេល​ចេញ"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "_Remember Currently Running Applications"
 msgstr "ចងចាំ​ការ​ដំណើរការ​កម្មវិធី​បច្ចុប្បន្ន"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "ជម្រើស"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Browse…"
 msgstr "រក​មើល..."
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "Comm_ent:"
 msgstr "មតិយោបល់ ៖"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "Co_mmand:"
 msgstr "ពាក្យ​បញ្ជា ៖"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Name:"
 msgstr "ឈ្មោះ ៖"
 
@@ -206,137 +206,137 @@ msgstr "ជម្រើស​គ្រប់គ្រង​សម័យ ៖"
 msgid "Show session management options"
 msgstr "បង្ហាញ​ជម្រើស​គ្រប់គ្រង​សម័យ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "រក​មិន​ឃើញ​រូបតំណាង '%s'"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "មិនស្គាល់"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "កម្មវិធី​នៅ​តែ​កំពុង​ដំណើរការ ៖"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "រង់ចាំ​ឲ្យ​កម្មវិធី​ចប់ ។ ការ​ផ្អាក​កម្មវិធី​ទាំង​នេះ​អាច​បណ្ដាល​ឲ្យ​បាត់បង់​កិច្ចកា​រ​របស់​អ្នក ។"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "អញ្ចឹង​ប្ដូរ​អ្នក​ប្រើ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "អញ្ចឹង​ចេញ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "អញ្ចឹង​ផ្អាក"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "អញ្ចឹង​សង្ខំ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "អញ្ចឹង បិទ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "អញ្ចឹង ចាប់ផ្ដើម​ឡើងវិញ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "ចាក់សោ​អេក្រង់"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "បោះបង់"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:266
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "អ្នក​នឹង​ត្រូវ​ចេញ​​ក្នុង​រយៈពេល %d វិនាទី ។"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "ប្រព័ន្ធ​នេះ​នឹង​បិទ​ដោយ​ស្វ័យ​ប្រវត្តិ​ក្នុង​រយៈ​ពេល %d វិនាទី ។"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "ប្រព័ន្ធ​នេះ​នឹង​ត្រូវ​បាន​ចាប់ផ្ដើម​ឡើង​វិញ​ដោយ​ស្វ័យប្រវត្តិ​នៅ​  %d វិនាទី ។"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "បច្ចុប្បន្ន​បាន​ចូល​ជា \"%s\" ។"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "ចេញ​ពី​ប្រព័ន្ធ​នេះ​ឥឡូវ ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ប្ដូរ​អ្នក​ប្រើ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
-#: ../cinnamon-session/gsm-util.c:428
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "ចេញ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "បិទ​ប្រព័ន្ធ​នេះ​ឥឡូវ ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "ផ្អាក"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "សម្ងំ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:411
-#: ../cinnamon-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "ចាប់ផ្ដើម​ឡើង​វិញ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "បិទ"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/csm-logout-dialog.c:427
 msgid "Restart this system now?"
 msgstr "ចាប់ផ្ដើម​ប្រព័ន្ធ​នេះ​ឥឡូវ​នេះ​ឬ ?"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "អូ ! មាន​អ្វី​មួយ​មិន​ត្រឹមត្រូវ​ហើយ ។"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
 msgstr "មាន​បញ្ហា ​ប្រព័ន្ធ​មិន​អាច​សង្គ្រោះ​បាន​ទេ ។ សូម​ទាក់ទង​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់​អ្នក"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
 msgstr "មាន​បញ្ហា ប្រព័ន្ធ​មិន​អាច​សង្គ្រោះ​បាន​ទេ ។ ផ្នែក​បន្ថែម​ទាំងអស់​ត្រូវ​បាន​បិទ ។"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -344,11 +344,11 @@ msgstr ""
 "មាន​បញ្ហា​ ​ប្រព័ន្ធ​មិន​អាច​សង្គ្រោះ​បាន​ទេ ។\n"
 "សូម​ចេញ ហើយ​ព្យាយាម​​ម្ដង​ទៀត ។"
 
-#: ../cinnamon-session/gsm-manager.c:1393
+#: ../cinnamon-session/csm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 បាន​ប​រាជ័យ​ក្នុង​ការ​ផ្ទុក"
 
-#: ../cinnamon-session/gsm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -361,11 +361,11 @@ msgstr ""
 "នេះ​ប្រហែលជា​ប្រព័ន្ធ​របស់​អ្នក (ផ្នែក​រឹង​ក្រាហ្វិក ឬ​កម្មវិធី​បញ្ជា) មិន​អាច​ផ្ដល់​បទពិសោធន៍ GNOME 3 "
 "ពេញលេញ ។"
 
-#: ../cinnamon-session/gsm-manager.c:1396
+#: ../cinnamon-session/csm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "សិក្សា​បន្ថែម​អំពី GNOME 3"
 
-#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
 msgstr "មិន​ឆ្លើយ​តប"
 
@@ -373,27 +373,27 @@ msgstr "មិន​ឆ្លើយ​តប"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "កម្មវិធី​ដែល​ចងចាំ"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "កម្មវិធី​នេះ​ត្រូវ​បាន​ទប់ស្កាត់​មិន​ឲ្យ​ចេញ ។"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "បដិសេធ​ការ​តភ្ជាប់​ម៉ាស៊ីន​ភ្ញៀវ ពីព្រោះ​សម័យ​បច្ចុប្បន្ន​កំពុង​ត្រូវ​បានបិទ\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "មិន​អាច​បង្កើត​រន្ធ​ស្ដាប់ ICE បាន​ទេ ៖ %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:412
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "មិន​អាច​ចាប់ផ្ដើម​សម័យ​ចូល​បាន​ទេ (និង​មិន​អាច​តភ្ជាប់​ទៅ​ម៉ាស៊ីន​បម្រើ X បាន​ទេ)"

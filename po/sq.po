@@ -91,16 +91,16 @@ msgstr ""
 "janë \"dil\" për të dalë jashtë, \"fik\" për të ndalur sistemin dhe \"rinis"
 "\" për të rinisur kompjuterin."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Konfiguro seancën tënde"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 #: ../cinnamon-session/session-properties-capplet.c:222
 msgid "Sessions"
 msgstr "Seanca"
 
-#: ../cinnamon-session/gsm-at-startup.c:61
+#: ../cinnamon-session/csm-at-startup.c:61
 msgid ""
 "Assistive technology support has been requested for this session, but the "
 "accessibility registry was not found. Please ensure that the AT-SPI package "
@@ -111,108 +111,108 @@ msgstr ""
 "açesibilitetit nuk u gjet. Të lutem sigurohu që paketa AT-SPI është e "
 "instaluar. Seanca jote u nis pa teknologjinë mbështetëse."
 
-#: ../cinnamon-session/gsm-client-editor.c:97
+#: ../cinnamon-session/csm-client-editor.c:97
 msgid "_Order:"
 msgstr "_Renditja:"
 
-#: ../cinnamon-session/gsm-client-editor.c:99
+#: ../cinnamon-session/csm-client-editor.c:99
 msgid "The order in which applications are started in the session."
 msgstr "Renditja me të cilën programet do të fillohen në seancë."
 
-#: ../cinnamon-session/gsm-client-editor.c:106
+#: ../cinnamon-session/csm-client-editor.c:106
 msgid "What happens to the application when it exits."
 msgstr "Çfarë i ndodh programit kur mbyllet."
 
-#: ../cinnamon-session/gsm-client-editor.c:109
+#: ../cinnamon-session/csm-client-editor.c:109
 msgid "_Style:"
 msgstr "_Stili:"
 
-#: ../cinnamon-session/gsm-client-list.c:150
+#: ../cinnamon-session/csm-client-list.c:150
 msgid "Order"
 msgstr "Renditja"
 
-#: ../cinnamon-session/gsm-client-list.c:155
+#: ../cinnamon-session/csm-client-list.c:155
 msgid "Style"
 msgstr "Stili"
 
-#: ../cinnamon-session/gsm-client-list.c:160
+#: ../cinnamon-session/csm-client-list.c:160
 msgid "State"
 msgstr "Gjendja"
 
-#: ../cinnamon-session/gsm-client-list.c:165
+#: ../cinnamon-session/csm-client-list.c:165
 #: ../cinnamon-session/session-properties-capplet.c:280
 msgid "Program"
 msgstr "Programi"
 
-#: ../cinnamon-session/gsm-client-row.c:31
+#: ../cinnamon-session/csm-client-row.c:31
 msgid "Inactive"
 msgstr "Jo aktiv"
 
-#: ../cinnamon-session/gsm-client-row.c:32
+#: ../cinnamon-session/csm-client-row.c:32
 msgid "Waiting to start or already finished."
 msgstr "Në pritje për të filluar ose i sapo mbaruar."
 
-#: ../cinnamon-session/gsm-client-row.c:34
+#: ../cinnamon-session/csm-client-row.c:34
 msgid "Starting"
 msgstr "Duke filluar"
 
-#: ../cinnamon-session/gsm-client-row.c:35
+#: ../cinnamon-session/csm-client-row.c:35
 msgid "Started but has not yet reported state."
 msgstr "I filluar por nuk ka akoma një gjendje raportimi."
 
-#: ../cinnamon-session/gsm-client-row.c:37
+#: ../cinnamon-session/csm-client-row.c:37
 msgid "Running"
 msgstr "Në ekzekutim"
 
-#: ../cinnamon-session/gsm-client-row.c:38
+#: ../cinnamon-session/csm-client-row.c:38
 msgid "A normal member of the session."
 msgstr "Një anëtar normal i seancës."
 
-#: ../cinnamon-session/gsm-client-row.c:40
+#: ../cinnamon-session/csm-client-row.c:40
 msgid "Saving"
 msgstr "Duke ruajtur"
 
-#: ../cinnamon-session/gsm-client-row.c:41
+#: ../cinnamon-session/csm-client-row.c:41
 msgid "Saving session details."
 msgstr "Detajet e ruajtjes së seancës."
 
-#: ../cinnamon-session/gsm-client-row.c:43
+#: ../cinnamon-session/csm-client-row.c:43
 msgid "Unknown"
 msgstr "Nuk njihet"
 
-#: ../cinnamon-session/gsm-client-row.c:44
+#: ../cinnamon-session/csm-client-row.c:44
 msgid "State not reported within timeout."
 msgstr "Gjëndje e pa raportuar në mungesë të timeout (jashtëkohe)."
 
-#: ../cinnamon-session/gsm-client-row.c:50
+#: ../cinnamon-session/csm-client-row.c:50
 msgid "Normal"
 msgstr "Normal"
 
-#: ../cinnamon-session/gsm-client-row.c:51
+#: ../cinnamon-session/csm-client-row.c:51
 msgid "Unaffected by logouts but can die."
 msgstr "I pandikueshëm nga daljet por mund të mbyllet."
 
-#: ../cinnamon-session/gsm-client-row.c:53
+#: ../cinnamon-session/csm-client-row.c:53
 msgid "Restart"
 msgstr "Rifillo"
 
-#: ../cinnamon-session/gsm-client-row.c:54
+#: ../cinnamon-session/csm-client-row.c:54
 msgid "Never allowed to die."
 msgstr "Nuk lejohet të vdesë asnjëherë."
 
-#: ../cinnamon-session/gsm-client-row.c:56
+#: ../cinnamon-session/csm-client-row.c:56
 msgid "Trash"
 msgstr "Koshi"
 
-#: ../cinnamon-session/gsm-client-row.c:57
+#: ../cinnamon-session/csm-client-row.c:57
 msgid "Discarded on logout and can die."
 msgstr "I skartuar gjatë daljes dhe mund të mbyllet."
 
-#: ../cinnamon-session/gsm-client-row.c:59
+#: ../cinnamon-session/csm-client-row.c:59
 msgid "Settings"
 msgstr "Rregullimet"
 
-#: ../cinnamon-session/gsm-client-row.c:60
+#: ../cinnamon-session/csm-client-row.c:60
 msgid "Always started on every login."
 msgstr "Fillon gjithmonë në çdo login."
 
@@ -224,7 +224,7 @@ msgstr "Fillon gjithmonë në çdo login."
 #. *
 #. * for now, we just kill the old dialog and pop up a new one.
 #.
-#: ../cinnamon-session/gsm-gsd.c:45
+#: ../cinnamon-session/csm-gsd.c:45
 msgid ""
 "There was an error starting the GNOME Settings Daemon.\n"
 "\n"
@@ -235,7 +235,7 @@ msgstr ""
 "\n"
 "Disa gjëra si temat, zëri, ose sfondi mund të mos punojnë në mënyrë korrekte."
 
-#: ../cinnamon-session/gsm-gsd.c:57
+#: ../cinnamon-session/csm-gsd.c:57
 msgid ""
 "\n"
 "\n"
@@ -247,7 +247,7 @@ msgstr ""
 "Mesazhi i fundit i gabimit ishte:\n"
 "\n"
 
-#: ../cinnamon-session/gsm-gsd.c:62
+#: ../cinnamon-session/csm-gsd.c:62
 msgid ""
 "\n"
 "\n"
@@ -258,19 +258,19 @@ msgstr ""
 "Gnome do të provojë të rinisë demonin e rregullimeve herën tjetër që ju do "
 "të kryeni log-in."
 
-#: ../cinnamon-session/gsm-gsd.c:145
+#: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
 msgstr "Demoni i rregullimeve u rinis tepër herë. "
 
-#: ../cinnamon-session/gsm-remove-client.c:46
+#: ../cinnamon-session/csm-remove-client.c:46
 msgid "List registered clients, then exit"
 msgstr "Radhit klientët e regjistruar, pastaj dil"
 
-#: ../cinnamon-session/gsm-remove-client.c:48
+#: ../cinnamon-session/csm-remove-client.c:48
 msgid "PROGRAM..."
 msgstr "PROGRAM..."
 
-#: ../cinnamon-session/gsm-remove-client.c:172
+#: ../cinnamon-session/csm-remove-client.c:172
 msgid ""
 "You must specify at least one program to remove. You can list the programs "
 "with --list.\n"
@@ -278,15 +278,15 @@ msgstr ""
 "Duhet të përcaktosh të paktën një program për të hequr. Mund të radhitësh "
 "programet me --list.\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:179
+#: ../cinnamon-session/csm-remove-client.c:179
 msgid "Error: could not connect to the session manager\n"
 msgstr "Gabim: e pamundur lidhja me organizuesin e seancës\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:193
+#: ../cinnamon-session/csm-remove-client.c:193
 msgid "Currently registered clients:\n"
 msgstr "Klientët e regjistruar deri më tani:\n"
 
-#: ../cinnamon-session/gsm-remove-client.c:203
+#: ../cinnamon-session/csm-remove-client.c:203
 #, c-format
 msgid "Couldn't find program %s in session\n"
 msgstr "E pamundur gjetja e progamit %s në seancë\n"

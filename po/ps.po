@@ -18,47 +18,47 @@ msgstr ""
 "X-Poedit-Language: Pashto, Pushto\n"
 "X-Poedit-Country: AFGHANISTAN\n"
 
-#: ../capplet/gsm-app-dialog.c:126
+#: ../capplet/csm-app-dialog.c:126
 msgid "Select Command"
 msgstr "بولۍ ټاکل"
 
-#: ../capplet/gsm-app-dialog.c:187
+#: ../capplet/csm-app-dialog.c:187
 msgid "Add Startup Program"
 msgstr "پېلنګ کړنلار زياتول"
 
-#: ../capplet/gsm-app-dialog.c:191
+#: ../capplet/csm-app-dialog.c:191
 msgid "Edit Startup Program"
 msgstr "پېلنګ کړنلار سمول"
 
-#: ../capplet/gsm-properties-dialog.c:131
+#: ../capplet/csm-properties-dialog.c:131
 msgid "No description"
 msgstr "هېڅ سپړاوی"
 
-#: ../capplet/gsm-properties-dialog.c:974
+#: ../capplet/csm-properties-dialog.c:974
 msgid "The name of the startup program cannot be empty"
 msgstr "د پېلنګ کړنلار نوم تشېدی نه شي"
 
-#: ../capplet/gsm-properties-dialog.c:978
+#: ../capplet/csm-properties-dialog.c:978
 msgid "The startup command cannot be empty"
 msgstr "د پېلنګ بولۍ تشېدی نه شي"
 
-#: ../capplet/gsm-properties-dialog.c:984
+#: ../capplet/csm-properties-dialog.c:984
 msgid "The startup command is not valid"
 msgstr "پېلنګ بولۍ سمه نه ده"
 
-#: ../capplet/gsm-properties-dialog.c:1303
+#: ../capplet/csm-properties-dialog.c:1303
 msgid "Enabled"
 msgstr "توانول شوی"
 
-#: ../capplet/gsm-properties-dialog.c:1316
+#: ../capplet/csm-properties-dialog.c:1316
 msgid "Icon"
 msgstr "انځورن"
 
-#: ../capplet/gsm-properties-dialog.c:1327
+#: ../capplet/csm-properties-dialog.c:1327
 msgid "Program"
 msgstr "کړنلار"
 
-#: ../capplet/gsm-properties-dialog.c:1477
+#: ../capplet/csm-properties-dialog.c:1477
 msgid "Startup Applications Preferences"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ".د هغو کاريالونو لړ چې د تلوالې ناستې بر�
 #: ../data/cinnamon-session.schemas.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required_components\"). The "
+"names a key under \"/desktop/cinnamon/session/required_components\"). The "
 "Startup Applications preferences tool will not normally allow users to "
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
@@ -188,22 +188,22 @@ msgstr ""
 msgid "Window Manager"
 msgstr "کړکۍ سمبالګر"
 
-#: ../data/gsm-inhibit-dialog.glade.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr ""
 
-#: ../data/gsm-inhibit-dialog.glade.h:2
-#: ../cinnamon-session/gsm-inhibit-dialog.c:633
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:633
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "پېل کاريالونه"
 
@@ -310,140 +310,140 @@ msgstr "د ناستې سمبالونې غوراوي"
 msgid "Show Session Management options"
 msgstr "د ناستې سمبالونې غوراوي ښودل"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
 "(%s exited with status %d)"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:256
+#: ../cinnamon-session/csm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "انځورن ونه موندل شو '%s'"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:581
+#: ../cinnamon-session/csm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "ناپېژندلی"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:632
+#: ../cinnamon-session/csm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:636
+#: ../cinnamon-session/csm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:637
+#: ../cinnamon-session/csm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:865
+#: ../cinnamon-session/csm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:868
+#: ../cinnamon-session/csm-inhibit-dialog.c:868
 msgid "Logout Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:871
+#: ../cinnamon-session/csm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Shutdown Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:888
+#: ../cinnamon-session/csm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "پرده کولپول"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:891
+#: ../cinnamon-session/csm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "بندول"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:284
+#: ../cinnamon-session/csm-logout-dialog.c:284
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:292
+#: ../cinnamon-session/csm-logout-dialog.c:292
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:324
+#: ../cinnamon-session/csm-logout-dialog.c:324
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:389
 msgid "Log out of this system now?"
 msgstr "دې غونډال نه دستي وتل غواړئ؟"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/csm-logout-dialog.c:395
 msgid "_Switch User"
 msgstr "کارن ونجول_"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:404
+#: ../cinnamon-session/csm-logout-dialog.c:404
 msgid "_Log Out"
 msgstr "وتل_"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:410
+#: ../cinnamon-session/csm-logout-dialog.c:410
 msgid "Shut down this system now?"
 msgstr "دا غونډال دستي ګلول غواړئ؟"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:416
+#: ../cinnamon-session/csm-logout-dialog.c:416
 msgid "S_uspend"
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:422
+#: ../cinnamon-session/csm-logout-dialog.c:422
 msgid "_Hibernate"
 msgstr "پرکالول_"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:428
+#: ../cinnamon-session/csm-logout-dialog.c:428
 msgid "_Restart"
 msgstr "بياپېلول_"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:438
+#: ../cinnamon-session/csm-logout-dialog.c:438
 msgid "_Shut Down"
 msgstr "ګلول_"
 
-#: ../cinnamon-session/gsm-manager.c:948 ../cinnamon-session/gsm-manager.c:1634
+#: ../cinnamon-session/csm-manager.c:948 ../cinnamon-session/csm-manager.c:1634
 msgid "Not responding"
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1149
+#: ../cinnamon-session/csm-xsmp-client.c:1149
 msgid "This program is blocking log out."
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "د نوي پېرن نښلېدنه نه منل کيږي ځکه چې ناسته اوس ګليږي\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:282
+#: ../cinnamon-session/csm-util.c:282
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""

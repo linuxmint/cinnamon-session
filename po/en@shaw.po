@@ -14,47 +14,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "𐑕𐑩𐑤𐑧𐑒𐑑 𐑒𐑩𐑥𐑭𐑯𐑛"
 
-#: ../capplet/gsm-app-dialog.c:194
+#: ../capplet/csm-app-dialog.c:194
 msgid "Add Startup Program"
 msgstr "𐑨𐑛 𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/csm-app-dialog.c:198
 msgid "Edit Startup Program"
 msgstr "𐑧𐑛𐑦𐑑 𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/csm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑒𐑩𐑥𐑭𐑯𐑛 𐑒𐑨𐑯𐑪𐑑 𐑚𐑰 𐑧𐑥𐑐𐑑𐑦"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/csm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑒𐑩𐑥𐑭𐑯𐑛 𐑦𐑟 𐑯𐑪𐑑 𐑝𐑨𐑤𐑦𐑛"
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/csm-properties-dialog.c:555
 msgid "Enabled"
 msgstr "𐑦𐑯𐑱𐑚𐑩𐑤𐑛"
 
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/csm-properties-dialog.c:567
 msgid "Icon"
 msgstr "𐑲𐑒𐑪𐑯"
 
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/csm-properties-dialog.c:579
 msgid "Program"
 msgstr "𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
 
-#: ../capplet/gsm-properties-dialog.c:792
+#: ../capplet/csm-properties-dialog.c:792
 msgid "Startup Applications Preferences"
 msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "𐑯𐑴 𐑯𐑱𐑥"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "𐑯𐑴 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
 
@@ -107,14 +107,14 @@ msgstr "𐑤𐑦𐑕𐑑 𐑝 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑞𐑨�
 #: ../data/cinnamon-session.schemas.in.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required_components\"). The "
+"names a key under \"/desktop/cinnamon/session/required_components\"). The "
 "Startup Applications preferences tool will not normally allow users to remove "
 "a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
 "𐑤𐑦𐑕𐑑 𐑝 𐑒𐑩𐑥𐑐𐑴𐑯𐑩𐑯𐑑𐑕 𐑞𐑨𐑑 𐑸 𐑮𐑦𐑒𐑢𐑲𐑼𐑛 𐑨𐑟 𐑐𐑸𐑑 𐑝 𐑞 𐑕𐑧𐑖𐑩𐑯. (𐑰𐑗 𐑧𐑤𐑩𐑥𐑩𐑯𐑑 𐑯𐑱𐑥𐑟 𐑩 𐑒𐑰 𐑳𐑯𐑛𐑼 "
-"\"/desktop/gnome/session/required_components\"). 𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 "
+"\"/desktop/cinnamon/session/required_components\"). 𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 "
 "𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟 𐑑𐑵𐑤 𐑢𐑦𐑤 𐑯𐑪𐑑 𐑯𐑹𐑥𐑩𐑤𐑦 𐑩𐑤𐑬 𐑿𐑟𐑼𐑟 𐑑 𐑮𐑦𐑥𐑵𐑝 𐑩 𐑮𐑦𐑒𐑢𐑲𐑼𐑛 𐑒𐑩𐑥𐑐𐑴𐑯𐑩𐑯𐑑 𐑓𐑮𐑪𐑥 𐑞 "
 "𐑕𐑧𐑖𐑩𐑯, 𐑯 𐑞 𐑕𐑧𐑖𐑩𐑯 𐑥𐑨𐑯𐑩𐑡𐑼 𐑢𐑦𐑤 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑨𐑛 𐑞 𐑮𐑦𐑒𐑢𐑲𐑼𐑛 𐑒𐑩𐑥𐑐𐑴𐑯𐑩𐑯𐑑𐑕 𐑚𐑨𐑒 𐑑 𐑞 𐑕𐑧𐑖𐑩𐑯 "
 "𐑨𐑑 𐑤𐑪𐑜𐑦𐑯 𐑑𐑲𐑥 𐑦𐑓 𐑞𐑱 𐑛𐑵 𐑜𐑧𐑑 𐑮𐑦𐑥𐑵𐑝𐑛."
@@ -194,59 +194,59 @@ msgstr "𐑑𐑲𐑥 𐑚𐑦𐑓𐑹 𐑕𐑧𐑖𐑩𐑯 𐑦𐑟 𐑒𐑩𐑯
 msgid "Window Manager"
 msgstr "𐑢𐑦𐑯𐑛𐑴 𐑥𐑨𐑯𐑩𐑡𐑼"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>𐑕𐑳𐑥 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟 𐑸 𐑕𐑑𐑦𐑤 𐑮𐑳𐑯𐑦𐑙:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:667
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:667
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr "𐑢𐑱𐑑𐑦𐑙 𐑓𐑹 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑑 𐑓𐑦𐑯𐑦𐑖.  𐑦𐑯𐑑𐑻𐑳𐑐𐑑𐑦𐑙 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑥𐑱 𐑒𐑷𐑟 𐑿 𐑑 𐑤𐑵𐑟 𐑢𐑻𐑒."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "𐑗𐑵𐑟 𐑢𐑪𐑑 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑑 𐑕𐑑𐑸𐑑 𐑢𐑧𐑯 𐑿 𐑤𐑪𐑜 𐑦𐑯"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "𐑩𐑛𐑦𐑖𐑩𐑯𐑩𐑤 𐑕𐑑𐑸𐑑𐑳𐑐 _𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse..."
 msgstr "𐑚𐑮𐑬𐑟..."
 
 #, fuzzy
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "Co_mmand:"
 
 #, fuzzy
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "Comm_ent:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "𐑪𐑐𐑖𐑩𐑯𐑟"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "_𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑮𐑦𐑥𐑧𐑥𐑚𐑼 𐑮𐑳𐑯𐑦𐑙 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑢𐑧𐑯 𐑤𐑪𐑜𐑦𐑙 𐑬𐑑"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_𐑯𐑱𐑥:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "_𐑮𐑦𐑥𐑧𐑥𐑚𐑼 𐑒𐑳𐑮𐑩𐑯𐑑𐑤𐑦 𐑮𐑳𐑯𐑦𐑙 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯"
 
@@ -314,142 +314,142 @@ msgid "Show session management options"
 msgstr "𐑖𐑴 𐑕𐑧𐑖𐑩𐑯 𐑥𐑨𐑯𐑩𐑡𐑥𐑩𐑯𐑑 𐑪𐑐𐑖𐑩𐑯𐑟"
 
 #, c-format
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 msgid ""
 "There is a problem with the configuration server.\n(%s exited with status %d)"
 msgstr "𐑞𐑺 𐑦𐑟 𐑩 𐑐𐑮𐑪𐑚𐑤𐑩𐑥 𐑢𐑦𐑞 𐑞 𐑒𐑩𐑯𐑓𐑦𐑜𐑘𐑼𐑱𐑖𐑩𐑯 𐑕𐑻𐑝𐑼.\n(%s 𐑧𐑜𐑟𐑦𐑑𐑩𐑛 𐑢𐑦𐑞 𐑕𐑑𐑱𐑑𐑫𐑕 %d)"
 
 #, c-format
-#: ../cinnamon-session/gsm-inhibit-dialog.c:255
+#: ../cinnamon-session/csm-inhibit-dialog.c:255
 msgid "Icon '%s' not found"
 msgstr "𐑲𐑒𐑪𐑯 '%s' 𐑯𐑪𐑑 𐑓𐑬𐑯𐑛"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:615
+#: ../cinnamon-session/csm-inhibit-dialog.c:615
 msgid "Unknown"
 msgstr "𐑳𐑯𐑴𐑯"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:666
+#: ../cinnamon-session/csm-inhibit-dialog.c:666
 msgid "A program is still running:"
 msgstr "𐑩 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑦𐑟 𐑕𐑑𐑦𐑤 𐑮𐑳𐑯𐑦𐑙:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:670
+#: ../cinnamon-session/csm-inhibit-dialog.c:670
 msgid "Some programs are still running:"
 msgstr "𐑕𐑳𐑥 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟 𐑸 𐑕𐑑𐑦𐑤 𐑮𐑳𐑯𐑦𐑙:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:671
+#: ../cinnamon-session/csm-inhibit-dialog.c:671
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you to "
 "lose work."
 msgstr ""
 "𐑢𐑱𐑑𐑦𐑙 𐑓𐑹 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟 𐑑 𐑓𐑦𐑯𐑦𐑖.  𐑦𐑯𐑑𐑻𐑳𐑐𐑑𐑦𐑙 𐑞𐑰𐑟 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟 𐑥𐑱 𐑒𐑷𐑟 𐑿 𐑑 𐑤𐑵𐑟 𐑢𐑻𐑒."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/csm-inhibit-dialog.c:901
 msgid "Switch User Anyway"
 msgstr "𐑕𐑢𐑦𐑗 𐑿𐑟𐑼 𐑧𐑯𐑦𐑢𐑱"
 
 #, fuzzy
-#: ../cinnamon-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/csm-inhibit-dialog.c:904
 msgid "Logout Anyway"
 msgstr "Logout 𐑧𐑯𐑦𐑢𐑱"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:907
+#: ../cinnamon-session/csm-inhibit-dialog.c:907
 msgid "Suspend Anyway"
 msgstr "𐑕𐑩𐑕𐑐𐑧𐑯𐑛 𐑧𐑯𐑦𐑢𐑱"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:910
+#: ../cinnamon-session/csm-inhibit-dialog.c:910
 msgid "Hibernate Anyway"
 msgstr "𐑣𐑲𐑚𐑼𐑯𐑱𐑑 𐑧𐑯𐑦𐑢𐑱"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:913
+#: ../cinnamon-session/csm-inhibit-dialog.c:913
 msgid "Shutdown Anyway"
 msgstr "𐑖𐑩𐑑𐑛𐑶𐑯 𐑧𐑯𐑦𐑢𐑱"
 
 #, fuzzy
-#: ../cinnamon-session/gsm-inhibit-dialog.c:916
+#: ../cinnamon-session/csm-inhibit-dialog.c:916
 msgid "Reboot Anyway"
 msgstr "Reboot 𐑧𐑯𐑦𐑢𐑱"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:924
+#: ../cinnamon-session/csm-inhibit-dialog.c:924
 msgid "Lock Screen"
 msgstr "𐑤𐑪𐑒 𐑕𐑒𐑮𐑰𐑯"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:927
+#: ../cinnamon-session/csm-inhibit-dialog.c:927
 msgid "Cancel"
 msgstr "𐑒𐑨𐑯𐑕𐑩𐑤"
 
 #, c-format
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "𐑿 𐑢𐑦𐑤 𐑚𐑰 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑤𐑪𐑜𐑛 𐑬𐑑 𐑦𐑯 %d 𐑕𐑧𐑒𐑩𐑯𐑛."
 msgstr[1] "𐑿 𐑢𐑦𐑤 𐑚𐑰 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑤𐑪𐑜𐑛 𐑬𐑑 𐑦𐑯 %d 𐑕𐑧𐑒𐑩𐑯𐑛𐑟."
 
 #, c-format
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "𐑞𐑦𐑕 𐑕𐑦𐑕𐑑𐑩𐑥 𐑢𐑦𐑤 𐑚𐑰 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑖𐑳𐑑 𐑛𐑬𐑯 𐑦𐑯 %d 𐑕𐑧𐑒𐑩𐑯𐑛."
 msgstr[1] "𐑞𐑦𐑕 𐑕𐑦𐑕𐑑𐑩𐑥 𐑢𐑦𐑤 𐑚𐑰 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑖𐑳𐑑 𐑛𐑬𐑯 𐑦𐑯 %d 𐑕𐑧𐑒𐑩𐑯𐑛𐑟."
 
 #, c-format
-#: ../cinnamon-session/gsm-logout-dialog.c:314
+#: ../cinnamon-session/csm-logout-dialog.c:314
 msgid "You are currently logged in as \"%s\"."
 msgstr "𐑿 𐑸 𐑒𐑳𐑮𐑩𐑯𐑑𐑤𐑦 𐑤𐑪𐑜𐑛 𐑦𐑯 𐑨𐑟 \"%s\"."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:380
+#: ../cinnamon-session/csm-logout-dialog.c:380
 msgid "Log out of this system now?"
 msgstr "𐑤𐑪𐑜 𐑬𐑑 𐑝 𐑞𐑦𐑕 𐑕𐑦𐑕𐑑𐑩𐑥 𐑯𐑬?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:386
+#: ../cinnamon-session/csm-logout-dialog.c:386
 msgid "_Switch User"
 msgstr "_𐑕𐑢𐑦𐑗 𐑿𐑟𐑼"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/csm-logout-dialog.c:395
 msgid "_Log Out"
 msgstr "_𐑤𐑪𐑜 𐑬𐑑"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:401
+#: ../cinnamon-session/csm-logout-dialog.c:401
 msgid "Shut down this system now?"
 msgstr "𐑖𐑳𐑑 𐑛𐑬𐑯 𐑞𐑦𐑕 𐑕𐑦𐑕𐑑𐑩𐑥 𐑯𐑬?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:407
+#: ../cinnamon-session/csm-logout-dialog.c:407
 msgid "S_uspend"
 msgstr "𐑕_𐑳𐑕𐑐𐑧𐑯𐑛"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:413
+#: ../cinnamon-session/csm-logout-dialog.c:413
 msgid "_Hibernate"
 msgstr "_𐑣𐑲𐑚𐑼𐑯𐑱𐑑"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:419
+#: ../cinnamon-session/csm-logout-dialog.c:419
 msgid "_Restart"
 msgstr "_𐑮𐑰𐑕𐑑𐑸𐑑"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:429
+#: ../cinnamon-session/csm-logout-dialog.c:429
 msgid "_Shut Down"
 msgstr "_𐑖𐑳𐑑 𐑛𐑬𐑯"
 
-#: ../cinnamon-session/gsm-manager.c:1220 ../cinnamon-session/gsm-manager.c:1912
+#: ../cinnamon-session/csm-manager.c:1220 ../cinnamon-session/csm-manager.c:1912
 msgid "Not responding"
 msgstr "𐑯𐑪𐑑 𐑮𐑰𐑕𐑐𐑪𐑯𐑛𐑦𐑙"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1189
+#: ../cinnamon-session/csm-xsmp-client.c:1189
 msgid "This program is blocking log out."
 msgstr "𐑞𐑦𐑕 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑦𐑟 𐑚𐑤𐑪𐑒𐑦𐑙 𐑤𐑪𐑜 𐑬𐑑."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "𐑮𐑩𐑓𐑘𐑵𐑟𐑦𐑙 𐑯𐑿 𐑒𐑤𐑲𐑩𐑯𐑑 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯 𐑚𐑦𐑒𐑪𐑟 𐑞 𐑕𐑧𐑖𐑩𐑯 𐑦𐑟 𐑒𐑳𐑮𐑩𐑯𐑑𐑤𐑦 𐑚𐑰𐑦𐑙 𐑖𐑳𐑑 𐑛𐑬𐑯\n"
 
 #, c-format
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 msgid "Could not create ICE listening socket: %s"
 msgstr "𐑒𐑫𐑛 𐑯𐑪𐑑 𐑒𐑮𐑦𐑱𐑑 ICE 𐑤𐑦𐑕𐑩𐑯𐑦𐑙 𐑕𐑪𐑒𐑩𐑑: %s"
 
 #. Oh well, no X for you!
 #, c-format
-#: ../cinnamon-session/gsm-util.c:354
+#: ../cinnamon-session/csm-util.c:354
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "𐑳𐑯𐑱𐑚𐑩𐑤 𐑑 𐑕𐑑𐑸𐑑 𐑤𐑪𐑜𐑦𐑯 𐑕𐑧𐑖𐑩𐑯 (𐑯 𐑳𐑯𐑱𐑚𐑩𐑤 𐑑 𐑒𐑩𐑯𐑧𐑒𐑑 𐑑 𐑞 X 𐑕𐑻𐑝𐑼)"
 

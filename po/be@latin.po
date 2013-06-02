@@ -15,47 +15,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../capplet/gsm-app-dialog.c:126
+#: ../capplet/csm-app-dialog.c:126
 msgid "Select Command"
 msgstr "Abiary zahad"
 
-#: ../capplet/gsm-app-dialog.c:187
+#: ../capplet/csm-app-dialog.c:187
 msgid "Add Startup Program"
 msgstr "Dadaj prahramu dla ŭruchamleńnia"
 
-#: ../capplet/gsm-app-dialog.c:191
+#: ../capplet/csm-app-dialog.c:191
 msgid "Edit Startup Program"
 msgstr "Redahuj prahramu dla ŭruchamleńnia"
 
-#: ../capplet/gsm-properties-dialog.c:132
+#: ../capplet/csm-properties-dialog.c:132
 msgid "No description"
 msgstr "Niama apisańnia"
 
-#: ../capplet/gsm-properties-dialog.c:977
+#: ../capplet/csm-properties-dialog.c:977
 msgid "The name of the startup program cannot be empty"
 msgstr "Nazva prahramy dla ŭruchamleńnia nia moža być pustoj"
 
-#: ../capplet/gsm-properties-dialog.c:981
+#: ../capplet/csm-properties-dialog.c:981
 msgid "The startup command cannot be empty"
 msgstr "Zahad dla ŭruchamleńnia nia moža być pustym"
 
-#: ../capplet/gsm-properties-dialog.c:987
+#: ../capplet/csm-properties-dialog.c:987
 msgid "The startup command is not valid"
 msgstr "Zahad dla ŭruchamleńnia niapravilny"
 
-#: ../capplet/gsm-properties-dialog.c:1291
+#: ../capplet/csm-properties-dialog.c:1291
 msgid "Enabled"
 msgstr "Uklučanaja"
 
-#: ../capplet/gsm-properties-dialog.c:1304
+#: ../capplet/csm-properties-dialog.c:1304
 msgid "Icon"
 msgstr "Ikonka"
 
-#: ../capplet/gsm-properties-dialog.c:1315
+#: ../capplet/csm-properties-dialog.c:1315
 msgid "Program"
 msgstr "Prahrama"
 
-#: ../capplet/gsm-properties-dialog.c:1465
+#: ../capplet/csm-properties-dialog.c:1465
 #: ../data/session-properties.glade.h:6
 msgid "Sessions Preferences"
 msgstr "Nałady sesijaŭ"
@@ -124,7 +124,7 @@ msgstr "Śpis aplikacyjaŭ zmoŭčanaj sesii."
 #: ../data/cinnamon-session.schemas.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required-components\".) The "
+"names a key under \"/desktop/cinnamon/session/required-components\".) The "
 "Session Preferences will not normally allow users to remove a required "
 "component from the session, and the session manager will automatically add "
 "the required components back to the session if they do get removed."
@@ -204,12 +204,12 @@ msgstr ""
 msgid "Window Manager"
 msgstr "Kiraŭnik voknaŭ"
 
-#: ../data/gsm-inhibit-dialog.glade.h:1
+#: ../data/csm-inhibit-dialog.glade.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Dasiul uklučanyja nastupnyja prahramy:</b>"
 
-#: ../data/gsm-inhibit-dialog.glade.h:2
-#: ../cinnamon-session/gsm-inhibit-dialog.c:632
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:632
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
@@ -217,11 +217,11 @@ msgstr ""
 "Čakajem vychadu z prahramy. Kali ty pierapyniš hetuju prahramu, možaš "
 "stracić karysnyja źviestki."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
 msgstr "Kanfihuruj svaje sesii"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Sessions"
 msgstr "Sesii"
 
@@ -328,7 +328,7 @@ msgstr "Opcyi kiravańnia sesijami"
 msgid "Show Session Management options"
 msgstr "Pakažy opcyi kiravańnia sesijami"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
@@ -337,24 +337,24 @@ msgstr ""
 "Kanfihuracyjny server sustreŭ prablemu.\n"
 "(%s vyjšła sa statusam %d)"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:256
+#: ../cinnamon-session/csm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Nie ŭdałosia znajści ikonu „%s”"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:580
+#: ../cinnamon-session/csm-inhibit-dialog.c:580
 msgid "Unknown"
 msgstr "Nieviadoma"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:631
+#: ../cinnamon-session/csm-inhibit-dialog.c:631
 msgid "A program is still running:"
 msgstr "Dasiul pracuje prahrama:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:635
+#: ../cinnamon-session/csm-inhibit-dialog.c:635
 msgid "Some programs are still running:"
 msgstr "Dasiul pracujuć prahramy:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:636
+#: ../cinnamon-session/csm-inhibit-dialog.c:636
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -362,39 +362,39 @@ msgstr ""
 "Čakajem vychadu z prahramaŭ. Kali ty pierapyniš hetyja prahramy, možaš "
 "stracić karysnyja źviestki."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:864
+#: ../cinnamon-session/csm-inhibit-dialog.c:864
 msgid "Switch User Anyway"
 msgstr "Usio roŭna źmiani karystalnika"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:867
+#: ../cinnamon-session/csm-inhibit-dialog.c:867
 msgid "Logout Anyway"
 msgstr "Usio roŭna vyjdzi"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:870
+#: ../cinnamon-session/csm-inhibit-dialog.c:870
 msgid "Suspend Anyway"
 msgstr "Usio roŭna zaśni"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:873
+#: ../cinnamon-session/csm-inhibit-dialog.c:873
 msgid "Hibernate Anyway"
 msgstr "Usio roŭna zhibernuj"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:876
+#: ../cinnamon-session/csm-inhibit-dialog.c:876
 msgid "Shutdown Anyway"
 msgstr "Usio adno vyklučy"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:879
+#: ../cinnamon-session/csm-inhibit-dialog.c:879
 msgid "Reboot Anyway"
 msgstr "Usio adno pieraŭruchom"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:887
+#: ../cinnamon-session/csm-inhibit-dialog.c:887
 msgid "Lock Screen"
 msgstr "Zablakuj ekran"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:890
+#: ../cinnamon-session/csm-inhibit-dialog.c:890
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -405,7 +405,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:295
+#: ../cinnamon-session/csm-logout-dialog.c:295
 #, c-format
 msgid ""
 "You are currently logged in as \"%s\".\n"
@@ -416,59 +416,59 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:377
+#: ../cinnamon-session/csm-logout-dialog.c:377
 msgid "Log out of this system now?"
 msgstr "Zaraz ža vyjści z systemy?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:383
+#: ../cinnamon-session/csm-logout-dialog.c:383
 msgid "_Switch User"
 msgstr "Ź_miani karystalnika"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:392
+#: ../cinnamon-session/csm-logout-dialog.c:392
 msgid "_Log Out"
 msgstr "_Vyjdzi"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:398
+#: ../cinnamon-session/csm-logout-dialog.c:398
 msgid "Shut down this system now?"
 msgstr "Zaraz ža vyklučyć systemu?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:404
+#: ../cinnamon-session/csm-logout-dialog.c:404
 msgid "S_uspend"
 msgstr "Z_aśni"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:410
+#: ../cinnamon-session/csm-logout-dialog.c:410
 msgid "_Hibernate"
 msgstr "Z_hibernuj"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:416
+#: ../cinnamon-session/csm-logout-dialog.c:416
 msgid "_Restart"
 msgstr "_Pierazahruzi"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:426
+#: ../cinnamon-session/csm-logout-dialog.c:426
 msgid "_Shut Down"
 msgstr "_Vyklučy"
 
-#: ../cinnamon-session/gsm-manager.c:924 ../cinnamon-session/gsm-manager.c:1541
+#: ../cinnamon-session/csm-manager.c:924 ../cinnamon-session/csm-manager.c:1541
 msgid "Not responding"
 msgstr "Nie adkazvaje"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:988
+#: ../cinnamon-session/csm-xsmp-client.c:988
 msgid "This program is blocking log out."
 msgstr "Hetaja prahrama strymvaje vychad."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Admoŭlena ŭ novym spałučeńni, bo sesija ŭžo zakončvajecca\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nie ŭdałosia stvaryć sokiet ICE dziela prasłuchoŭvańnia: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:139
+#: ../cinnamon-session/csm-util.c:139
 msgid "Unable to start login session (and unable connect to the X server)"
 msgstr "Nie ŭdałosia ŭklučyć sesiju ŭvachodu (i spałučycca z serveram X)"
 

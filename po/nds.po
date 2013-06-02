@@ -17,47 +17,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Order utwählen"
 
-#: ../capplet/gsm-app-dialog.c:194
+#: ../capplet/csm-app-dialog.c:194
 msgid "Add Startup Program"
 msgstr "Systemstartprogramm hentofögen"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/csm-app-dialog.c:198
 msgid "Edit Startup Program"
 msgstr "Systemstartprogramm bewarken"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/csm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "De Systemstartprogrammorder künn nich leer ween"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/csm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "De Systemstartprogrammorder is nich valide"
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/csm-properties-dialog.c:555
 msgid "Enabled"
 msgstr "Aktivert"
 
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/csm-properties-dialog.c:567
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/csm-properties-dialog.c:579
 msgid "Program"
 msgstr "Programm"
 
-#: ../capplet/gsm-properties-dialog.c:792
+#: ../capplet/csm-properties-dialog.c:792
 msgid "Startup Applications Preferences"
 msgstr ""
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/csp-app.c:269
 msgid "No name"
 msgstr "Keen Naam"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/csp-app.c:275
 msgid "No description"
 msgstr "Keen Beschrievens"
 
@@ -106,7 +106,7 @@ msgstr ""
 #: ../data/cinnamon-session.schemas.in.in.h:6
 msgid ""
 "List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/gnome/session/required_components\"). The "
+"names a key under \"/desktop/cinnamon/session/required_components\"). The "
 "Startup Applications preferences tool will not normally allow users to "
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
@@ -179,57 +179,57 @@ msgstr ""
 msgid "Window Manager"
 msgstr "Finsteroppasser"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Een paar Programme lööpen noh:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:667
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:667
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr ""
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Systemstartprogramme"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Tosettliche Systemstart_programme"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse..."
 msgstr "Ankieken..."
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "Or_der:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "Komm_entar:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Optschoonen"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Systemstartprogramme"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Naam:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr ""
 
@@ -296,140 +296,140 @@ msgstr "Törnoppassensoptschoonen:"
 msgid "Show session management options"
 msgstr "Törnoppassensoptschoonen opwiesen"
 
-#: ../cinnamon-session/gsm-gconf.c:106
+#: ../cinnamon-session/csm-gconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
 "(%s exited with status %d)"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:255
+#: ../cinnamon-session/csm-inhibit-dialog.c:255
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Symbol '%s' nich funnen"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:615
+#: ../cinnamon-session/csm-inhibit-dialog.c:615
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:666
+#: ../cinnamon-session/csm-inhibit-dialog.c:666
 msgid "A program is still running:"
 msgstr "Een Programm lööpt noh:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:670
+#: ../cinnamon-session/csm-inhibit-dialog.c:670
 msgid "Some programs are still running:"
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:671
+#: ../cinnamon-session/csm-inhibit-dialog.c:671
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:901
+#: ../cinnamon-session/csm-inhibit-dialog.c:901
 msgid "Switch User Anyway"
 msgstr "Bruker liekers wesseln"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:904
+#: ../cinnamon-session/csm-inhibit-dialog.c:904
 msgid "Logout Anyway"
 msgstr "Liekers avmellen"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:907
+#: ../cinnamon-session/csm-inhibit-dialog.c:907
 msgid "Suspend Anyway"
 msgstr "Liekers slopen gahn"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:910
+#: ../cinnamon-session/csm-inhibit-dialog.c:910
 msgid "Hibernate Anyway"
 msgstr "Liekers överwintern"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:913
+#: ../cinnamon-session/csm-inhibit-dialog.c:913
 msgid "Shutdown Anyway"
 msgstr "Liekers daalfahren"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:916
+#: ../cinnamon-session/csm-inhibit-dialog.c:916
 msgid "Reboot Anyway"
 msgstr "Liekers nej starten"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:924
+#: ../cinnamon-session/csm-inhibit-dialog.c:924
 msgid "Lock Screen"
 msgstr "Avslutbillschirm"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:927
+#: ../cinnamon-session/csm-inhibit-dialog.c:927
 msgid "Cancel"
 msgstr "Avbreken"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Ji warrt vun alleen avmellt in %d Sekunn."
 msgstr[1] "Ji warrt vun alleen avmellt in %d Sekunnen."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Düsses System warrt vun alleen daalfahrt in %d Sekunn."
 msgstr[1] "Düsses System warrt vun alleen daalfahrt in %d Sekunnen."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:314
+#: ../cinnamon-session/csm-logout-dialog.c:314
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr ""
 
-#: ../cinnamon-session/gsm-logout-dialog.c:380
+#: ../cinnamon-session/csm-logout-dialog.c:380
 msgid "Log out of this system now?"
 msgstr "Nu Avmellen?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:386
+#: ../cinnamon-session/csm-logout-dialog.c:386
 msgid "_Switch User"
 msgstr "Bruker we_sseln"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:395
+#: ../cinnamon-session/csm-logout-dialog.c:395
 msgid "_Log Out"
 msgstr "_Avmellen"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:401
+#: ../cinnamon-session/csm-logout-dialog.c:401
 msgid "Shut down this system now?"
 msgstr "System nu daalfahren?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:407
+#: ../cinnamon-session/csm-logout-dialog.c:407
 msgid "S_uspend"
 msgstr "S_lopengahn"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:413
+#: ../cinnamon-session/csm-logout-dialog.c:413
 msgid "_Hibernate"
 msgstr "_Överwintern"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:419
+#: ../cinnamon-session/csm-logout-dialog.c:419
 msgid "_Restart"
 msgstr "_Nejstart"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:429
+#: ../cinnamon-session/csm-logout-dialog.c:429
 msgid "_Shut Down"
 msgstr "_Daalfahrt"
 
-#: ../cinnamon-session/gsm-manager.c:1220 ../cinnamon-session/gsm-manager.c:1912
+#: ../cinnamon-session/csm-manager.c:1220 ../cinnamon-session/csm-manager.c:1912
 msgid "Not responding"
 msgstr "Antert nich"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1206
+#: ../cinnamon-session/csm-xsmp-client.c:1206
 msgid "This program is blocking log out."
 msgstr "Düsses Programm lett nich to, dat je dik avmellen künnst."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:234
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 
-#: ../cinnamon-session/gsm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:489
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:354
+#: ../cinnamon-session/csm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""

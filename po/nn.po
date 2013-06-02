@@ -27,56 +27,56 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Vel kommando"
 
 # gsm/startup-programs.c:373
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Legg til oppstartsprogram"
 
 # gsm/startup-programs.c:391
 #
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Rediger oppstartsprogram"
 
 # gsm/startup-programs.c:333
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "Oppstartskommandoen kan ikkje vera tom"
 
 #
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "Oppstartskommandoen er ikkje gyldig"
 
 #
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Aktivert"
 
 # gsm/logout.c:239
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Ikon"
 
-# gsm/gsm-client-list.c:122
-#: ../capplet/gsm-properties-dialog.c:542
+# gsm/csm-client-list.c:122
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "Innstillingar for oppstartsprogram"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "Utan namn"
 
 #
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "Inga skildring"
 
@@ -93,7 +93,7 @@ msgid "GNOME fallback"
 msgstr "GNOME reserveløysing"
 
 #
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -102,11 +102,11 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Denne økta loggar inn i GNOME"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Nokre program køyrer enno:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 #| msgid ""
 #| "Waiting for programs to finish.  Interrupting these programs may cause "
 #| "you to lose work."
@@ -117,55 +117,55 @@ msgstr ""
 "Ventar på at programmet skal avslutta. Om du avbryt programmet kan data gå "
 "tapt."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Vel kva for program du vil starta når du loggar inn"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Oppstartsprogram"
 
 # gsm/startup-programs.c:373
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Fleire oppstarts_program:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 #| msgid "Browse..."
 msgid "Browse…"
 msgstr "Bla gjennom …"
 
 #
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "Ko_mmando:"
 
 #
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "Komm_entar:"
 
 # gsm/session-properties-capplet.c:262
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Innstillingar"
 
 # gsm/session-properties-capplet.c:330
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Oppstartsprogram"
 
 #
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Hugs køyrande program _automatisk ved utlogging"
 
 #
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Namn:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "Hugs programmet som køy_rer no"
 
@@ -182,7 +182,7 @@ msgstr "Fila er ikkje ei gyldig .desktop-fil"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Klarte ikkje kjenna att desktop-fil versjon «%s»"
 
-# gsm/gsm-client-row.c:34
+# gsm/csm-client-row.c:34
 #: ../egg/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
@@ -243,25 +243,25 @@ msgstr "Innstillingar for økthandsaming"
 msgid "Show session management options"
 msgstr "Vis innstillingar for økthandsaming"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Klarte ikkje finna ikonet «%s»"
 
-# gsm/gsm-client-row.c:43
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+# gsm/csm-client-row.c:43
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Eit program køyrer enno:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Nokre program køyrer enno:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -269,103 +269,103 @@ msgstr ""
 "Ventar på at program skal avslutta. Om du avbryt desse programma kan data gå "
 "tapt."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Byt brukar likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 #| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "Logg ut likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Gå i kvilemodus likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Gå i dvalemodus likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 #| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "Slå av likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 #| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "Start på nytt likevel"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Avbryt"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:275
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Du vert logga ut automatisk om %d sekund."
 msgstr[1] "Du vert logga ut automatisk om %d sekund."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Systemet vert slått av automatisk om %d sekund."
 msgstr[1] "Systemet vert slått av automatisk om %d sekund."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du er logga inn som «%s»."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Logg ut av systemet no?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "_Byt brukar"
 
 # panel/logout.c:74 panel/menu.c:5340
-#: ../cinnamon-session/gsm-logout-dialog.c:396
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:422
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:396
+#: ../cinnamon-session/csm-fail-whale-dialog.c:422
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "_Logg ut"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Slå av systemet no?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "_Kvilemodus"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Dvalemodus"
 
 # applets/tasklist/tasklist_menu.c:258
-#: ../cinnamon-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "_Start på nytt"
 
 # gsm/logout.c:250
-#: ../cinnamon-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "Slå _av"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:377
+#: ../cinnamon-session/csm-fail-whale-dialog.c:377
 msgid "Oh no!  Something has gone wrong."
 msgstr "Å nei! Noko har gått gale."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:384
+#: ../cinnamon-session/csm-fail-whale-dialog.c:384
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -373,7 +373,7 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Kontakt ein "
 "systemadministrator."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:386
+#: ../cinnamon-session/csm-fail-whale-dialog.c:386
 msgid ""
 "A problem has occurred and the system can't recover. Some of the extensions "
 "below may have caused this.\n"
@@ -383,7 +383,7 @@ msgstr ""
 "utvidingane under kan ha medført dette.\n"
 "Prøv å slå av nokre av desse og logg ut for å prøva på nytt."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:388
+#: ../cinnamon-session/csm-fail-whale-dialog.c:388
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -391,26 +391,26 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta.\n"
 "Logg ut og prøv på nytt."
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "Avslutta med koden %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "Avslutta av signalet %d"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "Stoppa av signalet %d"
 
-#: ../cinnamon-session/gsm-manager.c:1386
+#: ../cinnamon-session/csm-manager.c:1386
 msgid "GNOME 3 Failed to Load"
 msgstr "GNOME 3 klarte ikkje starta"
 
-#: ../cinnamon-session/gsm-manager.c:1387
+#: ../cinnamon-session/csm-manager.c:1387
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -423,11 +423,11 @@ msgstr ""
 "Sannsynlegvis klarer ikkje systemet (grafikkortet eller drivaren) å køyre "
 "GNOME 3."
 
-#: ../cinnamon-session/gsm-manager.c:1389
+#: ../cinnamon-session/csm-manager.c:1389
 msgid "Learn more about GNOME 3"
 msgstr "Lær meir om GNOME 3"
 
-#: ../cinnamon-session/gsm-manager.c:1486 ../cinnamon-session/gsm-manager.c:2255
+#: ../cinnamon-session/csm-manager.c:1486 ../cinnamon-session/csm-manager.c:2255
 msgid "Not responding"
 msgstr "Svarer ikkje"
 
@@ -436,29 +436,29 @@ msgstr "Svarer ikkje"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 #| msgid "Remember running applications"
 msgid "Remembered Application"
 msgstr "Hugsa program"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 #| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "Dette programmet hindrar utlogging."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Avviser ny klienttilkopling fordi økta er i ferd med å avslutta\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Klarte ikkje oppretta sokkel for ICE-lytting: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -561,14 +561,14 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Liste med komponentar som er ein nødvendig del av økta. (Kvart element "
-#~ "namngjev ein nøkkel under «/desktop/gnome/session/required_components»). "
+#~ "namngjev ein nøkkel under «/desktop/cinnamon/session/required_components»). "
 #~ "Innstillingsverktøyet av oppstartsprogram vil normalt ikkje gje brukarar "
 #~ "tilgjenge til å fjerna nødvendige komponentar frå økta, og økthandsamaren "
 #~ "vil automatisk leggja til dei nødvendige komponentane tilbake til økta "
@@ -727,87 +727,87 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ "for denne funksjonen vart ikkje funne. Vennligst sjekk at AT-SPI er "
 #~ "installert. Sesjonen er starta utan hjelpeteknologi for tilgjenge."
 
-# gsm/gsm-client-editor.c:97
+# gsm/csm-client-editor.c:97
 #~ msgid "_Order:"
 #~ msgstr "_Rekkefølgje: "
 
 #~ msgid "What happens to the application when it exits."
 #~ msgstr "Kva som skjer med applikasjonen når han avsluttar."
 
-# gsm/gsm-client-editor.c:107
+# gsm/csm-client-editor.c:107
 #~ msgid "_Style:"
 #~ msgstr "_Stil: "
 
-# gsm/gsm-client-row.c:31
+# gsm/csm-client-row.c:31
 #~ msgid "Inactive"
 #~ msgstr "Inaktiv"
 
-# gsm/gsm-client-row.c:32
+# gsm/csm-client-row.c:32
 #~ msgid "Waiting to start or already finished."
 #~ msgstr "Ventar på å få starta eller er allereie starta."
 
-# gsm/gsm-client-row.c:35
+# gsm/csm-client-row.c:35
 #~ msgid "Started but has not yet reported state."
 #~ msgstr "Starta, men har ikkje enno rapportert tilstand."
 
-# gsm/gsm-client-row.c:37
+# gsm/csm-client-row.c:37
 #~ msgid "Running"
 #~ msgstr "Køyrer"
 
-# gsm/gsm-client-row.c:38
+# gsm/csm-client-row.c:38
 #~ msgid "A normal member of the session."
 #~ msgstr "Eit vanleg medlem av økta."
 
-# gsm/gsm-client-row.c:40
+# gsm/csm-client-row.c:40
 #~ msgid "Saving"
 #~ msgstr "Lagrar"
 
-# gsm/gsm-client-row.c:41
+# gsm/csm-client-row.c:41
 #~ msgid "Saving session details."
 #~ msgstr "Lagrar innstillingar for økta."
 
-# gsm/gsm-client-row.c:44
+# gsm/csm-client-row.c:44
 #~ msgid "State not reported within timeout."
 #~ msgstr "Tilstand ikkje rapportert innan tidsavbrot."
 
-# gsm/gsm-client-row.c:50 panel/menu.c:4760 panel/panel_config.c:1400
+# gsm/csm-client-row.c:50 panel/menu.c:4760 panel/panel_config.c:1400
 #~ msgid "Normal"
 #~ msgstr "Vanleg"
 
-# gsm/gsm-client-row.c:51
+# gsm/csm-client-row.c:51
 #~ msgid "Unaffected by logouts but can die."
 #~ msgstr "Ikkje påvirka av avlogging, men kan døy."
 
-# gsm/gsm-client-row.c:54
+# gsm/csm-client-row.c:54
 #~ msgid "Never allowed to die."
 #~ msgstr "Aldri la døy."
 
-# gsm/gsm-client-row.c:56
+# gsm/csm-client-row.c:56
 #~ msgid "Trash"
 #~ msgstr "Papirkorg"
 
-# gsm/gsm-client-row.c:57
+# gsm/csm-client-row.c:57
 #~ msgid "Discarded on logout and can die."
 #~ msgstr "Forkastast ved avlogging og kan døy."
 
-# gnome-terminal/gnome-terminal.c:1596 gsm/gsm-client-row.c:59
+# gnome-terminal/gnome-terminal.c:1596 gsm/csm-client-row.c:59
 # panel/foobar-widget.c:1070
 #~ msgid "Settings"
 #~ msgstr "Innstillingar"
 
-# gsm/gsm-client-row.c:60
+# gsm/csm-client-row.c:60
 #~ msgid "Always started on every login."
 #~ msgstr "Startast ved kvar login."
 
-# gsm/gsm-client-list.c:119
+# gsm/csm-client-list.c:119
 #~ msgid "Order"
 #~ msgstr "Rekkjefølgje"
 
-# gsm/gsm-client-list.c:120
+# gsm/csm-client-list.c:120
 #~ msgid "Style"
 #~ msgstr "Stil"
 
-# gsm/gsm-client-list.c:121
+# gsm/csm-client-list.c:121
 #~ msgid "State"
 #~ msgstr "Tilstand"
 

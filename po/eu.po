@@ -21,47 +21,47 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Hautatu komandoa"
 
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Gehitu abioko programa"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Editatu abioko programa"
 
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "Abioko komandoa ezin da hutsik egon"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "Abioko komandoa ez da baliozkoa"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Ikonoa"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "Abioko aplikazioen hobespenak"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "Izenik ez"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "Azalpenik ez"
 
@@ -77,7 +77,7 @@ msgstr "Ezin izan da laguntzako dokumentua bistaratu"
 msgid "GNOME fallback"
 msgstr "GNOME ordezkoa"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "GNOME"
 
@@ -85,59 +85,59 @@ msgstr "GNOME"
 msgid "This session logs you into GNOME"
 msgstr "Saio honek GNOMEn sartuko zaitu"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Programa batzuk oraindik exekutatzen ari dira:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
 "Programa amaitu zain. Programa hau eteteak zure lanak galtzea eragin lezake."
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Choose what applications to start when you log in"
 msgstr "Aukeratu zein aplikazio abiarazi saioa-hasten duzunean"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Abioko aplikazioak"
 
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Abioko _programa osagarriak:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Browse…"
 msgstr "Arakatu..."
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "Co_mmand:"
 msgstr "_Komandoa:"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 msgid "Comm_ent:"
 msgstr "_Iruzkina:"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "Aukerak"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Abioko programak"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "Gogoratu _automatikoki exekutatzen ari diren aplikazioak saioa amaitzean"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "_Name:"
 msgstr "_Izena:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Remember Currently Running Application"
 msgstr "_Gogoratu unean exekutatzen ari diren aplikazioak"
 
@@ -209,24 +209,24 @@ msgstr "Saio-kudeatzailearen aukerak:"
 msgid "Show session management options"
 msgstr "Erakutsi saio-kudeatzailearen aukerak"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ez da '%s' ikonoa aurkitu"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "Programa bat oraindik exekutatzen ari da:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Programa batzuk oraindik exekutatzen ari dira:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -234,97 +234,97 @@ msgstr ""
 "Programak amaitu zain. Programa hauek etetzeak zure lanak galtzea eragin "
 "lezake."
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "Aldatu erabiltzailez hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "Amaitu saioa hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "Eseki hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "Hibernatu hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "Itzali hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "Berrabiarazi hala ere"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "Blokeatu pantaila"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "Utzi"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:275
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:275
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Automatikoki zure saioa segundo %d barru amaituko da."
 msgstr[1] "Automatikoki zure saioa %d segundotan amaituko da."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:283
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Automatikoki sistema segundo %d barru itzaliko da."
 msgstr[1] "Automatikoki sistema %d segundotan itzaliko da."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:315
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Unean \"%s\" gisa zaude saioan hasita."
 
-#: ../cinnamon-session/gsm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:381
 msgid "Log out of this system now?"
 msgstr "Amaitu saioa sistematik orain?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:387
 msgid "_Switch User"
 msgstr "_Aldatu erabiltzailez"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:396
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:422
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:396
+#: ../cinnamon-session/csm-fail-whale-dialog.c:422
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "Amaitu _saioa"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:402
 msgid "Shut down this system now?"
 msgstr "Itzali sistema orain?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:408
 msgid "S_uspend"
 msgstr "_Eseki"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:414
 msgid "_Hibernate"
 msgstr "_Hibernatu"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:420
 msgid "_Restart"
 msgstr "_Berrabiarazi"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:430
 msgid "_Shut Down"
 msgstr "_Itzali"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:377
+#: ../cinnamon-session/csm-fail-whale-dialog.c:377
 msgid "Oh no!  Something has gone wrong."
 msgstr "Zerbait gaizki irten da."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:384
+#: ../cinnamon-session/csm-fail-whale-dialog.c:384
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -332,7 +332,7 @@ msgstr ""
 "Arazo bat gertatu da eta sistemak ezin du berreskuratu. Jarri harremanetan "
 "sistemaren administratzaile batekin"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:386
+#: ../cinnamon-session/csm-fail-whale-dialog.c:386
 msgid ""
 "A problem has occurred and the system can't recover. Some of the extensions "
 "below may have caused this.\n"
@@ -342,7 +342,7 @@ msgstr ""
 "gehigarrietakoren batek eragindakoa izan daiteke arazoa.\n"
 "Saiatu hauetakoren bat desgaitzen eta gero amaitu saioa eta saiatu berriro."
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:388
+#: ../cinnamon-session/csm-fail-whale-dialog.c:388
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -350,26 +350,26 @@ msgstr ""
 "Arazo bat gertatu da eta sistemak ezin du berreskuratu.\n"
 "Amaitu saioa eta saiatu berriro."
 
-#: ../cinnamon-session/gsm-process-helper.c:123
+#: ../cinnamon-session/csm-process-helper.c:123
 #, c-format
 msgid "Exited with code %d"
 msgstr "%d kodearekin irten da"
 
-#: ../cinnamon-session/gsm-process-helper.c:128
+#: ../cinnamon-session/csm-process-helper.c:128
 #, c-format
 msgid "Killed by signal %d"
 msgstr "%d seinalearekin hilda"
 
-#: ../cinnamon-session/gsm-process-helper.c:133
+#: ../cinnamon-session/csm-process-helper.c:133
 #, c-format
 msgid "Stopped by signal %d"
 msgstr "%d seinalearekin geldituta"
 
-#: ../cinnamon-session/gsm-manager.c:1386
+#: ../cinnamon-session/csm-manager.c:1386
 msgid "GNOME 3 Failed to Load"
 msgstr "Huts egin du GNOME 3 kargatzean"
 
-#: ../cinnamon-session/gsm-manager.c:1387
+#: ../cinnamon-session/csm-manager.c:1387
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -383,11 +383,11 @@ msgstr ""
 "Baliteke sistemak (grafikoen hardware edo gailuak) ahalmenik ez izatea GNOME "
 "3 esperientzia osoaz aritzeko."
 
-#: ../cinnamon-session/gsm-manager.c:1389
+#: ../cinnamon-session/csm-manager.c:1389
 msgid "Learn more about GNOME 3"
 msgstr "Ikasi GNOME 3 buruz gehiago"
 
-#: ../cinnamon-session/gsm-manager.c:1486 ../cinnamon-session/gsm-manager.c:2255
+#: ../cinnamon-session/csm-manager.c:1486 ../cinnamon-session/csm-manager.c:2255
 msgid "Not responding"
 msgstr "Ez du erantzuten"
 
@@ -395,27 +395,27 @@ msgstr "Ez du erantzuten"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "Gogoratutako aplikazioa"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "Programa honek saioa amaitzea blokeatzen ari da."
 
-#: ../cinnamon-session/gsm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Bezero berrien konexioa ukatzen, unean saioa itzaltzen ari delako\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Ezin izan da entzuteko ICE socket-a sortu: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Ezin da saio-hasiera hasi (eta ezin da X zerbitzariarekin konektatu)"

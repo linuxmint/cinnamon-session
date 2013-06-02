@@ -22,53 +22,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 # cinnamon-session/session-properties-capplet.c:362
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "ਕਮਾਂਡ ਚੁਣੋ"
 
 # cinnamon-session/startup-programs.c:392
-#: ../capplet/gsm-app-dialog.c:193
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮ ਸ਼ਾਮਲ"
 
 # cinnamon-session/startup-programs.c:392
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮ ਸੋਧ"
 
 # cinnamon-session/startup-programs.c:332
-#: ../capplet/gsm-app-dialog.c:484
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "ਸ਼ੁਰੂਆਤੀ ਕਮਾਂਡ ਖਾਲੀ ਨਹੀ ਹੋ ਸਕਦੀ ਹੈ"
 
 # cinnamon-session/startup-programs.c:332
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "ਸ਼ੁਰੂਆਤੀ ਕਮਾਂਡ ਠੀਕ ਨਹੀਂ ਹੈ"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "ਯੋਗ"
 
 # cinnamon-session/logout.c:266
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:530
 msgid "Icon"
 msgstr "ਆਈਕਾਨ"
 
-# cinnamon-session/gsm-client-list.c:111
-#: ../capplet/gsm-properties-dialog.c:542
+# cinnamon-session/csm-client-list.c:111
+#: ../capplet/csm-properties-dialog.c:542
 msgid "Program"
 msgstr "ਪਰੋਗਰਾਮ"
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:746
 msgid "Startup Applications Preferences"
 msgstr "ਸ਼ੁਰੂਆਤੀ ਐਪਲੀਕੇਸ਼ਨ ਪਸੰਦ"
 
-#: ../capplet/gsp-app.c:274
+#: ../capplet/csp-app.c:274
 msgid "No name"
 msgstr "ਕੋਈ ਨਾਂ ਨਹੀਂ"
 
-#: ../capplet/gsp-app.c:280
+#: ../capplet/csp-app.c:280
 msgid "No description"
 msgstr "ਕੋਈ ਵੇਰਵਾ ਨਹੀਂ"
 
@@ -84,7 +84,7 @@ msgstr "ਮੱਦਦ ਡੌਕੂਮੈਂਟ ਨੂੰ ਵੇਖਾਇਆ ਨ�
 msgid "GNOME fallback"
 msgstr "ਗਨੋਮ ਫਾਲਬੈਕ"
 
-#: ../data/gnome.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
 msgid "GNOME"
 msgstr "ਗਨੋਮ"
 
@@ -92,11 +92,11 @@ msgstr "ਗਨੋਮ"
 msgid "This session logs you into GNOME"
 msgstr "ਇਹ ਸ਼ੈਸ਼ਨ ਤੁਹਾਨੂੰ ਗਨੋਮ ਵਿੱਚ ਲਾਗ ਕਰਦਾ ਹੈ"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1 ../cinnamon-session/gsm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ਕੁਝ ਪਰੋਗਰਾਮ ਹਾਲੇ ਵੀ ਚੱਲ ਰਹੇ ਹਨ:"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../cinnamon-session/gsm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.ui.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -105,53 +105,53 @@ msgstr ""
 "ਤੁਹਾਡਾ ਕੰਮ ਗੁਆਚ "
 "ਸਕਦਾ ਹੈ।"
 
-#: ../data/session-properties.desktop.in.in.h:1
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
 msgstr "ਸ਼ੁਰੂਆਤੀ ਐਪਲੀਕੇਸ਼ਨ"
 
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "ਚੁਣੋ ਕਿ ਕਿਹੜੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਤੁਸੀਂ ਲਾਗਇਨ ਸਮੇਂ ਸ਼ੁਰੂ ਕਰਨੀਆਂ ਚਾਹੁੰਦੇ ਹੋ"
 
 # cinnamon-session/startup-programs.c:372
-#: ../data/session-properties.ui.h:1
+#: ../data/cinnamon-session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "ਹੋਰ ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮ(_P):"
 
 # cinnamon-session/session-properties-capplet.c:399
-#: ../data/session-properties.ui.h:2
+#: ../data/cinnamon-session-properties.ui.h:2
 msgid "Startup Programs"
 msgstr "ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮ"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/cinnamon-session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ਜਦੋਂ ਲਾਗ ਆਉਟ ਹੋਵੋ ਤਾਂ ਚੱਲਦੇ ਐਪਲੀਕੇਸ਼ਨ ਆਟੋਮੈਟਿਕ ਹੀ ਯਾਦ ਰੱਖੋ(_A)"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/cinnamon-session-properties.ui.h:4
 #| msgid "_Remember Currently Running Application"
 msgid "_Remember Currently Running Applications"
 msgstr "ਇਸ ਸਮੇਂ ਚੱਲਦੇ ਐਪਲੀਕੇਸ਼ਨ ਯਾਦ ਰੱਖੋ(_R)"
 
 # cinnamon-session/session-properties-capplet.c:332
-#: ../data/session-properties.ui.h:5
+#: ../data/cinnamon-session-properties.ui.h:5
 msgid "Options"
 msgstr "ਚੋਣਾਂ"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/cinnamon-session-properties.ui.h:6
 msgid "Browse…"
 msgstr "ਝਲਕ..."
 
 # cinnamon-session/session-properties-capplet.c:362
-#: ../data/session-properties.ui.h:7
+#: ../data/cinnamon-session-properties.ui.h:7
 msgid "Comm_ent:"
 msgstr "ਟਿੱਪਣੀ(_e):"
 
 # cinnamon-session/session-properties-capplet.c:362
-#: ../data/session-properties.ui.h:8
+#: ../data/cinnamon-session-properties.ui.h:8
 msgid "Co_mmand:"
 msgstr "ਕਮਾਂਡ(_m):"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/cinnamon-session-properties.ui.h:9
 msgid "_Name:"
 msgstr "ਨਾਂ(_N):"
 
@@ -168,7 +168,7 @@ msgstr "ਫਾਇਲ ਢੁੱਕਵੀਂ .desktop ਫਾਇਲ ਨਹੀਂ �
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "ਅਣਜਾਣ ਡੈਸਕਟਾਪ ਫਾਇਲ ਵਰਜਨ '%s'"
 
-# cinnamon-session/gsm-client-row.c:34
+# cinnamon-session/csm-client-row.c:34
 #: ../egg/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
@@ -228,20 +228,20 @@ msgstr "ਸ਼ੈਸ਼ਨ ਪਰਬੰਧਕ ਚੋਣਾਂ:"
 msgid "Show session management options"
 msgstr "ਸ਼ੈਸ਼ਨ ਪਰਬੰਧਕ ਚੋਣਾਂ ਵੇਖੋ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:253
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "ਆਈਕਾਨ '%s' ਨਹੀਂ ਲੱਭਿਆ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:588
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:639
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr "ਇੱਕ ਪਰੋਗਰਾਮ ਹਾਲੇ ਵੀ ਚੱਲ ਰਿਹਾ ਹੈ:"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:644
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -250,55 +250,55 @@ msgstr ""
 "ਤੁਹਾਡਾ ਕੰਮ ਗੁਆਚ "
 "ਸਕਦਾ ਹੈ।"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:874
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਯੂਜ਼ਰ ਬਦਲੋ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:877
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 msgid "Log Out Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਲਾਗ-ਆਉਟ ਕਰੋ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:880
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 msgid "Suspend Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਸਸਪੈਂਡ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 msgid "Hibernate Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਹਾਈਬਰਨੇਟ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 msgid "Shut Down Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਬੰਦ ਕਰੋ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:889
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 msgid "Restart Anyway"
 msgstr "ਕਿਵੇਂ ਵੀ ਮੁੜ-ਚਾਲੂ ਕਰੋ"
 
-#: ../cinnamon-session/gsm-inhibit-dialog.c:897
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 msgid "Lock Screen"
 msgstr "ਸਕਰੀਨ ਲਾਕ ਕਰੋ"
 
 # cinnamon-session/splash.c:69
-#: ../cinnamon-session/gsm-inhibit-dialog.c:900
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#. This string is shared with gsm-fail-whale-dialog.c
-#: ../cinnamon-session/gsm-logout-dialog.c:266
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "ਤੁਹਾਨੂੰ %d ਸਕਿੰਟ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਲਾਗਆਉਟ ਕੀਤਾ ਜਾਵੇਗਾ।"
 msgstr[1] "ਤੁਹਾਨੂੰ %d ਸਕਿੰਟਾਂ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਲਾਗਆਉਟ ਕੀਤਾ ਜਾਵੇਗਾ।"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:274
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "ਇਹ ਸਿਸਟਮ %d ਸਕਿੰਟ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਬੰਦ ਕੀਤਾ ਜਾਵੇਗਾ।"
 msgstr[1] "ਇਹ ਸਿਸਟਮ %d ਸਕਿੰਟਾਂ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਬੰਦ ਕੀਤਾ ਜਾਵੇਗਾ।"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:282
+#: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
 #| msgid "This system will be automatically shut down in %d second."
 #| msgid_plural "This system will be automatically shut down in %d seconds."
@@ -307,68 +307,68 @@ msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "ਇਹ ਸਿਸਟਮ %d ਸਕਿੰਟ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਬੰਦ ਹੋ ਜਾਵੇਗਾ।"
 msgstr[1] "ਇਹ ਸਿਸਟਮ %d ਸਕਿੰਟਾਂ ਬਾਅਦ ਆਟੋਮੈਟਿਕ ਬੰਦ ਹੋ ਜਾਵੇਗਾ।"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:306
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "ਹੁਣ ਤੁਸੀਂ  \"%s\" ਵਜੋਂ ਲਾਗਇਨ ਹੋ।"
 
 # msgid "You are currently logged in as \"%s\"."
 # msgstr "ਤੁਸੀਂ ਇਸ ਵੇਲੇ "%s\" ਵਜੋਂ ਲਾਗਇਨ ਹੋ।"
-#: ../cinnamon-session/gsm-logout-dialog.c:372
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "ਇਸ ਸਿਸਟਮ ਲਈ ਹੁਣੇ ਲਾਗ ਆਉਟ ਕਰਨਾ ਹੈ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:378
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "ਯੂਜ਼ਰ ਬਦਲੋ(_S)"
 
 # cinnamon-session/logout.c:274
-#: ../cinnamon-session/gsm-logout-dialog.c:387
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:337
-#: ../cinnamon-session/gsm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:389
 msgid "_Log Out"
 msgstr "ਲਾਗ-ਆਉਟ(_L)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:393
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "ਕੀ ਸਿਸਟਮ ਹੁਣੇ ਬੰਦ ਕਰਨਾ ਹੈ?"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:399
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "ਸਸਪੈਂਡ(_u)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:405
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "ਹਾਈਬਰਨੇਟ(_H)"
 
 # cinnamon-session/session-properties.c:173
-#: ../cinnamon-session/gsm-logout-dialog.c:411
-#: ../cinnamon-session/gsm-logout-dialog.c:437
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "ਰੀ-ਸਟਾਰਟ(_R)"
 
 # cinnamon-session/logout.c:277
-#: ../cinnamon-session/gsm-logout-dialog.c:421
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "ਬੰਦ ਕਰੋ(_S)"
 
-#: ../cinnamon-session/gsm-logout-dialog.c:427
+#: ../cinnamon-session/csm-logout-dialog.c:427
 #| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "ਕੀ ਸਿਸਟਮ ਹੁਣ ਮੁੜ-ਚਾਲੂ ਕਰਨਾ ਹੈ?"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:311
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "ਓਹ ਹੋ! ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ।"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:318
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
 msgstr ""
 "ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ ਅਤੇ ਸਿਸਟਮ ਉਭਰ ਨਹੀਂ ਸਕਿਆ। ਆਪਣੇ ਸਿਸਟਮ ਐਡਮਿਸਟੇਟਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:320
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
@@ -376,7 +376,7 @@ msgstr ""
 "ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ ਅਤੇ ਸਿਸਟਮ ਉਭਰ ਨਹੀਂ ਸਕਿਆ। ਬਚਾਅ ਵਜੋਂ ਸਭ ਇਕਸਟੈਸ਼ਨ ਨੂੰ ਬੰਦ ਕੀਤਾ "
 "ਜਾ ਚੁੱਕਾ ਹੈ।"
 
-#: ../cinnamon-session/gsm-fail-whale-dialog.c:322
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -384,11 +384,11 @@ msgstr ""
 "ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ ਅਤੇ ਸਿਸਟਮ ਇਸ ਤੋਂ ਉਭਰ ਨਹੀਂ ਸਕਿਆ।\n"
 "ਲਾਗ ਆਉਟ ਕਰਕੇ ਫੇਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: ../cinnamon-session/gsm-manager.c:1393
+#: ../cinnamon-session/csm-manager.c:1393
 msgid "GNOME 3 Failed to Load"
 msgstr "ਗਨੋਮ ੩ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: ../cinnamon-session/gsm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1394
 msgid ""
 "Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
@@ -403,11 +403,11 @@ msgstr ""
 "ਨੂੰ ਠੀਕ "
 "ਤਰ੍ਹਾਂ ਚਲਾਉਣ ਲਈ ਸਮਰੱਥ ਨਹੀਂ ਹੈ।"
 
-#: ../cinnamon-session/gsm-manager.c:1396
+#: ../cinnamon-session/csm-manager.c:1396
 msgid "Learn more about GNOME 3"
 msgstr "ਗਨੋਮ ੩ ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਵੋ"
 
-#: ../cinnamon-session/gsm-manager.c:1493 ../cinnamon-session/gsm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
 msgstr "ਕੋਈ ਜਵਾਬ ਨਹੀਂ"
 
@@ -415,28 +415,28 @@ msgstr "ਕੋਈ ਜਵਾਬ ਨਹੀਂ"
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: ../cinnamon-session/gsm-xsmp-client.c:559
+#: ../cinnamon-session/csm-xsmp-client.c:559
 msgid "Remembered Application"
 msgstr "ਯਾਦ ਰੱਖੇ ਹੋਏ ਐਪਲੀਕੇਸ਼ਨ"
 
-#: ../cinnamon-session/gsm-xsmp-client.c:1197
+#: ../cinnamon-session/csm-xsmp-client.c:1197
 msgid "This program is blocking logout."
 msgstr "ਇਹ ਪਰੋਗਰਾਮ ਲਾਗ-ਆਉਟ ਨੂੰ ਰੋਕ ਰਿਹਾ ਹੈ।"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:326
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "ਨਵਾਂ ਕਲਾਇਟ ਕੁਨੈਕਸ਼ਨ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ ਸ਼ੈਸ਼ਨ ਬੰਦ ਹੋ ਰਿਹਾ ਹੈ\n"
 
-#: ../cinnamon-session/gsm-xsmp-server.c:595
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE ਲਿਸਨਿੰਗ ਸਾਕਟ ਬਣਾਈ ਨਹੀਂ ਜਾ ਸਕੀ: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/gsm-util.c:373
+#: ../cinnamon-session/csm-util.c:373
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
@@ -557,7 +557,7 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 
 #~ msgid ""
 #~ "List of components that are required as part of the session. (Each "
-#~ "element names a key under \"/desktop/gnome/session/required_components"
+#~ "element names a key under \"/desktop/cinnamon/session/required_components"
 #~ "\"). The Startup Applications preferences tool will not normally allow "
 #~ "users to remove a required component from the session, and the session "
 #~ "manager will automatically add the required components back to the "
