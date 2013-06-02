@@ -1,10 +1,10 @@
 SPEC_XML_FILES =					\
 	cinnamon-session.xml				\
-	org.gnome.SessionManager.ref.xml		\
-	org.gnome.SessionManager.Client.ref.xml		\
-	org.gnome.SessionManager.ClientPrivate.ref.xml	\
-	org.gnome.SessionManager.Inhibitor.ref.xml	\
-	org.gnome.SessionManager.Presence.ref.xml
+	org.cinnamon.SessionManager.ref.xml		\
+	org.cinnamon.SessionManager.Client.ref.xml		\
+	org.cinnamon.SessionManager.ClientPrivate.ref.xml	\
+	org.cinnamon.SessionManager.Inhibitor.ref.xml	\
+	org.cinnamon.SessionManager.Presence.ref.xml
 
 if DOCBOOK_DOCS_ENABLED
 
@@ -16,23 +16,23 @@ cinnamon-session.html: $(SPEC_XML_FILES)
 
 endif # DOCBOOK_DOCS_ENABLED
 
-org.gnome.SessionManager.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.xml spec-to-docbook.xsl
+org.cinnamon.SessionManager.ref.xml: $(top_srcdir)/cinnamon-session/org.cinnamon.SessionManager.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Client.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Client.xml spec-to-docbook.xsl
+org.cinnamon.SessionManager.Client.ref.xml: $(top_srcdir)/cinnamon-session/org.cinnamon.SessionManager.Client.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.ClientPrivate.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.ClientPrivate.xml spec-to-docbook.xsl
+org.cinnamon.SessionManager.ClientPrivate.ref.xml: $(top_srcdir)/cinnamon-session/org.cinnamon.SessionManager.ClientPrivate.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Inhibitor.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Inhibitor.xml spec-to-docbook.xsl
+org.cinnamon.SessionManager.Inhibitor.ref.xml: $(top_srcdir)/cinnamon-session/org.cinnamon.SessionManager.Inhibitor.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
-org.gnome.SessionManager.Presence.ref.xml: $(top_srcdir)/cinnamon-session/org.gnome.SessionManager.Presence.xml spec-to-docbook.xsl
+org.cinnamon.SessionManager.Presence.ref.xml: $(top_srcdir)/cinnamon-session/org.cinnamon.SessionManager.Presence.xml spec-to-docbook.xsl
 	$(AM_V_GEN)$(XSLTPROC) $(top_srcdir)/doc/dbus/spec-to-docbook.xsl $< | tail -n +2 > $@
 
 BUILT_SOURCES =	\
-	org.gnome.SessionManager.ref.xml \
-	org.gnome.SessionManager.Client.ref.xml \
-	org.gnome.SessionManager.ClientPrivate.ref.xml \
-	org.gnome.SessionManager.Inhibitor.ref.xml \
-	org.gnome.SessionManager.Presence.ref.xml
+	org.cinnamon.SessionManager.ref.xml \
+	org.cinnamon.SessionManager.Client.ref.xml \
+	org.cinnamon.SessionManager.ClientPrivate.ref.xml \
+	org.cinnamon.SessionManager.Inhibitor.ref.xml \
+	org.cinnamon.SessionManager.Presence.ref.xml
 
 CLEANFILES =				\
 	$(BUILT_SOURCES)		\

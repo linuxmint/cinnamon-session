@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-<!ENTITY dbus-Manager SYSTEM "org.gnome.SessionManager.ref.xml">
-<!ENTITY dbus-Client SYSTEM "org.gnome.SessionManager.Client.ref.xml">
-<!ENTITY dbus-ClientPrivate SYSTEM "org.gnome.SessionManager.ClientPrivate.ref.xml">
-<!ENTITY dbus-Inhibitor SYSTEM "org.gnome.SessionManager.Inhibitor.ref.xml">
-<!ENTITY dbus-Presence SYSTEM "org.gnome.SessionManager.Presence.ref.xml">
+<!ENTITY dbus-Manager SYSTEM "org.cinnamon.SessionManager.ref.xml">
+<!ENTITY dbus-Client SYSTEM "org.cinnamon.SessionManager.Client.ref.xml">
+<!ENTITY dbus-ClientPrivate SYSTEM "org.cinnamon.SessionManager.ClientPrivate.ref.xml">
+<!ENTITY dbus-Inhibitor SYSTEM "org.cinnamon.SessionManager.Inhibitor.ref.xml">
+<!ENTITY dbus-Presence SYSTEM "org.cinnamon.SessionManager.Presence.ref.xml">
 ]>
 
 <book id="index">
   <bookinfo>
-    <title>GNOME Session @VERSION@ Documentation</title>
+    <title>Cinnamon Session @VERSION@ Documentation</title>
     <releaseinfo>Version @VERSION@</releaseinfo>
     <authorgroup>
       <author>
-        <firstname>William Jon</firstname>
-        <surname>McCann</surname>
+        <firstname>Clement</firstname>
+        <surname>Lefebvre</surname>
         <affiliation>
           <address>
-            <email>jmccann@redhat.com</email>
+            <email>root@linuxmint.com</email>
           </address>
         </affiliation>
       </author>
