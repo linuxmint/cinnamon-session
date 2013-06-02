@@ -11,7 +11,7 @@ AM_CPPFLAGS =					\
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-gnome_session_SOURCES =				\
+cinnamon_session_SOURCES =				\
 	csm-app.h				\
 	csm-app.c				\
 	csm-autostart-app.h			\
@@ -67,7 +67,7 @@ gnome_session_SOURCES =				\
 	csm-xsmp-server.c			\
 	csm-xsmp-server.h
 
-gnome_session_CPPFLAGS =			\
+cinnamon_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
@@ -82,7 +82,7 @@ gnome_session_CPPFLAGS =			\
 	-DGCONF_SANITY_CHECK=\""$(GCONF_SANITY_CHECK)"\" \
 	-DGCONFTOOL_CMD=\"$(GCONFTOOL)\"
 
-gnome_session_LDADD =				\
+cinnamon_session_LDADD =				\
 	libcsmutil.la 				\
 	$(top_builddir)/egg/libeggdesktopfile.la \
 	$(SM_LIBS)				\

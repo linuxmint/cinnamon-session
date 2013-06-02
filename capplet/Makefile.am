@@ -10,7 +10,7 @@ AM_CPPFLAGS =						\
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-gnome_session_properties_SOURCES =			\
+cinnamon_session_properties_SOURCES =			\
 	main.c						\
 	csm-properties-dialog.h				\
 	csm-properties-dialog.c				\
@@ -23,7 +23,7 @@ gnome_session_properties_SOURCES =			\
 	csp-keyfile.h					\
 	csp-keyfile.c
 
-gnome_session_properties_LDADD =			\
+cinnamon_session_properties_LDADD =			\
 	$(SESSION_PROPERTIES_LIBS)			\
 	$(top_builddir)/cinnamon-session/libcsmutil.la 	\
 	$(GCONF_LIBS)
