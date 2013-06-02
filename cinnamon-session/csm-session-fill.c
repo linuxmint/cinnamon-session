@@ -248,7 +248,7 @@ load_standard_apps (CsmManager *manager,
 
                 autostart_dirs = csm_util_get_autostart_dirs ();
 
-                if (g_getenv ("GNOME_SESSION_SAVE") != NULL)
+                if (g_getenv ("CINNAMON_SESSION_SAVE") != NULL)
                         maybe_load_saved_session_apps (manager);
 
                 for (i = 0; autostart_dirs[i]; i++) {

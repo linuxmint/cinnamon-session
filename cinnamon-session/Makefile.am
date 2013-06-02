@@ -6,7 +6,7 @@ noinst_PROGRAMS = 		\
 	test-process-helper
 
 AM_CPPFLAGS =					\
-	$(GNOME_SESSION_CFLAGS)			\
+	$(CINNAMON_SESSION_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
@@ -90,7 +90,7 @@ cinnamon_session_LDADD =				\
 	$(XRENDER_LIBS)				\
 	$(XTEST_LIBS)				\
 	$(XEXT_LIBS)				\
-	$(GNOME_SESSION_LIBS)			\
+	$(CINNAMON_SESSION_LIBS)			\
 	$(GCONF_LIBS)				\
 	$(SYSTEMD_LIBS)				\
 	$(EXECINFO_LIBS)
@@ -100,10 +100,10 @@ libcsmutil_la_SOURCES =				\
 	csm-util.h
 
 libcsmutil_la_LIBADD = 				\
-	$(GNOME_SESSION_LIBS)
+	$(CINNAMON_SESSION_LIBS)
 
 test_inhibit_SOURCES = test-inhibit.c
-test_inhibit_LDADD = $(GNOME_SESSION_LIBS)
+test_inhibit_LDADD = $(CINNAMON_SESSION_LIBS)
 
 test_client_dbus_SOURCES = test-client-dbus.c
 test_client_dbus_LDADD = $(DBUS_GLIB_LIBS)

@@ -1,5 +1,5 @@
 /* -*- mode:c; c-basic-offset: 8; indent-tabs-mode: nil; -*- */
-/* Tool to set the property _GNOME_SESSION_ACCELERATED on the root window */
+/* Tool to set the property _CINNAMON_SESSION_ACCELERATED on the root window */
 /*
  * Copyright (C) 2011 Red Hat, Inc.
  *
@@ -32,7 +32,7 @@
 /* Wait up to this long for a running check to finish */
 #define PROPERTY_CHANGE_TIMEOUT 5000
 
-/* Values used for the _GNOME_SESSION_ACCELERATED root window property */
+/* Values used for the _CINNAMON_SESSION_ACCELERATED root window property */
 #define NO_ACCEL            0
 #define HAVE_ACCEL          1
 #define ACCEL_CHECK_RUNNING 2
@@ -111,7 +111,7 @@ main (int argc, char **argv)
         display = gdk_display_get_default ();
         rootwin = gdk_x11_get_default_root_xwindow ();
 
-        is_accelerated_atom = gdk_x11_get_xatom_by_name_for_display (display, "_GNOME_SESSION_ACCELERATED");
+        is_accelerated_atom = gdk_x11_get_xatom_by_name_for_display (display, "_CINNAMON_SESSION_ACCELERATED");
 
         {
                 Atom type;

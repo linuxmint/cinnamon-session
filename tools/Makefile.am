@@ -10,7 +10,7 @@ cinnamon_session_quit_SOURCES =			\
 
 cinnamon_session_quit_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
-	$(GNOME_SESSION_CFLAGS)			\
+	$(CINNAMON_SESSION_CFLAGS)			\
 	$(DBUS_GLIB_CFLAGS)			\
 	$(GCONF_FLAGS)				\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
@@ -19,7 +19,7 @@ cinnamon_session_quit_CPPFLAGS =			\
 cinnamon_session_quit_LDADD =			\
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
-	$(GNOME_SESSION_LIBS)			\
+	$(CINNAMON_SESSION_LIBS)			\
 	$(DBUS_GLIB_LIBS)			\
 	$(GCONF_LIBS)
 
