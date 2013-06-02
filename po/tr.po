@@ -13,9 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-06 21:49+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-08-12 22:09+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@acikkaynak.name.tr>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -46,31 +45,31 @@ msgstr "Başlangıç komutu boş bırakılamaz"
 msgid "The startup command is not valid"
 msgstr "Başlangıç komutu geçerli değil"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Etkin"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Simge"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Açılış Uygulamaları Tercihleri"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "İsimsiz"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Açıklama yok"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Bu uygulamanın sürümü"
 
@@ -78,23 +77,13 @@ msgstr "Bu uygulamanın sürümü"
 msgid "Could not display help document"
 msgstr "Yardım belgesi görüntülenemedi"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon korumalı"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Bu oturum Cinnamon girişi yapmanızı sağlar"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Bazı programlar hala çalışıyor:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -115,34 +104,26 @@ msgid "Additional startup _programs:"
 msgstr "Ek başlangıç _programları:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Başlangıç Uygulamaları"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "Çıkarken çalışan uygulamaları kendiliğindne _hatırla"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "Şu Anda Çalışan Uygulamaları Hatı_rla"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Seçenekler"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Gözat…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "_Açıklama:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Komut:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "İ_sim:"
 
@@ -301,7 +282,7 @@ msgstr "_Kullanıcı Değiştir"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "Çı_kış"
 
@@ -358,17 +339,19 @@ msgstr ""
 "Bir sorun oluştu ve sistem kurtarılamıyor.\n"
 "Lütfen çıkış yapın ve tekrar deneyin."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3'ün Yüklenmesi Başarısız Oldu"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "Maalesef Cinnamon 3 düzgün şekilde başlatılamadı ve <i>korumalı kipte</i> "
 "başlatıldı.\n"
@@ -376,11 +359,13 @@ msgstr ""
 "Büyük olasılıkla sisteminiz (grafik donanımı veya sürücüsü) tam Cinnamon 3 "
 "deneyimi sunmak için yeterli değil."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Cinnamon 3 hakkında daha fazlasını öğren"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Cevap vermiyor"
 
@@ -408,42 +393,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE dinleme soketi oluşturulamadı: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Giriş oturumu başlatılamıyor (ve X sunucuya bağlanılamıyor)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Standart kendiliğinden başlat dizinlerinin yerine geç"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Kullanılacak oturum"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Hata ayıklama kodunu etkinleştir"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Kullanıcıya özel programları yükleme"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Sınama için büyük hata iletişim penceresini göster"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- Cinnamon oturum yöneticisi"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -473,6 +459,21 @@ msgstr "Oturum yöneticisine bağlanılamadı"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Program çakışan seçeneklerle çağırıldı"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon korumalı"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Bu oturum Cinnamon girişi yapmanızı sağlar"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Başlangıç Uygulamaları"
+
+#~ msgid "Options"
+#~ msgstr "Seçenekler"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Bazı programlar hala çalışıyor:</b>"
@@ -528,12 +529,12 @@ msgstr "Program çakışan seçeneklerle çağırıldı"
 #~ msgid ""
 #~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Eğer seçiliyse, cinnamon-session oturumu kapatmadan önce kullanıcı istemini "
-#~ "sorar."
+#~ "Eğer seçiliyse, cinnamon-session oturumu kapatmadan önce kullanıcı "
+#~ "istemini sorar."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Eğer seçiliyse, cinnamon-session oturumu kendiliğinden kaydeder. Seçili "
 #~ "değilse, iletişim kutusunda oturumu kaydetme seçeneği bulunur."
@@ -687,9 +688,9 @@ msgstr "Program çakışan seçeneklerle çağırıldı"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "Güvenlik gerekçesiyle, cinnamon-session, _IceTcpTransNoListen() olan "
 #~ "platformlarda (XFree86 sistemleri) TCP portlarını dinlemez. Bu seçenek "
@@ -784,7 +785,8 @@ msgstr "Program çakışan seçeneklerle çağırıldı"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -817,9 +819,10 @@ msgstr "Program çakışan seçeneklerle çağırıldı"
 #~ msgstr "Program %s oturum içinde bulunamadı\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
-#~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
 #~ "Cinnamon ortam yöneticisi tam olarak başlatılamıyor. Lütfen bunu Cinnamon "
 #~ "hatası olarak raporlayın. Lütfen ICE hata mesajınız da hata bildirimine "
@@ -828,29 +831,31 @@ msgstr "Program çakışan seçeneklerle çağırıldı"
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
 #~ "Cinnamon oturum yöneticisi '%s' dosyasını kilitleyemedi. Lütfen bunu bir "
-#~ "Cinnamon hatası olarak bildirin. Bazen bu hata dosyanın dizini yazılabilir "
-#~ "olmadığı zaman oluşur, hata durumunda kullanılan oturuma giriş yapmayı "
-#~ "deneyebilir ve dizinin yazılabilir olduğundan emin olabilirsiniz."
+#~ "Cinnamon hatası olarak bildirin. Bazen bu hata dosyanın dizini "
+#~ "yazılabilir olmadığı zaman oluşur, hata durumunda kullanılan oturuma "
+#~ "giriş yapmayı deneyebilir ve dizinin yazılabilir olduğundan emin "
+#~ "olabilirsiniz."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
-#~ "Cinnamon oturum yöneticisi dosyayı okuyamadı: '%s'. Eğer bu dosya mevcutsa "
-#~ "tam olarak çalışabilmesi için Cinnamon tarafından okunabilir olması "
-#~ "gerekmektedir. Hata durumunda kullanılan oturumla giriş yapıp bu dosyayı "
-#~ "silmeyi deneyin."
+#~ "Cinnamon oturum yöneticisi dosyayı okuyamadı: '%s'. Eğer bu dosya "
+#~ "mevcutsa tam olarak çalışabilmesi için Cinnamon tarafından okunabilir "
+#~ "olması gerekmektedir. Hata durumunda kullanılan oturumla giriş yapıp bu "
+#~ "dosyayı silmeyi deneyin."
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
 #~ "Dosya '%s' yazılamadı. Bu dosya Cinnamon'un düzgün çalışabilmesi için "
 #~ "yazılabilir olmalıdır. Hata durumunda kullanılan oturum ile giriş yapıp "

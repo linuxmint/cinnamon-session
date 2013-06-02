@@ -14,9 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-20 05:49+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-20 23:40+0800\n"
 "Last-Translator: tuhaihe <1132321739qq@gmail.com>\n"
 "Language-Team: Chinese/Simplified <i18n-zh@googlegroups.com>\n"
@@ -47,33 +46,33 @@ msgstr "启动命令不能为空"
 msgid "The startup command is not valid"
 msgstr "启动命令无效"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "启用"
 
 # gsm/logout.c:240
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "图标"
 
 # applets/gkb/gkb.c:262
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "程序"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "启动应用程序首选项"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "无名称"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "无描述"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "此应用程序的版本"
 
@@ -81,23 +80,13 @@ msgstr "此应用程序的版本"
 msgid "Could not display help document"
 msgstr "不能显示帮助文档"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon 后备模式"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "此会话将您登录到 Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "有些程序仍在运行中："
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -116,39 +105,29 @@ msgstr "选择登录时要启动的应用程序"
 msgid "Additional startup _programs:"
 msgstr "额外的启动程序(_P)："
 
-# applets/gkb/gkb.c:262
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "启动程序"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "注销时自动记住正在运行的应用程序(_A)"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "记住目前正在运行的应用程序(_R)"
 
-# panel/menu.c:3509
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "选项"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "浏览..."
 
 # help-browser/toc-man.c:19 help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "注释(_E)："
 
 # help-browser/toc-man.c:19 help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "命令(_M)："
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "名称(_N)："
 
@@ -310,7 +289,7 @@ msgstr "切换用户(_S)"
 # gsm/logout.c:248
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "注销(_L)"
 
@@ -362,27 +341,31 @@ msgid ""
 "Please log out and try again."
 msgstr "系统出错并无法恢复，请尝试注销并重新登录。"
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 加载失败"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "很遗憾 Cinnamon 3 无法正常启动，并已启动到<i>后备模式</i>。\n"
 "\n"
 "这可能是因为您的显卡硬件或驱动不足以完全运行 Cinnamon 3。"
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "进一步了解 Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "无响应"
 
@@ -410,42 +393,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "无法创建 ICE 监听套接字：%s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "无法启动登录会话(并且无法连接到 X 服务器)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "取代默认的自动启动目录"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "自动启动目录"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "要使用的会话"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "会话名称"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "启用调试代码"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "不装入用户指定的应用程序"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "显示用于测试的鲸鱼失败对话框"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- Cinnamon 会话管理器"
 
 # gsm/logout.c:248
@@ -477,6 +461,23 @@ msgstr "无法连接到会话管理器"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "调用程序的选项互相冲突"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon 后备模式"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "此会话将您登录到 Cinnamon"
+
+# applets/gkb/gkb.c:262
+#~ msgid "Startup Programs"
+#~ msgstr "启动程序"
+
+# panel/menu.c:3509
+#~ msgid "Options"
+#~ msgstr "选项"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>某些程序仍在运行中：</b>"

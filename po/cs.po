@@ -14,9 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-24 17:39+0200\n"
 "Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -48,31 +47,31 @@ msgstr "Příkaz při přihlášení nesmí být prázdný"
 msgid "The startup command is not valid"
 msgstr "Příkaz při přihlášení není platný"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Předvolby aplikací spouštěných při přihlášení"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Bez názvu"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Bez popisu"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Verze této aplikace"
 
@@ -80,23 +79,13 @@ msgstr "Verze této aplikace"
 msgid "Could not display help document"
 msgstr "Nelze zobrazit dokument nápovědy"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Záložní prostředí Cinnamon"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Toto sezení vás přihlásí do Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Některé programy stále běží:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -117,35 +106,26 @@ msgid "Additional startup _programs:"
 msgstr "_Další programy při přihlášení:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Programy při přihlášení"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "Při odhlašování si _automaticky pamatovat běžící aplikace"
 
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "Zapa_matovat si aktuálně běžící aplikace"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Možnosti"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Procházet…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "_Komentář:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Příkaz:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Název:"
 
@@ -289,8 +269,6 @@ msgstr[2] "Systém bude automaticky vypnut za %d sekund."
 
 #: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
-#| msgid "This system will be automatically shut down in %d second."
-#| msgid_plural "This system will be automatically shut down in %d seconds."
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "Tento systém bude automaticky restartován za %d sekundu."
@@ -312,7 +290,7 @@ msgstr "_Přepnout uživatele"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Odhlásit se"
 
@@ -338,7 +316,6 @@ msgid "_Shut Down"
 msgstr "_Vypnout"
 
 #: ../cinnamon-session/csm-logout-dialog.c:427
-#| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "Restartovat tento systém nyní?"
 
@@ -370,29 +347,33 @@ msgstr ""
 "Došlo ke komplikacím a systém se nepodařilo obnovit.\n"
 "Odhlaste se prosím a zkuste to znovu."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Nelze načíst Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Cinnamon 3 bohužel nemohlo být správně spuštěno a bylo přepnuto do <i>záložního "
-"režimu</i>.\n"
+"Cinnamon 3 bohužel nemohlo být správně spuštěno a bylo přepnuto do "
+"<i>záložního režimu</i>.\n"
 "\n"
 "Příčinou je patrně váš systém (grafický hardware nebo ovladač), na kterém "
 "není možné provozovat Cinnamon 3 se všemi jeho vlastnostmi."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Poznejte lépe Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Neodpovídá"
 
@@ -421,42 +402,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Nelze vytvořit socket naslouchání ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Nepodařilo se spustit sezení s přihlášením (a spojit se se serverem X)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Přepsat standardní adresáře automatického spuštění"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "ADR_AUTOSPUŠTĚNÍ"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Sezení, které se má použít"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "NÁZEV_SEZENÍ"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Zapnout ladicí kód"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Nenahrávat uživatelem zadané aplikace"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Zobrazit dialogové okno černé barvy pro testování"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " – správce sezení Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -486,6 +468,21 @@ msgstr "Nelze se spojit se správcem sezení"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Program volán s kolidujícími volbami"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Záložní prostředí Cinnamon"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Toto sezení vás přihlásí do Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Programy při přihlášení"
+
+#~ msgid "Options"
+#~ msgstr "Možnosti"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Některé programy stále běží:</b>"

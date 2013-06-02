@@ -5,573 +5,585 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session 0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-09 12:32+0200\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2008-04-14 17:50+0000\n"
 "Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
 "net>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2008-05-28 02:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/csm-app-dialog.c:126
+#: ../capplet/csm-app-dialog.c:120
 msgid "Select Command"
 msgstr "Odaberite naredbu"
 
-#: ../capplet/csm-app-dialog.c:187
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Dodaj progam za pokretanje pri podizanju"
 
-#: ../capplet/csm-app-dialog.c:191
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Uređivanje programa koji se pokreću prilikom pokretanja"
 
-#: ../capplet/csm-properties-dialog.c:132
-msgid "No description"
-msgstr "Bez opisa"
-
-#: ../capplet/csm-properties-dialog.c:977
-msgid "The name of the startup program cannot be empty"
-msgstr "Ime programa ne može biti prazno"
-
-#: ../capplet/csm-properties-dialog.c:981
+#: ../capplet/csm-app-dialog.c:484
 msgid "The startup command cannot be empty"
 msgstr "Naredba pri pokretanju ne može biti prazna"
 
-#: ../capplet/csm-properties-dialog.c:987
+#: ../capplet/csm-app-dialog.c:490
 msgid "The startup command is not valid"
 msgstr "Naredba nije ispravna"
 
-#: ../capplet/csm-properties-dialog.c:1291
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: ../capplet/csm-properties-dialog.c:1304
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr ""
 
-#: ../capplet/csm-properties-dialog.c:1315
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:1464
-#: ../data/session-properties.glade.h:6
-msgid "Sessions Preferences"
+#: ../capplet/csm-properties-dialog.c:747
+#, fuzzy
+msgid "Startup Applications Preferences"
 msgstr "Postavke prijave"
 
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:509
+#: ../capplet/csp-app.c:276
+msgid "No name"
+msgstr ""
+
+#: ../capplet/csp-app.c:282
+msgid "No description"
+msgstr "Bez opisa"
+
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr ""
 
-#: ../compat/at-spi-registryd-wrapper.c:47
-msgid ""
-"Assistive technology support has been requested for this session, but the "
-"accessibility registry was not found. Please ensure that the AT-SPI package "
-"is installed. Your session has been started without assistive technology "
-"support."
+#: ../capplet/main.c:61
+msgid "Could not display help document"
 msgstr ""
-"Tehnologija pomoći je zatražena za ovu sesiju, no registar pomoći nije "
-"nađen. Molim, provjerite je li AT-SPI paket instaliran. Vaša sesija je "
-"započeta bez tehnologije pomoći."
-
-#: ../compat/at-spi-registryd-wrapper.desktop.in.in.in.h:1
-msgid "AT SPI Registry Wrapper"
-msgstr ""
-
-#: ../compat/gnome-keyring-daemon-wrapper.desktop.in.in.in.h:1
-msgid "Cinnamon Keyring Daemon Wrapper"
-msgstr ""
-
-#: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "Cinnamon Settings Daemon Helper"
-msgstr ""
-
-#: ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Ova sesija vas prijavljuje u Cinnamon"
-
-#: ../data/cinnamon-session.schemas.in.h:1
-#, fuzzy
-msgid "Default session"
-msgstr "Ubij prijavu"
-
-#: ../data/cinnamon-session.schemas.in.h:2
-#, fuzzy
-msgid "File Manager"
-msgstr "Upravitelj prozora"
-
-#: ../data/cinnamon-session.schemas.in.h:3
-msgid "If enabled, cinnamon-session will prompt the user before ending a session."
-msgstr ""
-"Ako je omogućeno, cinnamon-session će upitati korisnika prije završavanja "
-"prijave."
-
-#: ../data/cinnamon-session.schemas.in.h:4
-msgid ""
-"If enabled, cinnamon-session will save the session automatically. Otherwise, "
-"the logout dialog will have an option to save the session."
-msgstr ""
-"Ako je omogućeno, cinnamon-session će automatski spremiti prijavu. Inače će "
-"dijalog odjave imati opciju spremanja prijave."
-
-#: ../data/cinnamon-session.schemas.in.h:5
-#, fuzzy
-msgid "List of applications that are part of the default session."
-msgstr "Poredak po kojem se programi pokreću nakon prijave."
-
-#: ../data/cinnamon-session.schemas.in.h:6
-msgid ""
-"List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/cinnamon/session/required-components\".) The "
-"Session Preferences will not normally allow users to remove a required "
-"component from the session, and the session manager will automatically add "
-"the required components back to the session if they do get removed."
-msgstr ""
-
-#: ../data/cinnamon-session.schemas.in.h:7
-msgid "Logout prompt"
-msgstr "Dijalog odjave"
-
-#: ../data/cinnamon-session.schemas.in.h:8
-#, fuzzy
-msgid "Panel"
-msgstr "Ploča"
-
-#: ../data/cinnamon-session.schemas.in.h:9
-msgid "Preferred Image to use for login splash screen"
-msgstr "Slika koju želite koristiti za prijavni zaslon"
-
-#: ../data/cinnamon-session.schemas.in.h:10
-msgid "Required session components"
-msgstr ""
-
-#: ../data/cinnamon-session.schemas.in.h:11
-msgid "Save sessions"
-msgstr "Spremiti prijavu"
-
-#: ../data/cinnamon-session.schemas.in.h:12
-msgid "Selected option in the log out dialog"
-msgstr "Odabrana opcija u odjavnom prozoru"
-
-#: ../data/cinnamon-session.schemas.in.h:13
-msgid "Show the splash screen"
-msgstr "Pokaži pozdravni zaslon"
-
-#: ../data/cinnamon-session.schemas.in.h:14
-msgid "Show the splash screen when the session starts up"
-msgstr "Pokaži pozdravni zaslon kod prijavljivanja"
-
-#: ../data/cinnamon-session.schemas.in.h:15
-msgid ""
-"The file manager provides the desktop icons and allows you to interact with "
-"your saved files."
-msgstr ""
-
-#: ../data/cinnamon-session.schemas.in.h:16
-msgid ""
-"The panel provides the bar at the top or bottom of the screen containing "
-"menus, the window list, status icons, the clock, etc."
-msgstr ""
-
-#: ../data/cinnamon-session.schemas.in.h:17
-msgid ""
-"The window manager is the program that draws the title bar and borders "
-"around windows, and allows you to move and resize windows."
-msgstr ""
-
-#: ../data/cinnamon-session.schemas.in.h:18
-msgid ""
-"This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
-"directories and image names are valid values. Changing this value will "
-"effect the next session login."
-msgstr ""
-"Ovo je relativna staza u odnosu na $datadir/pixmaps/ direktorij. "
-"Poddirektoriji i imena slika su ispravne vrijednosti. Izmijenjena vrijednost "
-"stupiti će na snagu prilikom slijedeće prijave."
-
-#: ../data/cinnamon-session.schemas.in.h:19
-msgid ""
-"This is the option that will be selected in the logout dialog, valid values "
-"are \"logout\" for logging out, \"shutdown\" for halting the system and "
-"\"restart\" for restarting the system."
-msgstr ""
-"Ovo je opcija koja će biti odabrana u izlaznom dijalogu, ispravne "
-"vrijednosti su \"odjava\" za odjaviti se, \"ugasi\" za gašenje sistema i "
-"\"ponovno pokretanje\" za ponovno pokretanje sistema."
-
-#: ../data/cinnamon-session.schemas.in.h:20 ../data/gnome-wm.desktop.in.in.h:1
-msgid "Window Manager"
-msgstr "Upravitelj prozora"
 
 #: ../data/csm-inhibit-dialog.glade.h:1
-msgid "<b>Some programs are still running:</b>"
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
 msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:2
-#: ../cinnamon-session/csm-inhibit-dialog.c:628
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
-"Waiting for program to finish.  Interrupting program may cause you to lose "
-"work."
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
 msgstr ""
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Podešavanje prijave"
+msgid "Startup Applications"
+msgstr ""
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Prijave"
+msgid "Choose what applications to start when you log in"
+msgstr ""
 
-#: ../data/session-properties.glade.h:1
+#: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "Dodatni programi za _pokrenuti pri podizanju:"
 
-#: ../data/session-properties.glade.h:2
-#, fuzzy
-msgid "Browse..."
-msgstr "_Potraži..."
-
-#: ../data/session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "Na_redba:"
-
-#: ../data/session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "_Komentar:"
-
-#: ../data/session-properties.glade.h:5
-#, fuzzy
-msgid "Options"
-msgstr "Odrednice prijave"
-
-#: ../data/session-properties.glade.h:7
-msgid "Startup Programs"
-msgstr "Startup servisi"
-
-#: ../data/session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:2
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Automatski zapamti pokrenute aplikacije pri odjavljivanju iz sustava"
 
-#: ../data/session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:3
+#, fuzzy
+msgid "_Remember Currently Running Applications"
+msgstr "_Zapamti trenutno pokrenute programe"
+
+#: ../data/cinnamon-session-properties.glade.h:4
+#, fuzzy
+msgid "Browse…"
+msgstr "_Potraži..."
+
+#: ../data/cinnamon-session-properties.glade.h:5
+msgid "Comm_ent:"
+msgstr "_Komentar:"
+
+#: ../data/cinnamon-session-properties.glade.h:6
+msgid "Co_mmand:"
+msgstr "Na_redba:"
+
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Ime:"
 
-#: ../data/session-properties.glade.h:10
-#, fuzzy
-msgid "_Remember Currently Running Application"
-msgstr "_Zapamti trenutno pokrenute programe"
-
 #: ../egg/eggdesktopfile.c:165
+#, c-format
 msgid "File is not a valid .desktop file"
 msgstr ""
 
-#: ../egg/eggdesktopfile.c:188
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr ""
 
-#: ../egg/eggdesktopfile.c:962
+#: ../egg/eggdesktopfile.c:974
 #, fuzzy, c-format
 msgid "Starting %s"
 msgstr "Početak"
 
-#: ../egg/eggdesktopfile.c:1096
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
 msgid "Application does not accept documents on command line"
 msgstr ""
 
-#: ../egg/eggdesktopfile.c:1164
+#: ../egg/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr ""
 
-#: ../egg/eggdesktopfile.c:1372
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 
-#: ../egg/eggdesktopfile.c:1391
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
 msgid "Not a launchable item"
 msgstr ""
 
-#: ../egg/eggsmclient-libgnomeui.c:102
-msgid "Session management"
-msgstr ""
-
-#: ../egg/eggsmclient-libgnomeui.c:136
-msgid "Cinnamon GUI Library + EggSMClient"
-msgstr ""
-
-#: ../egg/eggsmclient.c:185
+#: ../egg/eggsmclient.c:226
 #, fuzzy
 msgid "Disable connection to session manager"
 msgstr "Nije moguće povezati se na upravitelja prijava"
 
-#: ../egg/eggsmclient.c:188
+#: ../egg/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
 msgstr ""
 
-#: ../egg/eggsmclient.c:188
+#: ../egg/eggsmclient.c:229
 msgid "FILE"
 msgstr ""
 
-#: ../egg/eggsmclient.c:191
+#: ../egg/eggsmclient.c:232
 #, fuzzy
 msgid "Specify session management ID"
 msgstr "Odredi ime prijave za učitavanje"
 
-#: ../egg/eggsmclient.c:191
+#: ../egg/eggsmclient.c:232
 msgid "ID"
 msgstr ""
 
-#: ../egg/eggsmclient.c:241
+#: ../egg/eggsmclient.c:253
 #, fuzzy
-msgid "Session Management Options"
+msgid "Session management options:"
 msgstr "Odrednice prijave"
 
-#: ../egg/eggsmclient.c:242
+#: ../egg/eggsmclient.c:254
 #, fuzzy
-msgid "Show Session Management options"
+msgid "Show session management options"
 msgstr "Odrednice prijave"
 
-#: ../cinnamon-session/csm-gconf.c:106
-#, c-format
-msgid ""
-"There is a problem with the configuration server.\n"
-"(%s exited with status %d)"
-msgstr ""
-
-#: ../cinnamon-session/csm-inhibit-dialog.c:256
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
 #, c-format
 msgid "Icon '%s' not found"
 msgstr ""
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:579
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
 msgid "Unknown"
 msgstr "Napoznato"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:627
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
 msgid "A program is still running:"
 msgstr ""
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:631
-msgid "Some programs are still running:"
-msgstr ""
-
-#: ../cinnamon-session/csm-inhibit-dialog.c:632
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:860
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
 #, fuzzy
 msgid "Switch User Anyway"
 msgstr "_Promjena korisnika"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:863
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
 #, fuzzy
-msgid "Logout Anyway"
+msgid "Log Out Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:866
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
 #, fuzzy
 msgid "Suspend Anyway"
 msgstr "Sus_pendiranje"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:869
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
 #, fuzzy
 msgid "Hibernate Anyway"
 msgstr "_Hibernacija"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:872
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
 #, fuzzy
-msgid "Shutdown Anyway"
+msgid "Shut Down Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:875
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
 #, fuzzy
-msgid "Reboot Anyway"
+msgid "Restart Anyway"
 msgstr "Svejedno se prijavi"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:883
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
 #, fuzzy
 msgid "Lock Screen"
 msgstr "_Zaključavanje zaslona"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:886
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
 msgid "Cancel"
 msgstr ""
 
-#: ../cinnamon-session/csm-logout-dialog.c:283
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
-msgid ""
-"You are currently logged in as \"%s\".\n"
-"You will be automatically logged out in %d second."
-msgid_plural ""
-"You are currently logged in as \"%s\".\n"
-"You will be automatically logged out in %d seconds."
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
-#: ../cinnamon-session/csm-logout-dialog.c:295
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
-msgid ""
-"You are currently logged in as \"%s\".\n"
-"This system will be automatically shut down in %d second."
-msgid_plural ""
-"You are currently logged in as \"%s\".\n"
-"This system will be automatically shut down in %d seconds."
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
-#: ../cinnamon-session/csm-logout-dialog.c:371
+#: ../cinnamon-session/csm-logout-dialog.c:282
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr ""
 
-#: ../cinnamon-session/csm-logout-dialog.c:377
+#: ../cinnamon-session/csm-logout-dialog.c:378
 #, fuzzy
 msgid "_Switch User"
 msgstr "_Promjena korisnika"
 
-#: ../cinnamon-session/csm-logout-dialog.c:386
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Odjava"
 
-#: ../cinnamon-session/csm-logout-dialog.c:392
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr ""
 
-#: ../cinnamon-session/csm-logout-dialog.c:398
+#: ../cinnamon-session/csm-logout-dialog.c:399
 #, fuzzy
 msgid "S_uspend"
 msgstr "Sus_pendiranje"
 
-#: ../cinnamon-session/csm-logout-dialog.c:404
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Hibernacija"
 
-#: ../cinnamon-session/csm-logout-dialog.c:410
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "Po_novno pokretanje"
 
-#: ../cinnamon-session/csm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_Gašenje"
 
-#: ../cinnamon-session/csm-manager.c:923 ../cinnamon-session/csm-manager.c:1539
+#: ../cinnamon-session/csm-logout-dialog.c:427
+msgid "Restart this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
+msgid "Oh no!  Something has gone wrong."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1431
+msgid "GNOME 3 Failed to Load"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1432
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1434
+msgid "Learn more about GNOME 3"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr ""
 
-#: ../cinnamon-session/csm-xsmp-client.c:975
-msgid "This program is blocking log out."
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../cinnamon-session/csm-xsmp-client.c:559
+#, fuzzy
+msgid "Remembered Application"
+msgstr "_Zapamti trenutno pokrenute programe"
+
+#: ../cinnamon-session/csm-xsmp-client.c:1197
+msgid "This program is blocking logout."
 msgstr ""
 
-#: ../cinnamon-session/csm-xsmp-server.c:234
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 
-#: ../cinnamon-session/csm-xsmp-server.c:489
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:139
-msgid "Unable to start login session (and unable connect to the X server)"
+#: ../cinnamon-session/csm-util.c:412
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 
-#: ../cinnamon-session/main.c:505
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr ""
 
-#: ../cinnamon-session/main.c:506
-msgid "GConf key used to lookup default session"
+#: ../cinnamon-session/main.c:291
+msgid "AUTOSTART_DIR"
 msgstr ""
 
-#: ../cinnamon-session/main.c:507
+#: ../cinnamon-session/main.c:292
+#, fuzzy
+msgid "Session to use"
+msgstr "Prijave"
+
+#: ../cinnamon-session/main.c:292
+msgid "SESSION_NAME"
+msgstr ""
+
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr ""
 
-#: ../cinnamon-session/main.c:508
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr ""
 
-#: ../cinnamon-session/main.c:529
-#, fuzzy
-msgid " - the Cinnamon session manager"
-msgstr "- Upravlja Cinnamon prijavom"
-
-#: ../splash/cinnamon-session-splash.c:291
-#, fuzzy
-msgid "- Cinnamon Splash Screen"
-msgstr "Pokaži pozdravni zaslon"
-
-#: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "Cinnamon Splash Screen"
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../cinnamon-session/main.c:297
+msgid "Show the fail whale dialog for testing"
 msgstr ""
 
-#: ../tools/cinnamon-session-save.c:65
-msgid "Set the current session name"
-msgstr "Postavi ime trenutačne prijave"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
+msgstr "- Upravlja Cinnamon prijavom"
 
-#: ../tools/cinnamon-session-save.c:65
-msgid "NAME"
-msgstr "IME"
-
-#: ../tools/cinnamon-session-save.c:66
+#: ../tools/cinnamon-session-quit.c:53
 #, fuzzy
 msgid "Log out"
 msgstr "_Odjava"
 
-#: ../tools/cinnamon-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
+#: ../tools/cinnamon-session-quit.c:54
+msgid "Power off"
 msgstr ""
 
-#: ../tools/cinnamon-session-save.c:68
-msgid "Show logout dialog"
+#: ../tools/cinnamon-session-quit.c:55
+#, fuzzy
+msgid "Reboot"
+msgstr "Svejedno se prijavi"
+
+#: ../tools/cinnamon-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
 msgstr ""
 
-#: ../tools/cinnamon-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr ""
-
-#: ../tools/cinnamon-session-save.c:70
-msgid "Kill session"
-msgstr "Ubij prijavu"
-
-#: ../tools/cinnamon-session-save.c:71
-msgid "Use dialog boxes for errors"
-msgstr "Koristi dijaloške okvire za greške"
-
-#: ../tools/cinnamon-session-save.c:72
-msgid "Do not require confirmation"
+#: ../tools/cinnamon-session-quit.c:57
+#, fuzzy
+msgid "Don't prompt for user confirmation"
 msgstr "Ne traži potvrdu"
 
-#: ../tools/cinnamon-session-save.c:120 ../tools/cinnamon-session-save.c:130
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Nije moguće povezati se na upravitelja prijava"
 
-#: ../tools/cinnamon-session-save.c:273
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr ""
+
+#~ msgid "The name of the startup program cannot be empty"
+#~ msgstr "Ime programa ne može biti prazno"
+
+#~ msgid ""
+#~ "Assistive technology support has been requested for this session, but the "
+#~ "accessibility registry was not found. Please ensure that the AT-SPI "
+#~ "package is installed. Your session has been started without assistive "
+#~ "technology support."
+#~ msgstr ""
+#~ "Tehnologija pomoći je zatražena za ovu sesiju, no registar pomoći nije "
+#~ "nađen. Molim, provjerite je li AT-SPI paket instaliran. Vaša sesija je "
+#~ "započeta bez tehnologije pomoći."
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Ova sesija vas prijavljuje u Cinnamon"
+
+#, fuzzy
+#~ msgid "Default session"
+#~ msgstr "Ubij prijavu"
+
+#, fuzzy
+#~ msgid "File Manager"
+#~ msgstr "Upravitelj prozora"
+
+#~ msgid ""
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
+#~ msgstr ""
+#~ "Ako je omogućeno, cinnamon-session će upitati korisnika prije završavanja "
+#~ "prijave."
+
+#~ msgid ""
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
+#~ msgstr ""
+#~ "Ako je omogućeno, cinnamon-session će automatski spremiti prijavu. Inače "
+#~ "će dijalog odjave imati opciju spremanja prijave."
+
+#, fuzzy
+#~ msgid "List of applications that are part of the default session."
+#~ msgstr "Poredak po kojem se programi pokreću nakon prijave."
+
+#~ msgid "Logout prompt"
+#~ msgstr "Dijalog odjave"
+
+#, fuzzy
+#~ msgid "Panel"
+#~ msgstr "Ploča"
+
+#~ msgid "Preferred Image to use for login splash screen"
+#~ msgstr "Slika koju želite koristiti za prijavni zaslon"
+
+#~ msgid "Save sessions"
+#~ msgstr "Spremiti prijavu"
+
+#~ msgid "Selected option in the log out dialog"
+#~ msgstr "Odabrana opcija u odjavnom prozoru"
+
+#~ msgid "Show the splash screen"
+#~ msgstr "Pokaži pozdravni zaslon"
+
+#~ msgid "Show the splash screen when the session starts up"
+#~ msgstr "Pokaži pozdravni zaslon kod prijavljivanja"
+
+#~ msgid ""
+#~ "This is a relative path value based off the $datadir/pixmaps/ directory. "
+#~ "Sub-directories and image names are valid values. Changing this value "
+#~ "will effect the next session login."
+#~ msgstr ""
+#~ "Ovo je relativna staza u odnosu na $datadir/pixmaps/ direktorij. "
+#~ "Poddirektoriji i imena slika su ispravne vrijednosti. Izmijenjena "
+#~ "vrijednost stupiti će na snagu prilikom slijedeće prijave."
+
+#~ msgid ""
+#~ "This is the option that will be selected in the logout dialog, valid "
+#~ "values are \"logout\" for logging out, \"shutdown\" for halting the "
+#~ "system and \"restart\" for restarting the system."
+#~ msgstr ""
+#~ "Ovo je opcija koja će biti odabrana u izlaznom dijalogu, ispravne "
+#~ "vrijednosti su \"odjava\" za odjaviti se, \"ugasi\" za gašenje sistema i "
+#~ "\"ponovno pokretanje\" za ponovno pokretanje sistema."
+
+#~ msgid "Window Manager"
+#~ msgstr "Upravitelj prozora"
+
+#~ msgid "Configure your sessions"
+#~ msgstr "Podešavanje prijave"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Odrednice prijave"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Startup servisi"
+
+#, fuzzy
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "Pokaži pozdravni zaslon"
+
+#~ msgid "Set the current session name"
+#~ msgstr "Postavi ime trenutačne prijave"
+
+#~ msgid "NAME"
+#~ msgstr "IME"
+
+#~ msgid "Kill session"
+#~ msgstr "Ubij prijavu"
+
+#~ msgid "Use dialog boxes for errors"
+#~ msgstr "Koristi dijaloške okvire za greške"
 
 #~ msgid "Allow TCP connections"
 #~ msgstr "Dozvoli TCP spajanja"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "Zbog sigurnosnih razloga, na platformama koje imaju _IceTcpTransNoListen"
 #~ "() (XFree86 sustavi), cinnamon-session ne sluša za TCP konekcije na "
@@ -677,7 +689,8 @@ msgstr ""
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -713,30 +726,31 @@ msgstr ""
 #~ msgstr "Nije moguće naći program %s u prijavi\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
-#~ "s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
-#~ "Cinnamon se nije mogao pokrenuti normalno. Molim da ovo prijavite kao grešku "
-#~ "u Cinnamon-u. Molim da uključite ICE poruku o grešci u prijavi: '%s'. U "
-#~ "međuvremenu se možete pokušat prijaviti pod sigurnom prijavom."
+#~ "Cinnamon se nije mogao pokrenuti normalno. Molim da ovo prijavite kao "
+#~ "grešku u Cinnamon-u. Molim da uključite ICE poruku o grešci u prijavi: "
+#~ "'%s'. U međuvremenu se možete pokušat prijaviti pod sigurnom prijavom."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
-#~ "Cinnamon nije bio u mogućnosti zaključati datoteku '%s'. Molimo da prijavite "
-#~ "ovo kao grešku u Cinnamon-u. Katkada se ova greška događa ako je direktorij "
-#~ "datoteke nadostupan za pisanje; možete se pokušati prijaviti putem "
-#~ "sigurne prijave (failsafe session) i osigurati da direktorij ima potrebna "
-#~ "prava."
+#~ "Cinnamon nije bio u mogućnosti zaključati datoteku '%s'. Molimo da "
+#~ "prijavite ovo kao grešku u Cinnamon-u. Katkada se ova greška događa ako "
+#~ "je direktorij datoteke nadostupan za pisanje; možete se pokušati "
+#~ "prijaviti putem sigurne prijave (failsafe session) i osigurati da "
+#~ "direktorij ima potrebna prava."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
 #~ "Cinnamon nije bio u mogućnosti čitati datoteku '%s'. Ukoliko ova datoteka "
 #~ "postoji, mora biti čitljiva kako bi Cinnamon radio normalno.  Možete se "
@@ -745,8 +759,9 @@ msgstr ""
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
 #~ "Nije moguće pisati u datoteku '%s'. Ova datoteka mora imati rw (čitaj-"
 #~ "piši) prava kako bi Cinnamon pravilno radio. Možete se pokušati prijavitu "

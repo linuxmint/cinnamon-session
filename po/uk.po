@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-21 10:11+0300\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-21 10:16+0300\n"
 "Last-Translator: Re. <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
@@ -41,31 +41,31 @@ msgstr "Початкова команда не може бути порожнь�
 msgid "The startup command is not valid"
 msgstr "Початкова команда некоректна"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Увімкнено"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Піктограма"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Програма"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Налаштування початкових програм "
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Без назви"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Без опису"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Версія цієї програми"
 
@@ -73,23 +73,13 @@ msgstr "Версія цієї програми"
 msgid "Could not display help document"
 msgstr "Не вдалось показати довідку"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Запас Cinnamon"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Це — сеанс входу в Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Деякі програми досі працюють:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -110,34 +100,26 @@ msgid "Additional startup _programs:"
 msgstr "Додаткові по_чаткові програми для запуску:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Початкові програми"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Автоматично запам'ятовувати запущені програми при завершенні"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Запам'ятати поточно запущені програми"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Параметри"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Огляд…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Ко_ментар:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Команда:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Назва:"
 
@@ -302,7 +284,7 @@ msgstr "_Перемикнути користувача"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Завершити сеанс"
 
@@ -359,17 +341,19 @@ msgstr ""
 "Виникла помилка і систему неможливо відновити.\n"
 "Будь ласка, вийдіть і спробуйте знову."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Не вдалось завантажити Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "На жаль, не вдалось запустити Cinnamon 3 належним чином і його запущено в "
 "<i>резервному режимі</i>.\n"
@@ -377,11 +361,13 @@ msgstr ""
 "Найімовірніше, це означає, що ваша система (графічне обладнання або "
 "відеодрайвер) не підтримує роботу всіх можливостей Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Докладніше про Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Не відповідає"
 
@@ -409,42 +395,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Не вдалось створити гніздо прослуховування ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Не вдалось запустити сеанс (та з'єднатися з сервером X)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Перевизначити стандартні каталоги автозапуску"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "САМОЗАПУСКНА_ТЕКА"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Сеанси, які використовуються"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "НАЗВА_СЕАНСУ"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Увімкнути код зневадження"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Не завантажувати вибрані користувачем програми"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Показувати величезне вікно помилок для випробування "
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " — керування сеансом Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -474,6 +461,21 @@ msgstr "Не вдалось з'єднатись із менеджером сеа
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Програму запущено з несумісними параметрами"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Запас Cinnamon"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Це — сеанс входу в Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Початкові програми"
+
+#~ msgid "Options"
+#~ msgstr "Параметри"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Деякі програми досі працюють:</b>"
@@ -537,8 +539,8 @@ msgstr "Програму запущено з несумісними параме
 #~ "завершенням сеансу."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Якщо увімкнено, то сеанс зберігатиметься автоматично. У іншому випадку, у "
 #~ "діалозі завершення сеансу відображається відповідне поле для вмикання/"
@@ -556,10 +558,10 @@ msgstr "Програму запущено з несумісними параме
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Список компонентів які є обо'язковими для сеансу. (Кожна елемент є назвою "
-#~ "ключа у \"/desktop/cinnamon/session/required_components\".) \"Параметри сенсу"
-#~ "\" звичайно не дозволяють користувачам видаляти обов'язковий компонент з "
-#~ "системи, та менеджер сеансів автоматично додаватиме обов'язкові "
-#~ "компоненти назад до сеансу, якщо вони будуть видалені."
+#~ "ключа у \"/desktop/cinnamon/session/required_components\".) \"Параметри "
+#~ "сенсу\" звичайно не дозволяють користувачам видаляти обов'язковий "
+#~ "компонент з системи, та менеджер сеансів автоматично додаватиме "
+#~ "обов'язкові компоненти назад до сеансу, якщо вони будуть видалені."
 
 #~ msgid "Logout prompt"
 #~ msgstr "Попередження про завершення сеансу"

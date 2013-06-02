@@ -14,9 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.master.te\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-07-17 17:26+0530\n"
 "Last-Translator: GVS.Giri <gvs.giri947@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -50,31 +49,31 @@ msgstr "ప్రారంభ  ఆదేశం ఖాళీగా  ఉండర�
 msgid "The startup command is not valid"
 msgstr "ప్రారంభ  ఆదేశం సరియైనదికాదు"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "చేతనమైంది"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "ప్రతీక"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "ప్రోగామ్"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "ప్రారంభ అనువర్తనాల ప్రాధాన్యతలు"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "పేరు లేదు"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "వివరణ లేదు"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "ఈ అనువర్తనం యొక్క రూపాంతరం"
 
@@ -82,23 +81,13 @@ msgstr "ఈ అనువర్తనం యొక్క రూపాంతరం
 msgid "Could not display help document"
 msgstr "సహాయ పత్రమును ప్రదర్శించలేక పోయింది"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "గ్నోమ్ ఫాల్‌బ్యాక్"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "ఈ సెషన్ గ్నోమ్‌లోనికి లాగ్ చేస్తుంది"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "కొన్ని ప్రోగ్రాములు ఇప్పటికి నడుచుచున్నవి:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -119,35 +108,26 @@ msgid "Additional startup _programs:"
 msgstr "అదనపు  ప్రారంభ కార్యక్రమాలు (_p):"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "ప్రారంభ కార్యక్రమాలు"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "నిష్క్రమించేటప్పుడు నడుస్తున్న కార్యక్షేత్రాలని స్వయంచాలకంగా గుర్తుంచుకొనుము (_A)"
 
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "ప్రస్తుతం నడుస్తున్న అనువర్తనాలు గుర్తుంచుకో (_R)"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "ఐచ్చికములు"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "విహరించు..."
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "వ్యాఖ్య (_e):"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "ఆదేశం (_m):"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "పేరు (_N):"
 
@@ -309,7 +289,7 @@ msgstr "వాడుకరిని మార్చు (_S)"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "నిష్క్రమించు (_L)"
 
@@ -365,17 +345,19 @@ msgstr ""
 "ఒక సమస్య ఎదురయింది మరియు వ్యవస్థ దానినుండి కోలుకోలేదు.\n"
 "దయచేసి నిష్క్రమించి మరలా ప్రయత్నించండి."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "గ్నోమ్ 3 లోడుచేయుటలో విఫలమైంది"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "దురదృష్టశావత్తు గ్నోమ్ 3 సక్రమంగా ప్రారంభించుటలో విఫలమైంది అందువలన <i>ఫాల్‌బ్యాక్ రీతి</i>లో "
 "ప్రారంభమయినది.\n"
@@ -383,11 +365,13 @@ msgstr ""
 "మీ వ్యవస్థ (గ్రాఫిక్స్ హార్డ్‍వేర్ లేదా డ్రైవర్) గ్నోమ్ 3 యొక్క పూర్తి అనుభవాన్ని ఇచ్చుటకు తగిన శక్తి "
 "సామర్ధ్యాలను కలిగిలేదు."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "గ్నోమ్ 3 గురించి మరింత తెలుసుకోండి"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "స్పందించుటలేదు"
 
@@ -416,42 +400,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE లిజనింగ్ సాకెట్‌ను సృష్టించలేక పోయింది: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "లాగిన్ విభాగమును ప్రారంభించలేక పోయింది (మరియు X సేవికకు అనుసంధానము కాలేక పోయింది)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "ప్రామాణిక స్వయంచాలక డైరెక్టరీలను తిరిగివ్రాయుము"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "స్వయంప్రారంభ సంచయం (_D)"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "వాడవలసిన సెషన్"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "సెషన్ పేరు (_N)"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "దోషనిర్మూలన కోడ్‌ను చేతనపరుచు"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "వాడుకరి-తెలిపిన అనువర్తనములను లోడుచేయలేకపోయింది"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "పరీక్షించుటకు ఫెయిల్ వేల్ డైలాగును చూపించు"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " -గ్నోమ్ సెషన్ నిర్వాహకము"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -481,6 +466,21 @@ msgstr "సెషన్ నిర్వాహకానికి అనుసం�
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "విభేదిస్తున్న ఐచ్చికాలతో పిలువబడే ప్రోగ్రామ్"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "గ్నోమ్ ఫాల్‌బ్యాక్"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "ఈ సెషన్ గ్నోమ్‌లోనికి లాగ్ చేస్తుంది"
+
+#~ msgid "Startup Programs"
+#~ msgstr "ప్రారంభ కార్యక్రమాలు"
+
+#~ msgid "Options"
+#~ msgstr "ఐచ్చికములు"
 
 #~ msgid "Exited with code %d"
 #~ msgstr "%d కోడ్ తో నిష్క్రమించింది"

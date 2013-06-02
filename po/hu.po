@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-04 15:38+0200\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-04 15:38+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
@@ -43,31 +43,31 @@ msgstr "Az elindítandó parancs nem lehet üres"
 msgid "The startup command is not valid"
 msgstr "Az elindítandó parancs nem érvényes"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Indítópult beállításai"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Névtelen"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Nincs leírás"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Ezen alkalmazás verziója"
 
@@ -75,23 +75,13 @@ msgstr "Ezen alkalmazás verziója"
 msgid "Could not display help document"
 msgstr "A súgódokumentum nem jeleníthető meg"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon tartalék"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Bejelentkezés a Cinnamon környezetbe"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Néhány program még fut:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -112,34 +102,26 @@ msgid "Additional startup _programs:"
 msgstr "További elindítandó _programok:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Automatikusan elinduló programok"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Kijelentkezéskor a futó alkalmazások automatikus megjegyzése"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Jelenleg futó alkalmazások megjegyzése"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Beállítások"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Tallózás…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "_Megjegyzés:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Parancs:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Név:"
 
@@ -302,7 +284,7 @@ msgstr "Felhasználó_váltás"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Kijelentkezés"
 
@@ -359,17 +341,19 @@ msgstr ""
 "Hiba történt, és a rendszer nem képes helyreállni.\n"
 "Jelentkezzen ki, és próbálja újra."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "A Cinnamon 3 betöltése meghiúsult"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "A Cinnamon 3 megfelelő indítása sajnos meghiúsult, és <i>tartalék</i> módban "
 "indult el.\n"
@@ -377,11 +361,13 @@ msgstr ""
 "Ez valószínűleg azt jelenti, hogy a rendszere (a grafikus hardver vagy annak "
 "illesztőprogramja) nem képes a Cinnamon 3 környezet megfelelő működtetésére."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Tudjon meg többet a Cinnamon 3-ról"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Nem válaszol"
 
@@ -409,44 +395,45 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Nem hozható létre az ICE-figyelő foglalat: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "A bejelentkező munkamenet indítása sikertelen (és sikertelen a csatlakozás "
 "az X-kiszolgálóhoz)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Szabványos automatikus indítási könyvtárak felülbírálása"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTO_INDÍTÁS_KVT"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Használandó munkamenet"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "MUNKAMENET_NEVE"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Hibakeresési kód engedélyezése"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Ne töltsön be felhasználó által megadott alkalmazásokat"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "A hibaképernyő megjelenítése teszteléshez"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " – A Cinnamon munkamenet-kezelője"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -477,3 +464,17 @@ msgstr "Sikertelen kapcsolatfelvétel a munkamenet-kezelővel"
 msgid "Program called with conflicting options"
 msgstr "A program kapcsolói ütköznek"
 
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon tartalék"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Bejelentkezés a Cinnamon környezetbe"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Automatikusan elinduló programok"
+
+#~ msgid "Options"
+#~ msgstr "Beállítások"

@@ -6,482 +6,791 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cinnamon-SESSION 2.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-28 09:58+0200\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2006-08-04 22:16+0300\n"
 "Last-Translator: Fano Rajaonarisoa <rajfanhar@yahoo.fr>\n"
 "Language-Team: MALAGASY <i18n-malagasy-gnome@gna.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:1
-msgid "Allow TCP connections"
-msgstr "Ekeo ny fifandraisana TCP"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:2
-msgid "For security reasons, on platforms which have _IceTcpTransNoListen() (XFree86 systems), cinnamon-session does not listen for connections on TCP ports. This option will allow connections from (authorized) remote hosts. cinnamon-session must be restarted for this to take effect."
-msgstr "Noho ny antony ara-piarovana, dia tsy mihaino fifandraisana amin'ny irika TCP ny cinnamon-session amin'ny plateforme misy _IceTcpTransNoListen() (XFree86 systems). Io safidy io dia ahafahana mifandray amin'ny mpampiantrano lavi-toerana (ekena). Tsy maintsy averina alefa ny cinnamon-session izay vao mihatra izany."
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:3
-msgid "If enabled, cinnamon-session will prompt the user before ending a session."
-msgstr "Raha toa ka alefa, dia hanontany ny mpampiasa ny cinnamon-session alohan'ny hamaranana session iray."
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:4
-msgid "If enabled, cinnamon-session will save the session automatically. Otherwise, the logout dialog will have an option to save the session."
-msgstr "Raha toa ka alefa, dia horaiketin'ny cinnamon-session hoazy ilay session. Raha tsy izany, dia hisy safidy handraiketana ilay session eo amin'ny takila fivoahana."
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:5
-msgid "Logout prompt"
-msgstr "Fanontaniana momba ny fivoahana"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:6
-msgid "Preferred Image to use for login splash screen"
-msgstr "Sary tiana ampiasaina amin'ny takila fanokafan'ny fidirana"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:7
-msgid "Save sessions"
-msgstr "Raiketo ny session"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:8
-msgid "Selected option in the log out dialog"
-msgstr "Safidy voafaritra tanatin'ny takilan'ny fivoahana"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:9
-msgid "Show the splash screen"
-msgstr "Asehoy ny takila fanokafana"
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:10
-msgid "Show the splash screen when the session starts up"
-msgstr "Maneho ny takila fanokafana rehefa miantomboka ny session "
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:11
-msgid "This is a relative path value based off the $datadir/pixmaps/ directory. Sub-directories and image names are valid values. Changing this value will effect the next session login."
-msgstr "Sanda anankina mitoetra lavitra ny lahatahiry $datadir/pixmaps/ io sanda io. Sanda mitombina ny zana-dahatahiry sy ny anaran-tsary. Hihatra amin'ny fidirana amin'ny session manaraka ny fanovana io sanda io."
-
-#: ../cinnamon-session/cinnamon-session.schemas.in.h:12
-msgid "This is the option that will be selected in the logout dialog, valid values are \"logout\" for logging out, \"shutdown\" for halting the system and \"restart\" for restarting the system."
-msgstr "Io ilay safidy hofaritana ao anatin'ny takilan'ny fivoahana. Ireto avy ireo sanda ekena: \"logout\" raha hivoaka, \"shutdown\" raha hanajanona ny rafitra, ary \"restart\" raha hiverina handefa ny rafitra."
-
-#: ../cinnamon-session/csm-client-editor.c:97
-msgid "_Order:"
-msgstr "_Filaharana:"
-
-#: ../cinnamon-session/csm-client-editor.c:99
-msgid "The order in which applications are started in the session."
-msgstr "Ny filaharan'ny fandefasana ireo rindranasa anatin'ilay session."
-
-#: ../cinnamon-session/csm-client-editor.c:106
-msgid "What happens to the application when it exits."
-msgstr "Ny mitranga amin'ilay rindranasa rehefa mijanona ilay izy."
-
-#: ../cinnamon-session/csm-client-editor.c:109
-msgid "_Style:"
-msgstr "_Endrika:"
-
-#: ../cinnamon-session/csm-client-list.c:150
-msgid "Order"
-msgstr "Filaharana"
-
-#: ../cinnamon-session/csm-client-list.c:155
-msgid "Style"
-msgstr "Endrika"
-
-#: ../cinnamon-session/csm-client-list.c:160
-msgid "State"
-msgstr "Toetra"
-
-#: ../cinnamon-session/csm-client-list.c:165
-msgid "Program"
-msgstr "Rindranasa"
-
-#: ../cinnamon-session/csm-client-row.c:31
-msgid "Inactive"
-msgstr "Tsy miasa"
-
-#: ../cinnamon-session/csm-client-row.c:32
-msgid "Waiting to start or already finished."
-msgstr "Miandry fanombohana na efa vita."
-
-#: ../cinnamon-session/csm-client-row.c:34
-msgid "Starting"
-msgstr "Miantomboka"
-
-#: ../cinnamon-session/csm-client-row.c:35
-msgid "Started but has not yet reported state."
-msgstr "Voatomboka fa tsy mbola nitatitra ny toetra."
-
-#: ../cinnamon-session/csm-client-row.c:37
-msgid "Running"
-msgstr "Mandeha"
-
-#: ../cinnamon-session/csm-client-row.c:38
-msgid "A normal member of the session."
-msgstr "Mpikambana ara-dalàna anatin'ilay session."
-
-#: ../cinnamon-session/csm-client-row.c:40
-msgid "Saving"
-msgstr "Mandraikitra"
-
-#: ../cinnamon-session/csm-client-row.c:41
-msgid "Saving session details."
-msgstr "Mandraikitra ny antsipirian'ilay session."
-
-#: ../cinnamon-session/csm-client-row.c:43
-msgid "Unknown"
-msgstr "Tsy fantatra"
-
-#: ../cinnamon-session/csm-client-row.c:44
-msgid "State not reported within timeout."
-msgstr "Tsy voatatitra tanatin'ny fe-potoana ny toetra."
-
-#: ../cinnamon-session/csm-client-row.c:50
-msgid "Normal"
-msgstr "Ara-dalàna"
-
-#: ../cinnamon-session/csm-client-row.c:51
-msgid "Unaffected by logouts but can die."
-msgstr "Tsy voakitiky ny fivoahana saingy mety maty."
-
-#: ../cinnamon-session/csm-client-row.c:53
-msgid "Restart"
-msgstr "Avereno alefa"
-
-#: ../cinnamon-session/csm-client-row.c:54
-msgid "Never allowed to die."
-msgstr "Tsy mahazo maty."
-
-#: ../cinnamon-session/csm-client-row.c:56
-msgid "Trash"
-msgstr "Daba"
-
-#: ../cinnamon-session/csm-client-row.c:57
-msgid "Discarded on logout and can die."
-msgstr "Ariana rehefa mivoaka ka mety ho faty."
-
-#: ../cinnamon-session/csm-client-row.c:59
-msgid "Settings"
-msgstr "Fandrindrana"
-
-#: ../cinnamon-session/csm-client-row.c:60
-msgid "Always started on every login."
-msgstr "Alefa foana isaka ny miditra."
-
-#.
-#. * it would be nice to have a dialog which either:
-#. *
-#. * 1.  lets you change the message on it
-#. * 2.  lets you append messages and has a "history"
-#. *
-#. * for now, we just kill the old dialog and pop up a new one.
-#.
-#: ../cinnamon-session/csm-gsd.c:45
-msgid ""
-"There was an error starting the Cinnamon Settings Daemon.\n"
-"\n"
-"Some things, such as themes, sounds, or background settings may not work correctly."
-msgstr ""
-"Nisy olana teo am-pandefasana ny Daemon'ny fandrindran'ny Cinnamon.\n"
-"\n"
-"Misy zavatra toy ny fandrindran'endrika, feo na afara tsy mandeha araka ny tokony ho izy any ho any."
-
-#: ../cinnamon-session/csm-gsd.c:57
-msgid ""
-"\n"
-"\n"
-"The last error message was:\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"Ny filazana tsy fetezana farany:\n"
-"\n"
-
-#: ../cinnamon-session/csm-gsd.c:62
-msgid ""
-"\n"
-"\n"
-"Cinnamon will still try to restart the Settings Daemon next time you log in."
-msgstr ""
-"\n"
-"\n"
-"Hanandrana ny handefa ny Daemon'ny fandrindrana ihany ny Cinnamon rehefa miditra amin'ny manaraka ianao."
-
-#: ../cinnamon-session/csm-gsd.c:145
-msgid "The Settings Daemon restarted too many times."
-msgstr "Naverina nalefa imbetsaka loatra ny Daemon'ny fandrindrana."
-
-#: ../cinnamon-session/logout.c:404
-msgid "Are you sure you want to log out?"
-msgstr "Te hivoaka marina ve ianao?"
-
-#: ../cinnamon-session/logout.c:421
-msgid "_Save current setup"
-msgstr "_Raiketo ny kirakira izao"
-
-#: ../cinnamon-session/logout.c:444
-msgid "Action"
-msgstr "Asa"
-
-#: ../cinnamon-session/logout.c:461
-msgid "_Log out"
-msgstr "_Hivoaka"
-
-#: ../cinnamon-session/logout.c:468
-msgid "Sh_ut down"
-msgstr "_Ajanony"
-
-#: ../cinnamon-session/logout.c:476
-msgid "_Restart the computer"
-msgstr "_Avereno alefa ny solosaina"
-
-#: ../cinnamon-session/main.c:82
-msgid "Specify a session name to load"
-msgstr "Mamarita anarana session alaina"
-
-#: ../cinnamon-session/main.c:82
-#: ../cinnamon-session/save-session.c:46
-msgid "NAME"
-msgstr "ANARANA"
-
-#: ../cinnamon-session/main.c:83
-msgid "Only read saved sessions from the default.session file"
-msgstr "Vakio ao anatin'ny rakitra default.session fotsiny izay session voaraikitra"
-
-#: ../cinnamon-session/main.c:84
-msgid "Millisecond period spent waiting for clients to register (0=forever)"
-msgstr "Fotoana (milisegaondra) lany niandrasana ireo mpivatsy hanao fanambarana (0=tsy manam-petra)"
-
-#: ../cinnamon-session/main.c:84
-#: ../cinnamon-session/main.c:85
-#: ../cinnamon-session/main.c:86
-msgid "DELAY"
-msgstr "FOTOANA IANDRASANA"
-
-#: ../cinnamon-session/main.c:85
-msgid "Millisecond period spent waiting for clients to respond (0=forever)"
-msgstr "Fotoana (milisegaondra) lany niandrasana ny mpivatsy hamaly (0=tsy manam-petra)"
-
-#: ../cinnamon-session/main.c:86
-msgid "Millisecond period spent waiting for clients to die (0=forever)"
-msgstr "Fotoana (milisegaondra) lany niandrasana ny mpivatsy ho faty (0=tsy manam-petra)"
-
-#: ../cinnamon-session/main.c:261
-#, c-format
-msgid ""
-"Could not look up internet address for %s.\n"
-"This will prevent Cinnamon from operating correctly.\n"
-"It may be possible to correct the problem by adding\n"
-"%s to the file /etc/hosts."
-msgstr ""
-"Tsy nahita adiresy Internet ho an'ny %s.\n"
-"Hahatonga ny Cinnamon tsy handeha ara-dalàna izany.\n"
-"Azo vahana amin'ny alalan'ny fanampiana ny %s\n"
-"anatin'ny rakitra /etc/hosts izany olana izany."
-
-#: ../cinnamon-session/main.c:268
-msgid "Log in Anyway"
-msgstr "Hiditra ihany na dia izany aza"
-
-#: ../cinnamon-session/main.c:269
-msgid "Try Again"
-msgstr "Andramo indray"
-
-#: ../cinnamon-session/main.c:402
-msgid "- Manage the Cinnamon session"
-msgstr "- Mandrindra ny session'ny Cinnamon"
-
-#: ../cinnamon-session/manager.c:223
-msgid "Your session has been saved"
-msgstr "Voaraikitra ny sessionao"
-
-#: ../cinnamon-session/manager.c:527
-msgid "Wait abandoned due to conflict."
-msgstr "Nadaboka ny fiandrasana noho ny fisian'ny fifanipahana."
-
-#: ../cinnamon-session/manager.c:1035
-#, c-format
-msgid "No response to the %s command."
-msgstr "Tsy misy valin-teny ho an'ny baiko %s."
-
-#: ../cinnamon-session/manager.c:1036
-msgid "The program may be slow, stopped or broken."
-msgstr "Mety votsa, najanona na simba angamba ilay rindranasa."
-
-#: ../cinnamon-session/manager.c:1037
-msgid "You may wait for it to respond or remove it."
-msgstr "Azonao atao ny miandry azy hamaly na koa manala azy."
-
-#: ../cinnamon-session/manager.c:1760
-msgid "Restart abandoned due to failures."
-msgstr "Nadaboka ny famerenana ny famelomana noho ny tsy fetezana maro."
-
-#: ../cinnamon-session/manager.c:1956
-msgid "A session shutdown is in progress."
-msgstr "Misy fanajanona session mitranga."
-
-#: ../cinnamon-session/save-session.c:46
-msgid "Set the current session name"
-msgstr "Hamaritra ny anaran'ity session ity"
-
-#: ../cinnamon-session/save-session.c:47
-msgid "Kill session"
-msgstr "Vonoy io session io"
-
-#: ../cinnamon-session/save-session.c:48
-msgid "Use dialog boxes"
-msgstr "Mampiasà takila filazana"
-
-#: ../cinnamon-session/save-session.c:146
-#: ../cinnamon-session/save-session.c:183
-msgid "Could not connect to the session manager"
-msgstr "Tsy afaka nifandray tamin'ilay mpandrindra session"
-
-#: ../cinnamon-session/save-session.c:169
-msgid "- Save the current session"
-msgstr "- Mandraikitra ity session ity"
-
-#: ../cinnamon-session/session-names.c:143
-msgid "The session name cannot be empty"
-msgstr "Tsy azo atao foana ny anaran'ilay session"
-
-#: ../cinnamon-session/session-names.c:154
-msgid "The session name already exists"
-msgstr "Efa misy io anarana session io"
-
-#: ../cinnamon-session/session-names.c:188
-msgid "Add a new session"
-msgstr "Hampiditra session iray vaovao"
-
-#: ../cinnamon-session/session-names.c:218
-msgid "Edit session name"
-msgstr "Hanova ilay anarana session"
-
-#: ../cinnamon-session/session-properties-capplet.c:119
-msgid "Enable"
-msgstr "Alefaso"
-
-#: ../cinnamon-session/session-properties-capplet.c:125
-#: ../cinnamon-session/session-properties-capplet.c:467
-msgid "Disable"
-msgstr "Atsaharo"
-
-#: ../cinnamon-session/session-properties-capplet.c:148
-msgid "_Edit"
-msgstr "_Ovay"
-
-#: ../cinnamon-session/session-properties-capplet.c:216
-msgid ""
-"Some changes are not saved.\n"
-"Is it still OK to exit?"
-msgstr ""
-"Misy fanovana tsy voaraikitra.\n"
-"Mety ihany ve raha miala izao?"
-
-#: ../cinnamon-session/session-properties-capplet.c:266
-#: ../cinnamon-session/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Session"
-
-#: ../cinnamon-session/session-properties-capplet.c:299
-msgid "Show splash screen on _login"
-msgstr "Asehoy eny am-_pidirana ny takila fanokafana"
-
-#: ../cinnamon-session/session-properties-capplet.c:310
-msgid "As_k on logout"
-msgstr "_Anontanio rehefa mivoaka"
-
-#: ../cinnamon-session/session-properties-capplet.c:321
-msgid "Automatically save chan_ges to session"
-msgstr "Avy dia raiketo ireo _fanovana natao tamin'ilay session"
-
-#: ../cinnamon-session/session-properties-capplet.c:332
-msgid "_Sessions:"
-msgstr "_Session:"
-
-#: ../cinnamon-session/session-properties-capplet.c:350
-msgid "Session Name"
-msgstr "Anaran'ilay session"
-
-#: ../cinnamon-session/session-properties-capplet.c:401
-msgid "Session Options"
-msgstr "Safidin'ilay session"
-
-#: ../cinnamon-session/session-properties-capplet.c:410
-msgid "Current Session"
-msgstr "Ny session izao"
-
-#: ../cinnamon-session/session-properties-capplet.c:419
-msgid "Additional startup _programs:"
-msgstr "_Rindranasam-piantombohana fanampiny:"
-
-#: ../cinnamon-session/session-properties-capplet.c:438
-msgid "Command"
-msgstr "Baiko"
-
-#: ../cinnamon-session/session-properties-capplet.c:478
-msgid "Startup Programs"
-msgstr "Rindranasam-piatombohana"
-
-#: ../cinnamon-session/session-properties.c:49
-msgid "Remove the currently selected client from the session."
-msgstr "Esory tanatin'ny session io mpivatsy voafaritra io."
-
-#: ../cinnamon-session/session-properties.c:55
-msgid "Apply changes to the current session"
-msgstr "Ampiharo amin'ity session ity ireo fanovana ireo"
-
-#: ../cinnamon-session/session-properties.c:61
-msgid "The list of programs in the session."
-msgstr "Ny lisitr'ireo rindranasa anatin'ilay session."
-
-#: ../cinnamon-session/session-properties.c:88
-msgid "Currently running _programs:"
-msgstr "Ny _rindranasa mandeha izao:"
-
-#: ../cinnamon-session/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Mikirakira ny sessionao"
-
-#: ../cinnamon-session/splash-widget.c:43
-msgid "Sawfish Window Manager"
-msgstr "Mpandrindra fikandrana Sawfish"
-
-#: ../cinnamon-session/splash-widget.c:44
-msgid "Metacity Window Manager"
-msgstr "Mpandrindra fikandran'ny Metacity"
-
-#: ../cinnamon-session/splash-widget.c:45
-msgid "Window Manager"
-msgstr "Mpandrindra fikandrana"
-
-#: ../cinnamon-session/splash-widget.c:46
-msgid "The Panel"
-msgstr "Ilay tontonana"
-
-#: ../cinnamon-session/splash-widget.c:47
-msgid "Nautilus"
-msgstr "Nautilus"
-
-#: ../cinnamon-session/splash-widget.c:48
-msgid "Desktop Settings"
-msgstr "Fandrindran'ny sehatrasa"
-
-#: ../cinnamon-session/startup-programs.c:403
-msgid "_Startup Command:"
-msgstr "_Baikom-piantombohana:"
-
-#: ../cinnamon-session/startup-programs.c:409
-msgid "Startup Command"
+#: ../capplet/csm-app-dialog.c:120
+#, fuzzy
+msgid "Select Command"
 msgstr "Baikom-piantombohana"
 
-#: ../cinnamon-session/startup-programs.c:441
-msgid "The startup command cannot be empty"
-msgstr "Tsy azo atao foana ny baikom-piantombohana"
-
-#: ../cinnamon-session/startup-programs.c:480
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr "Hampiditra rindranasam-piantombohana"
 
-#: ../cinnamon-session/startup-programs.c:524
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr "Hanova rindranasam-piantombohana"
+
+#: ../capplet/csm-app-dialog.c:484
+msgid "The startup command cannot be empty"
+msgstr "Tsy azo atao foana ny baikom-piantombohana"
+
+#: ../capplet/csm-app-dialog.c:490
+#, fuzzy
+msgid "The startup command is not valid"
+msgstr "Tsy azo atao foana ny baikom-piantombohana"
+
+#: ../capplet/csm-properties-dialog.c:519
+#, fuzzy
+msgid "Enabled"
+msgstr "Alefaso"
+
+#: ../capplet/csm-properties-dialog.c:531
+msgid "Icon"
+msgstr ""
+
+#: ../capplet/csm-properties-dialog.c:543
+msgid "Program"
+msgstr "Rindranasa"
+
+#: ../capplet/csm-properties-dialog.c:747
+msgid "Startup Applications Preferences"
+msgstr ""
+
+#: ../capplet/csp-app.c:276
+msgid "No name"
+msgstr ""
+
+#: ../capplet/csp-app.c:282
+msgid "No description"
+msgstr ""
+
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
+msgid "Version of this application"
+msgstr ""
+
+#: ../capplet/main.c:61
+msgid "Could not display help document"
+msgstr ""
+
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr ""
+
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:1
+msgid "Additional startup _programs:"
+msgstr "_Rindranasam-piantombohana fanampiny:"
+
+#: ../data/cinnamon-session-properties.glade.h:2
+msgid "_Automatically remember running applications when logging out"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:3
+msgid "_Remember Currently Running Applications"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:4
+msgid "Browse…"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:5
+#, fuzzy
+msgid "Comm_ent:"
+msgstr "Baiko"
+
+#: ../data/cinnamon-session-properties.glade.h:6
+#, fuzzy
+msgid "Co_mmand:"
+msgstr "Baiko"
+
+#: ../data/cinnamon-session-properties.glade.h:7
+msgid "_Name:"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr ""
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:974
+#, fuzzy, c-format
+msgid "Starting %s"
+msgstr "Miantomboka"
+
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr ""
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr ""
+
+#: ../egg/eggsmclient.c:226
+#, fuzzy
+msgid "Disable connection to session manager"
+msgstr "Tsy afaka nifandray tamin'ilay mpandrindra session"
+
+#: ../egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr ""
+
+#: ../egg/eggsmclient.c:229
+msgid "FILE"
+msgstr ""
+
+#: ../egg/eggsmclient.c:232
+#, fuzzy
+msgid "Specify session management ID"
+msgstr "Mamarita anarana session alaina"
+
+#: ../egg/eggsmclient.c:232
+msgid "ID"
+msgstr ""
+
+#: ../egg/eggsmclient.c:253
+#, fuzzy
+msgid "Session management options:"
+msgstr "Safidin'ilay session"
+
+#: ../egg/eggsmclient.c:254
+#, fuzzy
+msgid "Show session management options"
+msgstr "Safidin'ilay session"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr "Tsy fantatra"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
+#, fuzzy
+msgid "Log Out Anyway"
+msgstr "Hiditra ihany na dia izany aza"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
+#, fuzzy
+msgid "Hibernate Anyway"
+msgstr "Hiditra ihany na dia izany aza"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
+#, fuzzy
+msgid "Shut Down Anyway"
+msgstr "Hiditra ihany na dia izany aza"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
+#, fuzzy
+msgid "Restart Anyway"
+msgstr "Avereno alefa"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr ""
+
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:274
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:282
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:372
+msgid "Log out of this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:378
+msgid "_Switch User"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
+#, fuzzy
+msgid "_Log Out"
+msgstr "_Hivoaka"
+
+#: ../cinnamon-session/csm-logout-dialog.c:393
+msgid "Shut down this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:399
+msgid "S_uspend"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:405
+msgid "_Hibernate"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
+#, fuzzy
+msgid "_Restart"
+msgstr "Avereno alefa"
+
+#: ../cinnamon-session/csm-logout-dialog.c:421
+msgid "_Shut Down"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:427
+msgid "Restart this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
+msgid "Oh no!  Something has gone wrong."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1431
+msgid "GNOME 3 Failed to Load"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1432
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1434
+msgid "Learn more about GNOME 3"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
+msgid "Not responding"
+msgstr ""
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../cinnamon-session/csm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-client.c:1197
+msgid "This program is blocking logout."
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-server.c:326
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-server.c:595
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr ""
+
+#. Oh well, no X for you!
+#: ../cinnamon-session/csm-util.c:412
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+
+#: ../cinnamon-session/main.c:291
+msgid "Override standard autostart directories"
+msgstr ""
+
+#: ../cinnamon-session/main.c:291
+msgid "AUTOSTART_DIR"
+msgstr ""
+
+#: ../cinnamon-session/main.c:292
+#, fuzzy
+msgid "Session to use"
+msgstr "Safidin'ilay session"
+
+#: ../cinnamon-session/main.c:292
+msgid "SESSION_NAME"
+msgstr ""
+
+#: ../cinnamon-session/main.c:293
+msgid "Enable debugging code"
+msgstr ""
+
+#: ../cinnamon-session/main.c:294
+msgid "Do not load user-specified applications"
+msgstr ""
+
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../cinnamon-session/main.c:297
+msgid "Show the fail whale dialog for testing"
+msgstr ""
+
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
+msgstr "Tsy afaka nifandray tamin'ilay mpandrindra session"
+
+#: ../tools/cinnamon-session-quit.c:53
+#, fuzzy
+msgid "Log out"
+msgstr "_Hivoaka"
+
+#: ../tools/cinnamon-session-quit.c:54
+msgid "Power off"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:55
+msgid "Reboot"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:57
+msgid "Don't prompt for user confirmation"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
+msgid "Could not connect to the session manager"
+msgstr "Tsy afaka nifandray tamin'ilay mpandrindra session"
+
+#: ../tools/cinnamon-session-quit.c:203
+msgid "Program called with conflicting options"
+msgstr ""
+
+#~ msgid "Allow TCP connections"
+#~ msgstr "Ekeo ny fifandraisana TCP"
+
+#~ msgid ""
+#~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
+#~ msgstr ""
+#~ "Noho ny antony ara-piarovana, dia tsy mihaino fifandraisana amin'ny irika "
+#~ "TCP ny cinnamon-session amin'ny plateforme misy _IceTcpTransNoListen() "
+#~ "(XFree86 systems). Io safidy io dia ahafahana mifandray amin'ny "
+#~ "mpampiantrano lavi-toerana (ekena). Tsy maintsy averina alefa ny cinnamon-"
+#~ "session izay vao mihatra izany."
+
+#~ msgid ""
+#~ "If enabled, cinnamon-session will prompt the user before ending a session."
+#~ msgstr ""
+#~ "Raha toa ka alefa, dia hanontany ny mpampiasa ny cinnamon-session "
+#~ "alohan'ny hamaranana session iray."
+
+#~ msgid ""
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
+#~ msgstr ""
+#~ "Raha toa ka alefa, dia horaiketin'ny cinnamon-session hoazy ilay session. "
+#~ "Raha tsy izany, dia hisy safidy handraiketana ilay session eo amin'ny "
+#~ "takila fivoahana."
+
+#~ msgid "Logout prompt"
+#~ msgstr "Fanontaniana momba ny fivoahana"
+
+#~ msgid "Preferred Image to use for login splash screen"
+#~ msgstr "Sary tiana ampiasaina amin'ny takila fanokafan'ny fidirana"
+
+#~ msgid "Save sessions"
+#~ msgstr "Raiketo ny session"
+
+#~ msgid "Selected option in the log out dialog"
+#~ msgstr "Safidy voafaritra tanatin'ny takilan'ny fivoahana"
+
+#~ msgid "Show the splash screen"
+#~ msgstr "Asehoy ny takila fanokafana"
+
+#~ msgid "Show the splash screen when the session starts up"
+#~ msgstr "Maneho ny takila fanokafana rehefa miantomboka ny session "
+
+#~ msgid ""
+#~ "This is a relative path value based off the $datadir/pixmaps/ directory. "
+#~ "Sub-directories and image names are valid values. Changing this value "
+#~ "will effect the next session login."
+#~ msgstr ""
+#~ "Sanda anankina mitoetra lavitra ny lahatahiry $datadir/pixmaps/ io sanda "
+#~ "io. Sanda mitombina ny zana-dahatahiry sy ny anaran-tsary. Hihatra "
+#~ "amin'ny fidirana amin'ny session manaraka ny fanovana io sanda io."
+
+#~ msgid ""
+#~ "This is the option that will be selected in the logout dialog, valid "
+#~ "values are \"logout\" for logging out, \"shutdown\" for halting the "
+#~ "system and \"restart\" for restarting the system."
+#~ msgstr ""
+#~ "Io ilay safidy hofaritana ao anatin'ny takilan'ny fivoahana. Ireto avy "
+#~ "ireo sanda ekena: \"logout\" raha hivoaka, \"shutdown\" raha hanajanona "
+#~ "ny rafitra, ary \"restart\" raha hiverina handefa ny rafitra."
+
+#~ msgid "_Order:"
+#~ msgstr "_Filaharana:"
+
+#~ msgid "The order in which applications are started in the session."
+#~ msgstr "Ny filaharan'ny fandefasana ireo rindranasa anatin'ilay session."
+
+#~ msgid "What happens to the application when it exits."
+#~ msgstr "Ny mitranga amin'ilay rindranasa rehefa mijanona ilay izy."
+
+#~ msgid "_Style:"
+#~ msgstr "_Endrika:"
+
+#~ msgid "Order"
+#~ msgstr "Filaharana"
+
+#~ msgid "Style"
+#~ msgstr "Endrika"
+
+#~ msgid "State"
+#~ msgstr "Toetra"
+
+#~ msgid "Inactive"
+#~ msgstr "Tsy miasa"
+
+#~ msgid "Waiting to start or already finished."
+#~ msgstr "Miandry fanombohana na efa vita."
+
+#~ msgid "Started but has not yet reported state."
+#~ msgstr "Voatomboka fa tsy mbola nitatitra ny toetra."
+
+#~ msgid "Running"
+#~ msgstr "Mandeha"
+
+#~ msgid "A normal member of the session."
+#~ msgstr "Mpikambana ara-dalàna anatin'ilay session."
+
+#~ msgid "Saving"
+#~ msgstr "Mandraikitra"
+
+#~ msgid "Saving session details."
+#~ msgstr "Mandraikitra ny antsipirian'ilay session."
+
+#~ msgid "State not reported within timeout."
+#~ msgstr "Tsy voatatitra tanatin'ny fe-potoana ny toetra."
+
+#~ msgid "Normal"
+#~ msgstr "Ara-dalàna"
+
+#~ msgid "Unaffected by logouts but can die."
+#~ msgstr "Tsy voakitiky ny fivoahana saingy mety maty."
+
+#~ msgid "Never allowed to die."
+#~ msgstr "Tsy mahazo maty."
+
+#~ msgid "Trash"
+#~ msgstr "Daba"
+
+#~ msgid "Discarded on logout and can die."
+#~ msgstr "Ariana rehefa mivoaka ka mety ho faty."
+
+#~ msgid "Settings"
+#~ msgstr "Fandrindrana"
+
+#~ msgid "Always started on every login."
+#~ msgstr "Alefa foana isaka ny miditra."
+
+#~ msgid ""
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
+#~ "\n"
+#~ "Some things, such as themes, sounds, or background settings may not work "
+#~ "correctly."
+#~ msgstr ""
+#~ "Nisy olana teo am-pandefasana ny Daemon'ny fandrindran'ny Cinnamon.\n"
+#~ "\n"
+#~ "Misy zavatra toy ny fandrindran'endrika, feo na afara tsy mandeha araka "
+#~ "ny tokony ho izy any ho any."
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "The last error message was:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "Ny filazana tsy fetezana farany:\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "Hanandrana ny handefa ny Daemon'ny fandrindrana ihany ny Cinnamon rehefa "
+#~ "miditra amin'ny manaraka ianao."
+
+#~ msgid "The Settings Daemon restarted too many times."
+#~ msgstr "Naverina nalefa imbetsaka loatra ny Daemon'ny fandrindrana."
+
+#~ msgid "Are you sure you want to log out?"
+#~ msgstr "Te hivoaka marina ve ianao?"
+
+#~ msgid "_Save current setup"
+#~ msgstr "_Raiketo ny kirakira izao"
+
+#~ msgid "Action"
+#~ msgstr "Asa"
+
+#~ msgid "Sh_ut down"
+#~ msgstr "_Ajanony"
+
+#~ msgid "_Restart the computer"
+#~ msgstr "_Avereno alefa ny solosaina"
+
+#~ msgid "NAME"
+#~ msgstr "ANARANA"
+
+#~ msgid "Only read saved sessions from the default.session file"
+#~ msgstr ""
+#~ "Vakio ao anatin'ny rakitra default.session fotsiny izay session "
+#~ "voaraikitra"
+
+#~ msgid "Millisecond period spent waiting for clients to register (0=forever)"
+#~ msgstr ""
+#~ "Fotoana (milisegaondra) lany niandrasana ireo mpivatsy hanao fanambarana "
+#~ "(0=tsy manam-petra)"
+
+#~ msgid "DELAY"
+#~ msgstr "FOTOANA IANDRASANA"
+
+#~ msgid "Millisecond period spent waiting for clients to respond (0=forever)"
+#~ msgstr ""
+#~ "Fotoana (milisegaondra) lany niandrasana ny mpivatsy hamaly (0=tsy manam-"
+#~ "petra)"
+
+#~ msgid "Millisecond period spent waiting for clients to die (0=forever)"
+#~ msgstr ""
+#~ "Fotoana (milisegaondra) lany niandrasana ny mpivatsy ho faty (0=tsy manam-"
+#~ "petra)"
+
+#~ msgid ""
+#~ "Could not look up internet address for %s.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
+#~ "It may be possible to correct the problem by adding\n"
+#~ "%s to the file /etc/hosts."
+#~ msgstr ""
+#~ "Tsy nahita adiresy Internet ho an'ny %s.\n"
+#~ "Hahatonga ny Cinnamon tsy handeha ara-dalàna izany.\n"
+#~ "Azo vahana amin'ny alalan'ny fanampiana ny %s\n"
+#~ "anatin'ny rakitra /etc/hosts izany olana izany."
+
+#~ msgid "Try Again"
+#~ msgstr "Andramo indray"
+
+#~ msgid "- Manage the Cinnamon session"
+#~ msgstr "- Mandrindra ny session'ny Cinnamon"
+
+#~ msgid "Your session has been saved"
+#~ msgstr "Voaraikitra ny sessionao"
+
+#~ msgid "Wait abandoned due to conflict."
+#~ msgstr "Nadaboka ny fiandrasana noho ny fisian'ny fifanipahana."
+
+#~ msgid "No response to the %s command."
+#~ msgstr "Tsy misy valin-teny ho an'ny baiko %s."
+
+#~ msgid "The program may be slow, stopped or broken."
+#~ msgstr "Mety votsa, najanona na simba angamba ilay rindranasa."
+
+#~ msgid "You may wait for it to respond or remove it."
+#~ msgstr "Azonao atao ny miandry azy hamaly na koa manala azy."
+
+#~ msgid "Restart abandoned due to failures."
+#~ msgstr "Nadaboka ny famerenana ny famelomana noho ny tsy fetezana maro."
+
+#~ msgid "A session shutdown is in progress."
+#~ msgstr "Misy fanajanona session mitranga."
+
+#~ msgid "Set the current session name"
+#~ msgstr "Hamaritra ny anaran'ity session ity"
+
+#~ msgid "Kill session"
+#~ msgstr "Vonoy io session io"
+
+#~ msgid "Use dialog boxes"
+#~ msgstr "Mampiasà takila filazana"
+
+#~ msgid "- Save the current session"
+#~ msgstr "- Mandraikitra ity session ity"
+
+#~ msgid "The session name cannot be empty"
+#~ msgstr "Tsy azo atao foana ny anaran'ilay session"
+
+#~ msgid "The session name already exists"
+#~ msgstr "Efa misy io anarana session io"
+
+#~ msgid "Add a new session"
+#~ msgstr "Hampiditra session iray vaovao"
+
+#~ msgid "Edit session name"
+#~ msgstr "Hanova ilay anarana session"
+
+#~ msgid "Disable"
+#~ msgstr "Atsaharo"
+
+#~ msgid "_Edit"
+#~ msgstr "_Ovay"
+
+#~ msgid ""
+#~ "Some changes are not saved.\n"
+#~ "Is it still OK to exit?"
+#~ msgstr ""
+#~ "Misy fanovana tsy voaraikitra.\n"
+#~ "Mety ihany ve raha miala izao?"
+
+#~ msgid "Sessions"
+#~ msgstr "Session"
+
+#~ msgid "Show splash screen on _login"
+#~ msgstr "Asehoy eny am-_pidirana ny takila fanokafana"
+
+#~ msgid "As_k on logout"
+#~ msgstr "_Anontanio rehefa mivoaka"
+
+#~ msgid "Automatically save chan_ges to session"
+#~ msgstr "Avy dia raiketo ireo _fanovana natao tamin'ilay session"
+
+#~ msgid "_Sessions:"
+#~ msgstr "_Session:"
+
+#~ msgid "Session Name"
+#~ msgstr "Anaran'ilay session"
+
+#~ msgid "Current Session"
+#~ msgstr "Ny session izao"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Rindranasam-piatombohana"
+
+#~ msgid "Remove the currently selected client from the session."
+#~ msgstr "Esory tanatin'ny session io mpivatsy voafaritra io."
+
+#~ msgid "Apply changes to the current session"
+#~ msgstr "Ampiharo amin'ity session ity ireo fanovana ireo"
+
+#~ msgid "The list of programs in the session."
+#~ msgstr "Ny lisitr'ireo rindranasa anatin'ilay session."
+
+#~ msgid "Currently running _programs:"
+#~ msgstr "Ny _rindranasa mandeha izao:"
+
+#~ msgid "Configure your sessions"
+#~ msgstr "Mikirakira ny sessionao"
+
+#~ msgid "Sawfish Window Manager"
+#~ msgstr "Mpandrindra fikandrana Sawfish"
+
+#~ msgid "Metacity Window Manager"
+#~ msgstr "Mpandrindra fikandran'ny Metacity"
+
+#~ msgid "Window Manager"
+#~ msgstr "Mpandrindra fikandrana"
+
+#~ msgid "The Panel"
+#~ msgstr "Ilay tontonana"
+
+#~ msgid "Nautilus"
+#~ msgstr "Nautilus"
+
+#~ msgid "Desktop Settings"
+#~ msgstr "Fandrindran'ny sehatrasa"
+
+#~ msgid "_Startup Command:"
+#~ msgstr "_Baikom-piantombohana:"

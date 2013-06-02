@@ -14,12 +14,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-19 13:06+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2011-12-19 16:48+0100\n"
 "Last-Translator: Andreas N. <gedemiti@gmail.com>\n"
 "Language-Team: Norsk (nynorsk) <i18n-nn@lister.ping.gladeo.no>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
@@ -53,34 +53,34 @@ msgid "The startup command is not valid"
 msgstr "Oppstartskommandoen er ikkje gyldig"
 
 #
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Aktivert"
 
 # gsm/logout.c:239
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikon"
 
 # gsm/csm-client-list.c:122
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Innstillingar for oppstartsprogram"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Utan namn"
 
 #
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Inga skildring"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Versjon av dette programmet"
 
@@ -88,28 +88,13 @@ msgstr "Versjon av dette programmet"
 msgid "Could not display help document"
 msgstr "Klarte ikkje visa hjelpedokumentet"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon reserveløysing"
-
-#
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Denne økta loggar inn i Cinnamon"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
-msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Nokre program køyrer enno:</b>"
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr "Nokre program køyrer enno:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
-#| msgid ""
-#| "Waiting for programs to finish.  Interrupting these programs may cause "
-#| "you to lose work."
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -118,56 +103,46 @@ msgstr ""
 "tapt."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "Vel kva for program du vil starta når du loggar inn"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Oppstartsprogram"
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Vel kva for program du vil starta når du loggar inn"
 
 # gsm/startup-programs.c:373
 #: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "Fleire oppstarts_program:"
 
+#
 #: ../data/cinnamon-session-properties.glade.h:2
-#| msgid "Browse..."
+msgid "_Automatically remember running applications when logging out"
+msgstr "Hugs køyrande program _automatisk ved utlogging"
+
+#: ../data/cinnamon-session-properties.glade.h:3
+#, fuzzy
+msgid "_Remember Currently Running Applications"
+msgstr "Hugs programmet som køy_rer no"
+
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Bla gjennom …"
 
 #
-#: ../data/cinnamon-session-properties.glade.h:3
+#: ../data/cinnamon-session-properties.glade.h:5
+msgid "Comm_ent:"
+msgstr "Komm_entar:"
+
+#
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "Ko_mmando:"
 
 #
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "Komm_entar:"
-
-# gsm/session-properties-capplet.c:262
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Innstillingar"
-
-# gsm/session-properties-capplet.c:330
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "Oppstartsprogram"
-
-#
 #: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "Hugs køyrande program _automatisk ved utlogging"
-
-#
-#: ../data/cinnamon-session-properties.glade.h:8
 msgid "_Name:"
 msgstr "_Namn:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "Hugs programmet som køy_rer no"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format
@@ -257,10 +232,6 @@ msgstr "Ukjend"
 msgid "A program is still running:"
 msgstr "Eit program køyrer enno:"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:643
-msgid "Some programs are still running:"
-msgstr "Nokre program køyrer enno:"
-
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
@@ -274,7 +245,6 @@ msgid "Switch User Anyway"
 msgstr "Byt brukar likevel"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:877
-#| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "Logg ut likevel"
 
@@ -287,12 +257,10 @@ msgid "Hibernate Anyway"
 msgstr "Gå i dvalemodus likevel"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:886
-#| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "Slå av likevel"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:889
-#| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "Start på nytt likevel"
 
@@ -305,67 +273,80 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #. This string is shared with csm-fail-whale-dialog.c
-#: ../cinnamon-session/csm-logout-dialog.c:275
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Du vert logga ut automatisk om %d sekund."
 msgstr[1] "Du vert logga ut automatisk om %d sekund."
 
-#: ../cinnamon-session/csm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Systemet vert slått av automatisk om %d sekund."
 msgstr[1] "Systemet vert slått av automatisk om %d sekund."
 
-#: ../cinnamon-session/csm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:282
+#, fuzzy, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] "Systemet vert slått av automatisk om %d sekund."
+msgstr[1] "Systemet vert slått av automatisk om %d sekund."
+
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du er logga inn som «%s»."
 
-#: ../cinnamon-session/csm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Logg ut av systemet no?"
 
-#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "_Byt brukar"
 
 # panel/logout.c:74 panel/menu.c:5340
-#: ../cinnamon-session/csm-logout-dialog.c:396
-#: ../cinnamon-session/csm-fail-whale-dialog.c:422
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Logg ut"
 
-#: ../cinnamon-session/csm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Slå av systemet no?"
 
-#: ../cinnamon-session/csm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_Kvilemodus"
 
-#: ../cinnamon-session/csm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Dvalemodus"
 
 # applets/tasklist/tasklist_menu.c:258
-#: ../cinnamon-session/csm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_Start på nytt"
 
 # gsm/logout.c:250
-#: ../cinnamon-session/csm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "Slå _av"
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:377
+#: ../cinnamon-session/csm-logout-dialog.c:427
+#, fuzzy
+msgid "Restart this system now?"
+msgstr "Slå av systemet no?"
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Å nei! Noko har gått gale."
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:384
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
 "A problem has occurred and the system can't recover. Please contact a system "
 "administrator"
@@ -373,17 +354,16 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Kontakt ein "
 "systemadministrator."
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:386
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
+#, fuzzy
 msgid ""
-"A problem has occurred and the system can't recover. Some of the extensions "
-"below may have caused this.\n"
-"Please try disabling some of these, and then log out and try again."
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
 msgstr ""
-"Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Nokre av "
-"utvidingane under kan ha medført dette.\n"
-"Prøv å slå av nokre av desse og logg ut for å prøva på nytt."
+"Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Kontakt ein "
+"systemadministrator."
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:388
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -391,43 +371,33 @@ msgstr ""
 "Eit problem har oppstått og systemet klarer ikkje gjenoppretta.\n"
 "Logg ut og prøv på nytt."
 
-#: ../cinnamon-session/csm-process-helper.c:123
-#, c-format
-msgid "Exited with code %d"
-msgstr "Avslutta med koden %d"
-
-#: ../cinnamon-session/csm-process-helper.c:128
-#, c-format
-msgid "Killed by signal %d"
-msgstr "Avslutta av signalet %d"
-
-#: ../cinnamon-session/csm-process-helper.c:133
-#, c-format
-msgid "Stopped by signal %d"
-msgstr "Stoppa av signalet %d"
-
-#: ../cinnamon-session/csm-manager.c:1386
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 klarte ikkje starta"
 
-#: ../cinnamon-session/csm-manager.c:1387
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Cinnamon 3 klarte ikkje starta skikkeleg, og køyrer <i>reserveløysinga.</i>.\n"
+"Cinnamon 3 klarte ikkje starta skikkeleg, og køyrer <i>reserveløysinga.</"
+"i>.\n"
 "\n"
 "Sannsynlegvis klarer ikkje systemet (grafikkortet eller drivaren) å køyre "
 "Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1389
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Lær meir om Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1486 ../cinnamon-session/csm-manager.c:2255
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Svarer ikkje"
 
@@ -437,97 +407,137 @@ msgstr "Svarer ikkje"
 #. * properties. But it could still be that SmProgram is not set.
 #.
 #: ../cinnamon-session/csm-xsmp-client.c:559
-#| msgid "Remember running applications"
 msgid "Remembered Application"
 msgstr "Hugsa program"
 
 #: ../cinnamon-session/csm-xsmp-client.c:1197
-#| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "Dette programmet hindrar utlogging."
 
-#: ../cinnamon-session/csm-xsmp-server.c:325
+#: ../cinnamon-session/csm-xsmp-server.c:326
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Avviser ny klienttilkopling fordi økta er i ferd med å avslutta\n"
 
-#: ../cinnamon-session/csm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Klarte ikkje oppretta sokkel for ICE-lytting: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Klarte ikkje starta innloggingsøkt (klarte heller ikkje å kopla til X-"
 "tenaren)"
 
-#: ../cinnamon-session/main.c:277
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Overstyr standard autostartmapper"
 
-#: ../cinnamon-session/main.c:277
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
 # gsm/session-properties.c:272
-#: ../cinnamon-session/main.c:278
-#| msgid "Sessions"
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Økt som skal brukast"
 
-#: ../cinnamon-session/main.c:278
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:279
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Aktiver feilsøkingskode"
 
-#: ../cinnamon-session/main.c:280
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Ikkje last brukarvalde program"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:283
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Vis feilvindauget for testing"
 
-#: ../cinnamon-session/main.c:303
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " – Cinnamon økthandsamar"
 
 # panel/logout.c:74 panel/menu.c:5340
-#: ../tools/cinnamon-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Logg ut"
 
-#: ../tools/cinnamon-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "Slå av"
 
-#: ../tools/cinnamon-session-quit.c:54
-#| msgid "Log out, ignoring any existing inhibitors"
+#: ../tools/cinnamon-session-quit.c:55
+msgid "Reboot"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "Ignorerer eventuelle hindringar"
 
 #
-#: ../tools/cinnamon-session-quit.c:55
-#| msgid "Do not require confirmation"
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "Ikkje spør etter stadfesting"
 
 # gsm/save-session.c:92
-#: ../tools/cinnamon-session-quit.c:89 ../tools/cinnamon-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Klarte ikkje kopla til økthandsamar"
 
-#: ../tools/cinnamon-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Programmet vart kalla med motstridande alternativ"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon reserveløysing"
+
+#
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Denne økta loggar inn i Cinnamon"
+
+#~ msgid "<b>Some programs are still running:</b>"
+#~ msgstr "<b>Nokre program køyrer enno:</b>"
+
+# gsm/session-properties-capplet.c:262
+#~ msgid "Options"
+#~ msgstr "Innstillingar"
+
+# gsm/session-properties-capplet.c:330
+#~ msgid "Startup Programs"
+#~ msgstr "Oppstartsprogram"
+
+#~ msgid ""
+#~ "A problem has occurred and the system can't recover. Some of the "
+#~ "extensions below may have caused this.\n"
+#~ "Please try disabling some of these, and then log out and try again."
+#~ msgstr ""
+#~ "Eit problem har oppstått og systemet klarer ikkje gjenoppretta. Nokre av "
+#~ "utvidingane under kan ha medført dette.\n"
+#~ "Prøv å slå av nokre av desse og logg ut for å prøva på nytt."
+
+#~ msgid "Exited with code %d"
+#~ msgstr "Avslutta med koden %d"
+
+#~ msgid "Killed by signal %d"
+#~ msgstr "Avslutta av signalet %d"
+
+#~ msgid "Stopped by signal %d"
+#~ msgstr "Stoppa av signalet %d"
 
 #~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "Hjelpar til Cinnamon innstillingsnisse"
@@ -549,8 +559,8 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ "vert avslutta."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Viss det er kryssa av her, vil økta verta lagra automatisk. Elles vil "
 #~ "utloggingsdialogen ha eit val for å lagra økta."
@@ -568,11 +578,11 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Liste med komponentar som er ein nødvendig del av økta. (Kvart element "
-#~ "namngjev ein nøkkel under «/desktop/cinnamon/session/required_components»). "
-#~ "Innstillingsverktøyet av oppstartsprogram vil normalt ikkje gje brukarar "
-#~ "tilgjenge til å fjerna nødvendige komponentar frå økta, og økthandsamaren "
-#~ "vil automatisk leggja til dei nødvendige komponentane tilbake til økta "
-#~ "dersom dei vert fjerna."
+#~ "namngjev ein nøkkel under «/desktop/cinnamon/session/"
+#~ "required_components»). Innstillingsverktøyet av oppstartsprogram vil "
+#~ "normalt ikkje gje brukarar tilgjenge til å fjerna nødvendige komponentar "
+#~ "frå økta, og økthandsamaren vil automatisk leggja til dei nødvendige "
+#~ "komponentane tilbake til økta dersom dei vert fjerna."
 
 # gsm/logout.c:247
 #~ msgid "Logout prompt"
@@ -692,14 +702,14 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
-#~ "Av omsyn til tryggleiken vil ikkje cinnamon-session lytta etter tilkoplingar "
-#~ "på TCP-portar på system som har _IceTcpTransNoListen() (XFree86-system). "
-#~ "Dette valet vil la autoriserte eksterne vertar kopla til. cinnamon-session "
-#~ "må startast på nytt før dette valet blir aktivt."
+#~ "Av omsyn til tryggleiken vil ikkje cinnamon-session lytta etter "
+#~ "tilkoplingar på TCP-portar på system som har _IceTcpTransNoListen() "
+#~ "(XFree86-system). Dette valet vil la autoriserte eksterne vertar kopla "
+#~ "til. cinnamon-session må startast på nytt før dette valet blir aktivt."
 
 #~ msgid "Selected option in the log out dialog"
 #~ msgstr "Vald val i utloggingsdialogen"
@@ -837,7 +847,8 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -872,42 +883,45 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgstr "Kunne ikkje finna program %s i økta\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
-#~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
-#~ "Sesjonshandsamar for Cinnamon kan ikkje startast. Vennligst rapportar dette "
-#~ "som ein feil. Ta med denne feilmeldinga frå ICE i rapporten: «%s». I "
-#~ "mellomtida kan du logge inn med feilsikker økt."
+#~ "Sesjonshandsamar for Cinnamon kan ikkje startast. Vennligst rapportar "
+#~ "dette som ein feil. Ta med denne feilmeldinga frå ICE i rapporten: «%s». "
+#~ "I mellomtida kan du logge inn med feilsikker økt."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
 #~ "Sesjonshandsamar for Cinnamon klarte ikkje å låse fila '%s'. Vennligst "
-#~ "rapportar dette som ein feili Cinnamon. Nokon gong oppstår denne feilen når "
-#~ "filens mappe ikkje er skrivbar, du kan prøve å logge inn via ein "
+#~ "rapportar dette som ein feili Cinnamon. Nokon gong oppstår denne feilen "
+#~ "når filens mappe ikkje er skrivbar, du kan prøve å logge inn via ein "
 #~ "feilsikker økt for å forsikre deg om at den er skrivbar."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
-#~ "Sesjonshandsamar for Cinnamon klarte ikkje å lesa fila '%s'. Viss denne fila "
-#~ "eksisterer, så må den vera lesbar av deg, for at Cinnamon skal fungere "
-#~ "ordentlig. Prøv og logg med ein feilsikker økt og fjern denne fila."
+#~ "Sesjonshandsamar for Cinnamon klarte ikkje å lesa fila '%s'. Viss denne "
+#~ "fila eksisterer, så må den vera lesbar av deg, for at Cinnamon skal "
+#~ "fungere ordentlig. Prøv og logg med ein feilsikker økt og fjern denne "
+#~ "fila."
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
-#~ "Kan ikkje skriva til '%s'. Denne fila må vera skrivbar for at Cinnamon skal "
-#~ "fungere ordentlig. Prøv og logg med ein feilsikker økt og fjern denne "
-#~ "fila. Sjekk òg at filens mappe er skrivbar."
+#~ "Kan ikkje skriva til '%s'. Denne fila må vera skrivbar for at Cinnamon "
+#~ "skal fungere ordentlig. Prøv og logg med ein feilsikker økt og fjern "
+#~ "denne fila. Sjekk òg at filens mappe er skrivbar."
 
 # gmenu/treedel.c:146
 #~ msgid "Are you sure you want to log out?"

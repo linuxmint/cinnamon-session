@@ -15,8 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session 2.3.6.2\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-25 19:38+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2011-11-13 16:42+0100\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 "Language-Team: Esperanto <ubuntu-l10n-eo@lists.launchpad.net>\n"
@@ -49,32 +49,31 @@ msgstr "La lanĉa komando ne povas esti malplena"
 msgid "The startup command is not valid"
 msgstr "La lanĉa komando ne estas valida"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Enŝaltite"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Piktogramo"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Programo"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Agordoj de startaj aplikaĵoj"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Neniu nomo"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Neniu priskribo"
 
-#: ../capplet/main.c:35
-#: ../cinnamon-session/main.c:281
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Versio de ĉi tiu aplikaĵo"
 
@@ -82,71 +81,56 @@ msgstr "Versio de ĉi tiu aplikaĵo"
 msgid "Could not display help document"
 msgstr "Ne eblis montri helpdokumenton"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Retropaŝa Cinnamon-reĝimo"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1
-#: ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Ĉi tiu seanco ensalutas vin en Cinnamon"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
-msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Kelkaj programoj ankoraŭ rulas:</b>"
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr "Iuj programoj ankoraŭ rulas:"
 
 #: ../data/csm-inhibit-dialog.glade.h:2
 #: ../cinnamon-session/csm-inhibit-dialog.c:640
-msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
-msgstr "Atendante ĝis la programo finiĝi. Se vi interrompas ĉi tiun programon, via laboro povus perdiĝi."
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"Atendante ĝis la programo finiĝi. Se vi interrompas ĉi tiun programon, via "
+"laboro povus perdiĝi."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "Elektu kiujn aplikaĵojn startigi kiam vi ensalutas"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "Lanĉaj aplikaĵoj"
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Elektu kiujn aplikaĵojn startigi kiam vi ensalutas"
 
 #: ../data/cinnamon-session-properties.glade.h:1
 msgid "Additional startup _programs:"
 msgstr "Pli lanĉaj a_plikaĵoj:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse…"
-msgstr "Foliumi…"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "Ko_mando:"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "Kom_entaro:"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opcioj"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "Lanĉaj aplikaĵoj"
-
-#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Memori aŭtomate jam lanĉitajn aplikaĵojn kiam vi elsalutas"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:3
+#, fuzzy
+msgid "_Remember Currently Running Applications"
+msgstr "_Memorigi nun rulantan aplikaĵon"
+
+#: ../data/cinnamon-session-properties.glade.h:4
+msgid "Browse…"
+msgstr "Foliumi…"
+
+#: ../data/cinnamon-session-properties.glade.h:5
+msgid "Comm_ent:"
+msgstr "Kom_entaro:"
+
+#: ../data/cinnamon-session-properties.glade.h:6
+msgid "Co_mmand:"
+msgstr "Ko_mando:"
+
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Nomo:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "_Memorigi nun rulantan aplikaĵon"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format
@@ -181,7 +165,8 @@ msgstr "Nerekonata lanĉo-opcio: %d"
 #: ../egg/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ne eblas transdoni dokumento-URI-ojn al labortabla elemento 'Type=Link'"
+msgstr ""
+"Ne eblas transdoni dokumento-URI-ojn al labortabla elemento 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1412
 #, c-format
@@ -229,13 +214,13 @@ msgstr "Nekonate"
 msgid "A program is still running:"
 msgstr "Programo ankoraŭ rulas:"
 
-#: ../cinnamon-session/csm-inhibit-dialog.c:643
-msgid "Some programs are still running:"
-msgstr "Iuj programoj ankoraŭ rulas:"
-
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
-msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
-msgstr "Atendas ĝis programoj finiĝas.  Vian laboran povus perdigota se vi interrompas ĉi tiuj programoj."
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"Atendas ĝis programoj finiĝas.  Vian laboran povus perdigota se vi "
+"interrompas ĉi tiuj programoj."
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
@@ -270,76 +255,94 @@ msgid "Cancel"
 msgstr "Nuligi"
 
 #. This string is shared with csm-fail-whale-dialog.c
-#: ../cinnamon-session/csm-logout-dialog.c:275
+#: ../cinnamon-session/csm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
 msgstr[0] "Vi estos aŭtomate malkonektata post %d sekundo."
 msgstr[1] "Vi estos aŭtomate malkonektata post %d sekundoj."
 
-#: ../cinnamon-session/csm-logout-dialog.c:283
+#: ../cinnamon-session/csm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
 msgstr[0] "Ĉi tiu sistemo aŭtomate haltos post %d sekundo."
 msgstr[1] "Ĉi tiu sistemo aŭtomate haltos post %d sekundoj."
 
-#: ../cinnamon-session/csm-logout-dialog.c:315
+#: ../cinnamon-session/csm-logout-dialog.c:282
+#, fuzzy, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] "Ĉi tiu sistemo aŭtomate haltos post %d sekundo."
+msgstr[1] "Ĉi tiu sistemo aŭtomate haltos post %d sekundoj."
+
+#: ../cinnamon-session/csm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Vi ensalutis kiel \"%s\"."
 
-#: ../cinnamon-session/csm-logout-dialog.c:381
+#: ../cinnamon-session/csm-logout-dialog.c:372
 msgid "Log out of this system now?"
 msgstr "Ĉu elsaluti el la sistemo nun?"
 
-#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-logout-dialog.c:378
 msgid "_Switch User"
 msgstr "Ŝangi la _uzanton"
 
-#: ../cinnamon-session/csm-logout-dialog.c:396
-#: ../cinnamon-session/csm-fail-whale-dialog.c:422
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "E_lsaluti"
 
-#: ../cinnamon-session/csm-logout-dialog.c:402
+#: ../cinnamon-session/csm-logout-dialog.c:393
 msgid "Shut down this system now?"
 msgstr "Ĉu elŝalti ĉi tiun sistemon nun?"
 
-#: ../cinnamon-session/csm-logout-dialog.c:408
+#: ../cinnamon-session/csm-logout-dialog.c:399
 msgid "S_uspend"
 msgstr "_Prokrasti"
 
-#: ../cinnamon-session/csm-logout-dialog.c:414
+#: ../cinnamon-session/csm-logout-dialog.c:405
 msgid "_Hibernate"
 msgstr "_Pasivumigi"
 
-#: ../cinnamon-session/csm-logout-dialog.c:420
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
 msgid "_Restart"
 msgstr "_Restartigi"
 
-#: ../cinnamon-session/csm-logout-dialog.c:430
+#: ../cinnamon-session/csm-logout-dialog.c:421
 msgid "_Shut Down"
 msgstr "_Elŝalti"
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:377
+#: ../cinnamon-session/csm-logout-dialog.c:427
+#, fuzzy
+msgid "Restart this system now?"
+msgstr "Ĉu elŝalti ĉi tiun sistemon nun?"
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
 msgid "Oh no!  Something has gone wrong."
 msgstr "Ho ne! Io fiaskis."
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:384
-msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
-msgstr "Problemo okazis kaj la sistemo ne eblis retrovi. Bonvole kontaktu sistemadministranton"
-
-#: ../cinnamon-session/csm-fail-whale-dialog.c:386
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
 msgid ""
-"A problem has occurred and the system can't recover. Some of the extensions below may have caused this.\n"
-"Please try disabling some of these, and then log out and try again."
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
 msgstr ""
-"Problemo okazis kaj la sistemo ne eblis retrovi.  Iuj kromprogramoj kiuj subitajestus kaŭzito de ĉi tiu.\n"
-"Bonvole provu elŝalti iujn de la kromprogramoj kaj provu denove."
+"Problemo okazis kaj la sistemo ne eblis retrovi. Bonvole kontaktu "
+"sistemadministranton"
 
-#: ../cinnamon-session/csm-fail-whale-dialog.c:388
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
+#, fuzzy
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"Problemo okazis kaj la sistemo ne eblis retrovi. Bonvole kontaktu "
+"sistemadministranton"
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
 "A problem has occurred and the system can't recover.\n"
 "Please log out and try again."
@@ -347,41 +350,33 @@ msgstr ""
 "Problemo okazis kaj la sistemo ne eblas restaŭri.\n"
 "Bonvolu elsaluti kaj provi denove."
 
-#: ../cinnamon-session/csm-process-helper.c:123
-#, c-format
-msgid "Exited with code %d"
-msgstr "Elirate kun kodo %d"
-
-#: ../cinnamon-session/csm-process-helper.c:128
-#, c-format
-msgid "Killed by signal %d"
-msgstr "Mortigis per signalo %d"
-
-#: ../cinnamon-session/csm-process-helper.c:133
-#, c-format
-msgid "Stopped by signal %d"
-msgstr "Haltigis per signalo %d"
-
-#: ../cinnamon-session/csm-manager.c:1386
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Ŝargo de Cinnamon 3 fiaskis"
 
-#: ../cinnamon-session/csm-manager.c:1387
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Bedaŭrinde korekta startado de Cinnamon 3 fiaskis kaj startis per la <i>fallback mode</i> (retropaŝa reĝimo).\n"
+"Bedaŭrinde korekta startado de Cinnamon 3 fiaskis kaj startis per la "
+"<i>fallback mode</i> (retropaŝa reĝimo).\n"
 "\n"
-"La kompleta sperto de Cinnamon 3 ne disponeblas por via sistemo. (La grafika aparato aŭ pelilo ne kapablas lanĉi la plenan Cinnamon 3)."
+"La kompleta sperto de Cinnamon 3 ne disponeblas por via sistemo. (La grafika "
+"aparato aŭ pelilo ne kapablas lanĉi la plenan Cinnamon 3)."
 
-#: ../cinnamon-session/csm-manager.c:1389
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Lernu plu pri Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1486
-#: ../cinnamon-session/csm-manager.c:2255
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Ne respondas"
 
@@ -397,79 +392,121 @@ msgstr "Memorigitaj aplikaĵoj"
 msgid "This program is blocking logout."
 msgstr "Ĉi tiu programaro blokas ensaluton."
 
-#: ../cinnamon-session/csm-xsmp-server.c:325
-msgid "Refusing new client connection because the session is currently being shut down\n"
+#: ../cinnamon-session/csm-xsmp-server.c:326
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
 msgstr "Rifuzas novan klientkonekton ĉar la seanco estas nun elsalutata.\n"
 
-#: ../cinnamon-session/csm-xsmp-server.c:587
+#: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Ne eblis krei ICE-aŭskultantan kontaktoskatolon: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Ne eblas lanĉi ensalutan seancon (kaj ne eblas konekti al la X-servilo)"
+msgstr ""
+"Ne eblas lanĉi ensalutan seancon (kaj ne eblas konekti al la X-servilo)"
 
-#: ../cinnamon-session/main.c:277
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Transiri normajn aŭtomatajn startdosierujojn"
 
-#: ../cinnamon-session/main.c:277
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:278
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Uzenda seanco"
 
-#: ../cinnamon-session/main.c:278
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:279
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Enŝalti sencimigan kodon"
 
-#: ../cinnamon-session/main.c:280
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Ne ŝargi propre specifitajn aplikaĵojn"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:283
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Montri la paneo-dialogo por testado"
 
-#: ../cinnamon-session/main.c:303
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - la seancadministrilo de Cinnamon"
 
-#: ../tools/cinnamon-session-quit.c:52
+#: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
 msgstr "Elsaluti"
 
-#: ../tools/cinnamon-session-quit.c:53
+#: ../tools/cinnamon-session-quit.c:54
 msgid "Power off"
 msgstr "Elŝalti"
 
-#: ../tools/cinnamon-session-quit.c:54
+#: ../tools/cinnamon-session-quit.c:55
+msgid "Reboot"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
 msgstr "Ignori ĉiujn ajn ekzistantajn malebligilojn"
 
-#: ../tools/cinnamon-session-quit.c:55
+#: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
 msgstr "Ne postuli konfirmon de la uzanto"
 
-#: ../tools/cinnamon-session-quit.c:89
-#: ../tools/cinnamon-session-quit.c:99
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Ne eblis konekti al la seancoadministrilo"
 
-#: ../tools/cinnamon-session-quit.c:199
+#: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Programo vokata kun konfliktaj parametroj"
 
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Retropaŝa Cinnamon-reĝimo"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Ĉi tiu seanco ensalutas vin en Cinnamon"
+
+#~ msgid "<b>Some programs are still running:</b>"
+#~ msgstr "<b>Kelkaj programoj ankoraŭ rulas:</b>"
+
+#~ msgid "Options"
+#~ msgstr "Opcioj"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Lanĉaj aplikaĵoj"
+
+#~ msgid ""
+#~ "A problem has occurred and the system can't recover. Some of the "
+#~ "extensions below may have caused this.\n"
+#~ "Please try disabling some of these, and then log out and try again."
+#~ msgstr ""
+#~ "Problemo okazis kaj la sistemo ne eblis retrovi.  Iuj kromprogramoj kiuj "
+#~ "subitajestus kaŭzito de ĉi tiu.\n"
+#~ "Bonvole provu elŝalti iujn de la kromprogramoj kaj provu denove."
+
+#~ msgid "Exited with code %d"
+#~ msgstr "Elirate kun kodo %d"
+
+#~ msgid "Killed by signal %d"
+#~ msgstr "Mortigis per signalo %d"
+
+#~ msgid "Stopped by signal %d"
+#~ msgstr "Haltigis per signalo %d"
 
 #~ msgid ""
 #~ "Suspends your session, using no power until the computer is restarted."

@@ -11,9 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-23 14:29+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-10-23 15:49+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
@@ -47,31 +46,31 @@ msgstr "Príkaz na spustenie pri štarte nemôže byť prázdny"
 msgid "The startup command is not valid"
 msgstr "Príkaz na spustenie pri štarte je neplatný"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Povolené"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Nastavenia aplikácií spúšťaných pri štarte"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Bez názvu"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Bez popisu"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Verzia tejto aplikácie"
 
@@ -79,23 +78,13 @@ msgstr "Verzia tejto aplikácie"
 msgid "Could not display help document"
 msgstr "Nepodarilo sa zobraziť dokument pomocníka"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Núdzový režim Cinnamon"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Táto relácia vás prihlási do Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Niektoré programy stále bežia:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -116,34 +105,26 @@ msgid "Additional startup _programs:"
 msgstr "Ďaľšie _programy spúšťané pri štarte:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Programy spúšťané pri štarte"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "Pri odhlasovaní si _automaticky zapamätať bežiace aplikácie"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Zapamätať si teraz bežiace aplikácie"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Voľby"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Prehliadať…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "P_oznámka:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Príkaz:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Názov:"
 
@@ -369,17 +350,19 @@ msgstr ""
 "Vyskytla sa chyba a systém sa nedokáže obnoviť.\n"
 "Prosím, odhláste sa a skúste to znovu."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Načítanie Cinnamon 3 zlyhalo"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "Nanešťastie Cinnamon 3 nedokázalo správne naštartovať a spustilo sa v "
 "<i>núdzovom režime</i>.\n"
@@ -387,11 +370,13 @@ msgstr ""
 "Pravdepodobne vaša grafická karta alebo ovládač nie je schopný poskytnúť "
 "plný zážitok z Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Zistite viac o Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Neodpovedá"
 
@@ -428,41 +413,42 @@ msgstr ""
 
 # PK: je to trochu dlhe, ale aspon je jasne na co to sluzi
 # cmd desc
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Namiesto predvoleného adresára automatického spúšťania použije tento"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "ADRESÁR_AUTOSPUSTENIA"
 
 # cmd desc
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Relácia, ktorá bude použitá"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "NÁZOV_RELÁCIE"
 
 # cmd desc
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Povolí ladiaci kód"
 
 # cmd desc
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Nenačíta aplikácie špecifikované používateľom"
 
 # cmd desc
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Zobrazí dialógové okno s chybou slúžiacou na testovanie"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - správca relácie Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -492,3 +478,18 @@ msgstr "Nepodarilo sa pripojiť k správcovi relácií"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Program volaný s konfliktnými voľbami"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Núdzový režim Cinnamon"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Táto relácia vás prihlási do Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Programy spúšťané pri štarte"
+
+#~ msgid "Options"
+#~ msgstr "Voľby"

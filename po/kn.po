@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.master.kn\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-26 15:57+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -39,31 +38,31 @@ msgstr "ಆರಂಭಿಕ ಆಜ್ಞೆಯು ಖಾಲಿ ಇರುವಂತ
 msgid "The startup command is not valid"
 msgstr "ಆರಂಭಿಕ ಆಜ್ಞೆಯು ಮಾನ್ಯವಾದುದಲ್ಲ"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "ಶಕ್ತಗೊಂಡ"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "ಚಿಹ್ನೆ"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "ಪ್ರೊಗ್ರಾಂ"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "ಆರಂಭಿಕ ಅನ್ವಯಗಳ ಆದ್ಯತೆಗಳು"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "ಯಾವುದೆ ಹೆಸರಿಲ್ಲ"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "ಯಾವುದೆ ವಿವರಣೆ ಇಲ್ಲ"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "ಈ ಅನ್ವಯದ ಆವೃತ್ತಿ"
 
@@ -71,33 +70,19 @@ msgstr "ಈ ಅನ್ವಯದ ಆವೃತ್ತಿ"
 msgid "Could not display help document"
 msgstr "ನೆರವಿನ ದಸ್ತಾವೇಜನ್ನು ತೋರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr ""
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "ಈ ಅಧಿವೇಶನವು ನಿಮ್ಮನ್ನು Cinnamon ಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ಕೆಲವು ಪ್ರೊಗ್ರಾಂಗಳು ಇನ್ನೂ ಚಾಲನೆಯಲ್ಲಿವೆ:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 #, fuzzy
-#| msgid ""
-#| "Waiting for programs to finish.  Interrupting these programs may cause "
-#| "you to lose work."
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
-"ಪ್ರೊಗ್ರಾಂಗಳು ಅಂತ್ಯಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲಾಗುತ್ತಿದೆ.  ಈ ಪ್ರೊಗ್ರಾಂಗಳನ್ನು ಅನ್ನು "
-"ಮಧ್ಯದಲ್ಲಿ "
+"ಪ್ರೊಗ್ರಾಂಗಳು ಅಂತ್ಯಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲಾಗುತ್ತಿದೆ.  ಈ ಪ್ರೊಗ್ರಾಂಗಳನ್ನು ಅನ್ನು ಮಧ್ಯದಲ್ಲಿ "
 "ತಡೆಯುವುದರಿಂದ ನಿಮ್ಮ ಕೆಲಸವು ನಾಶಗೊಳ್ಳಬಹುದು."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
@@ -113,37 +98,27 @@ msgid "Additional startup _programs:"
 msgstr "ಹೆಚ್ಚುವರಿ ಆರಂಭಿಕ ಪ್ರೊಗ್ರಾಂಗಳು(_p):"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳು"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ನಿರ್ಗಮಿಸುವಾಗ ಚಾಲನೆಯಲ್ಲಿರುವ ಅನ್ವಯಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನೆನಪಿಟ್ಟುಕೊ(_A)"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 #, fuzzy
-#| msgid "_Remember Currently Running Application"
 msgid "_Remember Currently Running Applications"
 msgstr "ಪ್ರಸಕ್ತ ಚಾಲನೆಯಲ್ಲಿರುವ ಅನ್ವಯವನ್ನು ನೆನಪಿಟ್ಟುಕೊ(_R)"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "ಆಯ್ಕೆಗಳು"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-#| msgid "Browse..."
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "ವೀಕ್ಷಿಸು..."
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "ಟಿಪ್ಪಣಿ(_e):"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "ಆಜ್ಞೆ(_m):"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "ಹೆಸರು(_N):"
 
@@ -233,8 +208,7 @@ msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
-"ಪ್ರೊಗ್ರಾಂಗಳು ಅಂತ್ಯಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲಾಗುತ್ತಿದೆ.  ಈ ಪ್ರೊಗ್ರಾಂಗಳನ್ನು ಅನ್ನು "
-"ಮಧ್ಯದಲ್ಲಿ "
+"ಪ್ರೊಗ್ರಾಂಗಳು ಅಂತ್ಯಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲಾಗುತ್ತಿದೆ.  ಈ ಪ್ರೊಗ್ರಾಂಗಳನ್ನು ಅನ್ನು ಮಧ್ಯದಲ್ಲಿ "
 "ತಡೆಯುವುದರಿಂದ ನಿಮ್ಮ ಕೆಲಸವು ನಾಶಗೊಳ್ಳಬಹುದು."
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
@@ -242,7 +216,6 @@ msgid "Switch User Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಬಳಕೆದಾರನನ್ನು ಬದಲಾಯಿಸು"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:877
-#| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ನಿರ್ಗಮಿಸು"
 
@@ -256,13 +229,11 @@ msgstr "ಪರವಾಗಿಲ್ಲ ಹೈಬರ್ನೇಟ್ ಮಾಡು"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:886
 #, fuzzy
-#| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಮುಚ್ಚು"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:889
 #, fuzzy
-#| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಇನ್ನೊಮ್ಮೆ ಬೂಟ್ ಮಾಡು"
 
@@ -291,8 +262,6 @@ msgstr[1] "ಗಣಕವು ಸ್ವಯಂಚಾಲಿತವಾಗಿ %d ಸೆ�
 
 #: ../cinnamon-session/csm-logout-dialog.c:282
 #, fuzzy, c-format
-#| msgid "This system will be automatically shut down in %d second."
-#| msgid_plural "This system will be automatically shut down in %d seconds."
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "ಗಣಕವು ಸ್ವಯಂಚಾಲಿತವಾಗಿ %d ಸೆಕೆಂಡಿನಲ್ಲಿ ಮುಚ್ಚಲ್ಪಡುತ್ತದೆ."
@@ -313,7 +282,7 @@ msgstr "ಬಳಕೆದಾರರನ್ನು ಬದಲಾಯಿಸು(_S)"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "ನಿರ್ಗಮಿಸು(_L)"
 
@@ -340,7 +309,6 @@ msgstr "ಮುಚ್ಚು(_S)"
 
 #: ../cinnamon-session/csm-logout-dialog.c:427
 #, fuzzy
-#| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "ಈ ಗಣಕವನ್ನು ಈಗಲೆ ಮುಚ್ಚಬೇಕೆ?"
 
@@ -366,24 +334,25 @@ msgid ""
 "Please log out and try again."
 msgstr ""
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+msgid "GNOME 3 Failed to Load"
 msgstr ""
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+msgid "Learn more about GNOME 3"
 msgstr ""
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ"
 
@@ -393,13 +362,11 @@ msgstr "ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ"
 #.
 #: ../cinnamon-session/csm-xsmp-client.c:559
 #, fuzzy
-#| msgid "_Remember Currently Running Application"
 msgid "Remembered Application"
 msgstr "ಪ್ರಸಕ್ತ ಚಾಲನೆಯಲ್ಲಿರುವ ಅನ್ವಯವನ್ನು ನೆನಪಿಟ್ಟುಕೊ(_R)"
 
 #: ../cinnamon-session/csm-xsmp-client.c:1197
 #, fuzzy
-#| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "ಪ್ರೊಗ್ರಾಂ ನಿರ್ಗಮನವನ್ನು ತಡೆಯುತ್ತಿದೆ."
 
@@ -408,8 +375,7 @@ msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
-"ಹೊಸ ಕ್ಲೈಂಟ್ ಸಂಪರ್ಕಗಳನ್ನು ತಿರಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ ಏಕೆಂದರೆ ಅಧೀವೇಶವನವು ಈಗ "
-"ಮುಚ್ಚಲ್ಪಡುತ್ತಿದೆ\n"
+"ಹೊಸ ಕ್ಲೈಂಟ್ ಸಂಪರ್ಕಗಳನ್ನು ತಿರಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ ಏಕೆಂದರೆ ಅಧೀವೇಶವನವು ಈಗ ಮುಚ್ಚಲ್ಪಡುತ್ತಿದೆ\n"
 
 #: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
@@ -417,46 +383,46 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE ಆಲಿಸುವ ಸಾಕೆಟ್ ಅನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "ಪ್ರವೇಶ ಅಧಿವೇಶನವನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ (ಹಾಗು X ಪರಿಚಾರಕಕ್ಕೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು "
 "ಸಾಧ್ಯವಾಗಿಲ್ಲ)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "ರೂಢಿಗತ ಸ್ವಯಂಚಾಲನಾ ಕೋಶಗಳನ್ನು ಅತಿಕ್ರಮಿಸು"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 #, fuzzy
-#| msgid "Session %d"
 msgid "Session to use"
 msgstr "ಅಧಿವೇಶನ %d"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "ದೋಷನಿವಾರಣ ಕೋಡ್ ಅನ್ನು ಶಕ್ತಗೊಳಿಸು"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "ಬಳಕೆದಾರ-ಸೂಚಿತ ಅನ್ವಯಗಳನ್ನು ಲೋಡ್ ಮಾಡಬೇಡ"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr ""
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- Cinnamon ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕ"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -469,19 +435,16 @@ msgstr ""
 
 #: ../tools/cinnamon-session-quit.c:55
 #, fuzzy
-#| msgid "Reboot Anyway"
 msgid "Reboot"
 msgstr "ಮರು ಬೂಟ್"
 
 #: ../tools/cinnamon-session-quit.c:56
 #, fuzzy
-#| msgid "Log out, ignoring any existing inhibitors"
 msgid "Ignoring any existing inhibitors"
 msgstr "ಯಾವುದೆ ಪ್ರತಿರೋಧಗಳಿದ್ದರೂ ಅವನ್ನು ಆಲಕ್ಷಿಸಿ, ನಿರ್ಗಮಿಸು"
 
 #: ../tools/cinnamon-session-quit.c:57
 #, fuzzy
-#| msgid "Do not require confirmation"
 msgid "Don't prompt for user confirmation"
 msgstr "ಖಚಿತಪಡಿಸುವ ಅಗತ್ಯವಿರುವುದಿಲ್ಲ"
 
@@ -492,6 +455,18 @@ msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗ�
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊಗ್ರಾಂ ಅನ್ನು ಕರೆಯಲಾಗಿದೆ"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "ಈ ಅಧಿವೇಶನವು ನಿಮ್ಮನ್ನು Cinnamon ಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
+
+#~ msgid "Startup Programs"
+#~ msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳು"
+
+#~ msgid "Options"
+#~ msgstr "ಆಯ್ಕೆಗಳು"
 
 #~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "Cinnamon ಸೆಟ್ಟಿಂಗ್ಸ್‍ ಡೀಮನ್ ಹೆಲ್ಪರ್"
@@ -509,11 +484,11 @@ msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊ�
 #~ "ಬಳಕೆದಾರನನ್ನು ಕೇಳುತ್ತದೆ."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "ಶಕ್ತಗೊಂಡಿದ್ದಲ್ಲಿ, cinnamon-session ಅಧಿವೇಶನವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಉಳಿಸುತ್ತದೆ. ಇಲ್ಲದೆ "
-#~ "ಹೋದಲ್ಲಿ, ಅಧಿವೇಶನವನ್ನು ಉಳಿಸಲು ನಿರ್ಗಮಿಸುವ ಸಂವಾದದಲ್ಲಿ ಆಯ್ಕೆಯು ಇರುತ್ತದೆ."
+#~ "ಶಕ್ತಗೊಂಡಿದ್ದಲ್ಲಿ, cinnamon-session ಅಧಿವೇಶನವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಉಳಿಸುತ್ತದೆ. "
+#~ "ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ, ಅಧಿವೇಶನವನ್ನು ಉಳಿಸಲು ನಿರ್ಗಮಿಸುವ ಸಂವಾದದಲ್ಲಿ ಆಯ್ಕೆಯು ಇರುತ್ತದೆ."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಅಧಿವೇಶನದ ಭಾಗವಾಗಿರುವ ಅನ್ವಯಗಳ ಪಟ್ಟಿ."
@@ -683,8 +658,8 @@ msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊ�
 #~ msgstr "ನಿರ್ವಾಹಕ ಖಾತೆಯಿಂದ gnome-ಅಧಿವೇಶನವನ್ನು ಚಲಾಯಿಸದಂತೆ ಬಳಕೆದಾರರಿಗೆ ಎಚ್ಚರಿಸು"
 
 #~ msgid ""
-#~ "When enabled, cinnamon-session will automatically save the next session at "
-#~ "log out even if auto saving is disabled."
+#~ "When enabled, cinnamon-session will automatically save the next session "
+#~ "at log out even if auto saving is disabled."
 #~ msgstr ""
 #~ "ಶಕ್ತಗೊಂಡಿದ್ದಲ್ಲಿ, ಸ್ವಯಂ ಉಳಿಸುವಿಕೆಯನ್ನು ಅಶಕ್ತಗೊಂಡಿದ್ದರೂ ಸಹ cinnamon-session "
 #~ "ನಿರ್ಗಮಿಸಿದಾಗ ಮುಂದಿನ ಅಧಿವೇಶನವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಉಳಿಸುತ್ತದೆ."

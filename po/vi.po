@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session 2.25.90\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-08-23 13:06+0700\n"
 "Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -39,31 +38,31 @@ msgstr "Không cho phép tạo lệnh khởi động rỗng"
 msgid "The startup command is not valid"
 msgstr "Lệnh khởi động không hợp lệ"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Bật"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Biểu tượng"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Chương trình"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Tuỳ chọn ứng dụng khởi chạy"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Không tên"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Không mô tả"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Phiên bản của ứng dụng"
 
@@ -71,23 +70,13 @@ msgstr "Phiên bản của ứng dụng"
 msgid "Could not display help document"
 msgstr "Không thể hiện tài liệu trợ giúp"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon phòng bị"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Phiên chạy này sẽ đăng nhập bạn vào Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Vài chương trình vẫn đang chạy:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -108,35 +97,26 @@ msgid "Additional startup _programs:"
 msgstr "_Chương trình khởi động thêm:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Chương trình khởi động"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Tự động nhớ các ứng dụng đang chạy khi đăng xuất"
 
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Nhớ ứng dụng đang chạy"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Tùy chọn"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Duyệt…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "C_hú thích:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "Lệ_nh:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Tên:"
 
@@ -278,8 +258,6 @@ msgstr[0] "Hệ thống này sẽ bị tự động tắt trong %d giây."
 
 #: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
-#| msgid "This system will be automatically shut down in %d second."
-#| msgid_plural "This system will be automatically shut down in %d seconds."
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "Hệ thống này sẽ bị tự động khởi động lại trong %d giây."
@@ -299,7 +277,7 @@ msgstr "Đổ_i người dùng"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "Đăng _xuất"
 
@@ -325,7 +303,6 @@ msgid "_Shut Down"
 msgstr "_Tắt máy"
 
 #: ../cinnamon-session/csm-logout-dialog.c:427
-#| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "Khởi động lại hệ thống này ngay bây giờ?"
 
@@ -356,29 +333,33 @@ msgstr ""
 "Hệ thống gặp vấn đề không thể phục hồi.\n"
 "Hãy đăng xuất và thử lại."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Lỗi nạp Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Rất tiếc không thể khởi động Cinnamon 3 nên đang chạy trong <i>chế độ phòng bị</"
-"i>.\n"
+"Rất tiếc không thể khởi động Cinnamon 3 nên đang chạy trong <i>chế độ phòng "
+"bị</i>.\n"
 "\n"
 "Nhiều khả năng hệ thống của bạn (phần cứng đồ hoạ hoặc trình điều khiển) "
 "không đủ khả năng chạy Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Tìm hiểu thêm về Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Không trả lời"
 
@@ -406,43 +387,44 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Không thể tạo ổ cắm lắng nghe ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Không thể khởi chạy phiên đăng nhập (và không thể kết nối đến X server)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Đè thư mục autostart chuẩn"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Phiên làm việc cần dùng"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Bật mã hỗ trợ tìm lỗi"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Đừng nạp ứng dụng do người dùng xác định"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Hiện cửa sổ cá voi thất bại để kiểm tra"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " — Bộ Quản lý Phiên chạy Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -472,6 +454,21 @@ msgstr "Không thể kết nối với trình quản lý phiên chạy"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Chương trình được gọi với tuỳ chọn xung đột"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon phòng bị"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Phiên chạy này sẽ đăng nhập bạn vào Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Chương trình khởi động"
+
+#~ msgid "Options"
+#~ msgstr "Tùy chọn"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Vài chương trình vẫn đang hoạt đọng:</b>"
@@ -524,14 +521,15 @@ msgstr "Chương trình được gọi với tuỳ chọn xung đột"
 #~ msgid ""
 #~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Nếu bật, cinnamon-session sẽ nhắc người dùng trước khi kết thúc phiên chạy."
+#~ "Nếu bật, cinnamon-session sẽ nhắc người dùng trước khi kết thúc phiên "
+#~ "chạy."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Nếu bật, cinnamon-session sẽ lưu tự động phiên chạy. Nếu tắt, hộp thoại đăng "
-#~ "xuất sẽ hiển thị tùy chọn lưu phiên chạy."
+#~ "Nếu bật, cinnamon-session sẽ lưu tự động phiên chạy. Nếu tắt, hộp thoại "
+#~ "đăng xuất sẽ hiển thị tùy chọn lưu phiên chạy."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Danh sách các ứng dụng thuộc về phiên chạy mặc định."
@@ -551,10 +549,10 @@ msgstr "Chương trình được gọi với tuỳ chọn xung đột"
 #~ "process), cinnamon-session will start it next time you log in anyway."
 #~ msgstr ""
 #~ "Danh sách các thành phần cần thiết là phần của buổi hợp. (Mỗi thành phần "
-#~ "đặt tên một khoá dưới « /desktop/cinnamon/session/required-components ».) Gỡ "
-#~ "bỏ khỏi buổi hợp một thành phần cần thiết (v.d. buộc kết thúc một tiến "
-#~ "trình liên quan) thì cinnamon-session khởi chạy lại nó lần bạn đăng nhập kế "
-#~ "tiếp."
+#~ "đặt tên một khoá dưới « /desktop/cinnamon/session/required-components ».) "
+#~ "Gỡ bỏ khỏi buổi hợp một thành phần cần thiết (v.d. buộc kết thúc một tiến "
+#~ "trình liên quan) thì cinnamon-session khởi chạy lại nó lần bạn đăng nhập "
+#~ "kế tiếp."
 
 #~ msgid "Logout prompt"
 #~ msgstr "Nhắc đăng xuất"

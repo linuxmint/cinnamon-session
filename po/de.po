@@ -19,9 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-25 10:52+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-07-28 15:48+0200\n"
 "Last-Translator: Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
@@ -52,31 +51,31 @@ msgstr "Der Startbefehl darf nicht leer sein"
 msgid "The startup command is not valid"
 msgstr "Der Startbefehl ist ungültig"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Programm"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Startprogrammeinstellungen"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Namenlos"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Keine Beschreibung"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Version dieser Anwendung"
 
@@ -84,23 +83,13 @@ msgstr "Version dieser Anwendung"
 msgid "Could not display help document"
 msgstr "Die Hilfeseite konnte nicht angezeigt werden"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon-Ausweichmodus"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Diese Sitzung meldet Sie bei Cinnamon an"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Einige Anwendungen laufen noch:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -122,34 +111,26 @@ msgid "Additional startup _programs:"
 msgstr "_Zusätzliche Startprogramme:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Startprogramme"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Automatisch die laufenden Programme beim Abmelden merken"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "Momentan laufende Programme _merken"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Optionen"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Durchsuchen …"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Ko_mmentar:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Befehl:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Name:"
 
@@ -311,7 +292,7 @@ msgstr "Benutzer _wechseln"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "Benutzer ab_melden"
 
@@ -368,17 +349,19 @@ msgstr ""
 "Ein Problem ist aufgetreten, welches vom System nicht behoben werden kann.\n"
 "Bitte melden Sie sich ab und versuchen Sie es erneut."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Das Laden von Cinnamon 3 schlug fehl"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "Leider schlug das richtige Laden von Cinnamon 3 fehl und es wurde im "
 "<i>Ausweichmodus</i> gestartet.\n"
@@ -386,11 +369,13 @@ msgstr ""
 "Das bedeutet sehr wahrscheinlich, dass Ihre Grafik-Hardware nicht für die "
 "vollständige Cinnamon-3-Umgebung geeignet ist."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Erfahren Sie mehr über Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Keine Antwort"
 
@@ -420,44 +405,45 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE-Listening-Socket konnte nicht erzeugt werden: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Anmeldesitzung konnte nicht gestartet werden (keine Verbindung zum X-Server)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Vorgegebene Autostart-Ordner außer Kraft setzen"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTARTORDNER"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Zu verwendende Sitzung"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SITZUNGSNAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Debugging-Code aktivieren"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Keine benutzerspezifischen Anwendungen laden"
 
 # Der Kommentar im Quelltext lautet: »/* Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong */«
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Den Dialog zum Fehlschlag für Prüfungszwecke anzeigen"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - Die Cinnamon-Sitzung verwalten"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -487,6 +473,21 @@ msgstr "Sitzungsverwaltung konnte nicht kontaktiert werden"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Programm wurde mit Optionen aufgerufen, die zu einem Konflikt führen"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon-Ausweichmodus"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Diese Sitzung meldet Sie bei Cinnamon an"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Startprogramme"
+
+#~ msgid "Options"
+#~ msgstr "Optionen"
 
 #~ msgid "Exited with code %d"
 #~ msgstr "Abbruch mit Code %d"
@@ -530,7 +531,8 @@ msgstr "Programm wurde mit Optionen aufgerufen, die zu einem Konflikt führen"
 #~ "Soll cinnamon-session den Benutzer vor dem Beenden einer Sitzung fragen?"
 
 #~ msgid "If enabled, cinnamon-session will save the session automatically."
-#~ msgstr "Falls aktiviert, speichert cinnamon-session die Sitzung automatisch."
+#~ msgstr ""
+#~ "Falls aktiviert, speichert cinnamon-session die Sitzung automatisch."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Liste der Anwendungen, die Teil der Standardsitzung sind."

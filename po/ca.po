@@ -10,9 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session 2.3.7\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-16 11:29+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-03-24 01:40+0100\n"
 "Last-Translator: David Planella <david.planella@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -42,31 +41,31 @@ msgstr "L'ordre d'inici no pot ser buida"
 msgid "The startup command is not valid"
 msgstr "L'ordre d'inici no és vàlida"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Icona"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Preferències de les aplicacions d'inici"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Sense nom"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Sense descripció"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Versió d'aquesta aplicació"
 
@@ -74,23 +73,13 @@ msgstr "Versió d'aquesta aplicació"
 msgid "Could not display help document"
 msgstr "No s'ha pogut mostrar el document de l'ajuda"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon clàssic"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Aquesta sessió us entra al Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Hi ha alguns programes que encara s'estan executant:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -111,36 +100,28 @@ msgid "Additional startup _programs:"
 msgstr "_Programes d'inici addicionals:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Programes d'inici"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "Recorda _automàticament les aplicacions que s'estan executant en sortir"
 
 # FIXME [l10n-bug] (dpm)
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Recorda les aplicacions que s'estan executant actualment"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opcions"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Navega…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Co_mentari:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Ordre:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Nom:"
 
@@ -305,7 +286,7 @@ msgstr "Canvia d'_usuari"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Surt"
 
@@ -362,17 +343,19 @@ msgstr ""
 "S'ha produït un problema i el sistema no es pot recuperar.\n"
 "Sortiu i torneu-ho a provar."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Ha fallat la càrrega del Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "El Cinnamon 3 no s'ha pogut iniciar correctament i ha arrencat en <i>mode "
 "clàssic</i>.\n"
@@ -380,11 +363,13 @@ msgstr ""
 "Això vol dir que segurament el vostre sistema (maquinari gràfic o "
 "controlador) no podrà proporcionar el Cinnamon 3 a la seva màxima capacitat."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Descobriu més coses sobre el Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "No està responent"
 
@@ -414,43 +399,44 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "No s'ha pogut crear el sòcol ICE d'escolta: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "No s'ha pogut iniciar la sessió d'entrada (ni connectar amb el servidor X)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Ignora els directoris estàndard d'inici automàtic"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "DIRECTORI_INICI_AUTOMÀTIC"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Sessió que s'utilitzarà"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "NOM_DE_SESSIÓ"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Habilita el codi de depuració"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "No carreguis les aplicacions especificades per l'usuari"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Mostra el diàleg de la balena per fer proves"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- el gestor de sessions del Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -481,6 +467,21 @@ msgstr "No s'ha pogut connectar al gestor de sessions"
 msgid "Program called with conflicting options"
 msgstr ""
 "El programa s'ha invocat amb opcions que entren en conflicte entre elles"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon clàssic"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Aquesta sessió us entra al Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Programes d'inici"
+
+#~ msgid "Options"
+#~ msgstr "Opcions"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Hi ha alguns programes encara en execució:</b>"
@@ -543,8 +544,8 @@ msgstr ""
 #~ msgid ""
 #~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Si s'habilita, el cinnamon-session preguntarà a l'usuari abans de finalitzar "
-#~ "una sessió."
+#~ "Si s'habilita, el cinnamon-session preguntarà a l'usuari abans de "
+#~ "finalitzar una sessió."
 
 #~ msgid "If enabled, cinnamon-session will save the session automatically."
 #~ msgstr "Si s'habilita, el cinnamon-session desarà la sessió automàticament."
@@ -625,11 +626,12 @@ msgstr ""
 #~ msgstr "Auxiliar del dimoni dels paràmetres del Cinnamon"
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Si s'habilita, el cinnamon-session desarà la sessió automàticament. D'altra "
-#~ "manera, el diàleg de sortida tindrà una opció per a desar la sessió."
+#~ "Si s'habilita, el cinnamon-session desarà la sessió automàticament. "
+#~ "D'altra manera, el diàleg de sortida tindrà una opció per a desar la "
+#~ "sessió."
 
 #~ msgid "Preferred Image to use for login splash screen"
 #~ msgstr "Imatge preferida per a emprar a la pantalla de presentació"
@@ -703,21 +705,23 @@ msgstr ""
 
 #~ msgid "Cinnamon GUI Library + EggSMClient"
 #~ msgstr ""
-#~ "Biblioteca de la interfìcie gràfica d'usuari del Cinnamon amb l'EggSMClient"
+#~ "Biblioteca de la interfìcie gràfica d'usuari del Cinnamon amb "
+#~ "l'EggSMClient"
 
 #~ msgid "Allow TCP connections"
 #~ msgstr "Permet connexions TCP"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "Per raons de seguretat, en les plataformes que tenen _IceTcpTransNoListen"
 #~ "() (sistemes XFree86), el cinnamon-session no escolta connexions en ports "
 #~ "TCP. Aquesta opció permetrà connexions des de màquines remotes "
-#~ "(autoritzades). S'ha de reiniciar el cinnamon-session perquè tingui efecte."
+#~ "(autoritzades). S'ha de reiniciar el cinnamon-session perquè tingui "
+#~ "efecte."
 
 #~ msgid "_Order:"
 #~ msgstr "_Ordre:"
@@ -807,7 +811,8 @@ msgstr ""
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -840,9 +845,10 @@ msgstr ""
 #~ msgstr "No s'ha pogut trobar el programa %s a la sessió\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
-#~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
 #~ "No s'ha pogut iniciar correctament el gestor de sessions del Cinnamon. "
 #~ "Informeu-ne com una errada del Cinnamon. Indiqueu aquest missatge d'error "
@@ -851,19 +857,19 @@ msgstr ""
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
 #~ "El gestor de sessions del Cinnamon no ha pogut blocar el fitxer «%s». "
-#~ "Informeu-ne com una errada del Cinnamon. A vegades aquest error es produeix "
-#~ "si no es pot escriure al directori on és el fitxer. Podeu mirar d'entrar "
-#~ "mitjançant la sessió a prova de fallades i assegurar-vos-en."
+#~ "Informeu-ne com una errada del Cinnamon. A vegades aquest error es "
+#~ "produeix si no es pot escriure al directori on és el fitxer. Podeu mirar "
+#~ "d'entrar mitjançant la sessió a prova de fallades i assegurar-vos-en."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
 #~ "El gestor de sessions del Cinnamon no ha pogut llegir el fitxer: «%s». "
 #~ "Aquest fitxer ha d'existir i s'ha de poder llegir perquè el Cinnamon "
@@ -872,13 +878,14 @@ msgstr ""
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
 #~ "No s'ha pogut escriure al fitxer «%s». S'ha de poder escriure en aquest "
-#~ "fitxer perquè el Cinnamon funcioni correctament. Mireu d'entrar mitjançant "
-#~ "la sessió a prova de fallades, i també assegureu-vos que es pugui "
-#~ "escriure al directori."
+#~ "fitxer perquè el Cinnamon funcioni correctament. Mireu d'entrar "
+#~ "mitjançant la sessió a prova de fallades, i també assegureu-vos que es "
+#~ "pugui escriure al directori."
 
 #~ msgid "Are you sure you want to log out?"
 #~ msgstr "Esteu segur que voleu sortir?"

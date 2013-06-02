@@ -18,8 +18,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-18 15:44+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-20 10:07+0000\n"
 "Last-Translator: Noriko Mizumoto <noriko@fedoraproject.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -49,31 +49,31 @@ msgstr "自動起動するプログラムのコマンド名を入力してくだ
 msgid "The startup command is not valid"
 msgstr "コマンド名が間違っています"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "有効"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "プログラム"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "自動起動するアプリケーションの設定"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "名前なし"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "(説明なし)"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "このアプリケーションのバージョンを表示する"
 
@@ -81,25 +81,19 @@ msgstr "このアプリケーションのバージョンを表示する"
 msgid "Could not display help document"
 msgstr "ヘルプのドキュメントを表示できませんでした"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon フォールバック"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "このセッションで Cinnamon にログインします"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "いくつかのプログラムが未だ実行中です:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
-msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
-msgstr "プログラムが終了するのを待っています。プログラムの実行を強制的に中断すると、作業内容を失うことになるかもしれません。"
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"プログラムが終了するのを待っています。プログラムの実行を強制的に中断すると、"
+"作業内容を失うことになるかもしれません。"
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -114,34 +108,26 @@ msgid "Additional startup _programs:"
 msgstr "自動的に起動するプログラムの追加(_P):"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "自動起動するプログラム"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ログアウト時に実行中のアプリケーションを自動的に記憶しておく(_A)"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "現在実行中のアプリケーションを記憶しておく(_R)"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "オプション"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "参照…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "説明(_E):"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "コマンド(_M):"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "名前(_N):"
 
@@ -227,8 +213,12 @@ msgid "A program is still running:"
 msgstr "プログラムが未だ実行中です:"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
-msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
-msgstr "プログラムが終了するのを待っています。実行中のプログラムを途中で強制終了させてしまうと、これまでの処理結果を失ってしまう可能性があります。"
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"プログラムが終了するのを待っています。実行中のプログラムを途中で強制終了させ"
+"てしまうと、これまでの処理結果を失ってしまう可能性があります。"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
@@ -296,7 +286,7 @@ msgstr "ユーザーを切り替える(_S)"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "ログアウト(_L)"
 
@@ -330,12 +320,19 @@ msgid "Oh no!  Something has gone wrong."
 msgstr "あれっ! 何かおかしいです。"
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:318
-msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
-msgstr "問題が発生して、システムの復帰ができません。システム管理者に連絡してください"
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+"問題が発生して、システムの復帰ができません。システム管理者に連絡してください"
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:320
-msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
-msgstr "問題が発生して、システムの復帰ができません。念のため、すべての拡張を無効にしました。"
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"問題が発生して、システムの復帰ができません。念のため、すべての拡張を無効にし"
+"ました。"
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -345,25 +342,33 @@ msgstr ""
 "問題が発生して、システムの復帰ができません。\n"
 "ログアウトして再度試してください。"
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 を読み込むのに失敗しました"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"残念ながら Cinnamon 3 が正しく起動せず、<i>フォールバックモード</i> で起動しました。\n"
+"残念ながら Cinnamon 3 が正しく起動せず、<i>フォールバックモード</i> で起動し"
+"ました。\n"
 "\n"
-"おそらく、このシステム (グラフィックのハードウェアやドライバー) は Cinnamon 3 を満足に動かすことができないようです。"
+"おそらく、このシステム (グラフィックのハードウェアやドライバー) は Cinnamon "
+"3 を満足に動かすことができないようです。"
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Cinnamon 3 について詳しく知る"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "応答なし"
 
@@ -380,8 +385,12 @@ msgid "This program is blocking logout."
 msgstr "このプログラムがログアウトできないようにしています。"
 
 #: ../cinnamon-session/csm-xsmp-server.c:326
-msgid "Refusing new client connection because the session is currently being shut down\n"
-msgstr "セッションがシャットダウンを実行しているため、新しいクライアントとの接続を拒否しました。\n"
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+"セッションがシャットダウンを実行しているため、新しいクライアントとの接続を拒"
+"否しました。\n"
 
 #: ../cinnamon-session/csm-xsmp-server.c:595
 #, c-format
@@ -389,42 +398,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE の監視ソケットを生成できませんでした: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "ログインセッションを起動できません (X サーバーにも接続できません)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "標準の自動起動フォルダーをオーバーライドする"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "使用するセッション"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "デバッグモードにする"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "ユーザーが指定したアプリケーションを起動しない"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "テスト用にエラー画面を表示する"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- Cinnamon セッションマネージャー"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -455,6 +465,21 @@ msgstr "セッションマネージャーに接続できませんでした"
 msgid "Program called with conflicting options"
 msgstr "同時には適用できないオプションを指定しました"
 
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon フォールバック"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "このセッションで Cinnamon にログインします"
+
+#~ msgid "Startup Programs"
+#~ msgstr "自動起動するプログラム"
+
+#~ msgid "Options"
+#~ msgstr "オプション"
+
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>いくつかのプログラムが未だ実行中です:</b>"
 
@@ -468,8 +493,10 @@ msgstr "同時には適用できないオプションを指定しました"
 #~ msgstr "シグナル %d で停止させられました"
 
 #~ msgid ""
-#~ "A problem has occurred and the system can't recover. Some of the extensions below may have caused this.\n"
+#~ "A problem has occurred and the system can't recover. Some of the "
+#~ "extensions below may have caused this.\n"
 #~ "Please try disabling some of these, and then log out and try again."
 #~ msgstr ""
-#~ "問題が発生して、システムの復帰ができません。これは以下の拡張のどれかが引き起こした可能性があります。\n"
+#~ "問題が発生して、システムの復帰ができません。これは以下の拡張のどれかが引き"
+#~ "起こした可能性があります。\n"
 #~ "これらのどれかを無効にして、ログアウトして再度試してください。"

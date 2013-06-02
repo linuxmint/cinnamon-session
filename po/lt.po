@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-08-29 23:08+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.6.1\n"
 
 #: ../capplet/csm-app-dialog.c:120
@@ -40,51 +41,37 @@ msgstr "Paleidimo komanda negali būti tuščia"
 msgid "The startup command is not valid"
 msgstr "Paleidimo komanda netinkama"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Įjungta"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Piktograma"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Paleidžiamų programų nustatymai"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Be pavadinimo"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Nėra aprašymo"
 
-#: ../capplet/main.c:35
-#: ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Programos versija"
 
 #: ../capplet/main.c:61
 msgid "Could not display help document"
 msgstr "Nepavyko parodyti žinyno dokumento"
-
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon atsarginė veiksena"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1
-#: ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Šis seansas prijungia jus prie Cinnamon"
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -93,8 +80,12 @@ msgstr "Kai kurios programos vis dar veikia:"
 
 #: ../data/csm-inhibit-dialog.glade.h:2
 #: ../cinnamon-session/csm-inhibit-dialog.c:640
-msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
-msgstr "Laukiama, kol programa baigs darbą. Nutraukus programos darbą galite prarasti neįrašytų duomenų."
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"Laukiama, kol programa baigs darbą. Nutraukus programos darbą galite "
+"prarasti neįrašytų duomenų."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -109,35 +100,26 @@ msgid "Additional startup _programs:"
 msgstr "Papildomos paleidžiamos _programos:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Pradžioje paleidžiamos programos"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Atsijungiant, automatiškai atsiminti paleistas programas"
 
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Atsiminti dabar veikiančias programas"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Parinktys"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Naršyti…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Ko_mentaras:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Komanda:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Pavadinimas:"
 
@@ -223,8 +205,12 @@ msgid "A program is still running:"
 msgstr "Programa vis dar veikia:"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
-msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
-msgstr "Laukiama, kol programos baigs darbą. Šias programas nutraukus gali būti prarasta informacija."
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"Laukiama, kol programos baigs darbą. Šias programas nutraukus gali būti "
+"prarasta informacija."
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
@@ -277,8 +263,6 @@ msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių."
 
 #: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
-#| msgid "This system will be automatically shut down in %d second."
-#| msgid_plural "This system will be automatically shut down in %d seconds."
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "Sistema automatiškai bus įkelta iš naujo po %d sekundės."
@@ -300,7 +284,7 @@ msgstr "_Keisti naudotoją"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Atsijungti"
 
@@ -326,7 +310,6 @@ msgid "_Shut Down"
 msgstr "Išj_ungti"
 
 #: ../cinnamon-session/csm-logout-dialog.c:427
-#| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "Įkelti sistemą iš naujo dabar?"
 
@@ -335,12 +318,20 @@ msgid "Oh no!  Something has gone wrong."
 msgstr "O ne! Nutiko kažkas negera."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:318
-msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
-msgstr "Įvyko klaida ir sistema negali atsistatyti. Susisiekite su sistemos administratoriumi"
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+"Įvyko klaida ir sistema negali atsistatyti. Susisiekite su sistemos "
+"administratoriumi"
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:320
-msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
-msgstr "Įvyko klaida ir sistema negali atsistatyti. Kaip atsargos priemonė visi plėtiniai buvo išjungti."
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"Įvyko klaida ir sistema negali atsistatyti. Kaip atsargos priemonė visi "
+"plėtiniai buvo išjungti."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -350,26 +341,33 @@ msgstr ""
 "Įvyko klaida ir sistema negali atsistatyti.\n"
 "Atsijunkite ir prisijunkite iš naujo."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 nepavyko pakrauti"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Deja, Cinnamon 3 nepavyko sėkmingai paleisti, dabar aktyvi <i>atsarginė veiksena</i>.\n"
+"Deja, Cinnamon 3 nepavyko sėkmingai paleisti, dabar aktyvi <i>atsarginė "
+"veiksena</i>.\n"
 "\n"
-"Greičiausiai tai reiškia, kad Jūsų sistema (grafikos techninė įranga arba tvarkyklė) negali pilnai vykdyti Cinnamon 3."
+"Greičiausiai tai reiškia, kad Jūsų sistema (grafikos techninė įranga arba "
+"tvarkyklė) negali pilnai vykdyti Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Sužinoti daugiau apie Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493
-#: ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Neatsako"
 
@@ -386,7 +384,9 @@ msgid "This program is blocking logout."
 msgstr "Ši programa neleidžia atsijungti."
 
 #: ../cinnamon-session/csm-xsmp-server.c:326
-msgid "Refusing new client connection because the session is currently being shut down\n"
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
 msgstr "Atsisakoma naujo kliento ryšio, kadangi seansas dabar išjungiamas\n"
 
 #: ../cinnamon-session/csm-xsmp-server.c:595
@@ -395,42 +395,45 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Nepavyko sukurti ICE klausymo lizdo: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Nepavyko paleisti prisijungimo seanso (taip pat nepavyko prisijungti prie X serverio)"
+msgstr ""
+"Nepavyko paleisti prisijungimo seanso (taip pat nepavyko prisijungti prie X "
+"serverio)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Nepaisyti standartinių automatinės paleisties aplankų"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Naudoti sesiją"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Įjungti derinimo kodą"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Neįkelti naudotojo nurodytų programų"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Rodyti visiškos nesėkmės dialogą bandymui"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " – Cinnamon seanso valdyklė"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -453,8 +456,7 @@ msgstr "Ignoruojami trukdžiai"
 msgid "Don't prompt for user confirmation"
 msgstr "Nereikalauti naudotojo patvirtinimo"
 
-#: ../tools/cinnamon-session-quit.c:91
-#: ../tools/cinnamon-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Nepavyko prisijungti prie seansų valdyklės"
 
@@ -462,3 +464,17 @@ msgstr "Nepavyko prisijungti prie seansų valdyklės"
 msgid "Program called with conflicting options"
 msgstr "Programa iškviesta naudojant konfliktuojančias parinktis"
 
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon atsarginė veiksena"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Šis seansas prijungia jus prie Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Pradžioje paleidžiamos programos"
+
+#~ msgid "Options"
+#~ msgstr "Parinktys"

@@ -9,9 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.master.ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-18 21:13+0000\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam <discuss@lists.smc.org.in>\n"
@@ -42,31 +41,31 @@ msgstr "ആരംഭ നിര്‍ദ്ദേശം ശൂന്യമായ�
 msgid "The startup command is not valid"
 msgstr "ആരംഭ ആജ്ഞ ശരിയല്ല"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "പ്രവര്‍ത്തന സജ്ജമാക്കുക"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "ചിഹ്നം "
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "പ്രോഗ്രാം"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍ക്കുള്ള മുന്‍ഗണനകള്‍"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "പേരില്ല"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "വിവരണം ഒന്നുമില്ല"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 
@@ -74,26 +73,13 @@ msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 msgid "Could not display help document"
 msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "ഗ്നോം ഫോള്‍ബാക്ക്"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "ഗ്നോം"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ്നോമിലേക്ക് കയറ്റുന്നു"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
-#| msgid ""
-#| "Waiting for programs to finish.  Interrupting these programs may cause "
-#| "you to lose work."
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -114,36 +100,26 @@ msgid "Additional startup _programs:"
 msgstr "കൂടുതല്‍ പ്രാരംഭ _പ്രയോഗങ്ങള്‍:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "പ്രാരംഭ പ്രോഗ്രാമുകള്‍"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "പുറത്തിറങ്ങുമ്പോള്‍ പ്രവര്‍ത്തിയ്ക്കുന്ന പ്രയോഗങ്ങള്‍ ഓര്‍ത്തിരിയ്ക്കുക."
 
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "ഇപ്പോള്‍ പ്രവര്‍ത്തിക്കുന്ന പ്രയോഗങ്ങള്‍ _ഓര്‍ക്കുക"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "ഐച്ഛികങ്ങള്‍"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-#| msgid "Browse..."
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "പരതുക..."
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "അഭിപ്രായം:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_ആജ്ഞ:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_പേരു്:"
 
@@ -242,7 +218,6 @@ msgid "Switch User Anyway"
 msgstr "എന്തായാലും ഉപയോക്താവിനെ മാറ്റുക"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:877
-#| msgid "Logout Anyway"
 msgid "Log Out Anyway"
 msgstr "എന്തായാലും പുറത്തിറങ്ങുക"
 
@@ -255,12 +230,10 @@ msgid "Hibernate Anyway"
 msgstr "എന്തായാലും ശിശിരനിദ്രയിലാഴുക"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:886
-#| msgid "Shutdown Anyway"
 msgid "Shut Down Anyway"
 msgstr "എന്തായാലും നിര്‍ത്തി വയ്ക്കുക"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:889
-#| msgid "Reboot Anyway"
 msgid "Restart Anyway"
 msgstr "എന്തായാലും വീണ്ടും തുടങ്ങുക"
 
@@ -289,8 +262,6 @@ msgstr[1] "ഈ സിസ്റ്റം തനിയെ %d സെകന്റി
 
 #: ../cinnamon-session/csm-logout-dialog.c:282
 #, c-format
-#| msgid "This system will be automatically shut down in %d second."
-#| msgid_plural "This system will be automatically shut down in %d seconds."
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be automatically restarted in %d seconds."
 msgstr[0] "ഈ സിസ്റ്റം തനിയെ %d സെക്കന്റില്‍ അടച്ചു പൂട്ടും."
@@ -311,7 +282,7 @@ msgstr "ഉപയോക്താവിനെ മാറ്റുക"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "പുറത്തിറങ്ങുക"
 
@@ -337,7 +308,6 @@ msgid "_Shut Down"
 msgstr "കമ്പ്യൂട്ടര്‍ അടച്ചുപൂട്ടുക"
 
 #: ../cinnamon-session/csm-logout-dialog.c:427
-#| msgid "Shut down this system now?"
 msgid "Restart this system now?"
 msgstr "ഈ സിസ്റ്റം ഇപ്പോള്‍ വീണ്ടും ആരംഭിയ്ക്കണമോ?"
 
@@ -351,16 +321,14 @@ msgid ""
 "administrator"
 msgstr ""
 "എന്തോ പ്രശ്നം കാരണം സിസ്റ്റം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല. ദയവായി ഒരു സിസ്റ്റം "
-"അഡ്മിസിസ്ട്രേറ്ററുമായി "
-"ബന്ധപ്പെടുക."
+"അഡ്മിസിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:320
 msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
 msgstr ""
-"എന്തോ പ്രശ്നം കാരണം സിസ്റ്റം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല. മുന്‍കരുതലിനായി എല്ലാ "
-"എക്സ്റ്റെന്‍ഷനുകളും "
+"എന്തോ പ്രശ്നം കാരണം സിസ്റ്റം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല. മുന്‍കരുതലിനായി എല്ലാ എക്സ്റ്റെന്‍ഷനുകളും "
 "പ്രവര്‍ത്തന രഹിതമാക്കിയിരിയ്ക്കുന്നു."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
@@ -371,29 +339,33 @@ msgstr ""
 "എന്തോ പ്രശ്നം കാരണം സിസ്റ്റം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല.\n"
 "ദയവായി പുറത്തു് കടന്നു് വീണ്ടും ശ്രമിയ്ക്കുക."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "ഗ്നോം 3 ലഭ്യമാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"ഗ്നോം 3 ശരിയായി ആരംഭിയ്ക്കുന്നതില്‍ പരാജയപ്പെട്ടു, അതിനാല്‍ <i>ഫോള്‍ബാക്ക് "
-"മോഡില്‍</i> ആരംഭിച്ചിരിയ്ക്കുന്നു.\n"
+"ഗ്നോം 3 ശരിയായി ആരംഭിയ്ക്കുന്നതില്‍ പരാജയപ്പെട്ടു, അതിനാല്‍ <i>ഫോള്‍ബാക്ക് മോഡില്‍</i> "
+"ആരംഭിച്ചിരിയ്ക്കുന്നു.\n"
 "\n"
-"ഇതിനര്‍ത്ഥം ഒരു പക്ഷേ നിങ്ങളുടെ സിസ്റ്റം (ഗ്രാഫിക്സ് ഹാര്‍ഡ്‌വെയര്‍ അല്ലെങ്കില്‍ ഡ്രൈവര്‍) "
-"പൂര്‍ണ്ണമായി ഗ്നോം 3 ആസ്വദിയ്ക്കുന്നതിനു് അനുവദിയ്ക്കുന്നില്ല."
+"ഇതിനര്‍ത്ഥം ഒരു പക്ഷേ നിങ്ങളുടെ സിസ്റ്റം (ഗ്രാഫിക്സ് ഹാര്‍ഡ്‌വെയര്‍ അല്ലെങ്കില്‍ ഡ്രൈവര്‍) പൂര്‍ണ്ണമായി "
+"ഗ്നോം 3 ആസ്വദിയ്ക്കുന്നതിനു് അനുവദിയ്ക്കുന്നില്ല."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "ഗ്നോം 3-യെപ്പറ്റി കൂടുതല്‍ അറിയുക"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 
@@ -402,12 +374,10 @@ msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 #. * properties. But it could still be that SmProgram is not set.
 #.
 #: ../cinnamon-session/csm-xsmp-client.c:559
-#| msgid "_Remember Currently Running Application"
 msgid "Remembered Application"
 msgstr "ഓര്‍ത്തു് വച്ച പ്രയോഗങ്ങള്‍"
 
 #: ../cinnamon-session/csm-xsmp-client.c:1197
-#| msgid "This program is blocking log out."
 msgid "This program is blocking logout."
 msgstr "ഈ പ്രയോഗം പുറത്തിറങ്ങുന്നതു് തടയുന്നു."
 
@@ -423,44 +393,45 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "'ഐസ് '(ICE) കേള്‍ക്കാനുള്ള സോക്കറ്റ് ഉണ്ടാക്കാന്‍ കഴിഞ്ഞില്ല: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "അകത്തുകയറുമ്പോഴുള്ള പ്രവര്‍ത്തനവേള തുടങ്ങാന്‍ കഴിഞ്ഞില്ല (എക്സ്-സെര്‍വറിലേക്ക് ബന്ധപ്പെടാനും "
 "സാധിച്ചില്ല)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "സാധാരണയുള്ള സ്വയം തുടങ്ങാനുള്ള തട്ടുകള്‍ മറികടക്കുക"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "ഉപയോഗിയ്ക്കുവാനുള്ള സെഷന്‍"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "പിഴവു് തിരുത്താന്‍ സഹായിയ്ക്കുന്ന കോഡ് പ്രാവര്‍ത്തികമാക്കുക"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "ഉപയോക്താവ് വ്യക്തമാക്കിയ പ്രയോഗങ്ങള്‍ ലോഡ് ചെയ്യേണ്ട"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "പരീക്ഷണത്തിനായി പരാജയ ഡയലോഗ് കാണിയ്ക്കുക"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- Cinnamon പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരന്‍"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -472,17 +443,14 @@ msgid "Power off"
 msgstr "പവര്‍ ഓഫ് ചെയ്യുക"
 
 #: ../tools/cinnamon-session-quit.c:55
-#| msgid "Reboot Anyway"
 msgid "Reboot"
 msgstr "വീണ്ടും തുടങ്ങുക"
 
 #: ../tools/cinnamon-session-quit.c:56
-#| msgid "Log out, ignoring any existing inhibitors"
 msgid "Ignoring any existing inhibitors"
 msgstr "തടസ്സമുണ്ടാക്കുന്നവരെ വക വയ്ക്കുന്നില്ല"
 
 #: ../tools/cinnamon-session-quit.c:57
-#| msgid "Do not require confirmation"
 msgid "Don't prompt for user confirmation"
 msgstr "ഉറപ്പു വരുത്തുന്നതിനായി ഇനി ചോദിയ്ക്കേണ്ട"
 
@@ -493,6 +461,21 @@ msgstr "പ്രവര്‍ത്തനവേള നടത്തിപ്പ�
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ്ങളോടെയാണു് പ്രോഗ്രാമിനെ വിളിച്ചിരിയ്ക്കുന്നതു്"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "ഗ്നോം ഫോള്‍ബാക്ക്"
+
+#~ msgid "Cinnamon"
+#~ msgstr "ഗ്നോം"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ്നോമിലേക്ക് കയറ്റുന്നു"
+
+#~ msgid "Startup Programs"
+#~ msgstr "പ്രാരംഭ പ്രോഗ്രാമുകള്‍"
+
+#~ msgid "Options"
+#~ msgstr "ഐച്ഛികങ്ങള്‍"
 
 #~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "ഗ്നോം സജ്ജീകരണങ്ങള്‍ക്കുള്ള നിരന്തരപ്രവൃത്തിയ്ക്കായുള്ള വേലക്കാരന്‍"
@@ -510,8 +493,8 @@ msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ�
 #~ "ഉപയോക്താവിനെ അറിയിക്കുന്നതാണു്."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "പ്രവര്‍ത്തന സജ്ജമാണെങ്കില്‍, cinnamon-session സ്വയമേ ഈ പ്രവര്‍ത്തനവേള സൂക്ഷിക്കുന്നതാണു്. "
 #~ "അല്ലായെങ്കില്‍, പ്രവര്‍ത്തനവേള സൂക്ഷിക്കുവാനുളള ഐച്ഛികം, പുറത്തിറങ്ങുന്നതിനുള്ള ഡയലോഗില്‍ "

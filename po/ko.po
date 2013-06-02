@@ -8,9 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-15 17:18+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: Cinnamon Korea <gnome-kr@googlegroups.com>\n"
@@ -40,31 +39,31 @@ msgstr "시작 프로그램을 비워 둘 수 없습니다"
 msgid "The startup command is not valid"
 msgstr "시작 프로그램이 올바르지 않습니다"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "사용하기"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "프로그램"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "시작 프로그램 기본 설정"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "이름 없음"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "설명 없음"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "이 프로그램의 버전"
 
@@ -72,23 +71,13 @@ msgstr "이 프로그램의 버전"
 msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "그놈 대체"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "그놈"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "이 세션을 사용하면 그놈에 로그인합니다"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "프로그램이 실행 중입니다:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -109,34 +98,26 @@ msgid "Additional startup _programs:"
 msgstr "시작 프로그램 추가(_P):"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "시작 프로그램"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "로그아웃할 때 자동으로 실행 중인 프로그램 기억(_A)"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "현재 실행 중인 프로그램 기억(_R)"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "옵션"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "찾아보기…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "설명(_E):"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "명령(_M):"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "이름(_N):"
 
@@ -295,7 +276,7 @@ msgstr "사용자 바꾸기(_S)"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "로그아웃(_L)"
 
@@ -350,27 +331,32 @@ msgstr ""
 "문제가 발생했지만 복구하지 못했습니다.\n"
 "로그아웃하고 다시 시도하십시오."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "그놈 3 읽어들이기 실패했습니다"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "그놈 3 시작이 실패해서 <i>대체 모드</i>로 시작합니다.\n"
 "\n"
-"보통 이 경우 완전한 그놈 3 기능을 사용하기에는 시스템 기능이(그래픽 하드웨어 또는 드라이버) 부족한 경우입니다."
+"보통 이 경우 완전한 그놈 3 기능을 사용하기에는 시스템 기능이(그래픽 하드웨어 "
+"또는 드라이버) 부족한 경우입니다."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "그놈 3에 대해 좀 더 알고 싶으면"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "응답 없음"
 
@@ -398,42 +384,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ICE 리스닝 소켓을 만들 수 없습니다: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "로그인 세션을 시작할 수 없습니다(X 서버에 연결할 수 없습니다)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "기본 자동 시작 디렉토리 대신 사용합니다"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "<자동시작_폴더>"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "사용할 세션"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "<세션_이름>"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "디버깅 코드를 사용합니다"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "사용자가 지정한 프로그램을 읽어들이지 않습니다"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "테스트 용도로 고래 표시"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- 그놈 세션 관리자"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -463,6 +450,21 @@ msgstr "세션 관리자에 연결할 수 없습니다"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "함께 사용할 수 없는 옵션을 같이 사용했습니다"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "그놈 대체"
+
+#~ msgid "Cinnamon"
+#~ msgstr "그놈"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "이 세션을 사용하면 그놈에 로그인합니다"
+
+#~ msgid "Startup Programs"
+#~ msgstr "시작 프로그램"
+
+#~ msgid "Options"
+#~ msgstr "옵션"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>실행 중인 프로그램이 있습니다:</b>"

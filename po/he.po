@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-24 22:32+0300\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-07-24 22:34+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -39,51 +39,37 @@ msgstr "פקודת ההפעלה לא יכולה להיות ריקה"
 msgid "The startup command is not valid"
 msgstr "פקודת ההפעלה אינה תקינה"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "מאופשר"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "סמל"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "תכנית"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "העדפות יישומי הפעלה"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "ללא שם"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "ללא תיאור"
 
-#: ../capplet/main.c:35
-#: ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Version of this application"
 
 #: ../capplet/main.c:61
 msgid "Could not display help document"
 msgstr "Could not display help document"
-
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "רשת הביטחון של Cinnamon"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1
-#: ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "‏Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "הפעלה זאת מחברת אותך לשולחן העבודה Cinnamon"
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -92,7 +78,9 @@ msgstr "ישנן תכניות שעדיין רצות:"
 
 #: ../data/csm-inhibit-dialog.glade.h:2
 #: ../cinnamon-session/csm-inhibit-dialog.c:640
-msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
 msgstr "בהמתנה לסיום התכנית. הפרעה לתכנית עלולה לגרום לאבדן העבודה שלך."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
@@ -108,34 +96,26 @@ msgid "Additional startup _programs:"
 msgstr "_תכניות הפעלה נוספות:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "תכניות הפעלה"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_זכירת היישומים הפעילים בזמן הניתוק"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "זכירת היישומים הפועלים _כעת"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "אפשרויות"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "עיון…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "הע_רה:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "פ_קודה:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_שם:"
 
@@ -221,7 +201,9 @@ msgid "A program is still running:"
 msgstr "ישנה תכנית שעדיין רצה:"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
-msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
 msgstr "בהמתנה לסיום התכניות. הפרעה לתכניות עלולה לגרום לאיבוד העבודה שלך."
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
@@ -293,7 +275,7 @@ msgstr "ה_חלפת משתמש"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_ניתוק"
 
@@ -327,12 +309,18 @@ msgid "Oh no!  Something has gone wrong."
 msgstr "אבוי!  משהו השתבש."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:318
-msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
-msgstr "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. נא ליצור קשר עם מנהל המערכת."
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+"אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. נא ליצור קשר עם מנהל המערכת."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:320
-msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
-msgstr "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. ליתר ביטחון נוטרלו כל ההרחבות."
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה. ליתר ביטחון נוטרלו כל ההרחבות."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -342,26 +330,32 @@ msgstr ""
 "אירעה שגיאה והמערכת אינה יכולה להשתקם ממנה.\n"
 "נא לצאת ולנסות שוב."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "טעינת Cinnamon 3 נכשלה"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "לרוע המזל הפעלת Cinnamon 3 כראוי נכשלה ובמקום זאת הופעל <b>מצב השחזור</b>.\n"
 "\n"
-"תקלה זו אירעה כפי הנראה כיוון שהמערכת שלך (או מנהל ההתקן של חומרת הגרפיקה שלך) אינה מסוגלת להפעיל את חווית Cinnamon 3 במלואה."
+"תקלה זו אירעה כפי הנראה כיוון שהמערכת שלך (או מנהל ההתקן של חומרת הגרפיקה "
+"שלך) אינה מסוגלת להפעיל את חווית Cinnamon 3 במלואה."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "מידע נוסף על אודות Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493
-#: ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "אין תגובה"
 
@@ -378,7 +372,9 @@ msgid "This program is blocking logout."
 msgstr "תכנית זו מונעת את היציאה."
 
 #: ../cinnamon-session/csm-xsmp-server.c:326
-msgid "Refusing new client connection because the session is currently being shut down\n"
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
 msgstr "מסרב לחיבור לקוח חדש מכיון שההפעלה נמצאת במהלך כיבוי\n"
 
 #: ../cinnamon-session/csm-xsmp-server.c:595
@@ -387,42 +383,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "לא ניתן ליצור שקע ICE: ‏%s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Unable to start login session (and unable to connect to the X server)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Override standard autostart directories"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "הפעלה לשימוש"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Enable debugging code"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Do not load user-specified applications"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "הצגת דו־שיח 'לוויתן הכשל'  לבדיקה"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - the Cinnamon session manager"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -445,14 +442,28 @@ msgstr "תוך התעלמות ממעקבים קיימים"
 msgid "Don't prompt for user confirmation"
 msgstr "אין לבקש אישור מהמשתמש"
 
-#: ../tools/cinnamon-session-quit.c:91
-#: ../tools/cinnamon-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "לא ניתן להתחבר למנהל ההפעלה"
 
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "התכנית נקראה עם אפשרויות סותרות"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "רשת הביטחון של Cinnamon"
+
+#~ msgid "Cinnamon"
+#~ msgstr "‏Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "הפעלה זאת מחברת אותך לשולחן העבודה Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "תכניות הפעלה"
+
+#~ msgid "Options"
+#~ msgstr "אפשרויות"
 
 #~ msgid "Exited with code %d"
 #~ msgstr "יציאה עם הקוד %d"
@@ -612,11 +623,11 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgstr "Cinnamon Splash Screen"
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 
 #~ msgid ""
 #~ "Assistive technology support has been requested for this session, but the "
@@ -691,14 +702,14 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 
 #~ msgid "_Order:"
 #~ msgstr "_סדר:"
@@ -787,7 +798,8 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-24 01:33+0300\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-24 01:51+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
@@ -45,31 +45,31 @@ msgstr "Starta komanda nevar būt tukša"
 msgid "The startup command is not valid"
 msgstr "Starta komanda nav derīga"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Aktivēts"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Programma"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Starta programmu iestatījumi"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Nav nosaukuma"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Nav apraksta"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Lietotnes versija"
 
@@ -77,29 +77,19 @@ msgstr "Lietotnes versija"
 msgid "Could not display help document"
 msgstr "Nevar parādīt palīdzības dokumentu"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon atkāpšanās"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Šī sesija ieraksta jūs Cinnamon vidē"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Dažas programmas joprojām darbojas:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
-"Gaida programmu darbības beigas. Programmu pārtraukšana var novest pie "
-"darba rezultātu zaudēšanas."
+"Gaida programmu darbības beigas. Programmu pārtraukšana var novest pie darba "
+"rezultātu zaudēšanas."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -114,34 +104,26 @@ msgid "Additional startup _programs:"
 msgstr "Papildu starta _programmas:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Starta programmas"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Automātiski atcerēties palaistās lietotnes izrakstoties"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "Atce_rēties šobrīd palaistās lietotnes"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opcijas"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Pārlūkot…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Kom_entārs:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "Ko_manda:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Nosaukums:"
 
@@ -306,7 +288,7 @@ msgstr "_Nomainīt lietotāju"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Izrakstīties"
 
@@ -352,8 +334,8 @@ msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
 msgstr ""
-"Gadījās problēma, un sistēma no tās nevar atgūties. Kā piesardzības pasākums, "
-"visi paplašinājumi ir deaktivēti."
+"Gadījās problēma, un sistēma no tās nevar atgūties. Kā piesardzības "
+"pasākums, visi paplašinājumi ir deaktivēti."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -363,30 +345,33 @@ msgstr ""
 "Gadījās problēma, un sistēma no tās nevar atgūties.\n"
 "Lūdzu, izrakstieties un mēģiniet vēlreiz."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 neizdevās ielādēties"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Diemžēl Cinnamon 3 neizdevās startēties pareizi, tāpēc tika startēts <i>"
-"atkāpšanās "
-"režīms</i>.\n"
+"Diemžēl Cinnamon 3 neizdevās startēties pareizi, tāpēc tika startēts "
+"<i>atkāpšanās režīms</i>.\n"
 "\n"
 "Visdrīzāk tas nozīmē to, ka sistēma (videokarte vai draiveris) nespēj "
 "realizēt pilnu Cinnamon 3 iespēju klāstu."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Uzziniet vairāk par Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Neatbild"
 
@@ -414,42 +399,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Nevar izveidot ICE klausīšanās ligzdu — %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Nevar ierakstīties sesijā (nevar savienoties ar X serveri)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Aizstāt standarta automātiskā starta direktorijas"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTARTA_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Sesija, ko izmantot"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESIJAS_NOSAUKUMS"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Aktivēt atkļūdošanas kodu"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Neielādēt lietotāja norādītās lietotnes"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Rādīt neveiksmju vali testēšanai"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - Cinnamon sesiju pārvaldnieks"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -479,6 +465,21 @@ msgstr "Nevar savienoties ar sesiju pārvaldnieku"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Programma izsaukta ar konfliktējošām opcijām"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon atkāpšanās"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Šī sesija ieraksta jūs Cinnamon vidē"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Starta programmas"
+
+#~ msgid "Options"
+#~ msgstr "Opcijas"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Dažas programmas joprojām darbojas:</b>"
@@ -545,11 +546,11 @@ msgstr "Programma izsaukta ar konfliktējošām opcijām"
 #~ "beigšanas."
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
-#~ "Ja aktivizēts, cinnamon-session saglabās sesiju automātiski. Citā gadījumā, "
-#~ "atteikšanās dialogā būs opcija saglabāt sesiju."
+#~ "Ja aktivizēts, cinnamon-session saglabās sesiju automātiski. Citā "
+#~ "gadījumā, atteikšanās dialogā būs opcija saglabāt sesiju."
 
 #~ msgid "List of applications that are part of the default session."
 #~ msgstr "Noklusētās sesijas programmu saraksts."
@@ -563,11 +564,11 @@ msgstr "Programma izsaukta ar konfliktējošām opcijām"
 #~ "session at login time if they do get removed."
 #~ msgstr ""
 #~ "Saraksts ar komponentēm, kuras ir šīs sesijas nepieciešama daļā. (Katrs "
-#~ "elements izveido atslēgu zem \"/desktop/cinnamon/session/required_components"
-#~ "\"). Startalietotņu izvēles rīks parasti neļauj lietotājam no sesijas "
-#~ "izņemt nepieciešamu komponenti, un sesijas pārvaldnieks pieteikšanās "
-#~ "laikā automātiski pieliks nepieciešamo komponenti atpakaļ, ja tā tomēr "
-#~ "tiks izņemta."
+#~ "elements izveido atslēgu zem \"/desktop/cinnamon/session/"
+#~ "required_components\"). Startalietotņu izvēles rīks parasti neļauj "
+#~ "lietotājam no sesijas izņemt nepieciešamu komponenti, un sesijas "
+#~ "pārvaldnieks pieteikšanās laikā automātiski pieliks nepieciešamo "
+#~ "komponenti atpakaļ, ja tā tomēr tiks izņemta."
 
 #~ msgid "Logout prompt"
 #~ msgstr "Atteikšanās uzvedne"

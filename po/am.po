@@ -8,460 +8,592 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-11 08:59+0000\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2003-01-24 09:30+EDT\n"
 "Last-Translator: Ge'ez Frontier Foundation <locales@geez.org>\n"
 "Language-Team: Amharic <locales@geez.org>\n"
+"Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: cinnamon-session/cinnamon-session.schemas.in.h:1
-msgid "Allow TCP connections"
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:2
-msgid ""
-"For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-"ports. This option will allow connections from (authorized) remote hosts. "
-"cinnamon-session must be restarted for this to take effect."
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:3
-msgid "If enabled, cinnamon-session will prompt the user before ending a session."
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:4
-msgid ""
-"If enabled, cinnamon-session will save the session automatically. Otherwise, "
-"the logout dialog will have an option to save the session."
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:5
-msgid "Logout prompt"
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:6
-msgid ""
-"Preferred Image to use for the splash screen when logging in to the Cinnamon "
-"Desktop"
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:7
-msgid "Save sessions"
-msgstr "ክፍለ ጊዜዎችን አስቀምጥ"
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:8
-msgid "Show the splash screen"
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:9
-msgid "Show the splash screen when the session starts up"
-msgstr ""
-
-#: cinnamon-session/cinnamon-session.schemas.in.h:10
-msgid "Splash Screen Image"
-msgstr ""
-
-#: cinnamon-session/csm-client-editor.c:97 cinnamon-session/startup-programs.c:314
-msgid "_Order:"
-msgstr "ቅደም _ተከተል፦"
-
-#: cinnamon-session/csm-client-editor.c:99
-msgid "The order in which applications are started in the session."
-msgstr "በክፍለ ጊዜ ውስጥ ፕሮግራሞቹ የሚነሱበት ቅድመ ተከተል።"
-
-#: cinnamon-session/csm-client-editor.c:106
-msgid "What happens to the application when it exits."
-msgstr "ፕሮግራሙ በሚወጣበት ጊዜ ምን ተፈጠረ።"
-
-#: cinnamon-session/csm-client-editor.c:109
-msgid "_Style:"
-msgstr "_ዘይቤ፦"
-
-#: cinnamon-session/csm-client-list.c:150
-#: cinnamon-session/session-properties-capplet.c:412
-msgid "Order"
-msgstr "ቅደም ተከተል"
-
-#: cinnamon-session/csm-client-list.c:155
-msgid "Style"
-msgstr "ዘይቤ"
-
-#: cinnamon-session/csm-client-list.c:160
-msgid "State"
-msgstr "ሁኔታ"
-
-#: cinnamon-session/csm-client-list.c:165
-msgid "Program"
-msgstr "ፕሮግራም"
-
-#: cinnamon-session/csm-client-row.c:31
-msgid "Inactive"
-msgstr "የማይንቀሳቀስ"
-
-#: cinnamon-session/csm-client-row.c:32
-msgid "Waiting to start or already finished."
-msgstr "ለመጀመር በመጠበቅ ላይ ወይም ጨርሷል።"
-
-#: cinnamon-session/csm-client-row.c:34
-msgid "Starting"
-msgstr "እየጀመረ ነው"
-
-#: cinnamon-session/csm-client-row.c:35
-msgid "Started but has not yet reported state."
-msgstr "ጀምሯል ግን ሁኔታውን የመዘገብ ሁኔታ የለውም።"
-
-#: cinnamon-session/csm-client-row.c:37
-msgid "Running"
-msgstr "በሥራ ላይ"
-
-#: cinnamon-session/csm-client-row.c:38
-msgid "A normal member of the session."
-msgstr "የተለመደ የክፍለ ጊዘው አባል"
-
-#: cinnamon-session/csm-client-row.c:40
-msgid "Saving"
-msgstr "በማስቀመጥ ላይ"
-
-#: cinnamon-session/csm-client-row.c:41
-msgid "Saving session details."
-msgstr ""
-
-#: cinnamon-session/csm-client-row.c:43
-msgid "Unknown"
-msgstr "ያልታወቀ"
-
-#: cinnamon-session/csm-client-row.c:44
-msgid "State not reported within timeout."
-msgstr ""
-
-#: cinnamon-session/csm-client-row.c:50
-msgid "Normal"
-msgstr "የተለመደ"
-
-#: cinnamon-session/csm-client-row.c:51
-msgid "Unaffected by logouts but can die."
-msgstr ""
-
-#: cinnamon-session/csm-client-row.c:53
-msgid "Restart"
-msgstr "እንደገና አስጀምሩ"
-
-#: cinnamon-session/csm-client-row.c:54
-msgid "Never allowed to die."
-msgstr "ለመሞት በፍጹም አልተፈቀደም።"
-
-#: cinnamon-session/csm-client-row.c:56
-msgid "Trash"
-msgstr "የማይፈለግ"
-
-#: cinnamon-session/csm-client-row.c:57
-msgid "Discarded on logout and can die."
-msgstr ""
-
-#: cinnamon-session/csm-client-row.c:59
-msgid "Settings"
-msgstr "ምርጫዎች"
-
-#: cinnamon-session/csm-client-row.c:60
-msgid "Always started on every login."
-msgstr ""
-
-#.
-#. * it would be nice to have a dialog which either:
-#. *
-#. * 1.  lets you change the message on it
-#. * 2.  lets you append messages and has a "history"
-#. *
-#. * for now, we just kill the old dialog and pop up a new one.
-#.
-#: cinnamon-session/csm-gsd.c:41
-msgid ""
-"There was an error starting the Cinnamon Settings Daemon.\n"
-"\n"
-"Some things, such as themes, sounds, or background settings may not work "
-"correctly."
-msgstr ""
-
-#: cinnamon-session/csm-gsd.c:53
-msgid ""
-"\n"
-"\n"
-"The last error message was:\n"
-"\n"
-msgstr ""
-
-#: cinnamon-session/csm-gsd.c:58
-msgid ""
-"\n"
-"\n"
-"Cinnamon will still try to restart the Settings Daemon next time you log in."
-msgstr ""
-
-#: cinnamon-session/csm-gsd.c:115
-msgid "There was an unknown activation error."
-msgstr ""
-
-#: cinnamon-session/csm-gsd.c:157
-msgid "The Settings Daemon restarted too many times."
-msgstr ""
-
-#: cinnamon-session/logout.c:355
-msgid "Are you sure you want to log out?"
-msgstr "ዘግቶ ለመውጣት እርግጠኛ ነዎት?"
-
-#: cinnamon-session/logout.c:372
-msgid "_Save current setup"
-msgstr "አሁኑ የተቋቋመውን _አስቀምጡ"
-
-#: cinnamon-session/logout.c:393
-msgid "Action"
-msgstr "ትግባር"
-
-#: cinnamon-session/logout.c:410
+#: ../capplet/csm-app-dialog.c:120
 #, fuzzy
-msgid "_Log out"
-msgstr "_ዘግተው ይውጡ"
-
-#: cinnamon-session/logout.c:416
-#, fuzzy
-msgid "Sh_ut down"
-msgstr "_አጥፉ"
-
-#: cinnamon-session/logout.c:423
-msgid "_Restart the computer"
-msgstr "ኮምፒውተሩን _እንደገና አስጀምሩ"
-
-#: cinnamon-session/main.c:81
-msgid "Specify a session name to load"
-msgstr ""
-
-#: cinnamon-session/main.c:82
-msgid "Only read saved sessions from the default.session file"
-msgstr ""
-
-#: cinnamon-session/main.c:83
-msgid "Millisecond period spent waiting for clients to register (0=forever)"
-msgstr ""
-
-#: cinnamon-session/main.c:84
-msgid "Millisecond period spent waiting for clients to respond (0=forever)"
-msgstr ""
-
-#: cinnamon-session/main.c:85
-msgid "Millisecond period spent waiting for clients to die (0=forever)"
-msgstr ""
-
-#: cinnamon-session/main.c:265
-#, c-format
-msgid ""
-"Could not look up internet address for %s.\n"
-"This will prevent Cinnamon from operating correctly.\n"
-"It may be possible to correct the problem by adding\n"
-"%s to the file /etc/hosts."
-msgstr ""
-
-#: cinnamon-session/main.c:272
-msgid "Log in Anyway"
-msgstr "ለማንኛውም ዝምብሎ ይግባ"
-
-#: cinnamon-session/main.c:273
-msgid "Try Again"
-msgstr "እንደገና ይሞክሩ"
-
-#: cinnamon-session/manager.c:223
-msgid "Your session has been saved"
-msgstr ""
-
-#: cinnamon-session/manager.c:527
-msgid "Wait abandoned due to conflict."
-msgstr ""
-
-#: cinnamon-session/manager.c:1035
-#, c-format
-msgid "No response to the %s command."
-msgstr ""
-
-#: cinnamon-session/manager.c:1036
-msgid "The program may be slow, stopped or broken."
-msgstr ""
-
-#: cinnamon-session/manager.c:1037
-msgid "You may wait for it to respond or remove it."
-msgstr ""
-
-#: cinnamon-session/manager.c:1760
-msgid "Restart abandoned due to failures."
-msgstr ""
-
-#: cinnamon-session/manager.c:1956
-msgid "A session shutdown is in progress."
-msgstr ""
-
-#: cinnamon-session/save-session.c:46
-#, fuzzy
-msgid "Set the current session"
-msgstr "የአሁኑን ክፍለ ጊዜ አስቀምጡ"
-
-#: cinnamon-session/save-session.c:47
-msgid "Kill session"
-msgstr "ክፍለ ጊዜውን አቋርጥ"
-
-#: cinnamon-session/save-session.c:48
-msgid "Use dialog boxes"
-msgstr ""
-
-#: cinnamon-session/save-session.c:146 cinnamon-session/save-session.c:179
-msgid "Could not connect to the session manager"
-msgstr ""
-
-#: cinnamon-session/session-names.c:143
-msgid "The session name cannot be empty"
-msgstr ""
-
-#: cinnamon-session/session-names.c:154
-msgid "The session name already exists"
-msgstr ""
-
-#: cinnamon-session/session-names.c:188
-msgid "Add a new session"
-msgstr "አዲስ የክፍለ ጊዜው ጨምር"
-
-#: cinnamon-session/session-names.c:218
-msgid "Edit session name"
-msgstr "የክፍለ ጊዜው ስም ያስተካክሉ"
-
-#: cinnamon-session/session-properties-capplet.c:122
-msgid "_Edit"
-msgstr "_አስተካክል"
-
-#: cinnamon-session/session-properties-capplet.c:190
-msgid ""
-"Some changes are not saved.\n"
-"Is it still OK to exit?"
-msgstr ""
-"አንዳንድ ለውጦች አልተቀመጡም።\n"
-"አሁንም ቢሆን ቢወጣ ምንም አይደለም?"
-
-#: cinnamon-session/session-properties-capplet.c:240
-#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "ክፍለ ጊዜዎች"
-
-#: cinnamon-session/session-properties-capplet.c:273
-msgid "Show splash screen on _login"
-msgstr "የሚፈነጠቅ መመልከቻ ሲጀምር _አሳይ"
-
-#: cinnamon-session/session-properties-capplet.c:284
-#, fuzzy
-msgid "As_k on logout"
-msgstr "ሲወጣ _አስታውቅ"
-
-#: cinnamon-session/session-properties-capplet.c:295
-msgid "Automatically save chan_ges to session"
-msgstr "ለክፍለ ጊዜው ለውጦችን አውቶማቲካሊ አስቀምጥ"
-
-#: cinnamon-session/session-properties-capplet.c:306
-msgid "_Sessions:"
-msgstr "_ክፍለ ጊዜዎች፦"
-
-#: cinnamon-session/session-properties-capplet.c:324
-msgid "Session Name"
-msgstr "የክፍለ ጊዜው ስም"
-
-#: cinnamon-session/session-properties-capplet.c:375
-msgid "Session Options"
-msgstr "የአሁኑን ክፍለ ይዞታዎች"
-
-#: cinnamon-session/session-properties-capplet.c:384
-msgid "Current Session"
-msgstr "የአሁኑን ክፍለ ጊዜው"
-
-#: cinnamon-session/session-properties-capplet.c:393
-msgid "Additional startup _programs:"
-msgstr "ተጨማሪ ፕሮግራሞቹን አስጀምር"
-
-#: cinnamon-session/session-properties-capplet.c:414
-msgid "Command"
+msgid "Select Command"
 msgstr "ትእዛዝ"
 
-#: cinnamon-session/session-properties-capplet.c:446
-msgid "Startup Programs"
-msgstr "ፕሮግራሞቹን አስጀምር"
-
-#: cinnamon-session/session-properties.c:49
-msgid "Remove the currently selected client from the session."
-msgstr ""
-
-#: cinnamon-session/session-properties.c:55
-msgid "Apply changes to the current session"
-msgstr ""
-
-#: cinnamon-session/session-properties.c:61
-msgid "The list of programs in the session."
-msgstr ""
-
-#: cinnamon-session/session-properties.c:88
-msgid "Currently running _programs:"
-msgstr "አሁን በመስራት ላይ ያለው _ፕሮግራሞች፦"
-
-#: cinnamon-session/session-properties.c:104
-msgid "Initialize session settings"
-msgstr "ለክፍለ ጊዜው ይዞታ ምልክት አድርጉ"
-
-#: cinnamon-session/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "ክፍለ ጊዜዎትን ያስተካክሉ"
-
-#: cinnamon-session/splash-widget.c:43
-msgid "Sawfish Window Manager"
-msgstr "Sawfish መስኮቱን መቆጣጠሪያ"
-
-#: cinnamon-session/splash-widget.c:44
-msgid "Metacity Window Manager"
-msgstr "Metacity መስኮቱን መቆጣጠሪያ"
-
-#: cinnamon-session/splash-widget.c:45
-msgid "Window Manager"
-msgstr "መስኮቱን መቆጣጠሪያ"
-
-#: cinnamon-session/splash-widget.c:46
-msgid "The Panel"
-msgstr "ፓነሉ"
-
-#: cinnamon-session/splash-widget.c:47
-msgid "Session Manager Proxy"
-msgstr ""
-
-#: cinnamon-session/splash-widget.c:48
-msgid "Nautilus"
-msgstr "Nautilus"
-
-#: cinnamon-session/splash-widget.c:49
-msgid "Desktop Settings"
-msgstr "የሠሌዳ ምርጫዎች"
-
-#: cinnamon-session/startup-programs.c:292
-msgid "_Startup Command:"
-msgstr ""
-
-#: cinnamon-session/startup-programs.c:298
-msgid "Startup Command"
-msgstr ""
-
-#: cinnamon-session/startup-programs.c:347
-msgid "The startup command cannot be empty"
-msgstr ""
-
-#: cinnamon-session/startup-programs.c:384
+#: ../capplet/csm-app-dialog.c:193
 msgid "Add Startup Program"
 msgstr ""
 
-#: cinnamon-session/startup-programs.c:405
+#: ../capplet/csm-app-dialog.c:197
 msgid "Edit Startup Program"
 msgstr ""
+
+#: ../capplet/csm-app-dialog.c:484
+msgid "The startup command cannot be empty"
+msgstr ""
+
+#: ../capplet/csm-app-dialog.c:490
+msgid "The startup command is not valid"
+msgstr ""
+
+#: ../capplet/csm-properties-dialog.c:519
+msgid "Enabled"
+msgstr ""
+
+#: ../capplet/csm-properties-dialog.c:531
+msgid "Icon"
+msgstr ""
+
+#: ../capplet/csm-properties-dialog.c:543
+msgid "Program"
+msgstr "ፕሮግራም"
+
+#: ../capplet/csm-properties-dialog.c:747
+msgid "Startup Applications Preferences"
+msgstr ""
+
+#: ../capplet/csp-app.c:276
+msgid "No name"
+msgstr ""
+
+#: ../capplet/csp-app.c:282
+msgid "No description"
+msgstr ""
+
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
+msgid "Version of this application"
+msgstr ""
+
+#: ../capplet/main.c:61
+msgid "Could not display help document"
+msgstr ""
+
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
+msgid "Some programs are still running:"
+msgstr ""
+
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:1
+msgid "Additional startup _programs:"
+msgstr "ተጨማሪ ፕሮግራሞቹን አስጀምር"
+
+#: ../data/cinnamon-session-properties.glade.h:2
+msgid "_Automatically remember running applications when logging out"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:3
+msgid "_Remember Currently Running Applications"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:4
+msgid "Browse…"
+msgstr ""
+
+#: ../data/cinnamon-session-properties.glade.h:5
+#, fuzzy
+msgid "Comm_ent:"
+msgstr "ትእዛዝ"
+
+#: ../data/cinnamon-session-properties.glade.h:6
+#, fuzzy
+msgid "Co_mmand:"
+msgstr "ትእዛዝ"
+
+#: ../data/cinnamon-session-properties.glade.h:7
+msgid "_Name:"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr ""
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:974
+#, fuzzy, c-format
+msgid "Starting %s"
+msgstr "እየጀመረ ነው"
+
+#: ../egg/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr ""
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../egg/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr ""
+
+#: ../egg/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr ""
+
+#: ../egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr ""
+
+#: ../egg/eggsmclient.c:229
+msgid "FILE"
+msgstr ""
+
+#: ../egg/eggsmclient.c:232
+#, fuzzy
+msgid "Specify session management ID"
+msgstr "የክፍለ ጊዜው ስም ያስተካክሉ"
+
+#: ../egg/eggsmclient.c:232
+msgid "ID"
+msgstr ""
+
+#: ../egg/eggsmclient.c:253
+#, fuzzy
+msgid "Session management options:"
+msgstr "የአሁኑን ክፍለ ይዞታዎች"
+
+#: ../egg/eggsmclient.c:254
+#, fuzzy
+msgid "Show session management options"
+msgstr "የአሁኑን ክፍለ ይዞታዎች"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr "ያልታወቀ"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:644
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:877
+#, fuzzy
+msgid "Log Out Anyway"
+msgstr "ለማንኛውም ዝምብሎ ይግባ"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:883
+#, fuzzy
+msgid "Hibernate Anyway"
+msgstr "ለማንኛውም ዝምብሎ ይግባ"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:886
+#, fuzzy
+msgid "Shut Down Anyway"
+msgstr "ለማንኛውም ዝምብሎ ይግባ"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:889
+#, fuzzy
+msgid "Restart Anyway"
+msgstr "እንደገና አስጀምሩ"
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr ""
+
+#: ../cinnamon-session/csm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr ""
+
+#. This string is shared with csm-fail-whale-dialog.c
+#: ../cinnamon-session/csm-logout-dialog.c:266
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:274
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:282
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be automatically restarted in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:372
+msgid "Log out of this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:378
+msgid "_Switch User"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:387
+#: ../cinnamon-session/csm-fail-whale-dialog.c:337
+#: ../cinnamon-session/csm-util.c:428
+#, fuzzy
+msgid "_Log Out"
+msgstr "_ዘግተው ይውጡ"
+
+#: ../cinnamon-session/csm-logout-dialog.c:393
+msgid "Shut down this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:399
+msgid "S_uspend"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:405
+msgid "_Hibernate"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:411
+#: ../cinnamon-session/csm-logout-dialog.c:437
+#, fuzzy
+msgid "_Restart"
+msgstr "እንደገና አስጀምሩ"
+
+#: ../cinnamon-session/csm-logout-dialog.c:421
+msgid "_Shut Down"
+msgstr ""
+
+#: ../cinnamon-session/csm-logout-dialog.c:427
+msgid "Restart this system now?"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:311
+msgid "Oh no!  Something has gone wrong."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:318
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:320
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+
+#: ../cinnamon-session/csm-fail-whale-dialog.c:322
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1431
+msgid "GNOME 3 Failed to Load"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1432
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1434
+msgid "Learn more about GNOME 3"
+msgstr ""
+
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
+msgid "Not responding"
+msgstr ""
+
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#.
+#: ../cinnamon-session/csm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-client.c:1197
+msgid "This program is blocking logout."
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-server.c:326
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+
+#: ../cinnamon-session/csm-xsmp-server.c:595
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr ""
+
+#. Oh well, no X for you!
+#: ../cinnamon-session/csm-util.c:412
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+
+#: ../cinnamon-session/main.c:291
+msgid "Override standard autostart directories"
+msgstr ""
+
+#: ../cinnamon-session/main.c:291
+msgid "AUTOSTART_DIR"
+msgstr ""
+
+#: ../cinnamon-session/main.c:292
+#, fuzzy
+msgid "Session to use"
+msgstr "የአሁኑን ክፍለ ይዞታዎች"
+
+#: ../cinnamon-session/main.c:292
+msgid "SESSION_NAME"
+msgstr ""
+
+#: ../cinnamon-session/main.c:293
+msgid "Enable debugging code"
+msgstr ""
+
+#: ../cinnamon-session/main.c:294
+msgid "Do not load user-specified applications"
+msgstr ""
+
+#. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
+#: ../cinnamon-session/main.c:297
+msgid "Show the fail whale dialog for testing"
+msgstr ""
+
+#: ../cinnamon-session/main.c:317
+msgid " - the GNOME session manager"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:53
+#, fuzzy
+msgid "Log out"
+msgstr "_ዘግተው ይውጡ"
+
+#: ../tools/cinnamon-session-quit.c:54
+msgid "Power off"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:55
+msgid "Reboot"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:57
+msgid "Don't prompt for user confirmation"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
+msgid "Could not connect to the session manager"
+msgstr ""
+
+#: ../tools/cinnamon-session-quit.c:203
+msgid "Program called with conflicting options"
+msgstr ""
+
+#~ msgid "Save sessions"
+#~ msgstr "ክፍለ ጊዜዎችን አስቀምጥ"
+
+#~ msgid "_Order:"
+#~ msgstr "ቅደም _ተከተል፦"
+
+#~ msgid "The order in which applications are started in the session."
+#~ msgstr "በክፍለ ጊዜ ውስጥ ፕሮግራሞቹ የሚነሱበት ቅድመ ተከተል።"
+
+#~ msgid "What happens to the application when it exits."
+#~ msgstr "ፕሮግራሙ በሚወጣበት ጊዜ ምን ተፈጠረ።"
+
+#~ msgid "_Style:"
+#~ msgstr "_ዘይቤ፦"
+
+#~ msgid "Order"
+#~ msgstr "ቅደም ተከተል"
+
+#~ msgid "Style"
+#~ msgstr "ዘይቤ"
+
+#~ msgid "State"
+#~ msgstr "ሁኔታ"
+
+#~ msgid "Inactive"
+#~ msgstr "የማይንቀሳቀስ"
+
+#~ msgid "Waiting to start or already finished."
+#~ msgstr "ለመጀመር በመጠበቅ ላይ ወይም ጨርሷል።"
+
+#~ msgid "Started but has not yet reported state."
+#~ msgstr "ጀምሯል ግን ሁኔታውን የመዘገብ ሁኔታ የለውም።"
+
+#~ msgid "Running"
+#~ msgstr "በሥራ ላይ"
+
+#~ msgid "A normal member of the session."
+#~ msgstr "የተለመደ የክፍለ ጊዘው አባል"
+
+#~ msgid "Saving"
+#~ msgstr "በማስቀመጥ ላይ"
+
+#~ msgid "Normal"
+#~ msgstr "የተለመደ"
+
+#~ msgid "Never allowed to die."
+#~ msgstr "ለመሞት በፍጹም አልተፈቀደም።"
+
+#~ msgid "Trash"
+#~ msgstr "የማይፈለግ"
+
+#~ msgid "Settings"
+#~ msgstr "ምርጫዎች"
+
+#~ msgid "Are you sure you want to log out?"
+#~ msgstr "ዘግቶ ለመውጣት እርግጠኛ ነዎት?"
+
+#~ msgid "_Save current setup"
+#~ msgstr "አሁኑ የተቋቋመውን _አስቀምጡ"
+
+#~ msgid "Action"
+#~ msgstr "ትግባር"
+
+#, fuzzy
+#~ msgid "Sh_ut down"
+#~ msgstr "_አጥፉ"
+
+#~ msgid "_Restart the computer"
+#~ msgstr "ኮምፒውተሩን _እንደገና አስጀምሩ"
+
+#~ msgid "Try Again"
+#~ msgstr "እንደገና ይሞክሩ"
+
+#, fuzzy
+#~ msgid "Set the current session"
+#~ msgstr "የአሁኑን ክፍለ ጊዜ አስቀምጡ"
+
+#~ msgid "Kill session"
+#~ msgstr "ክፍለ ጊዜውን አቋርጥ"
+
+#~ msgid "Add a new session"
+#~ msgstr "አዲስ የክፍለ ጊዜው ጨምር"
+
+#~ msgid "_Edit"
+#~ msgstr "_አስተካክል"
+
+#~ msgid ""
+#~ "Some changes are not saved.\n"
+#~ "Is it still OK to exit?"
+#~ msgstr ""
+#~ "አንዳንድ ለውጦች አልተቀመጡም።\n"
+#~ "አሁንም ቢሆን ቢወጣ ምንም አይደለም?"
+
+#~ msgid "Sessions"
+#~ msgstr "ክፍለ ጊዜዎች"
+
+#~ msgid "Show splash screen on _login"
+#~ msgstr "የሚፈነጠቅ መመልከቻ ሲጀምር _አሳይ"
+
+#, fuzzy
+#~ msgid "As_k on logout"
+#~ msgstr "ሲወጣ _አስታውቅ"
+
+#~ msgid "Automatically save chan_ges to session"
+#~ msgstr "ለክፍለ ጊዜው ለውጦችን አውቶማቲካሊ አስቀምጥ"
+
+#~ msgid "_Sessions:"
+#~ msgstr "_ክፍለ ጊዜዎች፦"
+
+#~ msgid "Session Name"
+#~ msgstr "የክፍለ ጊዜው ስም"
+
+#~ msgid "Current Session"
+#~ msgstr "የአሁኑን ክፍለ ጊዜው"
+
+#~ msgid "Startup Programs"
+#~ msgstr "ፕሮግራሞቹን አስጀምር"
+
+#~ msgid "Currently running _programs:"
+#~ msgstr "አሁን በመስራት ላይ ያለው _ፕሮግራሞች፦"
+
+#~ msgid "Initialize session settings"
+#~ msgstr "ለክፍለ ጊዜው ይዞታ ምልክት አድርጉ"
+
+#~ msgid "Configure your sessions"
+#~ msgstr "ክፍለ ጊዜዎትን ያስተካክሉ"
+
+#~ msgid "Sawfish Window Manager"
+#~ msgstr "Sawfish መስኮቱን መቆጣጠሪያ"
+
+#~ msgid "Metacity Window Manager"
+#~ msgstr "Metacity መስኮቱን መቆጣጠሪያ"
+
+#~ msgid "Window Manager"
+#~ msgstr "መስኮቱን መቆጣጠሪያ"
+
+#~ msgid "The Panel"
+#~ msgstr "ፓነሉ"
+
+#~ msgid "Nautilus"
+#~ msgstr "Nautilus"
+
+#~ msgid "Desktop Settings"
+#~ msgstr "የሠሌዳ ምርጫዎች"
 
 #~ msgid "Save Current Session"
 #~ msgstr "የአሁኑን ክፍለ ጊዜ አስቀምጡ"

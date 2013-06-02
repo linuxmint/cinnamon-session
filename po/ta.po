@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.HEAD.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-02 16:56+0530\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-02 17:06+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -20,8 +20,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
-"\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
 "\n"
 "X-Generator: Lokalize 1.1\n"
 
@@ -50,33 +49,33 @@ msgstr "துவக்க கட்டளை காலியாக இருக
 msgid "The startup command is not valid"
 msgstr "துவக்க கட்டளை செல்லுபடியாகாதது"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "செயலாக்கப்பட்டது"
 
 # gsm/logout.c:240
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "சின்னம்"
 
 # gsm/csm-client-list.c:112
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "நிரல்"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "துவக்க பயன்பாடுகள் விருப்பங்கள்"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "பெயர் இல்லை"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "விவரணம் இல்லை"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "இந்த பயன்பாட்டின் பதிப்பு "
 
@@ -84,23 +83,13 @@ msgstr "இந்த பயன்பாட்டின் பதிப்பு 
 msgid "Could not display help document"
 msgstr "உதவி ஆவணத்தை காட்ட இயலவில்லை"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "க்னோம் பின்சார்தல்"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "இந்த அமர்வு க்நோம் இல் உங்களை நுழைக்கும் "
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "நிரல்கள் சில இன்னும் ஒடுகின்றன:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -109,12 +98,12 @@ msgstr ""
 "சேமிக்காமல் போகச் செய்யும்."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "நீங்கள் புகுபதிவு செய்யும் போது எந்த பயன்பாடுகள் தேர்ந்தெடுக்கப்படவேண்டும்"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
 msgid "Startup Applications"
 msgstr "துவக்க பயன்பாடுகள்"
+
+#: ../data/cinnamon-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "நீங்கள் புகுபதிவு செய்யும் போது எந்த பயன்பாடுகள் தேர்ந்தெடுக்கப்படவேண்டும்"
 
 # gsm/startup-programs.c:373
 #: ../data/cinnamon-session-properties.glade.h:1
@@ -122,40 +111,30 @@ msgid "Additional startup _programs:"
 msgstr "மேலும்சில தொடங்க _நிரல்கள்:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
+msgid "_Automatically remember running applications when logging out"
+msgstr "தானியங்கியாக வெளியேறும் போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
+
+#: ../data/cinnamon-session-properties.glade.h:3
+msgid "_Remember Currently Running Applications"
+msgstr "(_R) இப்போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
+
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "உலாவு... "
 
 # gsm/session-properties-capplet.c:292
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "(_m) கட்டளை:"
-
-# gsm/session-properties-capplet.c:292
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "(_e) குறிப்புரை:"
 
-# gsm/session-properties-capplet.c:262
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "தேர்வுகள்"
-
-# gsm/session-properties-capplet.c:330
+# gsm/session-properties-capplet.c:292
 #: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "தொடங்கும் போது இயக்கும் நிரல்கள்"
+msgid "Co_mmand:"
+msgstr "(_m) கட்டளை:"
 
 #: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "தானியங்கியாக வெளியேறும் போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
-
-#: ../data/cinnamon-session-properties.glade.h:8
 msgid "_Name:"
 msgstr "பெயர்: (_N)"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Applications"
-msgstr "(_R) இப்போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format
@@ -320,7 +299,7 @@ msgstr "(_S) பயனரை மாற்றுக"
 # panel/logout.c:73 panel/menu.c:5339
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "(_L) விலகவும்"
 
@@ -366,8 +345,8 @@ msgid ""
 "A problem has occurred and the system can't recover. All extensions have "
 "been disabled as a precaution."
 msgstr ""
-"ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது. முன் எச்சரிக்கையாக எல்லா நீட்சிகளும் "
-"செயல் இழக்கப்பட்டுள்ளன."
+"ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது. முன் எச்சரிக்கையாக எல்லா நீட்சிகளும் செயல் "
+"இழக்கப்பட்டுள்ளன."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -377,17 +356,19 @@ msgstr ""
 "ஒரு பிரச்சினை நிகழ்ந்தது. கணினி மீள இயலாது.\n"
 "வெளியேறி மீண்டும் முயற்சிக்கவும்"
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "க்னோம் 3 ஏற்றத்தில் தோல்வியுற்றது"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "துரத்ருஷ்ட வசமாக க்னோம் 3 சரியாக துவங்கவில்லை; அது இந்த நிலையில் துவங்கியது. <i>பின் "
 "சார்தல்</i>.\n"
@@ -395,11 +376,13 @@ msgstr ""
 "அனேகமாக இதன் பொரூல் என்னவென்றால் உங்கள் கணினி (வரைகலை வன்பொருள் அல்லது இயக்கி) முழு "
 "க்னோம் 3 அனுபவத்தை தர பொருத்தமில்லை."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "மேலும் க்னோம் 3 பற்றி"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "பதிலளிக்க இல்லை"
 
@@ -427,43 +410,44 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ஐஸ் கேட்கும் பொருத்துவாயை உருவாக்க முடியவில்லை : %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "உள்நுழைவு அமர்வை துவக்க முடியவில்லை ( மற்றும் எக்ஸ் சேவையகத்துடன் இணைக்க  இயலவில்லை)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "செந்தர தானியங்கி அடைவுகளை வலுவாக புறக்கணி"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "பயன்படுத்த அமர்வு"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "பிழைத்திருத்த குறியீட்டை செயல்படுத்து."
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "பயனர் குறித்த நிரல்களை ஏற்றாதே"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "சோதனைக்கு பெய்ல் வேல் உரையாடலை காட்டுக"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- க்னோம் அமர்வு மேலாலாளர்"
 
 # panel/logout.c:73 panel/menu.c:5339
@@ -495,6 +479,23 @@ msgstr "அமர்வு மேலாளருடன் இணைக்க ம
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "நிரல் முரணான தேர்வுகளை அழைத்தது"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "க்னோம் பின்சார்தல்"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "இந்த அமர்வு க்நோம் இல் உங்களை நுழைக்கும் "
+
+# gsm/session-properties-capplet.c:262
+#~ msgid "Options"
+#~ msgstr "தேர்வுகள்"
+
+# gsm/session-properties-capplet.c:330
+#~ msgid "Startup Programs"
+#~ msgstr "தொடங்கும் போது இயக்கும் நிரல்கள்"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b> சில நிரல்கள் இன்னும் ஒடுகிறன</b>"
@@ -644,8 +645,8 @@ msgstr "நிரல் முரணான தேர்வுகளை அழை
 #~ msgstr "Cinnamon அமைப்புகள் டெய்மன் உதவியாளர்"
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr "செயல்படுத்தப்பட்ட gnome -அமர்வுகளை தானாகவே சேமித்துக்கொள்ள முடியும்."
 
 #~ msgid "Preferred Image to use for login splash screen"

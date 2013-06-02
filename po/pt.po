@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-01 01:29+0100\n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-01 01:30+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Português <gnome_pt@yahoogroups.com>\n"
@@ -38,31 +38,31 @@ msgstr "O comando de arranque não pode ser vazio"
 msgid "The startup command is not valid"
 msgstr "O comando de arranque não é válido"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Activo"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ícone"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Aplicação"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Preferências das Aplicações de Arranque"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Sem nome"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Sem descrição"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Versão desta aplicação"
 
@@ -70,23 +70,13 @@ msgstr "Versão desta aplicação"
 msgid "Could not display help document"
 msgstr "Incapaz de apresentar o documento de ajuda"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon de recurso"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Esta é uma sessão no Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "Algumas aplicações ainda se encontram em execução:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -107,35 +97,27 @@ msgid "Additional startup _programs:"
 msgstr "A_plicações de arranque adicionais:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Aplicações de Arranque"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "Recordar _automaticamente as aplicações em execução ao terminar a sessão"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Recordar as Aplicações Actualmente em Execução"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opções"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Navegar…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "Com_entário:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "Co_mando:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Nome:"
 
@@ -299,7 +281,7 @@ msgstr "_Alternar Utilizador"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Terminar a Sessão"
 
@@ -356,17 +338,19 @@ msgstr ""
 "Ocorreu um problema e o sistema é incapaz de recuperar.\n"
 "Termine a sessão e tente novamente."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Falha ao Iniciar o Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "Infelizmente o Cinnamon 3 foi incapaz de iniciar correctamente e arrancou em "
 "<i>modo de recurso</i>.\n"
@@ -374,11 +358,13 @@ msgstr ""
 "Provavelmente isso significa que o seu sistema (placa gráfica ou "
 "controladores) não é capaz de processar toda a experiência Cinnamon 3."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Descubra mais sobre o Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Não está a responder"
 
@@ -408,43 +394,44 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Incapaz de criar socket de escuta ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Incapaz de iniciar sessão de arranque (e incapaz de se ligar ao servidor X)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Especificar novos directórios base de arranque automático"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "DIR_INICIOAUTO"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Sessão a utilizar"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "NOME_SESSAO"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Activar o código de depuração"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Não ler as aplicações especificadas pelo utilizador"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Apresentar o diálogo de falha total para teste"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - o gestor de sessões do Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -474,6 +461,21 @@ msgstr "Não foi possível ligar-se ao gestor de sessões"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Aplicação invocada com conflito de opções"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon de recurso"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Esta é uma sessão no Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Aplicações de Arranque"
+
+#~ msgid "Options"
+#~ msgstr "Opções"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>Algumas aplicações ainda se encontram em execução:</b>"
@@ -530,8 +532,8 @@ msgstr "Aplicação invocada com conflito de opções"
 #~ msgid ""
 #~ "If enabled, cinnamon-session will prompt the user before ending a session."
 #~ msgstr ""
-#~ "Se activo, o cinnamon-session questionará o utilizador antes de terminar uma "
-#~ "sessão."
+#~ "Se activo, o cinnamon-session questionará o utilizador antes de terminar "
+#~ "uma sessão."
 
 #~ msgid "If enabled, cinnamon-session will save the session automatically."
 #~ msgstr "Se activo, o cinnamon-session irá gravar a sessão automaticamente."
@@ -639,8 +641,8 @@ msgstr "Aplicação invocada com conflito de opções"
 #~ msgstr "Assistente do Daemon das Definições Cinnamon"
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "Se activo, o cinnamon-session gravará a sessão automaticamente. Caso "
 #~ "contrário, o diálogo de terminar sessão terá uma opção para gravar a "
@@ -712,8 +714,8 @@ msgstr "Aplicação invocada com conflito de opções"
 #~ "The Window manager that cinnamon-session will start. Valid values are "
 #~ "\"metacity\" and \"compiz\"."
 #~ msgstr ""
-#~ "O gestor de janelas que o cinnamon-session irá iniciar. Valores válidos são "
-#~ "\"metacity\" e \"compiz\"."
+#~ "O gestor de janelas que o cinnamon-session irá iniciar. Valores válidos "
+#~ "são \"metacity\" e \"compiz\"."
 
 #~ msgid "Window Manager to start"
 #~ msgstr "Gestor de Janelas a iniciar"
@@ -732,14 +734,15 @@ msgstr "Aplicação invocada com conflito de opções"
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "Por motivos de segurança, em plataformas que tenham _IceTcpTransNoListen"
-#~ "() (sistemas XFree86), o cinnamon-session não escuta por ligações em portos "
-#~ "TCP. Esta opção autorizará ligações de máquinas remotas (autorizadas). O "
-#~ "cinnamon-session tem de ser reiniciado para que esta opção tenha efeito."
+#~ "() (sistemas XFree86), o cinnamon-session não escuta por ligações em "
+#~ "portos TCP. Esta opção autorizará ligações de máquinas remotas "
+#~ "(autorizadas). O cinnamon-session tem de ser reiniciado para que esta "
+#~ "opção tenha efeito."
 
 #~ msgid "_Order:"
 #~ msgstr "_Ordem:"
@@ -829,12 +832,13 @@ msgstr "Aplicação invocada com conflito de opções"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "O Cinnamon tentará ainda assim reiniciar o Daemon de Definições da próxima "
-#~ "vez que iniciar sessão."
+#~ "O Cinnamon tentará ainda assim reiniciar o Daemon de Definições da "
+#~ "próxima vez que iniciar sessão."
 
 #~ msgid "The Settings Daemon restarted too many times."
 #~ msgstr "O Daemon de Definições reiniciou-se demasiadas vezes."
@@ -862,41 +866,43 @@ msgstr "Aplicação invocada com conflito de opções"
 #~ msgstr "Incapaz de encontrar a aplicação %s na sessão\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
-#~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
 #~ "O gestor de sessões Cinnamon foi incapaz de se iniciar correctamente.  "
-#~ "Reporte este problema como sendo um erro do Cinnamon. Inclua esta mensagem "
-#~ "de falha ICE no relatório de erro:  '%s'.  Entretanto poderá tentar "
-#~ "iniciar uma sessão utilizando a sessão de recurso."
+#~ "Reporte este problema como sendo um erro do Cinnamon. Inclua esta "
+#~ "mensagem de falha ICE no relatório de erro:  '%s'.  Entretanto poderá "
+#~ "tentar iniciar uma sessão utilizando a sessão de recurso."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
-#~ "O gestor de sessões Cinnamon foi incapaz de trancar o ficheiro '%s'.  Relate "
-#~ "este problema como sendo um erro do Cinnamon.  Por vezes este erro poderá "
-#~ "ocorrer se o directório do ficheiro não permitir escrita, pelo que poderá "
-#~ "iniciar uma sessão utilizando a sessão de recurso e certificar-se de que "
-#~ "o directório possui permissões de escrita."
+#~ "O gestor de sessões Cinnamon foi incapaz de trancar o ficheiro '%s'.  "
+#~ "Relate este problema como sendo um erro do Cinnamon.  Por vezes este erro "
+#~ "poderá ocorrer se o directório do ficheiro não permitir escrita, pelo que "
+#~ "poderá iniciar uma sessão utilizando a sessão de recurso e certificar-se "
+#~ "de que o directório possui permissões de escrita."
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
-#~ "O gestor de sessões Cinnamon foi incapaz de ler o ficheiro: '%s'.  Se este "
-#~ "ficheiro existir terá de ser legível pelo seu utilizador para que o Cinnamon "
-#~ "funcione correctamente.  Tente iniciar uma sessão utilizando a sessão de "
-#~ "recurso e remover este ficheiro."
+#~ "O gestor de sessões Cinnamon foi incapaz de ler o ficheiro: '%s'.  Se "
+#~ "este ficheiro existir terá de ser legível pelo seu utilizador para que o "
+#~ "Cinnamon funcione correctamente.  Tente iniciar uma sessão utilizando a "
+#~ "sessão de recurso e remover este ficheiro."
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
 #~ "Incapz de escrever no ficheiro '%s'.  Este ficheiro tem de permitir "
 #~ "escrita para que o Cinnamon funcione correctamente.  Tente iniciar uma "

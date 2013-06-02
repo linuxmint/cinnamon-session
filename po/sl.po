@@ -8,16 +8,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cinnamon-session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-18 11:32+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-07-19 09:56+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian Cinnamon Translation Team <gnome-si@googlegroups.com>\n"
+"Language-Team: Slovenian Cinnamon Translation Team <gnome-si@googlegroups."
+"com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -42,51 +44,37 @@ msgstr "Polje začetnega ukaza mora biti izpolnjeno"
 msgid "The startup command is not valid"
 msgstr "Začetni ukaz ni veljaven"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "Omogočeno"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "Možnosti začetnih programov"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "Brez imena"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "Brez opisa"
 
-#: ../capplet/main.c:35
-#: ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "Različica programa"
 
 #: ../capplet/main.c:61
 msgid "Could not display help document"
 msgstr "Ni mogoče prikazati dokumenta pomoči"
-
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Povratni nabor Cinnamon"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1
-#: ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "Seja vas prijavi v Cinnamon namizje"
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -95,8 +83,12 @@ msgstr "Nekateri programi so še vedno zagnani:"
 
 #: ../data/csm-inhibit-dialog.glade.h:2
 #: ../cinnamon-session/csm-inhibit-dialog.c:640
-msgid "Waiting for the program to finish.  Interrupting the program may cause you to lose work."
-msgstr "Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči izgubo vaših podatkov."
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+"Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči "
+"izgubo vaših podatkov."
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -111,34 +103,26 @@ msgid "Additional startup _programs:"
 msgstr "Dodatni _začetni programi:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Začetni programi"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Zapomni si zagnane programe ob odjavi"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_Zapomni si trenutno zagnane programe"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Možnosti"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "Prebrskaj ..."
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "_Opomba:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_Ukaz:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_Ime:"
 
@@ -175,7 +159,9 @@ msgstr "Nepoznana možnost zagona: %d"
 #: ../egg/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ni mogoče poslati naslova URI dokumenta na vnos 'Vrsta=Povezava' predmeta namizja"
+msgstr ""
+"Ni mogoče poslati naslova URI dokumenta na vnos 'Vrsta=Povezava' predmeta "
+"namizja"
 
 #: ../egg/eggdesktopfile.c:1412
 #, c-format
@@ -224,8 +210,12 @@ msgid "A program is still running:"
 msgstr "Program je še vedno zagnan:"
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:644
-msgid "Waiting for programs to finish.  Interrupting these programs may cause you to lose work."
-msgstr "Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči izgubo vaših podatkov."
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+"Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči "
+"izgubo vaših podatkov."
 
 #: ../cinnamon-session/csm-inhibit-dialog.c:874
 msgid "Switch User Anyway"
@@ -302,7 +292,7 @@ msgstr "_Preklop uporabnika"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_Odjava"
 
@@ -336,14 +326,20 @@ msgid "Oh no!  Something has gone wrong."
 msgstr "Prišlo je do nepričakovane napake."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:318
-msgid "A problem has occurred and the system can't recover. Please contact a system administrator"
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
 msgstr ""
 "Prišlo je do napake, ki je ni mogoče samodejno odpraviti.\n"
 "Stopite v stik s skrbnikom."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:320
-msgid "A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."
-msgstr "Prišlo je do napake, ki je ni mogoče samodejno odpraviti. Priporočljivo je onemogočiti vse razširitve, dokler se napaka ne razreši."
+msgid ""
+"A problem has occurred and the system can't recover. All extensions have "
+"been disabled as a precaution."
+msgstr ""
+"Prišlo je do napake, ki je ni mogoče samodejno odpraviti. Priporočljivo je "
+"onemogočiti vse razširitve, dokler se napaka ne razreši."
 
 #: ../cinnamon-session/csm-fail-whale-dialog.c:322
 msgid ""
@@ -353,26 +349,33 @@ msgstr ""
 "Prišlo je do napake, ki je ni mogoče samodejno odpraviti.\n"
 "Odjavite se in poskusite znova."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Nalaganje namizja Cinnamon 3 je spodletelo"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
-"Nalaganje namizja Cinnamon 3 je spodletelo, zato je namizje <i>povrnjeno na  delujočo različico</i>.\n"
+"Nalaganje namizja Cinnamon 3 je spodletelo, zato je namizje <i>povrnjeno na  "
+"delujočo različico</i>.\n"
 "\n"
-"Napaka običajno pomeni, da grafična strojna oprema ali gonilnik ni primeren za zagon namizja Cinnamon 3 v polnem grafičnem načinu."
+"Napaka običajno pomeni, da grafična strojna oprema ali gonilnik ni primeren "
+"za zagon namizja Cinnamon 3 v polnem grafičnem načinu."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "Več podrobnosti o namizju Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493
-#: ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "Ni odziva"
 
@@ -389,7 +392,9 @@ msgid "This program is blocking logout."
 msgstr "Program zavira postopek odjave."
 
 #: ../cinnamon-session/csm-xsmp-server.c:326
-msgid "Refusing new client connection because the session is currently being shut down\n"
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
 msgstr "Povezave z odjemalci bodo zavrnjene, ker se trenutna seja izklaplja.\n"
 
 #: ../cinnamon-session/csm-xsmp-server.c:595
@@ -398,42 +403,44 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Ni mogoče ustvariti ICE vtiča za poslušanje: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Ni mogoče začeti prijavne seje (in ni se mogoče povezati s strežnikom X)"
+msgstr ""
+"Ni mogoče začeti prijavne seje (in ni se mogoče povezati s strežnikom X)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "Preskoči običajne mape samodejnega zagona"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "ZAČETNA_MAPA"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "Seja za uporabo"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "IME_SEJE"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "Omogoči razhroščevanje kode"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "Ne naloži uporabniško določenih programov"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "Pokaži pogovorno okno napak med preizkušanjem."
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- upravljalnik seje Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -456,14 +463,28 @@ msgstr "Prezri obstoječe oviralnike dejavnosti"
 msgid "Don't prompt for user confirmation"
 msgstr "Ne zahtevaj potrditve uporabnika"
 
-#: ../tools/cinnamon-session-quit.c:91
-#: ../tools/cinnamon-session-quit.c:101
+#: ../tools/cinnamon-session-quit.c:91 ../tools/cinnamon-session-quit.c:101
 msgid "Could not connect to the session manager"
 msgstr "Ni se mogoče povezati z upravljalnikom sej"
 
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "Program zagnan z nasprotujočimi si možnostmi ukaza"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Povratni nabor Cinnamon"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "Seja vas prijavi v Cinnamon namizje"
+
+#~ msgid "Startup Programs"
+#~ msgstr "Začetni programi"
+
+#~ msgid "Options"
+#~ msgstr "Možnosti"
 
 #~ msgid "Exited with code %d"
 #~ msgstr "Končano s kodo %d"

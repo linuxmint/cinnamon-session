@@ -9,9 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 02:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-06 20:17+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -41,31 +40,31 @@ msgstr "คำสั่งที่ให้เรียกเมื่อเร
 msgid "The startup command is not valid"
 msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระผิดพลาด"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "เปิดใช้"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "ไอคอน"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "โปรแกรม"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "ปรับแต่งโปรแกรมเริ่มวาระ"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "ไม่มีชื่อ"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "ไม่มีคำบรรยาย"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "รุ่นของโปรแกรมนี้"
 
@@ -73,23 +72,13 @@ msgstr "รุ่นของโปรแกรมนี้"
 msgid "Could not display help document"
 msgstr "ไม่สามารถแสดงเอกสารวิธีใช้"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "Cinnamon แบบสำรอง"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "Cinnamon"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "วาระนี้จะเข้าสู่ Cinnamon"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ยังมีบางโปรแกรมทำงานอยู่:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -108,34 +97,26 @@ msgid "Additional startup _programs:"
 msgstr "โ_ปรแกรมเริ่มวาระเพิ่มเติม:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "โปรแกรมเริ่มวาระ"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "จำรายชื่อโปรแกรมที่ทำงานอยู่โดย_อัตโนมัติเมื่อออกจากระบบ"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_จำรายชื่อโปรแกรมที่ทำงานอยู่"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "ตัวเลือก"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "เรียกดู…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "ห_มายเหตุ:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "_คำสั่ง:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "_ชื่อ:"
 
@@ -292,7 +273,7 @@ msgstr "_สลับผู้ใช้"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "_ออกจากระบบ"
 
@@ -347,28 +328,32 @@ msgstr ""
 "เกิดปัญหาบางอย่างขึ้น โดยระบบไม่สามารถฟื้นคืนได้\n"
 "กรุณาออกจากระบบ แล้วลองเข้ามาใหม่"
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "Cinnamon 3 โหลดไม่สำเร็จ"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "โชคไม่ดีที่ Cinnamon 3 เริ่มทำงานไม่สำเร็จ โดยเป็นการทำงานใน <i>โหมดสำรอง</i>\n"
 "\n"
 "เป็นไปได้สูงว่าระบบของคุณ (การ์ดจอหรือไดรเวอร์) ไม่สามารถรองรับการทำงานของ Cinnamon 3 "
 "อย่างเต็มรูปแบบได้"
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "ศึกษาเพิ่มเติมเกี่ยวกับ Cinnamon 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "ไม่ตอบสนอง"
 
@@ -396,42 +381,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ไม่สามารถสร้างซ็อกเก็ตรอรับการเชื่อมต่อ ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "ไม่สามารถเริ่มวาระเข้าระบบ (และไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์เอ็กซ์)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "กำหนดค่าไดเรกทอรีเริ่มต้นอัตโนมัติทับค่ามาตรฐาน"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "วาระที่จะใช้"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "เปิดใช้โค้ดส่วนดีบั๊ก"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "ไม่ต้องโหลดโปรแกรมที่ผู้ใช้ระบุไว้"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "แสดงกล่องแจ้งพังเพื่อทดสอบ"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr "- โปรแกรมจัดการวาระ Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -461,6 +447,21 @@ msgstr "ติดต่อโปรแกรมจัดการวาระไ
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "โปรแกรมถูกเรียกด้วยตัวเลือกที่ขัดแย้งกันเอง"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "Cinnamon แบบสำรอง"
+
+#~ msgid "Cinnamon"
+#~ msgstr "Cinnamon"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "วาระนี้จะเข้าสู่ Cinnamon"
+
+#~ msgid "Startup Programs"
+#~ msgstr "โปรแกรมเริ่มวาระ"
+
+#~ msgid "Options"
+#~ msgstr "ตัวเลือก"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>ยังมีบางโปรแกรมทำงานอยู่:</b>"
@@ -596,8 +597,8 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgstr "ตัวช่วยดีมอนค่าตั้ง Cinnamon"
 
 #~ msgid ""
-#~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
-#~ "the logout dialog will have an option to save the session."
+#~ "If enabled, cinnamon-session will save the session automatically. "
+#~ "Otherwise, the logout dialog will have an option to save the session."
 #~ msgstr ""
 #~ "ถ้าเลือก cinnamon-session จะบันทึกรายละเอียดวาระโดยอัตโนมัติ  "
 #~ "มิฉะนั้นคุณจะถูกถามในหน้าต่างออกจากระบบว่าจะบันทึกวาระหรือไม่"
@@ -675,9 +676,9 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 
 #~ msgid ""
 #~ "For security reasons, on platforms which have _IceTcpTransNoListen() "
-#~ "(XFree86 systems), cinnamon-session does not listen for connections on TCP "
-#~ "ports. This option will allow connections from (authorized) remote hosts. "
-#~ "cinnamon-session must be restarted for this to take effect."
+#~ "(XFree86 systems), cinnamon-session does not listen for connections on "
+#~ "TCP ports. This option will allow connections from (authorized) remote "
+#~ "hosts. cinnamon-session must be restarted for this to take effect."
 #~ msgstr ""
 #~ "บนเครื่องที่มี _IceTcpTransNoListen() (เช่นเครื่องที่ใช้ XFree86) เพื่อความปลอดภัย "
 #~ "cinnamon-session จะไม่รับการติดต่อ TCP  ตั้งค่านี้แล้วโปรแกรมจะ "
@@ -770,7 +771,8 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log "
+#~ "in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -799,18 +801,19 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgstr "ไม่พบโปรแกรม %s ในวาระ\n"
 
 #~ msgid ""
-#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
-#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
-#~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
+#~ "The Cinnamon session manager cannot start properly.  Please report this "
+#~ "as a Cinnamon bug. Please include this ICE failure message in the bug "
+#~ "report:  '%s'.  Meanwhile you could try logging in using the failsafe "
+#~ "session."
 #~ msgstr ""
-#~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถเริ่มทำงานได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง Cinnamon "
-#~ "โดยแนบข้อความข้อผิดพลาดจาก ICE ต่อไปนี้ไปด้วย: '%s' ในระหว่างนี้ "
+#~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถเริ่มทำงานได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง "
+#~ "Cinnamon โดยแนบข้อความข้อผิดพลาดจาก ICE ต่อไปนี้ไปด้วย: '%s' ในระหว่างนี้ "
 #~ "คุณอาจลองเข้าระบบด้วยวาระ failsafe แทน"
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
-#~ "directory is unwritable, you could try logging in via the failsafe "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the "
+#~ "file's directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
 #~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถล็อคแฟ้ม '%s' ได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง "
@@ -819,8 +822,8 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 
 #~ msgid ""
 #~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
-#~ "logging in with the failsafe session and removing this file."
+#~ "file exists it must be readable by you for Cinnamon to work properly.  "
+#~ "Try logging in with the failsafe session and removing this file."
 #~ msgstr ""
 #~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถอ่านแฟ้ม: '%s' ถ้าแฟ้มนี้มีอยู่แล้ว "
 #~ "คุณก็จะต้องมีสิทธิ์อ่านได้ด้วย Cinnamon จะได้ทำงานได้อย่างถูกต้อง ลองเข้าระบบด้วยวาระ "
@@ -828,8 +831,9 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
-#~ "removing this file.  Also make sure that the file's directory is writable."
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session "
+#~ "and removing this file.  Also make sure that the file's directory is "
+#~ "writable."
 #~ msgstr ""
 #~ "ไม่สามารถเขียนแฟ้ม '%s' ได้ คุณต้องมีสิทธิ์เขียนแฟ้มนี้เพื่อให้ Cinnamon ทำงานได้อย่างถูกต้อง "
 #~ "ลองเข้าระบบด้วยวาระ failsafe แล้วลบแฟ้มนี้ดู "

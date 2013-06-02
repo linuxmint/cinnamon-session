@@ -11,9 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"session&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-07 15:07+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-02 18:48-0400\n"
 "PO-Revision-Date: 2012-09-08 17:11+0200\n"
 "Last-Translator: Ibrahim Saed <ibraheem5000@gmail.com>\n"
 "Language-Team: <doc@arabeyes.org>\n"
@@ -46,31 +45,31 @@ msgstr "لا يمكن أن يكون أمر بدء التشغيل فارغًا"
 msgid "The startup command is not valid"
 msgstr "أمر بدء التشغيل غير سليم"
 
-#: ../capplet/csm-properties-dialog.c:518
+#: ../capplet/csm-properties-dialog.c:519
 msgid "Enabled"
 msgstr "مُفعّل"
 
-#: ../capplet/csm-properties-dialog.c:530
+#: ../capplet/csm-properties-dialog.c:531
 msgid "Icon"
 msgstr "أيقونة"
 
-#: ../capplet/csm-properties-dialog.c:542
+#: ../capplet/csm-properties-dialog.c:543
 msgid "Program"
 msgstr "البرنامج"
 
-#: ../capplet/csm-properties-dialog.c:746
+#: ../capplet/csm-properties-dialog.c:747
 msgid "Startup Applications Preferences"
 msgstr "تفضيلات برمجيات بدء التشغيل"
 
-#: ../capplet/csp-app.c:274
+#: ../capplet/csp-app.c:276
 msgid "No name"
 msgstr "بلا اسم"
 
-#: ../capplet/csp-app.c:280
+#: ../capplet/csp-app.c:282
 msgid "No description"
 msgstr "بلا وصف"
 
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
+#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
 msgid "Version of this application"
 msgstr "إصدارة هذا التطبيق"
 
@@ -78,23 +77,13 @@ msgstr "إصدارة هذا التطبيق"
 msgid "Could not display help document"
 msgstr "تعذّر عرض مستند المساعدة"
 
-#: ../data/cinnamon-fallback-session.desktop.in.in.h:1
-msgid "Cinnamon fallback"
-msgstr "جنوم (تقليدية)"
-
-#: ../data/cinnamon-session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
-msgid "Cinnamon"
-msgstr "جنوم"
-
-#: ../data/cinnamon.desktop.in.h:2
-msgid "This session logs you into Cinnamon"
-msgstr "تولجك هذه الجلسة في جنوم"
-
-#: ../data/csm-inhibit-dialog.glade.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
+#: ../data/csm-inhibit-dialog.glade.h:1
+#: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
 msgstr "ما زالت بعض البرامج تعمل:"
 
-#: ../data/csm-inhibit-dialog.glade.h:2 ../cinnamon-session/csm-inhibit-dialog.c:640
+#: ../data/csm-inhibit-dialog.glade.h:2
+#: ../cinnamon-session/csm-inhibit-dialog.c:640
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -113,34 +102,26 @@ msgid "Additional startup _programs:"
 msgstr "برامج بدء الت_شغيل الإضافية:"
 
 #: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "برامج بدء التشغيل"
-
-#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Automatically remember running applications when logging out"
 msgstr "ت_ذكّر تلقائيا التطبيقات المشغلة عند تسجيل الخروج"
 
-#: ../data/cinnamon-session-properties.glade.h:4
+#: ../data/cinnamon-session-properties.glade.h:3
 msgid "_Remember Currently Running Applications"
 msgstr "_تذكّر التطبيقات المشغلة حاليًا"
 
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "الخيارات"
-
-#: ../data/cinnamon-session-properties.glade.h:6
+#: ../data/cinnamon-session-properties.glade.h:4
 msgid "Browse…"
 msgstr "تصفّح…"
 
-#: ../data/cinnamon-session-properties.glade.h:7
+#: ../data/cinnamon-session-properties.glade.h:5
 msgid "Comm_ent:"
 msgstr "ال_تعليق:"
 
-#: ../data/cinnamon-session-properties.glade.h:8
+#: ../data/cinnamon-session-properties.glade.h:6
 msgid "Co_mmand:"
 msgstr "الأ_مر:"
 
-#: ../data/cinnamon-session-properties.glade.h:9
+#: ../data/cinnamon-session-properties.glade.h:7
 msgid "_Name:"
 msgstr "الا_سم:"
 
@@ -312,7 +293,7 @@ msgstr "ب_دّل المستخدم"
 
 #: ../cinnamon-session/csm-logout-dialog.c:387
 #: ../cinnamon-session/csm-fail-whale-dialog.c:337
-#: ../cinnamon-session/csm-util.c:389
+#: ../cinnamon-session/csm-util.c:428
 msgid "_Log Out"
 msgstr "ا_خرج"
 
@@ -365,28 +346,32 @@ msgstr ""
 "حدثت مشكلة وتعذّر تعافي النظام.\n"
 "حاول الخروج ثم الولوج مجددا."
 
-#: ../cinnamon-session/csm-manager.c:1393
-msgid "Cinnamon 3 Failed to Load"
+#: ../cinnamon-session/csm-manager.c:1431
+#, fuzzy
+msgid "GNOME 3 Failed to Load"
 msgstr "فشل بدء جنوم 3"
 
-#: ../cinnamon-session/csm-manager.c:1394
+#: ../cinnamon-session/csm-manager.c:1432
+#, fuzzy
 msgid ""
-"Unfortunately Cinnamon 3 failed to start properly and started in the "
+"Unfortunately GNOME 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full Cinnamon 3 experience."
+"capable of delivering the full GNOME 3 experience."
 msgstr ""
 "للأسف فشل بدء جنوم 3 على الوجه الصحيح ودخلت إلى <i>الطور التقليدي</i>.\n"
 "\n"
 "غالبا ما يعني هذا أن نظامك (عتاد الرسوميات أو المُشغّل) ليس مؤهلا لتشغيل جنوم "
 "3 بكامل طاقتها."
 
-#: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about Cinnamon 3"
+#: ../cinnamon-session/csm-manager.c:1434
+#, fuzzy
+msgid "Learn more about GNOME 3"
 msgstr "تعرّف أكثر على جنوم 3"
 
-#: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
+#: ../cinnamon-session/csm-manager.c:1531
+#: ../cinnamon-session/csm-manager.c:2272
 msgid "Not responding"
 msgstr "لا يستجيب"
 
@@ -414,42 +399,43 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "تعذّر إنشاء مقبس استماع ICE: %s"
 
 #. Oh well, no X for you!
-#: ../cinnamon-session/csm-util.c:373
+#: ../cinnamon-session/csm-util.c:412
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "تعذّر بدء جلسة الولوج (وتعذّر الاتصال بالخادوم الرسومي)"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "Override standard autostart directories"
 msgstr "تخطى مجلدات بدء التشغيل القياسية"
 
-#: ../cinnamon-session/main.c:290
+#: ../cinnamon-session/main.c:291
 msgid "AUTOSTART_DIR"
 msgstr "AUTOSTART_DIR"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "Session to use"
 msgstr "الجلسة التي ستُستخدم"
 
-#: ../cinnamon-session/main.c:291
+#: ../cinnamon-session/main.c:292
 msgid "SESSION_NAME"
 msgstr "SESSION_NAME"
 
-#: ../cinnamon-session/main.c:292
+#: ../cinnamon-session/main.c:293
 msgid "Enable debugging code"
 msgstr "فعّل كود تتبع الأخطاء"
 
-#: ../cinnamon-session/main.c:293
+#: ../cinnamon-session/main.c:294
 msgid "Do not load user-specified applications"
 msgstr "لا تُحمّل التطبيقات التي حددها المستخدم"
 
 #. Translators: the 'fail whale' is the black dialog we show when something goes seriously wrong
-#: ../cinnamon-session/main.c:296
+#: ../cinnamon-session/main.c:297
 msgid "Show the fail whale dialog for testing"
 msgstr "أظهر حوار الفشل للاختبار"
 
-#: ../cinnamon-session/main.c:316
-msgid " - the Cinnamon session manager"
+#: ../cinnamon-session/main.c:317
+#, fuzzy
+msgid " - the GNOME session manager"
 msgstr " - مدير جلسات جنوم"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -479,6 +465,21 @@ msgstr "تعذّر الاتصال بمدير الجلسات"
 #: ../tools/cinnamon-session-quit.c:203
 msgid "Program called with conflicting options"
 msgstr "تم استدعاء البرنامج بخيارات متضاربة"
+
+#~ msgid "Cinnamon fallback"
+#~ msgstr "جنوم (تقليدية)"
+
+#~ msgid "Cinnamon"
+#~ msgstr "جنوم"
+
+#~ msgid "This session logs you into Cinnamon"
+#~ msgstr "تولجك هذه الجلسة في جنوم"
+
+#~ msgid "Startup Programs"
+#~ msgstr "برامج بدء التشغيل"
+
+#~ msgid "Options"
+#~ msgstr "الخيارات"
 
 #~ msgid "<b>Some programs are still running:</b>"
 #~ msgstr "<b>ما زالت بعض البرامج تعمل:</b>"
