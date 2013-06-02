@@ -1126,7 +1126,7 @@ save_yourself_request_callback (SmsConn   conn,
          * requesting that a logout message be sent to all clients, so we do
          * that. We use @fast to decide whether or not to show a
          * confirmation dialog. (This isn't really what @fast is for, but
-         * the old gnome-session and ksmserver both interpret it that way,
+         * the old  and ksmserver both interpret it that way,
          * so we do too.) We ignore @save_type because we pick the correct
          * save_type ourselves later based on user prefs, dialog choices,
          * etc, and we ignore @interact_style, because clients have not used

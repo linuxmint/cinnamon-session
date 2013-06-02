@@ -1,6 +1,6 @@
 SUBDIRS =			\
 	egg			\
-	gnome-session		\
+			\
 	capplet			\
 	tools			\
 	data			\

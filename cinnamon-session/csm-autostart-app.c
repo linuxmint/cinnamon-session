@@ -118,7 +118,7 @@ is_disabled (CsmApp *app)
 
         priv = CSM_AUTOSTART_APP (app)->priv;
 
-        /* CSM_AUTOSTART_APP_ENABLED_KEY key, used by old gnome-session */
+        /* CSM_AUTOSTART_APP_ENABLED_KEY key, used by old  */
         if (egg_desktop_file_has_key (priv->desktop_file,
                                       CSM_AUTOSTART_APP_ENABLED_KEY, NULL) &&
             !egg_desktop_file_get_boolean (priv->desktop_file,
