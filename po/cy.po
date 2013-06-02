@@ -204,12 +204,12 @@ msgstr "Caiff ei gychwyn ar bob mewngofnodiad."
 #.
 #: ../cinnamon-session/csm-gsd.c:41
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
 msgstr ""
-"Roedd gwall wrth gychwyn Ellyll Gosodiadau GNOME.\n"
+"Roedd gwall wrth gychwyn Ellyll Gosodiadau Cinnamon.\n"
 "\n"
 "Efallai na fydd rhai pethau (megis themâu, seiniau a chefndir) yn gweithio'n "
 "gywir."
@@ -231,11 +231,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"Bydd GNOME o hyd yn ceisio ailgychwyn y Daemon Gosodiadau y tro nesaf i chi "
+"Bydd Cinnamon o hyd yn ceisio ailgychwyn y Daemon Gosodiadau y tro nesaf i chi "
 "fewngofnodi."
 
 #: ../cinnamon-session/csm-gsd.c:115
@@ -244,7 +244,7 @@ msgstr "Roedd gwall cychwyn anhysbys."
 
 #: ../cinnamon-session/csm-gsd.c:157
 msgid "The Settings Daemon restarted too many times."
-msgstr "Fe ailgychwynnodd Daemon Gosodiadau GNOME gormod o weithiau."
+msgstr "Fe ailgychwynnodd Daemon Gosodiadau Cinnamon gormod o weithiau."
 
 #: ../cinnamon-session/logout.c:408
 msgid "Are you sure you want to log out?"
@@ -296,12 +296,12 @@ msgstr ""
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "Methu canfod y cyfeiriad rhyngrwyd ar gyfer %s.\n"
-"Fe fydd hyn yn rhwystro GNOME rhag gweithredu'n gywir.\n"
+"Fe fydd hyn yn rhwystro Cinnamon rhag gweithredu'n gywir.\n"
 "Fe all fod yn bosib cywiro'r broblem gan ychwanegu\n"
 "%s y ffeil /etc/hosts."
 

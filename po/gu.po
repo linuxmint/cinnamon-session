@@ -90,16 +90,16 @@ msgid "Could not display help document"
 msgstr "મદદ દસ્તાવેજ દર્શાવી શકાયુ નહિં"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ફોલબેક"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ફોલબેક"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "આ સત્ર તમને GNOME માં પ્રવેશ આપે છે"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "આ સત્ર તમને Cinnamon માં પ્રવેશ આપે છે"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -391,26 +391,26 @@ msgstr ""
 " મહેરબાની કરીને બહાર નીકળો અને ફરીથી પ્રયત્ન કરો."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "લાવવા માટે GNOME 3 નિષ્ફળ"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "લાવવા માટે Cinnamon 3 નિષ્ફળ"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"કમનસીબે GNOME 3 યોગ્ય રીતે શરૂ કરવામાં નિષ્ફળતા અને <i>ફોલબેક સ્થિતિ</i> માં શરૂ થયેલ "
+"કમનસીબે Cinnamon 3 યોગ્ય રીતે શરૂ કરવામાં નિષ્ફળતા અને <i>ફોલબેક સ્થિતિ</i> માં શરૂ થયેલ "
 "છે.\n"
 "\n"
-"આનો મતલબ એ કે તમારી સિસ્ટમ (ગ્રાફિકલ હાર્ડવેર અથવા ડ્રાઇવર) સંપૂર્ણ GNOME 3 અનુભવને "
+"આનો મતલબ એ કે તમારી સિસ્ટમ (ગ્રાફિકલ હાર્ડવેર અથવા ડ્રાઇવર) સંપૂર્ણ Cinnamon 3 અનુભવને "
 "મોકલવા માટે સક્ષમ નથી."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 વિશે વધારે શીખો"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 વિશે વધારે શીખો"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -475,7 +475,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "પરીક્ષણ માટે નિષ્ફળ વ્હેલ સંવાદ બતાવો"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - જીનોમ સત્ર વ્યવસ્થાપક"
 
 # cinnamon-session/logout.c:274

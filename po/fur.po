@@ -89,13 +89,13 @@ msgstr ""
 "session. Valôrs valids a son \"logout\" par lâ fûr, \"shutdown\" par studâ "
 "il sisteme e \"restart\" par tornâ a inviâ il sisteme."
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Cheste session ti puartarâ dentri GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Cheste session ti puartarâ dentri Cinnamon"
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
 msgid "Configure your sessions"
@@ -234,13 +234,13 @@ msgstr "Programe"
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
 msgstr ""
 "Al è saltât fûr un erôr vie pa l'inviament dal demoni des impostazions di "
-"GNOME.\n"
+"Cinnamon.\n"
 "\n"
 "Cualchi aspiet come temis, sûns o impostazions dal fondâl a podaressin no "
 "funzionâ tal mût coret."
@@ -261,11 +261,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"GNOME al provarâ a tornâ a inviâ il demoni des impostazions al prossim login."
+"Cinnamon al provarâ a tornâ a inviâ il demoni des impostazions al prossim login."
 
 #: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
@@ -309,46 +309,46 @@ msgstr "Impussibil cjatâ il programe %s ta session\n"
 #: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
-"Nol è pussibil inviâ in mût coret il gjestôr di session di GNOME. Parplasè "
-"mandâ une report a GNOME. Meti dentri chest faliment di ICE tal bug report: "
+"Nol è pussibil inviâ in mût coret il gjestôr di session di Cinnamon. Parplasè "
+"mandâ une report a Cinnamon. Meti dentri chest faliment di ICE tal bug report: "
 "'%s'. Tal fratimp, provâ a loggasi doprant la session di emergence."
 
 #: ../cinnamon-session/ice.c:514
 #, c-format
 msgid ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable, you could try logging in via the failsafe session and "
 "ensuring that it is."
 msgstr ""
-"Il gjestôr di session di GNOME nol à rivât a lei il file '%s'. Se chest file "
-"al esist, al vares di jessi legjibil par lassâ che GNOME al podedi operâ in "
+"Il gjestôr di session di Cinnamon nol à rivât a lei il file '%s'. Se chest file "
+"al esist, al vares di jessi legjibil par lassâ che Cinnamon al podedi operâ in "
 "mût coret. Provâ a loggasi cu la session di emergence e a rimovi chest file."
 
 #: ../cinnamon-session/ice.c:541
 #, c-format
 msgid ""
-"The GNOME session manager was unable to read the file: '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file: '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 msgstr ""
-"Il gjestôr di session di GNOME nol à rivât a lei il file '%s'. Se chest file "
-"al esist, al vares di jessi legjibil par lassâ che GNOME al podedi operâ in "
+"Il gjestôr di session di Cinnamon nol à rivât a lei il file '%s'. Se chest file "
+"al esist, al vares di jessi legjibil par lassâ che Cinnamon al podedi operâ in "
 "mût coret. Provâ a loggasi cu la session di emergence e a rimovi chest file."
 
 #: ../cinnamon-session/ice.c:586
 #, c-format
 msgid ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 msgstr ""
 "Impussibil scrivi sul file '%s'. Chest files al à di jessi scrivibil parcè "
-"che GNOME al funzioni in mût coret. Provâ a loggasi cu la session di "
+"che Cinnamon al funzioni in mût coret. Provâ a loggasi cu la session di "
 "emergence e rimovi chest file. Sigurasi ancje, che la directory dal file a "
 "sedi scrivibil."
 
@@ -455,12 +455,12 @@ msgstr "_Regole l'orloi"
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "Nol è pussibil risolvi l'indiriz internet par %s.\n"
-"Chest nol permet a GNOME di funzionâ in mût coret.\n"
+"Chest nol permet a Cinnamon di funzionâ in mût coret.\n"
 "Eventualmentri al è pussibil coregi l'erôr zontant\n"
 "%s a la fin dal file. /etc/hosts."
 
@@ -473,8 +473,8 @@ msgid "Try Again"
 msgstr "Prove ancjemò"
 
 #: ../cinnamon-session/main.c:693
-msgid "- Manage the GNOME session"
-msgstr "- Gjestis la session di GNOME"
+msgid "- Manage the Cinnamon session"
+msgstr "- Gjestis la session di Cinnamon"
 
 #: ../cinnamon-session/manager.c:513
 msgid "Wait abandoned due to conflict."
@@ -581,8 +581,8 @@ msgid "could not connect to the session manager\n"
 msgstr "Impussibil conetisi al gjestôr di session\n"
 
 #: ../cinnamon-session/session-properties-capplet.c:506
-msgid "session manager does not support GNOME extensions\n"
-msgstr "Il gjestôr di session nol supuarte lis estensions di GNOME\n"
+msgid "session manager does not support Cinnamon extensions\n"
+msgstr "Il gjestôr di session nol supuarte lis estensions di Cinnamon\n"
 
 #: ../cinnamon-session/session-properties.c:51
 msgid "Remove the currently selected client from the session."

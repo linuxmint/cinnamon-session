@@ -84,16 +84,16 @@ msgid "AT SPI Registry Wrapper"
 msgstr "Rapar Chlárlann AT SPI"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
-msgstr "Cuiditheoir Dheamhan Socruithe GNOME"
+msgid "Cinnamon Settings Daemon Helper"
+msgstr "Cuiditheoir Dheamhan Socruithe Cinnamon"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Logálann an seisiún seo thú isteach i nGNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Logálann an seisiún seo thú isteach i nCinnamon"
 
 #: ../data/cinnamon-session.schemas.in.in.h:1
 msgid "Default session"
@@ -473,16 +473,16 @@ msgid "Do not load user-specified applications"
 msgstr "Ná luchtaigh feidhmchláir sonraithe ag an úsáideoir"
 
 #: ../cinnamon-session/main.c:457
-msgid " - the GNOME session manager"
-msgstr "- an bainisteoir seisiún GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- an bainisteoir seisiún Cinnamon"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
-msgstr "- Splancscáileáin GNOME"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Splancscáileáin Cinnamon"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "Splancscáileáin GNOME"
+msgid "Cinnamon Splash Screen"
+msgstr "Splancscáileáin Cinnamon"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Log out"

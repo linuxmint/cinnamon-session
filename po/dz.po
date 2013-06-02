@@ -66,12 +66,12 @@ msgstr "འདི་$datadir/pixmaps/ སྣོད་ཐོ་ལུ་མ་བ
 msgid "This is the option that will be selected in the logout dialog, valid values are \"logout\" for logging out, \"shutdown\" for halting the system and \"restart\" for restarting the system."
 msgstr "འདི་ཕྱིར་བསྐྱོད་ཌའི་ལོག་ནང་ སེལ་འཐུ་འབད་ནིའི་ གདམ་ཁ་ཨིན། ནུས་ཅན་བེ་ལུསི་ཚུ་ ཕྱིར་བསྐྱོད་དོན་ལུ་ \"logout\" དང་ མཚམས་འཇོག་དོན་ལུ་\"shutdown\" དེ་ལས་ རིམ་ལུགས་ལོག་འགོ་བཙུགས་ནིའི་དོན་ལུ་\"shutdown\" ཨིན།"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "ཇི་ནོམ་ "
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ལཱ་ཡུན་འདི་གིས་ ཁྱོད་ ཇི་ནོམ་ནང་ལུ་ ནང་བསྐྱོད་འབདཝ་ཨིན་ "
 
 #: ../data/cinnamon-session-properties.desktop.in.in.h:1
@@ -203,7 +203,7 @@ msgstr "ལས་རིམ།"
 #.
 #: ../cinnamon-session/csm-gsd.c:47
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work correctly."
 msgstr ""
@@ -227,7 +227,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
@@ -273,22 +273,22 @@ msgstr "ལཱ་ཡུན་ནང་ ལས་རིམ་ %s འཚོལ་�
 #. At least try to tell the user something.
 #: ../cinnamon-session/ice.c:355
 #, c-format
-msgid "The GNOME session manager cannot start properly.  Please report this as a GNOME bug. Please include this ICE failure message in the bug report:  '%s'.  Meanwhile you could try logging in using the failsafe session."
+msgid "The Cinnamon session manager cannot start properly.  Please report this as a Cinnamon bug. Please include this ICE failure message in the bug report:  '%s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་ ཚུལ་ལྡན་སྦེ་འགོ་བཙུགས་མི་ཚུགས། འ་ནི་འདི་ ཇི་ནོམ་རྐྱེན་ཅིག་སྦེ་སྙན་ཞུ་འབད་གནང་། '%s' : རྐྱེན་གྱི་སྙན་ཞུ་འདི་ནང་ འ་ནི་ཨའི་སི་ཨི་འཐུས་ཤོར་འཕྲིན་དོན་འདི་ གྲངས་སུ་བཙུགས་གནང། དེ་སྐབས་ ཁྱོད་ཀྱིས་འཐུས་ཤོར་ཉེན་སྲུང་ལག་ལེན་འཐབ་ཐོག་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོར་བསྐྱེད།"
 
 #: ../cinnamon-session/ice.c:514
 #, c-format
-msgid "The GNOME session manager was unable to lock the file '%s'.  Please report this as a GNOME bug.  Sometimes this error may occur if the file's directory is unwritable, you could try logging in via the failsafe session and ensuring that it is."
+msgid "The Cinnamon session manager was unable to lock the file '%s'.  Please report this as a Cinnamon bug.  Sometimes this error may occur if the file's directory is unwritable, you could try logging in via the failsafe session and ensuring that it is."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་གིས་ ཡིག་སྣོད་ '%s' ལྡེ་མིག་རྐྱབས་མ་ཚུགས། འ་ནི་འདི་ཇི་ནོམ་རྐྱེན་སྦེ་སྙན་ཞུ་འབད་གནང་། རེ་ཅིག་སྐབས་འ་ནི་འཛོལ་བ་འདི་ ཡིག་སྣོད་ཀྱི་སྣོད་ཐོ་འདི་འབྲི་མ་བཏུབ་ཨིན་པའི་སྐབས་ འབྱུང་འོང་  ཁྱོད་ཀྱིས་ངེས་གཏན་བཟོ་ཞིནམ་དང་ འཐུས་ཤོར་ཉེན་སྲུང་ལཱ་ཡུན་འདི་བརྒྱུད་དེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱེད་བཏུབ།"
 
 #: ../cinnamon-session/ice.c:541
 #, c-format
-msgid "The GNOME session manager was unable to read the file: '%s'.  If this file exists it must be readable by you for GNOME to work properly.  Try logging in with the failsafe session and removing this file."
+msgid "The Cinnamon session manager was unable to read the file: '%s'.  If this file exists it must be readable by you for Cinnamon to work properly.  Try logging in with the failsafe session and removing this file."
 msgstr "ཇི་ནོམ་ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་གིས་ ཡིག་སྣོད་ལྷག་མ་ཚུགས་: '%s'  འ་ནི་ཡིག་སྣོད་འདི་ཡོདཔ་ཨིན་པ་ཅིན་ ཚུལ་ལྡན་སྦེ་ལཱ་འབད་ནིའི་དོན་ལས་ ཇི་ནོམ་གྱི་དོན་ལུ་ ཁྱོད་ཀྱིས་ལྷག་བཏུབ་དགོ  འ་ནི་ཡིག་སྣོད་རྩ་བསྐྲད་གཏང་ཐོག་དང་ འཐུས་ཤོར་ཉེན་སྲུང་གིས་སྦེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱེད།"
 
 #: ../cinnamon-session/ice.c:586
 #, c-format
-msgid "Could not write to file '%s'.  This file must be writable in order for GNOME to function properly.  Try logging in with the failsafe session and removing this file.  Also make sure that the file's directory is writable."
+msgid "Could not write to file '%s'.  This file must be writable in order for Cinnamon to function properly.  Try logging in with the failsafe session and removing this file.  Also make sure that the file's directory is writable."
 msgstr "ཡིག་སྣོད་ '%s' ལུ་འབྲི་མ་ཚུགས། འ་ནི་ཡིག་སྣོད་འདི་ ཇི་ནོམ་གྱི་དོན་ལུ་ཚུལ་ལྡན་ལཱ་འབད་ནིའི་དོན་ལས་ འབྲི་བཏུབ་དགོ  འ་ནི་ཡིག་སྣོད་རྩ་བསྐྲད་གཏང་ཐོག་དང་ འཐུས་ཤོར་ཉེན་སྲུང་ལཱ་ཡུན་གྱིས་སྦེ་ ནང་བསྐྱོད་འབད་ནི་འབད་རྩོལ་བསྐྱོད། ཡིག་སྣོད་ཀྱི་སྣོད་ཐོ་འདི་ འབྲི་བཏུབ་ཨིནམ་ཡང་ངེས་གཏན་བཟོ།"
 
 #: ../cinnamon-session/logout.c:392
@@ -390,7 +390,7 @@ msgstr "ཆེ་འཁོར་བདེ་སྒྲིག་འབད(_A)"
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
@@ -408,7 +408,7 @@ msgid "Try Again"
 msgstr "ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།"
 
 #: ../cinnamon-session/main.c:693
-msgid "- Manage the GNOME session"
+msgid "- Manage the Cinnamon session"
 msgstr "- ཇི་ནོམ་ལཱ་ཡུན་ འཛིན་སྐྱོང་འཐབ།"
 
 #: ../cinnamon-session/manager.c:513
@@ -518,7 +518,7 @@ msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་འདི་
 
 #: ../cinnamon-session/session-properties-capplet.c:506
 #, c-format
-msgid "session manager does not support GNOME extensions\n"
+msgid "session manager does not support Cinnamon extensions\n"
 msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་གིས་ ཇི་ནོམ་རྒྱ་བསྐྱེད་རྒྱབ་སྐྱོར་མི་འབད་\n"
 
 #: ../cinnamon-session/session-properties.c:51

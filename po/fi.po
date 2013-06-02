@@ -78,15 +78,15 @@ msgid "Could not display help document"
 msgstr "Ohjetta ei voitu näyttää"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "Gnome-vara"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "Gnome"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "Tämä istunto kirjautuu Gnomeen"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -368,16 +368,16 @@ msgstr ""
 "Kirjaudu ulos ja yritä uudelleen, kiitos."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "Gnome 3 lataus epäonnistui"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "Valitettavasti Gnome 3:n täysi käynnistys epäonnistui ja se käynnistettiin "
 "<i>varatilassa</i>.\n"
@@ -386,8 +386,8 @@ msgstr ""
 "ei pysty tarjoamaan täyttä Gnome 3 -kokemusta."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Opi lisää GNOME 3 -työpöydästä"
+msgid "Learn more about Cinnamon 3"
+msgstr "Opi lisää Cinnamon 3 -työpöydästä"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -455,7 +455,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Näytä musta virheikkuna testausta varten"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - Gnomen istunnonhallinta"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -611,7 +611,7 @@ msgstr "Ohjelmaa kutsuttiin ristiriitaisilla valitsimilla"
 #~ msgid "Ubuntu Desktop Edition"
 #~ msgstr "Ubuntu työpöydille"
 
-#~ msgid "This session logs you into GNOME without user applications"
+#~ msgid "This session logs you into Cinnamon without user applications"
 #~ msgstr "Tämä istunto kirjautuu Gnomeen ilman käyttäjäsovelluksia"
 
 #~ msgid "Ubuntu Desktop Edition (Safe Mode)"
@@ -659,13 +659,13 @@ msgstr "Ohjelmaa kutsuttiin ristiriitaisilla valitsimilla"
 #~ msgid "Cannot find help."
 #~ msgstr "Ohjetta ei löydy."
 
-#~ msgid "GNOME Splash Screen"
+#~ msgid "Cinnamon Splash Screen"
 #~ msgstr "Gnomen käynnistymisikkuna"
 
-#~ msgid "GNOME Settings Daemon Helper"
+#~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "Gnomen asetuspalvelimen käärin"
 
-#~ msgid "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
 #~ msgstr "- Gnomen käynnistymisikkuna"
 
 #~ msgid ""

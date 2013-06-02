@@ -84,16 +84,16 @@ msgid "Could not display help document"
 msgstr "No se pudo mostrar el documento de ayuda"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Alternativa de GNOME"
+msgid "Cinnamon fallback"
+msgstr "Alternativa de Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Esta sesión accede a GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Esta sesión accede a Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -370,26 +370,26 @@ msgstr ""
 "cierre la sesión e inténtelo de nuevo."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 falló al cargar"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 falló al cargar"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Desafortunadamente GNOME 3 falló al iniciar y se inició en el <i>modo "
+"Desafortunadamente Cinnamon 3 falló al iniciar y se inició en el <i>modo "
 "alternativo</i>.\n"
 "\n"
 "Probablemente significa que su sistema (hardware gráfico o controlador) no "
-"es capaz de ejecutar la experiencia GNOME 3 completa."
+"es capaz de ejecutar la experiencia Cinnamon 3 completa."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Aprenda más acerca de GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Aprenda más acerca de Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -458,8 +458,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Mostrar el diálogo de la ballena de pruebas"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " - El gestor de sesiones de GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " - El gestor de sesiones de Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -557,8 +557,8 @@ msgstr "Se llamó al programa con opciones en conflicto"
 #~ msgid "Window Manager"
 #~ msgstr "Gestor de ventanas"
 
-#~ msgid "Classic GNOME"
-#~ msgstr "GNOME clásico"
+#~ msgid "Classic Cinnamon"
+#~ msgstr "Cinnamon clásico"
 
 #~ msgid "Default session"
 #~ msgstr "Sesión predeterminada"
@@ -670,11 +670,11 @@ msgstr "Se llamó al programa con opciones en conflicto"
 #~ "Esperando a que finalice el programa. Interrumpir el programa puede "
 #~ "causar pérdidas de datos."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- Pantalla de bienvenida de GNOME"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Pantalla de bienvenida de Cinnamon"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "Pantalla de bienvenida de GNOME"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Pantalla de bienvenida de Cinnamon"
 
 #~ msgid ""
 #~ "Assistive technology support has been requested for this session, but the "
@@ -690,8 +690,8 @@ msgstr "Se llamó al programa con opciones en conflicto"
 #~ msgid "AT SPI Registry Wrapper"
 #~ msgstr "Envolvente de registro AT SPI"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "Ayudante del demonio de preferencias de GNOME"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Ayudante del demonio de preferencias de Cinnamon"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -723,14 +723,14 @@ msgstr "Se llamó al programa con opciones en conflicto"
 #~ msgid "Configure your sessions"
 #~ msgstr "Configure sus sesiones"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
-#~ msgstr "Envolvente del demonio del Depósito de claves de GNOME"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
+#~ msgstr "Envolvente del demonio del Depósito de claves de Cinnamon"
 
 #~ msgid "Session management"
 #~ msgstr "Gestión de sesiones"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "Biblioteca IGU de GNOME + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Biblioteca IGU de Cinnamon + EggSMClient"
 
 #~ msgid ""
 #~ "The Window manager that cinnamon-session will start. Valid values are "

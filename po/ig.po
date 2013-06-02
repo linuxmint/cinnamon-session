@@ -78,15 +78,15 @@ msgid "AT SPI Registry Wrapper"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr ""
 
 #: ../data/cinnamon-session.schemas.in.h:1
@@ -499,16 +499,16 @@ msgstr ""
 
 #: ../cinnamon-session/main.c:528
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "Enweghị ike isụnye n'onyenlekọta oge mmem"
 
 #: ../splash/cinnamon-session-splash.c:315
 #, fuzzy
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr "Gosi inyogo ngosi ndubanye"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr ""
 
 #: ../tools/cinnamon-session-save.c:65
@@ -561,11 +561,11 @@ msgstr ""
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME ga-achọkwa ibidogharị Nhazi Deimọọnụ mgbe ọzọ ị̀bànyé."
+#~ "Cinnamon ga-achọkwa ibidogharị Nhazi Deimọọnụ mgbe ọzọ ị̀bànyé."
 
 #~ msgid ""
 #~ "\n"
@@ -607,12 +607,12 @@ msgstr ""
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "Agaghị achọnwu ngosi ebe ịntaneetị maka %s.\n"
-#~ "Nke a ga-egbochi GNOME ịrụ ọfụma.\n"
+#~ "Nke a ga-egbochi Cinnamon ịrụ ọfụma.\n"
 #~ "O nwere ike inwe isi n'imezi nsogbu ahụ site n'itinye\n"
 #~ "%s na hostụ faịlụ /dgz/."
 
@@ -741,12 +741,12 @@ msgstr ""
 #~ msgstr "Aha oge mmem agaghị eghenwu oghe"
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "E nwere ndehie mgbe a na-ebido Deimọọnụ nhazi GNOME.\n"
+#~ "E nwere ndehie mgbe a na-ebido Deimọọnụ nhazi Cinnamon.\n"
 #~ "\n"
 #~ "Ụfọdụ ihe, dịka isiokwu, Ụda, mọọbụ nhazi ntọala nwere ike ọgaghị arụ ọrụ "
 #~ "ọfụma."

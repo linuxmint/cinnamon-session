@@ -75,17 +75,17 @@ msgid "Could not display help document"
 msgstr "Kunde inte visa hjälpdokumentet"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Fall tillbaka på GNOME"
+msgid "Cinnamon fallback"
+msgstr "Fall tillbaka på Cinnamon"
 
 #: ../data/cinnamon.session.desktop.in.in.h:1
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Denna session loggar in dig i GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Denna session loggar in dig i Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -345,22 +345,22 @@ msgstr ""
 "Logga ut och försök igen."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 kunde inte läsas in"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 kunde inte läsas in"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Tyvärr gick det inte att starta GNOME 3 korrekt och startas därför i <i>fallback-läge</i>.\n"
+"Tyvärr gick det inte att starta Cinnamon 3 korrekt och startas därför i <i>fallback-läge</i>.\n"
 "\n"
-"Detta betyder oftast att ditt system (grafikmaskinvara eller drivrutin) inte kan dra nytta av den kompletta GNOME 3-upplevelsen."
+"Detta betyder oftast att ditt system (grafikmaskinvara eller drivrutin) inte kan dra nytta av den kompletta Cinnamon 3-upplevelsen."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Lär dig mer om GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Lär dig mer om Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493
 #: ../cinnamon-session/csm-manager.c:2234
@@ -424,8 +424,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Visa den \"felande valen\" för testning "
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME-sessionshanteraren"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon-sessionshanteraren"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -520,8 +520,8 @@ msgstr "Program anropat med motsägande flaggor"
 #~ msgid "Kill session"
 #~ msgstr "Döda session"
 
-#~ msgid "Classic GNOME"
-#~ msgstr "Klassisk GNOME"
+#~ msgid "Classic Cinnamon"
+#~ msgstr "Klassisk Cinnamon"
 
 #~ msgid "Window Manager"
 #~ msgstr "Fönsterhanterare"

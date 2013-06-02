@@ -67,15 +67,15 @@ msgid "Could not display help document"
 msgstr "𐑒𐑫𐑛 𐑯𐑪𐑑 𐑛𐑩𐑕𐑐𐑤𐑱 𐑣𐑧𐑤𐑐 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr "·𐑜𐑯𐑴𐑥 𐑕𐑧𐑑𐑦𐑙𐑟 𐑛𐑰𐑥𐑩𐑯 𐑣𐑧𐑤𐑐𐑼"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "·𐑜𐑯𐑴𐑥"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "𐑞𐑦𐑕 𐑕𐑧𐑖𐑩𐑯 𐑤𐑪𐑜𐑟 𐑿 𐑦𐑯𐑑𐑫 ·𐑜𐑯𐑴𐑥"
 
 #: ../data/cinnamon-session.schemas.in.in.h:1
@@ -472,15 +472,15 @@ msgid "Do not load user-specified applications"
 msgstr "𐑛𐑵 𐑯𐑪𐑑 𐑤𐑴𐑛 𐑿𐑟𐑼-𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑛 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟"
 
 #: ../cinnamon-session/main.c:461
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - 𐑞 ·𐑜𐑯𐑴𐑥 𐑕𐑧𐑖𐑩𐑯 𐑥𐑨𐑯𐑩𐑡𐑼"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr "- ·𐑜𐑯𐑴𐑥 𐑕𐑐𐑤𐑨𐑖 𐑕𐑒𐑮𐑰𐑯"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr "·𐑜𐑯𐑴𐑥 𐑕𐑐𐑤𐑨𐑖 𐑕𐑒𐑮𐑰𐑯"
 
 #: ../tools/cinnamon-session-save.c:65

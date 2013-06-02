@@ -76,16 +76,16 @@ msgid "Could not display help document"
 msgstr "সহায়তা নথি প্রদর্শন করতে ব্যর্থ"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "জিনোম ফলব্যাক"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "এই সেশনের মাধ্যমে GNOME-এ লগ-ইন করা যাবে"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "এই সেশনের মাধ্যমে Cinnamon-এ লগ-ইন করা যাবে"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -356,16 +356,16 @@ msgid "Stopped by signal %d"
 msgstr "সিগন্যাল %d দ্বারা বন্ধ করা হয়েছে"
 
 #: ../cinnamon-session/csm-manager.c:1372
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "জিনোম 3 লোড করতে ব্যর্থ"
 
 #: ../cinnamon-session/csm-manager.c:1373
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "দুর্ভাগ্যবশত জিনোম 3 ঠিকভাবে শুরু করতে ব্যর্থ এবং <i>ফলব্যাক মোড</i> এ শুরু হয়।\n"
 "\n"
@@ -373,7 +373,7 @@ msgstr ""
 "পরিবেশ ডেলিভার করতে সমর্থ নয়।"
 
 #: ../cinnamon-session/csm-manager.c:1375
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "জিনোম 3 সম্পর্কে আরও জানুন"
 
 #: ../cinnamon-session/csm-manager.c:1472 ../cinnamon-session/csm-manager.c:2203
@@ -420,8 +420,8 @@ msgid "Do not load user-specified applications"
 msgstr "ব্যবহারকারী দ্বারা নির্ধারিত অ্যাপ্লিকেশন লোড করা হবে না"
 
 #: ../cinnamon-session/main.c:300
-msgid " - the GNOME session manager"
-msgstr "- GNOME সেশন ম্যানেজার"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon সেশন ম্যানেজার"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -465,8 +465,8 @@ msgstr "দ্বন্দ্বযুক্ত অপশন সহ প্রো
 #~ msgid "Timed out"
 #~ msgstr "সময় শেষ"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME সেটিং ডেমন সহায়তাকারী"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon সেটিং ডেমন সহায়তাকারী"
 
 #~ msgid "Default session"
 #~ msgstr "ডিফল্ট সেশন"
@@ -572,11 +572,11 @@ msgstr "দ্বন্দ্বযুক্ত অপশন সহ প্রো
 #~ msgid "GConf key used to lookup default session"
 #~ msgstr "ডিফল্ট সেশন অনুসন্ধানের জন্য ব্যবহৃত GConf কী"
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME-র স্প্ল্যাশ স্ক্রিন"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon-র স্প্ল্যাশ স্ক্রিন"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME-র স্প্ল্যাশ স্ক্রিন"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon-র স্প্ল্যাশ স্ক্রিন"
 
 #~ msgid "Show logout dialog"
 #~ msgstr "লগ-আউট ডায়ালগ বাক্স প্রদর্শন করা হবে"

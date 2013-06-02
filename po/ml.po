@@ -75,15 +75,15 @@ msgid "Could not display help document"
 msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "ഗ്നോം ഫോള്‍ബാക്ക്"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "ഗ്നോം"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ്നോമിലേക്ക് കയറ്റുന്നു"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -372,16 +372,16 @@ msgstr ""
 "ദയവായി പുറത്തു് കടന്നു് വീണ്ടും ശ്രമിയ്ക്കുക."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "ഗ്നോം 3 ലഭ്യമാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "ഗ്നോം 3 ശരിയായി ആരംഭിയ്ക്കുന്നതില്‍ പരാജയപ്പെട്ടു, അതിനാല്‍ <i>ഫോള്‍ബാക്ക് "
 "മോഡില്‍</i> ആരംഭിച്ചിരിയ്ക്കുന്നു.\n"
@@ -390,7 +390,7 @@ msgstr ""
 "പൂര്‍ണ്ണമായി ഗ്നോം 3 ആസ്വദിയ്ക്കുന്നതിനു് അനുവദിയ്ക്കുന്നില്ല."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "ഗ്നോം 3-യെപ്പറ്റി കൂടുതല്‍ അറിയുക"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -460,8 +460,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "പരീക്ഷണത്തിനായി പരാജയ ഡയലോഗ് കാണിയ്ക്കുക"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരന്‍"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരന്‍"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -494,7 +494,7 @@ msgstr "പ്രവര്‍ത്തനവേള നടത്തിപ്പ�
 msgid "Program called with conflicting options"
 msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ്ങളോടെയാണു് പ്രോഗ്രാമിനെ വിളിച്ചിരിയ്ക്കുന്നതു്"
 
-#~ msgid "GNOME Settings Daemon Helper"
+#~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "ഗ്നോം സജ്ജീകരണങ്ങള്‍ക്കുള്ള നിരന്തരപ്രവൃത്തിയ്ക്കായുള്ള വേലക്കാരന്‍"
 
 #~ msgid "Default session"
@@ -622,10 +622,10 @@ msgstr "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ�
 #~ msgid "GConf key used to lookup default session"
 #~ msgstr "സഹജമായ പ്രവര്‍ത്തനവേള കണ്ടുപിടിയ്ക്കാനുപയോഗിയ്ക്കുന്ന ജികോണ്‍ഫിലെ ചാവി"
 
-#~ msgid "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
 #~ msgstr "- ഗ്നോമിലെ മിന്നിമറയുന്ന സ്ക്രീന്‍"
 
-#~ msgid "GNOME Splash Screen"
+#~ msgid "Cinnamon Splash Screen"
 #~ msgstr "- ഗ്നോമിലെ മിന്നിമറയുന്ന സ്ക്രീന്‍"
 
 #~ msgid "Show logout dialog"

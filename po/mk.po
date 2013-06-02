@@ -85,20 +85,20 @@ msgid "AT SPI Registry Wrapper"
 msgstr "AT SPI обвиткувач на регистри"
 
 #: ../compat/gnome-keyring-daemon-wrapper.desktop.in.in.in.h:1
-msgid "GNOME Keyring Daemon Wrapper"
-msgstr "Обвивка на демонот за приврзоци на GNOME "
+msgid "Cinnamon Keyring Daemon Wrapper"
+msgstr "Обвивка на демонот за приврзоци на Cinnamon "
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
-msgstr "Помагач за демонот за поставување на GNOME"
+msgid "Cinnamon Settings Daemon Helper"
+msgstr "Помагач за демонот за поставување на Cinnamon"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Оваа сесија Ве најавува во GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Оваа сесија Ве најавува во Cinnamon"
 
 #: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
@@ -152,7 +152,7 @@ msgstr "Панел"
 msgid "Preferred Image to use for login splash screen"
 msgstr ""
 "Преферирана слика која ќе се користи за поздравниот екран при најава во "
-"работната околина GNOME"
+"работната околина Cinnamon"
 
 #: ../data/cinnamon-session.schemas.in.h:10
 msgid "Required session components"
@@ -323,8 +323,8 @@ msgid "Session management"
 msgstr "Менаџмент на сесии"
 
 #: ../egg/eggsmclient-libgnomeui.c:136
-msgid "GNOME GUI Library + EggSMClient"
-msgstr "GNOME GUI библиотека + EggSMClient"
+msgid "Cinnamon GUI Library + EggSMClient"
+msgstr "Cinnamon GUI библиотека + EggSMClient"
 
 #: ../egg/eggsmclient.c:185
 msgid "Disable connection to session manager"
@@ -532,16 +532,16 @@ msgid "Do not load user-specified applications"
 msgstr "Не вчитувај апликации одредени од корисникот"
 
 #: ../cinnamon-session/main.c:521
-msgid " - the GNOME session manager"
-msgstr "- Менаџер за сесии за GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- Менаџер за сесии за Cinnamon"
 
 #: ../splash/cinnamon-session-splash.c:291
-msgid "- GNOME Splash Screen"
-msgstr "- Поздравен екран за GNOME"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Поздравен екран за Cinnamon"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "Поздравен екран за GNOME"
+msgid "Cinnamon Splash Screen"
+msgstr "Поздравен екран за Cinnamon"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"

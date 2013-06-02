@@ -93,16 +93,16 @@ msgid "Could not display help document"
 msgstr "Kunne ikke vise hjælpedokument"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME-tilbagefaldstilstand"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon-tilbagefaldstilstand"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Denne session logger dig ind i GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Denne session logger dig ind i Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -376,26 +376,26 @@ msgstr ""
 "Log venligst ud og prøv igen."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 kunne ikke indlæses"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 kunne ikke indlæses"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Desværre er det mislykkedes for GNOME 3 at starte rigtigt og startede derfor "
+"Desværre er det mislykkedes for Cinnamon 3 at starte rigtigt og startede derfor "
 "i <i>tilbagefaldstilstand</i>.\n"
 "\n"
 "Dette betyder højst sandsynligt at dit system (grafik-hardware eller -"
-"driver) ikke er i stand til at levere den fulde GNOME 3-oplevelse."
+"driver) ikke er i stand til at levere den fulde Cinnamon 3-oplevelse."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Lær mere om GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Lær mere om Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -462,8 +462,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Vis dialogen uheldig hval for at gennemføre en test"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " - GNOME-sessionshåndteringen"
+msgid " - the Cinnamon session manager"
+msgstr " - Cinnamon-sessionshåndteringen"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -619,8 +619,8 @@ msgstr "Program blev kaldt med selvmodsigende tilvalg"
 #~ msgid "Kill session"
 #~ msgstr "Afslut session"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME-indstillinger dæmonhjælper"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon-indstillinger dæmonhjælper"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -654,11 +654,11 @@ msgstr "Program blev kaldt med selvmodsigende tilvalg"
 #~ "Venter på at programmer afslutter. At forstyrre disse programmer kan føre "
 #~ "til at du mister data."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME-velkomstvindue"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon-velkomstvindue"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME-velkomstvindue"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon-velkomstvindue"
 
 #~ msgid "The name of the startup program cannot be empty"
 #~ msgstr "Startkommandoen kan ikke være tom"
@@ -680,8 +680,8 @@ msgstr "Program blev kaldt med selvmodsigende tilvalg"
 #~ msgid "Sessions Preferences"
 #~ msgstr "Sessionsindstillinger"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
-#~ msgstr "GNOME-nøglering dæmonomslag"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
+#~ msgstr "Cinnamon-nøglering dæmonomslag"
 
 #~ msgid "Selected option in the log out dialog"
 #~ msgstr "Forvalgt valgmulighed i \"Log ud\"-vinduet"
@@ -701,5 +701,5 @@ msgstr "Program blev kaldt med selvmodsigende tilvalg"
 #~ msgid "Session management"
 #~ msgstr "Sessionshåndtering"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "GNOME GUI-bibliotek + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Cinnamon GUI-bibliotek + EggSMClient"

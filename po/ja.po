@@ -82,16 +82,16 @@ msgid "Could not display help document"
 msgstr "ヘルプのドキュメントを表示できませんでした"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME フォールバック"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon フォールバック"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "このセッションで GNOME にログインします"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "このセッションで Cinnamon にログインします"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -346,22 +346,22 @@ msgstr ""
 "ログアウトして再度試してください。"
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 を読み込むのに失敗しました"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 を読み込むのに失敗しました"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"残念ながら GNOME 3 が正しく起動せず、<i>フォールバックモード</i> で起動しました。\n"
+"残念ながら Cinnamon 3 が正しく起動せず、<i>フォールバックモード</i> で起動しました。\n"
 "\n"
-"おそらく、このシステム (グラフィックのハードウェアやドライバー) は GNOME 3 を満足に動かすことができないようです。"
+"おそらく、このシステム (グラフィックのハードウェアやドライバー) は Cinnamon 3 を満足に動かすことができないようです。"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 について詳しく知る"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 について詳しく知る"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -424,8 +424,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "テスト用にエラー画面を表示する"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME セッションマネージャー"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon セッションマネージャー"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

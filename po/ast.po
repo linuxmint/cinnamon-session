@@ -85,16 +85,16 @@ msgid "AT SPI Registry Wrapper"
 msgstr "Endolcu de rexistru AT SPI"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
-msgstr "Aidante del demoñu de les preferencies de GNOME"
+msgid "Cinnamon Settings Daemon Helper"
+msgstr "Aidante del demoñu de les preferencies de Cinnamon"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Esta sesión conéuta-y a GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Esta sesión conéuta-y a Cinnamon"
 
 #: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
@@ -523,16 +523,16 @@ msgid "Do not load user-specified applications"
 msgstr "Nun cargar les aplicaciones especificaes pol usuariu"
 
 #: ../cinnamon-session/main.c:528
-msgid " - the GNOME session manager"
-msgstr " - el remanador de sesiones de GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " - el remanador de sesiones de Cinnamon"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
-msgstr "- Pantalla de presentación de GNOME"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Pantalla de presentación de Cinnamon"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "Pantalla de presentación de GNOME"
+msgid "Cinnamon Splash Screen"
+msgstr "Pantalla de presentación de Cinnamon"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"
@@ -616,14 +616,14 @@ msgstr "Programa llamáu con opciones conflictives"
 #~ msgid "Cannot find help."
 #~ msgstr "Nun se pue atopar aida."
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
-#~ msgstr "Endolcu del demoñu de depósitu de claves de GNOME"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
+#~ msgstr "Endolcu del demoñu de depósitu de claves de Cinnamon"
 
 #~ msgid "Session management"
 #~ msgstr "Remanamientu de sesiones"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "Biblioteca GNOME GUI + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Biblioteca Cinnamon GUI + EggSMClient"
 
 #~ msgid "Unable to start login session (and unable connect to the X server)"
 #~ msgstr ""

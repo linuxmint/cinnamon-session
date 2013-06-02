@@ -74,16 +74,16 @@ msgid "Could not display help document"
 msgstr "Ezin izan da laguntzako dokumentua bistaratu"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ordezkoa"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ordezkoa"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Saio honek GNOMEn sartuko zaitu"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Saio honek Cinnamonn sartuko zaitu"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -366,26 +366,26 @@ msgid "Stopped by signal %d"
 msgstr "%d seinalearekin geldituta"
 
 #: ../cinnamon-session/csm-manager.c:1386
-msgid "GNOME 3 Failed to Load"
-msgstr "Huts egin du GNOME 3 kargatzean"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Huts egin du Cinnamon 3 kargatzean"
 
 #: ../cinnamon-session/csm-manager.c:1387
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Zoritxarrez huts egin du GNOME 3 dagokion moduan kargatzean eta <i>ordezko "
+"Zoritxarrez huts egin du Cinnamon 3 dagokion moduan kargatzean eta <i>ordezko "
 "moduan</i> hasi da.\n"
 "\n"
-"Baliteke sistemak (grafikoen hardware edo gailuak) ahalmenik ez izatea GNOME "
+"Baliteke sistemak (grafikoen hardware edo gailuak) ahalmenik ez izatea Cinnamon "
 "3 esperientzia osoaz aritzeko."
 
 #: ../cinnamon-session/csm-manager.c:1389
-msgid "Learn more about GNOME 3"
-msgstr "Ikasi GNOME 3 buruz gehiago"
+msgid "Learn more about Cinnamon 3"
+msgstr "Ikasi Cinnamon 3 buruz gehiago"
 
 #: ../cinnamon-session/csm-manager.c:1486 ../cinnamon-session/csm-manager.c:2255
 msgid "Not responding"
@@ -450,8 +450,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Erakutsi errorearen elkarrizketa-koadroa probetarako"
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
-msgstr "- GNOMEren saio-kudeatzailea"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamonren saio-kudeatzailea"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"

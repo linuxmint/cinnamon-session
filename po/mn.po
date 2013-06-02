@@ -58,7 +58,7 @@ msgstr "Горимоос гарах"
 
 #: cinnamon-session/cinnamon-session.schemas.in.h:6
 msgid ""
-"Preferred Image to use for the splash screen when logging in to the GNOME "
+"Preferred Image to use for the splash screen when logging in to the Cinnamon "
 "Desktop"
 msgstr "ГНОМЕ дэлгэцэнд орох үед сонгосон зургийг дэлгэцэнд тавина"
 
@@ -193,7 +193,7 @@ msgstr "Горим руу орох бүрд эхлэх"
 #.
 #: cinnamon-session/csm-gsd.c:41
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -218,7 +218,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
@@ -281,7 +281,7 @@ msgstr "Клиентүүдийг усттал хэдэн хором хүлээх
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""

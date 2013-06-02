@@ -70,16 +70,16 @@ msgid "Could not display help document"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Düsser Törn mellt dik bi GNOME an"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Düsser Törn mellt dik bi Cinnamon an"
 
 #: ../data/cinnamon-session.schemas.in.in.h:1
 msgid "Default session"
@@ -451,16 +451,16 @@ msgid "Do not load user-specified applications"
 msgstr ""
 
 #: ../cinnamon-session/main.c:457
-msgid " - the GNOME session manager"
-msgstr "GNOME Törnoppasser"
+msgid " - the Cinnamon session manager"
+msgstr "Cinnamon Törnoppasser"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
-msgstr "- GNOME Splash-Billschirm"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Cinnamon Splash-Billschirm"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "GNOME Splash-Billschirm"
+msgid "Cinnamon Splash Screen"
+msgstr "Cinnamon Splash-Billschirm"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Log out"

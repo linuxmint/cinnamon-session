@@ -73,17 +73,17 @@ msgid "Could not display help document"
 msgstr "Could not display help document"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "רשת הביטחון של GNOME"
+msgid "Cinnamon fallback"
+msgstr "רשת הביטחון של Cinnamon"
 
 #: ../data/cinnamon.session.desktop.in.in.h:1
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "‏GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "‏Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "הפעלה זאת מחברת אותך לשולחן העבודה GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "הפעלה זאת מחברת אותך לשולחן העבודה Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -343,22 +343,22 @@ msgstr ""
 "נא לצאת ולנסות שוב."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "טעינת GNOME 3 נכשלה"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "טעינת Cinnamon 3 נכשלה"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"לרוע המזל הפעלת GNOME 3 כראוי נכשלה ובמקום זאת הופעל <b>מצב השחזור</b>.\n"
+"לרוע המזל הפעלת Cinnamon 3 כראוי נכשלה ובמקום זאת הופעל <b>מצב השחזור</b>.\n"
 "\n"
-"תקלה זו אירעה כפי הנראה כיוון שהמערכת שלך (או מנהל ההתקן של חומרת הגרפיקה שלך) אינה מסוגלת להפעיל את חווית GNOME 3 במלואה."
+"תקלה זו אירעה כפי הנראה כיוון שהמערכת שלך (או מנהל ההתקן של חומרת הגרפיקה שלך) אינה מסוגלת להפעיל את חווית Cinnamon 3 במלואה."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "מידע נוסף על אודות GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "מידע נוסף על אודות Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493
 #: ../cinnamon-session/csm-manager.c:2234
@@ -422,8 +422,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "הצגת דו־שיח 'לוויתן הכשל'  לבדיקה"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
+msgstr " - the Cinnamon session manager"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -500,8 +500,8 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid "Kill session"
 #~ msgstr "Kill session"
 
-#~ msgid "Classic GNOME"
-#~ msgstr "GNOME קלסי"
+#~ msgid "Classic Cinnamon"
+#~ msgstr "Cinnamon קלסי"
 
 #~ msgid "Window Manager"
 #~ msgstr "Window Manager"
@@ -605,11 +605,11 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ "lose work."
 #~ msgstr "ממתין לסיום תוכנית. הפרעה לתוכנית עלולה לגרום לאיבוד העבודה שלך."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon Splash Screen"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME Splash Screen"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon Splash Screen"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -631,8 +631,8 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid "AT SPI Registry Wrapper"
 #~ msgstr "עוטף רישומי ה־AT SPI"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "מסייע מנוע ההגדרות של GNOME"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "מסייע מנוע ההגדרות של Cinnamon"
 
 #~ msgid "The name of the startup program cannot be empty"
 #~ msgstr "שם פקודת ההפעלה לא יכול להיות ריק"
@@ -658,8 +658,8 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid "Session management"
 #~ msgstr "ניהול תצורת ההפעלה"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "GNOME GUI Library + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Cinnamon GUI Library + EggSMClient"
 
 #~ msgid ""
 #~ "The Window manager that cinnamon-session will start. Valid values are "
@@ -683,8 +683,8 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid "Play logout sound instead of login"
 #~ msgstr "Play logout sound instead of login"
 
-#~ msgid "- GNOME login/logout sound"
-#~ msgstr "- GNOME login/logout sound"
+#~ msgid "- Cinnamon login/logout sound"
+#~ msgstr "- Cinnamon login/logout sound"
 
 #~ msgid "Allow TCP connections"
 #~ msgstr "Allow TCP connections"
@@ -764,12 +764,12 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgstr "מצב"
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "ארעה שגיאה בהפעלת תהליך השירות של הגדרות GNOME.\n"
+#~ "ארעה שגיאה בהפעלת תהליך השירות של הגדרות Cinnamon.\n"
 #~ "\n"
 #~ "כמה דברים, כמו הגדרות ערכות נושא, צלילים, או רקעים עלולים לא לפעול כראוי."
 
@@ -787,11 +787,11 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME עדיין ינסה להפעיל מחדש את תהליך שירות ההגדרות בפעם הבאה שתתחבר."
+#~ "Cinnamon עדיין ינסה להפעיל מחדש את תהליך שירות ההגדרות בפעם הבאה שתתחבר."
 
 #~ msgid "The Settings Daemon restarted too many times."
 #~ msgstr "תהליך שירות ההגדרות הופעל מחדש יותר מידי פעמים."
@@ -845,12 +845,12 @@ msgstr "התכנית נקראה עם אפשרויות סותרות"
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "לא הצלחתי למצוא את כתובת האינטרנט: %s.\n"
-#~ "זה ימנע מ GNOME לעבוד כנדרש.\n"
+#~ "זה ימנע מ Cinnamon לעבוד כנדרש.\n"
 #~ "ייתכן וכל הנדרש לתיקון הבעיה הוא הוספת\n"
 #~ "%s לקובץ /etc/hosts."
 

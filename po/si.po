@@ -223,7 +223,7 @@ msgstr "සෑම පිවිසුමකදීම සෑමවිටම ආර
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -248,11 +248,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"ඔබගේ මිළඟ පිවිසුම් වාරයේදි GNOME තවමත් සැකසුම් විබුද්ධයා නැවත ආරම්භ කිරිමට උත්සාහ ගනිමින් සිටී ."
+"ඔබගේ මිළඟ පිවිසුම් වාරයේදි Cinnamon තවමත් සැකසුම් විබුද්ධයා නැවත ආරම්භ කිරිමට උත්සාහ ගනිමින් සිටී ."
 
 #: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
@@ -291,45 +291,45 @@ msgstr "සැසිය තුළ වූු %s ක්‍රමලේඛය ස�
 #: ../cinnamon-session/ice.c:357
 #, c-format
 msgid ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
-"GNOME සැසි කළමණාකරු නිසියාකාරව ඇරඹිය නොහැක.  කරුණාකර මෙය GNOME "
+"Cinnamon සැසි කළමණාකරු නිසියාකාරව ඇරඹිය නොහැක.  කරුණාකර මෙය Cinnamon "
 "දෝෂයක් ලෙස වාර්තා කරන්න. දෝෂස වාර්තාව තුළ  ICE අසාර්ථක පණිවිඩය ඇතුලත් "
 "කරන්න: '%s''.  එමෙන්ම ඔබ ආරක්‍ෂිත සැසියකින් පිවිසීමට උත්සාහ කරන්න."
 
 #: ../cinnamon-session/ice.c:512
 #, c-format
 msgid ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable, you could try logging in via the failsafe session and "
 "ensuring that it is."
 msgstr ""
-"GNOME සැසි කළමණාකරුට මෙම ගොනුව: '%s' අගුලුලෑමට නොහැකි විය.  කරුණාකර "
-"මෙය GNOME දෝෂයක් ලෙස වාර්තා කරන්න.  සමහරවිට ගොනු බහාලුමට ලිවිමට නොහැකි වුවිට "
+"Cinnamon සැසි කළමණාකරුට මෙම ගොනුව: '%s' අගුලුලෑමට නොහැකි විය.  කරුණාකර "
+"මෙය Cinnamon දෝෂයක් ලෙස වාර්තා කරන්න.  සමහරවිට ගොනු බහාලුමට ලිවිමට නොහැකි වුවිට "
 "සිදුවේ, ඔබ ආරක්‍ෂිත සැසියකින් පිවිසී එය තහවුරු කරගන්න."
 
 #: ../cinnamon-session/ice.c:539
 #, c-format
 msgid ""
-"The GNOME session manager was unable to read the file: '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file: '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 msgstr ""
-"GNOME සැසි කළමණාකරුට මෙම ගොනුව: '%s' කියවීමට නොහැකි විය.  GNOME "
+"Cinnamon සැසි කළමණාකරුට මෙම ගොනුව: '%s' කියවීමට නොහැකි විය.  Cinnamon "
 "නිසියාකාරව ක්‍රියාත්මක විමට මෙම ගොනුව පවතී නම් එය  අනිවාර්යෙන්ම ඔබට කියවිය "
 "හැකි වියයුතු වේ.  ආරක්‍ෂිත සැසියකින් පිවිසී මෙම ගොනුව ඉවත් කිරිමට උත්සාහ කරන්න."
 
 #: ../cinnamon-session/ice.c:584
 #, c-format
 msgid ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 msgstr ""
-"'%s' ගොනුවට ලිවීමට නොහැක.  GNOME නිසියාකාරව ක්‍රියාත්මක විමට අනිවාර්යෙන්ම "
+"'%s' ගොනුවට ලිවීමට නොහැක.  Cinnamon නිසියාකාරව ක්‍රියාත්මක විමට අනිවාර්යෙන්ම "
 "මෙම ගොනුව ලිවිය හැකි ගොනුවක් විය යුතුය.  ආරක්‍ෂිත සැසියකින් පිවිසී මෙම ගොනුව "
 "ඉවත් කිරීමට උත්සාහ කරන්න.  ගොනුව අඩංගු බහාලුම ලිවීමට හැකි බහාලුමක් දැයි බලන්න."
 
@@ -390,12 +390,12 @@ msgstr "සේවා ග්‍රාහකයාට අවසන් වීමට
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "%s සඳහා වු අන්තර්ජාල ලිපිනය සෝදිසි කර බැලිය නොහැක.\n"
-"මෙය GNOME නිසියාකාරව මෙහෙයවිම වළකයි.\n"
+"මෙය Cinnamon නිසියාකාරව මෙහෙයවිම වළකයි.\n"
 "/etc/hosts ගොනුව තුලට %s ඇතුලත් කිරීම මඟින් \n"
 "මෙය වළක්වා ගතහැකි වනු ඇත."
 
@@ -408,8 +408,8 @@ msgid "Try Again"
 msgstr "නැවත උත්සාහ කරන්න"
 
 #: ../cinnamon-session/main.c:396
-msgid "- Manage the GNOME session"
-msgstr "- GNOME සැසිය කලමණාකරනය කරයි"
+msgid "- Manage the Cinnamon session"
+msgstr "- Cinnamon සැසිය කලමණාකරනය කරයි"
 
 #: ../cinnamon-session/manager.c:514
 msgid "Wait abandoned due to conflict."
@@ -509,8 +509,8 @@ msgid "could not connect to the session manager\n"
 msgstr "සැසි-කළමණාකරු සමඟ සම්බන්ධවිය නොහැක\n"
 
 #: ../cinnamon-session/session-properties-capplet.c:502
-msgid "session manager does not support GNOME extensions\n"
-msgstr "GNOME ව්‍යාප්ති සඳහා සැසි කළමණාකරු සහාය නොදක්වයි\n"
+msgid "session manager does not support Cinnamon extensions\n"
+msgstr "Cinnamon ව්‍යාප්ති සඳහා සැසි කළමණාකරු සහාය නොදක්වයි\n"
 
 #: ../cinnamon-session/session-properties.c:51
 msgid "Remove the currently selected client from the session."

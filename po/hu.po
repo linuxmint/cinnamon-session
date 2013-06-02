@@ -76,16 +76,16 @@ msgid "Could not display help document"
 msgstr "A súgódokumentum nem jeleníthető meg"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME tartalék"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon tartalék"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Bejelentkezés a GNOME környezetbe"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Bejelentkezés a Cinnamon környezetbe"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -360,26 +360,26 @@ msgstr ""
 "Jelentkezzen ki, és próbálja újra."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "A GNOME 3 betöltése meghiúsult"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "A Cinnamon 3 betöltése meghiúsult"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"A GNOME 3 megfelelő indítása sajnos meghiúsult, és <i>tartalék</i> módban "
+"A Cinnamon 3 megfelelő indítása sajnos meghiúsult, és <i>tartalék</i> módban "
 "indult el.\n"
 "\n"
 "Ez valószínűleg azt jelenti, hogy a rendszere (a grafikus hardver vagy annak "
-"illesztőprogramja) nem képes a GNOME 3 környezet megfelelő működtetésére."
+"illesztőprogramja) nem képes a Cinnamon 3 környezet megfelelő működtetésére."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Tudjon meg többet a GNOME 3-ról"
+msgid "Learn more about Cinnamon 3"
+msgstr "Tudjon meg többet a Cinnamon 3-ról"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -446,8 +446,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "A hibaképernyő megjelenítése teszteléshez"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " – A GNOME munkamenet-kezelője"
+msgid " - the Cinnamon session manager"
+msgstr " – A Cinnamon munkamenet-kezelője"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

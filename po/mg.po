@@ -1,10 +1,10 @@
-# MALAGASY TRANSLATION OF GNOME-SESSION.
+# MALAGASY TRANSLATION OF Cinnamon-SESSION.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Thierry Randrianiriana <randrianiriana@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: GNOME-SESSION 2.16\n"
+"Project-Id-Version: Cinnamon-SESSION 2.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-28 09:58+0200\n"
 "PO-Revision-Date: 2006-08-04 22:16+0300\n"
@@ -176,11 +176,11 @@ msgstr "Alefa foana isaka ny miditra."
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work correctly."
 msgstr ""
-"Nisy olana teo am-pandefasana ny Daemon'ny fandrindran'ny GNOME.\n"
+"Nisy olana teo am-pandefasana ny Daemon'ny fandrindran'ny Cinnamon.\n"
 "\n"
 "Misy zavatra toy ny fandrindran'endrika, feo na afara tsy mandeha araka ny tokony ho izy any ho any."
 
@@ -200,11 +200,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"Hanandrana ny handefa ny Daemon'ny fandrindrana ihany ny GNOME rehefa miditra amin'ny manaraka ianao."
+"Hanandrana ny handefa ny Daemon'ny fandrindrana ihany ny Cinnamon rehefa miditra amin'ny manaraka ianao."
 
 #: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
@@ -269,12 +269,12 @@ msgstr "Fotoana (milisegaondra) lany niandrasana ny mpivatsy ho faty (0=tsy mana
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "Tsy nahita adiresy Internet ho an'ny %s.\n"
-"Hahatonga ny GNOME tsy handeha ara-dalàna izany.\n"
+"Hahatonga ny Cinnamon tsy handeha ara-dalàna izany.\n"
 "Azo vahana amin'ny alalan'ny fanampiana ny %s\n"
 "anatin'ny rakitra /etc/hosts izany olana izany."
 
@@ -287,8 +287,8 @@ msgid "Try Again"
 msgstr "Andramo indray"
 
 #: ../cinnamon-session/main.c:402
-msgid "- Manage the GNOME session"
-msgstr "- Mandrindra ny session'ny GNOME"
+msgid "- Manage the Cinnamon session"
+msgstr "- Mandrindra ny session'ny Cinnamon"
 
 #: ../cinnamon-session/manager.c:223
 msgid "Your session has been saved"

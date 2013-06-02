@@ -72,16 +72,16 @@ msgid "Could not display help document"
 msgstr "ನೆರವಿನ ದಸ್ತಾವೇಜನ್ನು ತೋರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr ""
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "ಈ ಅಧಿವೇಶನವು ನಿಮ್ಮನ್ನು GNOME ಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "ಈ ಅಧಿವೇಶನವು ನಿಮ್ಮನ್ನು Cinnamon ಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -367,20 +367,20 @@ msgid ""
 msgstr ""
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr ""
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr ""
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -456,8 +456,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr ""
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕ"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕ"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -493,8 +493,8 @@ msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗ�
 msgid "Program called with conflicting options"
 msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊಗ್ರಾಂ ಅನ್ನು ಕರೆಯಲಾಗಿದೆ"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME ಸೆಟ್ಟಿಂಗ್ಸ್‍ ಡೀಮನ್ ಹೆಲ್ಪರ್"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon ಸೆಟ್ಟಿಂಗ್ಸ್‍ ಡೀಮನ್ ಹೆಲ್ಪರ್"
 
 #~ msgid "Default session"
 #~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಅಧಿವೇಶನ"
@@ -617,11 +617,11 @@ msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊ�
 #~ msgid "GConf key used to lookup default session"
 #~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಅಧಿವೇಶನವನ್ನು ನೋಡಿಕೊಳ್ಳಲು ಬಳಸಲಾಗುವ GConf ಕೀಲಿ"
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME ಎರಚು ತೆರೆ"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon ಎರಚು ತೆರೆ"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME ಎರಚು ತೆರೆ"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon ಎರಚು ತೆರೆ"
 
 #~ msgid "Show logout dialog"
 #~ msgstr "ನಿರ್ಗಮನದ ಸಂವಾದವನ್ನು ತೋರಿಸು"

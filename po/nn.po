@@ -89,18 +89,18 @@ msgid "Could not display help document"
 msgstr "Klarte ikkje visa hjelpedokumentet"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME reserveløysing"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon reserveløysing"
 
 #
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
 #
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Denne økta loggar inn i GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Denne økta loggar inn i Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -407,25 +407,25 @@ msgid "Stopped by signal %d"
 msgstr "Stoppa av signalet %d"
 
 #: ../cinnamon-session/csm-manager.c:1386
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 klarte ikkje starta"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 klarte ikkje starta"
 
 #: ../cinnamon-session/csm-manager.c:1387
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"GNOME 3 klarte ikkje starta skikkeleg, og køyrer <i>reserveløysinga.</i>.\n"
+"Cinnamon 3 klarte ikkje starta skikkeleg, og køyrer <i>reserveløysinga.</i>.\n"
 "\n"
 "Sannsynlegvis klarer ikkje systemet (grafikkortet eller drivaren) å køyre "
-"GNOME 3."
+"Cinnamon 3."
 
 #: ../cinnamon-session/csm-manager.c:1389
-msgid "Learn more about GNOME 3"
-msgstr "Lær meir om GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Lær meir om Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1486 ../cinnamon-session/csm-manager.c:2255
 msgid "Not responding"
@@ -497,8 +497,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Vis feilvindauget for testing"
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
-msgstr " – GNOME økthandsamar"
+msgid " - the Cinnamon session manager"
+msgstr " – Cinnamon økthandsamar"
 
 # panel/logout.c:74 panel/menu.c:5340
 #: ../tools/cinnamon-session-quit.c:52
@@ -529,8 +529,8 @@ msgstr "Klarte ikkje kopla til økthandsamar"
 msgid "Program called with conflicting options"
 msgstr "Programmet vart kalla med motstridande alternativ"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "Hjelpar til GNOME innstillingsnisse"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Hjelpar til Cinnamon innstillingsnisse"
 
 # gsm/save-session.c:42
 #~| msgid "Kill session"
@@ -660,11 +660,11 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 
 # gsm/session-properties-capplet.c:192
 #~| msgid "Show the splash screen"
-#~ msgid "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
 #~ msgstr "- Oppstartskjerm"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME oppstartskjerm"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon oppstartskjerm"
 
 #~ msgid "Show logout dialog"
 #~ msgstr "Vis avloggingsdialog"
@@ -812,12 +812,12 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgstr "Tilstand"
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "Ein feil oppstod då programmet som styrer instillingane i GNOME vart "
+#~ "Ein feil oppstod då programmet som styrer instillingane i Cinnamon vart "
 #~ "starta.\n"
 #~ "\n"
 #~ "Somme ting, slik som drakt, lydar og bakgrunnsinnstillingar vil kanskje "
@@ -837,11 +837,11 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME vil likevel prøva å starta innstillingsprogrammet neste gong du "
+#~ "Cinnamon vil likevel prøva å starta innstillingsprogrammet neste gong du "
 #~ "loggar inn."
 
 #~ msgid "The Settings Daemon restarted too many times."
@@ -872,40 +872,40 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgstr "Kunne ikkje finna program %s i økta\n"
 
 #~ msgid ""
-#~ "The GNOME session manager cannot start properly.  Please report this as a "
-#~ "GNOME bug. Please include this ICE failure message in the bug report:  "
+#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
+#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
 #~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
 #~ msgstr ""
-#~ "Sesjonshandsamar for GNOME kan ikkje startast. Vennligst rapportar dette "
+#~ "Sesjonshandsamar for Cinnamon kan ikkje startast. Vennligst rapportar dette "
 #~ "som ein feil. Ta med denne feilmeldinga frå ICE i rapporten: «%s». I "
 #~ "mellomtida kan du logge inn med feilsikker økt."
 
 #~ msgid ""
-#~ "The GNOME session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a GNOME bug.  Sometimes this error may occur if the file's "
+#~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
 #~ "directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
-#~ "Sesjonshandsamar for GNOME klarte ikkje å låse fila '%s'. Vennligst "
-#~ "rapportar dette som ein feili GNOME. Nokon gong oppstår denne feilen når "
+#~ "Sesjonshandsamar for Cinnamon klarte ikkje å låse fila '%s'. Vennligst "
+#~ "rapportar dette som ein feili Cinnamon. Nokon gong oppstår denne feilen når "
 #~ "filens mappe ikkje er skrivbar, du kan prøve å logge inn via ein "
 #~ "feilsikker økt for å forsikre deg om at den er skrivbar."
 
 #~ msgid ""
-#~ "The GNOME session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for GNOME to work properly.  Try "
+#~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
+#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
 #~ "logging in with the failsafe session and removing this file."
 #~ msgstr ""
-#~ "Sesjonshandsamar for GNOME klarte ikkje å lesa fila '%s'. Viss denne fila "
-#~ "eksisterer, så må den vera lesbar av deg, for at GNOME skal fungere "
+#~ "Sesjonshandsamar for Cinnamon klarte ikkje å lesa fila '%s'. Viss denne fila "
+#~ "eksisterer, så må den vera lesbar av deg, for at Cinnamon skal fungere "
 #~ "ordentlig. Prøv og logg med ein feilsikker økt og fjern denne fila."
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "GNOME to function properly.  Try logging in with the failsafe session and "
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
 #~ "removing this file.  Also make sure that the file's directory is writable."
 #~ msgstr ""
-#~ "Kan ikkje skriva til '%s'. Denne fila må vera skrivbar for at GNOME skal "
+#~ "Kan ikkje skriva til '%s'. Denne fila må vera skrivbar for at Cinnamon skal "
 #~ "fungere ordentlig. Prøv og logg med ein feilsikker økt og fjern denne "
 #~ "fila. Sjekk òg at filens mappe er skrivbar."
 
@@ -981,12 +981,12 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 # gsm/gnome-login-check.c:344
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "Kunne ikkje slå opp internett-adressa for %s.\n"
-#~ "Dette vil hindre GNOME i å virka ordentleg.\n"
+#~ "Dette vil hindre Cinnamon i å virka ordentleg.\n"
 #~ "Det er mogleg å retta opp problemet ved å leggja\n"
 #~ "til %s i fila /etc/hosts."
 
@@ -1044,8 +1044,8 @@ msgstr "Programmet vart kalla med motstridande alternativ"
 #~ msgid "could not connect to the session manager\n"
 #~ msgstr "kunne ikkje kopla til økthandsamaren\n"
 
-#~ msgid "session manager does not support GNOME extensions\n"
-#~ msgstr "økthandsamaren støttar ikkje GNOME-utvidelser\n"
+#~ msgid "session manager does not support Cinnamon extensions\n"
+#~ msgstr "økthandsamaren støttar ikkje Cinnamon-utvidelser\n"
 
 #~ msgid "Remove the currently selected client from the session."
 #~ msgstr "Fjern den valde klienten frå økta."

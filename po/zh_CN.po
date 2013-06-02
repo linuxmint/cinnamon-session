@@ -82,16 +82,16 @@ msgid "Could not display help document"
 msgstr "不能显示帮助文档"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME 后备模式"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon 后备模式"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "此会话将您登录到 GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "此会话将您登录到 Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -363,24 +363,24 @@ msgid ""
 msgstr "系统出错并无法恢复，请尝试注销并重新登录。"
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 加载失败"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 加载失败"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"很遗憾 GNOME 3 无法正常启动，并已启动到<i>后备模式</i>。\n"
+"很遗憾 Cinnamon 3 无法正常启动，并已启动到<i>后备模式</i>。\n"
 "\n"
-"这可能是因为您的显卡硬件或驱动不足以完全运行 GNOME 3。"
+"这可能是因为您的显卡硬件或驱动不足以完全运行 Cinnamon 3。"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "进一步了解 GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "进一步了解 Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -445,8 +445,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "显示用于测试的鲸鱼失败对话框"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME 会话管理器"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon 会话管理器"
 
 # gsm/logout.c:248
 #: ../tools/cinnamon-session-quit.c:53

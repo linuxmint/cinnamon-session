@@ -79,15 +79,15 @@ msgid "Could not display help document"
 msgstr "تعذّر عرض مستند المساعدة"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "جنوم (تقليدية)"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "جنوم"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "تولجك هذه الجلسة في جنوم"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -366,16 +366,16 @@ msgstr ""
 "حاول الخروج ثم الولوج مجددا."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "فشل بدء جنوم 3"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "للأسف فشل بدء جنوم 3 على الوجه الصحيح ودخلت إلى <i>الطور التقليدي</i>.\n"
 "\n"
@@ -383,7 +383,7 @@ msgstr ""
 "3 بكامل طاقتها."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "تعرّف أكثر على جنوم 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -449,7 +449,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "أظهر حوار الفشل للاختبار"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - مدير جلسات جنوم"
 
 #: ../tools/cinnamon-session-quit.c:53
@@ -544,7 +544,7 @@ msgstr "تم استدعاء البرنامج بخيارات متضاربة"
 #~ msgid "Kill session"
 #~ msgstr "اقتل الجلسة"
 
-#~ msgid "Classic GNOME"
+#~ msgid "Classic Cinnamon"
 #~ msgstr "جنوم تقليدية"
 
 #~ msgid "Window Manager"

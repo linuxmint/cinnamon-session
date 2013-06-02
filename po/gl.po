@@ -80,16 +80,16 @@ msgid "Could not display help document"
 msgstr "Non foi posíbel mostrar o documento de axuda"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Alternativa de GNOME"
+msgid "Cinnamon fallback"
+msgstr "Alternativa de Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Esta sesión iniciará en GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Esta sesión iniciará en Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -365,26 +365,26 @@ msgstr ""
 "Saia da sesión e ténteo de novo."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "Produciuse un erro ao cargar GNOME 3"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Produciuse un erro ao cargar Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Por desgraza produciuse un erro ao iniciar GNOME 3 e iniciouse o <i>modo "
+"Por desgraza produciuse un erro ao iniciar Cinnamon 3 e iniciouse o <i>modo "
 "alternativo</i>.\n"
 "\n"
 "Probabelmente significa que o seu sistema (hardware gráfico ou controlador) "
-"non é capaz de executar a experiencia GNOME 3 completa."
+"non é capaz de executar a experiencia Cinnamon 3 completa."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Aprenda máis sobre o GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Aprenda máis sobre o Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -452,8 +452,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Mostrar o diálogo da balea de fallos"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- o xestor de sesións do GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- o xestor de sesións do Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

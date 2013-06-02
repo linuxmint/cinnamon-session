@@ -1,5 +1,5 @@
 # Canadian English translation of cinnamon-session
-# Copyright (C) 2004-2006 Adam Weinberger and the GNOME Foundation
+# Copyright (C) 2004-2006 Adam Weinberger and the Cinnamon Foundation
 # This file is distributed under the same licence as the cinnamon-session package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2006.
 #
@@ -227,12 +227,12 @@ msgstr "Program"
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
 msgstr ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -253,11 +253,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 
 #: ../cinnamon-session/csm-gsd.c:145
 msgid "The Settings Daemon restarted too many times."
@@ -304,46 +304,46 @@ msgstr "Could not find program %s in session\n"
 #: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 
 #: ../cinnamon-session/ice.c:511
 #, c-format
 msgid ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable, you could try logging in via the failsafe session and "
 "ensuring that it is."
 msgstr ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable.  You could try logging in via the failsafe session and "
 "checking the directory."
 
 #: ../cinnamon-session/ice.c:538
 #, c-format
 msgid ""
-"The GNOME session manager was unable to read the file: '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file: '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 msgstr ""
-"The GNOME session manager was unable to read the file '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 
 #: ../cinnamon-session/ice.c:583
 #, c-format
 msgid ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 msgstr ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 
@@ -450,12 +450,12 @@ msgstr "_Adjust the Clock"
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 
@@ -468,8 +468,8 @@ msgid "Try Again"
 msgstr "Try Again"
 
 #: ../cinnamon-session/main.c:696
-msgid "- Manage the GNOME session"
-msgstr "- Manage the GNOME session"
+msgid "- Manage the Cinnamon session"
+msgstr "- Manage the Cinnamon session"
 
 #: ../cinnamon-session/manager.c:513
 msgid "Wait abandoned due to conflict."
@@ -572,8 +572,8 @@ msgstr "could not connect to the session manager\n"
 
 #: ../cinnamon-session/session-properties-capplet.c:509
 #, c-format
-msgid "session manager does not support GNOME extensions\n"
-msgstr "session manager does not support GNOME extensions\n"
+msgid "session manager does not support Cinnamon extensions\n"
+msgstr "session manager does not support Cinnamon extensions\n"
 
 #: ../cinnamon-session/session-properties.c:51
 msgid "Remove the currently selected client from the session."

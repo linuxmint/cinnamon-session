@@ -73,16 +73,16 @@ msgid "Could not display help document"
 msgstr "Kon nie hulpdokument vertoon nie"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME (terugval)"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon (terugval)"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Hierdie sessie laat mens aanmeld by GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Hierdie sessie laat mens aanmeld by Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -353,26 +353,26 @@ msgid "Stopped by signal %d"
 msgstr "Gestop met sein %d"
 
 #: ../cinnamon-session/csm-manager.c:1372
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 kon nie laai nie"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 kon nie laai nie"
 
 #: ../cinnamon-session/csm-manager.c:1373
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Ongelukkig kon GNOME 3 nie behoorlik laai nie en het in <i>terugvalmodus</i> "
+"Ongelukkig kon Cinnamon 3 nie behoorlik laai nie en het in <i>terugvalmodus</i> "
 "begin.\n"
 "\n"
 "Dit beteken waarskynlik dat die stelsel (grafikahardeware of aandrywer) nie "
-"in staat is om die volle ervaring van GNOME 3 te lewer nie."
+"in staat is om die volle ervaring van Cinnamon 3 te lewer nie."
 
 #: ../cinnamon-session/csm-manager.c:1375
-msgid "Learn more about GNOME 3"
-msgstr "Vind meer uit oor GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Vind meer uit oor Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1472 ../cinnamon-session/csm-manager.c:2203
 msgid "Not responding"
@@ -418,8 +418,8 @@ msgid "Do not load user-specified applications"
 msgstr "Moenie gebruiker-gespesifiseerde toepassings laai nie"
 
 #: ../cinnamon-session/main.c:300
-msgid " - the GNOME session manager"
-msgstr " - die GNOME-sessiebestuurder"
+msgid " - the Cinnamon session manager"
+msgstr " - die Cinnamon-sessiebestuurder"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -477,11 +477,11 @@ msgstr "Program geroep met konflikterende opsies"
 #~ msgstr "Afmeldingspor"
 
 #~ msgid ""
-#~ "Preferred Image to use for the splash screen when logging in to the GNOME "
+#~ "Preferred Image to use for the splash screen when logging in to the Cinnamon "
 #~ "Desktop"
 #~ msgstr ""
 #~ "Voorkeurbeeld wat gebruik moet word vir die spatskerm wanneer daar by "
-#~ "GNOME Desktop aangemeld word"
+#~ "Cinnamon Desktop aangemeld word"
 
 #~ msgid "Save sessions"
 #~ msgstr "Stoor sessies"
@@ -562,12 +562,12 @@ msgstr "Program geroep met konflikterende opsies"
 #~ msgstr "Altyd begin vir elke aanmelding."
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "n Fout is ondervind met die laai van die GNOME-Instellingsdaemoon.\n"
+#~ "n Fout is ondervind met die laai van die Cinnamon-Instellingsdaemoon.\n"
 #~ "\n"
 #~ "Sommige funksies, soos temas, klanke of agtergrondinstellings mag dalk "
 #~ "nie korrek werk nie."
@@ -586,11 +586,11 @@ msgstr "Program geroep met konflikterende opsies"
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME sal probeer om die Instellingsdaemoon oor te begin wanneer jy weer "
+#~ "Cinnamon sal probeer om die Instellingsdaemoon oor te begin wanneer jy weer "
 #~ "aanmeld."
 
 #~ msgid "There was an unknown activation error."
@@ -622,12 +622,12 @@ msgstr "Program geroep met konflikterende opsies"
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "Kon nie internetadres vir %s opsoek nie.\n"
-#~ "Die sal verhoed dat GNOME behoorlik funksioneer.\n"
+#~ "Die sal verhoed dat Cinnamon behoorlik funksioneer.\n"
 #~ "Die probleem mag moontlik opgelos word deur \n"
 #~ "%s by die lêer /etc/gashere te voeg."
 

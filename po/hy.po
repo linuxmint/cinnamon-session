@@ -195,12 +195,12 @@ msgstr "Միշտ գործարկվում է յուրաքանչյուր անգամ
 #.
 #: ../cinnamon-session/csm-gsd.c:41
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
 msgstr ""
-"GNOME Settings Daemon–ի գործարկման ժամանակ սխալ է կատարվել.\n"
+"Cinnamon Settings Daemon–ի գործարկման ժամանակ սխալ է կատարվել.\n"
 "\n"
 "Այնպիսի բաներ, ինչպիսիք են թեմաները, ձայները կամ հետին պլանի կարգադրվածքները կարող են ճիշտ չաշխատել։"
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
@@ -282,7 +282,7 @@ msgstr "Միլիվայրկյանների ժամանակահատված, որն ա
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""

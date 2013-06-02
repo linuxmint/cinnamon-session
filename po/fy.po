@@ -73,15 +73,15 @@ msgid "Could not display help document"
 msgstr "Koe it help dokumint net werjaan"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "Gnome weromfal"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "Gnome"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "Dizze sesje meld jo oan by Gnome"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
@@ -371,16 +371,16 @@ msgid "Timed out"
 msgstr "Wachttiid ferstriken"
 
 #: ../cinnamon-session/csm-manager.c:1332
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "Gnome 3 koe net laden wurde"
 
 #: ../cinnamon-session/csm-manager.c:1333
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "Spitigernôch is Gnome 3 net goed starte en begjint no in de <i>weromfal "
 "modus</i>.\n"
@@ -389,7 +389,7 @@ msgstr ""
 "stjoerprogramma) net de hiele Gnome 3 ûnderfining kin bringe."
 
 #: ../cinnamon-session/csm-manager.c:1335
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "Mear ynformaasje oer Gnome 3"
 
 #: ../cinnamon-session/csm-manager.c:1432 ../cinnamon-session/csm-manager.c:2156
@@ -435,7 +435,7 @@ msgid "Do not load user-specified applications"
 msgstr "Net troch de brûker oantsjutte programma's lade"
 
 #: ../cinnamon-session/main.c:300
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - de Gnome sesjebehearder"
 
 #: ../tools/cinnamon-session-quit.c:52
@@ -587,11 +587,11 @@ msgstr "Programma oanroppen mei stridige opsjes"
 #~ "Wachtsjen op beëinigjen fan applikaasje.  Ûnderbrekken fan de applikaasje "
 #~ "kin jo wurk kwyt meitsje."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME Splash-skerm"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon Splash-skerm"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME Splash-skerm"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon Splash-skerm"
 
 #~ msgid "Your session has been saved."
 #~ msgstr "Jo sesje is bewarre."
@@ -602,14 +602,14 @@ msgstr "Programma oanroppen mei stridige opsjes"
 #~ msgid "Could not connect to the session bus"
 #~ msgstr "Koe gjin ferbining meitsje mei de sesje bus"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME Ynstellings Demon Behearder"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon Ynstellings Demon Behearder"
 
-#~ msgid "Failsafe GNOME"
-#~ msgstr "Mislearfeiliche GNOME"
+#~ msgid "Failsafe Cinnamon"
+#~ msgstr "Mislearfeiliche Cinnamon"
 
-#~ msgid "This session logs you into GNOME without user applications"
-#~ msgstr "Dizze sesje meld jo oan yn GNOME sûnder brûker applikaasjes"
+#~ msgid "This session logs you into Cinnamon without user applications"
+#~ msgstr "Dizze sesje meld jo oan yn Cinnamon sûnder brûker applikaasjes"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "

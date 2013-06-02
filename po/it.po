@@ -73,16 +73,16 @@ msgid "Could not display help document"
 msgstr "Impossibile mostrare il documento d'aiuto"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ripiego"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ripiego"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Questa sessione esegue l'accesso in GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Questa sessione esegue l'accesso in Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -371,27 +371,27 @@ msgstr ""
 "Terminare la sessione e provare di nuovo."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "Avvio di GNOME 3 non riuscito"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Avvio di Cinnamon 3 non riuscito"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Non è stato possibile caricare in modo appropriato GNOME 3 ed è stata "
+"Non è stato possibile caricare in modo appropriato Cinnamon 3 ed è stata "
 "avviata la <i>modalità di ripiego</i>.\n"
 "\n"
 "Ciò indica che molto probabilmente il sistema (scheda grafica o relativo "
 "driver) non è in grado di supportare in modo completo l'esperienza utente "
-"GNOME 3."
+"Cinnamon 3."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Maggiori informazioni su GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Maggiori informazioni su Cinnamon 3"
 
 # non so se la forma è corretta, non ho provato
 # a inibire il termine sessione
@@ -461,8 +461,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Mostra il dialogo \"fail whale\" per test"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- il gestore di sessioni di GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- il gestore di sessioni di Cinnamon"
 
 # commento opzioni riga comando
 #: ../tools/cinnamon-session-quit.c:53

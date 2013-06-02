@@ -78,15 +78,15 @@ msgid "AT SPI Registry Wrapper"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr ""
 
 #: ../data/cinnamon-session.schemas.in.h:1
@@ -500,16 +500,16 @@ msgstr ""
 
 #: ../cinnamon-session/main.c:528
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "An kasa haɗi zuwa manajan zaman shawara"
 
 #: ../splash/cinnamon-session-splash.c:315
 #, fuzzy
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr "Nuna sifilash skireen"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr ""
 
 #: ../tools/cinnamon-session-save.c:65
@@ -562,11 +562,11 @@ msgstr ""
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME zai yi ƙoƙarin sake fara Deemun na Kayan Daidaitawa don shigarwan "
+#~ "Cinnamon zai yi ƙoƙarin sake fara Deemun na Kayan Daidaitawa don shigarwan "
 #~ "ka nan gaba."
 
 #~ msgid ""
@@ -609,12 +609,12 @@ msgstr ""
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "An kasa duba adireshin intanet wa %s.\n"
-#~ "Wannan zai hana GNOME aiki daidai.\n"
+#~ "Wannan zai hana Cinnamon aiki daidai.\n"
 #~ "Mai yiwuwa ana iya gyara matsalar idan an ƙara\n"
 #~ "%s zuwa file /etc/hosts."
 
@@ -751,12 +751,12 @@ msgstr ""
 #~ msgstr "Sunan zaman shawaran ba zai iya zama mai maras komai ba"
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "An sami kuskure wajen fara Deemun na Kewayen GNOME.\n"
+#~ "An sami kuskure wajen fara Deemun na Kewayen Cinnamon.\n"
 #~ "\n"
 #~ "Wasu abubuwa kamar, kayan daidaita jigo, sauti, ko bango ba zasu yi aiki "
 #~ "daidai ba."

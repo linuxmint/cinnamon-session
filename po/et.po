@@ -1,8 +1,8 @@
-# GNOME seansi eesti keele tõlge.
+# Cinnamon seansi eesti keele tõlge.
 # Estonian translation of cinnamon-session.
 #
 # Copyright (C) 1999, 2001, 2002, 2004–2006 Free Software Foundation, Inc.
-# Copyright (C) 2006–2011 The GNOME Project.
+# Copyright (C) 2006–2011 The Cinnamon Project.
 #
 # Lauris Kaplinski <lauris@ariman.ee>, 1999.
 # Ilmar Kerm <ikerm@hot.ee>, 2001, 2002.
@@ -65,14 +65,14 @@ msgstr "Rakenduse versioon"
 msgid "Could not display help document"
 msgstr "Abidokumenti pole võimalik kuvada"
 
-msgid "GNOME fallback"
-msgstr "GNOME varurežiim"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon varurežiim"
 
-msgid "GNOME"
-msgstr "GNOME"
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-msgid "This session logs you into GNOME"
-msgstr "Selle seansiga logitakse sind GNOME keskkonda sisse"
+msgid "This session logs you into Cinnamon"
+msgstr "Selle seansiga logitakse sind Cinnamon keskkonda sisse"
 
 msgid "Some programs are still running:"
 msgstr "Mõned rakendused töötavad ikka veel:"
@@ -287,24 +287,24 @@ msgstr ""
 "Esines viga ja süsteem ei suuda taastuda.\n"
 "Logi välja ja proovi uuesti."
 
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 laadimine nurjus"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 laadimine nurjus"
 
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Kahjuks polnud GNOME 3 võimalik õigesti käivituda ja kasutatakse "
+"Kahjuks polnud Cinnamon 3 võimalik õigesti käivituda ja kasutatakse "
 "<i>varurežiimi</i>.\n"
 "\n"
 "Kõige tõenäolisemalt on probleemide allikaks sinu videokaart või selle "
 "draiver."
 
-msgid "Learn more about GNOME 3"
-msgstr "Õpi GNOME 3 rohkem tundma"
+msgid "Learn more about Cinnamon 3"
+msgstr "Õpi Cinnamon 3 rohkem tundma"
 
 msgid "Not responding"
 msgstr "Ei vasta"
@@ -360,8 +360,8 @@ msgstr "Kasutaja määratud rakendusi ei laadita"
 msgid "Show the fail whale dialog for testing"
 msgstr "Testimise jaoks kuvatakse nurjumise dialoogi"
 
-msgid " - the GNOME session manager"
-msgstr " - GNOME seansihaldur"
+msgid " - the Cinnamon session manager"
+msgstr " - Cinnamon seansihaldur"
 
 msgid "Log out"
 msgstr "Väljalogimine"

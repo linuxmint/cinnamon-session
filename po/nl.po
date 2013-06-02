@@ -85,15 +85,15 @@ msgid "Could not display help document"
 msgstr "Kon hulpdocument niet weergeven"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "Gnome (terugval)"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "Gnome"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "Deze sessie laat u in Gnome inloggen"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
@@ -386,16 +386,16 @@ msgid "Stopped by signal %d"
 msgstr "Gestopt door signaal %d"
 
 #: ../cinnamon-session/csm-manager.c:1379
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "Gnome 3 kon niet geladen worden"
 
 #: ../cinnamon-session/csm-manager.c:1380
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "Helaas kon Gnome 3 niet correct opgestart worden en daarom is de <i>fallback-"
 "modus</i> opgestart.\n"
@@ -404,7 +404,7 @@ msgstr ""
 "die niet in staat is de complete Gnome 3-omgeving te draaien."
 
 #: ../cinnamon-session/csm-manager.c:1382
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "Kom meer over Gnome 3 te weten"
 
 #: ../cinnamon-session/csm-manager.c:1479 ../cinnamon-session/csm-manager.c:2210
@@ -475,7 +475,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Het misvis-venster tonen voor testen"
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " — het Gnome-sessiebeheer"
 
 #: ../tools/cinnamon-session-quit.c:52
@@ -528,7 +528,7 @@ msgstr "Toepassing aangeroepen met conflicterende opties"
 #~ msgid "Kill session"
 #~ msgstr "Sessie beëindigen"
 
-#~ msgid "Classic GNOME"
+#~ msgid "Classic Cinnamon"
 #~ msgstr "Klassieke Gnome"
 
 #~ msgid "Window Manager"
@@ -614,7 +614,7 @@ msgstr "Toepassing aangeroepen met conflicterende opties"
 #~ msgid "GConf key used to look up default session"
 #~ msgstr "GConf-sleutel voor het opzoeken van de standaardsessie"
 
-#~ msgid "GNOME Settings Daemon Helper"
+#~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "Hulptoepassing voor de Gnome-instellingenvoorziening"
 
 #~ msgid ""
@@ -653,10 +653,10 @@ msgstr "Toepassing aangeroepen met conflicterende opties"
 #~ "Wachten totdat de toepassing geëindigd is. Het onderbreken van de "
 #~ "toepassing kan er toe leiden dat er werk verloren gaat."
 
-#~ msgid "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
 #~ msgstr "— Gnome introvenster"
 
-#~ msgid "GNOME Splash Screen"
+#~ msgid "Cinnamon Splash Screen"
 #~ msgstr "Gnome-introvenster"
 
 #~ msgid "The name of the startup program cannot be empty"
@@ -694,11 +694,11 @@ msgstr "Toepassing aangeroepen met conflicterende opties"
 #~ msgid "Configure your sessions"
 #~ msgstr "Configureer uw sessies"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
 #~ msgstr "Wrapper voor Gnome-sleutelbosvoorziening"
 
 #~ msgid "Session management"
 #~ msgstr "Sessiebeheer"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
 #~ msgstr "Gnome GUI Library + EggSMClient"

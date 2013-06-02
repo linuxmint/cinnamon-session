@@ -83,17 +83,17 @@ msgid "Could not display help document"
 msgstr "Ne eblis montri helpdokumenton"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Retropaŝa GNOME-reĝimo"
+msgid "Cinnamon fallback"
+msgstr "Retropaŝa Cinnamon-reĝimo"
 
 #: ../data/cinnamon.session.desktop.in.in.h:1
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Ĉi tiu seanco ensalutas vin en GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Ĉi tiu seanco ensalutas vin en Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -363,22 +363,22 @@ msgid "Stopped by signal %d"
 msgstr "Haltigis per signalo %d"
 
 #: ../cinnamon-session/csm-manager.c:1386
-msgid "GNOME 3 Failed to Load"
-msgstr "Ŝargo de GNOME 3 fiaskis"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Ŝargo de Cinnamon 3 fiaskis"
 
 #: ../cinnamon-session/csm-manager.c:1387
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Bedaŭrinde korekta startado de GNOME 3 fiaskis kaj startis per la <i>fallback mode</i> (retropaŝa reĝimo).\n"
+"Bedaŭrinde korekta startado de Cinnamon 3 fiaskis kaj startis per la <i>fallback mode</i> (retropaŝa reĝimo).\n"
 "\n"
-"La kompleta sperto de GNOME 3 ne disponeblas por via sistemo. (La grafika aparato aŭ pelilo ne kapablas lanĉi la plenan GNOME 3)."
+"La kompleta sperto de Cinnamon 3 ne disponeblas por via sistemo. (La grafika aparato aŭ pelilo ne kapablas lanĉi la plenan Cinnamon 3)."
 
 #: ../cinnamon-session/csm-manager.c:1389
-msgid "Learn more about GNOME 3"
-msgstr "Lernu plu pri GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Lernu plu pri Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1486
 #: ../cinnamon-session/csm-manager.c:2255
@@ -442,8 +442,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Montri la paneo-dialogo por testado"
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
-msgstr " - la seancadministrilo de GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " - la seancadministrilo de Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -539,8 +539,8 @@ msgstr "Programo vokata kun konfliktaj parametroj"
 #~ msgid "If enabled, cinnamon-session will save the session automatically."
 #~ msgstr "Se aktivigita, cinnamon-session konservos la sesion aŭtomate."
 
-#~ msgid "This session logs you into GNOME without user applications"
-#~ msgstr "Ĉi tiu seanco ensalutas vin en GNOMEon sen uzantaj apliakĵoj"
+#~ msgid "This session logs you into Cinnamon without user applications"
+#~ msgstr "Ĉi tiu seanco ensalutas vin en Cinnamonon sen uzantaj apliakĵoj"
 
 #~ msgid ""
 #~ "The number of minutes of inactivity before the session is considered idle."

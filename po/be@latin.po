@@ -80,20 +80,20 @@ msgid "AT SPI Registry Wrapper"
 msgstr "Dapamožnaja prahrama dla schovišča AT SPI"
 
 #: ../compat/gnome-keyring-daemon-wrapper.desktop.in.in.in.h:1
-msgid "GNOME Keyring Daemon Wrapper"
-msgstr "Dapamožnaja prahrama dla słužby klučnika GNOME"
+msgid "Cinnamon Keyring Daemon Wrapper"
+msgstr "Dapamožnaja prahrama dla słužby klučnika Cinnamon"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
-msgstr "Dapamožnaja prahrama dla słužby naładaŭ GNOME"
+msgid "Cinnamon Settings Daemon Helper"
+msgstr "Dapamožnaja prahrama dla słužby naładaŭ Cinnamon"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Hetaja sesija ŭruchamlaje GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Hetaja sesija ŭruchamlaje Cinnamon"
 
 #: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
@@ -297,8 +297,8 @@ msgid "Session management"
 msgstr "Kiravańnie sesijami"
 
 #: ../egg/eggsmclient-libgnomeui.c:136
-msgid "GNOME GUI Library + EggSMClient"
-msgstr "Biblijateka GUI dla GNOME + EggSMClient"
+msgid "Cinnamon GUI Library + EggSMClient"
+msgstr "Biblijateka GUI dla Cinnamon + EggSMClient"
 
 #: ../egg/eggsmclient.c:185
 msgid "Disable connection to session manager"
@@ -489,16 +489,16 @@ msgid "Do not load user-specified applications"
 msgstr "Nie ŭklučaj aplikacyjaŭ, akreślenych karystalnikam"
 
 #: ../cinnamon-session/main.c:528
-msgid " - the GNOME session manager"
-msgstr "- kiraŭnik sesijaŭ dla GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- kiraŭnik sesijaŭ dla Cinnamon"
 
 #: ../splash/cinnamon-session-splash.c:291
-msgid "- GNOME Splash Screen"
-msgstr "- Zastaŭka GNOME"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Zastaŭka Cinnamon"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "Zastaŭka GNOME"
+msgid "Cinnamon Splash Screen"
+msgstr "Zastaŭka Cinnamon"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"
@@ -553,5 +553,5 @@ msgstr "Prahrama ŭklučanaja ź niaŭzhodnienymi opcyjami"
 #~ msgid "Play logout sound instead of login"
 #~ msgstr "Hraj huk vychadu zamiest huku ŭvachodu"
 
-#~ msgid "- GNOME login/logout sound"
-#~ msgstr "- Huk uvachodu/vychadu GNOME"
+#~ msgid "- Cinnamon login/logout sound"
+#~ msgstr "- Huk uvachodu/vychadu Cinnamon"

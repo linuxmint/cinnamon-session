@@ -81,15 +81,15 @@ msgid "Could not display help document"
 msgstr "ਮੱਦਦ ਡੌਕੂਮੈਂਟ ਨੂੰ ਵੇਖਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "ਗਨੋਮ ਫਾਲਬੈਕ"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "ਗਨੋਮ"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ਇਹ ਸ਼ੈਸ਼ਨ ਤੁਹਾਨੂੰ ਗਨੋਮ ਵਿੱਚ ਲਾਗ ਕਰਦਾ ਹੈ"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -385,16 +385,16 @@ msgstr ""
 "ਲਾਗ ਆਉਟ ਕਰਕੇ ਫੇਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "ਗਨੋਮ ੩ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "ਅਫਸੋਸ ਹੈ ਕਿ ਗਨੋਮ ੩ ਠੀਕ ਤਰ੍ਹਾਂ ਚੱਲਣ ਲਈ ਫੇਲ੍ਹ ਹੋਇਆ ਹੈ ਅਤੇ <i>ਫਾਲਬੈਕ ਮੋਡ</i> "
 "ਵਿੱਚ ਚੱਲ ਸਕਿਆ ਹੈ।\n"
@@ -404,7 +404,7 @@ msgstr ""
 "ਤਰ੍ਹਾਂ ਚਲਾਉਣ ਲਈ ਸਮਰੱਥ ਨਹੀਂ ਹੈ।"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "ਗਨੋਮ ੩ ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਵੋ"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -473,7 +473,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "ਟੈਸਟ ਕਰਨ ਲਈ ਵੇਲ੍ਹ ਡਾਈਲਾਗ ਵੇਖਾਓ"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "- ਗਨੋਮ ਸ਼ੈਸ਼ਨ ਮੈਨੇਜਰ"
 
 # cinnamon-session/logout.c:274
@@ -645,7 +645,7 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 #~ "ਪਰੋਗਰਾਮ ਦੇ ਖਤਮ ਹੋਣ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ। ਪਰੋਗਰਾਮ 'ਚ ਦਖਣ ਦੇਣ ਨਾਲ ਤੁਹਾਡਾ ਕੰਮ ਖਰਾਬ "
 #~ "ਹੋ ਸਕਦਾ ਹੈ।"
 
-#~ msgid "GNOME Settings Daemon Helper"
+#~ msgid "Cinnamon Settings Daemon Helper"
 #~ msgstr "ਗਨੋਮ ਸੈਟਿੰਗ ਡੈਮਨ ਸਹਾਇਕ"
 
 #~ msgid ""
@@ -675,11 +675,11 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 #~ "ਚਿੱਤਰ ਨਾਂ ਠੀਕ ਮੁੱਲ ਹਨ। ਇਹਨਾਂ ਵਿੱਚ ਤਬਦੀਲੀ ਸਿਰਫ਼ ਅਗਲੇ ਸ਼ੈਸ਼ਨ ਤੋਂ ਹੀ ਹੋ ਸਕੇਗੀ।"
 
 # cinnamon-session/session-properties-capplet.c:227
-#~ msgid "- GNOME Splash Screen"
+#~ msgid "- Cinnamon Splash Screen"
 #~ msgstr "- ਗਨੋਮ ਸਕਰੀਨ ਵੇਖੋ"
 
 # cinnamon-session/session-properties-capplet.c:227
-#~ msgid "GNOME Splash Screen"
+#~ msgid "Cinnamon Splash Screen"
 #~ msgstr "ਗਨੋਮ ਸ਼ੁਰੂਆਤੀ ਸਕਰੀਨ"
 
 # cinnamon-session/startup-programs.c:332
@@ -701,7 +701,7 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 #~ msgid "Sessions Preferences"
 #~ msgstr "ਸ਼ੈਸ਼ਨ ਪਸੰਦ"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
 #~ msgstr "ਗਨੋਮ ਕੀਰਿੰਗ ਡੈਮਨ ਰੈਪਰ"
 
 #~ msgid "Selected option in the log out dialog"
@@ -721,8 +721,8 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 #~ msgid "Session management"
 #~ msgstr "ਸ਼ੈਸ਼ਨ ਪਰਬੰਧ"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "GNOME GUI ਲਾਇਬਰੇਰੀ + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Cinnamon GUI ਲਾਇਬਰੇਰੀ + EggSMClient"
 
 # cinnamon-session/save-session.c:112
 #~ msgid "Could not connect to the session manager\n"
@@ -735,8 +735,8 @@ msgstr "ਪਰੋਗਰਾਮ ਨੂੰ ਚੋਣਾਂ ਨਾਲ ਅਪਵਾ�
 #~ msgid "Play logout sound instead of login"
 #~ msgstr "ਲਾਗਇਨ ਦੀ ਬਜਾਏ ਲਾਗਆਉਟ ਸਾਊਡ ਚਲਾਓ"
 
-#~ msgid "- GNOME login/logout sound"
-#~ msgstr "- GNOME ਲਾਗਇਨ/ਲਾਗਆਉਟ ਸਾਊਂਡ"
+#~ msgid "- Cinnamon login/logout sound"
+#~ msgstr "- Cinnamon ਲਾਗਇਨ/ਲਾਗਆਉਟ ਸਾਊਂਡ"
 
 #~ msgid "Allow TCP connections"
 #~ msgstr "TCP ਕੁਨੈਕਸ਼ਨ ਮਨਜ਼ੂਰ"

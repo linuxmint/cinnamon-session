@@ -34,14 +34,14 @@ msgstr ""
 #: cinnamon-session/cinnamon-session.schemas.in.h:3
 msgid "If enabled, cinnamon-session will prompt the user before ending a session."
 msgstr ""
-"Bu fəallaşdırılıbsa, GNOME iclası sonlandırmadan öncə təsdiq istəyəcəkdir."
+"Bu fəallaşdırılıbsa, Cinnamon iclası sonlandırmadan öncə təsdiq istəyəcəkdir."
 
 #: cinnamon-session/cinnamon-session.schemas.in.h:4
 msgid ""
 "If enabled, cinnamon-session will save the session automatically. Otherwise, "
 "the logout dialog will have an option to save the session."
 msgstr ""
-"Bu fəallaşdırılıbsa, GNOME iclası avtomatik olaraq qeyd edəcək. Əks halda "
+"Bu fəallaşdırılıbsa, Cinnamon iclası avtomatik olaraq qeyd edəcək. Əks halda "
 "çıxış təsdiqi dialoqunda iclası qeyd etmə seçimi olacaq."
 
 #: cinnamon-session/cinnamon-session.schemas.in.h:5
@@ -50,9 +50,9 @@ msgstr "Çıxış təstiqi"
 
 #: cinnamon-session/cinnamon-session.schemas.in.h:6
 msgid ""
-"Preferred Image to use for the splash screen when logging in to the GNOME "
+"Preferred Image to use for the splash screen when logging in to the Cinnamon "
 "Desktop"
-msgstr "GNOME Masa Üstünə girərkən sıçrayan ekranda göstərilməsi istənən rəsm."
+msgstr "Cinnamon Masa Üstünə girərkən sıçrayan ekranda göstərilməsi istənən rəsm."
 
 #: cinnamon-session/cinnamon-session.schemas.in.h:7
 msgid "Save sessions"
@@ -185,12 +185,12 @@ msgstr "Hər girişdə başlat"
 #.
 #: cinnamon-session/csm-gsd.c:41
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
 msgstr ""
-"GNOME Qurğular Demonu başlarkən xəta yarandı.\n"
+"Cinnamon Qurğular Demonu başlarkən xəta yarandı.\n"
 "\n"
 "Örtü,lər səslər vəya arxa planlar kimi bəzi şeylər düzgün işləməyə bilər."
 
@@ -210,11 +210,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
-"Bir sonrakı girişinizdə GNOME hələ də Qurğular Demonunu yenidən başladmaya "
+"Bir sonrakı girişinizdə Cinnamon hələ də Qurğular Demonunu yenidən başladmaya "
 "çalışacaq."
 
 #: cinnamon-session/csm-gsd.c:115
@@ -273,12 +273,12 @@ msgstr "Alıcıların bitişi üçün xərclənən millisaniyə (0=həmişə)"
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
 "%s üçün internet ünvanı tapıla bilmir.\n"
-"Bu GNOME-un düzgün işləməməsinə səbəb olacaq.\n"
+"Bu Cinnamon-un düzgün işləməməsinə səbəb olacaq.\n"
 "Problemi bəlkə /etc/hosts faylına %s alavə\n"
 "edərək həll edə bilərsiniz."
 

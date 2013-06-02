@@ -74,16 +74,16 @@ msgid "Could not display help document"
 msgstr "Nu se poate afișa documentul de ajutor"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Versiunea GNOME de rezervă"
+msgid "Cinnamon fallback"
+msgstr "Versiunea Cinnamon de rezervă"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Această sesiune vă va autentifica în GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Această sesiune vă va autentifica în Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -356,26 +356,26 @@ msgid "Stopped by signal %d"
 msgstr "Oprit de semnalul %d"
 
 #: ../cinnamon-session/csm-manager.c:1362
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 nu a reușit să pornească"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 nu a reușit să pornească"
 
 #: ../cinnamon-session/csm-manager.c:1363
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Din păcate, GNOME 3 nu a reușit să pornească corect și a pornit versiunea "
+"Din păcate, Cinnamon 3 nu a reușit să pornească corect și a pornit versiunea "
 "<i>de rezervă</i>.\n"
 "\n"
 "Cel mai probabil aceasta înseamnă că sistemul dumneavoastră (placa grafică "
-"sau driverul acesteia) nu poate oferi o experiență GNOME 3 completă."
+"sau driverul acesteia) nu poate oferi o experiență Cinnamon 3 completă."
 
 #: ../cinnamon-session/csm-manager.c:1365
-msgid "Learn more about GNOME 3"
-msgstr "Aflați mai multe despre GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Aflați mai multe despre Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1462 ../cinnamon-session/csm-manager.c:2193
 msgid "Not responding"
@@ -422,8 +422,8 @@ msgid "Do not load user-specified applications"
 msgstr "Nu încărca aplicațiile specificate de utilizator"
 
 #: ../cinnamon-session/main.c:300
-msgid " - the GNOME session manager"
-msgstr " - Administrator de sesiune GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " - Administrator de sesiune Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -549,8 +549,8 @@ msgstr "Program apelat cu opțiuni care intră în conflict"
 #~ msgid "Kill session"
 #~ msgstr "Închide forțat sesiunea"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "Ajutor serviciu configurări GNOME"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Ajutor serviciu configurări Cinnamon"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -584,8 +584,8 @@ msgstr "Program apelat cu opțiuni care intră în conflict"
 #~ "Se așteaptă ca programul să termine. Întreruperea acestuia poate duce la "
 #~ "pierderea activității de până acum."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- Imagine de pornire GNOME"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Imagine de pornire Cinnamon"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "Imagine pornire GNOME"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Imagine pornire Cinnamon"

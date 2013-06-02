@@ -76,15 +76,15 @@ msgid "Could not display help document"
 msgstr "Не могу да прикажем документ помоћи"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "Пребацивање Гнома"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "Гном"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "Ова сесија вас пријављује у Гном"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -367,16 +367,16 @@ msgstr ""
 "Молим одјавите се и покушајте опет."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "Гном 3 није успео да се учита"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "Нажалост Гном 3 није успео да правилно започне са радом и зато је започео у "
 "<i>режиму пребацивања</i>.\n"
@@ -385,7 +385,7 @@ msgstr ""
 "програм) није у стању да покрене потпуно Гном 3 окружење."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "Сазнајте више о Гному 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -452,7 +452,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Приказује прозорче неуспеха за испробавање"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " — управник Гномовом сесијом"
 
 #: ../tools/cinnamon-session-quit.c:53

@@ -80,19 +80,19 @@ msgid "AT SPI Registry Wrapper"
 msgstr ""
 
 #: ../compat/gnome-keyring-daemon-wrapper.desktop.in.in.in.h:1
-msgid "GNOME Keyring Daemon Wrapper"
+msgid "Cinnamon Keyring Daemon Wrapper"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ეს სესია გნომში შესვლის საშუალებას იძლევა"
 
 #: ../data/cinnamon-session.schemas.in.h:1
@@ -298,8 +298,8 @@ msgid "Session management"
 msgstr "სესიის სახელი"
 
 #: ../egg/eggsmclient-libgnomeui.c:136
-msgid "GNOME GUI Library + EggSMClient"
-msgstr "GNOME GUI Library + EggSMClient"
+msgid "Cinnamon GUI Library + EggSMClient"
+msgstr "Cinnamon GUI Library + EggSMClient"
 
 #: ../egg/eggsmclient.c:185
 msgid "Disable connection to session manager"
@@ -493,15 +493,15 @@ msgid "Do not load user-specified applications"
 msgstr ""
 
 #: ../cinnamon-session/main.c:528
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "ვერ ვუკავშირდები სესიის მენეჯერს"
 
 #: ../splash/cinnamon-session-splash.c:291
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr "ანახე მისალმების ფანჯარა"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr ""
 
 #: ../tools/cinnamon-session-save.c:65
@@ -627,7 +627,7 @@ msgstr ""
 #~ msgstr "ირთვება ყოველი რეგისტრირებისას."
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
@@ -652,7 +652,7 @@ msgstr ""
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
@@ -692,7 +692,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""

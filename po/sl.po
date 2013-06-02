@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2012-07-18 11:32+0000\n"
 "PO-Revision-Date: 2012-07-19 09:56+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language-Team: Slovenian Cinnamon Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,17 +76,17 @@ msgid "Could not display help document"
 msgstr "Ni mogoče prikazati dokumenta pomoči"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Povratni nabor GNOME"
+msgid "Cinnamon fallback"
+msgstr "Povratni nabor Cinnamon"
 
 #: ../data/cinnamon.session.desktop.in.in.h:1
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Seja vas prijavi v GNOME namizje"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Seja vas prijavi v Cinnamon namizje"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -354,22 +354,22 @@ msgstr ""
 "Odjavite se in poskusite znova."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "Nalaganje namizja GNOME 3 je spodletelo"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Nalaganje namizja Cinnamon 3 je spodletelo"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n"
+"Unfortunately Cinnamon 3 failed to start properly and started in the <i>fallback mode</i>.\n"
 "\n"
-"This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."
+"This most likely means your system (graphics hardware or driver) is not capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Nalaganje namizja GNOME 3 je spodletelo, zato je namizje <i>povrnjeno na  delujočo različico</i>.\n"
+"Nalaganje namizja Cinnamon 3 je spodletelo, zato je namizje <i>povrnjeno na  delujočo različico</i>.\n"
 "\n"
-"Napaka običajno pomeni, da grafična strojna oprema ali gonilnik ni primeren za zagon namizja GNOME 3 v polnem grafičnem načinu."
+"Napaka običajno pomeni, da grafična strojna oprema ali gonilnik ni primeren za zagon namizja Cinnamon 3 v polnem grafičnem načinu."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Več podrobnosti o namizju GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Več podrobnosti o namizju Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493
 #: ../cinnamon-session/csm-manager.c:2234
@@ -433,8 +433,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Pokaži pogovorno okno napak med preizkušanjem."
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- upravljalnik seje GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- upravljalnik seje Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

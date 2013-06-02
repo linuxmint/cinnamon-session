@@ -79,15 +79,15 @@ msgid "AT SPI Registry Wrapper"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "ګنوم"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "دا ناسته تاسو ګنوم ته ننباسي"
 
 #: ../data/cinnamon-session.schemas.in.h:1
@@ -465,15 +465,15 @@ msgid "Do not load user-specified applications"
 msgstr "کارن-پېژندلي کاريالونه نه پرانيستل"
 
 #: ../cinnamon-session/main.c:460
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "د ګنوم ناستې سمبالګر - "
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr "د ګنوم پېلوونکې پرده - "
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr "د ګنوم پېلوونکې پرده"
 
 #: ../tools/cinnamon-session-save.c:65
@@ -532,7 +532,7 @@ msgstr ""
 #~ msgid "Session management"
 #~ msgstr "ناسته سمبالونه"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
 #~ msgstr "EggSMClient + کتابتون‎ GUI د جنومي‎"
 
 #~ msgid "Could not connect to the session manager\n"
@@ -544,5 +544,5 @@ msgstr ""
 #~ msgid "Play logout sound instead of login"
 #~ msgstr "د ننوتو په ځای د وتو غږ غږول"
 
-#~ msgid "- GNOME login/logout sound"
+#~ msgid "- Cinnamon login/logout sound"
 #~ msgstr "د جنومي ننوتون/وتون غږ - "

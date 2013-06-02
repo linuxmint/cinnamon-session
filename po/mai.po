@@ -70,15 +70,15 @@ msgid "Could not display help document"
 msgstr "मद्दति दस्ताबेज़ नहि देखाए सकल"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "गनोम"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ई सत्र अहाँक गनोममे लागिन दैछ"
 
 #: ../data/cinnamon-session.schemas.in.in.h:1
@@ -452,15 +452,15 @@ msgid "Do not load user-specified applications"
 msgstr ""
 
 #: ../cinnamon-session/main.c:457
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr ""
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
+msgid "- Cinnamon Splash Screen"
 msgstr ""
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
+msgid "Cinnamon Splash Screen"
 msgstr ""
 
 #: ../tools/cinnamon-session-save.c:65

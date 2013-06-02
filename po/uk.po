@@ -74,16 +74,16 @@ msgid "Could not display help document"
 msgstr "Не вдалось показати довідку"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Запас GNOME"
+msgid "Cinnamon fallback"
+msgstr "Запас Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Це — сеанс входу в GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Це — сеанс входу в Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -360,26 +360,26 @@ msgstr ""
 "Будь ласка, вийдіть і спробуйте знову."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "Не вдалось завантажити GNOME 3"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Не вдалось завантажити Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"На жаль, не вдалось запустити GNOME 3 належним чином і його запущено в "
+"На жаль, не вдалось запустити Cinnamon 3 належним чином і його запущено в "
 "<i>резервному режимі</i>.\n"
 "\n"
 "Найімовірніше, це означає, що ваша система (графічне обладнання або "
-"відеодрайвер) не підтримує роботу всіх можливостей GNOME 3."
+"відеодрайвер) не підтримує роботу всіх можливостей Cinnamon 3."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Докладніше про GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Докладніше про Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -444,8 +444,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Показувати величезне вікно помилок для випробування "
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " — керування сеансом GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " — керування сеансом Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -521,8 +521,8 @@ msgstr "Програму запущено з несумісними параме
 #~ msgid "Timed out"
 #~ msgstr "Вичерпано"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "Допоміжна програма служби параметрів GNOME"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Допоміжна програма служби параметрів Cinnamon"
 
 #~ msgid "Default session"
 #~ msgstr "Типовий сеанс"
@@ -634,11 +634,11 @@ msgstr "Програму запущено з несумісними параме
 #~ msgid "GConf key used to lookup default session"
 #~ msgstr "Ключ GConf, що використовується для огляду типового сеансу"
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- екран-заставка GNOME"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- екран-заставка Cinnamon"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "Екран-заставка GNOME"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Екран-заставка Cinnamon"
 
 #~ msgid "Show logout dialog"
 #~ msgstr "Показати діалог завершення сеансу"
@@ -674,8 +674,8 @@ msgstr "Програму запущено з несумісними параме
 #~ msgid "The name of the startup program cannot be empty"
 #~ msgstr "Назва команди запуску не може бути порожньою"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
-#~ msgstr "Обгортка служби GNOME Keyring"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
+#~ msgstr "Обгортка служби Cinnamon Keyring"
 
 #~ msgid "Selected option in the log out dialog"
 #~ msgstr "Виділений параметр у діалозі виходу з сеансу"
@@ -695,5 +695,5 @@ msgstr "Програму запущено з несумісними параме
 #~ msgid "Session management"
 #~ msgstr "Керування сеансами"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "GNOME GUI Library + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "Cinnamon GUI Library + EggSMClient"

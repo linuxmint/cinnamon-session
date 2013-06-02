@@ -81,16 +81,16 @@ msgid "Could not display help document"
 msgstr "Nelze zobrazit dokument nápovědy"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "Záložní prostředí GNOME"
+msgid "Cinnamon fallback"
+msgstr "Záložní prostředí Cinnamon"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Toto sezení vás přihlásí do GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Toto sezení vás přihlásí do Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -371,26 +371,26 @@ msgstr ""
 "Odhlaste se prosím a zkuste to znovu."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "Nelze načíst GNOME 3"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Nelze načíst Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"GNOME 3 bohužel nemohlo být správně spuštěno a bylo přepnuto do <i>záložního "
+"Cinnamon 3 bohužel nemohlo být správně spuštěno a bylo přepnuto do <i>záložního "
 "režimu</i>.\n"
 "\n"
 "Příčinou je patrně váš systém (grafický hardware nebo ovladač), na kterém "
-"není možné provozovat GNOME 3 se všemi jeho vlastnostmi."
+"není možné provozovat Cinnamon 3 se všemi jeho vlastnostmi."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "Poznejte lépe GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "Poznejte lépe Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -456,8 +456,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Zobrazit dialogové okno černé barvy pro testování"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr " – správce sezení GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " – správce sezení Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

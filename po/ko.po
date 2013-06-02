@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2012-07-17 02:00+0000\n"
 "PO-Revision-Date: 2012-09-15 17:18+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
-"Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
+"Language-Team: Cinnamon Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,15 +73,15 @@ msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
+msgid "Cinnamon fallback"
 msgstr "그놈 대체"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "그놈"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "이 세션을 사용하면 그놈에 로그인합니다"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -351,23 +351,23 @@ msgstr ""
 "로그아웃하고 다시 시도하십시오."
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
+msgid "Cinnamon 3 Failed to Load"
 msgstr "그놈 3 읽어들이기 실패했습니다"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
 "그놈 3 시작이 실패해서 <i>대체 모드</i>로 시작합니다.\n"
 "\n"
 "보통 이 경우 완전한 그놈 3 기능을 사용하기에는 시스템 기능이(그래픽 하드웨어 또는 드라이버) 부족한 경우입니다."
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
+msgid "Learn more about Cinnamon 3"
 msgstr "그놈 3에 대해 좀 더 알고 싶으면"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
@@ -433,7 +433,7 @@ msgid "Show the fail whale dialog for testing"
 msgstr "테스트 용도로 고래 표시"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "- 그놈 세션 관리자"
 
 #: ../tools/cinnamon-session-quit.c:53

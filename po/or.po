@@ -79,15 +79,15 @@ msgid "Could not display help document"
 msgstr "ସାହାଯ୍ଯ ଦଲିଲ ଦେଖାଇହେଲା ନାହିଁ"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ଆବର୍ତ୍ତନ"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ଆବର୍ତ୍ତନ"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
 msgstr "ନୋମ"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
 msgstr "ଏହି ଅଧିବେଶନ ଆପଣଙ୍କୁ ନୋମ ରେ ଲଗ କରାଇଥାଏ"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
@@ -333,26 +333,26 @@ msgid "_Shut Down"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_S)"
 
 #: ../cinnamon-session/csm-manager.c:1273
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 ଧାରଣ କରିବାରେ ବିଫଳ"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 ଧାରଣ କରିବାରେ ବିଫଳ"
 
 #: ../cinnamon-session/csm-manager.c:1274
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your graphics hardware is not capable to run the full "
-"GNOME 3 experience"
+"Cinnamon 3 experience"
 msgstr ""
-"ଦୁର୍ଭାଗ୍ୟ ବଶତଃ GNOME 3 ସଠିକ ଭାବରେ ଆରମ୍ଭ ହେବାରେ ବିଫଳ ହେଲା ଏବଂ"
+"ଦୁର୍ଭାଗ୍ୟ ବଶତଃ Cinnamon 3 ସଠିକ ଭାବରେ ଆରମ୍ଭ ହେବାରେ ବିଫଳ ହେଲା ଏବଂ"
 "<i>ଆବର୍ତ୍ତନ ଧାରାରେ</i> ଆରମ୍ଭ ହେଲା।\n"
 "\n"
-"ସମ୍ଭବତଃ ଏହା ଅର୍ଥ ଆପଣଙ୍କର ଆଲେଖିକ ହାର୍ଡୱେର ସମ୍ପୂର୍ଣ୍ଣ GNOME 3 ଅଭିଜ୍ଞ୍ୟତାକୁ "
+"ସମ୍ଭବତଃ ଏହା ଅର୍ଥ ଆପଣଙ୍କର ଆଲେଖିକ ହାର୍ଡୱେର ସମ୍ପୂର୍ଣ୍ଣ Cinnamon 3 ଅଭିଜ୍ଞ୍ୟତାକୁ "
 "ଚଲାଇବାରେ ସକ୍ଷମ ହୋଇନଥାଏ"
 
 #: ../cinnamon-session/csm-manager.c:1276
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 ବିଷୟରେ ଅଧିକ ଜ୍ଞାନ ଆହରଣ କରନ୍ତୁ"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 ବିଷୟରେ ଅଧିକ ଜ୍ଞାନ ଆହରଣ କରନ୍ତୁ"
 
 #: ../cinnamon-session/csm-manager.c:1373 ../cinnamon-session/csm-manager.c:2097
 msgid "Not responding"
@@ -397,8 +397,8 @@ msgid "Do not load user-specified applications"
 msgstr "ଚାଳକ ନିର୍ଦ୍ଧାରିତ ପ୍ରୟୋଗଗୁଡ଼ିକୁ ଧାରଣ କରନ୍ତୁ ନାହିଁ"
 
 #: ../cinnamon-session/main.c:300
-msgid " - the GNOME session manager"
-msgstr " - GNOME ଅଧିବେଶନ ପରିଚାଳକ"
+msgid " - the Cinnamon session manager"
+msgstr " - Cinnamon ଅଧିବେଶନ ପରିଚାଳକ"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -426,8 +426,8 @@ msgstr "ଅଧିବେଶନ ପରିଚାଳକଙ୍କ ସହିତ ସମ
 msgid "Program called with conflicting options"
 msgstr "ଦ୍ୱନ୍ଦମୟ ବିକଳ୍ପଗୁଡ଼ିକ ସହିତ ଡକାହେଉଥିବା ପ୍ରଗ୍ରାମ"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME ସଂରଚନା ଡେମନ ସହାୟକ"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon ସଂରଚନା ଡେମନ ସହାୟକ"
 
 #~ msgid "Default session"
 #~ msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଅଧିବେଶନ"
@@ -534,11 +534,11 @@ msgstr "ଦ୍ୱନ୍ଦମୟ ବିକଳ୍ପଗୁଡ଼ିକ ସହି�
 #~ msgid "GConf key used to lookup default session"
 #~ msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଅଧିବେଶନକୁ ଦେଖିବା ପାଇଁ GConf କି"
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME ଗୁରୁତ୍ବପୂର୍ଣ୍ଣ ପରଦା"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon ଗୁରୁତ୍ବପୂର୍ଣ୍ଣ ପରଦା"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME ଗୁରୁତ୍ବପୂର୍ଣ୍ଣ ପରଦା"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon ଗୁରୁତ୍ବପୂର୍ଣ୍ଣ ପରଦା"
 
 #~ msgid "Show logout dialog"
 #~ msgstr "ଲଗଆଉଟ ସଂଳାପ ଦର୍ଶାନ୍ତୁ"

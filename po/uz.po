@@ -79,16 +79,16 @@ msgid "AT SPI Registry Wrapper"
 msgstr ""
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
+msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Ushbu seans GNOME'ga kirishingizni taʼminlaydi"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Ushbu seans Cinnamon'ga kirishingizni taʼminlaydi"
 
 #: ../data/cinnamon-session.schemas.in.h:1
 msgid "Default session"
@@ -465,16 +465,16 @@ msgid "Do not load user-specified applications"
 msgstr "Foydalanuvchi dasturlari ishga tushirilmasin"
 
 #: ../cinnamon-session/main.c:528
-msgid " - the GNOME session manager"
-msgstr " - GNOME seans boshqaruvchisi"
+msgid " - the Cinnamon session manager"
+msgstr " - Cinnamon seans boshqaruvchisi"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
-msgstr "- GNOME splesh oynasi"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Cinnamon splesh oynasi"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "GNOME splesh oynasi"
+msgid "Cinnamon Splash Screen"
+msgstr "Cinnamon splesh oynasi"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Set the current session name"

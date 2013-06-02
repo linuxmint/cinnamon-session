@@ -69,17 +69,17 @@ msgid "Could not display help document"
 msgstr "Yardım vesiqası kösterilamadı"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ricatı"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ricatı"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
 # tüklü
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "Bu oturım sizni GNOME'ğa içeri imzalandırır"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "Bu oturım sizni Cinnamon'ğa içeri imzalandırır"
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -361,26 +361,26 @@ msgid "Stopped by signal %d"
 msgstr "Signal %d tarafından toqtatıldı"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 Yüklenmekte Muvaffaqiyetsiz Edi"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 Yüklenmekte Muvaffaqiyetsiz Edi"
 
 #: ../cinnamon-session/csm-manager.c:1397
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"Teessüf ki GNOME 3 uyğun olaraq başlayamadı ve <i>ricat tarzında</i> "
+"Teessüf ki Cinnamon 3 uyğun olaraq başlayamadı ve <i>ricat tarzında</i> "
 "başladı.\n"
 "\n"
-"Bu eñ muhtemelen sistemiñiz (grafikler donanımı yaki sürücisi) tolu GNOME 3 "
+"Bu eñ muhtemelen sistemiñiz (grafikler donanımı yaki sürücisi) tolu Cinnamon 3 "
 "tecribesini sunmaq içün qabiliyetli degil demektir."
 
 #: ../cinnamon-session/csm-manager.c:1399
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 haqqında daha çoq ögren"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 haqqında daha çoq ögren"
 
 #: ../cinnamon-session/csm-manager.c:1496 ../cinnamon-session/csm-manager.c:2269
 msgid "Not responding"
@@ -451,8 +451,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "Sınama içün ciddiy hata dialoğını köster"
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
-msgstr " - GNOME oturım idarecisi"
+msgid " - the Cinnamon session manager"
+msgstr " - Cinnamon oturım idarecisi"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -597,8 +597,8 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 #~ msgid "Kill session"
 #~ msgstr "Oturımnı öldür"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME Tesbitleri Cın Yardımcısı"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon Tesbitleri Cın Yardımcısı"
 
 # tüklü
 #~ msgid ""
@@ -636,11 +636,11 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 #~ "Programnıñ tamamlanuvı içün beklene.  Programnıñ kestirilüvi yapqan "
 #~ "olğanıñız işlerni coyuvıñızğa sebep ola bilir."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME Saçrama Ekranı"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon Saçrama Ekranı"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME Saçrama Ekranı"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon Saçrama Ekranı"
 
 #~ msgid "The name of the startup program cannot be empty"
 #~ msgstr "Başlanğıç programınıñ ismi boş olamaz"
@@ -675,13 +675,13 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 #~ msgstr "Oturım veriyoluna bağlanılamadı"
 
 # tüklü
-#~ msgid "Failsafe GNOME"
-#~ msgstr "Qusur-öñler GNOME"
+#~ msgid "Failsafe Cinnamon"
+#~ msgstr "Qusur-öñler Cinnamon"
 
 # tüklü
-#~ msgid "This session logs you into GNOME without user applications"
+#~ msgid "This session logs you into Cinnamon without user applications"
 #~ msgstr ""
-#~ "Bu oturım sizni qullanıcı uyğulamaları olmağan GNOME'ğa içeri imzalandırır"
+#~ "Bu oturım sizni qullanıcı uyğulamaları olmağan Cinnamon'ğa içeri imzalandırır"
 
 #~ msgid "Log Out of the Session"
 #~ msgstr "Oturımdan Tışarı İmzalan"
@@ -742,18 +742,18 @@ msgstr "Program çatışqan ihtiyariyat ile çağırıldı"
 
 # tüklü
 #~ msgid ""
-#~ "This session logs you into GNOME with the traditional panel without any "
+#~ "This session logs you into Cinnamon with the traditional panel without any "
 #~ "graphical effect."
 #~ msgstr ""
 #~ "Bu oturım sizni her hangi grafikiy effekti olmağan ananeviy panelli "
-#~ "GNOME'ğa içeri imzalandırır."
+#~ "Cinnamon'ğa içeri imzalandırır."
 
 #~ msgid "Ubuntu Classic (No effects)"
 #~ msgstr "Ubuntu Klassik (Effektler yoq)"
 
 # tüklü
-#~ msgid "This session logs you into GNOME with the traditional panel"
-#~ msgstr "Bu oturım sizni ananeviy panelli GNOME'ğa içeri imzalandırır"
+#~ msgid "This session logs you into Cinnamon with the traditional panel"
+#~ msgstr "Bu oturım sizni ananeviy panelli Cinnamon'ğa içeri imzalandırır"
 
 #~ msgid "Ubuntu Classic"
 #~ msgstr "Ubuntu Klassik"

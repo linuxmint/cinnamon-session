@@ -220,7 +220,7 @@ msgstr "कार्यक्रम"
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -245,7 +245,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
@@ -291,8 +291,8 @@ msgstr "सत्रमा कार्यक्रम %s फेला पार
 #: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
 "जिनोम सत्र प्रबन्धक राम्रोसँग सुरु गर्न सकिँदैन ।  कृपया यसलाई जिनोम बगका रूपमा प्रतिवेदन गर्नुहोस् । कृपया यस आईसीई(ICE) असफलता सन्देशलाई बग प्रतिवेदनमा समाविष्ट गर्नुहोस्:  '%"
@@ -301,8 +301,8 @@ msgstr ""
 #: ../cinnamon-session/ice.c:511
 #, c-format
 msgid ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable, you could try logging in via the failsafe session and "
 "ensuring that it is."
 msgstr "जिनोम सत्र प्रबन्धक फाइल '%s' ताल्चा लगाउन असफल भयो ।  कृपया यसलाई जिनोम बगका रूपमा प्रतिवेदन गर्नुहोस् ।  फाइलको डाइरेक्टरी लेख्न नसकिने भएमा यस प्रकारको त्रुटि कहिलेकाही उत्पन्न हुनसक्छ, तपाईँले फेलसेफ सत्रबाट लगइन गर्न र यो भएको निश्चित गर्न सक्नुहुन्छ ।"
@@ -310,15 +310,15 @@ msgstr "जिनोम सत्र प्रबन्धक फाइल '%s' 
 #: ../cinnamon-session/ice.c:538
 #, c-format
 msgid ""
-"The GNOME session manager was unable to read the file: '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file: '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 msgstr "जिनोम सत्र प्रबन्धक फाइल पढ्न असमर्थ थियो: '%s'.  यो फाइल अवस्थित भएमाजिनोमका लागि ठीक तरिकाले कार्य गर्न तपाईँले पढ्नयोग्य हुनुपर्दछ ।  फलसेफ सत्रसँग लगइन गर्ने प्रयास गर्नुहोस् र यस फाइललाई हटाउनुहोस् ।"
 
 #: ../cinnamon-session/ice.c:583
 #, c-format
 msgid ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 msgstr "फाइल '%s'मा लेख्न सकेन ।  जिनोमले राम्रोसँग कार्य गर्न यो फाइल लेख्नयोग्य हुनुपर्दछ ।  फलसेफ सत्रसँग लगइन गर्ने प्रयास गर्नुहोस र यस फाइललाई हटाउनुहोस् ।  फाइलको डाइरेक्टरी लेख्नयोग्य भएको पनि निश्चित गर्नुहोस् ।"
@@ -423,7 +423,7 @@ msgstr "घडी समायोजन गर्नुहोस्"
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
@@ -441,7 +441,7 @@ msgid "Try Again"
 msgstr "फेरि प्रयास गर्नुहोस्"
 
 #: ../cinnamon-session/main.c:651
-msgid "- Manage the GNOME session"
+msgid "- Manage the Cinnamon session"
 msgstr "- जिनोम सत्र प्रबन्ध गर्नुहोस्"
 
 #: ../cinnamon-session/manager.c:513
@@ -543,7 +543,7 @@ msgid "could not connect to the session manager\n"
 msgstr "सत्र प्रबन्धकमा जडान गर्न सकेन\n"
 
 #: ../cinnamon-session/session-properties-capplet.c:509
-msgid "session manager does not support GNOME extensions\n"
+msgid "session manager does not support Cinnamon extensions\n"
 msgstr "सत्र प्रबन्धकले जिनोम विस्तार समर्थन गर्दैन\n"
 
 #: ../cinnamon-session/session-properties.c:51

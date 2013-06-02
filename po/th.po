@@ -74,16 +74,16 @@ msgid "Could not display help document"
 msgstr "ไม่สามารถแสดงเอกสารวิธีใช้"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME แบบสำรอง"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon แบบสำรอง"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "วาระนี้จะเข้าสู่ GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "วาระนี้จะเข้าสู่ Cinnamon"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -348,25 +348,25 @@ msgstr ""
 "กรุณาออกจากระบบ แล้วลองเข้ามาใหม่"
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 โหลดไม่สำเร็จ"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 โหลดไม่สำเร็จ"
 
 #: ../cinnamon-session/csm-manager.c:1394
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"โชคไม่ดีที่ GNOME 3 เริ่มทำงานไม่สำเร็จ โดยเป็นการทำงานใน <i>โหมดสำรอง</i>\n"
+"โชคไม่ดีที่ Cinnamon 3 เริ่มทำงานไม่สำเร็จ โดยเป็นการทำงานใน <i>โหมดสำรอง</i>\n"
 "\n"
-"เป็นไปได้สูงว่าระบบของคุณ (การ์ดจอหรือไดรเวอร์) ไม่สามารถรองรับการทำงานของ GNOME 3 "
+"เป็นไปได้สูงว่าระบบของคุณ (การ์ดจอหรือไดรเวอร์) ไม่สามารถรองรับการทำงานของ Cinnamon 3 "
 "อย่างเต็มรูปแบบได้"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "ศึกษาเพิ่มเติมเกี่ยวกับ GNOME 3"
+msgid "Learn more about Cinnamon 3"
+msgstr "ศึกษาเพิ่มเติมเกี่ยวกับ Cinnamon 3"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -431,8 +431,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "แสดงกล่องแจ้งพังเพื่อทดสอบ"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- โปรแกรมจัดการวาระ GNOME"
+msgid " - the Cinnamon session manager"
+msgstr "- โปรแกรมจัดการวาระ Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"
@@ -592,8 +592,8 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgid "AT SPI Registry Wrapper"
 #~ msgstr "โปรแกรมครอบเรจิสตรี AT SPI"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "ตัวช่วยดีมอนค่าตั้ง GNOME"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "ตัวช่วยดีมอนค่าตั้ง Cinnamon"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -624,11 +624,11 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ "lose work."
 #~ msgstr "จะรอให้โปรแกรมทำงานจบ การขัดจังหวะโปรแกรมอาจทำให้เสียงานบางอย่างของคุณไป"
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- รูปไตเติลเริ่มระบบ GNOME"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- รูปไตเติลเริ่มระบบ Cinnamon"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "รูปไตเติลเริ่มระบบ GNOME"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "รูปไตเติลเริ่มระบบ Cinnamon"
 
 #~ msgid "The name of the startup program cannot be empty"
 #~ msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระจะว่างไม่ได้"
@@ -651,14 +651,14 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgid "Configure your sessions"
 #~ msgstr "ตั้งค่าสำหรับวาระของคุณ"
 
-#~ msgid "GNOME Keyring Daemon Wrapper"
-#~ msgstr "โปรแกรมครอบดีมอนพวงกุญแจ GNOME"
+#~ msgid "Cinnamon Keyring Daemon Wrapper"
+#~ msgstr "โปรแกรมครอบดีมอนพวงกุญแจ Cinnamon"
 
 #~ msgid "Session management"
 #~ msgstr "การจัดการวาระ"
 
-#~ msgid "GNOME GUI Library + EggSMClient"
-#~ msgstr "ไลบรารี GUI ของ GNOME + EggSMClient"
+#~ msgid "Cinnamon GUI Library + EggSMClient"
+#~ msgstr "ไลบรารี GUI ของ Cinnamon + EggSMClient"
 
 #~ msgid ""
 #~ "The Window manager that cinnamon-session will start. Valid values are "
@@ -747,12 +747,12 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgstr "สถานะ"
 
 #~ msgid ""
-#~ "There was an error starting the GNOME Settings Daemon.\n"
+#~ "There was an error starting the Cinnamon Settings Daemon.\n"
 #~ "\n"
 #~ "Some things, such as themes, sounds, or background settings may not work "
 #~ "correctly."
 #~ msgstr ""
-#~ "เกิดข้อผิดพลาดขณะเริ่มดีมอนจัดการค่าตั้งของ GNOME\n"
+#~ "เกิดข้อผิดพลาดขณะเริ่มดีมอนจัดการค่าตั้งของ Cinnamon\n"
 #~ "\n"
 #~ "บางสิ่งบางอย่าง เช่น ชุดตกแต่ง เสียง พื้นหลัง หรือ สิ่งอื่น ๆ อาจทำงานไม่ถูกต้อง"
 
@@ -770,11 +770,11 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgid ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME will still try to restart the Settings Daemon next time you log in."
+#~ "Cinnamon will still try to restart the Settings Daemon next time you log in."
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "GNOME จะพยายามเรียกดีมอนจัดการค่าตั้งอีกครั้งเมื่อคุณเข้าระบบครั้งต่อไป"
+#~ "Cinnamon จะพยายามเรียกดีมอนจัดการค่าตั้งอีกครั้งเมื่อคุณเข้าระบบครั้งต่อไป"
 
 #~ msgid "The Settings Daemon restarted too many times."
 #~ msgstr "ดีมอนจัดการค่าตั้งถูกเริ่มทำงานใหม่หลายครั้งจนผิดปกติ"
@@ -799,39 +799,39 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgstr "ไม่พบโปรแกรม %s ในวาระ\n"
 
 #~ msgid ""
-#~ "The GNOME session manager cannot start properly.  Please report this as a "
-#~ "GNOME bug. Please include this ICE failure message in the bug report:  "
+#~ "The Cinnamon session manager cannot start properly.  Please report this as a "
+#~ "Cinnamon bug. Please include this ICE failure message in the bug report:  "
 #~ "'%s'.  Meanwhile you could try logging in using the failsafe session."
 #~ msgstr ""
-#~ "โปรแกรมจัดการวาระ GNOME ไม่สามารถเริ่มทำงานได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง GNOME "
+#~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถเริ่มทำงานได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง Cinnamon "
 #~ "โดยแนบข้อความข้อผิดพลาดจาก ICE ต่อไปนี้ไปด้วย: '%s' ในระหว่างนี้ "
 #~ "คุณอาจลองเข้าระบบด้วยวาระ failsafe แทน"
 
 #~ msgid ""
-#~ "The GNOME session manager was unable to lock the file '%s'.  Please "
-#~ "report this as a GNOME bug.  Sometimes this error may occur if the file's "
+#~ "The Cinnamon session manager was unable to lock the file '%s'.  Please "
+#~ "report this as a Cinnamon bug.  Sometimes this error may occur if the file's "
 #~ "directory is unwritable, you could try logging in via the failsafe "
 #~ "session and ensuring that it is."
 #~ msgstr ""
-#~ "โปรแกรมจัดการวาระ GNOME ไม่สามารถล็อคแฟ้ม '%s' ได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง "
-#~ "GNOME ในบางครั้ง ข้อผิดพลาดนี้ก็อาจเกิดขึ้นได้ ถ้าไดเรกทอรีที่เก็บแฟ้มไม่อนุญาตให้เขียน "
+#~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถล็อคแฟ้ม '%s' ได้ กรุณารายงานข้อผิดพลาดนี้ไปยัง "
+#~ "Cinnamon ในบางครั้ง ข้อผิดพลาดนี้ก็อาจเกิดขึ้นได้ ถ้าไดเรกทอรีที่เก็บแฟ้มไม่อนุญาตให้เขียน "
 #~ "คุณอาจลองเข้าระบบด้วยวาระ failsafe แล้วตรวจสอบดู"
 
 #~ msgid ""
-#~ "The GNOME session manager was unable to read the file: '%s'.  If this "
-#~ "file exists it must be readable by you for GNOME to work properly.  Try "
+#~ "The Cinnamon session manager was unable to read the file: '%s'.  If this "
+#~ "file exists it must be readable by you for Cinnamon to work properly.  Try "
 #~ "logging in with the failsafe session and removing this file."
 #~ msgstr ""
-#~ "โปรแกรมจัดการวาระ GNOME ไม่สามารถอ่านแฟ้ม: '%s' ถ้าแฟ้มนี้มีอยู่แล้ว "
-#~ "คุณก็จะต้องมีสิทธิ์อ่านได้ด้วย GNOME จะได้ทำงานได้อย่างถูกต้อง ลองเข้าระบบด้วยวาระ "
+#~ "โปรแกรมจัดการวาระ Cinnamon ไม่สามารถอ่านแฟ้ม: '%s' ถ้าแฟ้มนี้มีอยู่แล้ว "
+#~ "คุณก็จะต้องมีสิทธิ์อ่านได้ด้วย Cinnamon จะได้ทำงานได้อย่างถูกต้อง ลองเข้าระบบด้วยวาระ "
 #~ "failsafe แล้วลบแฟ้มนี้ดู"
 
 #~ msgid ""
 #~ "Could not write to file '%s'.  This file must be writable in order for "
-#~ "GNOME to function properly.  Try logging in with the failsafe session and "
+#~ "Cinnamon to function properly.  Try logging in with the failsafe session and "
 #~ "removing this file.  Also make sure that the file's directory is writable."
 #~ msgstr ""
-#~ "ไม่สามารถเขียนแฟ้ม '%s' ได้ คุณต้องมีสิทธิ์เขียนแฟ้มนี้เพื่อให้ GNOME ทำงานได้อย่างถูกต้อง "
+#~ "ไม่สามารถเขียนแฟ้ม '%s' ได้ คุณต้องมีสิทธิ์เขียนแฟ้มนี้เพื่อให้ Cinnamon ทำงานได้อย่างถูกต้อง "
 #~ "ลองเข้าระบบด้วยวาระ failsafe แล้วลบแฟ้มนี้ดู "
 #~ "กรุณาตรวจสอบให้แน่ใจด้วยว่าไดเรกทอรีที่เก็บแฟ้มนี้สามารถเขียนได้"
 
@@ -890,12 +890,12 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 
 #~ msgid ""
 #~ "Could not look up internet address for %s.\n"
-#~ "This will prevent GNOME from operating correctly.\n"
+#~ "This will prevent Cinnamon from operating correctly.\n"
 #~ "It may be possible to correct the problem by adding\n"
 #~ "%s to the file /etc/hosts."
 #~ msgstr ""
 #~ "ไม่สามารถค้นหาที่อยู่อินเทอร์เน็ตสำหรับ %s \n"
-#~ "ซึ่งจะทำให้ GNOME ทำงานไม่ถูกต้อง\n"
+#~ "ซึ่งจะทำให้ Cinnamon ทำงานไม่ถูกต้อง\n"
 #~ "อาจจะแก้ปัญหานี้ได้โดยการเพิ่ม %s ลงในแฟ้ม /etc/hosts"
 
 #~ msgid "Try Again"
@@ -940,8 +940,8 @@ msgstr "โปรแกรมถูกเรียกด้วยตัวเล
 #~ msgid "could not connect to the session manager\n"
 #~ msgstr "ติดต่อโปรแกรมจัดการวาระไม่สำเร็จ\n"
 
-#~ msgid "session manager does not support GNOME extensions\n"
-#~ msgstr "โปรแกรมจัดการวาระไม่รองรับส่วนขยายของ GNOME\n"
+#~ msgid "session manager does not support Cinnamon extensions\n"
+#~ msgstr "โปรแกรมจัดการวาระไม่รองรับส่วนขยายของ Cinnamon\n"
 
 #~ msgid "Remove the currently selected client from the session."
 #~ msgstr "ลบโปรแกรมลูกที่ถูกเลือกออกจากวาระ"

@@ -73,16 +73,16 @@ msgid "Could not display help document"
 msgstr "ياردەم پۈتۈكىنى كۆرسەتكىلى بولمىدى"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME زاپاس ھالىتى"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon زاپاس ھالىتى"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "بۇ قېتىمقى ئەڭگىمە سىزنى GNOME غا ئەكىرىدۇ."
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "بۇ قېتىمقى ئەڭگىمە سىزنى Cinnamon غا ئەكىرىدۇ."
 
 #: ../data/csm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
@@ -367,22 +367,22 @@ msgid "Stopped by signal %d"
 msgstr "سىگنال %d تەرىپىدىن توختىتىلدى"
 
 #: ../cinnamon-session/csm-manager.c:1377
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 نى يۈكلىيەلمىدى"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 نى يۈكلىيەلمىدى"
 
 #: ../cinnamon-session/csm-manager.c:1378
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"ناھايىتى ئەپسۇس GNOME 3 نى توغرا يۈكلىيەلمىدى، <i>زاپاس ھالەت</i>تە قوزغاتتى."
+"ناھايىتى ئەپسۇس Cinnamon 3 نى توغرا يۈكلىيەلمىدى، <i>زاپاس ھالەت</i>تە قوزغاتتى."
 
 #: ../cinnamon-session/csm-manager.c:1380
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 ھەققىدە تېخىمۇ كۆپ ئۇچۇر"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 ھەققىدە تېخىمۇ كۆپ ئۇچۇر"
 
 #: ../cinnamon-session/csm-manager.c:1477 ../cinnamon-session/csm-manager.c:2208
 msgid "Not responding"
@@ -446,8 +446,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr ""
 
 #: ../cinnamon-session/main.c:303
-msgid " - the GNOME session manager"
-msgstr " GNOME ئەڭگىمە باشقۇرغۇچ"
+msgid " - the Cinnamon session manager"
+msgstr " Cinnamon ئەڭگىمە باشقۇرغۇچ"
 
 #: ../tools/cinnamon-session-quit.c:52
 msgid "Log out"
@@ -585,14 +585,14 @@ msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئ
 #~ msgid "Could not connect to the session bus"
 #~ msgstr "ئەڭگىمە باش لىنىيىسىگە باغلىنالمىدى"
 
-#~ msgid "GNOME Settings Daemon Helper"
-#~ msgstr "GNOME تەڭشەك Daemon ياردەمچىسى"
+#~ msgid "Cinnamon Settings Daemon Helper"
+#~ msgstr "Cinnamon تەڭشەك Daemon ياردەمچىسى"
 
-#~ msgid "Failsafe GNOME"
-#~ msgstr "بىخەتەر GNOME"
+#~ msgid "Failsafe Cinnamon"
+#~ msgstr "بىخەتەر Cinnamon"
 
-#~ msgid "This session logs you into GNOME without user applications"
-#~ msgstr "بۇ ئەڭگىمە سىزنى GNOME غا ئەكىرىدۇ، باشقا پروگرامما قوزغىتىلمايدۇ"
+#~ msgid "This session logs you into Cinnamon without user applications"
+#~ msgstr "بۇ ئەڭگىمە سىزنى Cinnamon غا ئەكىرىدۇ، باشقا پروگرامما قوزغىتىلمايدۇ"
 
 #~ msgid ""
 #~ "If enabled, cinnamon-session will save the session automatically. Otherwise, "
@@ -645,8 +645,8 @@ msgstr "چاقىرغان پروگراممىنىڭ تاللانمىسى ئۆز ئ
 #~ msgid "Cannot find help."
 #~ msgstr "ياردەمنى تاپالمىدى."
 
-#~ msgid "- GNOME Splash Screen"
-#~ msgstr "- GNOME قوزغىلىش كۆزنىكى"
+#~ msgid "- Cinnamon Splash Screen"
+#~ msgstr "- Cinnamon قوزغىلىش كۆزنىكى"
 
-#~ msgid "GNOME Splash Screen"
-#~ msgstr "GNOME قوزغىلىش كۆزنىكى"
+#~ msgid "Cinnamon Splash Screen"
+#~ msgstr "Cinnamon قوزغىلىش كۆزنىكى"

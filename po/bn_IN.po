@@ -76,16 +76,16 @@ msgid "Could not display help document"
 msgstr "সহায়ক নথিপত্র প্রদর্শন করতে ব্যর্থ"
 
 #: ../data/cinnamon-fallback.session.desktop.in.in.h:1
-msgid "GNOME fallback"
-msgstr "GNOME ফল-ব্যাক"
+msgid "Cinnamon fallback"
+msgstr "Cinnamon ফল-ব্যাক"
 
-#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.session.desktop.in.in.h:1 ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "এই সেশানের মাধ্যমে GNOME-এ লগ-ইন করা যাবে"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "এই সেশানের মাধ্যমে Cinnamon-এ লগ-ইন করা যাবে"
 
 #: ../data/csm-inhibit-dialog.ui.h:1 ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -369,34 +369,34 @@ msgstr ""
 "অনুগ্রহ করে লগ আউট করে পুনরায় প্রয়াস করুন।"
 
 #: ../cinnamon-session/csm-manager.c:1393
-msgid "GNOME 3 Failed to Load"
-msgstr "GNOME 3 লোড করতে ব্যর্থ"
+msgid "Cinnamon 3 Failed to Load"
+msgstr "Cinnamon 3 লোড করতে ব্যর্থ"
 
 #: ../cinnamon-session/csm-manager.c:1394
 #| msgid ""
-#| "Unfortunately GNOME 3 failed to start properly and started in the "
+#| "Unfortunately Cinnamon 3 failed to start properly and started in the "
 #| "<i>fallback mode</i>.\n"
 #| "\n"
 #| "This most likely means your graphics hardwayre is not capable to run the "
-#| "full GNOME 3 experience"
+#| "full Cinnamon 3 experience"
 msgid ""
-"Unfortunately GNOME 3 failed to start properly and started in the "
+"Unfortunately Cinnamon 3 failed to start properly and started in the "
 "<i>fallback mode</i>.\n"
 "\n"
 "This most likely means your system (graphics hardware or driver) is not "
-"capable of delivering the full GNOME 3 experience."
+"capable of delivering the full Cinnamon 3 experience."
 msgstr ""
-"দুর্ভাগ্যবসত, GNOME 3 সঠিকভাবে আরম্ভ করতে ব্যর্থ হয়েছে ও <i>ফল-ব্যাক মোডে</i> "
+"দুর্ভাগ্যবসত, Cinnamon 3 সঠিকভাবে আরম্ভ করতে ব্যর্থ হয়েছে ও <i>ফল-ব্যাক মোডে</i> "
 "আরম্ভ "
 "করা হয়েছে।\n"
 "\n"
-"সম্ভবত GNOME 3-র সম্পূর্ণ ব্যবহারের অভিজ্ঞতার জন্য আপনার সিস্টেমের "
+"সম্ভবত Cinnamon 3-র সম্পূর্ণ ব্যবহারের অভিজ্ঞতার জন্য আপনার সিস্টেমের "
 "হার্ডওয়্যারের (গ্রাফিক্স হার্ডওয়্যার অথবা ড্রাইভার)"
 "প্রয়োজনীয় ক্ষমতা নেই।"
 
 #: ../cinnamon-session/csm-manager.c:1396
-msgid "Learn more about GNOME 3"
-msgstr "GNOME 3 সম্বন্ধে অধিক তথ্য"
+msgid "Learn more about Cinnamon 3"
+msgstr "Cinnamon 3 সম্বন্ধে অধিক তথ্য"
 
 #: ../cinnamon-session/csm-manager.c:1493 ../cinnamon-session/csm-manager.c:2234
 msgid "Not responding"
@@ -466,8 +466,8 @@ msgid "Show the fail whale dialog for testing"
 msgstr "পরীক্ষার জন্য ফেইল-ওয়েইল ডায়লগটি প্রদর্শন করা হবে"
 
 #: ../cinnamon-session/main.c:316
-msgid " - the GNOME session manager"
-msgstr "- GNOME সেশান পরিচালনা ব্যবস্থা"
+msgid " - the Cinnamon session manager"
+msgstr "- Cinnamon সেশান পরিচালনা ব্যবস্থা"
 
 #: ../tools/cinnamon-session-quit.c:53
 msgid "Log out"

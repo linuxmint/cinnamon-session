@@ -226,7 +226,7 @@ msgstr "Fillon gjithmonë në çdo login."
 #.
 #: ../cinnamon-session/csm-gsd.c:45
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -251,7 +251,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr ""
 "\n"
 "\n"
@@ -295,48 +295,48 @@ msgstr "E pamundur gjetja e progamit %s në seancë\n"
 #: ../cinnamon-session/ice.c:355
 #, c-format
 msgid ""
-"The GNOME session manager cannot start properly.  Please report this as a "
-"GNOME bug. Please include this ICE failure message in the bug report:  '%"
+"The Cinnamon session manager cannot start properly.  Please report this as a "
+"Cinnamon bug. Please include this ICE failure message in the bug report:  '%"
 "s'.  Meanwhile you could try logging in using the failsafe session."
 msgstr ""
-"Organizuesi i seancës GNOME nuk mundi të nisë në rregull.  Të lutem njoftoje "
-"këtë si një gabim GNOME. Të lutem përfshije këtë mesazh gabimi në njoftimin "
+"Organizuesi i seancës Cinnamon nuk mundi të nisë në rregull.  Të lutem njoftoje "
+"këtë si një gabim Cinnamon. Të lutem përfshije këtë mesazh gabimi në njoftimin "
 "e gabimit:  '%s'.  Ndërkohë mund të provosh të futesh duke përdorur seancën "
 "shpëtuese."
 
 #: ../cinnamon-session/ice.c:510
 #, c-format
 msgid ""
-"The GNOME session manager was unable to lock the file '%s'.  Please report "
-"this as a GNOME bug.  Sometimes this error may occur if the file's directory "
+"The Cinnamon session manager was unable to lock the file '%s'.  Please report "
+"this as a Cinnamon bug.  Sometimes this error may occur if the file's directory "
 "is unwritable, you could try logging in via the failsafe session and "
 "ensuring that it is."
 msgstr ""
-"Organizuesi i seancës GNOME nuk mundi të kyçë file '%s'.  Të lutem njoftoje "
-"këtë si një gabim GNOME.  Ndonjëherë ky gabim mund të ndodhë nëse dosja e "
+"Organizuesi i seancës Cinnamon nuk mundi të kyçë file '%s'.  Të lutem njoftoje "
+"këtë si një gabim Cinnamon.  Ndonjëherë ky gabim mund të ndodhë nëse dosja e "
 "file-t është e pashkruajtshme, mund të provosh të hysh me anë të seancës "
 "shpëtuese dhe të sigurohesh për këtë."
 
 #: ../cinnamon-session/ice.c:537
 #, c-format
 msgid ""
-"The GNOME session manager was unable to read the file: '%s'.  If this file "
-"exists it must be readable by you for GNOME to work properly.  Try logging "
+"The Cinnamon session manager was unable to read the file: '%s'.  If this file "
+"exists it must be readable by you for Cinnamon to work properly.  Try logging "
 "in with the failsafe session and removing this file."
 msgstr ""
-"Organizuesi i seancës GNOME nuk mundi të lexojë file '%s'.  Nëse ky file "
-"ekziston ai duhet të jetë i lexueshëm nga ti që GNOME të punojë siç duhet.  "
+"Organizuesi i seancës Cinnamon nuk mundi të lexojë file '%s'.  Nëse ky file "
+"ekziston ai duhet të jetë i lexueshëm nga ti që Cinnamon të punojë siç duhet.  "
 "Provo të hysh me seancën shpëtuese dhe të heqësh këtë file."
 
 #: ../cinnamon-session/ice.c:582
 #, c-format
 msgid ""
-"Could not write to file '%s'.  This file must be writable in order for GNOME "
+"Could not write to file '%s'.  This file must be writable in order for Cinnamon "
 "to function properly.  Try logging in with the failsafe session and removing "
 "this file.  Also make sure that the file's directory is writable."
 msgstr ""
 "Nuk munda të shkruaj në file '%s'.  Ky file duhet të jetë i shkruajtshëm që "
-"GNOME të punojë siç duhet.  Provo të futesh me seancën shpëtuese dhe të "
+"Cinnamon të punojë siç duhet.  Provo të futesh me seancën shpëtuese dhe të "
 "heqësh këtë file.  Gjithashtu sigurohu që dosja e file-t është e "
 "shkruajtshme."
 
@@ -402,7 +402,7 @@ msgstr ""
 #, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
@@ -420,8 +420,8 @@ msgid "Try Again"
 msgstr "Provo përsëri"
 
 #: ../cinnamon-session/main.c:395
-msgid "- Manage the GNOME session"
-msgstr " - Organizo seancën GNOME"
+msgid "- Manage the Cinnamon session"
+msgstr " - Organizo seancën Cinnamon"
 
 #: ../cinnamon-session/manager.c:512
 msgid "Wait abandoned due to conflict."
@@ -521,8 +521,8 @@ msgid "could not connect to the session manager\n"
 msgstr "e pamundur lidhja me organizuesin e seancës\n"
 
 #: ../cinnamon-session/session-properties-capplet.c:502
-msgid "session manager does not support GNOME extensions\n"
-msgstr "organizuesi i seancës nuk suporton shtesat GNOME\n"
+msgid "session manager does not support Cinnamon extensions\n"
+msgstr "organizuesi i seancës nuk suporton shtesat Cinnamon\n"
 
 #: ../cinnamon-session/session-properties.c:49
 msgid "Remove the currently selected client from the session."

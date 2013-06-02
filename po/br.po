@@ -82,16 +82,16 @@ msgid "AT SPI Registry Wrapper"
 msgstr "Skoazeller marilh AT SPI"
 
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "GNOME Settings Daemon Helper"
-msgstr "Skoazeller sikour arventennoù GNOME"
+msgid "Cinnamon Settings Daemon Helper"
+msgstr "Skoazeller sikour arventennoù Cinnamon"
 
-#: ../data/gnome.desktop.in.h:1
-msgid "GNOME"
-msgstr "GNOME"
+#: ../data/cinnamon.desktop.in.h:1
+msgid "Cinnamon"
+msgstr "Cinnamon"
 
-#: ../data/gnome.desktop.in.h:2
-msgid "This session logs you into GNOME"
-msgstr "An estez-mañ a lug ac'hanoc'h davet GNOME"
+#: ../data/cinnamon.desktop.in.h:2
+msgid "This session logs you into Cinnamon"
+msgstr "An estez-mañ a lug ac'hanoc'h davet Cinnamon"
 
 #: ../data/cinnamon-session.schemas.in.in.h:1
 msgid "Default session"
@@ -445,16 +445,16 @@ msgid "Do not load user-specified applications"
 msgstr "Ne garg ket an arloadoù goulennet gant an arveriad"
 
 #: ../cinnamon-session/main.c:457
-msgid " - the GNOME session manager"
-msgstr " - ardoer estezioù GNOME"
+msgid " - the Cinnamon session manager"
+msgstr " - ardoer estezioù Cinnamon"
 
 #: ../splash/cinnamon-session-splash.c:315
-msgid "- GNOME Splash Screen"
-msgstr "- Skramm degemer GNOME"
+msgid "- Cinnamon Splash Screen"
+msgstr "- Skramm degemer Cinnamon"
 
 #: ../splash/cinnamon-session-splash.desktop.in.in.in.h:1
-msgid "GNOME Splash Screen"
-msgstr "Skramm degemer GNOME"
+msgid "Cinnamon Splash Screen"
+msgstr "Skramm degemer Cinnamon"
 
 #: ../tools/cinnamon-session-save.c:65
 msgid "Log out"

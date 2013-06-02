@@ -230,7 +230,7 @@ msgstr "ku buri Ifashayinjira"
 #: cinnamon-session/csm-gsd.c:41
 #, fuzzy
 msgid ""
-"There was an error starting the GNOME Settings Daemon.\n"
+"There was an error starting the Cinnamon Settings Daemon.\n"
 "\n"
 "Some things, such as themes, sounds, or background settings may not work "
 "correctly."
@@ -252,7 +252,7 @@ msgstr "Iheruka Ikosa Ubutumwa"
 msgid ""
 "\n"
 "\n"
-"GNOME will still try to restart the Settings Daemon next time you log in."
+"Cinnamon will still try to restart the Settings Daemon next time you log in."
 msgstr "Kuri Ongera utangire Komeza>> Igihe LOG in"
 
 #: cinnamon-session/csm-gsd.c:115
@@ -324,7 +324,7 @@ msgstr "Igihe Tegereza kugirango Kuri 0"
 #, fuzzy, c-format
 msgid ""
 "Could not look up internet address for %s.\n"
-"This will prevent GNOME from operating correctly.\n"
+"This will prevent Cinnamon from operating correctly.\n"
 "It may be possible to correct the problem by adding\n"
 "%s to the file /etc/hosts."
 msgstr ""
