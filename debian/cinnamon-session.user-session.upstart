@@ -1,5 +1,5 @@
-description "Gnome Session itself"
-author "Stéphane Graber <stgraber@ubuntu.com>"
+description "Cinnamon Session itself"
+author "Michael Webster <miketwebster@gmail.com>"
 
 start on started dbus and xsession SESSION=ubuntu
 

@@ -6,9 +6,9 @@
 # If this is not set, we search a list of known windowmanagers and use
 # the first one that is found in the users's PATH
 
-# Avoid looping if the session configuration tells us to use gnome-wm or if
-# the user forces gnome-wm via WINDOW_MANAGER
-if [ "x$WINDOW_MANAGER" = "xgnome-wm" ]; then
+# Avoid looping if the session configuration tells us to use cinnamon-wm or if
+# the user forces cinnamon-wm via WINDOW_MANAGER
+if [ "x$WINDOW_MANAGER" = "xcinnamon-wm" ]; then
   WINDOW_MANAGER=""
 fi
 
