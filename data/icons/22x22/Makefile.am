@@ -2,8 +2,8 @@ size = 22x22
 
 iconsdir = $(datadir)/icons/hicolor/$(size)/apps
 
-icons_DATA = session-properties.png
-icons_SOURCE = session-properties.svg
+icons_DATA = cinnamon-session-properties.png
+icons_SOURCE = cinnamon-session-properties.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
