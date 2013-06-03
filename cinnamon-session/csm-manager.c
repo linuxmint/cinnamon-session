@@ -4112,7 +4112,8 @@ csm_manager_add_autostart_apps_from_dir (CsmManager *manager,
         while ((name = g_dir_read_name (dir))) {
                 char *desktop_file;
 
-                if (!g_str_has_suffix (name, ".desktop")) {
+                if (!g_str_has_suffix (name, ".desktop") ||
+                    g_strcmp0(name, "gnome-settings-daemon.desktop") == 0) {
                         continue;
                 }
 
