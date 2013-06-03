@@ -116,6 +116,9 @@ is_disabled (CsmApp *app)
         CsmAutostartAppPrivate *priv;
         const char *current_desktop;
 
+        if (g_strcmp0 (csm_app_peek_id (app), "gnome-settings-daemon") == 0)
+            return TRUE;
+
         priv = CSM_AUTOSTART_APP (app)->priv;
 
         /* CSM_AUTOSTART_APP_ENABLED_KEY key, used by old  */
