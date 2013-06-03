@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-09-20 05:55+0300\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -438,7 +438,7 @@ msgstr "Показване на черния екран за грешка с т�
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "— управление на сесиите на Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53

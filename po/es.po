@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-07-17 10:54+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -443,7 +443,7 @@ msgstr "Mostrar el diálogo de la ballena de pruebas"
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - El gestor de sesiones de Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53

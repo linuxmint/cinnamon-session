@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2008-02-26 23:10+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -418,7 +418,7 @@ msgstr ""
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "Impossible de se connectar al gestionari de sesilhas"
 
 #: ../tools/cinnamon-session-quit.c:53

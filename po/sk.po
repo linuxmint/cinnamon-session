@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-10-23 15:49+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
@@ -448,7 +448,7 @@ msgstr "Zobrazí dialógové okno s chybou slúžiacou na testovanie"
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - správca relácie Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53

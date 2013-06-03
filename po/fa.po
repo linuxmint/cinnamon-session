@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session 2.10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-09-06 21:12+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
@@ -429,7 +429,7 @@ msgstr "نمایش بالن محاوره شکست جهت آزمایش کردن"
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " ـ مدیر نشست گنوم"
 
 #: ../tools/cinnamon-session-quit.c:53

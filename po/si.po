@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.si\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2007-05-27 20:26+0530\n"
 "Last-Translator: Danishka Navin <snavin@redhat.com>\n"
 "Language-Team: Sinhala <en@li.org>\n"
@@ -422,7 +422,7 @@ msgstr ""
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "සැසි-කළමණාකරු සමඟ සම්බන්දවිය නොහැක"
 
 #: ../tools/cinnamon-session-quit.c:53

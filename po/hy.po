@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.HEAD.hy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2005-08-25 13:59+0500\n"
 "Last-Translator: Norayr Chilingaryan\n"
 "Language-Team:  <norik@freenet.am>\n"
@@ -420,7 +420,7 @@ msgstr ""
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "Անկարող է միանալ սեանսի մենեջերին"
 
 #: ../tools/cinnamon-session-quit.c:53

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session MASTER\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-09-23 09:54+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -438,7 +438,7 @@ msgstr "Testimise jaoks kuvatakse nurjumise dialoogi"
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr " - Cinnamon seansihaldur"
 
 #: ../tools/cinnamon-session-quit.c:53

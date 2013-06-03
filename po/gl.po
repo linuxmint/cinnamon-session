@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cinnamon-session.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-02 18:48-0400\n"
+"POT-Creation-Date: 2013-06-02 21:33-0400\n"
 "PO-Revision-Date: 2012-08-17 13:28+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
@@ -439,7 +439,7 @@ msgstr "Mostrar o diálogo da balea de fallos"
 
 #: ../cinnamon-session/main.c:317
 #, fuzzy
-msgid " - the GNOME session manager"
+msgid " - the Cinnamon session manager"
 msgstr "- o xestor de sesións do Cinnamon"
 
 #: ../tools/cinnamon-session-quit.c:53
