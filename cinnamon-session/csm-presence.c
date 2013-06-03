@@ -33,7 +33,7 @@
 #include "csm-presence.h"
 #include "csm-presence-glue.h"
 
-#define CSM_PRESENCE_DBUS_PATH "/org/cinnamon/SessionManager/Presence"
+#define CSM_PRESENCE_DBUS_PATH "/org/gnome/SessionManager/Presence"
 
 #define CS_NAME      "org.cinnamon.ScreenSaver"
 #define CS_PATH      "/org/cinnamon/ScreenSaver"

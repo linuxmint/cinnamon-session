@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
-  <interface name="org.cinnamon.SessionManager.App">
+  <interface name="org.gnome.SessionManager.App">
     <method name="GetAppId">
       <arg type="s" name="app_id" direction="out">
         <doc:doc>

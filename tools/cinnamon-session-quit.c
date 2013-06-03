@@ -33,9 +33,9 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#define CSM_SERVICE_DBUS   "org.cinnamon.SessionManager"
+#define CSM_SERVICE_DBUS   "org.gnome.SessionManager"
 #define CSM_PATH_DBUS      "/org.cinnamon/SessionManager"
-#define CSM_INTERFACE_DBUS "org.cinnamon.SessionManager"
+#define CSM_INTERFACE_DBUS "org.gnome.SessionManager"
 
 enum {
         CSM_LOGOUT_MODE_NORMAL = 0,

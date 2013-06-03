@@ -38,8 +38,8 @@
 #define SHELL_PATH      "/org/cinnamon/Shell"
 #define SHELL_INTERFACE "org.cinnamon.Shell"
 
-#define SHELL_END_SESSION_DIALOG_PATH      "/org/cinnamon/SessionManager/EndSessionDialog"
-#define SHELL_END_SESSION_DIALOG_INTERFACE "org.cinnamon.SessionManager.EndSessionDialog"
+#define SHELL_END_SESSION_DIALOG_PATH      "/org/gnome/SessionManager/EndSessionDialog"
+#define SHELL_END_SESSION_DIALOG_INTERFACE "org.gnome.SessionManager.EndSessionDialog"
 
 #define CSM_SHELL_DBUS_TYPE_G_OBJECT_PATH_ARRAY (dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_OBJECT_PATH))
 

@@ -48,7 +48,7 @@
 #include "csm-xsmp-server.h"
 #include "csm-fail-whale-dialog.h"
 
-#define CSM_DBUS_NAME "org.cinnamon.SessionManager"
+#define CSM_DBUS_NAME "org.gnome.SessionManager"
 
 static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;

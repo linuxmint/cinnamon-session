@@ -41,8 +41,8 @@
 #define CSM_DBUS_CLIENT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_DBUS_CLIENT, CsmDBusClientPrivate))
 
 
-#define SM_DBUS_NAME                     "org.cinnamon.SessionManager"
-#define SM_DBUS_CLIENT_PRIVATE_INTERFACE "org.cinnamon.SessionManager.ClientPrivate"
+#define SM_DBUS_NAME                     "org.gnome.SessionManager"
+#define SM_DBUS_CLIENT_PRIVATE_INTERFACE "org.gnome.SessionManager.ClientPrivate"
 
 struct CsmDBusClientPrivate
 {

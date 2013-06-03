@@ -30,9 +30,9 @@
 #include <gdk/gdkx.h>
 #include <dbus/dbus-glib.h>
 
-#define SM_DBUS_NAME      "org.cinnamon.SessionManager"
-#define SM_DBUS_PATH      "/org/cinnamon/SessionManager"
-#define SM_DBUS_INTERFACE "org.cinnamon.SessionManager"
+#define SM_DBUS_NAME      "org.gnome.SessionManager"
+#define SM_DBUS_PATH      "/org/gnome/SessionManager"
+#define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
 static DBusGConnection *bus_connection = NULL;
 static DBusGProxy      *sm_proxy = NULL;

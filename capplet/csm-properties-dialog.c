@@ -46,7 +46,7 @@
 
 #define STARTUP_APP_ICON     "system-run"
 
-#define SPC_SETTINGS_SCHEMA          "org.cinnamon.SessionManager"
+#define SPC_SETTINGS_SCHEMA          "org.gnome.SessionManager"
 #define SPC_SETTINGS_AUTOSAVE_KEY    "auto-save-session"
 
 struct CsmPropertiesDialogPrivate

@@ -65,8 +65,8 @@
 
 #define CSM_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_MANAGER, CsmManagerPrivate))
 
-#define CSM_MANAGER_DBUS_PATH "/org/cinnamon/SessionManager"
-#define CSM_MANAGER_DBUS_NAME "org.cinnamon.SessionManager"
+#define CSM_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
+#define CSM_MANAGER_DBUS_NAME "org.gnome.SessionManager"
 
 /* Probably about the longest amount of time someone could reasonably
  * want to wait, at least for something happening more than once.
@@ -85,7 +85,7 @@
 #define KEY_IDLE_DELAY            "idle-delay"
 #define KEY_SESSION_NAME          "session-name"
 
-#define CSM_MANAGER_SCHEMA        "org.cinnamon.SessionManager"
+#define CSM_MANAGER_SCHEMA        "org.gnome.SessionManager"
 #define KEY_AUTOSAVE              "auto-save-session"
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
@@ -3342,8 +3342,8 @@ user_logout (CsmManager           *manager,
 
 /*
   dbus-send --session --type=method_call --print-reply
-      --dest=org.cinnamon.SessionManager
-      /org/cinnamon/SessionManager
+      --dest=org.gnome.SessionManager
+      /org/gnome/SessionManager
       org.freedesktop.DBus.Introspectable.Introspect
 */
 

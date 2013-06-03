@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
-  <interface name="org.cinnamon.SessionManager">
+  <interface name="org.gnome.SessionManager">
 
     <!-- Initialization phase interfaces -->
 
@@ -116,7 +116,7 @@
           <doc:para>Applications should invoke this method when they begin an operation that
             should not be interrupted, such as creating a CD or DVD.  The types of actions
             that may be blocked are specified by the flags parameter.  When the application
-            completes the operation it should call <doc:ref type="method" to="org.cinnamon.SessionManager.Uninhibit">Uninhibit()</doc:ref>
+            completes the operation it should call <doc:ref type="method" to="org.gnome.SessionManager.Uninhibit">Uninhibit()</doc:ref>
             or disconnect from the session bus.
           </doc:para>
           <doc:para>
@@ -155,7 +155,7 @@
           </doc:para>
           <doc:para>
             The returned cookie is used to uniquely identify this request.  It should be used
-            as an argument to <doc:ref type="method" to="org.cinnamon.SessionManager.Uninhibit">Uninhibit()</doc:ref> in
+            as an argument to <doc:ref type="method" to="org.gnome.SessionManager.Uninhibit">Uninhibit()</doc:ref> in
             order to remove the request.
           </doc:para>
         </doc:description>
@@ -171,7 +171,7 @@
       </arg>
       <doc:doc>
         <doc:description>
-          <doc:para>Cancel a previous call to <doc:ref type="method" to="org.cinnamon.SessionManager.Inhibit">Inhibit()</doc:ref> identified by the cookie.</doc:para>
+          <doc:para>Cancel a previous call to <doc:ref type="method" to="org.gnome.SessionManager.Inhibit">Inhibit()</doc:ref> identified by the cookie.</doc:para>
         </doc:description>
       </doc:doc>
     </method>
@@ -192,7 +192,7 @@
           <doc:para>Determine if operation(s) specified by the flags
             are currently inhibited.  Flags are same as those accepted
             by the
-            <doc:ref type="method" to="org.cinnamon.SessionManager.Inhibit">Inhibit()</doc:ref>
+            <doc:ref type="method" to="org.gnome.SessionManager.Inhibit">Inhibit()</doc:ref>
             method.</doc:para>
         </doc:description>
       </doc:doc>
@@ -206,12 +206,12 @@
       </arg>
       <doc:doc>
         <doc:description>
-          <doc:para>This gets a list of all the <doc:ref type="interface" to="org.cinnamon.SessionManager.Client">Clients</doc:ref>
+          <doc:para>This gets a list of all the <doc:ref type="interface" to="org.gnome.SessionManager.Client">Clients</doc:ref>
           that are currently known to the session manager.</doc:para>
           <doc:para>Each Client ID is an D-Bus object path for the object that implements the
-          <doc:ref type="interface" to="org.cinnamon.SessionManager.Client">Client</doc:ref> interface.</doc:para>
+          <doc:ref type="interface" to="org.gnome.SessionManager.Client">Client</doc:ref> interface.</doc:para>
         </doc:description>
-        <doc:seealso><doc:ref type="interface" to="org.cinnamon.SessionManager.Client">org.cinnamon.SessionManager.Client</doc:ref></doc:seealso>
+        <doc:seealso><doc:ref type="interface" to="org.gnome.SessionManager.Client">org.gnome.SessionManager.Client</doc:ref></doc:seealso>
       </doc:doc>
     </method>
 
@@ -223,12 +223,12 @@
       </arg>
       <doc:doc>
         <doc:description>
-          <doc:para>This gets a list of all the <doc:ref type="interface" to="org.cinnamon.SessionManager.Inhibitor">Inhibitors</doc:ref>
+          <doc:para>This gets a list of all the <doc:ref type="interface" to="org.gnome.SessionManager.Inhibitor">Inhibitors</doc:ref>
           that are currently known to the session manager.</doc:para>
           <doc:para>Each Inhibitor ID is an D-Bus object path for the object that implements the
-          <doc:ref type="interface" to="org.cinnamon.SessionManager.Inhibitor">Inhibitor</doc:ref> interface.</doc:para>
+          <doc:ref type="interface" to="org.gnome.SessionManager.Inhibitor">Inhibitor</doc:ref> interface.</doc:para>
         </doc:description>
-        <doc:seealso><doc:ref type="interface" to="org.cinnamon.SessionManager.Inhibitor">org.cinnamon.SessionManager.Inhibitor</doc:ref></doc:seealso>
+        <doc:seealso><doc:ref type="interface" to="org.gnome.SessionManager.Inhibitor">org.gnome.SessionManager.Inhibitor</doc:ref></doc:seealso>
       </doc:doc>
     </method>
 
