@@ -335,7 +335,7 @@ doc/dbus/cinnamon-session.xml
 doc/man/Makefile
 data/Makefile
 data/cinnamon-session-properties.desktop.in
-data/org.gnome.SessionManager.gschema.xml
+data/org.cinnamon.SessionManager.gschema.xml
 data/icons/Makefile
 data/icons/16x16/Makefile
 data/icons/22x22/Makefile

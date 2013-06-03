@@ -85,7 +85,7 @@
 #define KEY_IDLE_DELAY            "idle-delay"
 #define KEY_SESSION_NAME          "session-name"
 
-#define CSM_MANAGER_SCHEMA        "org.gnome.SessionManager"
+#define CSM_MANAGER_SCHEMA        "org.cinnamon.SessionManager"
 #define KEY_AUTOSAVE              "auto-save-session"
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"

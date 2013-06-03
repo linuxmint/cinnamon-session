@@ -15,7 +15,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 @INTLTOOL_XML_NOMERGE_RULE@
 
-gsettings_SCHEMAS = org.gnome.SessionManager.gschema.xml
+gsettings_SCHEMAS = org.cinnamon.SessionManager.gschema.xml
 @GSETTINGS_RULES@
 
 EXTRA_DIST =					\
