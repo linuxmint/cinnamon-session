@@ -40,7 +40,7 @@
 /* Shared with csm-fail-whale-dialog.c */
 #define AUTOMATIC_ACTION_TIMEOUT 60
 
-#define LOCKDOWN_SCHEMA            "org.cinnamon.desktop.lockdown"
+#define LOCKDOWN_SCHEMA            "org.gnome.desktop.lockdown"
 #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
 
 struct _CsmLogoutDialogPrivate
