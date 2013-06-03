@@ -2,4 +2,4 @@ usr/share/applications
 usr/share/icons
 usr/share/locale
 debian/55cinnamon-session_gnomerc etc/X11/Xsession.d
-#debian/defaults.list etc/gnome
+#debian/defaults.list etc/cinnamon
