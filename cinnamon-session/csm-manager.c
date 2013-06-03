@@ -4114,7 +4114,9 @@ csm_manager_add_autostart_apps_from_dir (CsmManager *manager,
 
                 if (!g_str_has_suffix (name, ".desktop") ||
                     g_strcmp0(name, "gnome-settings-daemon.desktop") == 0 ||
-                    g_strcmp0(name, "gnome-fallback-mount-helper.desktop") == 0) {
+                    g_strcmp0(name, "gnome-fallback-mount-helper.desktop") == 0 ||
+                    g_strcmp0(name, "nautilus-autostart.desktop") == 0 ||
+                    g_strcmp0(name, "gnome-screensaver.desktop") == 0) {
                         continue;
                 }
 

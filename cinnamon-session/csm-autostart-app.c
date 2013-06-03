@@ -117,7 +117,9 @@ is_disabled (CsmApp *app)
         const char *current_desktop;
 
         if (g_strcmp0 (csm_app_peek_id (app), "gnome-settings-daemon") == 0 ||
-            g_strcmp0 (csm_app_peek_id (app), "gnome-fallback-mount-helper") == 0)
+            g_strcmp0 (csm_app_peek_id (app), "gnome-fallback-mount-helper") == 0 ||
+            g_strcmp0 (csm_app_peek_id (app), "nautilus-autostart") == 0 ||
+            g_strcmp0 (csm_app_peek_id (app), "gnome-screensaver") == 0)
             return TRUE;
 
         priv = CSM_AUTOSTART_APP (app)->priv;
