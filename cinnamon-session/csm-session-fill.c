@@ -28,7 +28,7 @@
 #include "csm-process-helper.h"
 #include "csm-util.h"
 
-#define CSM_KEYFILE_SESSION_GROUP "GNOME Session"
+#define CSM_KEYFILE_SESSION_GROUP "Cinnamon Session"
 #define CSM_KEYFILE_RUNNABLE_KEY "IsRunnableHelper"
 #define CSM_KEYFILE_FALLBACK_KEY "FallbackSession"
 #define CSM_KEYFILE_DESKTOP_NAME_KEY "DesktopName"

@@ -314,7 +314,7 @@ main (int argc, char **argv)
 
         error = NULL;
         gtk_init_with_args (&argc, &argv,
-                            (char *) _(" - the GNOME session manager"),
+                            (char *) _(" - the Cinnamon session manager"),
                             entries, GETTEXT_PACKAGE,
                             &error);
         if (error != NULL) {
