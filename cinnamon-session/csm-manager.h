@@ -200,6 +200,8 @@ gboolean            csm_manager_set_phase                      (CsmManager     *
 gboolean            csm_manager_is_session_running             (CsmManager     *manager,
                                                                 gboolean       *running,
                                                                 GError        **error);
+gboolean            csm_manager_get_app_is_blacklisted         (CsmManager     *manager,
+                                                                const gchar    *name);
 
 G_END_DECLS
 

@@ -15,5 +15,14 @@
       <summary>Show the fallback warning</summary>
       <description>If enabled, cinnamon-session will display a warning dialog after login if the session was automatically fallen back.</description>
     </key>
+    <key name="blacklist" type="as">
+      <default>[]</default>
+      <summary>Applications to block from autostarting or appearing in the app system</summary>
+      <description>
+        A list of applications or desktop names (without the .desktop extension) to prevent from
+        being accessible during the session.  Note: gnome-settings-daemon, gnome-fallback-mount-helper,
+        nautilus, and gnome-screensaver are hardcoded.  This list can add to those.
+      </description>
+    </key>
   </schema>
 </schemalist>

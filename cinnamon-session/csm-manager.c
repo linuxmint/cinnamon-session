@@ -89,6 +89,7 @@
 #define KEY_AUTOSAVE              "auto-save-session"
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
+#define KEY_BLACKLIST             "blacklist"
 
 #define SCREENSAVER_SCHEMA        "org.gnome.desktop.screensaver"
 #define KEY_SLEEP_LOCK            "lock-enabled"
@@ -96,6 +97,13 @@
 #define LOCKDOWN_SCHEMA           "org.gnome.desktop.lockdown"
 #define KEY_DISABLE_LOG_OUT       "disable-log-out"
 #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
+
+const gchar *blacklist[] = {
+                            "gnome-settings-daemon",
+                            "gnome-fallback-mount-helper",
+                            "nautilus-autostart",
+                            "gnome-screensaver"
+                           };
 
 static void app_registered (CsmApp     *app, CsmManager *manager);
 
@@ -4113,10 +4121,7 @@ csm_manager_add_autostart_apps_from_dir (CsmManager *manager,
                 char *desktop_file;
 
                 if (!g_str_has_suffix (name, ".desktop") ||
-                    g_strcmp0(name, "gnome-settings-daemon.desktop") == 0 ||
-                    g_strcmp0(name, "gnome-fallback-mount-helper.desktop") == 0 ||
-                    g_strcmp0(name, "nautilus-autostart.desktop") == 0 ||
-                    g_strcmp0(name, "gnome-screensaver.desktop") == 0) {
+                    csm_manager_get_app_is_blacklisted (manager, name)) {
                         continue;
                 }
 
@@ -4141,3 +4146,34 @@ csm_manager_is_session_running (CsmManager *manager,
         return TRUE;
 }
 
+gboolean
+csm_manager_get_app_is_blacklisted (CsmManager *manager,
+                                    const char *name)
+{
+    g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
+
+    gchar **gs_blacklist = g_settings_get_strv(manager->priv->settings, KEY_BLACKLIST);
+    GList *list = NULL;
+    gboolean ret = FALSE;
+
+    int i;
+    for (i = 0; i < G_N_ELEMENTS (blacklist); i++)
+        list = g_list_append (list, g_strdup (blacklist[i]));
+
+    for (i = 0; i < g_strv_length (gs_blacklist); i++)
+        list = g_list_append (list, g_strdup (gs_blacklist[i]));
+
+    GList *l;
+
+    for (l = list; l != NULL; l = l->next) {
+        gchar *ptr = g_strstr_len (name, -1, l->data);
+        if (ptr != NULL) {
+            ret = TRUE;
+            break;
+        }
+    }
+
+    g_list_free_full (list, g_free);
+    g_strfreev (gs_blacklist);
+    return ret;
+}
