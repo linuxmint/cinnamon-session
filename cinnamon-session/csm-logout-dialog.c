@@ -32,7 +32,7 @@
 #include "csm-logout-dialog.h"
 #include "csm-system.h"
 #include "csm-icon-names.h"
-#include "gdm.h"
+#include "mdm.h"
 
 #define CSM_LOGOUT_DIALOG_GET_PRIVATE(o)                                \
         (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_LOGOUT_DIALOG, CsmLogoutDialogPrivate))
@@ -209,7 +209,7 @@ csm_logout_supports_reboot (CsmLogoutDialog *logout_dialog)
 
         ret = csm_system_can_restart (logout_dialog->priv->system);
         if (!ret) {
-                ret = gdm_supports_logout_action (GDM_LOGOUT_ACTION_REBOOT);
+                ret = mdm_supports_logout_action (MDM_LOGOUT_ACTION_REBOOT);
         }
 
         return ret;
@@ -222,7 +222,7 @@ csm_logout_supports_shutdown (CsmLogoutDialog *logout_dialog)
 
         ret = csm_system_can_stop (logout_dialog->priv->system);
         if (!ret) {
-                ret = gdm_supports_logout_action (GDM_LOGOUT_ACTION_SHUTDOWN);
+                ret = mdm_supports_logout_action (MDM_LOGOUT_ACTION_SHUTDOWN);
         }
 
         return ret;

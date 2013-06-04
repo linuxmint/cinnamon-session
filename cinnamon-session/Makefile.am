@@ -41,12 +41,12 @@ cinnamon_session_SOURCES =				\
 	cs-idle-monitor.c			\
 	csm-presence.h				\
 	csm-presence.c				\
-	gdm.h					\
-	gdm.c					\
-	gdm-signal-handler.h			\
-	gdm-signal-handler.c			\
-	gdm-log.h				\
-	gdm-log.c				\
+	mdm.h					\
+	mdm.c					\
+	mdm-signal-handler.h			\
+	mdm-signal-handler.c			\
+	mdm-log.h				\
+	mdm-log.c				\
 	main.c					\
 	csm-store.h				\
 	csm-store.c				\

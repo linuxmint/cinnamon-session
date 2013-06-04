@@ -54,7 +54,7 @@
 #include "csm-autostart-app.h"
 
 #include "csm-util.h"
-#include "gdm.h"
+#include "mdm.h"
 #include "csm-logout-dialog.h"
 #include "csm-fail-whale-dialog.h"
 #include "csm-icon-names.h"
@@ -78,8 +78,8 @@
  */
 #define CSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
-#define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
-#define GDM_FLEXISERVER_ARGS    "--startnew Standard"
+#define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
+#define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
 #define SESSION_SCHEMA            "org.gnome.desktop.session"
 #define KEY_IDLE_DELAY            "idle-delay"
@@ -113,10 +113,10 @@ typedef enum
         CSM_MANAGER_LOGOUT_LOGOUT,
         CSM_MANAGER_LOGOUT_REBOOT,
         CSM_MANAGER_LOGOUT_REBOOT_INTERACT,
-        CSM_MANAGER_LOGOUT_REBOOT_GDM,
+        CSM_MANAGER_LOGOUT_REBOOT_MDM,
         CSM_MANAGER_LOGOUT_SHUTDOWN,
         CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT,
-        CSM_MANAGER_LOGOUT_SHUTDOWN_GDM
+        CSM_MANAGER_LOGOUT_SHUTDOWN_MDM
 } CsmManagerLogoutType;
 
 struct CsmManagerPrivate
@@ -476,10 +476,10 @@ quit_request_completed (CsmSystem *system,
                         GError    *error,
                         gpointer   user_data)
 {
-        GdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
+        MdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
 
         if (error != NULL) {
-                gdm_set_logout_action (fallback_action);
+                mdm_set_logout_action (fallback_action);
         }
 
         gtk_main_quit ();
@@ -497,30 +497,30 @@ csm_manager_quit (CsmManager *manager)
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
-                gdm_set_logout_action (GDM_LOGOUT_ACTION_NONE);
+                mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
                 g_signal_connect (manager->priv->system,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed),
-                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_NONE));
+                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_NONE));
                 csm_system_attempt_restart (manager->priv->system);
                 break;
-        case CSM_MANAGER_LOGOUT_REBOOT_GDM:
-                gdm_set_logout_action (GDM_LOGOUT_ACTION_REBOOT);
+        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
+                mdm_set_logout_action (MDM_LOGOUT_ACTION_REBOOT);
                 gtk_main_quit ();
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
         case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
-                gdm_set_logout_action (GDM_LOGOUT_ACTION_NONE);
+                mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
                 g_signal_connect (manager->priv->system,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed),
-                                  GINT_TO_POINTER (GDM_LOGOUT_ACTION_NONE));
+                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_NONE));
                 csm_system_attempt_stop (manager->priv->system);
                 break;
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_GDM:
-                gdm_set_logout_action (GDM_LOGOUT_ACTION_SHUTDOWN);
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
+                mdm_set_logout_action (MDM_LOGOUT_ACTION_SHUTDOWN);
                 gtk_main_quit ();
                 break;
         default:
@@ -1113,7 +1113,7 @@ cancel_end_session (CsmManager *manager)
         manager->priv->logout_mode = CSM_MANAGER_LOGOUT_MODE_NORMAL;
 
         manager->priv->logout_type = CSM_MANAGER_LOGOUT_NONE;
-        gdm_set_logout_action (GDM_LOGOUT_ACTION_NONE);
+        mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
         start_phase (manager);
 }
@@ -1137,12 +1137,12 @@ manager_switch_user (GdkDisplay *display,
 	}
 
         command = g_strdup_printf ("%s %s",
-                                   GDM_FLEXISERVER_COMMAND,
-                                   GDM_FLEXISERVER_ARGS);
+                                   MDM_FLEXISERVER_COMMAND,
+                                   MDM_FLEXISERVER_ARGS);
 
         error = NULL;
         context = (GAppLaunchContext*) gdk_display_get_app_launch_context (display);
-        app = g_app_info_create_from_commandline (command, GDM_FLEXISERVER_COMMAND, 0, &error);
+        app = g_app_info_create_from_commandline (command, MDM_FLEXISERVER_COMMAND, 0, &error);
 
         if (app) {
                 g_app_info_launch (app, NULL, context, &error);
@@ -1153,7 +1153,7 @@ manager_switch_user (GdkDisplay *display,
         g_object_unref (context);
 
         if (error) {
-                g_debug ("CsmManager: Unable to start GDM greeter: %s", error->message);
+                g_debug ("CsmManager: Unable to start MDM greeter: %s", error->message);
                 g_error_free (error);
         }
 }
@@ -1296,12 +1296,12 @@ end_session_or_show_fallback_dialog (CsmManager *manager)
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
-        case CSM_MANAGER_LOGOUT_REBOOT_GDM:
+        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
                 action = CSM_LOGOUT_ACTION_REBOOT;
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
         case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_GDM:
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
                 action = CSM_LOGOUT_ACTION_SHUTDOWN;
                 break;
         default:
@@ -1339,12 +1339,12 @@ end_session_or_show_shell_dialog (CsmManager *manager)
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
-        case CSM_MANAGER_LOGOUT_REBOOT_GDM:
+        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
                 type = CSM_SHELL_END_SESSION_DIALOG_TYPE_RESTART;
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
         case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_GDM:
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
                 type = CSM_SHELL_END_SESSION_DIALOG_TYPE_SHUTDOWN;
                 break;
         default:
