@@ -328,7 +328,7 @@ main (int argc, char **argv)
         }
 
         if (please_fail) {
-                csm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
+                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
                 gtk_main ();
                 exit (1);
         }
@@ -360,7 +360,7 @@ main (int argc, char **argv)
         xsmp_server = csm_xsmp_server_new (client_store);
 
         if (!acquire_name ()) {
-                csm_fail_whale_dialog_we_failed (TRUE, TRUE, NULL);
+                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
                 gtk_main ();
                 exit (1);
         }

@@ -26,8 +26,6 @@
 
 #include <gtk/gtk.h>
 
-#include "csm-shell-extensions.h"
-
 G_BEGIN_DECLS
 
 #define CSM_TYPE_FAIL_WHALE_DIALOG         (csm_fail_whale_dialog_get_type ())
@@ -56,8 +54,7 @@ struct _CsmFailWhaleDialogClass
 GType        csm_fail_whale_dialog_get_type   (void) G_GNUC_CONST;
 
 void         csm_fail_whale_dialog_we_failed  (gboolean            debug_mode,
-                                               gboolean            allow_logout,
-                                               CsmShellExtensions *extensions);
+                                               gboolean            allow_logout);
 
 G_END_DECLS
 

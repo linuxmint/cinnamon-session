@@ -60,10 +60,6 @@ cinnamon_session_SOURCES =				\
 	csm-session-fill.h			\
 	csm-session-save.c			\
 	csm-session-save.h			\
-	csm-shell-extensions.c			\
-	csm-shell-extensions.h			\
-	csm-shell.c				\
-	csm-shell.h				\
 	csm-xsmp-server.c			\
 	csm-xsmp-server.h
 

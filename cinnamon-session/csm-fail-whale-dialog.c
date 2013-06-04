@@ -32,7 +32,6 @@
 #include "csm-icon-names.h"
 #include "csm-manager.h"
 #include "csm-util.h"
-#include "csm-shell-extensions.h"
 
 #define CSM_FAIL_WHALE_DIALOG_GET_PRIVATE(o)                                \
         (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_FAIL_WHALE_DIALOG, CsmFailWhaleDialogPrivate))
@@ -42,7 +41,6 @@ struct _CsmFailWhaleDialogPrivate
         gboolean debug_mode;
         gboolean allow_logout;
         GdkRectangle geometry;
-        CsmShellExtensions *extensions;
 };
 
 G_DEFINE_TYPE (CsmFailWhaleDialog, csm_fail_whale_dialog, GTK_TYPE_WINDOW);
@@ -134,11 +132,6 @@ csm_fail_whale_dialog_finalize (GObject *object)
 {
         CsmFailWhaleDialog *fail_dialog = CSM_FAIL_WHALE_DIALOG (object);
         CsmFailWhaleDialogPrivate *priv = fail_dialog->priv;
-
-        if (priv->extensions != NULL) {
-                g_object_unref (priv->extensions);
-                priv->extensions = NULL;
-        }
 
         G_OBJECT_CLASS (csm_fail_whale_dialog_parent_class)->finalize (object);
 }
@@ -316,8 +309,6 @@ setup_window (CsmFailWhaleDialog *fail_dialog)
 
         if (!priv->allow_logout)
                 message_label = gtk_label_new (_("A problem has occurred and the system can't recover. Please contact a system administrator"));
-        else if (priv->extensions != NULL && csm_shell_extensions_n_extensions (priv->extensions) > 0)
-                message_label = gtk_label_new (_("A problem has occurred and the system can't recover. All extensions have been disabled as a precaution."));
         else
                 message_label = gtk_label_new (_("A problem has occurred and the system can't recover.\nPlease log out and try again."));
 
@@ -351,8 +342,7 @@ csm_fail_whale_dialog_init (CsmFailWhaleDialog *fail_dialog)
 
 void
 csm_fail_whale_dialog_we_failed (gboolean            debug_mode,
-                                 gboolean            allow_logout,
-                                 CsmShellExtensions *extensions)
+                                 gboolean            allow_logout)
 
 {
         static gboolean failed = FALSE;

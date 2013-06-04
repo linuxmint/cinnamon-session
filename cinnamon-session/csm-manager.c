@@ -46,7 +46,6 @@
 #include "csm-store.h"
 #include "csm-inhibitor.h"
 #include "csm-presence.h"
-#include "csm-shell.h"
 
 #include "csm-xsmp-client.h"
 #include "csm-dbus-client.h"
@@ -61,7 +60,6 @@
 #include "csm-inhibit-dialog.h"
 #include "csm-system.h"
 #include "csm-session-save.h"
-#include "csm-shell-extensions.h"
 
 #define CSM_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_MANAGER, CsmManagerPrivate))
 
@@ -161,12 +159,6 @@ struct CsmManagerPrivate
         DBusGConnection        *connection;
         gboolean                dbus_disconnected : 1;
 
-        CsmShell               *shell;
-        guint                   shell_end_session_dialog_canceled_id;
-        guint                   shell_end_session_dialog_open_failed_id;
-        guint                   shell_end_session_dialog_confirmed_logout_id;
-        guint                   shell_end_session_dialog_confirmed_shutdown_id;
-        guint                   shell_end_session_dialog_confirmed_reboot_id;
 };
 
 enum {
@@ -205,8 +197,6 @@ static void     _handle_client_end_session_response (CsmManager *manager,
                                                      gboolean    do_last,
                                                      gboolean    cancel,
                                                      const char *reason);
-static void     show_shell_end_session_dialog (CsmManager                   *manager,
-                                               CsmShellEndSessionDialogType  type);
 static gpointer manager_object = NULL;
 
 G_DEFINE_TYPE (CsmManager, csm_manager, G_TYPE_OBJECT)
@@ -277,18 +267,7 @@ static void
 on_required_app_failure (CsmManager  *manager,
                          CsmApp      *app)
 {
-        const gchar *app_id;
         gboolean allow_logout;
-        CsmShellExtensions *extensions;
-
-        app_id = csm_app_peek_app_id (app);
-
-        if (g_str_equal (app_id, "gnome-shell.desktop")) {
-                extensions = g_object_new (CSM_TYPE_SHELL_EXTENSIONS, NULL);
-                csm_shell_extensions_disable_all (extensions);
-        } else {
-                extensions = NULL;
-        }
 
         if (csm_system_is_login_session (manager->priv->system)) {
                 allow_logout = FALSE;
@@ -297,8 +276,7 @@ on_required_app_failure (CsmManager  *manager,
         }
 
         csm_fail_whale_dialog_we_failed (FALSE,
-                                         allow_logout,
-                                         extensions);
+                                         allow_logout);
 }
 
 static gboolean
@@ -1327,65 +1305,6 @@ end_session_or_show_fallback_dialog (CsmManager *manager)
 }
 
 static void
-end_session_or_show_shell_dialog (CsmManager *manager)
-{
-        gboolean logout_prompt;
-        CsmShellEndSessionDialogType type;
-        gboolean logout_inhibited;
-
-        switch (manager->priv->logout_type) {
-        case CSM_MANAGER_LOGOUT_LOGOUT:
-                type = CSM_SHELL_END_SESSION_DIALOG_TYPE_LOGOUT;
-                break;
-        case CSM_MANAGER_LOGOUT_REBOOT:
-        case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
-        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
-                type = CSM_SHELL_END_SESSION_DIALOG_TYPE_RESTART;
-                break;
-        case CSM_MANAGER_LOGOUT_SHUTDOWN:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
-                type = CSM_SHELL_END_SESSION_DIALOG_TYPE_SHUTDOWN;
-                break;
-        default:
-                g_warning ("Unexpected logout type %d when creating end session dialog",
-                           manager->priv->logout_type);
-                type = CSM_SHELL_END_SESSION_DIALOG_TYPE_LOGOUT;
-                break;
-        }
-
-        logout_inhibited = csm_manager_is_logout_inhibited (manager);
-        logout_prompt = g_settings_get_boolean (manager->priv->settings,
-                                                KEY_LOGOUT_PROMPT);
-
-        switch (manager->priv->logout_mode) {
-        case CSM_MANAGER_LOGOUT_MODE_NORMAL:
-                if (logout_inhibited || logout_prompt) {
-                        show_shell_end_session_dialog (manager, type);
-                } else {
-                        end_phase (manager);
-                }
-                break;
-
-        case CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION:
-                if (logout_inhibited) {
-                        show_shell_end_session_dialog (manager, type);
-                } else {
-                        end_phase (manager);
-                }
-                break;
-
-        case CSM_MANAGER_LOGOUT_MODE_FORCE:
-                end_phase (manager);
-                break;
-        default:
-                g_assert_not_reached ();
-                break;
-        }
-
-}
-
-static void
 show_fallback_dialog (const char *title,
                       const char *description,
                       const char *link_text,
@@ -1462,13 +1381,7 @@ query_end_session_complete (CsmManager *manager)
                 g_source_remove (manager->priv->query_timeout_id);
                 manager->priv->query_timeout_id = 0;
         }
-
-        if (csm_shell_is_running (manager->priv->shell)) {
-                end_session_or_show_shell_dialog (manager);
-        } else {
-                end_session_or_show_fallback_dialog (manager);
-        }
-
+        end_session_or_show_fallback_dialog (manager);
 }
 
 static guint32
@@ -2603,11 +2516,6 @@ csm_manager_dispose (GObject *object)
                 manager->priv->system = NULL;
         }
 
-        if (manager->priv->shell != NULL) {
-                g_object_unref (manager->priv->shell);
-                manager->priv->shell = NULL;
-        }
-
         G_OBJECT_CLASS (csm_manager_parent_class)->dispose (object);
 }
 
@@ -2809,8 +2717,6 @@ csm_manager_init (CsmManager *manager)
                                       NULL, NULL);
 
         manager->priv->system = csm_get_system ();
-
-        manager->priv->shell = csm_get_shell ();
 }
 
 static void
@@ -3110,10 +3016,6 @@ logout_dialog_response (CsmLogoutDialog *logout_dialog,
         case CSM_LOGOUT_RESPONSE_LOGOUT:
                 /* We've already gotten confirmation from the user so
                  * initiate the logout in NO_CONFIRMATION mode.
-                 *
-                 * (it shouldn't matter whether we use NO_CONFIRMATION or stay
-                 * with NORMAL, unless the shell happens to start after the
-                 * user confirmed)
                  */
                 request_logout (manager, CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION);
                 break;
@@ -3172,48 +3074,6 @@ show_fallback_logout_dialog (CsmManager *manager)
 }
 
 static void
-disconnect_shell_dialog_signals (CsmManager *manager)
-{
-        if (manager->priv->shell_end_session_dialog_canceled_id != 0) {
-                g_signal_handler_disconnect (manager->priv->shell,
-                                             manager->priv->shell_end_session_dialog_canceled_id);
-                manager->priv->shell_end_session_dialog_canceled_id = 0;
-        }
-
-        if (manager->priv->shell_end_session_dialog_confirmed_logout_id != 0) {
-                g_signal_handler_disconnect (manager->priv->shell,
-                                             manager->priv->shell_end_session_dialog_confirmed_logout_id);
-                manager->priv->shell_end_session_dialog_confirmed_logout_id = 0;
-        }
-
-        if (manager->priv->shell_end_session_dialog_confirmed_shutdown_id != 0) {
-                g_signal_handler_disconnect (manager->priv->shell,
-                                             manager->priv->shell_end_session_dialog_confirmed_shutdown_id);
-                manager->priv->shell_end_session_dialog_confirmed_shutdown_id = 0;
-        }
-
-        if (manager->priv->shell_end_session_dialog_confirmed_reboot_id != 0) {
-                g_signal_handler_disconnect (manager->priv->shell,
-                                             manager->priv->shell_end_session_dialog_confirmed_reboot_id);
-                manager->priv->shell_end_session_dialog_confirmed_reboot_id = 0;
-        }
-
-        if (manager->priv->shell_end_session_dialog_open_failed_id != 0) {
-                g_signal_handler_disconnect (manager->priv->shell,
-                                             manager->priv->shell_end_session_dialog_open_failed_id);
-                manager->priv->shell_end_session_dialog_open_failed_id = 0;
-        }
-}
-
-static void
-on_shell_end_session_dialog_canceled (CsmShell   *shell,
-                                      CsmManager *manager)
-{
-        cancel_end_session (manager);
-        disconnect_shell_dialog_signals (manager);
-}
-
-static void
 _handle_end_session_dialog_response (CsmManager           *manager,
                                      CsmManagerLogoutType  logout_type)
 {
@@ -3237,92 +3097,16 @@ _handle_end_session_dialog_response (CsmManager           *manager,
 }
 
 static void
-on_shell_end_session_dialog_confirmed_logout (CsmShell   *shell,
-                                              CsmManager *manager)
-{
-        _handle_end_session_dialog_response (manager, CSM_MANAGER_LOGOUT_LOGOUT);
-        disconnect_shell_dialog_signals (manager);
-}
-
-static void
-on_shell_end_session_dialog_confirmed_shutdown (CsmShell   *shell,
-                                                CsmManager *manager)
-{
-        _handle_end_session_dialog_response (manager, CSM_MANAGER_LOGOUT_SHUTDOWN);
-        disconnect_shell_dialog_signals (manager);
-}
-
-static void
-on_shell_end_session_dialog_confirmed_reboot (CsmShell   *shell,
-                                              CsmManager *manager)
-{
-        _handle_end_session_dialog_response (manager, CSM_MANAGER_LOGOUT_REBOOT);
-        disconnect_shell_dialog_signals (manager);
-}
-
-static void
-connect_shell_dialog_signals (CsmManager *manager)
-{
-        if (manager->priv->shell_end_session_dialog_canceled_id != 0)
-                return;
-
-        manager->priv->shell_end_session_dialog_canceled_id =
-                g_signal_connect (manager->priv->shell,
-                                  "end-session-dialog-canceled",
-                                  G_CALLBACK (on_shell_end_session_dialog_canceled),
-                                  manager);
-
-        manager->priv->shell_end_session_dialog_open_failed_id =
-                g_signal_connect (manager->priv->shell,
-                                  "end-session-dialog-open-failed",
-                                  G_CALLBACK (on_shell_end_session_dialog_canceled),
-                                  manager);
-
-        manager->priv->shell_end_session_dialog_confirmed_logout_id =
-                g_signal_connect (manager->priv->shell,
-                                  "end-session-dialog-confirmed-logout",
-                                  G_CALLBACK (on_shell_end_session_dialog_confirmed_logout),
-                                  manager);
-
-        manager->priv->shell_end_session_dialog_confirmed_shutdown_id =
-                g_signal_connect (manager->priv->shell,
-                                  "end-session-dialog-confirmed-shutdown",
-                                  G_CALLBACK (on_shell_end_session_dialog_confirmed_shutdown),
-                                  manager);
-
-        manager->priv->shell_end_session_dialog_confirmed_reboot_id =
-                g_signal_connect (manager->priv->shell,
-                                  "end-session-dialog-confirmed-reboot",
-                                  G_CALLBACK (on_shell_end_session_dialog_confirmed_reboot),
-                                  manager);
-}
-
-static void
-show_shell_end_session_dialog (CsmManager                   *manager,
-                               CsmShellEndSessionDialogType  type)
-{
-        if (!csm_shell_is_running (manager->priv->shell))
-                return;
-
-        csm_shell_open_end_session_dialog (manager->priv->shell,
-                                           type,
-                                           manager->priv->inhibitors);
-        connect_shell_dialog_signals (manager);
-}
-
-static void
 user_logout (CsmManager           *manager,
              CsmManagerLogoutMode  mode)
 {
         gboolean logout_prompt;
-        gboolean shell_running;
 
         if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION) {
                 /* Already shutting down, nothing more to do */
                 return;
         }
 
-        shell_running = csm_shell_is_running (manager->priv->shell);
         logout_prompt = g_settings_get_boolean (manager->priv->settings,
                                                 KEY_LOGOUT_PROMPT);
 
@@ -3333,7 +3117,7 @@ user_logout (CsmManager           *manager,
          * If the shell is running, then the confirmation dialog and inhibitor dialog are
          * combined, so we'll show it at a later stage in the logout process.
          */
-        if (!shell_running && mode == CSM_MANAGER_LOGOUT_MODE_NORMAL && logout_prompt) {
+        if (mode == CSM_MANAGER_LOGOUT_MODE_NORMAL && logout_prompt) {
                 show_fallback_logout_dialog (manager);
         } else {
                 request_logout (manager, mode);
@@ -3416,8 +3200,6 @@ gboolean
 csm_manager_shutdown (CsmManager *manager,
                       GError    **error)
 {
-        gboolean shell_running;
-
         g_debug ("CsmManager: Shutdown called");
 
         g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
@@ -3438,13 +3220,7 @@ csm_manager_shutdown (CsmManager *manager,
                 return FALSE;
         }
 
-        shell_running = csm_shell_is_running (manager->priv->shell);
-
-        if (!shell_running)
-                show_fallback_shutdown_dialog (manager, FALSE);
-        else
-                request_shutdown (manager);
-
+        show_fallback_shutdown_dialog (manager, FALSE);
         return TRUE;
 }
 
@@ -3452,8 +3228,6 @@ gboolean
 csm_manager_reboot (CsmManager  *manager,
                     GError     **error)
 {
-        gboolean shell_running;
-
         g_debug ("CsmManager: Reboot called");
 
         g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
@@ -3473,13 +3247,8 @@ csm_manager_reboot (CsmManager  *manager,
                              "Logout has been locked down");
                 return FALSE;
         }
-
-        shell_running = csm_shell_is_running (manager->priv->shell);
-
-        if (!shell_running)
-                show_fallback_shutdown_dialog (manager, TRUE);
-        else
-                request_reboot (manager);
+ 
+        show_fallback_shutdown_dialog (manager, TRUE);
 
         return TRUE;
 }
