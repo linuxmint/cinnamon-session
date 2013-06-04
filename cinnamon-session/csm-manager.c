@@ -194,7 +194,6 @@ static void     csm_manager_class_init  (CsmManagerClass *klass);
 static void     csm_manager_init        (CsmManager      *manager);
 static void     csm_manager_finalize    (GObject         *object);
 
-static gboolean auto_save_is_enabled (CsmManager *manager);
 static void     maybe_save_session   (CsmManager *manager);
 
 static gboolean _log_out_is_locked_down     (CsmManager *manager);
@@ -886,7 +885,7 @@ do_phase_end_session (CsmManager *manager)
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
-        if (auto_save_is_enabled (manager)) {
+        if (csm_manager_get_autosave_enabled (manager)) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_SAVE;
         }
 
@@ -919,7 +918,7 @@ do_phase_end_session_part_2 (CsmManager *manager)
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
-        if (auto_save_is_enabled (manager)) {
+        if (csm_manager_get_autosave_enabled (manager)) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_SAVE;
         }
         data.flags |= CSM_CLIENT_END_SESSION_FLAG_LAST;
@@ -2193,13 +2192,6 @@ on_xsmp_client_register_request (CsmXSMPClient *client,
         return handled;
 }
 
-static gboolean
-auto_save_is_enabled (CsmManager *manager)
-{
-        return g_settings_get_boolean (manager->priv->settings,
-                                       KEY_AUTOSAVE);
-}
-
 static void
 maybe_save_session (CsmManager *manager)
 {
@@ -2215,7 +2207,7 @@ maybe_save_session (CsmManager *manager)
                 return;
         }
 
-        if (!auto_save_is_enabled (manager)) {
+        if (!csm_manager_get_autosave_enabled (manager)) {
                 csm_session_save_clear ();
                 return;
         }
@@ -4176,4 +4168,11 @@ csm_manager_get_app_is_blacklisted (CsmManager *manager,
     g_list_free_full (list, g_free);
     g_strfreev (gs_blacklist);
     return ret;
+}
+
+gboolean
+csm_manager_get_autosave_enabled (CsmManager *manager)
+{
+    return g_settings_get_boolean (manager->priv->settings,
+                                   KEY_AUTOSAVE);
 }

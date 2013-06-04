@@ -189,8 +189,8 @@ maybe_load_saved_session_apps (CsmManager *manager)
         is_login = csm_system_is_login_session (system);
         g_object_unref (system);
 
-        if (is_login)
-                return;
+        // if (is_login)
+        //         return;
 
         csm_manager_add_autostart_apps_from_dir (manager, csm_util_get_saved_session_dir ());
 }
@@ -248,7 +248,7 @@ load_standard_apps (CsmManager *manager,
 
                 autostart_dirs = csm_util_get_autostart_dirs ();
 
-                if (g_getenv ("CINNAMON_SESSION_SAVE") != NULL)
+                if (csm_manager_get_autosave_enabled (manager))
                         maybe_load_saved_session_apps (manager);
 
                 for (i = 0; autostart_dirs[i]; i++) {
