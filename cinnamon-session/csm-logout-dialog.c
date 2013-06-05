@@ -192,12 +192,8 @@ csm_logout_supports_switch_user (CsmLogoutDialog *logout_dialog)
         gboolean   ret;
 
         settings = g_settings_new (LOCKDOWN_SCHEMA);
-        if (g_settings_get_boolean (settings, KEY_DISABLE_USER_SWITCHING))
-                ret = FALSE;
+        ret = !g_settings_get_boolean (settings, KEY_DISABLE_USER_SWITCHING);
         g_object_unref (settings);
-
-        if (ret)
-                ret = csm_system_can_switch_user (logout_dialog->priv->system);
 
         return ret;
 }
