@@ -28,7 +28,7 @@
 
 #include "csm-app-dialog.h"
 
-#define GTKBUILDER_FILE "session-properties.glade"
+#define GTKBUILDER_FILE "cinnamon-session-properties.glade"
 
 #define CAPPLET_NAME_ENTRY_WIDGET_NAME    "session_properties_name_entry"
 #define CAPPLET_COMMAND_ENTRY_WIDGET_NAME "session_properties_command_entry"
@@ -178,11 +178,6 @@ setup_dialog (CsmAppDialog *dialog)
 
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
         gtk_window_set_icon_name (GTK_WINDOW (dialog), "session-properties");
-
-        g_object_set (dialog,
-                      "allow-shrink", FALSE,
-                      "allow-grow", FALSE,
-                      NULL);
 
         gtk_dialog_add_button (GTK_DIALOG (dialog),
                                GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
