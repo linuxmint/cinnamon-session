@@ -79,7 +79,7 @@
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
-#define SESSION_SCHEMA            "org.gnome.desktop.session"
+#define SESSION_SCHEMA            "org.cinnamon.desktop.session"
 #define KEY_IDLE_DELAY            "idle-delay"
 #define KEY_SESSION_NAME          "session-name"
 
@@ -89,10 +89,10 @@
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
 #define KEY_BLACKLIST             "blacklist"
 
-#define SCREENSAVER_SCHEMA        "org.gnome.desktop.screensaver"
+#define SCREENSAVER_SCHEMA        "org.cinnamon.desktop.screensaver"
 #define KEY_SLEEP_LOCK            "lock-enabled"
 
-#define LOCKDOWN_SCHEMA           "org.gnome.desktop.lockdown"
+#define LOCKDOWN_SCHEMA           "org.cinnamon.desktop.lockdown"
 #define KEY_DISABLE_LOG_OUT       "disable-log-out"
 #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
 
