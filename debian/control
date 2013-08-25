@@ -37,7 +37,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          dbus-x11,
-         gsettings-desktop-schemas,
+         cinnamon-desktop-data,
          upower (>= 0.9.0)
 Description: Cinnamon Session Manager - Minimal runtime
  The Cinnamon Session Manager is in charge of starting the core components
