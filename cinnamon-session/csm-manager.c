@@ -100,7 +100,10 @@ const gchar *blacklist[] = {
                             "gnome-settings-daemon",
                             "gnome-fallback-mount-helper",
                             "nautilus-autostart",
-                            "gnome-screensaver"
+                            "gnome-screensaver",
+                            "caja",
+                            "mate-screensaver",
+                            "mate-keyring-daemon"
                            };
 
 static void app_registered (CsmApp     *app, CsmManager *manager);
