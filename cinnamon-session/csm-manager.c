@@ -99,9 +99,7 @@
 const gchar *blacklist[] = {
                             "gnome-settings-daemon",
                             "gnome-fallback-mount-helper",
-                            "nautilus-autostart",
                             "gnome-screensaver",
-                            "caja",
                             "mate-screensaver",
                             "mate-keyring-daemon"
                            };
