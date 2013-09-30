@@ -1,5 +1,5 @@
 AC_INIT([cinnamon-session],
-        [1.9.1],
+        [1.9.2],
         [https://github.com/linuxmint/cinnamon-session/issues])
 
 AC_CONFIG_SRCDIR([cinnamon-session])
