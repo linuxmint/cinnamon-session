@@ -176,13 +176,13 @@ csm_logout_dialog_destroy (CsmLogoutDialog *logout_dialog,
 static gboolean
 csm_logout_supports_system_suspend (CsmLogoutDialog *logout_dialog)
 {
-        return up_client_get_can_suspend (logout_dialog->priv->up_client);
+        return ( csm_system_can_suspend (logout_dialog->priv->system) || up_client_get_can_suspend (logout_dialog->priv->up_client) );
 }
 
 static gboolean
 csm_logout_supports_system_hibernate (CsmLogoutDialog *logout_dialog)
 {
-        return up_client_get_can_hibernate (logout_dialog->priv->up_client);
+        return ( csm_system_can_hibernate (logout_dialog->priv->system) || up_client_get_can_hibernate (logout_dialog->priv->up_client) );
 }
 
 static gboolean
