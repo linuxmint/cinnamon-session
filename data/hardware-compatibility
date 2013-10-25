@@ -15,6 +15,9 @@
 # Intel 830-865
 -Intel\(R\) 8[[:digit:]]{2,2}[^[:digit:]]
 
+# Intel IGD 
+-Intel IGD
+
 # Pre-R300 radeon
 -Mesa DRI R[12]00[^[:digit:]]
 -Mesa DRI R[12]00$
