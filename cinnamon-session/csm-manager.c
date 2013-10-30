@@ -79,6 +79,9 @@
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
+#define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
+#define GDM_FLEXISERVER_ARGS    "--startnew Standard"
+
 #define SESSION_SCHEMA            "org.cinnamon.desktop.session"
 #define KEY_IDLE_DELAY            "idle-delay"
 #define KEY_SESSION_NAME          "session-name"
@@ -1100,17 +1103,16 @@ cancel_end_session (CsmManager *manager)
 static gboolean
 process_is_running (const char * name)
 {
-    int num_processes;
-    char * command = g_strdup_printf ("pidof %s | wc -l", name);
-    FILE *fp = popen(command, "r");
-    fscanf(fp, "%d", &num_processes);
-    pclose(fp);
-    if (num_processes > 0) {
-        return TRUE;
-    }
-    else {
-        return FALSE;
-    }
+        int num_processes;
+        char * command = g_strdup_printf ("pidof %s | wc -l", name);
+        FILE *fp = popen(command, "r");
+        fscanf(fp, "%d", &num_processes);
+        pclose(fp);
+        if (num_processes > 0) {
+                return TRUE;
+        } else {
+                return FALSE;
+        }
 }
 
 static gboolean
@@ -1149,69 +1151,86 @@ manager_switch_user (GdkDisplay *display,
         GAppLaunchContext *context;
         GAppInfo *app;
 
-    /* We have to do this here and in request_switch_user() because this
-     * function can be called at a later time, not just directly after
-     * request_switch_user(). */
-    if (_switch_user_is_locked_down (manager)) {
-        g_warning ("Unable to switch user: User switching has been locked down");
-        return;
-    }
-    
-    if (process_is_running("mdm")) {
-            command = g_strdup_printf ("%s %s",
-                                       MDM_FLEXISERVER_COMMAND,
-                                       MDM_FLEXISERVER_ARGS);
+        /* We have to do this here and in request_switch_user() because this
+         * function can be called at a later time, not just directly after
+         * request_switch_user(). */
+        if (_switch_user_is_locked_down (manager)) {
+                g_warning ("Unable to switch user: User switching has been locked down");
+                return;
+        }
 
-            error = NULL;
-            context = (GAppLaunchContext*) gdk_display_get_app_launch_context (display);
-            app = g_app_info_create_from_commandline (command, MDM_FLEXISERVER_COMMAND, 0, &error);
+        if (process_is_running("mdm")) {
+                command = g_strdup_printf ("%s %s",
+                                           MDM_FLEXISERVER_COMMAND,
+                                           MDM_FLEXISERVER_ARGS);
 
-            if (app) {
-                    g_app_info_launch (app, NULL, context, &error);
-                    g_object_unref (app);
-            }
+                error = NULL;
+                context = (GAppLaunchContext*) gdk_display_get_app_launch_context (display);
+                app = g_app_info_create_from_commandline (command, MDM_FLEXISERVER_COMMAND, 0, &error);
 
-            g_free (command);
-            g_object_unref (context);
+                if (app) {
+                        g_app_info_launch (app, NULL, context, &error);
+                        g_object_unref (app);
+                }
 
-            if (error) {
-                    g_debug ("CsmManager: Unable to start MDM greeter: %s", error->message);
-                    g_error_free (error);
-            }
-    }
-    else if (process_is_running("lightdm")) {
-        const gchar *xdg_seat_path = g_getenv ("XDG_SEAT_PATH");
-        if (xdg_seat_path != NULL) {
-            GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
-            GDBusProxy *proxy = NULL;
-            error = NULL;
+                g_free (command);
+                g_object_unref (context);
 
-            proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
-                                                  flags,
-                                                  NULL,
-                                                  "org.freedesktop.DisplayManager",
-                                                  xdg_seat_path,
-                                                  "org.freedesktop.DisplayManager.Seat",
-                                                  NULL,
-                                                  &error);
-            if (proxy != NULL) {
-                    manager_perhaps_lock (manager);
-                    g_dbus_proxy_call (proxy,
-                                       "SwitchToGreeter",
-                                       g_variant_new ("()"),
-                                       G_DBUS_CALL_FLAGS_NONE,
-                                       -1,
-                                       NULL,
-                                       NULL,
-                                       NULL);
-                    g_object_unref (proxy);
-            }
-            else {
-                    g_debug ("GsmManager: Unable to start LightDM greeter: %s", error->message);
-                    g_error_free (error);
-            }
-        } 
-    }
+                if (error) {
+                        g_debug ("CsmManager: Unable to start MDM greeter: %s", error->message);
+                        g_error_free (error);
+                }
+        } else if (process_is_running("gdm")) {
+                command = g_strdup_printf ("%s %s",
+                                           GDM_FLEXISERVER_COMMAND,
+                                           GDM_FLEXISERVER_ARGS);
+
+                error = NULL;
+                context = (GAppLaunchContext*) gdk_display_get_app_launch_context (display);
+                app = g_app_info_create_from_commandline (command, GDM_FLEXISERVER_COMMAND, 0, &error);
+
+                if (app) {
+                        manager_perhaps_lock (manager);
+                        g_app_info_launch (app, NULL, context, &error);
+                        g_object_unref (app);
+                }
+
+                g_free (command);
+                g_object_unref (context);
+
+                if (error) {
+                        g_debug ("CsmManager: Unable to start GDM greeter: %s", error->message);
+                        g_error_free (error);
+                }
+        } else if (g_getenv ("XDG_SEAT_PATH")) {
+                GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
+                GDBusProxy *proxy = NULL;
+                error = NULL;
+
+                proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
+                                                      flags,
+                                                      NULL,
+                                                      "org.freedesktop.DisplayManager",
+                                                      g_getenv ("XDG_SEAT_PATH"),
+                                                      "org.freedesktop.DisplayManager.Seat",
+                                                      NULL,
+                                                      &error);
+                if (proxy != NULL) {
+                        manager_perhaps_lock (manager);
+                        g_dbus_proxy_call (proxy,
+                                           "SwitchToGreeter",
+                                           g_variant_new ("()"),
+                                           G_DBUS_CALL_FLAGS_NONE,
+                                           -1,
+                                           NULL,
+                                           NULL,
+                                           NULL);
+                        g_object_unref (proxy);
+                } else {
+                        g_debug ("CsmManager: Unable to start LightDM greeter: %s", error->message);
+                        g_error_free (error);
+                }
+        }
 }
 
 static void
