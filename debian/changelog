@@ -1,3 +1,27 @@
+cinnamon-session (2.0.5) petra; urgency=low
+
+  * 2.0.5
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Nov 2013 10:25:09 +0000
+
+cinnamon-session (2.0.4) petra; urgency=low
+
+  * 2.0.4
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 31 Oct 2013 13:34:50 +0000
+
+cinnamon-session (2.0.3) petra; urgency=low
+
+  * 2.0.3
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Oct 2013 10:36:44 +0000
+
+cinnamon-session (2.0.2) petra; urgency=low
+
+  * 2.0.2
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 26 Oct 2013 18:02:58 +0100
+
 cinnamon-session (2.0.1) petra; urgency=low
 
   * 2.0.1
