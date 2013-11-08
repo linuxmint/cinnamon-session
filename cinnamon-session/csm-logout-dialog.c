@@ -26,8 +26,10 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#ifdef HAVE_OLD_UPOWER
 #define UPOWER_ENABLE_DEPRECATED 1
 #include <upower.h>
+#endif
 
 #include "csm-logout-dialog.h"
 #include "csm-system.h"
@@ -47,7 +49,9 @@ struct _CsmLogoutDialogPrivate
 {
         CsmDialogLogoutType  type;
 
+#ifdef HAVE_OLD_UPOWER
         UpClient            *up_client;
+#endif
         CsmSystem           *system;
 
         int                  timeout;
@@ -139,7 +143,9 @@ csm_logout_dialog_init (CsmLogoutDialog *logout_dialog)
         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_stick (GTK_WINDOW (logout_dialog));
 
+#ifdef HAVE_OLD_UPOWER
         logout_dialog->priv->up_client = up_client_new ();
+#endif
 
         logout_dialog->priv->system = csm_get_system ();
 
@@ -163,10 +169,12 @@ csm_logout_dialog_destroy (CsmLogoutDialog *logout_dialog,
                 logout_dialog->priv->timeout_id = 0;
         }
 
+#ifdef HAVE_OLD_UPOWER 
         if (logout_dialog->priv->up_client) {
                 g_object_unref (logout_dialog->priv->up_client);
                 logout_dialog->priv->up_client = NULL;
         }
+#endif
 
         g_clear_object (&logout_dialog->priv->system);
 
@@ -176,13 +184,21 @@ csm_logout_dialog_destroy (CsmLogoutDialog *logout_dialog,
 static gboolean
 csm_logout_supports_system_suspend (CsmLogoutDialog *logout_dialog)
 {
-        return ( csm_system_can_suspend (logout_dialog->priv->system) || up_client_get_can_suspend (logout_dialog->priv->up_client) );
+#if defined(HAVE_SYSTEMD)
+        return csm_system_can_suspend (logout_dialog->priv->system);
+#elif defined(HAVE_OLD_UPOWER)
+        return up_client_get_can_suspend (logout_dialog->priv->up_client);
+#endif
 }
 
 static gboolean
 csm_logout_supports_system_hibernate (CsmLogoutDialog *logout_dialog)
 {
-        return ( csm_system_can_hibernate (logout_dialog->priv->system) || up_client_get_can_hibernate (logout_dialog->priv->up_client) );
+#if defined(HAVE_SYSTEMD)
+        return csm_system_can_hibernate (logout_dialog->priv->system);
+#elif defined(HAVE_OLD_UPOWER)
+        return up_client_get_can_hibernate (logout_dialog->priv->up_client);
+#endif
 }
 
 static gboolean
