@@ -1207,7 +1207,7 @@ manager_switch_user (GdkDisplay *display,
                     g_object_unref (proxy);
             }
             else {
-                    g_debug ("GsmManager: Unable to start LightDM greeter: %s", error->message);
+                    g_debug ("CsmManager: Unable to start LightDM greeter: %s", error->message);
                     g_error_free (error);
             }
         } 
