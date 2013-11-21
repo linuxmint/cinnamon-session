@@ -44,7 +44,7 @@
 
 #define MDM_PROTOCOL_UPDATE_INTERVAL 1 /* seconds */
 
-#define MDM_PROTOCOL_SOCKET_PATH "/var/run/mdm_socket"
+#define MDM_PROTOCOL_SOCKET_PATH "/var/run/gdm_socket"
 
 #define MDM_PROTOCOL_MSG_CLOSE         "CLOSE"
 #define MDM_PROTOCOL_MSG_VERSION       "VERSION"
