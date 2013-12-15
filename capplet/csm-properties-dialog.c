@@ -71,6 +71,7 @@ enum {
         STORE_COL_GICON,
         STORE_COL_DESCRIPTION,
         STORE_COL_APP,
+        STORE_COL_DELAY,
         STORE_COL_SEARCH,
         NUMBER_OF_COLUMNS
 };
@@ -118,10 +119,12 @@ _fill_iter_from_app (GtkListStore *list_store,
         GIcon      *icon;
         const char *description;
         const char *app_name;
+        const char *delay;
 
         hidden      = csp_app_get_hidden (app);
         display     = csp_app_get_display (app);
         enabled     = csp_app_get_enabled (app);
+        delay       = csp_app_get_delay (app);
         shown       = csp_app_get_shown (app);
         icon        = csp_app_get_icon (app);
         description = csp_app_get_description (app);
@@ -157,6 +160,7 @@ _fill_iter_from_app (GtkListStore *list_store,
                             STORE_COL_ENABLED, enabled,
                             STORE_COL_GICON, icon,
                             STORE_COL_DESCRIPTION, description,
+                            STORE_COL_DELAY, delay,
                             STORE_COL_APP, app,
                             STORE_COL_SEARCH, app_name,
                             -1);
@@ -364,17 +368,19 @@ on_add_app_clicked (GtkWidget           *widget,
         char       *name;
         char       *exec;
         char       *comment;
+        char       *delay;
 
-        add_dialog = csm_app_dialog_new (NULL, NULL, NULL);
+        add_dialog = csm_app_dialog_new (NULL, NULL, NULL, NULL);
         gtk_window_set_transient_for (GTK_WINDOW (add_dialog),
                                       GTK_WINDOW (dialog));
 
         if (csm_app_dialog_run (CSM_APP_DIALOG (add_dialog),
-                                &name, &exec, &comment)) {
-                csp_app_create (name, comment, exec);
+                                &name, &exec, &comment, &delay)) {
+                csp_app_create (name, comment, exec, delay);
                 g_free (name);
                 g_free (exec);
                 g_free (comment);
+                g_free (delay);
         }
 }
 
@@ -429,19 +435,22 @@ on_edit_app_clicked (GtkWidget           *widget,
                 char       *name;
                 char       *exec;
                 char       *comment;
+                char       *delay;
 
                 edit_dialog = csm_app_dialog_new (csp_app_get_name (app),
                                                   csp_app_get_exec (app),
-                                                  csp_app_get_comment (app));
+                                                  csp_app_get_comment (app),
+                                                  csp_app_get_delay (app));
                 gtk_window_set_transient_for (GTK_WINDOW (edit_dialog),
                                               GTK_WINDOW (dialog));
 
                 if (csm_app_dialog_run (CSM_APP_DIALOG (edit_dialog),
-                                        &name, &exec, &comment)) {
-                        csp_app_update (app, name, comment, exec);
+                                        &name, &exec, &comment, &delay)) {
+                        csp_app_update (app, name, comment, exec, delay);
                         g_free (name);
                         g_free (exec);
                         g_free (comment);
+                        g_free (delay);
                 }
 
                 g_object_unref (app);
@@ -485,6 +494,7 @@ setup_dialog (CsmPropertiesDialog *dialog)
                                                        G_TYPE_ICON,
                                                        G_TYPE_STRING,
                                                        G_TYPE_OBJECT,
+                                                       G_TYPE_STRING,
                                                        G_TYPE_STRING);
         tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->priv->list_store),
                                                  NULL);
@@ -501,7 +511,7 @@ setup_dialog (CsmPropertiesDialog *dialog)
         gtk_tree_view_set_model (treeview, tree_filter);
         g_object_unref (tree_filter);
 
-        gtk_tree_view_set_headers_visible (treeview, FALSE);
+        gtk_tree_view_set_headers_visible (treeview, TRUE);
         g_signal_connect (treeview,
                           "row-activated",
                           G_CALLBACK (on_row_activated),
@@ -528,7 +538,7 @@ setup_dialog (CsmPropertiesDialog *dialog)
 
         /* ICON COLUMN */
         renderer = gtk_cell_renderer_pixbuf_new ();
-        column = gtk_tree_view_column_new_with_attributes (_("Icon"),
+        column = gtk_tree_view_column_new_with_attributes (NULL,
                                                            renderer,
                                                            "gicon", STORE_COL_GICON,
                                                            "sensitive", STORE_COL_ENABLED,
@@ -550,6 +560,15 @@ setup_dialog (CsmPropertiesDialog *dialog)
                       NULL);
         gtk_tree_view_append_column (treeview, column);
 
+        /* DELAY COLUMN */
+
+        renderer = gtk_cell_renderer_text_new ();
+        column = gtk_tree_view_column_new_with_attributes (_("Delay (s)"),
+                                                           renderer,
+                                                           "text", STORE_COL_DELAY,
+                                                           "sensitive", STORE_COL_ENABLED,
+                                                           NULL);
+        gtk_tree_view_append_column (treeview, column);
 
         gtk_tree_view_column_set_sort_column_id (column, STORE_COL_DESCRIPTION);
         gtk_tree_view_set_search_column (treeview, STORE_COL_SEARCH);

@@ -60,11 +60,13 @@ GType            csp_app_get_type          (void);
 
 void             csp_app_create            (const char   *name,
                                             const char   *comment,
-                                            const char   *exec);
+                                            const char   *exec,
+                                            const char   *delay);
 void             csp_app_update            (CspApp       *app,
                                             const char   *name,
                                             const char   *comment,
-                                            const char   *exec);
+                                            const char   *exec,
+                                            const char   *delay);
 
 gboolean         csp_app_copy_desktop_file (const char   *uri);
 
@@ -84,6 +86,7 @@ gboolean         csp_app_get_shown         (CspApp       *app);
 
 const char      *csp_app_get_name          (CspApp       *app);
 const char      *csp_app_get_exec          (CspApp       *app);
+const char      *csp_app_get_delay         (CspApp       *app);
 const char      *csp_app_get_comment       (CspApp       *app);
 
 const char      *csp_app_get_description   (CspApp       *app);

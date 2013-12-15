@@ -34,7 +34,7 @@
 #define CAPPLET_COMMAND_ENTRY_WIDGET_NAME "session_properties_command_entry"
 #define CAPPLET_COMMENT_ENTRY_WIDGET_NAME "session_properties_comment_entry"
 #define CAPPLET_BROWSE_WIDGET_NAME        "session_properties_browse_button"
-
+#define CAPPLET_DELAY_SPINNER_WIDGET_NAME "session_properties_spinner"
 
 #define CSM_APP_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_APP_DIALOG, CsmAppDialogPrivate))
 
@@ -43,10 +43,12 @@ struct CsmAppDialogPrivate
         GtkWidget *name_entry;
         GtkWidget *command_entry;
         GtkWidget *comment_entry;
+        GtkWidget *delay_spinner;
         GtkWidget *browse_button;
         char      *name;
         char      *command;
         char      *comment;
+        char      *delay;
 };
 
 static void     csm_app_dialog_class_init  (CsmAppDialogClass *klass);
@@ -57,10 +59,21 @@ enum {
         PROP_0,
         PROP_NAME,
         PROP_COMMAND,
-        PROP_COMMENT
+        PROP_COMMENT,
+        PROP_DELAY
 };
 
 G_DEFINE_TYPE (CsmAppDialog, csm_app_dialog, GTK_TYPE_DIALOG)
+
+gint
+char_to_int (const char *in)
+{
+    gint64 ret;
+    ret = g_ascii_strtoll (in, NULL, 10);
+    if (ret > G_MAXINT || ret < G_MININT)
+        ret = 0;
+    return (gint) ret;
+}
 
 static char *
 make_exec_uri (const char *exec)
@@ -227,6 +240,15 @@ setup_dialog (CsmAppDialog *dialog)
                 gtk_entry_set_text (GTK_ENTRY (dialog->priv->comment_entry), dialog->priv->comment);
         }
 
+        dialog->priv->delay_spinner = GTK_WIDGET (gtk_builder_get_object (xml, CAPPLET_DELAY_SPINNER_WIDGET_NAME));
+        g_signal_connect (dialog->priv->delay_spinner,
+                          "activate",
+                          G_CALLBACK (on_entry_activate),
+                          dialog);
+        if (dialog->priv->delay != NULL) {
+                gtk_spin_button_set_value (GTK_SPIN_BUTTON (dialog->priv->delay_spinner), char_to_int (dialog->priv->delay));
+        }
+
         if (xml != NULL) {
                 g_object_unref (xml);
         }
@@ -266,6 +288,8 @@ csm_app_dialog_dispose (GObject *object)
         dialog->priv->command = NULL;
         g_free (dialog->priv->comment);
         dialog->priv->comment = NULL;
+        g_free (dialog->priv->delay);
+        dialog->priv->delay = NULL;
 
         G_OBJECT_CLASS (csm_app_dialog_parent_class)->dispose (object);
 }
@@ -306,6 +330,18 @@ csm_app_dialog_set_comment (CsmAppDialog *dialog,
         g_object_notify (G_OBJECT (dialog), "comment");
 }
 
+static void
+csm_app_dialog_set_delay (CsmAppDialog *dialog,
+                          const char   *delay)
+{
+    g_return_if_fail (CSM_IS_APP_DIALOG (dialog));
+
+    g_free (dialog->priv->delay);
+
+    dialog->priv->delay = g_strdup (delay);
+    g_object_notify (G_OBJECT (dialog), "delay");
+}
+
 const char *
 csm_app_dialog_get_name (CsmAppDialog *dialog)
 {
@@ -327,6 +363,15 @@ csm_app_dialog_get_comment (CsmAppDialog *dialog)
         return gtk_entry_get_text (GTK_ENTRY (dialog->priv->comment_entry));
 }
 
+char *
+csm_app_dialog_get_delay (CsmAppDialog *dialog)
+{
+        g_return_val_if_fail (CSM_IS_APP_DIALOG (dialog), NULL);
+        gint val = gtk_spin_button_get_value (GTK_SPIN_BUTTON (dialog->priv->delay_spinner));
+        gchar *ret = g_strdup_printf ("%d", val);
+        return ret;
+}
+
 static void
 csm_app_dialog_set_property (GObject        *object,
                              guint           prop_id,
@@ -344,6 +389,9 @@ csm_app_dialog_set_property (GObject        *object,
                 break;
         case PROP_COMMENT:
                 csm_app_dialog_set_comment (dialog, g_value_get_string (value));
+                break;
+        case PROP_DELAY:
+                csm_app_dialog_set_delay (dialog, g_value_get_string (value));
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -368,6 +416,9 @@ csm_app_dialog_get_property (GObject        *object,
                 break;
         case PROP_COMMENT:
                 g_value_set_string (value, dialog->priv->comment);
+                break;
+        case PROP_DELAY:
+                g_value_set_string (value, dialog->priv->delay);
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -408,6 +459,14 @@ csm_app_dialog_class_init (CsmAppDialogClass *klass)
                                                               NULL,
                                                               G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
+        g_object_class_install_property (object_class,
+                                         PROP_DELAY,
+                                         g_param_spec_string ("delay",
+                                                              "delay",
+                                                              "delay",
+                                                              NULL,
+                                                              G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
         g_type_class_add_private (klass, sizeof (CsmAppDialogPrivate));
 }
 
@@ -436,7 +495,8 @@ csm_app_dialog_finalize (GObject *object)
 GtkWidget *
 csm_app_dialog_new (const char *name,
                     const char *command,
-                    const char *comment)
+                    const char *comment,
+                    const char *delay)
 {
         GObject *object;
 
@@ -444,6 +504,7 @@ csm_app_dialog_new (const char *name,
                                "name", name,
                                "command", command,
                                "comment", comment,
+                               "delay", delay,
                                NULL);
 
         return GTK_WIDGET (object);
@@ -453,7 +514,8 @@ gboolean
 csm_app_dialog_run (CsmAppDialog  *dialog,
                     char         **name_p,
                     char         **command_p,
-                    char         **comment_p)
+                    char         **comment_p,
+                    char         **delay_p)
 {
         gboolean retval;
 
@@ -463,6 +525,7 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                 const char *name;
                 const char *exec;
                 const char *comment;
+                char *delay;
                 const char *error_msg;
                 GError     *error;
                 char      **argv;
@@ -471,6 +534,7 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                 name = csm_app_dialog_get_name (CSM_APP_DIALOG (dialog));
                 exec = csm_app_dialog_get_command (CSM_APP_DIALOG (dialog));
                 comment = csm_app_dialog_get_comment (CSM_APP_DIALOG (dialog));
+                delay = csm_app_dialog_get_delay (CSM_APP_DIALOG (dialog));
 
                 error = NULL;
                 error_msg = NULL;
@@ -525,6 +589,11 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                         *comment_p = g_strdup (comment);
                 }
 
+                if (delay_p) {
+                        *delay_p = g_strdup (delay);
+                }
+
+                g_free (delay);
                 retval = TRUE;
                 break;
         }

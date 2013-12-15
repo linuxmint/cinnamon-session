@@ -84,7 +84,7 @@ main (int argc, char *argv[])
         textdomain (GETTEXT_PACKAGE);
 
         error = NULL;
-        if (! gtk_init_with_args (&argc, &argv, " - GNOME Session Properties", options, GETTEXT_PACKAGE, &error)) {
+        if (! gtk_init_with_args (&argc, &argv, " - Cinnamon Session Properties", options, GETTEXT_PACKAGE, &error)) {
                 g_warning ("Unable to start: %s", error->message);
                 g_error_free (error);
                 return 1;

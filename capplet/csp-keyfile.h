@@ -32,6 +32,7 @@
 G_BEGIN_DECLS
 
 #define CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED "X-GNOME-Autostart-enabled"
+#define CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_DELAY "X-GNOME-Autostart-Delay"
 
 void      csp_key_file_populate        (GKeyFile *keyfile);
 

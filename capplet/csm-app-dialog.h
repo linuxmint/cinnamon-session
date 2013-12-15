@@ -50,16 +50,21 @@ GType                  csm_app_dialog_get_type           (void);
 
 GtkWidget            * csm_app_dialog_new                (const char   *name,
                                                           const char   *command,
-                                                          const char   *comment);
+                                                          const char   *comment,
+                                                          const char   *delay);
 
 gboolean               csm_app_dialog_run               (CsmAppDialog  *dialog,
                                                          char         **name_p,
                                                          char         **command_p,
-                                                         char         **comment_p);
+                                                         char         **comment_p,
+                                                         char         **delay);
 
 const char *           csm_app_dialog_get_name           (CsmAppDialog *dialog);
 const char *           csm_app_dialog_get_command        (CsmAppDialog *dialog);
 const char *           csm_app_dialog_get_comment        (CsmAppDialog *dialog);
+char *           csm_app_dialog_get_delay          (CsmAppDialog *delay);
+
+gint             char_to_int (const char *in);
 
 G_END_DECLS
 

@@ -47,6 +47,7 @@
 #define CSP_ASP_SAVE_MASK_EXEC       0x0008
 #define CSP_ASP_SAVE_MASK_COMMENT    0x0010
 #define CSP_ASP_SAVE_MASK_NO_DISPLAY 0x0020
+#define CSP_ASP_SAVE_MASK_DELAY      0x0040
 #define CSP_ASP_SAVE_MASK_ALL        0xffff
 
 struct _CspAppPrivate {
@@ -62,6 +63,7 @@ struct _CspAppPrivate {
         char         *exec;
         char         *comment;
         char         *icon;
+        char         *delay;
 
         GIcon        *gicon;
         char         *description;
@@ -185,6 +187,11 @@ _csp_app_free_reusable_data (CspApp *app)
         if (app->priv->comment) {
                 g_free (app->priv->comment);
                 app->priv->comment = NULL;
+        }
+
+        if (app->priv->delay) {
+                g_free (app->priv->delay);
+                app->priv->delay = NULL;
         }
 
         if (app->priv->icon) {
@@ -381,6 +388,16 @@ _csp_app_user_equal_system (CspApp  *app,
         }
         g_free (str);
 
+        str = csp_key_file_get_string (keyfile,
+                                       CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_DELAY);
+        if (char_to_int (app->priv->delay) > 0 && !_csp_str_equal (str, app->priv->delay)) {
+                g_free (str);
+                g_free (path);
+                g_key_file_free (keyfile);
+                return FALSE;
+        }
+        g_free (str);
+
         str = csp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_ICON);
         if (!_csp_str_equal (str, app->priv->icon)) {
@@ -489,6 +506,12 @@ _csp_app_save (gpointer data)
                 csp_key_file_set_string (keyfile,
                                          G_KEY_FILE_DESKTOP_KEY_EXEC,
                                          app->priv->exec);
+        }
+
+        if (app->priv->save_mask & CSP_ASP_SAVE_MASK_DELAY) {
+                csp_key_file_set_string (keyfile,
+                                         CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_DELAY,
+                                         app->priv->delay);
         }
 
         _csp_ensure_user_autostart_dir ();
@@ -628,6 +651,14 @@ csp_app_get_comment (CspApp *app)
         return app->priv->comment;
 }
 
+const char *
+csp_app_get_delay (CspApp *app)
+{
+        g_return_val_if_fail (CSP_IS_APP (app), NULL);
+
+        return app->priv->delay;
+}
+
 GIcon *
 csp_app_get_icon (CspApp *app)
 {
@@ -681,7 +712,8 @@ void
 csp_app_update (CspApp     *app,
                 const char *name,
                 const char *comment,
-                const char *exec)
+                const char *exec,
+                const char *delay)
 {
         gboolean    changed;
 
@@ -712,6 +744,13 @@ csp_app_update (CspApp     *app,
                 g_free (app->priv->exec);
                 app->priv->exec = g_strdup (exec);
                 app->priv->save_mask |= CSP_ASP_SAVE_MASK_EXEC;
+        }
+
+        if (!_csp_str_equal (delay, app->priv->delay)) {
+                changed = TRUE;
+                g_free (app->priv->delay);
+                app->priv->delay = g_strdup (delay);
+                app->priv->save_mask |= CSP_ASP_SAVE_MASK_DELAY;
         }
 
         if (changed) {
@@ -842,6 +881,8 @@ csp_app_new (const char   *path,
                                                           G_KEY_FILE_DESKTOP_KEY_NAME);
         app->priv->exec = csp_key_file_get_string (keyfile,
                                                    G_KEY_FILE_DESKTOP_KEY_EXEC);
+        app->priv->delay = csp_key_file_get_string (keyfile,
+                                                   CSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_DELAY);
         app->priv->comment = csp_key_file_get_locale_string (keyfile,
                                                              G_KEY_FILE_DESKTOP_KEY_COMMENT);
 
@@ -951,7 +992,8 @@ _csp_find_free_basename (const char *suggested_basename)
 void
 csp_app_create (const char *name,
                 const char *comment,
-                const char *exec)
+                const char *exec,
+                const char *delay)
 {
         CspAppManager  *manager;
         CspApp         *app;
@@ -989,6 +1031,7 @@ csp_app_create (const char *name,
                 app->priv->name = g_strdup (exec);
         }
         app->priv->exec = g_strdup (exec);
+        app->priv->delay = g_strdup (delay);
         app->priv->comment = g_strdup (comment);
         app->priv->icon = NULL;
 
