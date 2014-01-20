@@ -514,7 +514,7 @@ egg_desktop_file_can_launch (EggDesktopFile *desktop_file,
 	{
 	  for (i = 0, found = FALSE; only_show_in[i] && !found; i++)
 	    {
-	      if (!strcmp (only_show_in[i], desktop_environment))
+	      if (!strcmp (only_show_in[i], "GNOME") || !strcmp (only_show_in[i], "X-Cinnamon"))
 		found = TRUE;
 	    }
 
