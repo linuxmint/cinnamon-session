@@ -228,13 +228,15 @@ static void
 load_standard_apps (CsmManager *manager,
                     GKeyFile   *keyfile)
 {
-        GError *error;
-
-        g_debug ("fill: *** Executing user migration");
-        error = NULL;
-        if(!g_spawn_command_line_sync ("session-migration", NULL, NULL, NULL, &error)) {
-                 g_warning ("Error while executing session-migration: %s", error->message);
-                 g_error_free (error);
+        
+        if (g_file_test ("/usr/bin/session-migration", G_FILE_TEST_EXISTS)) {
+            GError *error;
+            g_debug ("fill: *** Executing user migration");
+            error = NULL;
+            if(!g_spawn_command_line_sync ("session-migration", NULL, NULL, NULL, &error)) {
+                     g_warning ("Error while executing session-migration: %s", error->message);
+                     g_error_free (error);
+            }
         }
 
         g_debug ("fill: *** Adding required components");
