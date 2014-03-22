@@ -330,6 +330,7 @@ csm_logout_dialog_set_timeout (CsmLogoutDialog *logout_dialog)
 
         if (logout_dialog->priv->timeout_id != 0) {
                 g_source_remove (logout_dialog->priv->timeout_id);
+                logout_dialog->priv->timeout_id = 0;
         }
 
         logout_dialog->priv->timeout_id = g_timeout_add (1000,

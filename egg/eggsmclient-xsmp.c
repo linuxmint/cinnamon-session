@@ -585,9 +585,10 @@ update_pending_events (EggSMClientXSMP *xsmp)
     }
   else
     {
-      if (xsmp->idle != 0)
-	g_source_remove (xsmp->idle);
-      xsmp->idle = 0;
+      if (xsmp->idle != 0) {
+		g_source_remove (xsmp->idle);
+      	xsmp->idle = 0;
+      }
     }
 }
 
@@ -1340,7 +1341,10 @@ ice_connection_watch (IceConn     ice_conn,
   else
     {
       watch_id = GPOINTER_TO_UINT (*watch_data);
-      g_source_remove (watch_id);
+      if (watch_id) {
+      	g_source_remove (watch_id);
+      	watch_id = 0;
+      }
     }
 }
 

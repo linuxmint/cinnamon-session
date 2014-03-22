@@ -846,6 +846,7 @@ csm_xsmp_client_disconnect (CsmXSMPClient *client)
 {
         if (client->priv->watch_id > 0) {
                 g_source_remove (client->priv->watch_id);
+                client->priv->watch_id = 0;
         }
 
         if (client->priv->conn != NULL) {
