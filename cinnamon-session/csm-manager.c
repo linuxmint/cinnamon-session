@@ -40,6 +40,8 @@
 
 #include <gtk/gtk.h> /* for logout dialog */
 
+#include <canberra.h>
+
 #include "csm-manager.h"
 #include "csm-manager-glue.h"
 
@@ -160,6 +162,9 @@ struct CsmManagerPrivate
         DBusGConnection        *connection;
         gboolean                dbus_disconnected : 1;
 
+        ca_context             *ca;
+        gboolean               *logout_sound_is_playing;
+
 };
 
 enum {
@@ -188,6 +193,7 @@ static void     csm_manager_init        (CsmManager      *manager);
 static void     csm_manager_finalize    (GObject         *object);
 
 static void     maybe_save_session   (CsmManager *manager);
+static void     maybe_play_logout_sound (CsmManager *manager);
 
 static gboolean _log_out_is_locked_down     (CsmManager *manager);
 static gboolean _switch_user_is_locked_down (CsmManager *manager);
@@ -551,6 +557,7 @@ end_phase (CsmManager *manager)
         case CSM_MANAGER_PHASE_QUERY_END_SESSION:
                 break;
         case CSM_MANAGER_PHASE_END_SESSION:
+                maybe_play_logout_sound (manager);
                 maybe_save_session (manager);
                 break;
         case CSM_MANAGER_PHASE_EXIT:
@@ -2154,6 +2161,46 @@ on_xsmp_client_register_request (CsmXSMPClient *client,
         *id = new_id;
 
         return handled;
+}
+
+static void
+_finished_playing_logout_sound (ca_context *c, uint32_t id, int error, void *userdata) 
+{
+    g_debug ("CsmManager: Finished playing logout sound");
+    CsmManager *manager = (CsmManager *) userdata;
+    ca_context_destroy (manager->priv->ca);
+    manager->priv->ca = NULL;
+    manager->priv->logout_sound_is_playing = FALSE;
+    g_debug ("CsmManager: Destroyed canberra context");
+}
+
+static void
+maybe_play_logout_sound (CsmManager *manager)
+{
+    GSettings *settings = g_settings_new ("org.cinnamon.sounds");
+        gboolean enabled = g_settings_get_boolean(settings, "logout-enabled");
+        gchar *sound = g_settings_get_string (settings, "logout-file");
+        if (enabled) {
+            if (sound) {
+                if (g_file_test (sound, G_FILE_TEST_EXISTS)) {
+                    g_debug ("CsmManager: Playing logout sound '%s'", sound);
+                    manager->priv->logout_sound_is_playing = TRUE;
+                    ca_context_create (&manager->priv->ca);
+                    ca_context_set_driver (manager->priv->ca, "pulse");
+                    ca_context_change_props (manager->priv->ca, 0, CA_PROP_APPLICATION_ID, "org.gnome.VolumeControl", NULL);
+                    ca_proplist *proplist = NULL;
+                    ca_proplist_create(&proplist);
+                    ca_proplist_sets(proplist, CA_PROP_MEDIA_FILENAME, sound);
+                    ca_context_play_full(manager->priv->ca, 0, proplist, _finished_playing_logout_sound, manager);                
+                }
+            }
+        }
+        g_free(sound);
+        g_object_unref (settings);    
+
+        while (manager->priv->logout_sound_is_playing) {
+            sleep(1);
+        }
 }
 
 static void

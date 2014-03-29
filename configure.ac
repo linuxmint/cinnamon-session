@@ -54,6 +54,7 @@ PKG_CHECK_MODULES(CINNAMON_SESSION,
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
         upower-glib >= $UPOWER_REQUIRED
         json-glib-1.0 >= $JSON_GLIB_REQUIRED
+        libcanberra
 )
 
 PKG_CHECK_MODULES(SESSION_PROPERTIES,
