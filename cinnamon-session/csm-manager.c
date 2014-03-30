@@ -2163,12 +2163,10 @@ on_xsmp_client_register_request (CsmXSMPClient *client,
 static void
 _finished_playing_logout_sound (ca_context *c, uint32_t id, int error, void *userdata) 
 {
-    g_debug ("CsmManager: Finished playing logout sound");
+    g_warning ("Finished playing logout sound");
     CsmManager *manager = (CsmManager *) userdata;
-    ca_context_destroy (manager->priv->ca);
-    manager->priv->ca = NULL;
-    manager->priv->logout_sound_is_playing = FALSE;
-    g_debug ("CsmManager: Destroyed canberra context");
+    manager->priv->logout_sound_is_playing = FALSE;    
+    g_warning ("Resuming logout sequence...");
 }
 
 static void
@@ -2180,7 +2178,7 @@ maybe_play_logout_sound (CsmManager *manager)
         if (enabled) {
             if (sound) {
                 if (g_file_test (sound, G_FILE_TEST_EXISTS)) {
-                    g_debug ("CsmManager: Playing logout sound '%s'", sound);
+                    g_warning ("Playing logout sound '%s'", sound);
                     manager->priv->logout_sound_is_playing = TRUE;
                     ca_context_create (&manager->priv->ca);
                     ca_context_set_driver (manager->priv->ca, "pulse");
@@ -2188,7 +2186,11 @@ maybe_play_logout_sound (CsmManager *manager)
                     ca_proplist *proplist = NULL;
                     ca_proplist_create(&proplist);
                     ca_proplist_sets(proplist, CA_PROP_MEDIA_FILENAME, sound);
-                    ca_context_play_full(manager->priv->ca, 0, proplist, _finished_playing_logout_sound, manager);                
+                    int result = ca_context_play_full(manager->priv->ca, 0, proplist, _finished_playing_logout_sound, manager); 
+                    if (result != CA_SUCCESS) {
+                        g_warning ("Logout sound failed to play, skipping.");
+                        manager->priv->logout_sound_is_playing = FALSE;
+                    }
                 }
             }
         }
