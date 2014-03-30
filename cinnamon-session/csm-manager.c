@@ -457,16 +457,13 @@ phase_num_to_name (guint phase)
 static void start_phase (CsmManager *manager);
 
 static void
-quit_request_completed (CsmSystem *system,
+quit_request_failed (CsmSystem *system,
                         GError    *error,
                         gpointer   user_data)
 {
+        g_warning ("Using an MDM logout action to shutdown/reboot the system.");
         MdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
-
-        if (error != NULL) {
-                mdm_set_logout_action (fallback_action);
-        }
-
+        mdm_set_logout_action (fallback_action);
         gtk_main_quit ();
 }
 
@@ -482,11 +479,11 @@ csm_manager_quit (CsmManager *manager)
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
+                g_warning ("Requesting system restart...");
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
-
                 g_signal_connect (manager->priv->system,
-                                  "request-completed",
-                                  G_CALLBACK (quit_request_completed),
+                                  "request-failed",
+                                  G_CALLBACK (quit_request_failed),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
                 csm_system_attempt_restart (manager->priv->system);
                 break;
@@ -495,12 +492,12 @@ csm_manager_quit (CsmManager *manager)
                 gtk_main_quit ();
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:              
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:  
+                g_warning ("Requesting system shutdown...");
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
-
                 g_signal_connect (manager->priv->system,
-                                  "request-completed",
-                                  G_CALLBACK (quit_request_completed),
+                                  "request-failed",
+                                  G_CALLBACK (quit_request_failed),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
                 csm_system_attempt_stop (manager->priv->system);
                 break;

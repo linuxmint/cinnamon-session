@@ -280,50 +280,6 @@ csm_consolekit_finalize (GObject *object)
 }
 
 static void
-emit_restart_complete (CsmConsolekit *manager,
-                       GError        *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_RESTARTING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
-emit_stop_complete (CsmConsolekit *manager,
-                    GError        *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_STOPPING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
 csm_consolekit_attempt_restart (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
@@ -332,10 +288,11 @@ csm_consolekit_attempt_restart (CsmSystem *system)
 
         error = NULL;
 
+        g_warning ("Attempting to restart using consolekit...");
+
         if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                emit_restart_complete (manager, error);
+                g_warning ("Could not connect to ConsoleKit: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
                 g_error_free (error);
                 return;
         }
@@ -348,11 +305,9 @@ csm_consolekit_attempt_restart (CsmSystem *system)
                                               G_TYPE_INVALID);
 
         if (!res) {
-                g_warning ("Unable to restart system: %s", error->message);
-                emit_restart_complete (manager, error);
+                g_warning ("Unable to restart system via consolekit: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
                 g_error_free (error);
-        } else {
-                emit_restart_complete (manager, NULL);
         }
 }
 
@@ -365,10 +320,11 @@ csm_consolekit_attempt_stop (CsmSystem *system)
 
         error = NULL;
 
+        g_warning ("Attempting to shutdown using consolekit...");
+
         if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                emit_stop_complete (manager, error);
+                g_warning ("Could not connect to ConsoleKit: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
                 g_error_free (error);
                 return;
         }
@@ -381,11 +337,9 @@ csm_consolekit_attempt_stop (CsmSystem *system)
                                               G_TYPE_INVALID);
 
         if (!res) {
-                g_warning ("Unable to stop system: %s", error->message);
-                emit_stop_complete (manager, error);
+                g_warning ("Unable to stop system via consolekit: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
                 g_error_free (error);
-        } else {
-                emit_stop_complete (manager, NULL);
         }
 }
 

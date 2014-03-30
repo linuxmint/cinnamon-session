@@ -28,7 +28,7 @@
 #include "csm-systemd.h"
 
 enum {
-        REQUEST_COMPLETED = 0,
+        REQUEST_FAILED = 0,
         LAST_SIGNAL
 };
 
@@ -39,8 +39,8 @@ G_DEFINE_INTERFACE (CsmSystem, csm_system, G_TYPE_OBJECT)
 static void
 csm_system_default_init (CsmSystemInterface *iface)
 {
-        signals [REQUEST_COMPLETED] =
-                g_signal_new ("request-completed",
+        signals [REQUEST_FAILED] =
+                g_signal_new ("request-failed",
                               CSM_TYPE_SYSTEM,
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmSystemInterface, request_completed),

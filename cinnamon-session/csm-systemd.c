@@ -164,50 +164,6 @@ csm_systemd_init (CsmSystemd *manager)
 }
 
 static void
-emit_restart_complete (CsmSystemd *manager,
-                       GError     *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_RESTARTING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
-emit_stop_complete (CsmSystemd *manager,
-                    GError     *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_STOPPING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
 restart_done (GObject      *source,
               GAsyncResult *result,
               gpointer      user_data)
@@ -220,11 +176,10 @@ restart_done (GObject      *source,
         res = g_dbus_proxy_call_finish (proxy, result, &error);
 
         if (!res) {
-                g_warning ("Unable to restart system: %s", error->message);
-                emit_restart_complete (manager, error);
+                g_warning ("Unable to restart system via systemd: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
                 g_error_free (error);
         } else {
-                emit_restart_complete (manager, NULL);
                 g_variant_unref (res);
         }
 }
@@ -232,6 +187,8 @@ restart_done (GObject      *source,
 static void
 csm_systemd_attempt_restart (CsmSystem *system)
 {
+        g_warning ("Attempting to restart using systemd...");
+
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
         g_dbus_proxy_call (manager->priv->sd_proxy,
@@ -257,11 +214,10 @@ stop_done (GObject      *source,
         res = g_dbus_proxy_call_finish (proxy, result, &error);
 
         if (!res) {
-                g_warning ("Unable to stop system: %s", error->message);
-                emit_stop_complete (manager, error);
+                g_warning ("Unable to stop system via systemd: %s", error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);                
                 g_error_free (error);
-        } else {
-                emit_stop_complete (manager, NULL);
+        } else {                
                 g_variant_unref (res);
         }
 }
@@ -269,6 +225,8 @@ stop_done (GObject      *source,
 static void
 csm_systemd_attempt_stop (CsmSystem *system)
 {
+        g_warning ("Attempting to shutdown using systemd...");
+
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
         g_dbus_proxy_call (manager->priv->sd_proxy,
