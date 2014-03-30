@@ -487,7 +487,7 @@ csm_manager_quit (CsmManager *manager)
                 g_signal_connect (manager->priv->system,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed),
-                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_NONE));
+                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
                 csm_system_attempt_restart (manager->priv->system);
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT_MDM:
@@ -495,13 +495,13 @@ csm_manager_quit (CsmManager *manager)
                 gtk_main_quit ();
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:              
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
                 g_signal_connect (manager->priv->system,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed),
-                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_NONE));
+                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
                 csm_system_attempt_stop (manager->priv->system);
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
