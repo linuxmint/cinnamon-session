@@ -230,9 +230,10 @@ shutdown_cb (gpointer data)
          * applications in the off chance a handler is already queued
          * to dispatch following the below call to gtk_main_quit.
          */
-        csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
-
-        gtk_main_quit ();
+        if (manager) {
+            csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
+            gtk_main_quit ();
+        }
 }
 
 static gboolean
