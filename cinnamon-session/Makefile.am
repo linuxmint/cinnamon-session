@@ -6,12 +6,13 @@ noinst_PROGRAMS = 		\
 	test-process-helper
 
 AM_CPPFLAGS =					\
-	$(CINNAMON_SESSION_CFLAGS)			\
+	$(CINNAMON_SESSION_CFLAGS)		\
+	$(UPOWER_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-cinnamon_session_SOURCES =				\
+cinnamon_session_SOURCES =			\
 	csm-app.h				\
 	csm-app.c				\
 	csm-autostart-app.h			\
@@ -28,8 +29,6 @@ cinnamon_session_SOURCES =				\
 	csm-marshal.c				\
 	csm-system.h				\
 	csm-system.c				\
-	csm-consolekit.c			\
-	csm-consolekit.h			\
 	csm-systemd.h				\
 	csm-systemd.c				\
 	csm-logout-dialog.h			\
@@ -63,6 +62,10 @@ cinnamon_session_SOURCES =				\
 	csm-xsmp-server.c			\
 	csm-xsmp-server.h
 
+if HAVE_OLD_UPOWER
+cinnamon_session_SOURCES += csm-consolekit.c csm-consolekit.h
+endif
+
 cinnamon_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
 	$(SM_CFLAGS)				\
@@ -86,7 +89,8 @@ cinnamon_session_LDADD =				\
 	$(XRENDER_LIBS)				\
 	$(XTEST_LIBS)				\
 	$(XEXT_LIBS)				\
-	$(CINNAMON_SESSION_LIBS)			\
+	$(CINNAMON_SESSION_LIBS)		\
+	$(UPOWER_LIBS)				\
 	$(GCONF_LIBS)				\
 	$(SYSTEMD_LIBS)				\
 	$(EXECINFO_LIBS)
