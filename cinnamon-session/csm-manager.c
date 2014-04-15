@@ -1185,7 +1185,7 @@ manager_switch_user (GdkDisplay *display,
                         g_debug ("CsmManager: Unable to start MDM greeter: %s", error->message);
                         g_error_free (error);
                 }
-        } else if (process_is_running("gdm")) {
+        } else if (process_is_running("gdm") || process_is_running("gdm3")) {
                 command = g_strdup_printf ("%s %s",
                                            GDM_FLEXISERVER_COMMAND,
                                            GDM_FLEXISERVER_ARGS);
