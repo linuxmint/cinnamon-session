@@ -79,12 +79,12 @@ main (int argc, char *argv[])
         GError    *error;
         GtkWidget *dialog;
 
-        bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-        textdomain (GETTEXT_PACKAGE);
+        bindtextdomain ("cinnamon-session", "/usr/share/cinnamon/locale");
+        bind_textdomain_codeset ("cinnamon-session", "UTF-8");
+        textdomain ("cinnamon-session");
 
         error = NULL;
-        if (! gtk_init_with_args (&argc, &argv, " - Cinnamon Session Properties", options, GETTEXT_PACKAGE, &error)) {
+        if (! gtk_init_with_args (&argc, &argv, " - Cinnamon Session Properties", options, "cinnamon-session", &error)) {
                 g_warning ("Unable to start: %s", error->message);
                 g_error_free (error);
                 return 1;
