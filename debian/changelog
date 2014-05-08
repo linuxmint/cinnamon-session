@@ -1,3 +1,9 @@
+cinnamon-session (2.2.1) qiana; urgency=medium
+
+  * 2.2.1
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 08 May 2014 10:35:56 +0100
+
 cinnamon-session (2.2.0) qiana; urgency=medium
 
   * 2.2.0
