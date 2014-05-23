@@ -281,7 +281,7 @@ setup_window (CsmFailWhaleDialog *fail_dialog)
                 gtk_window_set_skip_taskbar_hint (GTK_WINDOW (fail_dialog), TRUE);
                 gtk_window_set_keep_above (GTK_WINDOW (fail_dialog), TRUE);
                 gtk_window_stick (GTK_WINDOW (fail_dialog));
-                gtk_window_set_position (GTK_WINDOW (fail_dialog), GTK_WIN_POS_CENTER_ALWAYS);
+                gtk_window_set_position (GTK_WINDOW (fail_dialog), GTK_WIN_POS_CENTER);
                 /* only works if there is a window manager which is unlikely */
                 gtk_window_fullscreen (GTK_WINDOW (fail_dialog));
         }

@@ -460,7 +460,7 @@ csm_get_dialog (CsmDialogLogoutType type,
         gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
                                       icon_name, GTK_ICON_SIZE_DIALOG);
         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
-        gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER_ALWAYS);
+        gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER);
         gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
 
         gtk_dialog_set_default_response (GTK_DIALOG (logout_dialog),
