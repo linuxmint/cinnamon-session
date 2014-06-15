@@ -3104,6 +3104,9 @@ logout_dialog_response (CsmLogoutDialog *logout_dialog,
 
         display = gtk_widget_get_display (GTK_WIDGET (logout_dialog));
 
+        gdk_pointer_ungrab (GDK_CURRENT_TIME);
+        gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+
         gtk_widget_destroy (GTK_WIDGET (logout_dialog));
 
         /* In case of dialog cancel, switch user, hibernate and
@@ -3164,7 +3167,7 @@ show_fallback_shutdown_dialog (CsmManager *manager,
                           "response",
                           G_CALLBACK (logout_dialog_response),
                           manager);
-        gtk_widget_show (dialog);
+        gtk_window_present (GTK_WINDOW (dialog));
 }
 
 static void
@@ -3186,7 +3189,7 @@ show_fallback_logout_dialog (CsmManager *manager)
                           "response",
                           G_CALLBACK (logout_dialog_response),
                           manager);
-        gtk_widget_show (dialog);
+        gtk_window_present (GTK_WINDOW (dialog));
 }
 
 static void
