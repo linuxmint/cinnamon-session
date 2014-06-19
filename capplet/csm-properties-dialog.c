@@ -160,7 +160,7 @@ _fill_iter_from_app (GtkListStore *list_store,
                             STORE_COL_ENABLED, enabled,
                             STORE_COL_GICON, icon,
                             STORE_COL_DESCRIPTION, description,
-                            STORE_COL_DELAY, delay,
+                            STORE_COL_DELAY, delay ? delay : "0",
                             STORE_COL_APP, app,
                             STORE_COL_SEARCH, app_name,
                             -1);
