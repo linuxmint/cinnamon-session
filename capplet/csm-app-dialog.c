@@ -74,10 +74,8 @@ char_to_int (const char *in)
         return (gint) ret;
 
     ret = g_ascii_strtoll (in, NULL, 10);
-
     if (ret > G_MAXINT || ret < G_MININT)
         ret = 0;
-    g_printerr ("int is %d\n", (gint) ret);
     return (gint) ret;
 }
 
