@@ -106,7 +106,8 @@ const gchar *blacklist[] = {
                             "gnome-fallback-mount-helper",
                             "gnome-screensaver",
                             "mate-screensaver",
-                            "mate-keyring-daemon"
+                            "mate-keyring-daemon",
+                            "indicator-"
                            };
 
 static void app_registered (CsmApp     *app, CsmManager *manager);
