@@ -1,3 +1,13 @@
+cinnamon-session (2.2.2) qiana; urgency=medium
+
+  * Make shutdown and failwhale dialogs use CENTER instead of CENTER_ALWAYS, to stop the small jump the dialogs usually make right after they pop up.
+  * Logout/Shutdown dialogs: Capture focus and keyboard input and block until dialog is closed.
+  * session-properties (startup programs): show 0 in the list when there is no startup delay defined, as well as a 0 in the spinner during item edit.
+  * Remove logging from previous commit
+  * Block ubuntu indicator-* services from starting.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 27 Jun 2014 14:33:56 +0100
+
 cinnamon-session (2.2.1) qiana; urgency=medium
 
   * 2.2.1
