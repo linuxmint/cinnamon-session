@@ -200,7 +200,7 @@
         <child>
           <object class="GtkCheckButton" id="session_properties_remember_toggle">
             <property name="label" translatable="yes">_Automatically remember running applications when logging out</property>
-            <property name="visible">True</property>
+            <property name="visible">False</property>
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
             <property name="use_action_appearance">False</property>
