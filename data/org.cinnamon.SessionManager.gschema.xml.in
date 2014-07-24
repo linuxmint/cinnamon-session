@@ -24,5 +24,10 @@
         nautilus, and gnome-screensaver are hardcoded.  This list can add to those.
       </description>
     </key>
+    <key name="quit-time-delay" type="i">
+      <default>60</default>
+      <summary>The time delay before quitting the system automatically</summary>
+      <description>The time delay before the shutdown/logout dialogue quits the system automatically</description>
+    </key>
   </schema>
 </schemalist>
