@@ -62,9 +62,7 @@ cinnamon_session_SOURCES =			\
 	csm-xsmp-server.c			\
 	csm-xsmp-server.h
 
-if HAVE_OLD_UPOWER
 cinnamon_session_SOURCES += csm-consolekit.c csm-consolekit.h
-endif
 
 cinnamon_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\

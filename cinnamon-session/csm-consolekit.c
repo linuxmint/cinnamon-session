@@ -30,8 +30,11 @@
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
+
+#ifdef HAVE_OLD_UPOWER
 #define UPOWER_ENABLE_DEPRECATED 1
 #include <upower.h>
+#endif
 
 #include "csm-system.h"
 #include "csm-consolekit.h"
@@ -55,7 +58,9 @@ struct _CsmConsolekitPrivate
         DBusGConnection *dbus_connection;
         DBusGProxy      *bus_proxy;
         DBusGProxy      *ck_proxy;
+#ifdef HAVE_OLD_UPOWER
         UpClient        *up_client;
+#endif
 };
 
 static void     csm_consolekit_class_init   (CsmConsolekitClass *klass);
@@ -182,8 +187,10 @@ csm_consolekit_ensure_ck_connection (CsmConsolekit  *manager,
                 }
         }
 
+#ifdef HAVE_OLD_UPOWER
         g_clear_object (&manager->priv->up_client);
         manager->priv->up_client = up_client_new ();
+#endif
 
         is_connected = TRUE;
 
@@ -248,7 +255,9 @@ csm_consolekit_free_dbus (CsmConsolekit *manager)
 {
         g_clear_object (&manager->priv->bus_proxy);
         g_clear_object (&manager->priv->ck_proxy);
+#ifdef HAVE_OLD_UPOWER
         g_clear_object (&manager->priv->up_client);
+#endif
 
         if (manager->priv->dbus_connection != NULL) {
                 DBusConnection *connection;
@@ -771,7 +780,11 @@ csm_consolekit_can_suspend (CsmSystem *system)
 {
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
 
+#ifdef HAVE_OLD_UPOWER
         return up_client_get_can_suspend (consolekit->priv->up_client);
+#else
+        return FALSE;
+#endif
 }
 
 static gboolean
@@ -779,12 +792,18 @@ csm_consolekit_can_hibernate (CsmSystem *system)
 {
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
 
+#ifdef HAVE_OLD_UPOWER
         return up_client_get_can_hibernate (consolekit->priv->up_client);
+#else
+        return FALSE;
+#endif
+
 }
 
 static void
 csm_consolekit_suspend (CsmSystem *system)
 {
+#ifdef HAVE_OLD_UPOWER
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
         GError *error = NULL;
         gboolean ret;
@@ -794,11 +813,13 @@ csm_consolekit_suspend (CsmSystem *system)
                 g_warning ("Unexpected suspend failure: %s", error->message);
                 g_error_free (error);
         }
+#endif
 }
 
 static void
 csm_consolekit_hibernate (CsmSystem *system)
 {
+#ifdef HAVE_OLD_UPOWER
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
         GError *error = NULL;
         gboolean ret;
@@ -808,6 +829,7 @@ csm_consolekit_hibernate (CsmSystem *system)
                 g_warning ("Unexpected hibernate failure: %s", error->message);
                 g_error_free (error);
         }
+#endif
 }
 
 static void

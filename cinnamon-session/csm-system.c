@@ -156,14 +156,12 @@ csm_get_system (void)
                         g_debug ("Using systemd for session tracking");
                 }
         }
-#ifdef HAVE_OLD_UPOWER
         if (system == NULL) {
                 system = CSM_SYSTEM (csm_consolekit_new ());
                 if (system != NULL) {
                         g_debug ("Using ConsoleKit for session tracking");
                 }
         }
-#endif
 
         return g_object_ref (system);
 }
