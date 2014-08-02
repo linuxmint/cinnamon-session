@@ -167,7 +167,7 @@ struct CsmManagerPrivate
         gboolean                dbus_disconnected : 1;
 
         ca_context             *ca;
-        gboolean               *logout_sound_is_playing;
+        gboolean               logout_sound_is_playing;
 
 };
 
