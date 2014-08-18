@@ -42,12 +42,12 @@
 #define CAPPLET_DELETE_WIDGET_NAME        "session_properties_delete_button"
 #define CAPPLET_EDIT_WIDGET_NAME          "session_properties_edit_button"
 #define CAPPLET_SAVE_WIDGET_NAME          "session_properties_save_button"
-#define CAPPLET_REMEMBER_WIDGET_NAME      "session_properties_remember_toggle"
 
 #define STARTUP_APP_ICON     "system-run"
 
 #define SPC_SETTINGS_SCHEMA          "org.cinnamon.SessionManager"
 #define SPC_SETTINGS_AUTOSAVE_KEY    "auto-save-session"
+#define SPC_SETTINGS_ADVANCED        "show-advanced"
 
 struct CsmPropertiesDialogPrivate
 {
@@ -116,19 +116,27 @@ _fill_iter_from_app (GtkListStore *list_store,
         gboolean    display;
         gboolean    enabled;
         gboolean    shown;
+        gboolean    advanced;
         GIcon      *icon;
         const char *description;
         const char *app_name;
         const char *delay;
+        GSettings  *settings = g_settings_new (SPC_SETTINGS_SCHEMA);
 
         hidden      = csp_app_get_hidden (app);
-        display     = csp_app_get_display (app);
         enabled     = csp_app_get_enabled (app);
         delay       = csp_app_get_delay (app);
         shown       = csp_app_get_shown (app);
         icon        = csp_app_get_icon (app);
         description = csp_app_get_description (app);
         app_name    = csp_app_get_name (app);
+        advanced    = g_settings_get_boolean (settings, SPC_SETTINGS_ADVANCED);
+        
+        if (advanced) {
+            display = TRUE;
+        } else {
+            display = csp_app_get_display (app);
+        }
 
         if (G_IS_THEMED_ICON (icon)) {
                 GtkIconTheme       *theme;
@@ -164,6 +172,7 @@ _fill_iter_from_app (GtkListStore *list_store,
                             STORE_COL_APP, app,
                             STORE_COL_SEARCH, app_name,
                             -1);
+                        
         g_object_unref (icon);
 }
 
@@ -172,7 +181,6 @@ _app_changed (CsmPropertiesDialog *dialog,
               CspApp              *app)
 {
         GtkTreeIter iter;
-
         if (!find_by_app (GTK_TREE_MODEL (dialog->priv->list_store),
                           &iter, app)) {
                 return;
@@ -467,17 +475,11 @@ on_row_activated (GtkTreeView         *tree_view,
 }
 
 static void
-on_save_session_clicked (GtkWidget           *widget,
-                         CsmPropertiesDialog *dialog)
-{
-        g_debug ("Session saving is not implemented yet!");
-}
-
-static void
 setup_dialog (CsmPropertiesDialog *dialog)
 {
         GtkTreeView       *treeview;
         GtkWidget         *button;
+        GtkWidget         *checkbox;
         GtkTreeModel      *tree_filter;
         GtkTreeViewColumn *column;
         GtkCellRenderer   *renderer;
@@ -641,18 +643,6 @@ setup_dialog (CsmPropertiesDialog *dialog)
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_edit_app_clicked),
-                          dialog);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
-                                                     CAPPLET_REMEMBER_WIDGET_NAME));
-        g_settings_bind (dialog->priv->settings, SPC_SETTINGS_AUTOSAVE_KEY,
-                         button, "active", G_SETTINGS_BIND_DEFAULT);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
-                                                     CAPPLET_SAVE_WIDGET_NAME));
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_save_session_clicked),
                           dialog);
 
         dialog->priv->manager = csp_app_manager_get ();
