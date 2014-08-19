@@ -79,9 +79,9 @@ main (int argc, char *argv[])
         GError    *error;
         GtkWidget *dialog;
 
-        bindtextdomain ("cinnamon-session", "/usr/share/cinnamon/locale");
-        bind_textdomain_codeset ("cinnamon-session", "UTF-8");
-        textdomain ("cinnamon-session");
+        bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
+        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        textdomain (GETTEXT_PACKAGE);
 
         error = NULL;
         if (! gtk_init_with_args (&argc, &argv, " - Cinnamon Session Properties", options, "cinnamon-session", &error)) {
