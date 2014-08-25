@@ -43,6 +43,7 @@
 #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
 
 #define SESSION_SCHEMA             "org.cinnamon.SessionManager"
+#define KEY_TOGGLE_DELAY           "quit-delay-toggle"
 #define KEY_DELAY                  "quit-time-delay"
 
 struct _CsmLogoutDialogPrivate
@@ -55,6 +56,7 @@ struct _CsmLogoutDialogPrivate
         CsmSystem           *system;
         GtkWidget           *progressbar;
 
+        gboolean             delay_toggle;
         int                  timeout;
         int                  delay;
         unsigned int         timeout_id;
@@ -256,7 +258,7 @@ csm_logout_dialog_timeout (gpointer data)
 
         logout_dialog = (CsmLogoutDialog *) data;
 
-        if (!logout_dialog->priv->timeout) {
+        if (!logout_dialog->priv->timeout && logout_dialog->priv->delay_toggle) {
                 gtk_dialog_response (GTK_DIALOG (logout_dialog),
                                      logout_dialog->priv->default_response);
 
@@ -266,25 +268,25 @@ csm_logout_dialog_timeout (gpointer data)
         switch (logout_dialog->priv->type) {
         case CSM_DIALOG_LOGOUT_TYPE_LOGOUT:
                 /* This string is shared with csm-fail-whale-dialog.c */
-                seconds_warning = ngettext ("You will be automatically logged "
+                seconds_warning = ngettext ("You will be logged "
                                             "out in %d second.",
-                                            "You will be automatically logged "
+                                            "You will be logged "
                                             "out in %d seconds.",
                                             logout_dialog->priv->timeout);
                 break;
 
         case CSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
-                seconds_warning = ngettext ("This system will be automatically "
+                seconds_warning = ngettext ("This system will be "
                                             "shut down in %d second.",
-                                            "This system will be automatically "
+                                            "This system will be "
                                             "shut down in %d seconds.",
                                             logout_dialog->priv->timeout);
                 break;
 
         case CSM_DIALOG_LOGOUT_TYPE_REBOOT:
-                seconds_warning = ngettext ("This system will be automatically "
+                seconds_warning = ngettext ("This system will be "
                                             "restarted in %d second.",
-                                            "This system will be automatically "
+                                            "This system will be "
                                             "restarted in %d seconds.",
                                             logout_dialog->priv->timeout);
                 break;
@@ -292,11 +294,9 @@ csm_logout_dialog_timeout (gpointer data)
         default:
                 g_assert_not_reached ();
         }
-        
-        seconds_warning = g_strdup_printf (seconds_warning, logout_dialog->priv->timeout);
 
         if (!csm_system_is_login_session (logout_dialog->priv->system)) {
-                char *name, *tmp;
+                char *name;
 
                 name = g_locale_to_utf8 (g_get_real_name (), -1, NULL, NULL, NULL);
 
@@ -308,20 +308,19 @@ csm_logout_dialog_timeout (gpointer data)
                         name = g_strdup (g_get_user_name ());
                 }
 
-                tmp = g_strdup_printf (_("You are currently logged in as \"%s\"."), name);
-                secondary_text = g_strconcat (tmp, "\n", seconds_warning, NULL);
-                g_free (tmp);
-                
+                secondary_text = g_strdup_printf (_("You are currently logged in as \"%s\"."), name);
+
                 g_free (name);
-        } else {
-            secondary_text = g_strdup (seconds_warning);
         }
         
         gdouble delay;
 
         delay = (gdouble)logout_dialog->priv->delay;
+        seconds_warning = g_strdup_printf (seconds_warning, logout_dialog->priv->timeout);
         
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), logout_dialog->priv->timeout / delay);
+        gtk_progress_bar_set_show_text( GTK_PROGRESS_BAR(logout_dialog->priv->progressbar), TRUE );
+        gtk_progress_bar_set_text (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), seconds_warning);
         
         gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (logout_dialog),
                                                   secondary_text,
@@ -389,6 +388,8 @@ csm_get_dialog (CsmDialogLogoutType type,
         logout_dialog->priv->type = type;
         
         GSettings *settings = g_settings_new (SESSION_SCHEMA);
+        
+        logout_dialog->priv->delay_toggle = g_settings_get_boolean (settings, KEY_TOGGLE_DELAY);
         logout_dialog->priv->delay = g_settings_get_int (settings, KEY_DELAY);
 
         icon_name = NULL;
@@ -472,15 +473,17 @@ csm_get_dialog (CsmDialogLogoutType type,
         
         dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
         
-        hbox = gtk_box_new (FALSE, 0);
-        logout_dialog->priv->progressbar = gtk_progress_bar_new ();
-        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), 1.0);
-        gtk_box_pack_start (GTK_BOX (hbox),
-                            logout_dialog->priv->progressbar,
-                            TRUE, TRUE, 12);
-
-        gtk_widget_show_all (hbox);
-        gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
+        if (logout_dialog->priv->delay_toggle) {
+            hbox = gtk_box_new (FALSE, 0);
+            
+            logout_dialog->priv->progressbar = gtk_progress_bar_new ();
+            gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), 1.0);
+            gtk_box_pack_start (GTK_BOX (hbox),
+                                logout_dialog->priv->progressbar,
+                                TRUE, TRUE, 12);
+            gtk_widget_show_all (hbox);
+            gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
+        }
 
         gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
                                       icon_name, GTK_ICON_SIZE_DIALOG);
