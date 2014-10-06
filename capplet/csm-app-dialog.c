@@ -270,7 +270,9 @@ csm_app_dialog_constructor (GType                  type,
 
         setup_dialog (dialog);
 
+#if !GTK_CHECK_VERSION (3, 14, 0)
         gtk_widget_show_all (GTK_WIDGET (dialog));
+#endif
 
         return G_OBJECT (dialog);
 }
