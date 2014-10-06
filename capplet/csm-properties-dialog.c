@@ -445,6 +445,7 @@ on_edit_app_clicked (GtkWidget           *widget,
                 gtk_window_set_transient_for (GTK_WINDOW (edit_dialog),
                                               GTK_WINDOW (dialog));
 
+                gtk_widget_show_all (edit_dialog);
                 if (csm_app_dialog_run (CSM_APP_DIALOG (edit_dialog),
                                         &name, &exec, &comment, &delay)) {
                         csp_app_update (app, name, comment, exec, delay);
