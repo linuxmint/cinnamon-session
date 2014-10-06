@@ -374,6 +374,7 @@ on_add_app_clicked (GtkWidget           *widget,
         gtk_window_set_transient_for (GTK_WINDOW (add_dialog),
                                       GTK_WINDOW (dialog));
 
+        gtk_widget_show_all (add_dialog);
         if (csm_app_dialog_run (CSM_APP_DIALOG (add_dialog),
                                 &name, &exec, &comment, &delay)) {
                 csp_app_create (name, comment, exec, delay);
@@ -677,8 +678,6 @@ csm_properties_dialog_constructor (GType                  type,
                                                                                                                   construct_properties));
 
         setup_dialog (dialog);
-
-        gtk_widget_show (GTK_WIDGET (dialog));
 
         return G_OBJECT (dialog);
 }
