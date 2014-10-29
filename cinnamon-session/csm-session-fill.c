@@ -490,8 +490,10 @@ csm_session_fill (CsmManager  *manager,
 
         keyfile = get_session_keyfile (session, &actual_session, &is_fallback);
 
-        if (!keyfile)
+        if (!keyfile) {
+                g_free (actual_session);
                 return FALSE;
+        }
 
         _csm_manager_set_active_session (manager, actual_session, is_fallback);
 

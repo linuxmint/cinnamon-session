@@ -229,11 +229,12 @@ static void
 csm_logout_dialog_show (CsmLogoutDialog *logout_dialog, gpointer user_data)
 {   
     if (!csm_system_is_login_session (logout_dialog->priv->system)) {
-            char *name, *secondary_text;
+            gchar *name, *secondary_text;
 
             name = g_locale_to_utf8 (g_get_real_name (), -1, NULL, NULL, NULL);
 
             if (!name || name[0] == '\0' || strcmp (name, "Unknown") == 0) {
+                    g_free (name);
                     name = g_locale_to_utf8 (g_get_user_name (), -1 , NULL, NULL, NULL);
             }
 
