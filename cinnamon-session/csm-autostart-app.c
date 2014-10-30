@@ -372,8 +372,10 @@ setup_gsettings_condition_monitor (CsmAutostartApp *app,
                 }
         }
 
-        if (schema_exists == FALSE)
+        if (schema_exists == FALSE) {
+                g_strfreev (elems);
                 return FALSE;
+        }
 
         settings = g_settings_new (elems[0]);
         retval = g_settings_get_boolean (settings, elems[1]);

@@ -140,9 +140,10 @@ csm_util_get_empty_tmp_session_dir (void)
                 dir = g_dir_open (tmp, 0, NULL);
                 if (dir) {
                         while ((filename = g_dir_read_name (dir))) {
-                                char *path = g_build_filename (tmp, filename,
+                                gchar *path = g_build_filename (tmp, filename,
                                                                NULL);
                                 g_unlink (path);
+                                g_free (path);
                         }
                         g_dir_close (dir);
                 }
