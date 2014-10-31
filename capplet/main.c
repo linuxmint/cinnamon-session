@@ -79,7 +79,7 @@ main (int argc, char *argv[])
         GError    *error;
         GtkWidget *dialog;
 
-        bindtextdomain ("cinnamon-session", "/usr/share/cinnamon/locale");
+        bindtextdomain ("cinnamon-session", "/usr/share/locale");
         bind_textdomain_codeset ("cinnamon-session", "UTF-8");
         textdomain ("cinnamon-session");
 
