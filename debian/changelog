@@ -1,3 +1,10 @@
+cinnamon-session (2.4.1) rebecca; urgency=medium
+
+  * Switched locale path to standard /usr/share/locale
+  * Re-Added session timeout, disable by default
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 08 Nov 2014 10:04:29 +0100
+
 cinnamon-session (2.4.0) rebecca; urgency=medium
 
   * 2.4.0
