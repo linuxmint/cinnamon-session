@@ -23,6 +23,16 @@
         being accessible during the session.  Note: gnome-settings-daemon, gnome-fallback-mount-helper,
         nautilus, and gnome-screensaver are hardcoded.  This list can add to those.
       </description>
-    </key>    
+    </key>
+    <key name="quit-delay-toggle" type="b">
+      <default>false</default>
+      <summary>Toggles if there should be a timer when ending the session</summary>
+      <description>Toggles whether or not there's a timer to automatically end the current session</description>
+    </key>
+    <key name="quit-time-delay" type="i">
+      <default>60</default>
+      <summary>The time delay before quitting the system automatically</summary>
+      <description>The time delay before the shutdown/logout dialogue quits the system automatically</description>
+    </key>
   </schema>
 </schemalist>
