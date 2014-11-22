@@ -251,6 +251,8 @@ csm_logout_dialog_show (CsmLogoutDialog *logout_dialog, gpointer user_data)
         if (g_settings_get_boolean (settings, KEY_TOGGLE_DELAY)) {
             csm_logout_dialog_set_timeout (logout_dialog);
         }
+        
+        g_object_unref(settings);
 }
 
 static gboolean
