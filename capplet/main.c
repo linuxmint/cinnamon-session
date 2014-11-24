@@ -36,6 +36,14 @@ static GOptionEntry options[] = {
         { NULL, 0, 0, 0, NULL, NULL, NULL }
 };
 
+static gboolean
+delay_quit (GtkWidget *dialog)
+{
+    gtk_widget_destroy (dialog);
+    gtk_main_quit ();
+    return FALSE;
+}
+
 static void
 dialog_response (CsmPropertiesDialog *dialog,
                  guint                response_id,
@@ -68,8 +76,8 @@ dialog_response (CsmPropertiesDialog *dialog,
                         gtk_widget_destroy (d);
                 }
         } else {
-                gtk_widget_destroy (GTK_WIDGET (dialog));
-                gtk_main_quit ();
+            gtk_widget_hide (GTK_WIDGET (dialog));
+            g_timeout_add_seconds (2, (GSourceFunc) delay_quit, dialog);
         }
 }
 
@@ -100,6 +108,12 @@ main (int argc, char *argv[])
                           "response",
                           G_CALLBACK (dialog_response),
                           NULL);
+
+        g_signal_connect (dialog,
+                          "delete-event",
+                          G_CALLBACK (gtk_widget_hide_on_delete),
+                          NULL);
+
         gtk_widget_show (dialog);
 
         gtk_main ();
