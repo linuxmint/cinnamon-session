@@ -1,3 +1,9 @@
+cinnamon-session (2.4.2) rebecca; urgency=medium
+
+  * cinnamon-session-properties: don't destroy self immediately upon closing, to make sure any pending save operations are completed.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 26 Nov 2014 22:32:46 +0100
+
 cinnamon-session (2.4.1) rebecca; urgency=medium
 
   * Switched locale path to standard /usr/share/locale
