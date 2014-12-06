@@ -250,36 +250,7 @@ if_exists_condition_cb (GFileMonitor     *monitor,
         }
 }
 
-static void
-unless_exists_condition_cb (GFileMonitor     *monitor,
-                            GFile            *file,
-                            GFile            *other_file,
-                            GFileMonitorEvent event,
-                            CsmApp           *app)
-{
-        CsmAutostartAppPrivate *priv;
-        gboolean                condition = FALSE;
 
-        priv = CSM_AUTOSTART_APP (app)->priv;
-
-        switch (event) {
-        case G_FILE_MONITOR_EVENT_CREATED:
-                condition = FALSE;
-                break;
-        case G_FILE_MONITOR_EVENT_DELETED:
-                condition = TRUE;
-                break;
-        default:
-                /* Ignore any other monitor event */
-                return;
-        }
-
-        /* Emit only if the condition actually changed */
-        if (condition != priv->condition) {
-                priv->condition = condition;
-                g_signal_emit (app, signals[CONDITION_CHANGED], 0, condition);
-        }
-}
 
 #ifdef HAVE_GCONF
 static void
@@ -428,41 +399,6 @@ if_session_condition_cb (GObject    *object,
         }
 }
 
-static void
-unless_session_condition_cb (GObject    *object,
-                             GParamSpec *pspec,
-                             gpointer    user_data)
-{
-        CsmApp                 *app;
-        CsmAutostartAppPrivate *priv;
-        char                   *session_name;
-        char                   *key;
-        gboolean                condition;
-
-        g_return_if_fail (CSM_IS_APP (user_data));
-
-        app = CSM_APP (user_data);
-
-        priv = CSM_AUTOSTART_APP (app)->priv;
-
-        parse_condition_string (priv->condition_string, NULL, &key);
-
-        g_object_get (object, "session-name", &session_name, NULL);
-        condition = strcmp (session_name, key) != 0;
-        g_free (session_name);
-
-        g_free (key);
-
-        g_debug ("CsmAutostartApp: app:%s condition changed condition:%d",
-                 csm_app_peek_id (app),
-                 condition);
-
-        /* Emit only if the condition actually changed */
-        if (condition != priv->condition) {
-                priv->condition = condition;
-                g_signal_emit (app, signals[CONDITION_CHANGED], 0, condition);
-        }
-}
 
 static void
 setup_condition_monitor (CsmAutostartApp *app)
@@ -506,7 +442,8 @@ setup_condition_monitor (CsmAutostartApp *app)
                 return;
         }
 
-        if (kind == CSM_CONDITION_IF_EXISTS) {
+        if (kind == CSM_CONDITION_IF_EXISTS || kind == CSM_CONDITION_UNLESS_EXISTS) {
+        /* processing and callbacks identical, so have been merged */
                 char  *file_path;
                 GFile *file;
 
@@ -519,23 +456,6 @@ setup_condition_monitor (CsmAutostartApp *app)
 
                 g_signal_connect (app->priv->condition_monitor, "changed",
                                   G_CALLBACK (if_exists_condition_cb),
-                                  app);
-
-                g_object_unref (file);
-                g_free (file_path);
-        } else if (kind == CSM_CONDITION_UNLESS_EXISTS) {
-                char  *file_path;
-                GFile *file;
-
-                file_path = g_build_filename (g_get_user_config_dir (), key, NULL);
-
-                disabled = g_file_test (file_path, G_FILE_TEST_EXISTS);
-
-                file = g_file_new_for_path (file_path);
-                app->priv->condition_monitor = g_file_monitor_file (file, 0, NULL, NULL);
-
-                g_signal_connect (app->priv->condition_monitor, "changed",
-                                  G_CALLBACK (unless_exists_condition_cb),
                                   app);
 
                 g_object_unref (file);
@@ -565,7 +485,8 @@ setup_condition_monitor (CsmAutostartApp *app)
 #endif
         } else if (kind == CSM_CONDITION_GSETTINGS) {
                 disabled = !setup_gsettings_condition_monitor (app, key);
-        } else if (kind == CSM_CONDITION_IF_SESSION) {
+        } else if (kind == CSM_CONDITION_IF_SESSION || CSM_CONDITION_UNLESS_SESSION) {
+                /* the coding both here and in the callbacks is identical, so both have been merged */
                 CsmManager *manager;
                 char *session_name;
 
@@ -577,19 +498,6 @@ setup_condition_monitor (CsmAutostartApp *app)
 
                 g_signal_connect (manager, "notify::session-name",
                                   G_CALLBACK (if_session_condition_cb), app);
-                g_free (session_name);
-        } else if (kind == CSM_CONDITION_UNLESS_SESSION) {
-                CsmManager *manager;
-                char *session_name;
-
-                /* get the singleton */
-                manager = csm_manager_get ();
-
-                g_object_get (manager, "session-name", &session_name, NULL);
-                disabled = strcmp (session_name, key) == 0;
-
-                g_signal_connect (manager, "notify::session-name",
-                                  G_CALLBACK (unless_session_condition_cb), app);
                 g_free (session_name);
         } else {
                 disabled = TRUE;
@@ -878,17 +786,11 @@ is_conditionally_disabled (CsmApp *app)
                 return TRUE;
         }
 
-        if (kind == CSM_CONDITION_IF_EXISTS) {
+        if (kind == CSM_CONDITION_IF_EXISTS || kind == CSM_CONDITION_UNLESS_EXISTS ) {
                 char *file_path;
 
                 file_path = g_build_filename (g_get_user_config_dir (), key, NULL);
                 disabled = !g_file_test (file_path, G_FILE_TEST_EXISTS);
-                g_free (file_path);
-        } else if (kind == CSM_CONDITION_UNLESS_EXISTS) {
-                char *file_path;
-
-                file_path = g_build_filename (g_get_user_config_dir (), key, NULL);
-                disabled = g_file_test (file_path, G_FILE_TEST_EXISTS);
                 g_free (file_path);
 #ifdef HAVE_GCONF
         } else if (kind == CSM_CONDITION_GNOME) {
@@ -904,7 +806,7 @@ is_conditionally_disabled (CsmApp *app)
                 elems = g_strsplit (key, " ", 2);
                 disabled = !g_settings_get_boolean (priv->condition_settings, elems[1]);
                 g_strfreev (elems);
-        } else if (kind == CSM_CONDITION_IF_SESSION) {
+        } else if (kind == CSM_CONDITION_IF_SESSION || kind == CSM_CONDITION_UNLESS_SESSION) {
                 CsmManager *manager;
                 char *session_name;
 
@@ -913,16 +815,6 @@ is_conditionally_disabled (CsmApp *app)
 
                 g_object_get (manager, "session-name", &session_name, NULL);
                 disabled = strcmp (session_name, key) != 0;
-                g_free (session_name);
-        } else if (kind == CSM_CONDITION_UNLESS_SESSION) {
-                CsmManager *manager;
-                char *session_name;
-
-                /* get the singleton */
-                manager = csm_manager_get ();
-
-                g_object_get (manager, "session-name", &session_name, NULL);
-                disabled = strcmp (session_name, key) == 0;
                 g_free (session_name);
         } else {
                 disabled = TRUE;
