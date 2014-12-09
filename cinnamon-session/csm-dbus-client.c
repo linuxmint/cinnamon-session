@@ -598,7 +598,7 @@ dbus_client_cancel_end_session (CsmClient *client,
 {
         CsmDBusClient  *dbus_client = (CsmDBusClient *) client;
         DBusMessage    *message;
-        gboolean        ret;
+        gboolean        ret = FALSE;
 
         /* unicast the signal to only the registered bus name */
         message = dbus_message_new_signal (csm_client_peek_id (client),
