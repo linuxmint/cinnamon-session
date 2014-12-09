@@ -254,7 +254,7 @@ csm_logout_dialog_timeout (gpointer data)
 {
         CsmLogoutDialog *logout_dialog;
         char            *seconds_warning;
-        char            *secondary_text;
+        char            *secondary_text = NULL;
 
         logout_dialog = (CsmLogoutDialog *) data;
 
