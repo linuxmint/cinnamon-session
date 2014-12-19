@@ -246,7 +246,13 @@ csm_logout_supports_shutdown (CsmLogoutDialog *logout_dialog)
 static void
 csm_logout_dialog_show (CsmLogoutDialog *logout_dialog, gpointer user_data)
 {
-        csm_logout_dialog_set_timeout (logout_dialog);
+        GSettings *settings = g_settings_new (SESSION_SCHEMA);
+        
+        if (g_settings_get_boolean (settings, KEY_TOGGLE_DELAY)) {
+            csm_logout_dialog_set_timeout (logout_dialog);
+        }
+        
+        g_object_unref(settings);
 }
 
 static gboolean
