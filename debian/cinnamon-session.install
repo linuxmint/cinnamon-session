@@ -1,5 +1,6 @@
 usr/bin/cinnamon-session*
 usr/lib/cinnamon-session*
+usr/share/applications
 usr/share/cinnamon-session/*.glade
 usr/share/cinnamon-session/hardware-compatibility
 usr/share/man/man1
