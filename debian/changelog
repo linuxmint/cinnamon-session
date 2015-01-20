@@ -1,3 +1,9 @@
+cinnamon-session (2.4.3) rebecca; urgency=medium
+
+  * Fixed the width of the program column in Startup Applications (for GTK 3.14)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 20 Jan 2015 11:19:41 +0100
+
 cinnamon-session (2.4.2) rebecca; urgency=medium
 
   * cinnamon-session-properties: don't destroy self immediately upon closing, to make sure any pending save operations are completed.
