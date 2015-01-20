@@ -15,3 +15,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += --localstatedir=/var/lib \
 
 LDFLAGS += -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
 
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz -z9
+
