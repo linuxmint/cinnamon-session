@@ -561,6 +561,7 @@ setup_dialog (CsmPropertiesDialog *dialog)
                       "ellipsize", PANGO_ELLIPSIZE_END,
                       NULL);
         gtk_tree_view_append_column (treeview, column);
+        gtk_tree_view_column_set_expand (column, TRUE);
 
         /* DELAY COLUMN */
 
