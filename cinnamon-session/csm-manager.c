@@ -107,7 +107,10 @@ const gchar *blacklist[] = {
                             "gnome-screensaver",
                             "mate-screensaver",
                             "mate-keyring-daemon",
-                            "indicator-"
+                            "indicator-",
+                            "gnome-initial-setup-copy-worker",
+                            "gnome-initial-setup-first-login",
+                            "gnome-welcome-tour"
                            };
 
 static void app_registered (CsmApp     *app, CsmManager *manager);

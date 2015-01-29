@@ -1,6 +1,13 @@
+cinnamon-session (2.5.1) unstable; urgency=medium
+
+  * 2.5.x
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 13 Jan 2015 09:47:17 +0100
+
 cinnamon-session (2.4.2) rebecca; urgency=medium
 
-  * cinnamon-session-properties: don't destroy self immediately upon closing, to make sure any pending save operations are completed.
+  * cinnamon-session-properties: don't destroy self immediately upon closing,
+    to make sure any pending save operations are completed.
 
  -- Clement Lefebvre <root@linuxmint.com>  Wed, 26 Nov 2014 22:32:46 +0100
 
@@ -97,7 +104,7 @@ cinnamon-session (1.9.1) olivia; urgency=low
 
   * Builds
 
- -- Michael Webster <mtwebster@mint15-laptop>  Sun, 02 Jun 2013 19:27:15 -0400
+ -- Michael Webster <miketwebster@gmail.com>  Sun, 02 Jun 2013 19:27:15 -0400
 
 cinnamon-session (1.9.0) olivia; urgency=low
 

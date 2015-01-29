@@ -2,7 +2,7 @@ Source: cinnamon-session
 Section: gnome
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Build-Depends: cdbs (>= 0.4.41),
                dh-autoreconf,
                debhelper (>= 8),
