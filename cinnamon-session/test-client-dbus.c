@@ -239,8 +239,6 @@ main (int   argc,
 
         g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 
-        g_type_init ();
-
         res = session_manager_connect ();
         if (! res) {
                 g_warning ("Unable to connect to session manager");

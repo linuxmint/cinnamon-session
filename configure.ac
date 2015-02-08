@@ -33,11 +33,10 @@ if test "x$enable_deprecation_flags" = "xyes"; then
    AC_SUBST([DISABLE_DEPRECATED_CFLAGS])
 fi
 
-GLIB_REQUIRED=2.32
-GTK3_REQUIRED=2.90.7
-DBUS_GLIB_REQUIRED=0.76
+GLIB_REQUIRED=2.37.3
+GTK3_REQUIRED=3.0.0
+DBUS_GLIB_REQUIRED=0.88
 UPOWER_REQUIRED=0.9.0
-JSON_GLIB_REQUIRED=0.10
 
 dnl ====================================================================
 dnl Dependency Checks
@@ -52,7 +51,6 @@ PKG_CHECK_MODULES(CINNAMON_SESSION,
         gio-2.0 >= $GLIB_REQUIRED
         gtk+-3.0 >= $GTK3_REQUIRED
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
-        json-glib-1.0 >= $JSON_GLIB_REQUIRED
         libcanberra
 )
 
