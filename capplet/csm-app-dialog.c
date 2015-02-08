@@ -526,7 +526,6 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                 const char *name;
                 const char *exec;
                 const char *comment;
-                char *delay;
                 const char *error_msg;
                 GError     *error;
                 char      **argv;
@@ -535,7 +534,6 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                 name = csm_app_dialog_get_name (CSM_APP_DIALOG (dialog));
                 exec = csm_app_dialog_get_command (CSM_APP_DIALOG (dialog));
                 comment = csm_app_dialog_get_comment (CSM_APP_DIALOG (dialog));
-                delay = csm_app_dialog_get_delay (CSM_APP_DIALOG (dialog));
 
                 error = NULL;
                 error_msg = NULL;
@@ -591,10 +589,9 @@ csm_app_dialog_run (CsmAppDialog  *dialog,
                 }
 
                 if (delay_p) {
-                        *delay_p = g_strdup (delay);
+                        *delay_p = csm_app_dialog_get_delay (CSM_APP_DIALOG (dialog));
                 }
 
-                g_free (delay);
                 retval = TRUE;
                 break;
         }
