@@ -132,6 +132,7 @@ set_session_idle (CsmPresence   *presence,
 
                 /* restore saved status */
                 csm_presence_set_status (presence, presence->priv->saved_status, NULL);
+                g_debug ("CsmPresence: setting non-idle status %d", presence->priv->saved_status);
                 presence->priv->saved_status = CSM_PRESENCE_STATUS_AVAILABLE;
         }
 }
@@ -158,7 +159,7 @@ reset_idle_watch (CsmPresence  *presence)
         }
 
         if (presence->priv->idle_watch_id > 0) {
-                g_debug ("CsmPresence: removing idle watch");
+                g_debug ("CsmPresence: removing idle watch (%i)", presence->priv->idle_watch_id);
                 cs_idle_monitor_remove_watch (presence->priv->idle_monitor,
                                               presence->priv->idle_watch_id);
                 presence->priv->idle_watch_id = 0;
@@ -167,12 +168,13 @@ reset_idle_watch (CsmPresence  *presence)
         if (! presence->priv->screensaver_active
             && presence->priv->idle_enabled
             && presence->priv->idle_timeout > 0) {
-                g_debug ("CsmPresence: adding idle watch");
-
                 presence->priv->idle_watch_id = cs_idle_monitor_add_watch (presence->priv->idle_monitor,
                                                                            presence->priv->idle_timeout,
                                                                            (CSIdleMonitorWatchFunc)on_idle_timeout,
                                                                            presence);
+                g_debug ("CsmPresence: adding idle watch (%i) for %d secs",
+                         presence->priv->idle_watch_id,
+                         presence->priv->idle_timeout / 1000);
         }
 }
 
@@ -223,6 +225,9 @@ on_bus_name_owner_changed (DBusGProxy  *bus_proxy,
         } else if (strlen (old_service_name) == 0
                    && strlen (new_service_name) > 0) {
                 /* service added */
+
+                g_debug ("Detected that screensaver has appeared on the bus");
+
                 error = NULL;
                 presence->priv->screensaver_proxy = dbus_g_proxy_new_for_name_owner (presence->priv->bus_connection,
                                                                                      CS_NAME,
