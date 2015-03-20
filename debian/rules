@@ -11,7 +11,7 @@ include /usr/share/gnome-pkg-tools/1/rules/gnome-version.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS += --localstatedir=/var/lib \
 	                     --enable-ipv6 \
-	                     --disable-systemd
+	                     --enable-systemd
 
 LDFLAGS += -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
 
