@@ -348,6 +348,7 @@ main (int argc, char **argv)
          * detect if GNOME is running. We keep this for compatibility reasons.
          */
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
+        csm_util_setenv ("CLUTTER_BACKEND", "x11");
 
         client_store = csm_store_new ();
 
