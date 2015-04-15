@@ -369,23 +369,14 @@ main (int argc, char **argv)
 	                }
                         g_strfreev(tokens);
                 }
-                if (!g_str_match_string("unity-gtk-module", gtk_modules, FALSE)) {
-                        if (new_gtk_modules) {
-                                temp_gtk_modules = new_gtk_modules;
-                                new_gtk_modules = g_strconcat( "unity-gtk-module:", temp_gtk_modules, NULL );
-                                g_free (temp_gtk_modules);
-                        } else {
-                                new_gtk_modules = g_strconcat( "unity-gtk-module:", gtk_modules, NULL );
-                        }
+                if (g_str_match_string("unity-gtk-module", gtk_modules, FALSE)) {
+                	csm_util_setenv ("UBUNTU_MENUPROXY", "1");
                 }
                 if (new_gtk_modules) {
                         csm_util_setenv ("GTK_MODULES", new_gtk_modules);
                         g_free (new_gtk_modules);
                 }
-        } else {
-                csm_util_setenv ("GTK_MODULES", "unity-gtk-module");
         }
-        csm_util_setenv ("UBUNTU_MENUPROXY", "1");
 
         /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
          * detect if GNOME is running. We keep this for compatibility reasons.
