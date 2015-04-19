@@ -425,5 +425,15 @@
       </doc:doc>
     </property>
 
+    <property name="InhibitedActions" type="u" access="read">
+      <doc:doc>
+        <doc:description>
+          <doc:para>A bitmask of flags to indicate which actions
+          are inhibited. See the Inhibit() function's description
+          for a list of possible values.</doc:para>
+        </doc:description>
+      </doc:doc>
+    </property>
+
   </interface>
 </node>
