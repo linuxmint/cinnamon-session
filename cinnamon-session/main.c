@@ -344,6 +344,40 @@ main (int argc, char **argv)
         csm_util_setenv ("DISPLAY", display_str);
         g_free (display_str);
 
+        /* Removed the overlay-scrollbar module if is present, because right now
+         * is not compatible with cinnamon Gtk widgets.
+         * Set unity-gtk-module explicitly if is not present, to add support 
+         * for unity appmenu module and also set UBUNTU_MENUPROXY, to translate
+         * the Gtk2 menu style.
+         */
+        const gchar *gtk_modules;
+        gchar *new_gtk_modules = NULL;
+        gtk_modules = g_getenv ("GTK_MODULES");
+        if (gtk_modules != NULL) {
+                gchar *temp_gtk_modules;
+                if (g_str_match_string("overlay-scrollbar", gtk_modules, FALSE)) {
+                        int i = 0;
+                        gchar **tokens = g_strsplit(gtk_modules, ":", -1);
+                        new_gtk_modules = g_strconcat( "", NULL);
+                        while (tokens[i]) {
+                                if (!g_str_match_string("overlay-scrollbar", tokens[i], FALSE)) {
+                                        temp_gtk_modules = new_gtk_modules;
+                                        new_gtk_modules = g_strconcat( temp_gtk_modules, ":", tokens[i], NULL);
+                                        g_free (temp_gtk_modules);
+                                }
+                                i++;
+	                }
+                        g_strfreev(tokens);
+                }
+                if (g_str_match_string("unity-gtk-module", gtk_modules, FALSE)) {
+                	csm_util_setenv ("UBUNTU_MENUPROXY", "1");
+                }
+                if (new_gtk_modules) {
+                        csm_util_setenv ("GTK_MODULES", new_gtk_modules);
+                        g_free (new_gtk_modules);
+                }
+        }
+
         /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
          * detect if GNOME is running. We keep this for compatibility reasons.
          */
