@@ -37,6 +37,8 @@ Depends: ${shlibs:Depends},
          cinnamon-session-common (= ${source:Version}),
          consolekit,
          upower (>= 0.9.0)
+Replaces: cinnamon-session-common (<< 2.5.2)
+Breaks: cinnamon-session-common (<< 2.5.2)
 Description: Cinnamon Session Manager - Minimal runtime
  The Cinnamon Session Manager is in charge of starting the core components
  of the Cinnamon desktop, and applications that should be launched at
@@ -51,6 +53,8 @@ Description: Cinnamon Session Manager - Minimal runtime
 Package: cinnamon-session-common
 Architecture: all
 Depends: ${misc:Depends}
+Replaces: cinnamon-session (<< 2.5.2)
+Breaks: cinnamon-session (<< 2.5.2)
 Description: Cinnamon Session Manager - common files
  The Cinnamon Session Manager is in charge of starting the core components
  of the Cinnamon desktop, and applications that should be launched at
