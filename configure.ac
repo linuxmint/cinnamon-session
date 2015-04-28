@@ -62,11 +62,6 @@ AS_IF([test x$have_old_upower = xyes], [
 ])
 AM_CONDITIONAL(HAVE_OLD_UPOWER, test x$have_old_upower = xyes)
 
-PKG_CHECK_MODULES(SESSION_PROPERTIES,
-        glib-2.0 >= $GLIB_REQUIRED
-        gtk+-3.0 >= $GTK3_REQUIRED
-)
-
 PKG_CHECK_MODULES(SM, sm)
 PKG_CHECK_MODULES(ICE, ice)
 PKG_CHECK_MODULES(XEXT, xext xau)
@@ -334,13 +329,11 @@ dnl ============================================================================
 
 AC_CONFIG_FILES([
 Makefile
-capplet/Makefile
 doc/Makefile
 doc/dbus/Makefile
 doc/dbus/cinnamon-session.xml
 doc/man/Makefile
 data/Makefile
-data/cinnamon-session-properties.desktop.in
 data/org.cinnamon.SessionManager.gschema.xml
 data/icons/Makefile
 data/icons/16x16/Makefile

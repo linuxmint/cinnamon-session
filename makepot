@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Note:
-# cinnamon-session is still l10n'd via po/
-# only the cinnamon-session-properties tool was LP'd
-
-intltool-extract --type=gettext/glade data/cinnamon-session-properties.glade
-xgettext --language=C --from-code=UTF-8 --keyword=_ --keyword=N_ --output=cinnamon-session.pot capplet/*.c data/cinnamon-session-properties.glade.h
-rm -f data/cinnamon-session-properties.glade.h

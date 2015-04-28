@@ -2,15 +2,10 @@ SUBDIRS = icons
 
 uidir = $(pkgdatadir)
 ui_DATA = \
-	cinnamon-session-properties.glade	\
 	csm-inhibit-dialog.glade
 
 hwcompatdir = $(pkgdatadir)
 hwcompat_DATA = hardware-compatibility
-
-desktopdir = $(datadir)/applications
-desktop_in_files = cinnamon-session-properties.desktop.in
-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 @INTLTOOL_XML_NOMERGE_RULE@
@@ -27,9 +22,7 @@ CLEANFILES =					\
 	$(gsettings_SCHEMAS)			\
 	$(desktop_DATA)
 
-
 DISTCLEANFILES =				\
-	$(gsettings_SCHEMAS)			\
-	$(desktop_in_files)
+	$(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk
