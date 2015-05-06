@@ -110,7 +110,8 @@ const gchar *blacklist[] = {
                             "indicator-",
                             "gnome-initial-setup-copy-worker",
                             "gnome-initial-setup-first-login",
-                            "gnome-welcome-tour"
+                            "gnome-welcome-tour",
+                            "xscreensaver-autostart"
                            };
 
 static void app_registered (CsmApp     *app, CsmManager *manager);
