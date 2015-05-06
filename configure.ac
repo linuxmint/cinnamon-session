@@ -93,43 +93,17 @@ if test x$enable_gconf = xyes ; then
 fi
 
 dnl ====================================================================
-dnl Check for systemd
+dnl Check for logind
 dnl ====================================================================
-AC_ARG_ENABLE([systemd],
-              AS_HELP_STRING([--enable-systemd], [Use systemd]),
-              [enable_systemd=$enableval],
-              [enable_systemd=auto])
 
-PKG_CHECK_MODULES(SYSTEMD,
-                  [gio-unix-2.0 libsystemd-login >= 183 libsystemd-daemon],
-                  [have_systemd=yes], [have_systemd=no])
+PKG_CHECK_MODULES(LOGIND, [gio-unix-2.0 libsystemd-login >= 183], [have_logind=yes], [have_logind=no])
 
-AC_MSG_CHECKING([whether to use systemd])
-
-if test x$enable_systemd = xauto ; then
-        if test x$have_systemd = xno ; then
-                enable_systemd=no
-        else
-                enable_systemd=yes
-        fi
+if test x$have_logind = xyes; then
+    AC_DEFINE(HAVE_LOGIND, 1, [Define if logind is supported])
 fi
 
-AC_MSG_RESULT($enable_systemd)
-
-if test x$enable_systemd = xyes; then
-        if test x$have_systemd = xno; then
-                AC_MSG_ERROR([Systemd support explicitly required, but systemd not found])
-        fi
-        AC_DEFINE(HAVE_SYSTEMD, 1, [Define if systemd is used for session tracking])
-        session_tracking="systemd (with fallback to ConsoleKit)"
-else
-        session_tracking=ConsoleKit
-fi
-
-AC_SUBST(SYSTEMD_CFLAGS)
-AC_SUBST(SYSTEMD_LIBS)
-
-AM_CONDITIONAL(HAVE_SYSTEMD, [test "$with_systemd" = "yes"], [Using systemd])
+AC_SUBST(LOGIND_CFLAGS)
+AC_SUBST(LOGIND_LIBS)
 
 dnl ====================================================================
 dnl X development libraries check
@@ -372,7 +346,7 @@ echo "
         Use *_DISABLE_DEPRECATED: ${enable_deprecation_flags}
 
         GConf support:            ${enable_gconf}
-        Session tracking:         ${session_tracking}
+        Logind support:           ${have_logind}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}
