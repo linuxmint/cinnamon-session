@@ -23,58 +23,6 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Válasszon parancsot"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Elindítandó program hozzáadása"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Elindítandó program szerkesztése"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Az elindítandó parancs nem lehet üres"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Az elindítandó parancs nem érvényes"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Engedélyezve"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Indítópult beállításai"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Névtelen"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Nincs leírás"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Ezen alkalmazás verziója"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "A súgódokumentum nem jeleníthető meg"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -88,42 +36,6 @@ msgid ""
 msgstr ""
 "Várakozás a program befejeződésére. A program megszakítása adatok "
 "elvesztését okozhatja."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Indítópult"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "A bejelentkezéskor elindítandó alkalmazások kiválasztása"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "További elindítandó _programok:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Kijelentkezéskor a futó alkalmazások automatikus megjegyzése"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Jelenleg futó alkalmazások megjegyzése"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Tallózás…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Megjegyzés:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Parancs:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Név:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

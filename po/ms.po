@@ -20,59 +20,7 @@ msgstr ""
 
 # help-browser/toc-man.c:19
 # help-browser/toc2-man.c:21
-#: ../capplet/csm-app-dialog.c:120
-#, fuzzy
-msgid "Select Command"
-msgstr "Arahan Permulaan"
 
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Tambah Program Permulaan"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Edit Program Permulaan"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Arahan permulaan tak boleh kosong"
-
-#: ../capplet/csm-app-dialog.c:490
-#, fuzzy
-msgid "The startup command is not valid"
-msgstr "Arahan permulaan tak boleh kosong"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr ""
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr ""
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr ""
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -86,47 +34,11 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Program permulaan tambahan:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr ""
+# help-browser/toc-man.c:19
+# help-browser/toc2-man.c:21
 
 # help-browser/toc-man.c:19
 # help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:5
-#, fuzzy
-msgid "Comm_ent:"
-msgstr "Arahan"
-
-# help-browser/toc-man.c:19
-# help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:6
-#, fuzzy
-msgid "Co_mmand:"
-msgstr "Arahan"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr ""
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

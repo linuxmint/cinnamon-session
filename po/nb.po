@@ -17,58 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Velg kommando"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Legg til oppstartsprogram"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Rediger oppstartsprogram"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Oppstartskommando kan ikke være tom"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Oppstartskommandoen er ikke gyldig"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Aktivert"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Brukervalg for oppstartsprogrammer"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Uten navn"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Ingen beskrivelse"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Versjon av dette programmet"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Kunne ikke vise hjelp"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -82,42 +30,6 @@ msgid ""
 msgstr ""
 "Venter på at programmet skal avsluttes. Hvis du avbryter programmet kan du "
 "miste data."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Oppstartsprogrammer"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Velg programmer som skal startes når du logger inn"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Flere oppstarts_programmer:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Husk kjørende programmer _automatisk når du logger ut"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "Husk kjø_rende programmer"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Bla gjennom …"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Komm_entar:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Ko_mmando:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Navn:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

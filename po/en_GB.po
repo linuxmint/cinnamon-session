@@ -19,58 +19,6 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Select Command"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Add Startup Program"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Edit Startup Program"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "The startup command cannot be empty"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "The startup command is not valid"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Enabled"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Icon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Startup Applications Preferences"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "No name"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "No description"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Version of this application"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Could not display help document"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -84,42 +32,6 @@ msgid ""
 msgstr ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Startup Applications"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Choose what applications to start when you log in"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Additional startup _programs:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Automatically remember running applications when logging out"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Remember Currently Running Applications"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Browse…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Comm_ent:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Co_mmand:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Name:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

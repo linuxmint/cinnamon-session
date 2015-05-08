@@ -18,58 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.8\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Chọn câu lệnh"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Thêm chương trình chạy lúc khởi động"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Sửa chương trình chạy lúc khởi động"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Không cho phép tạo lệnh khởi động rỗng"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Lệnh khởi động không hợp lệ"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Bật"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Biểu tượng"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Chương trình"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Tuỳ chọn ứng dụng khởi chạy"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Không tên"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Không mô tả"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Phiên bản của ứng dụng"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Không thể hiện tài liệu trợ giúp"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -83,42 +31,6 @@ msgid ""
 msgstr ""
 "Đang chờ chương trình kết thúc. Ngắt những chương trình này có thể dẫn đến "
 "mất dữ liệu."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Ứng dụng Khởi chạy"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Hãy chọn những ứng dụng nào cần khởi chạy khi bạn đăng nhập"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Chương trình khởi động thêm:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Tự động nhớ các ứng dụng đang chạy khi đăng xuất"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Nhớ ứng dụng đang chạy"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Duyệt…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "C_hú thích:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Lệ_nh:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Tên:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -25,58 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "選擇指令"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "新增初始啟動程式"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "修改初始啟動程式"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "初始啟動指令不可以留空"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "初始啟動指令無效"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "已啟用"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "圖示"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "程式"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "初始啟動程式偏好設定"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "沒有名稱"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "沒有描述"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "這個程式的版本"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "無法顯示求助文件"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -88,42 +36,6 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "正在等待程式結束。中斷這些程式可能造成您的工作遺失。"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "初始啟動程式"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "選擇在您登入時要啟動哪些應用程式"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "初始啟動時額外執行以下的程式(_P):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "登出時自動記住還在執行中的應用程式(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "記住目前執行的應用程式(_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "瀏覽…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "註解(_E):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "指令(_M):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "名稱(_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -18,58 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Wëbierzë pòlét"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Nowi program sztartowi"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Editëjë program sztartowi"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Sztartowi pòlét nie mòże bëc pùsti"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Sztartowi pòlét je lëchi"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "Włączoné"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "Jikòna"
-
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "Preferencje sztartowëch aplikacji"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "Felëje miona"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "Felëje òpisënka"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
-msgid "Version of this application"
-msgstr "Wersëjô ti aplikacji"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Ni mòże wëskrzënic dokùmentu pòmòcë"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 #, fuzzy
 msgid "Cinnamon fallback"
@@ -96,50 +44,6 @@ msgstr ""
 "Żdanié na zakùńczenié dzejania programù. Òprzestanié mòże sprawic że "
 "ùtracysz swòją robòtã."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Sztartowé programë"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Wëbiérk apliakcjów zrëszónyëh przë logòwaniu"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Dodówne zrëszëniowi programë:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-#, fuzzy
-msgid "Startup Programs"
-msgstr "Nowi program sztartowi"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Automatné spamiãtëwónié zrëszonëch aplikacjów przë wëlogòwaniu"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "_Remember Currently Running Application"
-msgstr "_Spamiãtôj zrëszone programë"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Browse…"
-msgstr "Przezérôj..."
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "Comm_ent:"
-msgstr "_Dopòwiesc:"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "Co_mmand:"
-msgstr "_Pólét:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Name:"
-msgstr "_Miono:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

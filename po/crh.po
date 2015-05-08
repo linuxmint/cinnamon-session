@@ -16,58 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: UTF-8\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Emir Sayla"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Başlanğıç Programı Ekle"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Başlanğıç Programı Tahrir Et"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Başlanğıç emri boş olalmaz"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Başlanğıç emri keçerli degil"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "Qabilleştirilgen"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "İşaretçik"
-
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "Başlanğıç Uyğulamaları Tercihleri"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "İsim yoq"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "Tasvirsiz"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:281
-msgid "Version of this application"
-msgstr "Bu uyğulamanıñ sürümi"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Yardım vesiqası kösterilamadı"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon ricatı"
@@ -92,50 +40,6 @@ msgid ""
 msgstr ""
 "Programnıñ tamamlanuvı içün beklene.  Bu programnı inqıtağa oğratuv emekni "
 "ğayıp etüviñizge sebep olabilir."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "İçeri imzalanğan soñ başlatılacaq uyğulamalarnı saylañız"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "Başlanğıç Uyğulamaları"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Ek başlanğıç _programları:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse…"
-msgstr "Kezin…"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "_Emir:"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "_Şerh:"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "İhtiyariyat"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "Başlanğıç Uyğulamaları"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "Tışarı imzalanğanda çapmaqta olğan uyğulamalarnı _öz-özünden hatırla"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "_İsim:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "_Hal-hazırda Çapmaqta Olğan Uyğulamanı Hatırla"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

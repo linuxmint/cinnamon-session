@@ -12,58 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: ../capplet/csm-app-dialog.c:126
-#, fuzzy
-msgid "Select Command"
-msgstr "Mbido Iwu"
 
-#: ../capplet/csm-app-dialog.c:187
-msgid "Add Startup Program"
-msgstr "Tinye mbido program"
 
-#: ../capplet/csm-app-dialog.c:191
-msgid "Edit Startup Program"
-msgstr "Dezie mbido program"
 
-#: ../capplet/csm-properties-dialog.c:132
-msgid "No description"
-msgstr ""
 
-#: ../capplet/csm-properties-dialog.c:952
-#, fuzzy
-msgid "The name of the startup program cannot be empty"
-msgstr "Mbido iwu ahụ agaghị eghenwu oghe"
-
-#: ../capplet/csm-properties-dialog.c:956
-msgid "The startup command cannot be empty"
-msgstr "Mbido iwu ahụ agaghị eghenwu oghe"
-
-#: ../capplet/csm-properties-dialog.c:962
-#, fuzzy
-msgid "The startup command is not valid"
-msgstr "Mbido iwu ahụ agaghị eghenwu oghe"
-
-#: ../capplet/csm-properties-dialog.c:1279
-msgid "Enabled"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:1292
-#, fuzzy
-msgid "Icon"
-msgstr "Mmem"
-
-#: ../capplet/csm-properties-dialog.c:1303
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:1453
-#: ../data/session-properties.glade.h:6
-msgid "Sessions Preferences"
-msgstr ""
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:508
-msgid "Version of this application"
-msgstr ""
 
 #: ../compat/at-spi-registryd-wrapper.c:47
 msgid ""
@@ -218,14 +170,6 @@ msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Hazie ogemmem gị"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Ogemmem"
 
 #: ../data/session-properties.glade.h:1
 msgid "Additional startup _programs:"

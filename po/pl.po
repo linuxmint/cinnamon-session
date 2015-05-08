@@ -28,58 +28,6 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Wybór polecenia"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Nowy program startowy"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Modyfikacja programu startowego"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Polecenie startowe nie może być puste"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Polecenie startowe jest nieprawidłowe"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Włączone"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikona"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Preferencje programów startowych"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Bez nazwy"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Brak opisu"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Wersja tego programu"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Nie można wyświetlić dokumentu pomocy"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -93,42 +41,6 @@ msgid ""
 msgstr ""
 "Oczekiwanie na zakończenie działania programów. Przerwanie działania "
 "programów może spowodować utratę niezapisanych wyników pracy."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Programy startowe"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Wybór programów do uruchomienia podczas logowania"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "D_odatkowe programy startowe:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Z_apamiętanie uruchomionych programów podczas wylogowywania"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Zapamiętaj uruchomione programy"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Przeglądaj…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Komentarz:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Polecenie:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nazwa:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

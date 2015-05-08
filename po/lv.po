@@ -25,58 +25,6 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "X-Launchpad-Export-Date: 2009-02-19 16:24+0000\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Izvēlieties komandu"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Pievienot starta programmu"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Rediģēt starta programmu"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Starta komanda nevar būt tukša"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Starta komanda nav derīga"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Aktivēts"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikona"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Programma"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Starta programmu iestatījumi"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Nav nosaukuma"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Nav apraksta"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Lietotnes versija"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Nevar parādīt palīdzības dokumentu"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -90,42 +38,6 @@ msgid ""
 msgstr ""
 "Gaida programmu darbības beigas. Programmu pārtraukšana var novest pie darba "
 "rezultātu zaudēšanas."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Starta lietotnes"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Izvēlieties, kādas programmas vēlaties palaist ierakstoties"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Papildu starta _programmas:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Automātiski atcerēties palaistās lietotnes izrakstoties"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "Atce_rēties šobrīd palaistās lietotnes"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Pārlūkot…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Kom_entārs:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Ko_manda:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nosaukums:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

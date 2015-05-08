@@ -20,58 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n"
 "%10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Roghnaigh Ordú"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Cuir Ríomhchlár Tosaithe Leis"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Cuir Ríomhchlár Tosaithe in Eagar"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr ""
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Cumasaithe"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Deilbhín"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Ríomhchlár"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Sainroghanna Feidhmchlár Tosaithe"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Gan ainm"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Gan cur síos"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Leagan an fheidhmchláir seo"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -84,43 +32,7 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Feidhmchláir Tosaithe"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Roghnaigh na feidhmchláir le tosú agus ag logáil isteach"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Ríomhchláir tosaithe breise:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Meabhraigh feidhmchláir á rith go huathoibríoch agus ag logáil amach"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Meabhraigh Feidhmchlár á Rith Faoi Láthair"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "Brábhsáil..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Nóta:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Ordú:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Ainm:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

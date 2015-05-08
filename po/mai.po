@@ -17,58 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "कमांड चुनू"
-
-#: ../capplet/csm-app-dialog.c:194
-msgid "Add Startup Program"
-msgstr "प्रारंभिक प्रोग्राम जोड़ू"
-
-#: ../capplet/csm-app-dialog.c:198
-msgid "Edit Startup Program"
-msgstr "प्रारंभिक प्रोग्राम संपादित करू"
-
-#: ../capplet/csm-app-dialog.c:486
-msgid "The startup command cannot be empty"
-msgstr "प्रारंभिक कमांड रिक्त नहि भ' सकत"
-
-#: ../capplet/csm-app-dialog.c:492
-msgid "The startup command is not valid"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:555
-msgid "Enabled"
-msgstr "सक्षम"
-
-#: ../capplet/csm-properties-dialog.c:567
-msgid "Icon"
-msgstr "चिह्न"
-
-#: ../capplet/csm-properties-dialog.c:579
-msgid "Program"
-msgstr "प्रोग्राम"
-
-#: ../capplet/csm-properties-dialog.c:792
-msgid "Startup Applications Preferences"
-msgstr ""
-
-#: ../capplet/csp-app.c:269
-msgid "No name"
-msgstr "कोनो नाम नहि"
-
-#: ../capplet/csp-app.c:275
-msgid "No description"
-msgstr ""
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:437
-msgid "Version of this application"
-msgstr "एहि अनुप्रयोग क' संस्करण"
-
-#: ../capplet/main.c:63
-msgid "Could not display help document"
-msgstr "मद्दति दस्ताबेज़ नहि देखाए सकल"
-
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
 msgid "Cinnamon Settings Daemon Helper"
 msgstr ""
@@ -188,50 +136,6 @@ msgstr ""
 msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "प्रारंभिक प्रोग्राममे जोड़ू (_p)"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse..."
-msgstr "ब्राउज करू..."
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "कमांड (_m):"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "टिप्पणी (_e):"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "विकल्प"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "प्रारंभिक प्रोग्राम"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "नाम (_N):"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
 msgstr ""
 
 #: ../egg/eggdesktopfile.c:165

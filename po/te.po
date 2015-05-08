@@ -29,58 +29,6 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "ఆదేశాన్ని ఎంచుకోండి"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "ప్రారంభ కార్యక్రమాన్ని జతచేయి"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "ప్రారంభ కార్యక్రమాన్ని సవరించు"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "ప్రారంభ  ఆదేశం ఖాళీగా  ఉండరాదు"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "ప్రారంభ  ఆదేశం సరియైనదికాదు"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "చేతనమైంది"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "ప్రతీక"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "ప్రోగామ్"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "ప్రారంభ అనువర్తనాల ప్రాధాన్యతలు"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "పేరు లేదు"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "వివరణ లేదు"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "ఈ అనువర్తనం యొక్క రూపాంతరం"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "సహాయ పత్రమును ప్రదర్శించలేక పోయింది"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -94,42 +42,6 @@ msgid ""
 msgstr ""
 "ప్రాగ్రామును ముగించుటకు వేచివుంది.  ఈ ప్రోగ్రామును ఆటంకపరచుట వలన మీ పని కోల్పోవుటకు కారణం "
 "కావచ్చును."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "ప్రారంభ అనువర్తనములు"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "మీరు లాగిన్ అయినప్పుడు ఏ అనువర్తనములు ప్రారంభము కావలెనో యెంచుకొనుము"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "అదనపు  ప్రారంభ కార్యక్రమాలు (_p):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "నిష్క్రమించేటప్పుడు నడుస్తున్న కార్యక్షేత్రాలని స్వయంచాలకంగా గుర్తుంచుకొనుము (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "ప్రస్తుతం నడుస్తున్న అనువర్తనాలు గుర్తుంచుకో (_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "విహరించు..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "వ్యాఖ్య (_e):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "ఆదేశం (_m):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "పేరు (_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

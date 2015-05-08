@@ -20,58 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "เลือกคำสั่ง"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "เพิ่มโปรแกรมเริ่มวาระ"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "แก้ไขโปรแกรมเริ่มวาระ"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระจะว่างไม่ได้"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระผิดพลาด"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "เปิดใช้"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "ไอคอน"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "โปรแกรม"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "ปรับแต่งโปรแกรมเริ่มวาระ"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "ไม่มีชื่อ"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "ไม่มีคำบรรยาย"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "รุ่นของโปรแกรมนี้"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "ไม่สามารถแสดงเอกสารวิธีใช้"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -83,42 +31,6 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "จะรอให้โปรแกรมนี้ทำงานจบ การขัดจังหวะโปรแกรมอาจทำให้สูญเสียงานบางอย่างของคุณไป"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "โปรแกรมเริ่มวาระ"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "เลือกโปรแกรมที่จะเปิดเมื่อคุณเข้าระบบ"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "โ_ปรแกรมเริ่มวาระเพิ่มเติม:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "จำรายชื่อโปรแกรมที่ทำงานอยู่โดย_อัตโนมัติเมื่อออกจากระบบ"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_จำรายชื่อโปรแกรมที่ทำงานอยู่"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "เรียกดู…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "ห_มายเหตุ:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_คำสั่ง:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_ชื่อ:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -21,58 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Selecciona una orde"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Afig un programa d'inici"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Edita el programa d'inici"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "L'orde d'inici no pot ser buida"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "L'orde d'inici no és vàlida"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "Habilitat"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "Icona"
-
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "Programa"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "Preferències de les aplicacions d'inici"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "Sense nom"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "Sense descripció"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
-msgid "Version of this application"
-msgstr "Versió d'esta aplicació"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "No s'ha pogut mostrar el document de l'ajuda"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon clàssic"
@@ -97,51 +45,7 @@ msgstr ""
 "S'està esperant que finalitzi el programa. Si l'interrompeu podríeu perdre "
 "les dades no alçades."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Aplicacions d'inici"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Trieu quines aplicacions voleu que s'inicien en entrar"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Programes d'inici addicionals:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "Programes d'inici"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Automatically remember running applications when logging out"
-msgstr "Recorda _automàticament les aplicacions que s'estan executant en eixir"
-
 # FIXME [l10n-bug] (dpm)
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "_Remember Currently Running Applications"
-msgstr "_Recorda les aplicacions que s'estan executant actualment"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opcions"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Browse…"
-msgstr "Navega…"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "Comm_ent:"
-msgstr "Co_mentari:"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "Co_mmand:"
-msgstr "_Orde:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Name:"
-msgstr "_Nom:"
-
 #: ../egg/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"

@@ -25,64 +25,12 @@ msgstr ""
 "X-Generator: Lokalize 1.1\n"
 
 # gsm/session-properties-capplet.c:292
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "கட்டளையை தேர்ந்தெடு"
-
 # gsm/startup-programs.c:391
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "துவக்க நிரலுக்கு சேர் "
-
 # gsm/startup-programs.c:391
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "துவக்க நிரலை தொகு"
-
 # gsm/startup-programs.c:333
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "துவக்க கட்டளை காலியாக இருக்க முடியாது"
-
 # gsm/startup-programs.c:333
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "துவக்க கட்டளை செல்லுபடியாகாதது"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "செயலாக்கப்பட்டது"
-
 # gsm/logout.c:240
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "சின்னம்"
-
 # gsm/csm-client-list.c:112
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "நிரல்"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "துவக்க பயன்பாடுகள் விருப்பங்கள்"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "பெயர் இல்லை"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "விவரணம் இல்லை"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "இந்த பயன்பாட்டின் பதிப்பு "
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "உதவி ஆவணத்தை காட்ட இயலவில்லை"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -97,45 +45,9 @@ msgstr ""
 "நிரல் இயங்கி முடிய காத்திருக்கிறது. நிரல் இயக்கத்தை தடை செய்வது உங்கள் வேலையை "
 "சேமிக்காமல் போகச் செய்யும்."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "துவக்க பயன்பாடுகள்"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "நீங்கள் புகுபதிவு செய்யும் போது எந்த பயன்பாடுகள் தேர்ந்தெடுக்கப்படவேண்டும்"
-
 # gsm/startup-programs.c:373
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "மேலும்சில தொடங்க _நிரல்கள்:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "தானியங்கியாக வெளியேறும் போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "(_R) இப்போது இயங்கும் பயன்பாடுகளை நினைவில் கொள்க"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "உலாவு... "
-
 # gsm/session-properties-capplet.c:292
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "(_e) குறிப்புரை:"
-
 # gsm/session-properties-capplet.c:292
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "(_m) கட்டளை:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "பெயர்: (_N)"
-
 #: ../egg/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"

@@ -29,58 +29,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Sélection d'une commande"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Ajout d'un programme de démarrage"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Modification d'un programme de démarrage"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "La commande de démarrage ne peut pas être vide"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "La commande de démarrage n'est pas valide"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Activé"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Icône"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Programme"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Préférences des applications au démarrage"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Pas de nom"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Pas de description"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Version de cette application"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Impossible d'afficher le document d'aide"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -95,43 +43,7 @@ msgstr ""
 "Attente de la fin du programme. L'interruption du programme risquerait de "
 "vous faire perdre certaines données."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Applications au démarrage"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Choisir les applications à lancer à la connexion"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Programmes supplémentaires au démarrage :"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-"Se souvenir _automatiquement des applications en cours d'exécution lors de "
 "la déconnexion"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Se souvenir des applications en cours d'exécution"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Parcourir…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Co_mmentaire :"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Commande :"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nom :"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

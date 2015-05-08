@@ -20,58 +20,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-08-10 08:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "بۇيرۇق تاللا"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "قوزغىلىش پروگراممىسى قوش"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "قوزغىلىش پروگرامما تەھرىر"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "قوزغىلىش بۇيرۇقى بوش قالسا بولمايدۇ."
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "قوزغىلىش بۇيرۇقى ئىناۋەتسىز"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "قوزغىتىلغان"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "سىنبەلگە"
-
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "پروگرامما"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "قوزغىلىش پروگرامما مايىللىقى"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "ئاتسىز"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "چۈشەندۈرۈش يوق"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:282
-msgid "Version of this application"
-msgstr "بۇ پروگراممىنىڭ نەشرى"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "ياردەم پۈتۈكىنى كۆرسەتكىلى بولمىدى"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon زاپاس ھالىتى"
@@ -95,50 +43,6 @@ msgid ""
 msgstr ""
 "پروگرامما تاماملىنىشنى كۈتۈۋاتىدۇ. پروگرامما توختىتىلسا خىزمەت نەتىجىڭىزنىڭ "
 "يوقىلىشىنى كەلتۈرۈپ چىقىرىدۇ."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "سىز تىزىمغا كىرگەندىن كېيىن قوزغىتىدىغان پروگراممىنى تاللاڭ"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "قوزغىتىش پروگراممىلىرى"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "قوشۇمچە قوزغىلىش پروگراممىلىرى(_P):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse…"
-msgstr "كۆز يۈگۈرت…"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "بۇيرۇق(_M):"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "ئىزاھات(_E):"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "تاللانما"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "قوزغىلىش پروگراممىسى"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "تىزىمدىن چىققاندا ئىجرا قىلغان پروگراممىنى ئۆزلۈكىدىن ئەستە تۇت(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "ئاتى(_N):"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "نۆۋەتتە ئىجرا قىلىنغان پروگراممىنى ئەستە تۇت(_R)"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -19,60 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "কমান্ড বাছক"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "আৰম্ভৰ প্ৰগ্ৰাম যোগ কৰক"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "আৰম্ভৰ প্ৰগ্ৰাম সম্পাদন কৰক"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "আৰম্ভৰ কমান্ড ৰিক্ত থাকিব নোৱাৰিব"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "আৰম্ভৰ কমান্ড অবৈধ"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "সামৰ্থবান"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "আইকন"
-
 #
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "প্ৰগ্ৰাম"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "আৰম্ভৰ এপ্লিকেচন পছন্দসমূহ"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "নাম নোহোৱা"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "বিৱৰণ নাই"
-
 #
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
-msgid "Version of this application"
-msgstr "এই এপ্লিকেচনৰ সংস্কৰণ"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "সহায় দস্তাবেজ প্ৰদৰ্শন কৰিবলৈ ব্যৰ্থ"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon ফলবেক"
@@ -97,54 +45,10 @@ msgstr ""
 "প্ৰগ্ৰাম সমাপ্ত হোৱাৰ অপেক্ষা কৰা হৈছে। প্ৰগ্ৰাম বিঘ্নিত হ'লে সঞ্চালিত কামৰ ফল "
 "আঁতৰুৱাৰ সম্ভাৱনা আছে।"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "আৰম্ভৰ এপ্লিকেচনসমূহ"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "লগিন কৰাৰ সময়ত কোনবোৰ এপ্লিকেচন আৰম্ভ হব বাছক"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "অতিৰিক্ত আৰম্ভৰ প্ৰগ্ৰামসমূহ (_p):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "আৰম্ভৰ প্ৰগ্ৰামসমূহ"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Automatically remember running applications when logging out"
-msgstr "লগআউট কৰাৰ সময়ত চলি থকা এপ্লিকেচনসমূহ স্বচালিতভাৱে মনত ৰাখক (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#| msgid "_Remember Currently Running Application"
-msgid "_Remember Currently Running Applications"
-msgstr "বৰ্তমানে চলি থকা এপ্লিকেচনসমূহ মনত ৰাখক (_R)"
 
 #
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "বিকল্পসমূহ"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Browse…"
-msgstr "ব্ৰাউছ কৰক..."
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "Comm_ent:"
-msgstr "মন্তব্য (_e):"
-
 #
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "Co_mmand:"
-msgstr "কমান্ড (_m):"
-
 #
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Name:"
-msgstr "নাম (_N):"
-
 #: ../egg/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"

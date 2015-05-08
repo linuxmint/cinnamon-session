@@ -22,58 +22,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Выберите команду"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Добавить программу"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Изменить программу"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Команда запуска не может быть пустой"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Некорректная команда запуска"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Включено"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Значок"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Программа"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Настройки запуска приложений"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Нет имени"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Нет описания"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Версия этого приложения"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Не удалось показать документ справки"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -87,42 +35,6 @@ msgid ""
 msgstr ""
 "Ожидание завершения работы программы.  Прерывание программы может привести к "
 "потере данных."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Запускаемые приложения"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Выберите приложения, запускаемые при входе в систему"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Дополнительные _программы, запускаемые при старте:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Автоматически запоминать запущенные приложения при выходе из сеанса"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Запомнить запущенные приложения"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Обзор…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Ко_мментарий:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Команда:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Имя:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -25,58 +25,6 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "اختر أمرا"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "أضِف برنامجا لبداية التشغيل"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "حرّر برنامج بدء التشغيل"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "لا يمكن أن يكون أمر بدء التشغيل فارغًا"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "أمر بدء التشغيل غير سليم"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "مُفعّل"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "أيقونة"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "البرنامج"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "تفضيلات برمجيات بدء التشغيل"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "بلا اسم"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "بلا وصف"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "إصدارة هذا التطبيق"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "تعذّر عرض مستند المساعدة"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -88,42 +36,6 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "بانتظار انتهاء البرامج. مقاطعة هذه البرامج قد يتسبب في فقدان العمل."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "تطبيقات بدء التشغيل"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "اختر التطبيقات التي تريد تشغيلها عند ولوجك"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "برامج بدء الت_شغيل الإضافية:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "ت_ذكّر تلقائيا التطبيقات المشغلة عند تسجيل الخروج"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_تذكّر التطبيقات المشغلة حاليًا"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "تصفّح…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "ال_تعليق:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "الأ_مر:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "الا_سم:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

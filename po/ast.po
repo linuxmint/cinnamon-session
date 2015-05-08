@@ -20,54 +20,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-02-10 00:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/csm-app-dialog.c:126
-msgid "Select Command"
-msgstr "Comandu Selección"
-
-#: ../capplet/csm-app-dialog.c:187
-msgid "Add Startup Program"
-msgstr "Amestar Programa d'Arranque"
-
-#: ../capplet/csm-app-dialog.c:191
-msgid "Edit Startup Program"
-msgstr "Remanar Programa d'Arranque"
-
-#: ../capplet/csm-properties-dialog.c:132
-msgid "No description"
-msgstr "Ensin descrición"
-
-#: ../capplet/csm-properties-dialog.c:952
-msgid "The name of the startup program cannot be empty"
-msgstr "El nome del comandu d'arranque nun pue tar vacíu"
-
-#: ../capplet/csm-properties-dialog.c:956
-msgid "The startup command cannot be empty"
-msgstr "El comandu d'arranque nun puede tar vacíu"
-
-#: ../capplet/csm-properties-dialog.c:962
-msgid "The startup command is not valid"
-msgstr "El comandu d'arranque nun ye válidu"
-
-#: ../capplet/csm-properties-dialog.c:1279
-msgid "Enabled"
-msgstr "Activáu"
-
-#: ../capplet/csm-properties-dialog.c:1292
-msgid "Icon"
-msgstr "Iconu"
-
-#: ../capplet/csm-properties-dialog.c:1303
-msgid "Program"
-msgstr "Programa"
-
-#: ../capplet/csm-properties-dialog.c:1453
-#: ../data/session-properties.glade.h:6
-msgid "Sessions Preferences"
-msgstr "Preferencies de Sesión"
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:508
-msgid "Version of this application"
-msgstr "Versión d'esta aplicación"
 
 #: ../compat/at-spi-registryd-wrapper.c:47
 msgid ""
@@ -240,14 +192,6 @@ msgid ""
 msgstr ""
 "Esperando que fine'l programa. Interrumpir el programa pue facer que pierdas "
 "datos."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Configurar les sos sesiones"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Sesiones"
 
 #: ../data/session-properties.glade.h:1
 msgid "Additional startup _programs:"

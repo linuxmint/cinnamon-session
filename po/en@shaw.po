@@ -14,58 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "𐑕𐑩𐑤𐑧𐑒𐑑 𐑒𐑩𐑥𐑭𐑯𐑛"
-
-#: ../capplet/csm-app-dialog.c:194
-msgid "Add Startup Program"
-msgstr "𐑨𐑛 𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
-
-#: ../capplet/csm-app-dialog.c:198
-msgid "Edit Startup Program"
-msgstr "𐑧𐑛𐑦𐑑 𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
-
-#: ../capplet/csm-app-dialog.c:486
-msgid "The startup command cannot be empty"
-msgstr "𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑒𐑩𐑥𐑭𐑯𐑛 𐑒𐑨𐑯𐑪𐑑 𐑚𐑰 𐑧𐑥𐑐𐑑𐑦"
-
-#: ../capplet/csm-app-dialog.c:492
-msgid "The startup command is not valid"
-msgstr "𐑞 𐑕𐑑𐑸𐑑𐑳𐑐 𐑒𐑩𐑥𐑭𐑯𐑛 𐑦𐑟 𐑯𐑪𐑑 𐑝𐑨𐑤𐑦𐑛"
-
-#: ../capplet/csm-properties-dialog.c:555
-msgid "Enabled"
-msgstr "𐑦𐑯𐑱𐑚𐑩𐑤𐑛"
-
-#: ../capplet/csm-properties-dialog.c:567
-msgid "Icon"
-msgstr "𐑲𐑒𐑪𐑯"
-
-#: ../capplet/csm-properties-dialog.c:579
-msgid "Program"
-msgstr "𐑐𐑮𐑴𐑜𐑮𐑨𐑥"
-
-#: ../capplet/csm-properties-dialog.c:792
-msgid "Startup Applications Preferences"
-msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟"
-
-#: ../capplet/csp-app.c:269
-msgid "No name"
-msgstr "𐑯𐑴 𐑯𐑱𐑥"
-
-#: ../capplet/csp-app.c:275
-msgid "No description"
-msgstr "𐑯𐑴 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:441
-msgid "Version of this application"
-msgstr "𐑝𐑻𐑠𐑩𐑯 𐑝 𐑞𐑦𐑕 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯"
-
-#: ../capplet/main.c:63
-msgid "Could not display help document"
-msgstr "𐑒𐑫𐑛 𐑯𐑪𐑑 𐑛𐑩𐑕𐑐𐑤𐑱 𐑣𐑧𐑤𐑐 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑"
-
 #: ../compat/gnome-settings-daemon-helper.desktop.in.in.in.h:1
 msgid "Cinnamon Settings Daemon Helper"
 msgstr "·𐑜𐑯𐑴𐑥 𐑕𐑧𐑑𐑦𐑙𐑟 𐑛𐑰𐑥𐑩𐑯 𐑣𐑧𐑤𐑐𐑼"
@@ -204,52 +152,8 @@ msgid ""
 "work."
 msgstr "𐑢𐑱𐑑𐑦𐑙 𐑓𐑹 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑑 𐑓𐑦𐑯𐑦𐑖.  𐑦𐑯𐑑𐑻𐑳𐑐𐑑𐑦𐑙 𐑐𐑮𐑴𐑜𐑮𐑨𐑥 𐑥𐑱 𐑒𐑷𐑟 𐑿 𐑑 𐑤𐑵𐑟 𐑢𐑻𐑒."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "𐑗𐑵𐑟 𐑢𐑪𐑑 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑑 𐑕𐑑𐑸𐑑 𐑢𐑧𐑯 𐑿 𐑤𐑪𐑜 𐑦𐑯"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "𐑩𐑛𐑦𐑖𐑩𐑯𐑩𐑤 𐑕𐑑𐑸𐑑𐑳𐑐 _𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse..."
-msgstr "𐑚𐑮𐑬𐑟..."
-
 #, fuzzy
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "Co_mmand:"
-
 #, fuzzy
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "Comm_ent:"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "𐑪𐑐𐑖𐑩𐑯𐑟"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "𐑕𐑑𐑸𐑑𐑳𐑐 𐑐𐑮𐑴𐑜𐑮𐑨𐑥𐑟"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "_𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑮𐑦𐑥𐑧𐑥𐑚𐑼 𐑮𐑳𐑯𐑦𐑙 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑢𐑧𐑯 𐑤𐑪𐑜𐑦𐑙 𐑬𐑑"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "_𐑯𐑱𐑥:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "_𐑮𐑦𐑥𐑧𐑥𐑚𐑼 𐑒𐑳𐑮𐑩𐑯𐑑𐑤𐑦 𐑮𐑳𐑯𐑦𐑙 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯"
-
 #, c-format
 #: ../egg/eggdesktopfile.c:165
 msgid "File is not a valid .desktop file"

@@ -26,58 +26,6 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "ନିର୍ଦ୍ଦେଶ ବାଛନ୍ତୁ"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମକୁ ଯୋଗ କରନ୍ତୁ"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମକୁ ସଂଶୋଧନ କରନ୍ତୁ"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମଟି ଖାଲି ହୋଇ ପାରିବ ନାହିଁ"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "ପ୍ରାରମ୍ଭିକ ନିର୍ଦ୍ଦେଶଟି ବୈଧ ନୁହଁ"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "ସକ୍ରିୟ"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "ଚିତ୍ରସଙ୍କେତ"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "ପ୍ରୋଗ୍ରାମ"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗ ପସନ୍ଦ"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "କୌଣସି ନାମ ନାହିଁ"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "କୌଣସି ବର୍ଣ୍ଣନା ନାହିଁ"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "ଏହି ପ୍ରୟୋଗର ସଂସ୍କରଣ"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "ସାହାଯ୍ଯ ଦଲିଲ ଦେଖାଇହେଲା ନାହିଁ"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -92,42 +40,6 @@ msgstr ""
 "ପ୍ରଗ୍ରାମ ସମାପ୍ତ ହେବା ପାଇଁ ଅପେକ୍ଷା କରିଅଛି।  ଏହି ପ୍ରଗ୍ରାମଗୁଡ଼ିକୁ ବାଧା ଦେବା ଦ୍ୱାରା କାର୍ଯ୍ୟ ନଷ୍ଟ "
 "ହୋଇପାରେ।"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗଗୁଡ଼ିକ"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "ଆପଣ ଲଗଇନ ହେବା ସମୟରେ କେଉଁ ପ୍ରୟୋଗକୁ ଆରମ୍ଭ କରିବା ଉଚିତ ତାହା ବାଛନ୍ତୁ"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "ଅତିରିକ୍ତ ବ୍ଯବସ୍ଥାପକ ପ୍ରୋଗ୍ରାମ (_p):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "ଲଗଆଉଟ ହେବା ସମୟରେ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ମନେରଖନ୍ତୁ (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "ବର୍ତ୍ତମାନ ଚାଲୁଥିବା ପ୍ରୟୋଗଗୁଡ଼ିକୁ ମନେରଖନ୍ତୁ (_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "ବ୍ରାଉଜ କରନ୍ତୁ..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "ମନ୍ତବ୍ୟ (_e):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "ନିର୍ଦ୍ଦେଶ (_m):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "ନାମ (_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

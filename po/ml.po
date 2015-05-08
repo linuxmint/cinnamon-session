@@ -21,58 +21,6 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "കമാന്‍ഡ് തെരഞ്ഞെടുക്കുക"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "ആരംഭ നിര്‍ദ്ദേശം ചേര്‍ക്കുക"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "ആരംഭ നിര്‍ദ്ദേശം ചിട്ടപ്പെടുത്തുക"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "ആരംഭ നിര്‍ദ്ദേശം ശൂന്യമായിരിക്കുവാന്‍ പാടില്ല"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "ആരംഭ ആജ്ഞ ശരിയല്ല"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "പ്രവര്‍ത്തന സജ്ജമാക്കുക"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "ചിഹ്നം "
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "പ്രോഗ്രാം"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍ക്കുള്ള മുന്‍ഗണനകള്‍"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "പേരില്ല"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "വിവരണം ഒന്നുമില്ല"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -86,42 +34,6 @@ msgid ""
 msgstr ""
 "പ്രയോഗങ്ങള്‍ തീരുന്നതു് വരെ കാത്തിരിയ്ക്കുന്നു. ഈ പ്രയോഗങ്ങളെ തടസ്സപ്പെടുത്തുന്നതു് നിങ്ങള്‍ "
 "ചെയ്തുകൊണ്ടിരിയ്ക്കുന്ന പണി നഷ്ടപ്പെടുവാന്‍ കാരണമായേയ്ക്കാം."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "നിങ്ങള്‍ ലോഗിന്‍ ചെയ്യുമ്പോള്‍ ആരംഭിക്കേണ്ട പ്രയോഗങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "കൂടുതല്‍ പ്രാരംഭ _പ്രയോഗങ്ങള്‍:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "പുറത്തിറങ്ങുമ്പോള്‍ പ്രവര്‍ത്തിയ്ക്കുന്ന പ്രയോഗങ്ങള്‍ ഓര്‍ത്തിരിയ്ക്കുക."
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "ഇപ്പോള്‍ പ്രവര്‍ത്തിക്കുന്ന പ്രയോഗങ്ങള്‍ _ഓര്‍ക്കുക"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "പരതുക..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "അഭിപ്രായം:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_ആജ്ഞ:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_പേരു്:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

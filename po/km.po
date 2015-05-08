@@ -20,58 +20,6 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "ជ្រើសរើសពាក្យបញ្ជា"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "បន្ថែម​​កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "កែសម្រួល​កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "ពាក្យ​បញ្ជា​ចាប់ផ្ដើម​មិន​អាច​ទទេ​ឡើយ"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "ពាក្យ​បញ្ជា​ចាប់ផ្ដើម​មិន​ត្រឹមត្រូវ​ទេ"
-
-#: ../capplet/csm-properties-dialog.c:518
-msgid "Enabled"
-msgstr "បាន​បើក"
-
-#: ../capplet/csm-properties-dialog.c:530
-msgid "Icon"
-msgstr "រូបតំណាង"
-
-#: ../capplet/csm-properties-dialog.c:542
-msgid "Program"
-msgstr "កម្មវិធី"
-
-#: ../capplet/csm-properties-dialog.c:746
-msgid "Startup Applications Preferences"
-msgstr "ចំណូល​ចិត្ត​កម្មវិធី​ចាប់ផ្ដើម"
-
-#: ../capplet/csp-app.c:274
-msgid "No name"
-msgstr "គ្មាន​ឈ្មោះ"
-
-#: ../capplet/csp-app.c:280
-msgid "No description"
-msgstr "គ្មាន​សេចក្ដី​ពិពណ៌នា"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:294
-msgid "Version of this application"
-msgstr "កំណែ​កម្មវិធី​នេះ"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "មិន​អាច​បង្ហាញ​ឯកសារ​ជំនួយ​បាន​ទេ"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Cinnamon fallback"
@@ -93,50 +41,6 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "រង់ចាំ​ឲ្យ​កម្មវិធី​ចប់ ។ ការ​ផ្អាក​កម្មវិធី​អាច​បណ្ដាល​ឲ្យ​បាត់បង់កិច្ចការ ។"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "កម្មវិធី​នៅ​ពេល​ចាប់ផ្ដើម"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "ជ្រើស​កម្មវិធី​ត្រូវ​ចាប់ផ្ដើម​នៅ​ពេល​ចូល"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "កម្មវិធី​ចាប់ផ្ដើម​បន្ថែម ៖"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Startup Programs"
-msgstr "ចាប់ផ្ដើម​កម្មវិធី"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Automatically remember running applications when logging out"
-msgstr "ចងចាំ​កម្មវិធី​ដែល​កំពុង​ដំណើរការ​ដោយ​ស្វ័យ​ប្រវត្តិ នៅ​ពេល​ចេញ"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "_Remember Currently Running Applications"
-msgstr "ចងចាំ​ការ​ដំណើរការ​កម្មវិធី​បច្ចុប្បន្ន"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "ជម្រើស"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Browse…"
-msgstr "រក​មើល..."
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "Comm_ent:"
-msgstr "មតិយោបល់ ៖"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "Co_mmand:"
-msgstr "ពាក្យ​បញ្ជា ៖"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Name:"
-msgstr "ឈ្មោះ ៖"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

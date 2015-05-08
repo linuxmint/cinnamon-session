@@ -29,58 +29,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "コマンドの選択"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "自動起動するプログラムの追加"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "自動起動するプログラムの編集"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "自動起動するプログラムのコマンド名を入力してください"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "コマンド名が間違っています"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "有効"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "アイコン"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "プログラム"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "自動起動するアプリケーションの設定"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "名前なし"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "(説明なし)"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "このアプリケーションのバージョンを表示する"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "ヘルプのドキュメントを表示できませんでした"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -94,42 +42,6 @@ msgid ""
 msgstr ""
 "プログラムが終了するのを待っています。プログラムの実行を強制的に中断すると、"
 "作業内容を失うことになるかもしれません。"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "自動起動するアプリケーション"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "ログインした後に起動するアプリケーションを選択します"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "自動的に起動するプログラムの追加(_P):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "ログアウト時に実行中のアプリケーションを自動的に記憶しておく(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "現在実行中のアプリケーションを記憶しておく(_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "参照…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "説明(_E):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "コマンド(_M):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "名前(_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format
