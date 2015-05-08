@@ -1,12 +1,6 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-capplet/csm-app-dialog.c
-capplet/csm-properties-dialog.c
-capplet/csp-app.c
-capplet/main.c
 [type: gettext/glade]data/csm-inhibit-dialog.glade
-data/cinnamon-session-properties.desktop.in.in
-[type: gettext/glade]data/cinnamon-session-properties.glade
 egg/eggdesktopfile.c
 egg/eggsmclient.c
 cinnamon-session/csm-inhibit-dialog.c
