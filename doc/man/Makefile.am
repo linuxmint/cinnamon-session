@@ -1,6 +1,5 @@
 man_MANS =				\
 	cinnamon-session.1			\
-	cinnamon-session-properties.1	\
 	cinnamon-session-quit.1
 
 EXTRA_DIST =			\
