@@ -22,6 +22,7 @@
 
 #include <glib-object.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 
 #include "csm-system.h"
 #include "csm-consolekit.h"
@@ -151,16 +152,22 @@ csm_get_system (void)
         static CsmSystem *system = NULL;
 
         if (system == NULL) {
-                system = CSM_SYSTEM (csm_systemd_new ());
-                if (system != NULL) {
+                GSettings *session_settings = g_settings_new ("org.cinnamon.desktop.session");
+                if (g_settings_get_boolean (session_settings, "use-systemd")) {
+                  // Use logind
+                  system = CSM_SYSTEM (csm_systemd_new ());
+                  if (system != NULL) {
                         g_debug ("Using systemd for session tracking");
+                  }
                 }
-        }
-        if (system == NULL) {
-                system = CSM_SYSTEM (csm_consolekit_new ());
-                if (system != NULL) {
+                else {
+                  // Use consolekit
+                  system = CSM_SYSTEM (csm_consolekit_new ());
+                  if (system != NULL) {
                         g_debug ("Using ConsoleKit for session tracking");
+                  }
                 }
+                g_object_unref (session_settings);
         }
 
         return g_object_ref (system);
