@@ -20,58 +20,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-07-17 22:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Kommando selektearje"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Opstartprogramma tafoegje"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Opstartprogramma bewurkje"
-
-#: ../capplet/csm-app-dialog.c:485
-msgid "The startup command cannot be empty"
-msgstr "It opstartkommando kin net leech wêze"
-
-#: ../capplet/csm-app-dialog.c:491
-msgid "The startup command is not valid"
-msgstr "It opstartkommando is net jildich"
-
-#: ../capplet/csm-properties-dialog.c:517
-msgid "Enabled"
-msgstr "Ynskeakele"
-
-#: ../capplet/csm-properties-dialog.c:529
-msgid "Icon"
-msgstr "Ikoan"
-
-#: ../capplet/csm-properties-dialog.c:541
-msgid "Program"
-msgstr "Programma"
-
-#: ../capplet/csm-properties-dialog.c:745
-msgid "Startup Applications Preferences"
-msgstr "Ynstellingen foar opstarttapassingen"
-
-#: ../capplet/csp-app.c:269
-msgid "No name"
-msgstr "Gjin namme"
-
-#: ../capplet/csp-app.c:275
-msgid "No description"
-msgstr "Gjin beskriuwing"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:280
-msgid "Version of this application"
-msgstr "Ferzje fan dizze tapassing"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Koe it help dokumint net werjaan"
-
 #: ../data/cinnamon-fallback-session.desktop.in.in.h:1
 msgid "Cinnamon fallback"
 msgstr "Gnome weromfal"
@@ -95,50 +43,6 @@ msgid ""
 msgstr ""
 "Oan it wachtsjen oant it programma ôfrin is. It programma ûnderbrekke kin jo "
 "wurk fuort meitsje."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "Kies hokker tapassingen start wurden by it oanmelde"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "Opstarttapassingen"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Ekstra opstart_programma's:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse…"
-msgstr "Blêdzje…"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "Ko_mmando:"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "Taljochting:"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Opsjes"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "Opstartprogramma's"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "Ûnthâld rinnende tapassingen _automatysk by ôfmelde"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "_Namme:"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "Ûnthâld _rinnende tapassingen"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

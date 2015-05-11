@@ -19,58 +19,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-05-28 02:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Odaberite naredbu"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Dodaj progam za pokretanje pri podizanju"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Uređivanje programa koji se pokreću prilikom pokretanja"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Naredba pri pokretanju ne može biti prazna"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Naredba nije ispravna"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Omogućeno"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-#, fuzzy
-msgid "Startup Applications Preferences"
-msgstr "Postavke prijave"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Bez opisa"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr ""
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -84,43 +32,7 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Dodatni programi za _pokrenuti pri podizanju:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Automatski zapamti pokrenute aplikacije pri odjavljivanju iz sustava"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Zapamti trenutno pokrenute programe"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "_Potraži..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Komentar:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Na_redba:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Ime:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

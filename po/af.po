@@ -19,58 +19,6 @@ msgstr ""
 "X-Generator: Virtaal 0.7.0-beta4\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Kies bevel"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Voeg aanvangsprogram by"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Redigeer aanvangsprogram"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Die aanvangsbevel kan nie leeg wees nie"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Die aanvangsbevel is nie geldig nie"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Geaktiveer"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikoon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Voorkeure vir aanvangstoepassings"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Geen naam"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Geen beskrywing"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Weergawe van hierdie program"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Kon nie hulpdokument vertoon nie"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -85,42 +33,6 @@ msgstr ""
 "Wag nog vir die program om te voltooi.  Onderbreking van die program kan "
 "veroorsaak dat werk verloor word."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Aanvangstoepassings"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Kies watter toepassings moet begin by aanmelding"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Bykomende aanvangs_programme:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Onthou outomaties toepassings wat nog loop by afgemelding"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Onthou die toepassing wat tans loop"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Blaai…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Opm_erking:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Op_drag:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Naam:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

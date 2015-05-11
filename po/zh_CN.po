@@ -26,60 +26,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 # help-browser/toc-man.c:19 help-browser/toc2-man.c:21
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "选择命令"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "添加启动程序"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "编辑启动程序"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "启动命令不能为空"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "启动命令无效"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "启用"
-
 # gsm/logout.c:240
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "图标"
-
 # applets/gkb/gkb.c:262
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "程序"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "启动应用程序首选项"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "无名称"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "无描述"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "此应用程序的版本"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "不能显示帮助文档"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -92,45 +40,9 @@ msgid ""
 "to lose work."
 msgstr "正在等候程序完成。中断程序可能导致您的工作成果丢失。"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "启动应用程序"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "选择登录时要启动的应用程序"
-
 # applets/gkb/gkb.c:262
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "额外的启动程序(_P)："
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "注销时自动记住正在运行的应用程序(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "记住目前正在运行的应用程序(_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "浏览..."
-
 # help-browser/toc-man.c:19 help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "注释(_E)："
-
 # help-browser/toc-man.c:19 help-browser/toc2-man.c:21
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "命令(_M)："
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "名称(_N)："
-
 #: ../egg/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"

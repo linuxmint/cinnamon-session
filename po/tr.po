@@ -25,58 +25,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Komut Seç"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Başlangıç Programı Ekle"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Başlangıç Programı Düzenle"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Başlangıç komutu boş bırakılamaz"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Başlangıç komutu geçerli değil"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Etkin"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Simge"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Açılış Uygulamaları Tercihleri"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "İsimsiz"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Açıklama yok"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Bu uygulamanın sürümü"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Yardım belgesi görüntülenemedi"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -90,42 +38,6 @@ msgid ""
 msgstr ""
 "Programın bitmesi bekleniyor.  Programı kesintiye uğratmak çalışmalarınızı "
 "kaybetmenize sebep olabilir."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Başlangıç Uygulamaları"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Giriş yaptığınızda hangi uygulamaların başlatılacağını seçin"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Ek başlangıç _programları:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Çıkarken çalışan uygulamaları kendiliğindne _hatırla"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "Şu Anda Çalışan Uygulamaları Hatı_rla"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Gözat…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Açıklama:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Komut:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "İ_sim:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

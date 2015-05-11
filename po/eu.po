@@ -21,58 +21,6 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Hautatu komandoa"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Gehitu abioko programa"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Editatu abioko programa"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Abioko komandoa ezin da hutsik egon"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Abioko komandoa ez da baliozkoa"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Gaituta"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikonoa"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Programa"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Abioko aplikazioen hobespenak"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Izenik ez"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Azalpenik ez"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Aplikazio honen bertsioa"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Ezin izan da laguntzako dokumentua bistaratu"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -86,43 +34,7 @@ msgid ""
 msgstr ""
 "Programa amaitu zain. Programa hau eteteak zure lanak galtzea eragin lezake."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Abioko aplikazioak"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Aukeratu zein aplikazio abiarazi saioa-hasten duzunean"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Abioko _programa osagarriak:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-"Gogoratu _automatikoki exekutatzen ari diren aplikazioak saioa amaitzean"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Gogoratu unean exekutatzen ari diren aplikazioak"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Arakatu..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Iruzkina:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Komandoa:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Izena:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

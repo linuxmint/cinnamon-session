@@ -16,58 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Fermanê Hilbijêre"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Bernameya destpêkê zêde bike"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Bernameya destpêkê biguherîne"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Fermana destpêke vala nabe"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Fermana destpêke nederbasdar e"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Çalak"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Îkon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Bername"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr ""
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr ""
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr ""
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -80,42 +28,6 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Bernameyên pêvek ên destpêkê:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "Gerîn..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Şî_rove:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Ferman:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nav:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

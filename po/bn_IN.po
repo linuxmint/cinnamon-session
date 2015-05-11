@@ -22,58 +22,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "কমান্ড নির্বাচন করুন"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "প্রারম্ভিক প্রোগ্রাম যোগ করুন"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "প্রারম্ভিক কমান্ড সম্পাদন করুন"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "প্রারম্ভিক কমান্ড ফাঁকা রাখা যাবে না"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "প্রারম্ভিক কমান্ডের নাম উল্লেখ করা আবশ্যক"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "সক্রিয়"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "আইকন"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "প্রোগ্রাম"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "প্রারম্ভিক অ্যাপ্লিকেশন সংক্রান্ত পছন্দ"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "নামবিহীন"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "বিবরণ অনুপস্থিত"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "অ্যাপ্লিকেশনের সংস্করণ"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "সহায়ক নথিপত্র প্রদর্শন করতে ব্যর্থ"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -88,42 +36,6 @@ msgstr ""
 "প্রোগ্রাম সমাপ্তির অপেক্ষা করা হচ্ছে। প্রোগ্রাম বিঘ্নিত হলে সঞ্চালিত কর্মের তথ্য মুছে "
 "যাওয়ার সম্ভাবনা রয়েছে।"
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "প্রারম্ভিক অ্যাপ্লিকেশন"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "লগ-ইন করার সময় আরম্ভ করার উদ্দেশ্যে চিহ্নিত অ্যাপ্লিকেশন"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "অতিরিক্ত প্রারম্ভিক প্রোগ্রাম :(_p)"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr ""
-"লগ-আউট করার সময়, চলমান অ্যাপ্লিকেশনগুলির তালিকা স্বয়ংক্রিয়রূপে মনে রাখা হবে (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "বর্তমানে চলমান অ্যাপ্লিকেশনের তালিকা মনে রাখা হবে (_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "ব্রাউজ করুন..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "মন্তব্য: (_e)"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "কমান্ড: (_m)"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "নাম: (_N)"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

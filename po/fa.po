@@ -23,58 +23,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "انتخاب فرمان"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "افزودن برنامه‌ی راه‌اندازی"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "ویرایش برنامه‌ی راه‌اندازی"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "فرمان راه‌اندازی نمی‌تواند خالی باشد"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "فرمان راه‌اندازی معتبر نیست"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "فعال"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "نقشک"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "برنامه"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "ترجیحات برنامه‌های راه‌اندازی"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "بدون نام"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "بدون شرح"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "نسخه‌ی این برنامه"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "نمی‌توان سند راهنما را نمایش داد"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -88,42 +36,6 @@ msgid ""
 msgstr ""
 "در حال انتظار برای برنامه که به پایان برسد. وقفه انداختن در برنامه‌ها ممکن "
 "است باعث شود که کار شما از دست برود."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "برنامه‌های راه‌اندازی"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "انتخاب کنید که هنگام ورود به سیستم چه برنامه‌هایی آغاز شوند"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "برنامه‌های راه‌اندازی اضافی:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "برنامه‌های جاری هنگام خروج از سیستم، _خودکار به خاطر سپرده شوند"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "برنامه‌های درحال اجرای فعلی به خاطر _سپرده شوند"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "مرور..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_توضیح:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_فرمان:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_نام:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

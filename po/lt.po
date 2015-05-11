@@ -21,58 +21,6 @@ msgstr ""
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.6.1\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Pasirinkite komandą"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Pridėti paleidimo programą"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Redaguoti paleidžiamą programą"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Paleidimo komanda negali būti tuščia"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Paleidimo komanda netinkama"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Įjungta"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Piktograma"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Programa"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Paleidžiamų programų nustatymai"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Be pavadinimo"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Nėra aprašymo"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Programos versija"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Nepavyko parodyti žinyno dokumento"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -86,42 +34,6 @@ msgid ""
 msgstr ""
 "Laukiama, kol programa baigs darbą. Nutraukus programos darbą galite "
 "prarasti neįrašytų duomenų."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Paleidžiamos programos"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Pasirinkite, kokias programas paleisti jums prisijungiant"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Papildomos paleidžiamos _programos:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Atsijungiant, automatiškai atsiminti paleistas programas"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Atsiminti dabar veikiančias programas"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Naršyti…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Ko_mentaras:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Komanda:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Pavadinimas:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

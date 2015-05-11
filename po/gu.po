@@ -30,64 +30,12 @@ msgstr ""
 "\n"
 
 # cinnamon-session/session-properties-capplet.c:362
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "આદેશ ને પસંદ કરો"
-
 # cinnamon-session/startup-programs.c:392
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "શરુઆતી કાર્યક્રમને ઉમેરો"
-
 # cinnamon-session/startup-programs.c:392
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "શરુઆતી કાર્યક્રમમાં ફેરફાર કરો"
-
 # cinnamon-session/startup-programs.c:332
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "શરુઆતી આદેશ ખાલી હોઈ શકે નહિ"
-
 # cinnamon-session/startup-programs.c:332
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "શરૂઆતી આદેશ માન્ય નથી"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "સક્રિય કરેલ"
-
 # cinnamon-session/logout.c:266
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "ચિહ્ન"
-
 # cinnamon-session/csm-client-list.c:111
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "કાર્યક્રમ"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "શરૂઆતી કાર્યક્રમોની પસંદગીઓ"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "નામ નથી"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "કોઈ વર્ણન નથી"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "આ કાર્યક્રમની આવૃત્તિ"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "મદદ દસ્તાવેજ દર્શાવી શકાયુ નહિં"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -102,45 +50,9 @@ msgstr ""
 "સમાપ્ત કરવા પ્રક્રિયા માટે રાહ જોઇ રહ્યા છે.  અટકાવેલી પ્રક્રિયા એ તમે તમારા કામ ને "
 "ગુમાવવાનું કારણ બની શકે છે."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "શરૂઆતી કાર્યક્રમો"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "જ્યારે તમે પ્રવેશો તો શરૂ કરવા માટે ક્યા કાર્યક્મો જોઇએ છે તેને પસંદ કરો"
-
 # cinnamon-session/startup-programs.c:372
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "વધારાનો પ્રારંભીક કાર્યક્રમ (_p):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "જ્યારે બહાર નીકળી રહ્યા હોય ત્યારે ચાલી રહેલ કાર્યક્રમો આપોઆપ યાદ રાખો (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "વર્તમાનમાં ચાલી રહેલ કાર્યક્રમો યાદ રાખો (_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "બ્રાઉઝ કરો..."
-
 # cinnamon-session/session-properties-capplet.c:362
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "ટિપ્પણી (_e):"
-
 # cinnamon-session/session-properties-capplet.c:362
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "આદેશ (_m):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "નામ (_N):"
-
 #: ../egg/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"

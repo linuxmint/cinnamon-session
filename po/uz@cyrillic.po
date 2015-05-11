@@ -17,54 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../capplet/csm-app-dialog.c:126
-msgid "Select Command"
-msgstr "Буйруқни танлаш"
-
-#: ../capplet/csm-app-dialog.c:187
-msgid "Add Startup Program"
-msgstr ""
-
-#: ../capplet/csm-app-dialog.c:191
-msgid "Edit Startup Program"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:132
-msgid "No description"
-msgstr "Таъриф йўқ"
-
-#: ../capplet/csm-properties-dialog.c:977
-msgid "The name of the startup program cannot be empty"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:981
-msgid "The startup command cannot be empty"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:987
-msgid "The startup command is not valid"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:1291
-msgid "Enabled"
-msgstr "Ёқилган"
-
-#: ../capplet/csm-properties-dialog.c:1304
-msgid "Icon"
-msgstr "Нишонча"
-
-#: ../capplet/csm-properties-dialog.c:1315
-msgid "Program"
-msgstr "Дастур"
-
-#: ../capplet/csm-properties-dialog.c:1465
-#: ../data/session-properties.glade.h:6
-msgid "Sessions Preferences"
-msgstr "Сеанс параметрлари"
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:508
-msgid "Version of this application"
-msgstr "Дастур версияси"
 
 #: ../compat/at-spi-registryd-wrapper.c:47
 msgid ""
@@ -199,14 +151,6 @@ msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Сеансларни бошқаринг"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Сеанслар"
 
 #: ../data/session-properties.glade.h:1
 msgid "Additional startup _programs:"

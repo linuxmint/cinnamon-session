@@ -20,58 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Dibabit un arc'had"
-
-#: ../capplet/csm-app-dialog.c:194
-msgid "Add Startup Program"
-msgstr "Ouzhpennañ ur goulev-loc'hañ"
-
-#: ../capplet/csm-app-dialog.c:198
-msgid "Edit Startup Program"
-msgstr "Kemmañ ar goulev-loc'hañ"
-
-#: ../capplet/csm-app-dialog.c:486
-msgid "The startup command cannot be empty"
-msgstr "N'hell ket an arc'had-loc'hañ bezañ goullo"
-
-#: ../capplet/csm-app-dialog.c:492
-msgid "The startup command is not valid"
-msgstr "N'eo ket talvoudek an arc'had loc'hañ"
-
-#: ../capplet/csm-properties-dialog.c:555
-msgid "Enabled"
-msgstr "Gweredekaet"
-
-#: ../capplet/csm-properties-dialog.c:567
-msgid "Icon"
-msgstr "Arlun"
-
-#: ../capplet/csm-properties-dialog.c:579
-msgid "Program"
-msgstr "Goulev"
-
-#: ../capplet/csm-properties-dialog.c:792
-msgid "Startup Applications Preferences"
-msgstr "Gwellvezioù an arloadoù loc'hañ"
-
-#: ../capplet/csp-app.c:269
-msgid "No name"
-msgstr "Anv ebet"
-
-#: ../capplet/csp-app.c:275
-msgid "No description"
-msgstr "Deskrivadur ebet"
-
-#: ../capplet/main.c:37
-#: ../cinnamon-session/main.c:437
-msgid "Version of this application"
-msgstr "Handelv an arload-mañ"
-
-#: ../capplet/main.c:63
-msgid "Could not display help document"
-msgstr "N'haller ket skrammañ an teul skoazell"
 
 #: ../compat/at-spi-registryd-wrapper.c:47
 msgid "Assistive technology support has been requested for this session, but the accessibility registry was not found. Please ensure that the AT-SPI package is installed. Your session has been started without assistive technology support."
@@ -183,50 +131,6 @@ msgstr "<b>Arloadoù a lobour c'hoazh:</b>"
 msgid "Waiting for program to finish.  Interrupting program may cause you to lose work."
 msgstr "Gortoz arload echu. Un arsav a riskle da goll roadennoù bennak."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "Diuziñ arloadoù da lañsañ er gevreadur"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "Arloadoù loc'hañ"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Goulevioù loc'hañ ouzhpenn :"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "Browse..."
-msgstr "Furchal..."
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "Co_mmand:"
-msgstr "A_rc'had :"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Comm_ent:"
-msgstr "As_kelenn :"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Options"
-msgstr "Dibarzhioù"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Startup Programs"
-msgstr "Meziantoù loc'hañ"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-#, fuzzy
-msgid "_Automatically remember running applications when logging out"
-msgstr "_En em soñjañ emgefreek arloadoù e-pad an dilogadur"
-
-#: ../data/cinnamon-session-properties.glade.h:8
-msgid "_Name:"
-msgstr "A_nv :"
-
-#: ../data/cinnamon-session-properties.glade.h:9
-msgid "_Remember Currently Running Application"
-msgstr "E_n em soñjañ arloadoù o labourat"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

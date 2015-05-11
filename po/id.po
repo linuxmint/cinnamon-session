@@ -22,58 +22,6 @@ msgstr ""
 "X-Poedit-Country: Indonesia\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Pilih Perintah"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Tambah Program Awalan"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Sunting Program Awalan"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Perintah awalan tidak boleh kosong"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Perintah awalan tidak sah"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Diaktifkan"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Program"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Preferensi Aplikasi Awalan"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Tanpa nama"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Tanpa deskripsi"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Versi aplikasi ini"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Tidak dapat membuka dokumen bantuan"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -87,42 +35,6 @@ msgid ""
 msgstr ""
 "Menunggu program selesai. Menginterupsi program dapat menyebabkan Anda "
 "kehilangan hasil pekerjaan."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Aplikasi Awalan"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Memilih aplikasi yang hendak dijalankan saat Anda log masuk"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_Program awalan lain:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Otom_atis mengingkat aplikasi yang berjalan ketika log keluar"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "Ingat Aplikasi yang Kini Be_rjalan"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Telusur..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Kom_entar:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Perintah:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nama:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -19,58 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "명령 선택"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "시작 프로그램 추가"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "시작 프로그램 편집"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "시작 프로그램을 비워 둘 수 없습니다"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "시작 프로그램이 올바르지 않습니다"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "사용하기"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "아이콘"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "프로그램"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "시작 프로그램 기본 설정"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "이름 없음"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "설명 없음"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "이 프로그램의 버전"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "도움말 문서를 표시할 수 없습니다"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -84,42 +32,6 @@ msgid ""
 msgstr ""
 "프로그램이 끝나기를 기다리는 중입니다. 이 프로그램을 중단하면 작업하던 내용"
 "을 잃어버릴 수도 있습니다."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr " 시작 프로그램"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "로그인할 때 어떤 프로그램을 시작할 지 고릅니다"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "시작 프로그램 추가(_P):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "로그아웃할 때 자동으로 실행 중인 프로그램 기억(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "현재 실행 중인 프로그램 기억(_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "찾아보기…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "설명(_E):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "명령(_M):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "이름(_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

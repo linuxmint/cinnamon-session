@@ -19,58 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "בחירת פקודה"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "הוספת תכנית הפעלה"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "עריכת תכנית הפעלה"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "פקודת ההפעלה לא יכולה להיות ריקה"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "פקודת ההפעלה אינה תקינה"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "מאופשר"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "סמל"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "תכנית"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "העדפות יישומי הפעלה"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "ללא שם"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "ללא תיאור"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Version of this application"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Could not display help document"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -82,42 +30,6 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "בהמתנה לסיום התכנית. הפרעה לתכנית עלולה לגרום לאבדן העבודה שלך."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "יישומי ההפעלה"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "בחירת אילו יישומים יופעלו בעת כניסת המשתמש"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "_תכניות הפעלה נוספות:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_זכירת היישומים הפעילים בזמן הניתוק"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "זכירת היישומים הפועלים _כעת"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "עיון…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "הע_רה:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "פ_קודה:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_שם:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

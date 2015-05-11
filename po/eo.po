@@ -29,58 +29,6 @@ msgstr ""
 "X-Generator: Launchpad (build 14277)\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Elekti komandon"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Aldoni lanĉan programon"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Redakti lanĉan programon"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "La lanĉa komando ne povas esti malplena"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "La lanĉa komando ne estas valida"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Enŝaltite"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Piktogramo"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Programo"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Agordoj de startaj aplikaĵoj"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Neniu nomo"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Neniu priskribo"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Versio de ĉi tiu aplikaĵo"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Ne eblis montri helpdokumenton"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -95,42 +43,6 @@ msgstr ""
 "Atendante ĝis la programo finiĝi. Se vi interrompas ĉi tiun programon, via "
 "laboro povus perdiĝi."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Lanĉaj aplikaĵoj"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Elektu kiujn aplikaĵojn startigi kiam vi ensalutas"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Pli lanĉaj a_plikaĵoj:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Memori aŭtomate jam lanĉitajn aplikaĵojn kiam vi elsalutas"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Memorigi nun rulantan aplikaĵon"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Foliumi…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Kom_entaro:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Ko_mando:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nomo:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

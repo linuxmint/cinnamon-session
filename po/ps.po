@@ -18,54 +18,6 @@ msgstr ""
 "X-Poedit-Language: Pashto, Pushto\n"
 "X-Poedit-Country: AFGHANISTAN\n"
 
-#: ../capplet/csm-app-dialog.c:126
-msgid "Select Command"
-msgstr "بولۍ ټاکل"
-
-#: ../capplet/csm-app-dialog.c:187
-msgid "Add Startup Program"
-msgstr "پېلنګ کړنلار زياتول"
-
-#: ../capplet/csm-app-dialog.c:191
-msgid "Edit Startup Program"
-msgstr "پېلنګ کړنلار سمول"
-
-#: ../capplet/csm-properties-dialog.c:131
-msgid "No description"
-msgstr "هېڅ سپړاوی"
-
-#: ../capplet/csm-properties-dialog.c:974
-msgid "The name of the startup program cannot be empty"
-msgstr "د پېلنګ کړنلار نوم تشېدی نه شي"
-
-#: ../capplet/csm-properties-dialog.c:978
-msgid "The startup command cannot be empty"
-msgstr "د پېلنګ بولۍ تشېدی نه شي"
-
-#: ../capplet/csm-properties-dialog.c:984
-msgid "The startup command is not valid"
-msgstr "پېلنګ بولۍ سمه نه ده"
-
-#: ../capplet/csm-properties-dialog.c:1303
-msgid "Enabled"
-msgstr "توانول شوی"
-
-#: ../capplet/csm-properties-dialog.c:1316
-msgid "Icon"
-msgstr "انځورن"
-
-#: ../capplet/csm-properties-dialog.c:1327
-msgid "Program"
-msgstr "کړنلار"
-
-#: ../capplet/csm-properties-dialog.c:1477
-msgid "Startup Applications Preferences"
-msgstr ""
-
-#: ../capplet/main.c:37 ../cinnamon-session/main.c:440
-msgid "Version of this application"
-msgstr ""
-
 #: ../compat/at-spi-registryd-wrapper.c:47
 msgid ""
 "Assistive technology support has been requested for this session, but the "
@@ -198,14 +150,6 @@ msgid ""
 "Waiting for program to finish.  Interrupting program may cause you to lose "
 "work."
 msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Startup Applications"
-msgstr "پېل کاريالونه"
 
 #: ../data/session-properties.glade.h:1
 msgid "Additional startup _programs:"

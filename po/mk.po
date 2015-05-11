@@ -20,58 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural= n==1 || n%10==1 ? 0 : 1\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Изнерете команда"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Додај програма за подигнување"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Уреди програма за подигнување"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Startup командата не смее да биде празна"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Startup командата не е валидна"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Овозможено"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Икона"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Програма"
-
-#: ../capplet/csm-properties-dialog.c:747
-#, fuzzy
-msgid "Startup Applications Preferences"
-msgstr "Преференци за сесијата"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Нема опис"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Верзија на апликацијата"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -88,43 +36,7 @@ msgstr ""
 "Чекам да завршат програми.  Прекинувањето на овие програми може да "
 "предизвика загуба на податоци."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Додатни програми за _подигнување:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Автоматски запамти ги тековните апликации при одјава"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Запамти ги апликациите кои што работат"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "Разгледај..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Ко_ментар:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Ко_манда:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Име:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

@@ -24,58 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Valitse komento"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Lisää käynnistyvä sovellus"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Muokkaa käynnistyvää ohjelmaa"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Käynnistyskomento ei voi olla tyhjä"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Käynnistyskomento ei ole kelvollinen"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Käytössä"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Kuvake"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Sovellus"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Aloitusohjelmien asetukset"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Ei nimeä"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Ei kuvausta"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Tämän ohjelman versio"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Ohjetta ei voitu näyttää"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -89,42 +37,6 @@ msgid ""
 msgstr ""
 "Odotetaan ohjelman lopettamista. Ohjelman suorituksen keskeyttäminen voi "
 "aiheuttaa töiden häviämistä."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Käynnistettävät ohjelmat"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Valitse sisäänkirjauduttaessa käynnistettävät ohjelmat"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Muut käynnistyvät _ohjelmat:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Muista käynnissä olevat ohjelmat kirjauduttaessa ulos"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "Muista tällä hetkellä _käynnissä olevat sovellukset"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Selaa…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Komm_entti:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "Ko_mento:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nimi:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

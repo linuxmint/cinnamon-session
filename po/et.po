@@ -25,58 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Käsu valimine"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Automaatselt käivituva rakenduse lisamine"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Automaatselt käivituva rakenduse muutmine"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Käivituskäsku ei tohi tühjaks jätta"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Käivituskäsk pole korrektne"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Lubatud"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikoon"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Rakendus"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Automaatselt käivitatavate rakenduste eelistused"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Nimi puudub"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Kirjeldus puudub"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Rakenduse versioon"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Abidokumenti pole võimalik kuvada"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -90,42 +38,6 @@ msgid ""
 msgstr ""
 "Oodatakse rakenduse töö lõpetamist.  Rakenduse katkestamine võib põhjustada "
 "Sinu (salvestamata) tööde kaotsimineku."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Automaatselt käivitatavad rakendused"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Sisselogimisel käivitatavate rakenduste valimine"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Täiendavad automaatselt käivituvad _rakendused:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "Väljalogimisel _jäetakse töötavad rakendused meelde"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Jäta hetkel töötavad rakendused meelde"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Sirvi…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Komm_entaar:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Käsk:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nimi:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

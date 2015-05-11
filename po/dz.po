@@ -19,58 +19,6 @@ msgstr ""
 "X-Poedit-Country: BHUTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "བརྡ་བཀོད་ སེལ་འཐུ་འབད་ "
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ ཁ་སྐོང་རྐྱབས།"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ ཞུན་དག་རྐྱབས།"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་བརྡ་བཀོད་དེ་ སྟོངམ་བཏོན་མི་ཚུགས་པས།"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "འགོ་བཙུགས་བརྡ་བཀོད་དེ་ ནུས་ལྡན་མེན་པས་"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "ལྕོགས་ཅན་བཟོ་ཡོདཔ་"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr ""
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "ལས་རིམ།"
-
-#: ../capplet/csm-properties-dialog.c:747
-#, fuzzy
-msgid "Startup Applications Preferences"
-msgstr "ལཱ་ཡུན་གྱི་ དགའ་གདམ་ཚུ་ "
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "འགྲེལ་བཤད་མེད"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr ""
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -84,42 +32,6 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རིམ་ཁ་སྐོང་།(_p)"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "ཕྱིར་བསྐྱོད་འབད་བའི་སྐབས་ རང་བཞིན་གྱི་གཡོག་བཀོལ་བའི་སྒང་གི་འཇུག་སྤྱོད་སེམ་ཁར་བཞག(_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "ད་ལྟོ་ གཡོག་བཀོལ་བའི་བསྒང་ཡོད་པའི་ འཇུག་སྤྱོད་ཚུ་སེམས་ཁར་བཞག་ "
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "བརྡ་འཚོལ(_B)"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "བས་བཀོད་:(_E)"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "བརྡ་བཀོད་:(_M)"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "མིང་:(_N)"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

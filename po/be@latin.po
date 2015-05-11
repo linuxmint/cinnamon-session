@@ -16,58 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Abiary zahad"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Dadaj prahramu dla ŭruchamleńnia"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Redahuj prahramu dla ŭruchamleńnia"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Zahad dla ŭruchamleńnia nia moža być pustym"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Zahad dla ŭruchamleńnia niapravilny"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Uklučanaja"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Ikonka"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Prahrama"
-
-#: ../capplet/csm-properties-dialog.c:747
-#, fuzzy
-msgid "Startup Applications Preferences"
-msgstr "Nałady sesijaŭ"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr ""
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Niama apisańnia"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Versija hetaj aplikacyi"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr ""
 
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
@@ -84,43 +32,7 @@ msgstr ""
 "Čakajem vychadu z prahramaŭ. Kali ty pierapyniš hetyja prahramy, možaš "
 "stracić karysnyja źviestki."
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr ""
 
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr ""
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Dadatkovyja _prahramy aŭtaŭruchamleńnia:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Aŭtamatyčna zapaminaj uruchomlenyja aplikacyi pry vychadzie"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-#, fuzzy
-msgid "_Remember Currently Running Applications"
-msgstr "_Zapomni dziejna ŭruchomlenuju aplikacyju"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-#, fuzzy
-msgid "Browse…"
-msgstr "Ahladaj..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Kamentar:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Zahad:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Nazva:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

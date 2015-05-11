@@ -21,58 +21,6 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Виберіть команду"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Додати початкову програму"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Змінити початкову програму"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Початкова команда не може бути порожньою"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Початкова команда некоректна"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Увімкнено"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Піктограма"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Програма"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Налаштування початкових програм "
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Без назви"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Без опису"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Версія цієї програми"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Не вдалось показати довідку"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -86,42 +34,6 @@ msgid ""
 msgstr ""
 "Очікування завершення роботи програм.  Переривання цих програм може привести "
 "до втрати вашої напрацювань."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Початкові програми"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Виберіть програми, що запускаються при вході в сеанс"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Додаткові по_чаткові програми для запуску:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Автоматично запам'ятовувати запущені програми при завершенні"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Запам'ятати поточно запущені програми"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Огляд…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "Ко_ментар:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Команда:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Назва:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

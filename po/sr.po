@@ -22,58 +22,6 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "Изабери наредбу"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "Додај почетни програм"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "Уреди почетни програм"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "Наредба почетног програма се мора унети"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "Наредба почетног програма није исправна"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "Укључен"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "Иконица"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "Програм"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "Поставке почетних програма"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "Без имена"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "Без описа"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "Издање овог програма"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "Не могу да прикажем документ помоћи"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -87,42 +35,6 @@ msgid ""
 msgstr ""
 "Чекам на програм да заврши са радом.  Прекид програма може довести до "
 "губитка вашег рада."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "Почетни програми"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "Изаберите који ће се програми покренути када се пријавите на рачунар"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "Додатни почетни _програми:"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "_Сам запамти покренуте програме приликом одјављивања"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "_Запамти тренутно покренуте програме"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "Разгледај…"
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "_Коментар:"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "_Наредба:"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "_Назив:"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format

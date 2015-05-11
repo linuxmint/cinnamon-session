@@ -22,58 +22,6 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../capplet/csm-app-dialog.c:120
-msgid "Select Command"
-msgstr "आदेश नीवडा"
-
-#: ../capplet/csm-app-dialog.c:193
-msgid "Add Startup Program"
-msgstr "सुरूवातीचा कार्यक्रम समाविष्ट करा"
-
-#: ../capplet/csm-app-dialog.c:197
-msgid "Edit Startup Program"
-msgstr "सुरु होणारे कार्यक्रम संपादन करा"
-
-#: ../capplet/csm-app-dialog.c:484
-msgid "The startup command cannot be empty"
-msgstr "सुरुवातीची आज्ञा रिकामी असू शकत नाही"
-
-#: ../capplet/csm-app-dialog.c:490
-msgid "The startup command is not valid"
-msgstr "प्रारंभ आदेश वैध नाही"
-
-#: ../capplet/csm-properties-dialog.c:519
-msgid "Enabled"
-msgstr "कार्यान्वीत"
-
-#: ../capplet/csm-properties-dialog.c:531
-msgid "Icon"
-msgstr "चिन्ह"
-
-#: ../capplet/csm-properties-dialog.c:543
-msgid "Program"
-msgstr "कार्यक्रम"
-
-#: ../capplet/csm-properties-dialog.c:747
-msgid "Startup Applications Preferences"
-msgstr "प्रारंभिक अनुप्रयोग आवड निवड"
-
-#: ../capplet/csp-app.c:276
-msgid "No name"
-msgstr "नाव आढळले नाही"
-
-#: ../capplet/csp-app.c:282
-msgid "No description"
-msgstr "वर्णन आढळले नाही"
-
-#: ../capplet/main.c:35 ../cinnamon-session/main.c:295
-msgid "Version of this application"
-msgstr "या अनुप्रयोगाची आवृत्ती"
-
-#: ../capplet/main.c:61
-msgid "Could not display help document"
-msgstr "मदत दस्तऐवज दाखवण्यास अशक्य"
-
 #: ../data/csm-inhibit-dialog.glade.h:1
 #: ../cinnamon-session/csm-inhibit-dialog.c:643
 msgid "Some programs are still running:"
@@ -86,42 +34,6 @@ msgid ""
 "to lose work."
 msgstr ""
 "प्रोग्राम समाप्त होण्याची वाट पहात आहे.  प्रोग्राममध्ये व्यत्य आणल्यास केलेले कार्य गमवाल."
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:1
-msgid "Startup Applications"
-msgstr "आरंभिक अनुप्रयोग"
-
-#: ../data/cinnamon-session-properties.desktop.in.in.h:2
-msgid "Choose what applications to start when you log in"
-msgstr "प्रवेश केल्यावर कुठले अनुप्रयोग सुरू करायचे ते नीवडा"
-
-#: ../data/cinnamon-session-properties.glade.h:1
-msgid "Additional startup _programs:"
-msgstr "अगाऊ प्रारंभिक कार्यक्रम (_p):"
-
-#: ../data/cinnamon-session-properties.glade.h:2
-msgid "_Automatically remember running applications when logging out"
-msgstr "बाहेर पडतेवेळी आपोआप अनुप्रयोग कार्यरत करणे स्मर्णात ठेवा (_A)"
-
-#: ../data/cinnamon-session-properties.glade.h:3
-msgid "_Remember Currently Running Applications"
-msgstr "सध्या सुरू असलेले ॲप्लिकेशन्स् लक्षात ठेवा (_R)"
-
-#: ../data/cinnamon-session-properties.glade.h:4
-msgid "Browse…"
-msgstr "तपासा..."
-
-#: ../data/cinnamon-session-properties.glade.h:5
-msgid "Comm_ent:"
-msgstr "टिपण्णी (_e):"
-
-#: ../data/cinnamon-session-properties.glade.h:6
-msgid "Co_mmand:"
-msgstr "आदेश (_m):"
-
-#: ../data/cinnamon-session-properties.glade.h:7
-msgid "_Name:"
-msgstr "नाव (_N):"
 
 #: ../egg/eggdesktopfile.c:165
 #, c-format
