@@ -153,7 +153,7 @@ csm_get_system (void)
 
         if (system == NULL) {
                 GSettings *session_settings = g_settings_new ("org.cinnamon.desktop.session");
-                if (g_settings_get_boolean (session_settings, "use-systemd")) {
+                if (g_settings_get_boolean (session_settings, "session-manager-uses-logind")) {
                   // Use logind
                   system = CSM_SYSTEM (csm_systemd_new ());
                   if (system != NULL) {
