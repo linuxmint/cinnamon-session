@@ -356,7 +356,7 @@ msgstr "Ponovno pokretanje"
 
 #: ../tools/cinnamon-session-quit.c:56
 msgid "Ignoring any existing inhibitors"
-msgstr "Zanemarivanje svih poznatih nasljednika"
+msgstr "Zanemarivanje svih poznatih sprječavatelja"
 
 #: ../tools/cinnamon-session-quit.c:57
 msgid "Don't prompt for user confirmation"
