@@ -344,6 +344,34 @@ main (int argc, char **argv)
         csm_util_setenv ("DISPLAY", display_str);
         g_free (display_str);
 
+        const gchar *gtk_modules;
+        gchar *new_gtk_modules = NULL;
+
+        gtk_modules = g_getenv ("GTK_MODULES");
+
+        if (gtk_modules != NULL && g_strstr_len (gtk_modules, -1, "overlay-scrollbar")) {
+            int i = 0;
+            new_gtk_modules = g_strconcat ("", NULL);
+
+            gchar **module_list = g_strsplit (gtk_modules, ":", -1);
+
+            for (i = 0; i < g_strv_length (module_list); i++) {
+                if (!g_strstr_len (module_list[i], -1, "overlay-scrollbar")) {
+                    gchar *tmp = new_gtk_modules;
+                    new_gtk_modules = g_strconcat (tmp, ":", module_list[i], NULL);
+                    g_free (tmp);
+                }
+            }
+
+            g_strfreev (module_list);
+        }
+
+        if (new_gtk_modules) {
+            csm_util_setenv ("GTK_MODULES", new_gtk_modules);
+        }
+
+        g_free (new_gtk_modules);
+
         /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
          * detect if GNOME is running. We keep this for compatibility reasons.
          */
