@@ -24,6 +24,13 @@
         nautilus, and gnome-screensaver are hardcoded.  This list can add to those.
       </description>
     </key>
+    <key name="whitelist" type="as">
+      <default>[]</default>
+      <summary>Applications to explicitly allow autostarting.</summary>
+      <description>
+        A list of applications or desktop names (without the .desktop extension) to override the built-in blacklist.  See https://github.com/linuxmint/cinnamon-session/blob/master/cinnamon-session/csm-manager.c#L104
+      </description>
+    </key>
     <key name="quit-delay-toggle" type="b">
       <default>false</default>
       <summary>Toggles if there should be a timer when ending the session</summary>

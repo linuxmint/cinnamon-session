@@ -93,6 +93,7 @@
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
 #define KEY_BLACKLIST             "blacklist"
+#define KEY_WHITELIST             "whitelist"
 
 #define SCREENSAVER_SCHEMA        "org.cinnamon.desktop.screensaver"
 #define KEY_SLEEP_LOCK            "lock-enabled"
@@ -4136,6 +4137,7 @@ csm_manager_get_app_is_blacklisted (CsmManager *manager,
     g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
 
     gchar **gs_blacklist = g_settings_get_strv(manager->priv->settings, KEY_BLACKLIST);
+    gchar **gs_whitelist = g_settings_get_strv(manager->priv->settings, KEY_WHITELIST);
     GList *list = NULL;
     gboolean ret = FALSE;
 
@@ -4156,8 +4158,19 @@ csm_manager_get_app_is_blacklisted (CsmManager *manager,
         }
     }
 
+    if (ret) {
+        for (i = 0; i < g_strv_length (gs_whitelist); i++) {
+            gchar *ptr = g_strstr_len (name, -1, gs_whitelist[i]);
+            if (ptr != NULL) {
+                ret = FALSE;
+                break;
+            }
+        }
+    }
+
     g_list_free_full (list, g_free);
     g_strfreev (gs_blacklist);
+    g_strfreev (gs_whitelist);
     return ret;
 }
 
