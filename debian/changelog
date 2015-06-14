@@ -1,3 +1,14 @@
+cinnamon-session (2.6.3) rafaela; urgency=medium
+
+  [ sina23GOGO12 ]
+  * fix update croatian translation
+
+  [ Michael Webster ]
+  * csm-manager: add a whitelist to override autostart hardcoded list. Our internal blacklist is pretty broad, and some indicator apps work fine using the systray without causing issues with cinnamon. This will let users override on a case-by-case basis for now.
+  * main.c: prevent overlay-scrollbar from loading. The ubuntu overlay-scrollbar GTK module doesn't respect the normal ways of enabling/disabling modules, and doesn't play nice anywhere but in Unity (broken themes, scrollbars).  Ideally this is done in cinnamon-settings-daemon, where our existing gtk module blacklist will handle the GTK_MODULES environment variable as well as what it currently does.  For a quick fix, just remove it at session start.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 14 Jun 2015 13:16:53 +0200
+
 cinnamon-session (2.6.2) rafaela; urgency=medium
 
   [ leigh123linux ]
