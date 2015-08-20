@@ -288,6 +288,7 @@ main (int argc, char **argv)
         MdmSignalHandler *signal_handler;
         static char     **override_autostart_dirs = NULL;
         static char      *session_name = NULL;
+        const char       *debug_string = NULL;
         static GOptionEntry entries[] = {
                 { "autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), N_("AUTOSTART_DIR") },
                 { "session", 0, 0, G_OPTION_ARG_STRING, &session_name, N_("Session to use"), N_("SESSION_NAME") },
@@ -307,6 +308,11 @@ main (int argc, char **argv)
         bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         textdomain (GETTEXT_PACKAGE);
+
+        debug_string = g_getenv ("CINNAMON_SESSION_DEBUG");
+        if (debug_string != NULL) {
+                debug = rpmatch (debug_string) == TRUE || atoi (debug_string) == 1;
+        }
 
         sa.sa_handler = SIG_IGN;
         sa.sa_flags = 0;
