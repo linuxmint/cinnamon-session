@@ -308,6 +308,12 @@ main (int argc, char **argv)
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         textdomain (GETTEXT_PACKAGE);
 
+        GSettings *settings = g_settings_new ("org.cinnamon.SessionManager");
+        if (g_settings_get_boolean (settings, "debug")) {
+            debug = TRUE;
+        }
+        g_object_unref(settings);
+
         sa.sa_handler = SIG_IGN;
         sa.sa_flags = 0;
         sigemptyset (&sa.sa_mask);

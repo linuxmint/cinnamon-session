@@ -1,5 +1,10 @@
 <schemalist gettext-domain="cinnamon-session-3.0">
   <schema id="org.cinnamon.SessionManager" path="/org/cinnamon/cinnamon-session/">
+    <key name="debug" type="b">
+      <default>false</default>
+      <summary>Show debug info</summary>
+      <description>If enabled, cinnamon-session will output debug information.</description>
+    </key>
     <key name="auto-save-session" type="b">
       <default>false</default>
       <summary>Save sessions</summary>
