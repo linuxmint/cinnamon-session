@@ -2,16 +2,15 @@ Applications at startup
 -----------------------
 
 Upon startup, cinnamon-session starts the following applications:
- - Saved session: if you have saved a session, it is located in 
-   ~/.config/cinnamon-session/saved-session/. You can enable automatic 
-   session saving or manually save it in the "Startup Applications" 
+ - Saved session: if you have saved a session, it is located in
+   ~/.config/cinnamon-session/saved-session/. You can enable automatic
+   session saving or manually save it in the "Startup Applications"
    configuration applet.
- - Autostart applications: applications shipping a .desktop file in 
-   /usr/share/gnome/autostart or /etc/xdg/autostart. This includes the 
-   keyring manager, the settings daemon, nautilus and the power 
-   manager. They can be selectively disabled in the configuration 
+ - Autostart applications: applications shipping a .desktop file in
+   /usr/share/gnome/autostart or /etc/xdg/autostart. This includes the
+   keyring manager, the settings daemon, nautilus and the power
+   manager. They can be selectively disabled in the configuration
    applet.
- - Required components: they are listed in the 
-   /usr/share/cinnamon-session/sessions/*.desktop file corresponding to the 
+ - Required components: they are listed in the
+   /usr/share/cinnamon-session/sessions/*.desktop file corresponding to the
    current session (gnome or gnome-fallback).
-
