@@ -45,7 +45,6 @@
 #include "csm-session-fill.h"
 #include "csm-store.h"
 #include "csm-system.h"
-#include "csm-xsmp-server.h"
 #include "csm-fail-whale-dialog.h"
 
 #define CSM_DBUS_NAME "org.gnome.SessionManager"
@@ -284,7 +283,6 @@ main (int argc, char **argv)
         char             *display_str;
         CsmManager       *manager;
         CsmStore         *client_store;
-        CsmXsmpServer    *xsmp_server;
         MdmSignalHandler *signal_handler;
         static char     **override_autostart_dirs = NULL;
         static char      *session_name = NULL;
@@ -393,8 +391,6 @@ main (int argc, char **argv)
          */
         g_object_unref (csm_get_system ());
 
-        xsmp_server = csm_xsmp_server_new (client_store);
-
         if (!acquire_name ()) {
                 csm_fail_whale_dialog_we_failed (TRUE, TRUE);
                 gtk_main ();
@@ -421,14 +417,9 @@ main (int argc, char **argv)
                 csm_util_init_error (TRUE, "Failed to load session \"%s\"", session_name ? session_name : "(null)");
         }
 
-        csm_xsmp_server_start (xsmp_server);
         csm_manager_start (manager);
 
         gtk_main ();
-
-        if (xsmp_server != NULL) {
-                g_object_unref (xsmp_server);
-        }
 
         if (manager != NULL) {
                 g_debug ("Unreffing manager");

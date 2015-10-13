@@ -49,6 +49,7 @@
 #include "csm-inhibitor.h"
 #include "csm-presence.h"
 
+#include "csm-xsmp-server.h"
 #include "csm-xsmp-client.h"
 #include "csm-dbus-client.h"
 
@@ -137,6 +138,7 @@ struct CsmManagerPrivate
         CsmInhibitorFlag        inhibited_actions;
         CsmStore               *apps;
         CsmPresence            *presence;
+        CsmXsmpServer          *xsmp_server;
 
         char                   *session_name;
         gboolean                is_fallback_session : 1;
@@ -1625,6 +1627,7 @@ start_phase (CsmManager *manager)
                 update_idle (manager);
                 break;
         case CSM_MANAGER_PHASE_QUERY_END_SESSION:
+                csm_xsmp_server_stop_accepting_new_clients (manager->priv->xsmp_server);
                 do_phase_query_end_session (manager);
                 break;
         case CSM_MANAGER_PHASE_END_SESSION:
@@ -1683,6 +1686,7 @@ csm_manager_start (CsmManager *manager)
 
         g_return_if_fail (CSM_IS_MANAGER (manager));
 
+        csm_xsmp_server_start (manager->priv->xsmp_server);
         csm_manager_set_phase (manager, CSM_MANAGER_PHASE_INITIALIZATION);
         debug_app_summary (manager);
         start_phase (manager);
@@ -2457,6 +2461,11 @@ csm_manager_set_client_store (CsmManager *manager,
         manager->priv->clients = store;
 
         if (manager->priv->clients != NULL) {
+            if (manager->priv->xsmp_server)
+                    g_object_unref (manager->priv->xsmp_server);
+
+                manager->priv->xsmp_server = csm_xsmp_server_new (store);
+
                 g_signal_connect (manager->priv->clients,
                                   "added",
                                   G_CALLBACK (on_store_client_added),
@@ -2658,6 +2667,8 @@ csm_manager_dispose (GObject *object)
         CsmManager *manager = CSM_MANAGER (object);
 
         g_debug ("CsmManager: disposing manager");
+
+        g_clear_object (&manager->priv->xsmp_server);
 
         if (manager->priv->clients != NULL) {
                 g_signal_handlers_disconnect_by_func (manager->priv->clients,
