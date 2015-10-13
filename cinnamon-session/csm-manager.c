@@ -2421,8 +2421,12 @@ on_store_client_added (CsmStore   *store,
                           G_CALLBACK (on_client_end_session_response),
                           manager);
 
+        g_signal_connect (client,
+                          "disconnected",
+                          G_CALLBACK (on_client_disconnected),
+                          manager);
+
         g_signal_emit (manager, signals [CLIENT_ADDED], 0, id);
-        /* FIXME: disconnect signal handler */
 }
 
 static void
