@@ -257,6 +257,14 @@ csm_xsmp_server_stop_accepting_new_clients (CsmXsmpServer *server)
         server->priv->stopping = TRUE;
 }
 
+void
+csm_xsmp_server_start_accepting_new_clients (CsmXsmpServer *server)
+{
+        g_return_if_fail (CSM_IS_XSMP_SERVER (server));
+        g_debug ("csm_xsmp_server_start");
+        server->priv->stopping = FALSE;
+}
+
 static void
 csm_xsmp_server_set_client_store (CsmXsmpServer *xsmp_server,
                                   CsmStore      *store)

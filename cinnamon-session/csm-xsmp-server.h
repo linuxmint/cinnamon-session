@@ -53,6 +53,7 @@ GType               csm_xsmp_server_get_type                       (void);
 CsmXsmpServer *     csm_xsmp_server_new                            (CsmStore      *client_store);
 void                csm_xsmp_server_start                          (CsmXsmpServer *server);
 void                csm_xsmp_server_stop_accepting_new_clients     (CsmXsmpServer *server);
+void                csm_xsmp_server_start_accepting_new_clients    (CsmXsmpServer *server);
 
 G_END_DECLS
 

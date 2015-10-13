@@ -1623,6 +1623,7 @@ start_phase (CsmManager *manager)
                 do_phase_startup (manager);
                 break;
         case CSM_MANAGER_PHASE_RUNNING:
+                csm_xsmp_server_start_accepting_new_clients (manager->priv->xsmp_server);
                 g_signal_emit (manager, signals[SESSION_RUNNING], 0);
                 update_idle (manager);
                 break;
