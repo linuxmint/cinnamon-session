@@ -212,10 +212,10 @@ client_dbus_filter_function (DBusConnection *connection,
 
         path = dbus_message_get_path (message);
 
-        g_debug ("CsmDBusClient: obj_path=%s interface=%s method=%s",
-                 dbus_message_get_path (message),
-                 dbus_message_get_interface (message),
-                 dbus_message_get_member (message));
+        // g_debug ("CsmDBusClient: obj_path=%s interface=%s method=%s",
+        //          dbus_message_get_path (message),
+        //          dbus_message_get_interface (message),
+        //          dbus_message_get_member (message));
 
         if (dbus_message_is_method_call (message, SM_DBUS_CLIENT_PRIVATE_INTERFACE, "EndSessionResponse")) {
                 g_assert (csm_client_peek_id (CSM_CLIENT (client)) != NULL);

@@ -39,6 +39,8 @@
 static gboolean initialized = FALSE;
 static int      syslog_levels = (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 
+static struct timespec tstart={0,0}, tend={0,0};
+
 static void
 log_level_to_priority_and_prefix (GLogLevelFlags log_level,
                                   int           *priorityp,
@@ -135,6 +137,14 @@ mdm_log_default_handler (const gchar   *log_domain,
         g_string_append (gstring, level_prefix);
 
         g_string_append (gstring, ": ");
+
+        clock_gettime(CLOCK_MONOTONIC, &tend);
+        gchar * timestring = g_strdup_printf("t+%.5fs", ((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec));
+        g_string_append (gstring, timestring);
+        g_free (timestring);
+
+        g_string_append (gstring, ": ");
+
         if (message == NULL) {
                 g_string_append (gstring, "(NULL) message");
         } else {
@@ -182,6 +192,8 @@ mdm_log_init (void)
 {
         const char *prg_name;
         int         options;
+
+        clock_gettime(CLOCK_MONOTONIC, &tstart);
 
         g_log_set_default_handler (mdm_log_default_handler, NULL);
 
