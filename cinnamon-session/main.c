@@ -382,6 +382,9 @@ main (int argc, char **argv)
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
         csm_util_setenv ("CLUTTER_BACKEND", "x11");
 
+        /* Make QT5 apps follow the GTK style */
+        csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+
         client_store = csm_store_new ();
 
         /* Talk to logind before acquiring a name, since it does synchronous
