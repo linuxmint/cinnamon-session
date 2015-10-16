@@ -1,3 +1,25 @@
+cinnamon-session (2.8.0) rosa; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Add a gsettings key to enable debug
+  * Reject new XSMP clients earlier in the shutdown path
+  * xsmp: Re-accept clients if session shutdown is cancelled
+  * Avoid to keep zombie clients in the case when a IceError is thrown between accept_ice_connection() and accept_xsmp_connection()
+  * Only wait 1 second max on logout/shutdown
+  * Log time delta in debug mode. Also, don't log dbus calls (they don't show much info and they're very numerous)
+  * Make QT5 apps follow the GTK style
+  * Make the session blacklist entirely configurable
+  * Replace indicator- with indicator-session in session blacklist
+  * Renamed blacklist -> autostart-blacklist
+
+  [ Fabio Fantoni ]
+  * remove unused debian/po-up
+  * remove some other unused files in debian folder
+  * update debian/copyright
+  * debian fixes and improvements
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 16 Oct 2015 14:11:22 +0100
+
 cinnamon-session (2.6.3) rafaela; urgency=medium
 
   [ sina23GOGO12 ]
