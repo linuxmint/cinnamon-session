@@ -254,7 +254,7 @@ csm_logout_dialog_timeout (gpointer data)
         switch (logout_dialog->priv->type) {
         case CSM_DIALOG_LOGOUT_TYPE_LOGOUT:
                 /* This string is shared with csm-fail-whale-dialog.c */
-                seconds_warning = ngettext ("You will be logged "
+                seconds_warning = ngettext ("You will be automatically logged "
                                             "out in %d second.",
                                             "You will be logged "
                                             "out in %d seconds.",
@@ -262,7 +262,7 @@ csm_logout_dialog_timeout (gpointer data)
                 break;
 
         case CSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
-                seconds_warning = ngettext ("This system will be "
+                seconds_warning = ngettext ("This system will be automatically "
                                             "shut down in %d second.",
                                             "This system will be "
                                             "shut down in %d seconds.",
@@ -270,7 +270,7 @@ csm_logout_dialog_timeout (gpointer data)
                 break;
 
         case CSM_DIALOG_LOGOUT_TYPE_REBOOT:
-                seconds_warning = ngettext ("This system will be "
+                seconds_warning = ngettext ("This system will be automatically "
                                             "restarted in %d second.",
                                             "This system will be "
                                             "restarted in %d seconds.",
