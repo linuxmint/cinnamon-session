@@ -1,3 +1,9 @@
+cinnamon-session (2.8.2) rosa; urgency=medium
+
+  * Autostart: Blacklist xfce4-power-manager
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 09 Nov 2015 10:27:09 +0000
+
 cinnamon-session (2.8.1) rosa; urgency=medium
 
   [ pixunil ]
