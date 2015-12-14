@@ -380,7 +380,6 @@ main (int argc, char **argv)
          * detect if GNOME is running. We keep this for compatibility reasons.
          */
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
-        csm_util_setenv ("CLUTTER_BACKEND", "x11");
 
         /* Make QT5 apps follow the GTK style */
         csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
