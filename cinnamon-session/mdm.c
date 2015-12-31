@@ -286,7 +286,7 @@ mdm_init_protocol_connection (MdmProtocolData *data)
 
         response = mdm_send_protocol_msg (data, MDM_PROTOCOL_MSG_VERSION);
 
-        if (!response || strncmp (response, "MDM ", strlen ("MDM ") != 0)) {
+        if (!response || strncmp (response, "MDM ", strlen ("MDM ")) != 0) {
                 g_free (response);
 
                 g_warning ("Failed to get protocol version from MDM");
