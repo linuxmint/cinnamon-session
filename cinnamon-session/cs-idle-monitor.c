@@ -297,13 +297,13 @@ _init_xtest (CSIdleMonitor *monitor)
         if (monitor->priv->have_xtest) {
                 monitor->priv->keycode1 = XKeysymToKeycode (monitor->priv->display, XK_Alt_L);
                 if (monitor->priv->keycode1 == 0) {
-                        g_warning ("keycode1 not existant");
+                        g_warning ("keycode1 not existent");
                 }
                 monitor->priv->keycode2 = XKeysymToKeycode (monitor->priv->display, XK_Alt_R);
                 if (monitor->priv->keycode2 == 0) {
                         monitor->priv->keycode2 = XKeysymToKeycode (monitor->priv->display, XK_Alt_L);
                         if (monitor->priv->keycode2 == 0) {
-                                g_warning ("keycode2 not existant");
+                                g_warning ("keycode2 not existent");
                         }
                 }
                 monitor->priv->keycode = &monitor->priv->keycode1;
