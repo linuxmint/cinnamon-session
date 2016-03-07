@@ -1,3 +1,11 @@
+cinnamon-session (2.8.3) rosa; urgency=medium
+
+  [ monsta ]
+  * mdm: fix logic error
+  * fix a typo in a warning message
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Mar 2016 17:08:43 +0000
+
 cinnamon-session (2.8.2) rosa; urgency=medium
 
   * Autostart: Blacklist xfce4-power-manager
