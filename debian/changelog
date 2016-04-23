@@ -1,3 +1,19 @@
+cinnamon-session (3.0.0) sarah; urgency=medium
+
+  [ Michael Webster ]
+  * main.c: remove CLUTTER_BACKEND=x11 (moved to cinnamon main.c)
+
+  [ monsta ]
+  * mdm: fix logic error
+  * fix a typo in a warning message
+
+  [ Clement Lefebvre ]
+  * [Fantu & Ralf Jung] Add a provides for x-session-manager
+  * Support new libsystemd (which replaces libsystemd-login)
+  * Fixed GTK regression in csm-inhibit-dialog https://github.com/linuxmint/cinnamon-session/issues/63
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 23 Apr 2016 16:16:12 +0100
+
 cinnamon-session (2.8.2) rosa; urgency=medium
 
   * Autostart: Blacklist xfce4-power-manager
