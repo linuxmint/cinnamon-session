@@ -68,6 +68,8 @@ typedef struct
 typedef enum {
         /* csm's own startup/initialization phase */
         CSM_MANAGER_PHASE_STARTUP = 0,
+        /* gnome-keyring-daemon */
+        CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER,
         /* xrandr setup, gnome-settings-daemon, etc */
         CSM_MANAGER_PHASE_INITIALIZATION,
         /* window/compositing managers */
