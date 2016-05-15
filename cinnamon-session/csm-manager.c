@@ -423,6 +423,12 @@ phase_num_to_name (guint phase)
         case CSM_MANAGER_PHASE_STARTUP:
                 name = "STARTUP";
                 break;
+        case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
+                name = "EARLY_INITIALIZATION";
+                break;
+        case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
+                name = "PRE_DISPLAY_SERVER";
+                break;
         case CSM_MANAGER_PHASE_INITIALIZATION:
                 name = "INITIALIZATION";
                 break;
@@ -543,6 +549,8 @@ end_phase (CsmManager *manager)
 
         switch (manager->priv->phase) {
         case CSM_MANAGER_PHASE_STARTUP:
+        case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
+        case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -686,6 +694,8 @@ on_phase_timeout (CsmManager *manager)
 
         switch (manager->priv->phase) {
         case CSM_MANAGER_PHASE_STARTUP:
+        case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
+        case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -1606,6 +1616,8 @@ start_phase (CsmManager *manager)
 
         switch (manager->priv->phase) {
         case CSM_MANAGER_PHASE_STARTUP:
+        case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
+        case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -1663,7 +1675,7 @@ debug_app_summary (CsmManager *manager)
         guint phase;
 
         g_debug ("CsmManager: App startup summary");
-        for (phase = CSM_MANAGER_PHASE_INITIALIZATION; phase < CSM_MANAGER_PHASE_RUNNING; phase++) {
+        for (phase = CSM_MANAGER_PHASE_EARLY_INITIALIZATION; phase < CSM_MANAGER_PHASE_RUNNING; phase++) {
                 g_debug ("CsmManager: Phase %s", phase_num_to_name (phase));
                 csm_store_foreach (manager->priv->apps,
                                    (CsmStoreFunc)_debug_app_for_phase,
@@ -1679,7 +1691,7 @@ csm_manager_start (CsmManager *manager)
         g_return_if_fail (CSM_IS_MANAGER (manager));
 
         csm_xsmp_server_start (manager->priv->xsmp_server);
-        csm_manager_set_phase (manager, CSM_MANAGER_PHASE_INITIALIZATION);
+        csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EARLY_INITIALIZATION);
         debug_app_summary (manager);
         start_phase (manager);
 }

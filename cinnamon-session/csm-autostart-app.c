@@ -617,7 +617,11 @@ load_desktop_file (CsmAutostartApp *app)
                                                  CSM_AUTOSTART_APP_PHASE_KEY,
                                                  NULL);
         if (phase_str != NULL) {
-                if (strcmp (phase_str, "Initialization") == 0) {
+                if (strcmp (phase_str, "EarlyInitialization") == 0) {
+                        phase = CSM_MANAGER_PHASE_EARLY_INITIALIZATION;
+                } else if (strcmp (phase_str, "PreDisplayServer") == 0) {
+                        phase = CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER;
+                } else if (strcmp (phase_str, "Initialization") == 0) {
                         phase = CSM_MANAGER_PHASE_INITIALIZATION;
                 } else if (strcmp (phase_str, "WindowManager") == 0) {
                         phase = CSM_MANAGER_PHASE_WINDOW_MANAGER;

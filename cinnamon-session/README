@@ -9,14 +9,20 @@ and session files to create a list of CsmApps to be started.
 (CsmAppAutostart represents an autostarted app, and CsmAppResumed
 represents an app resumed from the previous saved session.)
 
-Startup is divided into 6 phases (CsmSessionPhase):
+Startup is divided into 7 phases (CsmSessionPhase):
 
     * CSM_SESSION_PHASE_STARTUP covers cinnamon-session's internal
       startup, which also includes starting gconfd and dbus-daemon (if
       it's not already running). Gnome-session starts up those
       explicitly because it needs them for its own purposes.
 
-    * CSM_SESSION_PHASE_INITIALIZATION is the first phase of "normal"
+    * CSM_SESSION_PHASE_EARLY_INITIALIZATION is the first phase of
+      "normal" startup (ie, startup controlled by .desktop files
+      rather than hardcoding). It covers the possible installation of
+      files in $HOME by cinnamon-initial-setup and must be done before
+      other components such as gnome-keyring use those files.
+
+    * CSM_SESSION_PHASE_INITIALIZATION covers low-level stuff like
       startup (ie, startup controlled by .desktop files rather than
       hardcoding). It covers low-level stuff like
       gnome-settings-daemon and at-spi-registryd, that need to be
