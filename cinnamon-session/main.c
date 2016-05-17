@@ -306,11 +306,13 @@ main (int argc, char **argv)
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         textdomain (GETTEXT_PACKAGE);
 
-        GSettings *settings = g_settings_new ("org.cinnamon.SessionManager");
+        GSettings *settings;
+
+        settings = g_settings_new ("org.cinnamon.SessionManager");
         if (g_settings_get_boolean (settings, "debug")) {
             debug = TRUE;
         }
-        g_object_unref(settings);
+        g_clear_object (&settings);
 
         sa.sa_handler = SIG_IGN;
         sa.sa_flags = 0;
@@ -383,6 +385,17 @@ main (int argc, char **argv)
 
         /* Make QT5 apps follow the GTK style */
         csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+
+        /* GTK Overlay scrollbars */
+        settings = g_settings_new ("org.cinnamon.desktop.interface");
+
+        if (g_settings_get_boolean (settings, "gtk-overlay-scrollbars")) {
+            csm_util_setenv ("GTK_OVERLAY_SCROLLING", "1");
+        } else {
+            csm_util_setenv ("GTK_OVERLAY_SCROLLING", "0");
+        }
+
+        g_clear_object (&settings);
 
         client_store = csm_store_new ();
 
