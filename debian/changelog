@@ -1,3 +1,14 @@
+cinnamon-session (3.0.1) sarah; urgency=medium
+
+  [ leigh123linux ]
+  * Add support PreDisplayServer phase to fix gnome-keyring ssh issue
+  * add new phase: CSM_MANAGER_PHASE_EARLY_INITIALIZATION, it's needed for PRE_DISPLAY_SERVER phase to run
+
+  [ Michael Webster ]
+  * main.c: Add support for disabling gtk overlay scrollbars
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 20 May 2016 12:02:48 +0100
+
 cinnamon-session (3.0.0) sarah; urgency=medium
 
   [ Michael Webster ]
