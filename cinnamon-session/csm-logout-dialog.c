@@ -356,7 +356,6 @@ csm_get_dialog (CsmDialogLogoutType type,
                 guint32             activate_time)
 {
         CsmLogoutDialog *logout_dialog;
-        GtkWidget       *dialog_image;
         GtkWidget       *hbox;
         const char      *primary_text;
         const char      *icon_name;
@@ -456,9 +455,7 @@ csm_get_dialog (CsmDialogLogoutType type,
         default:
                 g_assert_not_reached ();
         }
-        
-        dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
-        
+
         if (logout_dialog->priv->delay_toggle) {
             hbox = gtk_box_new (FALSE, 0);
             
@@ -471,8 +468,6 @@ csm_get_dialog (CsmDialogLogoutType type,
             gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
         }
 
-        gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
-                                      icon_name, GTK_ICON_SIZE_DIALOG);
         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
         gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER);
         gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
