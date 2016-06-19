@@ -5,7 +5,7 @@
     <method name="EndSessionResponse">
       <arg name="is_ok" type="b" direction="in">
         <doc:doc>
-          <doc:summary>Whether or not it is OK to preceed</doc:summary>
+          <doc:summary>Whether or not it is OK to proceed</doc:summary>
         </doc:doc>
       </arg>
       <arg name="reason" type="s" direction="in">
