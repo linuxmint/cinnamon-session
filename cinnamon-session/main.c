@@ -296,6 +296,9 @@ main (int argc, char **argv)
                 { "whale", 0, 0, G_OPTION_ARG_NONE, &please_fail, N_("Show the fail whale dialog for testing"), NULL },
                 { NULL, 0, 0, 0, NULL, NULL, NULL }
         };
+        gchar *qt_platform_theme_current = NULL;
+        gchar *qt_style_override_current = NULL;
+        char *qt_platform_theme_new = NULL;
 
         /* Make sure that we have a session bus */
         if (!require_dbus_session (argc, argv, &error)) {
@@ -383,8 +386,26 @@ main (int argc, char **argv)
          */
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
 
-        /* Make QT5 apps follow the GTK style */
-        csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+
+        /* Make QT5 apps follow the GTK style. Starting with QT 5.7, a different
+         * env var has to be set than what worked in previous versions.
+         */
+        qt_platform_theme_current = g_getenv ("QT_QPA_PLATFORMTHEME");
+        qt_style_override_current = g_getenv ("QT_STYLE_OVERRIDE");
+        qt_platform_theme_new = HAVE_QT57 ? "qt5ct" : "qgnomeplatform";
+
+        if (NULL == qt_platform_theme_current) {
+            csm_util_setenv ("QT_QPA_PLATFORMTHEME", qt_platform_theme_new);
+        }
+
+        if (NULL == qt_style_override_current) {
+            csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+        }
+
+        g_free(qt_platform_theme_current);
+        g_free(qt_style_override_current);
+        g_free(qt_platform_theme_new);
+
 
         /* GTK Overlay scrollbars */
         settings = g_settings_new ("org.cinnamon.desktop.interface");

@@ -108,6 +108,18 @@ AC_SUBST(LOGIND_CFLAGS)
 AC_SUBST(LOGIND_LIBS)
 
 dnl ====================================================================
+dnl Check for qt 5.7+ to set correct env var for theme
+dnl ====================================================================
+PKG_CHECK_MODULES([QT57], [qt-5.0 >= 5.7],
+   [AC_DEFINE([HAVE_QT57], [1], [Have Qt 5.7+])],
+       [AC_DEFINE([HAVE_QT57], [0], [Have Qt 5.7+])]
+)
+AM_CONDITIONAL([HAVE_QT57], [test "$HAVE_QT57" -eq 1])
+if test $HAVE_QT57=1; then
+    AC_DEFINE(HAVE_QT57, 1, [Have QT 5.7+])
+fi
+
+dnl ====================================================================
 dnl X development libraries check
 dnl ====================================================================
 
