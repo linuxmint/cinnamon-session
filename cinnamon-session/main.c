@@ -404,7 +404,6 @@ main (int argc, char **argv)
 
         g_free(qt_platform_theme_current);
         g_free(qt_style_override_current);
-        g_free(qt_platform_theme_new);
 
 
         /* GTK Overlay scrollbars */

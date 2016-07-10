@@ -117,6 +117,8 @@ AC_ARG_ENABLE(qt57_theme_support,
 
 if test x$enable_qt57_theme_support = xyes; then
     AC_DEFINE([HAVE_QT57], [1], [Have QT 5.7+])
+else
+    AC_DEFINE([HAVE_QT57], [0], [Have QT 5.7+])
 fi
 
 dnl ====================================================================
