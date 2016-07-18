@@ -296,8 +296,6 @@ main (int argc, char **argv)
                 { "whale", 0, 0, G_OPTION_ARG_NONE, &please_fail, N_("Show the fail whale dialog for testing"), NULL },
                 { NULL, 0, 0, 0, NULL, NULL, NULL }
         };
-        gchar *qt_platform_theme_current = NULL;
-        gchar *qt_style_override_current = NULL;
         char *qt_platform_theme_new = NULL;
 
         /* Make sure that we have a session bus */
@@ -390,20 +388,15 @@ main (int argc, char **argv)
         /* Make QT5 apps follow the GTK style. Starting with QT 5.7, a different
          * env var has to be set than what worked in previous versions.
          */
-        qt_platform_theme_current = g_getenv ("QT_QPA_PLATFORMTHEME");
-        qt_style_override_current = g_getenv ("QT_STYLE_OVERRIDE");
         qt_platform_theme_new = HAVE_QT57 ? "qt5ct" : "qgnomeplatform";
 
-        if (NULL == qt_platform_theme_current) {
+        if (NULL == g_getenv ("QT_QPA_PLATFORMTHEME")) {
             csm_util_setenv ("QT_QPA_PLATFORMTHEME", qt_platform_theme_new);
         }
 
-        if (NULL == qt_style_override_current) {
+        if (NULL == g_getenv ("QT_STYLE_OVERRIDE")) {
             csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
         }
-
-        g_free(qt_platform_theme_current);
-        g_free(qt_style_override_current);
 
 
         /* GTK Overlay scrollbars */
