@@ -394,8 +394,11 @@ main (int argc, char **argv)
             csm_util_setenv ("QT_QPA_PLATFORMTHEME", qt_platform_theme_new);
         }
 
-        if (NULL == g_getenv ("QT_STYLE_OVERRIDE")) {
+        if ( ! HAVE_QT57 && NULL == g_getenv ("QT_STYLE_OVERRIDE") ) {
             csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+
+        } else if (HAVE_QT57 && NULL != g_getenv ("QT_STYLE_OVERRIDE")) {
+            g_unsetenv ("QT_STYLE_OVERRIDE");
         }
 
 
