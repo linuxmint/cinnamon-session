@@ -108,6 +108,20 @@ AC_SUBST(LOGIND_CFLAGS)
 AC_SUBST(LOGIND_LIBS)
 
 dnl ====================================================================
+dnl Check for qt 5.7+ to set correct env var for theme/styling
+dnl ====================================================================
+AC_ARG_ENABLE(qt57_theme_support,
+              AS_HELP_STRING([--enable-qt57-theme-support], [Support GTK styles for QT apps with QT 5.7+]),
+              [enable_qt57_theme_support=yes],
+              [enable_qt57_theme_support=no])
+
+if test x$enable_qt57_theme_support = xyes; then
+    AC_DEFINE([HAVE_QT57], [1], [Have QT 5.7+])
+else
+    AC_DEFINE([HAVE_QT57], [0], [Have QT 5.7+])
+fi
+
+dnl ====================================================================
 dnl X development libraries check
 dnl ====================================================================
 
@@ -349,12 +363,13 @@ echo "
 
         GConf support:            ${enable_gconf}
         Logind support:           ${have_logind}
+        Qt 5.7+ theme support:    ${enable_qt57_theme_support}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}
         XSync support:            ${have_xsync}
         XTest support:            ${have_xtest}
-	Legacy UPower backend:    ${have_old_upower}
+        Legacy UPower backend:    ${have_old_upower}
         Build documentation:      ${enable_docbook_docs}
 
 "
