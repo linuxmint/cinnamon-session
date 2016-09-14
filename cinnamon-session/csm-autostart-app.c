@@ -347,38 +347,33 @@ static gboolean
 setup_gsettings_condition_monitor (CsmAutostartApp *app,
                                    const char      *key)
 {
+        GSettingsSchemaSource *source;
+        GSettingsSchema *schema;
         GSettings *settings;
-        const char * const *schemas;
         char **elems;
-        gboolean schema_exists;
-        guint i;
-        gboolean retval;
+        gboolean retval = FALSE;
         char *signal;
 
+        retval = FALSE;
+
         elems = g_strsplit (key, " ", 2);
+
         if (elems == NULL)
-                return FALSE;
-        if (elems[0] == NULL || elems[1] == NULL) {
-                g_strfreev (elems);
-                return FALSE;
-        }
+                goto out;
 
-        schemas = g_settings_list_schemas ();
-        schema_exists = FALSE;
-        for (i = 0; schemas[i] != NULL; i++) {
-                if (g_str_equal (schemas[i], elems[0])) {
-                        schema_exists = TRUE;
-                        break;
-                }
-        }
+        if (elems[0] == NULL || elems[1] == NULL)
+                goto out;
 
-        if (schema_exists == FALSE) {
-                g_strfreev (elems);
-                return FALSE;
-        }
+        source = g_settings_schema_source_get_default ();
 
-        settings = g_settings_new (elems[0]);
+        schema = g_settings_schema_source_lookup (source, elems[0], TRUE);
+
+        if (schema == NULL)
+                goto out;
+
+        settings = g_settings_new_full (schema, NULL, NULL);
         retval = g_settings_get_boolean (settings, elems[1]);
+        g_settings_schema_unref (schema);
 
         signal = g_strdup_printf ("changed::%s", elems[1]);
         g_signal_connect (G_OBJECT (settings), signal,
@@ -387,6 +382,7 @@ setup_gsettings_condition_monitor (CsmAutostartApp *app,
 
         app->priv->condition_settings = settings;
 
+out:
         g_strfreev (elems);
 
         return retval;
