@@ -131,7 +131,6 @@ static void
 csm_fail_whale_dialog_finalize (GObject *object)
 {
         CsmFailWhaleDialog *fail_dialog = CSM_FAIL_WHALE_DIALOG (object);
-        CsmFailWhaleDialogPrivate *priv = fail_dialog->priv;
 
         G_OBJECT_CLASS (csm_fail_whale_dialog_parent_class)->finalize (object);
 }
