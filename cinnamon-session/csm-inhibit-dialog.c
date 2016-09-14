@@ -225,7 +225,7 @@ _find_icon (GtkIconTheme  *icon_theme,
 
         if (info) {
                 retval = g_strdup (gtk_icon_info_get_filename (info));
-                gtk_icon_info_free (info);
+                g_object_unref (info);
         } else
                 retval = NULL;
 
