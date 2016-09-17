@@ -2,9 +2,9 @@ Source: cinnamon-session
 Section: x11
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: autoconf-archive,
+               debhelper (>= 9),
                dh-autoreconf,
-               gnome-common,
                gnome-pkg-tools (>= 0.13),
                intltool (>= 0.40.6),
                libcanberra-dev,
