@@ -6,6 +6,8 @@ AC_CONFIG_SRCDIR([cinnamon-session])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
+m4_ifdef([AX_IS_RELEASE], [AX_IS_RELEASE([always])])
+
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -20,8 +22,8 @@ PKG_PROG_PKG_CONFIG()
 LT_PREREQ([2.2.6])
 LT_INIT([dlopen disable-static])
 
-GNOME_MAINTAINER_MODE_DEFINES
-GNOME_COMPILE_WARNINGS([maximum])
+m4_ifdef([AX_COMPILER_FLAGS],
+         [AX_COMPILER_FLAGS([WARN_CFLAGS],[WARN_LDFLAGS])])
 
 AC_ARG_ENABLE(deprecation_flags,
               [AS_HELP_STRING([--enable-deprecation-flags],
@@ -155,7 +157,7 @@ fi
 AC_CHECK_LIB(Xau, XauFileName, [X_LIBS="$X_LIBS -lXau"],
              [AC_MSG_ERROR([
 *** Can't find the Xauth library. It is needed to compile cinnamon-session.])],
-	     $X_LIBS)
+             $X_LIBS)
 
 AC_SUBST(X_LIBS)
 
@@ -208,21 +210,21 @@ AC_ARG_ENABLE(docbook-docs,
 AC_PATH_PROG(XMLTO, xmlto, no)
 AC_MSG_CHECKING([whether to build DocBook documentation])
 if test x$XMLTO = xno ; then
-	have_docbook=no
+    have_docbook=no
 else
-	have_docbook=yes
+    have_docbook=yes
 fi
 if test x$enable_docbook_docs = xauto ; then
-	if test x$have_docbook = xno ; then
-        	enable_docbook_docs=no
-	else
-		enable_docbook_docs=yes
-	fi
+    if test x$have_docbook = xno ; then
+        enable_docbook_docs=no
+    else
+        enable_docbook_docs=yes
+    fi
 fi
 if test x$enable_docbook_docs = xyes; then
-	if test x$have_docbook = xno; then
-		AC_MSG_ERROR([Building DocBook docs explicitly required, but DocBook not found])
-	fi
+    if test x$have_docbook = xno; then
+        AC_MSG_ERROR([Building DocBook docs explicitly required, but DocBook not found])
+    fi
 fi
 AM_CONDITIONAL(DOCBOOK_DOCS_ENABLED, test x$enable_docbook_docs = xyes)
 AC_MSG_RESULT($enable_docbook_docs)
