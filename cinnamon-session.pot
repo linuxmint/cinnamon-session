@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-26 12:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: cinnamon-session/csm-fail-whale-dialog.c:303
+msgid "Oh no!  Something has gone wrong."
+msgstr ""
+
+#: cinnamon-session/csm-fail-whale-dialog.c:310
+msgid ""
+"A problem has occurred and the system can't recover. Please contact a system "
+"administrator"
+msgstr ""
+
+#: cinnamon-session/csm-fail-whale-dialog.c:312
+msgid ""
+"A problem has occurred and the system can't recover.\n"
+"Please log out and try again."
+msgstr ""
+
+#: cinnamon-session/csm-fail-whale-dialog.c:327
+#: cinnamon-session/csm-logout-dialog.c:401 cinnamon-session/csm-util.c:429
+msgid "_Log Out"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:253
+#, c-format
+msgid "Icon '%s' not found"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:588
+msgid "Unknown"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:639
+msgid "A program is still running:"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:640 data/csm-inhibit-dialog.glade.h:2
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:643 data/csm-inhibit-dialog.glade.h:1
+msgid "Some programs are still running:"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:644
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:874
+msgid "Switch User Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:877
+msgid "Log Out Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:880
+msgid "Suspend Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:883
+msgid "Hibernate Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:886
+msgid "Shut Down Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:889
+msgid "Restart Anyway"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:897
+msgid "Lock Screen"
+msgstr ""
+
+#: cinnamon-session/csm-inhibit-dialog.c:900
+msgid "Cancel"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:257
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be logged out in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: cinnamon-session/csm-logout-dialog.c:265
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be shut down in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: cinnamon-session/csm-logout-dialog.c:273
+#, c-format
+msgid "This system will be automatically restarted in %d second."
+msgid_plural "This system will be restarted in %d seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: cinnamon-session/csm-logout-dialog.c:297
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:386
+msgid "Log out of this system now?"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:392
+msgid "_Switch User"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:407
+msgid "Shut down this system now?"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:413
+msgid "S_uspend"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:419
+msgid "_Hibernate"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:425
+#: cinnamon-session/csm-logout-dialog.c:451
+msgid "_Restart"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:435
+msgid "_Shut Down"
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:441
+msgid "Restart this system now?"
+msgstr ""
+
+#: cinnamon-session/csm-manager.c:1444
+msgid "GNOME 3 Failed to Load"
+msgstr ""
+
+#: cinnamon-session/csm-manager.c:1445
+msgid ""
+"Unfortunately GNOME 3 failed to start properly and started in the "
+"<i>fallback mode</i>.\n"
+"\n"
+"This most likely means your system (graphics hardware or driver) is not "
+"capable of delivering the full GNOME 3 experience."
+msgstr ""
+
+#: cinnamon-session/csm-manager.c:1447
+msgid "Learn more about GNOME 3"
+msgstr ""
+
+#: cinnamon-session/csm-manager.c:1538 cinnamon-session/csm-manager.c:2319
+msgid "Not responding"
+msgstr ""
+
+#: cinnamon-session/csm-process-helper.c:123
+#, c-format
+msgid "Exited with code %d"
+msgstr ""
+
+#: cinnamon-session/csm-process-helper.c:128
+#, c-format
+msgid "Killed by signal %d"
+msgstr ""
+
+#: cinnamon-session/csm-process-helper.c:133
+#, c-format
+msgid "Stopped by signal %d"
+msgstr ""
+
+#: cinnamon-session/csm-util.c:413
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+
+#: cinnamon-session/csm-xsmp-client.c:559
+msgid "Remembered Application"
+msgstr ""
+
+#: cinnamon-session/csm-xsmp-client.c:1198
+msgid "This program is blocking logout."
+msgstr ""
+
+#: cinnamon-session/csm-xsmp-server.c:342
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+
+#: cinnamon-session/csm-xsmp-server.c:611
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr ""
+
+#: cinnamon-session/main.c:290
+msgid "Override standard autostart directories"
+msgstr ""
+
+#: cinnamon-session/main.c:290
+msgid "AUTOSTART_DIR"
+msgstr ""
+
+#: cinnamon-session/main.c:291
+msgid "Session to use"
+msgstr ""
+
+#: cinnamon-session/main.c:291
+msgid "SESSION_NAME"
+msgstr ""
+
+#: cinnamon-session/main.c:292
+msgid "Enable debugging code"
+msgstr ""
+
+#: cinnamon-session/main.c:293
+msgid "Do not load user-specified applications"
+msgstr ""
+
+#: cinnamon-session/main.c:294
+msgid "Version of this application"
+msgstr ""
+
+#: cinnamon-session/main.c:296
+msgid "Show the fail whale dialog for testing"
+msgstr ""
+
+#: cinnamon-session/main.c:325
+msgid " - the Cinnamon session manager"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:53
+msgid "Log out"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:54
+msgid "Power off"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:55
+msgid "Reboot"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:56
+msgid "Ignoring any existing inhibitors"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:57
+msgid "Don't prompt for user confirmation"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:91 tools/cinnamon-session-quit.c:101
+msgid "Could not connect to the session manager"
+msgstr ""
+
+#: tools/cinnamon-session-quit.c:203
+msgid "Program called with conflicting options"
+msgstr ""
+
+#: egg/eggdesktopfile.c:165
+msgid "File is not a valid .desktop file"
+msgstr ""
+
+#: egg/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr ""
+
+#: egg/eggdesktopfile.c:973
+#, c-format
+msgid "Starting %s"
+msgstr ""
+
+#: egg/eggdesktopfile.c:1114
+msgid "Application does not accept documents on command line"
+msgstr ""
+
+#: egg/eggdesktopfile.c:1182
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr ""
+
+#: egg/eggdesktopfile.c:1383
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+
+#: egg/eggdesktopfile.c:1404
+msgid "Not a launchable item"
+msgstr ""
+
+#: egg/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr ""
+
+#: egg/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr ""
+
+#: egg/eggsmclient.c:229
+msgid "FILE"
+msgstr ""
+
+#: egg/eggsmclient.c:232
+msgid "Specify session management ID"
+msgstr ""
+
+#: egg/eggsmclient.c:232
+msgid "ID"
+msgstr ""
+
+#: egg/eggsmclient.c:253
+msgid "Session management options:"
+msgstr ""
+
+#: egg/eggsmclient.c:254
+msgid "Show session management options"
+msgstr ""

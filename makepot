@@ -1,0 +1,7 @@
+#!/bin/bash
+
+intltool-extract --type=gettext/glade data/*.glade
+
+xgettext --language=C --keyword=_ --keyword=N_ --output=cinnamon-session.pot cinnamon-session/*.c tools/*.c egg/*.c data/*.glade.h
+
+rm -f data/*.glade.h
