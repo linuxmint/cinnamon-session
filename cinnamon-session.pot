@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-26 12:16+0100\n"
+"POT-Creation-Date: 2016-11-05 17:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,6 +124,10 @@ msgstr[1] ""
 #: cinnamon-session/csm-logout-dialog.c:297
 #, c-format
 msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: cinnamon-session/csm-logout-dialog.c:371
+msgid "Session"
 msgstr ""
 
 #: cinnamon-session/csm-logout-dialog.c:386
