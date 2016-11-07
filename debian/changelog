@@ -1,3 +1,38 @@
+cinnamon-session (3.2.0) serena; urgency=medium
+
+  [ Edgar Fournival ]
+  * removed old dialog icon code
+
+  [ leigh123linux ]
+  * gsettings: stop using g_settings_list_schemas()
+  * Fix spelling (wrong word used)
+
+  [ Dustin Falgout ]
+  * update .gitignore
+  * Add support for applying GTK style to QT apps when running QT 5.7+ Maintain backwards compatibility for earlier versions of QT.
+  * use build time option instead of pkgcheck for obvious reasons :sweat_smile:
+  * remove unecessary call to g_free
+  * Incorporated feedback
+
+  [ brownsr ]
+  * remove unused variable
+  * replace deprecated gtk_icon_info_free with g_object_unref
+
+  [ Dustin Falgout ]
+  * implement change described in PR comments related to "QT_STYLE_OVERRIDE" env var and qt versions 5.7+
+
+  [ leigh123linux ]
+  * main: fix heap overflow in dbus-launch wrapping
+
+  [ Maximiliano Curia ]
+  * Migrate away from gnome-common deprecated vars and macros
+
+  [ Clement Lefebvre ]
+  * Added cinnamon-session.pot and makepot
+  * Update POT file
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Nov 2016 10:39:17 +0000
+
 cinnamon-session (3.0.1) sarah; urgency=medium
 
   [ leigh123linux ]
