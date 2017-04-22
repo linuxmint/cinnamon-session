@@ -63,8 +63,6 @@ struct _CsmConsolekitPrivate
 #endif
 };
 
-static void     csm_consolekit_class_init   (CsmConsolekitClass *klass);
-static void     csm_consolekit_init         (CsmConsolekit      *ck);
 static void     csm_consolekit_finalize     (GObject            *object);
 
 static void     csm_consolekit_free_dbus    (CsmConsolekit      *manager);

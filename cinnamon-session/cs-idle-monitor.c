@@ -39,8 +39,6 @@
 
 #include "cs-idle-monitor.h"
 
-static void cs_idle_monitor_class_init (CSIdleMonitorClass *klass);
-static void cs_idle_monitor_init       (CSIdleMonitor      *idle_monitor);
 static void cs_idle_monitor_finalize   (GObject             *object);
 
 #define CS_IDLE_MONITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CS_TYPE_IDLE_MONITOR, CSIdleMonitorPrivate))

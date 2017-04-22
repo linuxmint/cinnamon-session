@@ -86,8 +86,6 @@ enum {
         NUMBER_OF_COLUMNS
 };
 
-static void     csm_inhibit_dialog_class_init  (CsmInhibitDialogClass *klass);
-static void     csm_inhibit_dialog_init        (CsmInhibitDialog      *inhibit_dialog);
 static void     csm_inhibit_dialog_finalize    (GObject               *object);
 
 G_DEFINE_TYPE (CsmInhibitDialog, csm_inhibit_dialog, GTK_TYPE_DIALOG)
