@@ -79,11 +79,6 @@
  */
 #define CSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
-/* In the exit phase, all apps were already given the chance to inhibit the session end
- * At that stage we don't want to wait much for apps to respond, we want to exit, and fast.
- */
-#define CSM_MANAGER_EXIT_PHASE_TIMEOUT 1 /* seconds */
-
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
@@ -677,15 +672,6 @@ app_registered (CsmApp     *app,
 }
 
 static gboolean
-_client_failed_to_stop (const char *id,
-                        CsmClient  *client,
-                        gpointer    user_data)
-{
-        g_debug ("CsmManager: client failed to stop: %s, %s", csm_client_peek_id (client), csm_client_peek_app_id (client));
-        return FALSE;
-}
-
-static gboolean
 on_phase_timeout (CsmManager *manager)
 {
         GSList *a;
@@ -715,9 +701,6 @@ on_phase_timeout (CsmManager *manager)
         case CSM_MANAGER_PHASE_END_SESSION:
                 break;
         case CSM_MANAGER_PHASE_EXIT:
-                csm_store_foreach (manager->priv->clients,
-                                   (CsmStoreFunc)_client_failed_to_stop,
-                                   NULL);
                 break;
         default:
                 g_assert_not_reached ();
@@ -960,16 +943,11 @@ static void
 do_phase_exit (CsmManager *manager)
 {
         if (csm_store_size (manager->priv->clients) > 0) {
-                manager->priv->phase_timeout_id = g_timeout_add_seconds (CSM_MANAGER_EXIT_PHASE_TIMEOUT,
-                                                                         (GSourceFunc)on_phase_timeout,
-                                                                         manager);
-
                 csm_store_foreach (manager->priv->clients,
                                    (CsmStoreFunc)_client_stop,
                                    NULL);
-        } else {
-                end_phase (manager);
         }
+        end_phase (manager);
 }
 
 static gboolean
