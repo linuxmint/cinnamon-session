@@ -187,8 +187,6 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-static void     csm_manager_class_init  (CsmManagerClass *klass);
-static void     csm_manager_init        (CsmManager      *manager);
 static void     csm_manager_finalize    (GObject         *object);
 
 static void     maybe_save_session   (CsmManager *manager);

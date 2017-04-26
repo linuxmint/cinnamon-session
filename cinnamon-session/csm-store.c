@@ -53,8 +53,6 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-static void     csm_store_class_init    (CsmStoreClass *klass);
-static void     csm_store_init          (CsmStore      *store);
 static void     csm_store_finalize      (GObject       *object);
 
 G_DEFINE_TYPE (CsmStore, csm_store, G_TYPE_OBJECT)

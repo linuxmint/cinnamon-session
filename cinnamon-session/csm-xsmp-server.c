@@ -80,8 +80,6 @@ enum {
         PROP_CLIENT_STORE
 };
 
-static void     csm_xsmp_server_class_init  (CsmXsmpServerClass *klass);
-static void     csm_xsmp_server_init        (CsmXsmpServer      *xsmp_server);
 static void     csm_xsmp_server_finalize    (GObject         *object);
 
 static gpointer xsmp_server_object = NULL;
