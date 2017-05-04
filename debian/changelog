@@ -1,3 +1,15 @@
+cinnamon-session (3.4.0) sonya; urgency=medium
+
+  [ leigh123linux ]
+  * Check stricter for presence of xtrans (with option to disable)
+  * remove aclocal from autogen
+  * Fix redundant redeclarations
+
+  [ Clement Lefebvre ]
+  * manager: don't wait for all clients to exit before exiting
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 04 May 2017 13:37:33 +0100
+
 cinnamon-session (3.2.0) serena; urgency=medium
 
   [ Edgar Fournival ]
