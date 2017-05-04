@@ -21,7 +21,7 @@
       <description>If enabled, cinnamon-session will display a warning dialog after login if the session was automatically fallen back.</description>
     </key>
     <key name="autostart-blacklist" type="as">
-      <default>['gnome-settings-daemon', 'gnome-fallback-mount-helper', 'gnome-screensaver', 'mate-screensaver', 'mate-keyring-daemon', 'indicator-session', 'gnome-initial-setup-copy-worker', 'gnome-initial-setup-first-login', 'gnome-welcome-tour', 'xscreensaver-autostart', 'nautilus-autostart', 'caja', 'xfce4-power-manager']</default>
+      <default>['gnome-settings-daemon', 'org.gnome.SettingsDaemon', 'gnome-fallback-mount-helper', 'gnome-screensaver', 'mate-screensaver', 'mate-keyring-daemon', 'indicator-session', 'gnome-initial-setup-copy-worker', 'gnome-initial-setup-first-login', 'gnome-welcome-tour', 'xscreensaver-autostart', 'nautilus-autostart', 'caja', 'xfce4-power-manager']</default>
       <summary>Applications to block from autostarting or appearing in the app system</summary>
       <description>
         A list of applications or desktop names (without the .desktop extension) to prevent from
