@@ -368,7 +368,7 @@ csm_get_dialog (CsmDialogLogoutType type,
 
         current_dialog = logout_dialog;
 
-        gtk_window_set_title (GTK_WINDOW (logout_dialog), _("Session"));
+        gtk_window_set_title (GTK_WINDOW (logout_dialog), _(("Session")));
 
         logout_dialog->priv->type = type;
         
