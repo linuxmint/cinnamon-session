@@ -774,6 +774,12 @@ csm_consolekit_is_login_session (CsmSystem *system)
 }
 
 static gboolean
+csm_consolekit_can_hybrid_sleep (CsmSystem *system)
+{
+        return FALSE;
+}
+
+static gboolean
 csm_consolekit_can_suspend (CsmSystem *system)
 {
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
@@ -796,6 +802,11 @@ csm_consolekit_can_hibernate (CsmSystem *system)
         return FALSE;
 #endif
 
+}
+
+static void
+csm_consolekit_hybrid_sleep (CsmSystem *system)
+{
 }
 
 static void
@@ -849,10 +860,12 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->can_switch_user = csm_consolekit_can_switch_user;
         iface->can_stop = csm_consolekit_can_stop;
         iface->can_restart = csm_consolekit_can_restart;
+        iface->can_hybrid_sleep = csm_consolekit_can_hybrid_sleep;
         iface->can_suspend = csm_consolekit_can_suspend;
         iface->can_hibernate = csm_consolekit_can_hibernate;
         iface->attempt_stop = csm_consolekit_attempt_stop;
         iface->attempt_restart = csm_consolekit_attempt_restart;
+        iface->hybrid_sleep = csm_consolekit_hybrid_sleep;
         iface->suspend = csm_consolekit_suspend;
         iface->hibernate = csm_consolekit_hibernate;
         iface->set_session_idle = csm_consolekit_set_session_idle;

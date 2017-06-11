@@ -83,6 +83,12 @@ csm_system_can_restart (CsmSystem *system)
 }
 
 gboolean
+csm_system_can_hybrid_sleep (CsmSystem *system)
+{
+        return CSM_SYSTEM_GET_IFACE (system)->can_hybrid_sleep (system);
+}
+
+gboolean
 csm_system_can_suspend (CsmSystem *system)
 {
         return CSM_SYSTEM_GET_IFACE (system)->can_suspend (system);
@@ -104,6 +110,12 @@ void
 csm_system_attempt_restart (CsmSystem *system)
 {
         CSM_SYSTEM_GET_IFACE (system)->attempt_restart (system);
+}
+
+void
+csm_system_hybrid_sleep (CsmSystem *system)
+{
+        CSM_SYSTEM_GET_IFACE (system)->hybrid_sleep (system);
 }
 
 void
