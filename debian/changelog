@@ -1,3 +1,13 @@
+cinnamon-session (3.4.1) sonya; urgency=medium
+
+  [ itzexor ]
+  * autostart-blacklist: add new gnome settings daemon prefix
+
+  [ Michael Webster ]
+  * csm-manager.c: Listen to the power schema 'lock-on-suspend' setting instead of the normal screensaver setting of 'lock when the screensaver starts'.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 20 Jun 2017 15:27:12 +0200
+
 cinnamon-session (3.4.0) sonya; urgency=medium
 
   [ leigh123linux ]
