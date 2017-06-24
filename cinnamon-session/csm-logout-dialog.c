@@ -338,18 +338,6 @@ csm_logout_dialog_set_timeout (CsmLogoutDialog *logout_dialog)
                                                          logout_dialog);
 }
 
-static gboolean
-grab_callback (GtkWidget *widget)
-{
-    return gdk_keyboard_grab (gtk_widget_get_window (widget), FALSE, GDK_CURRENT_TIME) != GDK_GRAB_SUCCESS;
-}
-
-static void
-on_show (GtkWidget *widget, gpointer user_data)
-{
-    g_timeout_add (50, (GSourceFunc) grab_callback, widget);
-}
-
 static GtkWidget *
 csm_get_dialog (CsmDialogLogoutType type,
                 GdkScreen          *screen,
@@ -477,8 +465,6 @@ csm_get_dialog (CsmDialogLogoutType type,
 
         gtk_window_set_screen (GTK_WINDOW (logout_dialog), screen);
 
-        g_signal_connect (logout_dialog, "show", G_CALLBACK (on_show), NULL);
-        
         g_object_unref(settings);
 
         return GTK_WIDGET (logout_dialog);
