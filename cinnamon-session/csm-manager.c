@@ -3203,9 +3203,6 @@ logout_dialog_response (CsmLogoutDialog *logout_dialog,
 
         display = gtk_widget_get_display (GTK_WIDGET (logout_dialog));
 
-        gdk_pointer_ungrab (GDK_CURRENT_TIME);
-        gdk_keyboard_ungrab (GDK_CURRENT_TIME);
-
         gtk_widget_destroy (GTK_WIDGET (logout_dialog));
 
         /* In case of dialog cancel, switch user, hibernate and
