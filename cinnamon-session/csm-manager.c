@@ -94,6 +94,7 @@
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
 #define KEY_BLACKLIST             "autostart-blacklist"
+#define KEY_PREFER_HYBRID_SLEEP   "prefer-hybrid-sleep"
 
 #define POWER_SETTINGS_SCHEMA     "org.cinnamon.settings-daemon.plugins.power"
 #define KEY_LOCK_ON_SUSPEND       "lock-on-suspend"
@@ -1229,9 +1230,11 @@ manager_switch_user (GdkDisplay *display,
 static void
 manager_attempt_hibernate (CsmManager *manager)
 {
+        /* lock the screen before we try anything.  If it all fails, at least the screen is locked
+         * (if preferences dictate it) */
+        manager_perhaps_lock (manager);
+
         if (csm_system_can_hibernate (manager->priv->system)) {
-                /* lock the screen before we suspend */
-                manager_perhaps_lock (manager);
                 csm_system_hibernate (manager->priv->system);
         }
 }
@@ -1239,9 +1242,14 @@ manager_attempt_hibernate (CsmManager *manager)
 static void
 manager_attempt_suspend (CsmManager *manager)
 {
-        if (csm_system_can_suspend (manager->priv->system)) {
-                /* lock the screen before we suspend */
-                manager_perhaps_lock (manager);
+        /* lock the screen before we try anything.  If it all fails, at least the screen is locked
+         * (if preferences dictate it) */
+        manager_perhaps_lock (manager);
+
+        if (g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
+            csm_system_can_hybrid_sleep (manager->priv->system)) {
+                csm_system_hybrid_sleep (manager->priv->system);
+        } else if (csm_system_can_suspend (manager->priv->system)) {
                 csm_system_suspend (manager->priv->system);
         }
 }

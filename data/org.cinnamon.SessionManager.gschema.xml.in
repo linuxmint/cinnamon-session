@@ -38,5 +38,10 @@
       <summary>The time delay before quitting the system automatically</summary>
       <description>The time delay before the shutdown/logout dialogue quits the system automatically</description>
     </key>
+    <key name="prefer-hybrid-sleep" type="b">
+      <default>false</default>
+      <summary>If your hardware and login service supports 'Hybrid Sleep' then use it instead of normal Suspend</summary>
+      <description>Whether or not to attempt to use hybrid sleep mode for suspend.  If it is unsupported, normal sleep will be used instead</description>
+    </key>
   </schema>
 </schemalist>
