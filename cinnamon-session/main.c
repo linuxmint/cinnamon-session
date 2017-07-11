@@ -341,6 +341,9 @@ main (int argc, char **argv)
                 exit (1);
         }
 
+        csm_util_export_activation_environment (NULL);
+        csm_util_export_user_environment (NULL);
+
         mdm_log_init ();
         mdm_log_set_debug (debug);
 

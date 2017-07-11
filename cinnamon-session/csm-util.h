@@ -52,6 +52,10 @@ void        csm_util_init_error                     (gboolean    fatal,
 
 char *      csm_util_generate_startup_id            (void);
 
+gboolean    csm_util_export_activation_environment  (GError     **error);
+
+gboolean    csm_util_export_user_environment        (GError     **error);
+
 void        csm_util_setenv                         (const char *variable,
                                                      const char *value);
 

@@ -505,53 +505,228 @@ csm_util_update_activation_environment (const char  *variable,
                                         const char  *value,
                                         GError     **error)
 {
-        DBusGConnection *dbus_connection;
-        DBusGProxy      *bus_proxy;
-        GHashTable      *environment;
+        GDBusConnection *connection;
         gboolean         environment_updated;
+        GVariantBuilder  builder;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
 
         environment_updated = FALSE;
-        bus_proxy = NULL;
-        environment = NULL;
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
 
-        dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, error);
-
-        if (dbus_connection == NULL) {
+        if (connection == NULL) {
                 return FALSE;
         }
 
-        bus_proxy = dbus_g_proxy_new_for_name_owner (dbus_connection,
-                                                     DBUS_SERVICE_DBUS,
-                                                     DBUS_PATH_DBUS,
-                                                     DBUS_INTERFACE_DBUS,
-                                                     error);
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{ss}"));
+        g_variant_builder_add (&builder, "{ss}", variable, value);
 
-        if (bus_proxy == NULL) {
-                goto out;
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.DBus",
+                                             "/org/freedesktop/DBus",
+                                             "org.freedesktop.DBus",
+                                             "UpdateActivationEnvironment",
+                                             g_variant_new ("(@a{ss})",
+                                                            g_variant_builder_end (&builder)),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
         }
 
-        environment = g_hash_table_new (g_str_hash, g_str_equal);
+        g_clear_object (&connection);
 
-        g_hash_table_insert (environment, (void *) variable, (void *) value);
+        return environment_updated;
+}
 
-        if (!dbus_g_proxy_call (bus_proxy,
-                                "UpdateActivationEnvironment", error,
-                                DBUS_TYPE_G_STRING_STRING_HASHTABLE,
-                                environment, G_TYPE_INVALID,
-                                G_TYPE_INVALID))
-                goto out;
+gboolean
+csm_util_export_activation_environment (GError     **error)
+{
+        GDBusConnection *connection;
+        gboolean         environment_updated = FALSE;
+        char           **entry_names;
+        int              i = 0;
+        GVariantBuilder  builder;
+        GRegex          *name_regex, *value_regex;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
 
-        environment_updated = TRUE;
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
 
- out:
-
-        if (bus_proxy != NULL) {
-                g_object_unref (bus_proxy);
+        if (connection == NULL) {
+                return FALSE;
         }
 
-        if (environment != NULL) {
-                g_hash_table_destroy (environment);
+        name_regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*$", G_REGEX_OPTIMIZE, 0, error);
+
+        if (name_regex == NULL) {
+                return FALSE;
         }
+
+        value_regex = g_regex_new ("^([[:blank:]]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+
+        if (value_regex == NULL) {
+                return FALSE;
+        }
+
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{ss}"));
+        for (entry_names = g_listenv (); entry_names[i] != NULL; i++) {
+                const char *entry_name = entry_names[i];
+                const char *entry_value = g_getenv (entry_name);
+
+                if (!g_utf8_validate (entry_name, -1, NULL))
+                    continue;
+
+                if (!g_regex_match (name_regex, entry_name, 0, NULL))
+                    continue;
+
+                if (!g_utf8_validate (entry_value, -1, NULL))
+                    continue;
+
+                if (!g_regex_match (value_regex, entry_value, 0, NULL))
+                    continue;
+
+                g_variant_builder_add (&builder, "{ss}", entry_name, entry_value);
+        }
+        g_regex_unref (name_regex);
+        g_regex_unref (value_regex);
+
+        g_strfreev (entry_names);
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.DBus",
+                                             "/org/freedesktop/DBus",
+                                             "org.freedesktop.DBus",
+                                             "UpdateActivationEnvironment",
+                                             g_variant_new ("(@a{ss})",
+                                                            g_variant_builder_end (&builder)),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
+        }
+
+        g_clear_object (&connection);
+
+        return environment_updated;
+}
+
+gboolean
+csm_util_export_user_environment (GError     **error)
+{
+        GDBusConnection *connection;
+        gboolean         environment_updated = FALSE;
+        char           **entries;
+        int              i = 0;
+        GVariantBuilder  builder;
+        GRegex          *regex;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
+
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL) {
+                return FALSE;
+        }
+
+        regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*=([[:blank:]]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+
+        if (regex == NULL) {
+                return FALSE;
+        }
+
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("as"));
+        for (entries = g_get_environ (); entries[i] != NULL; i++) {
+                const char *entry = entries[i];
+
+                if (!g_utf8_validate (entry, -1, NULL))
+                    continue;
+
+                if (!g_regex_match (regex, entry, 0, NULL))
+                    continue;
+
+                g_variant_builder_add (&builder, "s", entry);
+        }
+        g_regex_unref (regex);
+
+        g_strfreev (entries);
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "SetEnvironment",
+                                             g_variant_new ("(@as)",
+                                                            g_variant_builder_end (&builder)),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
+        }
+
+        g_clear_object (&connection);
+
+        return environment_updated;
+}
+
+static gboolean
+csm_util_update_user_environment (const char  *variable,
+                                  const char  *value,
+                                  GError     **error)
+{
+        GDBusConnection *connection;
+        gboolean         environment_updated;
+        char            *entry;
+        GVariantBuilder  builder;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
+
+        environment_updated = FALSE;
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL) {
+                return FALSE;
+        }
+
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("as"));
+        entry = g_strdup_printf ("%s=%s", variable, value);
+        g_variant_builder_add (&builder, "s", entry);
+        g_free (entry);
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "SetEnvironment",
+                                             g_variant_new ("(@as)",
+                                                            g_variant_builder_end (&builder)),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
+        }
+
+        g_clear_object (&connection);
 
         return environment_updated;
 }
@@ -560,18 +735,23 @@ void
 csm_util_setenv (const char *variable,
                  const char *value)
 {
-        GError *bus_error;
+        GError *error = NULL;
 
         g_setenv (variable, value, TRUE);
-
-        bus_error = NULL;
 
         /* If this fails it isn't fatal, it means some things like session
          * management and keyring won't work in activated clients.
          */
-        if (!csm_util_update_activation_environment (variable, value, &bus_error)) {
-                g_warning ("Could not make bus activated clients aware of %s=%s environment variable: %s", variable, value, bus_error->message);
-                g_error_free (bus_error);
+        if (!csm_util_update_activation_environment (variable, value, &error)) {
+                g_warning ("Could not make bus activated clients aware of %s=%s environment variable: %s", variable, value, error->message);
+                g_clear_error (&error);
+        }
+
+        /* If this fails, the system user session won't get the updated environment
+         */
+        if (!csm_util_update_user_environment (variable, value, &error)) {
+                g_debug ("Could not make systemd aware of %s=%s environment variable: %s", variable, value, error->message);
+                g_clear_error (&error);
         }
 }
 
