@@ -1,3 +1,13 @@
+cinnamon-session (3.4.2) sonya; urgency=medium
+
+  [ Michael Webster ]
+  * add an issue template
+
+  [ JosephMcc ]
+  * Logout dialog: Don't grab the keyboard and mouse when opening the dialog (#95)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 08 Aug 2017 13:11:46 +0200
+
 cinnamon-session (3.4.1) sonya; urgency=medium
 
   [ itzexor ]
