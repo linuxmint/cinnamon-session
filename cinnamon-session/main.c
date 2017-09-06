@@ -171,52 +171,6 @@ acquire_name (void)
         return TRUE;
 }
 
-static gboolean
-signal_cb (int      signo,
-           gpointer data)
-{
-        int ret;
-        CsmManager *manager;
-
-        g_debug ("Got callback for signal %d", signo);
-
-        ret = TRUE;
-
-        switch (signo) {
-        case SIGFPE:
-        case SIGPIPE:
-                /* let the fatal signals interrupt us */
-                g_debug ("Caught signal %d, shutting down abnormally.", signo);
-                ret = FALSE;
-                break;
-        case SIGINT:
-        case SIGTERM:
-                manager = (CsmManager *)data;
-                csm_manager_logout (manager, CSM_MANAGER_LOGOUT_MODE_FORCE, NULL);
-
-                /* let the fatal signals interrupt us */
-                g_debug ("Caught signal %d, shutting down normally.", signo);
-                ret = TRUE;
-                break;
-        case SIGHUP:
-                g_debug ("Got HUP signal");
-                ret = TRUE;
-                break;
-        case SIGUSR1:
-                g_debug ("Got USR1 signal");
-                ret = TRUE;
-                mdm_log_toggle_debug ();
-                break;
-        default:
-                g_debug ("Caught unhandled signal %d", signo);
-                ret = TRUE;
-
-                break;
-        }
-
-        return ret;
-}
-
 static void
 shutdown_cb (gpointer data)
 {
@@ -283,7 +237,6 @@ main (int argc, char **argv)
         char             *display_str;
         CsmManager       *manager;
         CsmStore         *client_store;
-        MdmSignalHandler *signal_handler;
         static char     **override_autostart_dirs = NULL;
         static char      *session_name = NULL;
         static GOptionEntry entries[] = {
@@ -432,16 +385,7 @@ main (int argc, char **argv)
         }
 
         manager = csm_manager_new (client_store, failsafe);
-        /*
-        signal_handler = mdm_signal_handler_new ();
-        mdm_signal_handler_add_fatal (signal_handler);
-        mdm_signal_handler_add (signal_handler, SIGFPE, signal_cb, NULL);
-        mdm_signal_handler_add (signal_handler, SIGHUP, signal_cb, NULL);
-        mdm_signal_handler_add (signal_handler, SIGUSR1, signal_cb, NULL);
-        mdm_signal_handler_add (signal_handler, SIGTERM, signal_cb, manager);
-        mdm_signal_handler_add (signal_handler, SIGINT, signal_cb, manager);
-        mdm_signal_handler_set_fatal_func (signal_handler, shutdown_cb, manager);
-        */
+
         if (IS_STRING_EMPTY (session_name))
                 session_name = _csm_manager_get_default_session (manager);
 

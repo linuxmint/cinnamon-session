@@ -1376,71 +1376,6 @@ end_session_or_show_fallback_dialog (CsmManager *manager)
 }
 
 static void
-show_fallback_dialog (const char *title,
-                      const char *description,
-                      const char *link_text,
-                      const char *uri)
-{
-        GtkWidget *dialog, *image, *link, *hbox;
-
-        dialog = gtk_message_dialog_new (NULL, 0,
-                                         GTK_MESSAGE_WARNING,
-                                         GTK_BUTTONS_CLOSE,
-                                         "%s", title);
-
-        gtk_window_set_icon_name (GTK_WINDOW (dialog), CSM_ICON_COMPUTER_FAIL);
-
-        image = gtk_image_new_from_icon_name (CSM_ICON_COMPUTER_FAIL,
-                                              csm_util_get_computer_fail_icon_size ());
-        gtk_message_dialog_set_image (GTK_MESSAGE_DIALOG (dialog), image);
-
-        if (description) {
-                gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
-                                                            "%s", description);
-        }
-
-        hbox = gtk_message_dialog_get_message_area (GTK_MESSAGE_DIALOG (dialog));
-
-        if (uri) {
-                if (link_text) {
-                        link = gtk_link_button_new_with_label (uri, link_text);
-                } else {
-                        link = gtk_link_button_new (uri);
-                }
-                gtk_box_pack_start (GTK_BOX (hbox), link, FALSE, FALSE, 0);
-        }
-
-        gtk_widget_show_all (dialog);
-
-        g_signal_connect (dialog,
-                          "response",
-                          G_CALLBACK (gtk_widget_destroy),
-                          NULL);
-}
-
-static void
-possibly_show_fallback_dialog (CsmManager *manager)
-{
-        if (manager->priv->is_fallback_session &&
-            g_strcmp0 (manager->priv->session_name, "gnome-fallback") == 0 &&
-            g_settings_get_boolean (manager->priv->settings,
-                                    KEY_SHOW_FALLBACK_WARNING)) {
-                show_fallback_dialog (_("GNOME 3 Failed to Load"),
-                                      _("Unfortunately GNOME 3 failed to start properly and started in the <i>fallback mode</i>.\n\n"
-                                        "This most likely means your system (graphics hardware or driver) is not capable of delivering the full GNOME 3 experience."),
-                                      _("Learn more about GNOME 3"),
-                                      "http://www.gnome3.org");
-                g_settings_set_boolean (manager->priv->settings,
-                                        KEY_SHOW_FALLBACK_WARNING, FALSE);
-        } else if (g_strcmp0 (manager->priv->session_name, "gnome") == 0 &&
-                   g_settings_get_boolean (manager->priv->settings,
-                                           KEY_SHOW_FALLBACK_WARNING)) {
-                /* Reset the setting if we ever manage to log into gnome 3 */
-                g_settings_reset (manager->priv->settings, KEY_SHOW_FALLBACK_WARNING);
-        }
-}
-
-static void
 query_end_session_complete (CsmManager *manager)
 {
 
@@ -3294,29 +3229,6 @@ show_fallback_logout_dialog (CsmManager *manager)
                           G_CALLBACK (logout_dialog_response),
                           manager);
         gtk_window_present (GTK_WINDOW (dialog));
-}
-
-static void
-_handle_end_session_dialog_response (CsmManager           *manager,
-                                     CsmManagerLogoutType  logout_type)
-{
-        /* Note we're checking for END_SESSION here and
-         * QUERY_END_SESSION in the fallback cases elsewhere.
-         *
-         * That's because they run at different times in the logout
-         * process. The shell combines the inhibit and
-         * confirmation dialogs, so it gets displayed after we've collected
-         * inhibitors. The fallback code has two distinct dialogs, once of
-         * which we can (and do show) before collecting the inhibitors.
-         */
-        if (manager->priv->phase >= CSM_MANAGER_PHASE_END_SESSION) {
-                /* Already shutting down, nothing more to do */
-                return;
-        }
-
-        manager->priv->logout_mode = CSM_MANAGER_LOGOUT_MODE_FORCE;
-        manager->priv->logout_type = logout_type;
-        end_phase (manager);
 }
 
 static void
