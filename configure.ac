@@ -239,7 +239,7 @@ dnl Language Support
 dnl ====================================================================
 IT_PROG_INTLTOOL([0.40.6])
 
-GETTEXT_PACKAGE=cinnamon-session-3.0
+GETTEXT_PACKAGE=cinnamon-session
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
                    [The gettext translation domain])
 AC_SUBST(GETTEXT_PACKAGE)

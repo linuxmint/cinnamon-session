@@ -1,4 +1,4 @@
-<schemalist gettext-domain="cinnamon-session-3.0">
+<schemalist gettext-domain="cinnamon-session">
   <schema id="org.cinnamon.SessionManager" path="/org/cinnamon/cinnamon-session/">
     <key name="debug" type="b">
       <default>false</default>
