@@ -854,6 +854,12 @@ csm_consolekit_remove_inhibitor (CsmSystem   *system,
 {
 }
 
+static gboolean
+csm_consolekit_is_last_session_for_user (CsmSystem *system)
+{
+        return FALSE;
+}
+
 static void
 csm_consolekit_system_init (CsmSystemInterface *iface)
 {
@@ -872,6 +878,7 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->is_login_session = csm_consolekit_is_login_session;
         iface->add_inhibitor = csm_consolekit_add_inhibitor;
         iface->remove_inhibitor = csm_consolekit_remove_inhibitor;
+        iface->is_last_session_for_user = csm_consolekit_is_last_session_for_user;
 }
 
 CsmConsolekit *

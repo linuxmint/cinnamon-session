@@ -68,6 +68,7 @@ struct _CsmSystemInterface
                                        CsmInhibitorFlag  flags);
         void     (* remove_inhibitor) (CsmSystem        *system,
                                        const gchar      *id);
+        gboolean (* is_last_session_for_user) (CsmSystem *system);
 };
 
 enum _CsmSystemError {
@@ -107,6 +108,8 @@ void       csm_system_set_session_idle (CsmSystem *system,
                                         gboolean   is_idle);
 
 gboolean   csm_system_is_login_session (CsmSystem *system);
+
+gboolean   csm_system_is_last_session_for_user (CsmSystem *system);
 
 void       csm_system_add_inhibitor    (CsmSystem        *system,
                                         const gchar      *id,
