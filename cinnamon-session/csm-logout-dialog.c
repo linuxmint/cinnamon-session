@@ -382,7 +382,7 @@ csm_get_dialog (CsmDialogLogoutType type,
                 }
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       GTK_STOCK_CANCEL,
+                                       _("_Cancel"),
                                        GTK_RESPONSE_CANCEL);
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
@@ -415,7 +415,7 @@ csm_get_dialog (CsmDialogLogoutType type,
                 }
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       GTK_STOCK_CANCEL,
+                                       _("_Cancel"),
                                        GTK_RESPONSE_CANCEL);
 
                 if (csm_logout_supports_shutdown (logout_dialog)) {
@@ -431,7 +431,7 @@ csm_get_dialog (CsmDialogLogoutType type,
                 logout_dialog->priv->default_response = CSM_LOGOUT_RESPONSE_REBOOT;
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       GTK_STOCK_CANCEL,
+                                       _("_Cancel"),
                                        GTK_RESPONSE_CANCEL);
 
                 if (csm_logout_supports_reboot (logout_dialog)) {
