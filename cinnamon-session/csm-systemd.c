@@ -648,6 +648,66 @@ csm_systemd_remove_inhibitor (CsmSystem   *system,
         }
 }
 
+static gboolean
+csm_systemd_is_last_session_for_user (CsmSystem *system)
+{
+        char **sessions = NULL;
+        char *session = NULL;
+        gboolean is_last_session;
+        int ret, i;
+
+        ret = sd_pid_get_session (getpid (), &session);
+
+        if (ret != 0) {
+                return FALSE;
+        }
+
+        ret = sd_uid_get_sessions (getuid (), FALSE, &sessions);
+
+        if (ret <= 0) {
+                return FALSE;
+        }
+
+        is_last_session = TRUE;
+        for (i = 0; sessions[i]; i++) {
+                char *state = NULL;
+                char *type = NULL;
+
+                if (g_strcmp0 (sessions[i], session) == 0)
+                        continue;
+
+                ret = sd_session_get_state (sessions[i], &state);
+
+                if (ret != 0)
+                        continue;
+
+                if (g_strcmp0 (state, "closing") == 0) {
+                        free (state);
+                        continue;
+                }
+                free (state);
+
+                ret = sd_session_get_type (sessions[i], &type);
+
+                if (ret != 0)
+                        continue;
+
+                if (g_strcmp0 (type, "x11") != 0 &&
+                    g_strcmp0 (type, "wayland") != 0) {
+                        free (type);
+                        continue;
+                }
+
+                is_last_session = FALSE;
+        }
+
+        for (i = 0; sessions[i]; i++)
+                free (sessions[i]);
+        free (sessions);
+
+        return is_last_session;
+}
+
 static void
 csm_systemd_system_init (CsmSystemInterface *iface)
 {
@@ -666,6 +726,7 @@ csm_systemd_system_init (CsmSystemInterface *iface)
         iface->is_login_session = csm_systemd_is_login_session;
         iface->add_inhibitor = csm_systemd_add_inhibitor;
         iface->remove_inhibitor = csm_systemd_remove_inhibitor;
+        iface->is_last_session_for_user = csm_systemd_is_last_session_for_user;
 }
 
 CsmSystemd *
