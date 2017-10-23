@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-06 13:59+0100\n"
+"POT-Creation-Date: 2017-10-23 14:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,6 +117,12 @@ msgstr ""
 msgid "_Switch User"
 msgstr ""
 
+#: cinnamon-session/csm-logout-dialog.c:385
+#: cinnamon-session/csm-logout-dialog.c:418
+#: cinnamon-session/csm-logout-dialog.c:434
+msgid "_Cancel"
+msgstr ""
+
 #: cinnamon-session/csm-logout-dialog.c:389 cinnamon-session/csm-util.c:429
 msgid "_Log Out"
 msgstr ""
@@ -146,7 +152,7 @@ msgstr ""
 msgid "Restart this system now?"
 msgstr ""
 
-#: cinnamon-session/csm-manager.c:1457 cinnamon-session/csm-manager.c:2238
+#: cinnamon-session/csm-manager.c:1490 cinnamon-session/csm-manager.c:2271
 msgid "Not responding"
 msgstr ""
 
