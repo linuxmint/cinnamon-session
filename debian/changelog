@@ -1,3 +1,33 @@
+cinnamon-session (3.6.0) sylvia; urgency=medium
+
+  [ Michael Webster ]
+  * add an issue template
+
+  [ Björn Esser ]
+  * Update environment for dbus and systemd user-session (#91)
+
+  [ JosephMcc ]
+  * Logout dialog: Don't grab the keyboard and mouse when opening the dialog (#95)
+
+  [ Michael Webster ]
+  * Add support for "hybrid sleep" (#93)
+
+  [ Clement Lefebvre ]
+  * Remove unused code
+  * l10n: Switch gettext schema to cinnamon-session (provided by cinnamon-translations)
+  * l10n: Remove translations (provided by cinnamon-translations)
+
+  [ JosephMcc ]
+  * csm-logout-dialog.c: Remove a couple uses of GtkStock (#100)
+
+  [ Björn Esser ]
+  * Restart dbus user-session if last graphical session (#99)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT file
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 23 Oct 2017 14:06:26 +0100
+
 cinnamon-session (3.4.1) sonya; urgency=medium
 
   [ itzexor ]
