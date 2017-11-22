@@ -1,3 +1,10 @@
+cinnamon-session (3.6.1) sylvia; urgency=medium
+
+  [ Björn Esser ]
+  * configure: Add option to disable support for DBus user sessions (#103)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 22 Nov 2017 12:29:17 +0000
+
 cinnamon-session (3.6.0) sylvia; urgency=medium
 
   [ Michael Webster ]
