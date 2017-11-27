@@ -109,6 +109,16 @@ fi
 AC_SUBST(LOGIND_CFLAGS)
 AC_SUBST(LOGIND_LIBS)
 
+have_elogind=no
+PKG_CHECK_MODULES(ELOGIND, [gio-unix-2.0 libelogind], [have_elogind=yes], [have_elogind=no])
+if test x$have_elogind = xyes; then
+    AC_DEFINE(HAVE_ELOGIND, 1, [Define if elogind is supported])
+    AC_DEFINE(HAVE_LOGIND, 1, [Define if logind is supported])
+fi
+
+AC_SUBST(ELOGIND_CFLAGS)
+AC_SUBST(ELOGIND_LIBS)
+
 dnl ====================================================================
 dnl Option to disable DBus user session support.
 dnl ====================================================================
