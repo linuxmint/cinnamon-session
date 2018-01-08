@@ -944,6 +944,10 @@ maybe_restart_user_bus (CsmManager *manager)
         CsmSystem *system;
         g_autoptr(GVariant) reply = NULL;
         g_autoptr(GError) error = NULL;
+        const char *user_unit = "/usr/lib/systemd/user/sockets.target.wants/dbus.socket";
+
+        if (!g_file_test (user_unit, G_FILE_TEST_EXISTS))
+                return;
 
         if (manager->priv->dbus_disconnected)
                 return;
@@ -978,11 +982,7 @@ do_phase_exit (CsmManager *manager)
                                    (CsmStoreFunc)_client_stop,
                                    NULL);
         }
-
-        if (WITH_DBUS_USER_SESSION) {
-                maybe_restart_user_bus (manager);
-        }
-
+        maybe_restart_user_bus (manager);
         end_phase (manager);
 }
 
