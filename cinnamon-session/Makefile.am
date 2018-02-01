@@ -71,6 +71,7 @@ cinnamon_session_CPPFLAGS =			\
 	$(XEXT_CFLAGS)				\
 	$(GCONF_CFLAGS)				\
 	$(LOGIND_CFLAGS)			\
+	$(ELOGIND_CFLAGS)			\
 	-I$(top_srcdir)/egg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	-DDATA_DIR=\""$(datadir)/cinnamon-session"\" \
@@ -91,6 +92,7 @@ cinnamon_session_LDADD =				\
 	$(UPOWER_LIBS)				\
 	$(GCONF_LIBS)				\
 	$(LOGIND_LIBS)				\
+	$(ELOGIND_LIBS)				\
 	$(EXECINFO_LIBS)
 
 libcsmutil_la_SOURCES =				\

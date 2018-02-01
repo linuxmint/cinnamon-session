@@ -32,7 +32,11 @@
 #include <sys/types.h>
 #include <pwd.h>
 
+#ifdef HAVE_ELOGIND
+#include <elogind/sd-login.h>
+#else
 #include <systemd/sd-login.h>
+#endif
 
 #include <glib.h>
 #include <glib-object.h>
