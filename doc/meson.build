@@ -1,0 +1,2 @@
+subdir('dbus')
+subdir('man')

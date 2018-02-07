@@ -1,0 +1,6 @@
+option('with-frequent-warnings',  type: 'boolean', value: false)
+option('with-docbook',            type: 'boolean', value: true)
+option('with-gconf',              type: 'boolean', value: true)
+option('with-ipv6',               type: 'boolean', value: true)
+option('with-qt5-theme-support',  type: 'boolean', value: true)
+option('with-xtrans',             type: 'boolean', value: true)
