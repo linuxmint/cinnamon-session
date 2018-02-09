@@ -1,18 +1,27 @@
 #!/usr/bin/make -f
 
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 %:
-	dh $@ --parallel --with=autoreconf
-
-override_dh_autoreconf:
-	dh_autoreconf --as-needed
+	dh $@ --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- \
-	    --localstatedir=/var/lib \
-	    --enable-ipv6
+	mkdir -p debian/build
+	meson debian/build \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/cinnamon-session \
+		--buildtype=plain \
+		-Dwith-docbook=true \
+		-Dwith-frequent-warnings=true \
+		-Dwith-gconf=false \
+		-Dwith-ipv6=true \
+		-Dwith-qt5-theme-support=true \
+		-Dwith-xtrans=true
 
-override_dh_install:
-	dh_install --list-missing
+override_dh_auto_build:
+	ninja -C debian/build
+
+override_dh_auto_test:
+	ninja -C debian/build test
+
+override_dh_auto_install:
+	DESTDIR=${CURDIR}/debian/tmp \
+	ninja -C debian/build install
