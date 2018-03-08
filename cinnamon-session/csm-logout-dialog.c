@@ -350,7 +350,7 @@ on_show (GtkWidget *widget, gpointer user_data)
     g_timeout_add (50, (GSourceFunc) grab_callback, widget);
 }
 
-static GkWidget *
+static GtkWidget *
 csm_get_dialog (CsmDialogLogoutType type,
                 GdkScreen          *screen,
                 guint32             activate_time)
