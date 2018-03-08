@@ -350,18 +350,6 @@ on_show (GtkWidget *widget, gpointer user_data)
     g_timeout_add (50, (GSourceFunc) grab_callback, widget);
 }
 
-        static gboolean
-grab_callback (GtkWidget *widget)
-{
-    return gdk_keyboard_grab (gtk_widget_get_window (widget), FALSE, GDK_CURRENT_TIME) != GDK_GRAB_SUCCESS;
-}
-
-static void
-on_show (GtkWidget *widget, gpointer user_data)
-{
-    g_timeout_add (50, (GSourceFunc) grab_callback, widget);
-}
-
 static GkWidget *
 csm_get_dialog (CsmDialogLogoutType type,
                 GdkScreen          *screen,
