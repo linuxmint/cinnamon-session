@@ -35,12 +35,13 @@ Homepage: http://cinnamon.linuxmint.com
 Package: cinnamon-session
 Architecture: any
 Depends:
- cinnamon-desktop-data (>= 2.6.3),
+ cinnamon-desktop-data (>= 3.6),
  cinnamon-session-common (= ${source:Version}),
  dbus-x11,
  upower (>= 0.9.0),
  ${misc:Depends},
  ${shlibs:Depends},
+Recommends: cinnamon-l10n
 Breaks: cinnamon-session-common (<< 2.2.2-5~)
 Replaces: cinnamon-session-common (<< 2.2.2-5~)
 Provides: x-session-manager
@@ -57,6 +58,7 @@ Description: Cinnamon Session Manager - Minimal runtime
 
 Package: cinnamon-session-common
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: Cinnamon Session Manager - common files
  The Cinnamon Session Manager is in charge of starting the core components
