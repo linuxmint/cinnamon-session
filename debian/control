@@ -37,7 +37,7 @@ Architecture: any
 Depends:
  cinnamon-desktop-data (>= 3.6),
  cinnamon-session-common (= ${source:Version}),
- dbus-x11,
+ default-dbus-session-bus | dbus-session-bus,
  upower (>= 0.9.0),
  ${misc:Depends},
  ${shlibs:Depends},
