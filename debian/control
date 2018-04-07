@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
- debhelper (>= 9),
+ debhelper (>= 10),
  gnome-pkg-tools (>= 0.13),
  intltool (>= 0.40.6),
  libcanberra-dev,
@@ -14,8 +14,7 @@ Build-Depends:
  libice-dev,
  libjson-glib-dev (>= 0.10),
  libsm-dev,
- libsystemd-daemon-dev [linux-any] | libsystemd-dev [linux-any],
- libsystemd-login-dev [linux-any] | libsystemd-dev [linux-any],
+ libsystemd-dev [linux-any],
  libupower-glib-dev (>= 0.9.0),
  libx11-dev,
  libxapp-dev,
