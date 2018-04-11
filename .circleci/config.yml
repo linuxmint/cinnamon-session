@@ -11,6 +11,14 @@ shared: &shared
             command: apt-get update
 
         - run:
+            name: Install dependencies
+            command: |
+                wget https://github.com/linuxmint/cinnamon-desktop/releases/download/master.${CIRCLE_JOB}/packages.tar.gz -O cinnamon-desktop.tar.gz
+                ls *.tar.gz | xargs -i tar zxvf {}
+                apt install --yes --allow-downgrades ./packages/*.deb
+                rm -rf packages
+
+        - run:
             name: Build project
             command: mint-build -i
 
