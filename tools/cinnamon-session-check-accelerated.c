@@ -21,6 +21,8 @@
  *   Colin Walters <walters@verbum.org>
  */
 
+#include "config.h"
+
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
