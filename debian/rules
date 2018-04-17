@@ -14,7 +14,6 @@ override_dh_auto_configure:
 		-Dwith-frequent-warnings=true \
 		-Dwith-gconf=false \
 		-Dwith-ipv6=true \
-		-Dwith-qt5-theme-support=true \
 		-Dwith-xtrans=true
 
 override_dh_auto_build:
