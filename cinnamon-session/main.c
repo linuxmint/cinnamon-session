@@ -340,24 +340,6 @@ main (int argc, char **argv)
          */
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
 
-
-        /* Make QT5 apps follow the GTK style. Starting with QT 5.7, a different
-         * env var has to be set than what worked in previous versions.
-         */
-        qt_platform_theme_new = HAVE_QT57 ? "qt5ct" : "qgnomeplatform";
-
-        if (NULL == g_getenv ("QT_QPA_PLATFORMTHEME")) {
-            csm_util_setenv ("QT_QPA_PLATFORMTHEME", qt_platform_theme_new);
-        }
-
-        if ( ! HAVE_QT57 && NULL == g_getenv ("QT_STYLE_OVERRIDE") ) {
-            csm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
-
-        } else if (HAVE_QT57 && NULL != g_getenv ("QT_STYLE_OVERRIDE")) {
-            g_unsetenv ("QT_STYLE_OVERRIDE");
-        }
-
-
         /* GTK Overlay scrollbars */
         settings = g_settings_new ("org.cinnamon.desktop.interface");
 
