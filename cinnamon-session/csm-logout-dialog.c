@@ -31,6 +31,8 @@
 #include <upower.h>
 #endif
 
+#include <libxapp/xapp-gtk-window.h>
+
 #include "csm-logout-dialog.h"
 #include "csm-system.h"
 #include "csm-icon-names.h"
@@ -142,7 +144,7 @@ csm_logout_dialog_init (CsmLogoutDialog *logout_dialog)
         logout_dialog->priv->timeout = 0;
         logout_dialog->priv->default_response = GTK_RESPONSE_CANCEL;
 
-        gtk_window_set_skip_taskbar_hint (GTK_WINDOW (logout_dialog), TRUE);
+        gtk_window_set_skip_taskbar_hint (GTK_WINDOW (logout_dialog), FALSE);
         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_stick (GTK_WINDOW (logout_dialog));
 
@@ -456,7 +458,7 @@ csm_get_dialog (CsmDialogLogoutType type,
             gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
         }
 
-        gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
+        xapp_set_window_icon_name (GTK_WINDOW (logout_dialog), icon_name);
         gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER);
         gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
 
