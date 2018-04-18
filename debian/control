@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
- debhelper (>= 10),
+ debhelper (>= 11~),
  gnome-pkg-tools (>= 0.13),
  intltool (>= 0.40.6),
  libcanberra-dev,
@@ -24,7 +24,7 @@ Build-Depends:
  libxrender-dev,
  libxt-dev,
  libxtst-dev,
- meson,
+ meson (>= 0.40.0),
  xmlto,
  xsltproc,
  xtrans-dev,
