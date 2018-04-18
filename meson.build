@@ -78,8 +78,6 @@ else
 endif
 conf.set('HAVE_ELOGIND', elogind.found())
 
-conf.set10('HAVE_QT57', get_option('with-qt5-theme-support'))
-
 
 xtest   = dependency('xtst',    required: false)
 conf.set('HAVE_XTEST', xtest.found())
@@ -198,7 +196,6 @@ message('\n'.join([
 '',
 '        GConf support:            @0@'.format(gconf.found()),
 '        Logind support:           @0@'.format(logind.found()),
-'        Qt 5.7+ theme support:    @0@'.format(get_option('with-qt5-theme-support')),
 '        IPv6 support:             @0@'.format(have_ipv6),
 '        Backtrace support:        @0@'.format(backtrace.found()),
 '        XRender support:          @0@'.format(xrender.found()),
