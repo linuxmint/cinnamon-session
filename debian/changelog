@@ -1,3 +1,46 @@
+cinnamon-session (3.8.0) tara; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Add CI configuration
+
+  [ Björn Esser ]
+  * csm-manager: Detect DBus user-session at runtime (#107)
+
+  [ krifisk ]
+  * Add support for elogind (#106)
+
+  [ Fabio Fantoni ]
+  * circleci: add install of updated cinnamon-desktop
+  * circleci: remove mint18 job
+
+  [ Salamandar ]
+  * Meson port (#108)
+
+  [ Eli Schwartz ]
+  * Stop trying to handle Qt integration at all (#102)
+
+  [ Clement Lefebvre ]
+  * Quit dialog: Don't skip taskbar
+
+  [ James Ross ]
+  * main: remove leftover qt theme support variable (#111)
+
+  [ Leigh Scott ]
+  * remove qt5 leftovers (#112)
+
+  [ Fabio Fantoni ]
+  * debian: wrap-and-sort -bst
+  * update debian/copyright
+  * small improves to debian/control
+  * switch from dbus-x11 to default-dbus-session-bus | dbus-session-bus
+  * Bump debhelper build-dep and compat to 10
+  * improve debian/rules
+  * debian: try to restore multiarch with meson without debhelper 11
+  * debian/rules: remove qt5 theme support option, was removed
+  * xapp version required is >=1.0.4
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 18 Apr 2018 11:46:24 +0100
+
 cinnamon-session (3.6.1) sylvia; urgency=medium
 
   [ Björn Esser ]
