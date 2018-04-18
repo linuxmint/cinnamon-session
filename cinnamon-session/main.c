@@ -249,7 +249,6 @@ main (int argc, char **argv)
                 { "whale", 0, 0, G_OPTION_ARG_NONE, &please_fail, N_("Show the fail whale dialog for testing"), NULL },
                 { NULL, 0, 0, 0, NULL, NULL, NULL }
         };
-        char *qt_platform_theme_new = NULL;
 
         /* Make sure that we have a session bus */
         if (!require_dbus_session (argc, argv, &error)) {
