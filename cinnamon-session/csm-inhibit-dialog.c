@@ -1075,7 +1075,7 @@ csm_inhibit_dialog_init (CsmInhibitDialog *dialog)
 
         error = NULL;
         if (!gtk_builder_add_from_file (dialog->priv->xml,
-                                        GTKBUILDER_DIR "/" GTKBUILDER_FILE,
+                                        PKGDATADIR "/" GTKBUILDER_FILE,
                                         &error)) {
                 if (error) {
                         g_warning ("Could not load inhibitor UI file: %s",
