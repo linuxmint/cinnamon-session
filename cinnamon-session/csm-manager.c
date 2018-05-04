@@ -957,6 +957,10 @@ maybe_restart_user_bus (CsmManager *manager)
         if (!csm_system_is_last_session_for_user (system))
                 return;
 
+        /*
+         * g_dbus_connection_call_sync is a GDBusConnection method, our
+         * manager is using the old DBusGConnection.
+         * In practice this causes that users can't logout.
         reply = g_dbus_connection_call_sync (manager->priv->connection,
                                              "org.freedesktop.systemd1",
                                              "/org/freedesktop/systemd1",
@@ -968,6 +972,7 @@ maybe_restart_user_bus (CsmManager *manager)
                                              -1,
                                              NULL,
                                              &error);
+        */
 
         if (error != NULL) {
                 g_debug ("CsmManager: reloading user bus failed: %s", error->message);
