@@ -942,14 +942,12 @@ static void
 maybe_restart_user_bus (CsmManager *manager)
 {
         CsmSystem *system;
-        g_autoptr(GVariant) reply = NULL;
-        g_autoptr(GError) error = NULL;
+        GDBusProxy *proxy = NULL;
+        GVariant *reply = NULL;
+        GError *error = NULL;
         const char *user_unit = "/usr/lib/systemd/user/sockets.target.wants/dbus.socket";
 
         if (!g_file_test (user_unit, G_FILE_TEST_EXISTS))
-                return;
-
-        if (manager->priv->dbus_disconnected)
                 return;
 
         system = csm_get_system ();
@@ -957,21 +955,33 @@ maybe_restart_user_bus (CsmManager *manager)
         if (!csm_system_is_last_session_for_user (system))
                 return;
 
-        reply = g_dbus_connection_call_sync (manager->priv->connection,
-                                             "org.freedesktop.systemd1",
-                                             "/org/freedesktop/systemd1",
-                                             "org.freedesktop.systemd1.Manager",
-                                             "TryRestartUnit",
-                                             g_variant_new ("(ss)", "dbus.service", "replace"),
-                                             NULL,
-                                             G_DBUS_CALL_FLAGS_NONE,
-                                             -1,
-                                             NULL,
-                                             &error);
+        proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                               G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                               NULL,
+                                               "org.freedesktop.systemd1",
+                                               "/org/freedesktop/systemd1",
+                                               "org.freedesktop.systemd1.Manager",
+                                               NULL,
+                                               &error);
 
-        if (error != NULL) {
-                g_debug ("CsmManager: reloading user bus failed: %s", error->message);
+        if (proxy != NULL) {
+                reply = g_dbus_proxy_call_sync (proxy,
+                                                "TryRestartUnit",
+                                                g_variant_new ("(ss)", "dbus.service", "replace"),
+                                                G_DBUS_CALL_FLAGS_NO_AUTO_START,
+                                                5000,
+                                                NULL,
+                                                &error);
+                g_object_unref (proxy);
+
+                if (reply != NULL) {
+                        g_variant_unref (reply);
+                        return;
+                }
         }
+
+        g_debug ("CsmManager: reloading user bus failed: %s", error->message);
+        g_error_free (error);
 }
 
 static void
