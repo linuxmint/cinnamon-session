@@ -344,6 +344,30 @@ gsettings_condition_cb (GSettings  *settings,
 }
 
 static gboolean
+contained (const gchar * const *items,
+           const gchar         *item)
+{
+        while (*items)
+                if (strcmp (*items++, item) == 0)
+                        return TRUE;
+        return FALSE;
+}
+
+static gboolean
+check_gsettings_schema_has_key (GSettingsSchema   *schema,
+                                const gchar *key)
+{
+        gboolean good;
+        gchar **keys;
+
+        keys = g_settings_schema_list_keys (schema);
+        good = contained ((const gchar **) keys, key);
+        g_strfreev (keys);
+
+        return good;
+}
+
+static gboolean
 setup_gsettings_condition_monitor (CsmAutostartApp *app,
                                    const char      *key)
 {
@@ -370,6 +394,13 @@ setup_gsettings_condition_monitor (CsmAutostartApp *app,
 
         if (schema == NULL)
                 goto out;
+
+        if (!check_gsettings_schema_has_key(schema, elems[1])) {
+                g_warning ("Gsettings key %s %s could not be found!",
+                           elems[0],
+                           elems[1]);
+                goto out;
+        }
 
         settings = g_settings_new_full (schema, NULL, NULL);
         retval = g_settings_get_boolean (settings, elems[1]);
