@@ -1,3 +1,13 @@
+cinnamon-session (3.8.2) tara; urgency=medium
+
+  [ itzexor ]
+  * build: fix PKGDATADIR define / use only one define
+
+  [ Clement Lefebvre ]
+  * Autostart: Don't let buggy GSettings condition break the session
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 04 Jul 2018 22:33:18 +0200
+
 cinnamon-session (3.8.1) tara; urgency=medium
 
   [ Fabio Fantoni ]
