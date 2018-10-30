@@ -347,6 +347,7 @@ csm_get_dialog (CsmDialogLogoutType type,
 {
         CsmLogoutDialog *logout_dialog;
         GtkWidget       *hbox;
+        GtkWidget       *button;
         const char      *primary_text;
         const char      *icon_name;
 
@@ -387,10 +388,12 @@ csm_get_dialog (CsmDialogLogoutType type,
                                        _("_Cancel"),
                                        GTK_RESPONSE_CANCEL);
 
-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       _("_Log Out"),
-                                       CSM_LOGOUT_RESPONSE_LOGOUT);
+                button = gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                _("_Log Out"),
+                                                CSM_LOGOUT_RESPONSE_LOGOUT);
 
+                gtk_style_context_add_class (gtk_widget_get_style_context (button),
+                                                     GTK_STYLE_CLASS_DESTRUCTIVE_ACTION);
                 break;
         case CSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
                 icon_name    = CSM_ICON_SHUTDOWN;
@@ -421,9 +424,12 @@ csm_get_dialog (CsmDialogLogoutType type,
                                        GTK_RESPONSE_CANCEL);
 
                 if (csm_logout_supports_shutdown (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Shut Down"),
-                                               CSM_LOGOUT_RESPONSE_SHUTDOWN);
+                        button = gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                        _("_Shut Down"),
+                                                        CSM_LOGOUT_RESPONSE_SHUTDOWN);
+
+                        gtk_style_context_add_class (gtk_widget_get_style_context (button),
+                                                     GTK_STYLE_CLASS_DESTRUCTIVE_ACTION);
                 }
                 break;
         case CSM_DIALOG_LOGOUT_TYPE_REBOOT:
@@ -437,9 +443,11 @@ csm_get_dialog (CsmDialogLogoutType type,
                                        GTK_RESPONSE_CANCEL);
 
                 if (csm_logout_supports_reboot (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Restart"),
-                                               CSM_LOGOUT_RESPONSE_REBOOT);
+                        button = gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                        _("_Restart"),
+                                                        CSM_LOGOUT_RESPONSE_REBOOT);
+                        gtk_style_context_add_class (gtk_widget_get_style_context (button),
+                                                     GTK_STYLE_CLASS_DESTRUCTIVE_ACTION);
                 }
                 break;
         default:
