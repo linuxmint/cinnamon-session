@@ -657,6 +657,18 @@ csm_consolekit_can_restart (CsmSystem *system)
 }
 
 static gboolean
+csm_consolekit_can_restart_to_firmware_setup (CsmSystem *system)
+{
+        return FALSE;
+}
+
+static void
+csm_consolekit_set_restart_to_firmware_setup (CsmSystem *system,
+                                           gboolean   enable)
+{
+}
+
+static gboolean
 csm_consolekit_can_stop (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
@@ -866,6 +878,8 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->can_switch_user = csm_consolekit_can_switch_user;
         iface->can_stop = csm_consolekit_can_stop;
         iface->can_restart = csm_consolekit_can_restart;
+        iface->can_restart_to_firmware_setup = csm_consolekit_can_restart_to_firmware_setup;
+        iface->set_restart_to_firmware_setup = csm_consolekit_set_restart_to_firmware_setup;
         iface->can_hybrid_sleep = csm_consolekit_can_hybrid_sleep;
         iface->can_suspend = csm_consolekit_can_suspend;
         iface->can_hibernate = csm_consolekit_can_hibernate;
