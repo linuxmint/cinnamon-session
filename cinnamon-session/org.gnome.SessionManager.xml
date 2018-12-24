@@ -281,7 +281,31 @@
         </doc:description>
       </doc:doc>
     </method>
-
+    <method name="SetRebootToFirmwareSetup">
+      <arg name="enable" direction="in" type="b">
+        <doc:doc>
+          <doc:summary>Whether we should reboot into setup</doc:summary>
+        </doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>Allows the caller to indicate to the system's firmware to boot into setup mode</doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+    <method name="CanRebootToFirmwareSetup">
+      <arg name="is_available" direction="out" type="b">
+        <doc:doc>
+          <doc:summary>True if boot into setup mode is available to the user, false otherwise</doc:summary>
+        </doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>Allows the caller to determine whether or not it's okay to show
+          a reboot to firmware option in the UI</doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
     <method name="Logout">
       <arg name="mode" type="u" direction="in">
         <doc:doc>

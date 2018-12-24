@@ -48,11 +48,15 @@ static gboolean opt_power_off = FALSE;
 static gboolean opt_reboot = FALSE;
 static gboolean opt_no_prompt = FALSE;
 static gboolean opt_force = FALSE;
+static gboolean opt_firmware = FALSE;
+
+static GPermission *permission;
 
 static GOptionEntry options[] = {
         {"logout", '\0', 0, G_OPTION_ARG_NONE, &opt_logout, N_("Log out"), NULL},
         {"power-off", '\0', 0, G_OPTION_ARG_NONE, &opt_power_off, N_("Power off"), NULL},
         {"reboot", '\0', 0, G_OPTION_ARG_NONE, &opt_reboot, N_("Reboot"), NULL},
+        {"firmware", '\0', 0, G_OPTION_ARG_NONE, &opt_firmware, N_("Use with the --reboot option, reboots into firmware setup."), NULL},
         {"force", '\0', 0, G_OPTION_ARG_NONE, &opt_force, N_("Ignoring any existing inhibitors"), NULL},
         {"no-prompt", '\0', 0, G_OPTION_ARG_NONE, &opt_no_prompt, N_("Don't prompt for user confirmation"), NULL},
         {NULL}
@@ -174,6 +178,53 @@ do_power_off (const char *action)
         }
 }
 
+static void
+check_firmware_option (void)
+{
+        if (opt_firmware) {
+                DBusGProxy *sm_proxy;
+                GError *error;
+                gboolean res, can_reboot_to_firmware;
+
+                sm_proxy = get_sm_proxy ();
+
+                if (sm_proxy == NULL) {
+                        return;
+                }
+
+                error = NULL;
+                res = dbus_g_proxy_call (sm_proxy,
+                                         "CanRebootToFirmwareSetup",
+                                         &error,
+                                         G_TYPE_INVALID,
+                                         G_TYPE_BOOLEAN, &can_reboot_to_firmware,
+                                         G_TYPE_INVALID);
+
+                if (!res) {
+                        if (error != NULL) {
+                                g_warning ("Failed to call CanRebootToFirmwareSetup: %s",
+                                           error->message);
+                                g_error_free (error);
+                        } 
+                } else {
+                        if (can_reboot_to_firmware) {
+                                res = dbus_g_proxy_call (sm_proxy,
+                                                         "SetRebootToFirmwareSetup",
+                                                         &error,
+                                                         G_TYPE_BOOLEAN, TRUE,
+                                                         G_TYPE_INVALID,
+                                                         G_TYPE_INVALID);
+
+                                if (!res) {
+                                        g_warning ("Failed to call SetRebootToFirmwareSetup: %s",
+                                                   error->message);
+                                        g_error_free (error);
+                                }
+                        }
+                }
+        }
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -205,6 +256,8 @@ main (int argc, char *argv[])
         if (opt_power_off) {
                 do_power_off ("Shutdown");
         } else if (opt_reboot) {
+                check_firmware_option ();
+
                 do_power_off ("Reboot");
         } else {
                 /* default to logout */

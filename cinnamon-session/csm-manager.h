@@ -176,6 +176,14 @@ gboolean            csm_manager_reboot                         (CsmManager     *
 gboolean            csm_manager_can_shutdown                   (CsmManager     *manager,
                                                                 gboolean       *shutdown_available,
                                                                 GError        **error);
+
+gboolean            csm_manager_can_reboot_to_firmware_setup   (CsmManager     *manager,
+                                                                gboolean       *can_reboot_to_firmware,
+                                                                GError        **error);
+gboolean            csm_manager_set_reboot_to_firmware_setup   (CsmManager     *manager,
+                                                                gboolean        reboot_to_firmware,
+                                                                GError        **error);
+
 gboolean            csm_manager_logout                         (CsmManager     *manager,
                                                                 guint           logout_mode,
                                                                 GError        **error);

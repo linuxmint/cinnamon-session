@@ -52,6 +52,9 @@ struct _CsmSystemInterface
         gboolean (* can_switch_user)  (CsmSystem *system);
         gboolean (* can_stop)         (CsmSystem *system);
         gboolean (* can_restart)      (CsmSystem *system);
+        gboolean (* can_restart_to_firmware_setup) (CsmSystem *system);
+        void     (* set_restart_to_firmware_setup) (CsmSystem *system,
+                                                    gboolean   enable);
         gboolean (* can_hybrid_sleep) (CsmSystem *system);
         gboolean (* can_suspend)      (CsmSystem *system);
         gboolean (* can_hibernate)    (CsmSystem *system);
@@ -89,6 +92,11 @@ gboolean   csm_system_can_stop         (CsmSystem *system);
 gboolean   csm_system_can_restart      (CsmSystem *system);
 
 gboolean   csm_system_can_hybrid_sleep (CsmSystem *system);
+
+gboolean   csm_system_can_restart_to_firmware_setup (CsmSystem *system);
+
+void       csm_system_set_restart_to_firmware_setup (CsmSystem *system,
+                                                     gboolean   enable);
 
 gboolean   csm_system_can_suspend      (CsmSystem *system);
 

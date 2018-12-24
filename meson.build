@@ -42,6 +42,7 @@ xapp        = dependency('xapp', version: '>=1.0.4')
 xau         = dependency('xau')
 xcomposite  = dependency('xcomposite')
 gl          = dependency('gl')
+polkit      = dependency('polkit-gobject-1')
 
 # We only support old upower
 # https://bugzilla.gnome.org/show_bug.cgi?id=710383

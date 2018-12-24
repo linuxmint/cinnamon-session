@@ -89,6 +89,19 @@ csm_system_can_hybrid_sleep (CsmSystem *system)
 }
 
 gboolean
+csm_system_can_restart_to_firmware_setup (CsmSystem *system)
+{
+        return CSM_SYSTEM_GET_IFACE (system)->can_restart_to_firmware_setup (system);
+}
+
+void
+csm_system_set_restart_to_firmware_setup (CsmSystem *system,
+                                          gboolean   enable)
+{
+        CSM_SYSTEM_GET_IFACE (system)->set_restart_to_firmware_setup (system, enable);
+}
+
+gboolean
 csm_system_can_suspend (CsmSystem *system)
 {
         return CSM_SYSTEM_GET_IFACE (system)->can_suspend (system);

@@ -38,6 +38,8 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
+#include <polkit/polkit.h>
+
 #include <gtk/gtk.h> /* for logout dialog */
 
 #include <canberra.h>
@@ -155,6 +157,8 @@ struct CsmManagerPrivate
         GSettings              *session_settings;
         GSettings              *power_settings;
         GSettings              *lockdown_settings;
+
+        GPermission            *firmware_permission;
 
         CsmSystem              *system;
         DBusGProxy             *bus_proxy;
@@ -3440,6 +3444,90 @@ csm_manager_can_shutdown (CsmManager *manager,
                                || csm_system_can_restart (manager->priv->system)
                                || csm_system_can_suspend (manager->priv->system)
                                || csm_system_can_hibernate (manager->priv->system));
+
+        return TRUE;
+}
+
+static gboolean
+get_permission (CsmManager *manager)
+{
+        GError *error;
+        gboolean res;
+
+        res = FALSE;
+
+        manager->priv->firmware_permission = polkit_permission_new_sync ("org.freedesktop.login1.set-reboot-to-firmware-setup",
+                                                                         NULL,
+                                                                         NULL,
+                                                                         NULL);
+
+        if (manager->priv->firmware_permission == NULL) {
+                g_warning ("Could not activate polkit");
+
+                return res;
+        }
+
+        if (g_permission_get_can_acquire (manager->priv->firmware_permission)) {
+                error = NULL;
+
+                res = g_permission_acquire (manager->priv->firmware_permission,
+                                            NULL,
+                                            &error);
+                
+                if (!res) {
+                        g_warning ("Could not acquire permission: %s", error->message);
+                        g_clear_error (&error);
+                }
+        }
+
+        return res;
+}
+
+static void
+release_permission (CsmManager *manager)
+{
+        GError *error;
+
+        if (manager->priv->firmware_permission == NULL) {
+                return;
+        }
+
+        if (g_permission_get_can_release (manager->priv->firmware_permission)) {
+                g_permission_release (manager->priv->firmware_permission,
+                                      NULL,
+                                      NULL);
+        }
+
+        g_clear_object (&manager->priv->firmware_permission);
+}
+
+gboolean
+csm_manager_can_reboot_to_firmware_setup (CsmManager    *manager,
+                                          gboolean      *can_reboot_to_firmware,
+                                          GError       **error)
+{
+        gboolean reboot_to_firmware_available;
+
+        g_debug ("CsmManager: CanRebootToFirmwareSetup called");
+
+        *can_reboot_to_firmware = !_log_out_is_locked_down (manager) &&
+                                  csm_system_can_restart_to_firmware_setup (manager->priv->system);
+
+        return TRUE;
+}
+
+gboolean
+csm_manager_set_reboot_to_firmware_setup (CsmManager    *manager,
+                                          gboolean       reboot_to_firmware,
+                                          GError       **error)
+{
+        g_debug ("CsmManager: SetRebootToFirmwareSetup called");
+
+        if (get_permission (manager)) {
+            csm_system_set_restart_to_firmware_setup (manager->priv->system, reboot_to_firmware);
+        }
+
+        release_permission (manager);
 
         return TRUE;
 }
