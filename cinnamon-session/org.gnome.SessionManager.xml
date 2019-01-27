@@ -44,7 +44,6 @@
     <!-- Running phase interfaces -->
 
     <method name="RegisterClient">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg type="s" name="app_id" direction="in">
         <doc:doc>
           <doc:summary>The application identifier</doc:summary>
@@ -68,7 +67,6 @@
     </method>
 
     <method name="UnregisterClient">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg type="o" name="client_id" direction="in">
         <doc:doc>
           <doc:summary>The object path of the client</doc:summary>
@@ -82,7 +80,6 @@
     </method>
 
     <method name="Inhibit">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg type="s" name="app_id" direction="in">
         <doc:doc>
           <doc:summary>The application identifier</doc:summary>
@@ -163,7 +160,6 @@
     </method>
 
     <method name="Uninhibit">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg type="u" name="inhibit_cookie" direction="in">
         <doc:doc>
           <doc:summary>The cookie</doc:summary>

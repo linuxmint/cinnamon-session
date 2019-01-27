@@ -83,14 +83,6 @@ void           csm_presence_set_idle_enabled     (CsmPresence  *presence,
 void           csm_presence_set_idle_timeout     (CsmPresence  *presence,
                                                   guint         n_seconds);
 
-/* exported to bus */
-gboolean       csm_presence_set_status           (CsmPresence  *presence,
-                                                  guint         status,
-                                                  GError      **error);
-gboolean       csm_presence_set_status_text      (CsmPresence  *presence,
-                                                  const char   *status_text,
-                                                  GError      **error);
-
 G_END_DECLS
 
 #endif /* __CSM_PRESENCE_H__ */

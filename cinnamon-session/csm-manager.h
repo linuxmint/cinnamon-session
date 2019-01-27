@@ -23,7 +23,6 @@
 #define __CSM_MANAGER_H
 
 #include <glib-object.h>
-#include <dbus/dbus-glib.h>
 
 #include "csm-store.h"
 
@@ -141,69 +140,13 @@ void                _csm_manager_set_active_session            (CsmManager     *
                                                                 const char     *session_name,
                                                                 gboolean        is_fallback);
 
-/* exported methods */
-
-gboolean            csm_manager_register_client                (CsmManager            *manager,
-                                                                const char            *app_id,
-                                                                const char            *client_startup_id,
-                                                                DBusGMethodInvocation *context);
-gboolean            csm_manager_unregister_client              (CsmManager            *manager,
-                                                                const char            *session_client_id,
-                                                                DBusGMethodInvocation *context);
-
-gboolean            csm_manager_inhibit                        (CsmManager            *manager,
-                                                                const char            *app_id,
-                                                                guint                  toplevel_xid,
-                                                                const char            *reason,
-                                                                guint                  flags,
-                                                                DBusGMethodInvocation *context);
-gboolean            csm_manager_uninhibit                      (CsmManager            *manager,
-                                                                guint                  inhibit_cookie,
-                                                                DBusGMethodInvocation *context);
-gboolean            csm_manager_is_inhibited                   (CsmManager            *manager,
-                                                                guint                  flags,
-                                                                gboolean              *is_inhibited,
-                                                                GError                *error);
-gboolean            csm_manager_request_shutdown               (CsmManager     *manager,
-                                                                GError        **error);
-gboolean            csm_manager_request_reboot                 (CsmManager     *manager,
-                                                                GError        **error);  
-gboolean            csm_manager_shutdown                       (CsmManager     *manager,
-                                                                GError        **error);
-gboolean            csm_manager_reboot                         (CsmManager     *manager,
-                                                                GError        **error);
-
-gboolean            csm_manager_can_shutdown                   (CsmManager     *manager,
-                                                                gboolean       *shutdown_available,
-                                                                GError        **error);
-gboolean            csm_manager_logout                         (CsmManager     *manager,
-                                                                guint           logout_mode,
-                                                                GError        **error);
-
-gboolean            csm_manager_setenv                         (CsmManager     *manager,
-                                                                const char     *variable,
-                                                                const char     *value,
-                                                                GError        **error);
-gboolean            csm_manager_initialization_error           (CsmManager     *manager,
-                                                                const char     *message,
-                                                                gboolean        fatal,
-                                                                GError        **error);
-
-gboolean            csm_manager_get_clients                    (CsmManager     *manager,
-                                                                GPtrArray     **clients,
-                                                                GError        **error);
-gboolean            csm_manager_get_inhibitors                 (CsmManager     *manager,
-                                                                GPtrArray     **inhibitors,
-                                                                GError        **error);
-gboolean            csm_manager_is_autostart_condition_handled (CsmManager     *manager,
-                                                                const char     *condition,
-                                                                gboolean       *handled,
-                                                                GError        **error);
 gboolean            csm_manager_set_phase                      (CsmManager     *manager,
                                                                 CsmManagerPhase phase);
-gboolean            csm_manager_is_session_running             (CsmManager     *manager,
-                                                                gboolean       *running,
-                                                                GError        **error);
+
+gboolean            csm_manager_logout                         (CsmManager *manager,
+                                                                guint       logout_mode,
+                                                                GError    **error);
+
 gboolean            csm_manager_get_app_is_blacklisted         (CsmManager     *manager,
                                                                 const gchar    *name);
 gboolean            csm_manager_get_autosave_enabled           (CsmManager     *manager);

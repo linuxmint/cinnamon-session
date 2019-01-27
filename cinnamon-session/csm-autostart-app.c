@@ -78,9 +78,6 @@ struct _CsmAutostartAppPrivate {
         int                   launch_type;
         GPid                  pid;
         guint                 child_watch_id;
-
-        DBusGProxy           *proxy;
-        DBusGProxyCall       *proxy_call;
 };
 
 enum {
@@ -375,7 +372,7 @@ setup_gsettings_condition_monitor (CsmAutostartApp *app,
         GSettingsSchema *schema;
         GSettings *settings;
         char **elems;
-        gboolean retval = FALSE;
+        gboolean retval;
         char *signal;
 
         retval = FALSE;
@@ -624,7 +621,9 @@ setup_condition_monitor (CsmAutostartApp *app)
 
         g_free (key);
 
-        /* FIXME: cache the disabled value? */
+        if (disabled) {
+                /* FIXME: cache the disabled value? */
+        }
 }
 
 static gboolean
@@ -848,16 +847,6 @@ csm_autostart_app_dispose (GObject *object)
                 priv->child_watch_id = 0;
         }
 
-        if (priv->proxy_call != NULL) {
-                dbus_g_proxy_cancel_call (priv->proxy, priv->proxy_call);
-                priv->proxy_call = NULL;
-        }
-
-        if (priv->proxy != NULL) {
-                g_object_unref (priv->proxy);
-                priv->proxy = NULL;
-        }
-
         if (priv->condition_monitor) {
                 g_file_monitor_cancel (priv->condition_monitor);
         }
@@ -996,7 +985,7 @@ static int
 _signal_pid (int pid,
              int signal)
 {
-        int status = -1;
+        int status;
 
         /* perhaps block sigchld */
         g_debug ("CsmAutostartApp: sending signal %d to process %d", signal, pid);
@@ -1137,21 +1126,19 @@ autostart_app_start_spawn (CsmAutostartApp *app,
 }
 
 static void
-start_notify (DBusGProxy      *proxy,
-              DBusGProxyCall  *call,
+start_notify (GObject *source,
+              GAsyncResult *result,
               CsmAutostartApp *app)
 {
-        gboolean res;
         GError  *error;
 
         error = NULL;
-        res = dbus_g_proxy_end_call (proxy,
-                                     call,
-                                     &error,
-                                     G_TYPE_INVALID);
-        app->priv->proxy_call = NULL;
 
-        if (! res) {
+        g_dbus_connection_call_finish (G_DBUS_CONNECTION (source),
+                                       result,
+                                       &error);
+
+        if (error != NULL) {
                 g_warning ("CsmAutostartApp: Error starting application: %s", error->message);
                 g_error_free (error);
         } else {
@@ -1166,11 +1153,11 @@ autostart_app_start_activate (CsmAutostartApp  *app,
         const char      *name;
         char            *path;
         char            *arguments;
-        DBusGConnection *bus;
+        GDBusConnection *bus;
         GError          *local_error;
 
         local_error = NULL;
-        bus = dbus_g_bus_get (DBUS_BUS_SESSION, &local_error);
+        bus = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &local_error);
         if (bus == NULL) {
                 if (local_error != NULL) {
                         g_warning ("error getting session bus: %s", local_error->message);
@@ -1194,34 +1181,18 @@ autostart_app_start_activate (CsmAutostartApp  *app,
                                                  CSM_AUTOSTART_APP_DBUS_ARGS_KEY,
                                                  NULL);
 
-        app->priv->proxy = dbus_g_proxy_new_for_name (bus,
-                                                      name,
-                                                      path,
-                                                      CSM_SESSION_CLIENT_DBUS_INTERFACE);
-        if (app->priv->proxy == NULL) {
-                g_set_error (error,
-                             CSM_APP_ERROR,
-                             CSM_APP_ERROR_START,
-                             "Unable to start application: unable to create proxy for client");
-                return FALSE;
-        }
+        g_dbus_connection_call (bus,
+                                name,
+                                path,
+                                CSM_SESSION_CLIENT_DBUS_INTERFACE,
+                                "Start",
+                                g_variant_new ("(s)", arguments),
+                                NULL,
+                                G_DBUS_CALL_FLAGS_NONE,
+                                -1, NULL,
+                                (GAsyncReadyCallback) start_notify, app);
 
-        app->priv->proxy_call = dbus_g_proxy_begin_call (app->priv->proxy,
-                                                         "Start",
-                                                         (DBusGProxyCallNotify)start_notify,
-                                                         app,
-                                                         NULL,
-                                                         G_TYPE_STRING, arguments,
-                                                         G_TYPE_INVALID);
-        if (app->priv->proxy_call == NULL) {
-                g_object_unref (app->priv->proxy);
-                app->priv->proxy = NULL;
-                g_set_error (error,
-                             CSM_APP_ERROR,
-                             CSM_APP_ERROR_START,
-                             "Unable to start application: unable to call Start on client");
-                return FALSE;
-        }
+        g_object_unref (bus);
 
         return TRUE;
 }

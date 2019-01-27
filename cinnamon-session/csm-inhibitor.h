@@ -65,8 +65,6 @@ typedef enum
 } CsmInhibitorError;
 
 #define CSM_INHIBITOR_ERROR csm_inhibitor_error_quark ()
-GType          csm_inhibitor_error_get_type       (void);
-#define CSM_INHIBITOR_TYPE_ERROR (csm_inhibitor_error_get_type ())
 
 GQuark         csm_inhibitor_error_quark          (void);
 
@@ -93,24 +91,6 @@ const char *   csm_inhibitor_peek_bus_name        (CsmInhibitor  *inhibitor);
 guint          csm_inhibitor_peek_cookie          (CsmInhibitor  *inhibitor);
 guint          csm_inhibitor_peek_flags           (CsmInhibitor  *inhibitor);
 guint          csm_inhibitor_peek_toplevel_xid    (CsmInhibitor  *inhibitor);
-
-/* exported to bus */
-gboolean       csm_inhibitor_get_app_id           (CsmInhibitor  *inhibitor,
-                                                   char         **id,
-                                                   GError       **error);
-gboolean       csm_inhibitor_get_client_id        (CsmInhibitor  *inhibitor,
-                                                   char         **id,
-                                                   GError       **error);
-gboolean       csm_inhibitor_get_reason           (CsmInhibitor  *inhibitor,
-                                                   char         **reason,
-                                                   GError       **error);
-gboolean       csm_inhibitor_get_flags            (CsmInhibitor  *inhibitor,
-                                                   guint         *flags,
-                                                   GError       **error);
-gboolean       csm_inhibitor_get_toplevel_xid     (CsmInhibitor  *inhibitor,
-                                                   guint         *xid,
-                                                   GError       **error);
-
 
 G_END_DECLS
 

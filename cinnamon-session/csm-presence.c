@@ -26,18 +26,21 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "cs-idle-monitor.h"
 
 #include "csm-presence.h"
-#include "csm-presence-glue.h"
+#include "csm-exported-presence.h"
 
 #define CSM_PRESENCE_DBUS_PATH "/org/gnome/SessionManager/Presence"
 
 #define CS_NAME      "org.cinnamon.ScreenSaver"
 #define CS_PATH      "/org/cinnamon/ScreenSaver"
 #define CS_INTERFACE "org.cinnamon.ScreenSaver"
+
+#define DBUS_NAME      "org.freedesktop.DBus"
+#define DBUS_PATH      "/org/freedesktop/DBus"
+#define DBUS_INTERFACE "org.freedesktop.DBus"
+
 
 #define MAX_STATUS_TEXT 140
 
@@ -53,9 +56,9 @@ struct CsmPresencePrivate
         guint            idle_watch_id;
         guint            idle_timeout;
         gboolean         screensaver_active;
-        DBusGConnection *bus_connection;
-        DBusGProxy      *bus_proxy;
-        DBusGProxy      *screensaver_proxy;
+        GDBusConnection *connection;
+        GDBusProxy      *screensaver_proxy;
+        CsmExportedPresence *skeleton;
 };
 
 enum {
@@ -77,36 +80,66 @@ static guint signals [LAST_SIGNAL] = { 0 };
 
 G_DEFINE_TYPE (CsmPresence, csm_presence, G_TYPE_OBJECT)
 
+#define CSM_PRESENCE_DBUS_IFACE "org.gnome.SessionManager.Presence"
+
+static const GDBusErrorEntry csm_presence_error_entries[] = {
+        { CSM_PRESENCE_ERROR_GENERAL, CSM_PRESENCE_DBUS_IFACE ".GeneralError" }
+};
+
 GQuark
 csm_presence_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("csm_presence_error");
-        }
+        static volatile gsize quark_volatile = 0;
 
-        return ret;
+        g_dbus_error_register_error_domain ("csm_presence_error",
+                                            &quark_volatile,
+                                            csm_presence_error_entries,
+                                            G_N_ELEMENTS (csm_presence_error_entries));
+        return quark_volatile;
 }
 
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-csm_presence_error_get_type (void)
+static gboolean
+csm_presence_set_status_text (CsmPresence  *presence,
+                              const char   *status_text,
+                              GError      **error)
 {
-        static GType etype = 0;
+        g_return_val_if_fail (CSM_IS_PRESENCE (presence), FALSE);
 
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (CSM_PRESENCE_ERROR_GENERAL, "GeneralError"),
-                        { 0, 0, 0 }
-                };
+        g_free (presence->priv->status_text);
+        presence->priv->status_text = NULL;
 
-                g_assert (CSM_PRESENCE_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("CsmPresenceError", values);
+        /* check length */
+        if (status_text != NULL && strlen (status_text) > MAX_STATUS_TEXT) {
+                g_set_error (error,
+                             CSM_PRESENCE_ERROR,
+                             CSM_PRESENCE_ERROR_GENERAL,
+                             "Status text too long");
+                return FALSE;
         }
 
-        return etype;
+        if (status_text != NULL) {
+                presence->priv->status_text = g_strdup (status_text);
+        }
+
+        csm_exported_presence_set_status_text (presence->priv->skeleton, presence->priv->status_text);
+        csm_exported_presence_emit_status_text_changed (presence->priv->skeleton, presence->priv->status_text);
+
+        return TRUE;
+}
+
+static gboolean
+csm_presence_set_status (CsmPresence  *presence,
+                         guint         status)
+{
+        g_return_val_if_fail (CSM_IS_PRESENCE (presence), FALSE);
+
+        if (status != presence->priv->status) {
+                presence->priv->status = status;
+                csm_exported_presence_set_status (presence->priv->skeleton, status);
+                csm_exported_presence_emit_status_changed (presence->priv->skeleton, presence->priv->status);
+                g_signal_emit (presence, signals[STATUS_CHANGED], 0, presence->priv->status);
+        }
+        return TRUE;
 }
 
 static void
@@ -123,7 +156,7 @@ set_session_idle (CsmPresence   *presence,
 
                 /* save current status */
                 presence->priv->saved_status = presence->priv->status;
-                csm_presence_set_status (presence, CSM_PRESENCE_STATUS_IDLE, NULL);
+                csm_presence_set_status (presence, CSM_PRESENCE_STATUS_IDLE);
         } else {
                 if (presence->priv->status != CSM_PRESENCE_STATUS_IDLE) {
                         g_debug ("CsmPresence: already not idle, ignoring");
@@ -131,7 +164,7 @@ set_session_idle (CsmPresence   *presence,
                 }
 
                 /* restore saved status */
-                csm_presence_set_status (presence, presence->priv->saved_status, NULL);
+                csm_presence_set_status (presence, presence->priv->saved_status);
                 g_debug ("CsmPresence: setting non-idle status %d", presence->priv->saved_status);
                 presence->priv->saved_status = CSM_PRESENCE_STATUS_AVAILABLE;
         }
@@ -179,11 +212,24 @@ reset_idle_watch (CsmPresence  *presence)
 }
 
 static void
-on_screensaver_active_changed (DBusGProxy  *proxy,
-                               gboolean     is_active,
-                               CsmPresence *presence)
+on_screensaver_g_signal (GDBusProxy  *proxy,
+                         gchar       *sender_name,
+                         gchar       *signal_name,
+                         GVariant    *parameters,
+                         CsmPresence *presence)
 {
+        GError *error;
+        gboolean is_active;
+
+        if (signal_name == NULL || g_strcmp0 (signal_name, "ActiveChanged") != 0) {
+                return;
+        }
+
+        g_variant_get (parameters,
+                       "(b)", &is_active);
+
         g_debug ("screensaver status changed: %d", is_active);
+
         if (presence->priv->screensaver_active != is_active) {
                 presence->priv->screensaver_active = is_active;
                 reset_idle_watch (presence);
@@ -192,77 +238,62 @@ on_screensaver_active_changed (DBusGProxy  *proxy,
 }
 
 static void
-on_screensaver_proxy_destroy (GObject     *proxy,
-                              CsmPresence *presence)
+on_screensaver_name_owner_changed (GDBusProxy *proxy,
+                                   GParamSpec *pspec,
+                                   gpointer    user_data)
 {
-        g_warning ("Detected that screensaver has left the bus");
+        CsmPresence *presence;
+        gchar *name_owner;
 
-        presence->priv->screensaver_proxy = NULL;
-        presence->priv->screensaver_active = FALSE;
-        set_session_idle (presence, FALSE);
-        reset_idle_watch (presence);
+        presence = CSM_PRESENCE (user_data);
+        name_owner = g_dbus_proxy_get_name_owner (proxy);
+
+        if (name_owner && g_strcmp0 (name_owner, CS_NAME)) {
+                g_warning ("Detected that screensaver has appeared on the bus");
+        } else {
+                g_warning ("Detected that screensaver has left the bus");
+                set_session_idle (presence, FALSE);
+                reset_idle_watch (presence);
+        }
 }
 
-static void
-on_bus_name_owner_changed (DBusGProxy  *bus_proxy,
-                           const char  *service_name,
-                           const char  *old_service_name,
-                           const char  *new_service_name,
-                           CsmPresence *presence)
+static gboolean
+csm_presence_set_status_text_dbus (CsmExportedPresence   *skeleton,
+                                   GDBusMethodInvocation *invocation,
+                                   gchar                 *status_text,
+                                   CsmPresence           *presence)
 {
-        GError *error;
+        GError *error = NULL;
 
-        if (service_name == NULL
-            || strcmp (service_name, CS_NAME) != 0) {
-                /* ignore */
-                return;
+        if (csm_presence_set_status_text (presence, status_text, &error)) {
+                csm_exported_presence_complete_set_status_text (skeleton, invocation);
+        } else {
+                g_dbus_method_invocation_take_error (invocation, error);
         }
 
-        if (strlen (new_service_name) == 0
-            && strlen (old_service_name) > 0) {
-                /* service removed */
-                /* let destroy signal handle this? */
-        } else if (strlen (old_service_name) == 0
-                   && strlen (new_service_name) > 0) {
-                /* service added */
+        return TRUE;
+}
 
-                g_debug ("Detected that screensaver has appeared on the bus");
-
-                error = NULL;
-                presence->priv->screensaver_proxy = dbus_g_proxy_new_for_name_owner (presence->priv->bus_connection,
-                                                                                     CS_NAME,
-                                                                                     CS_PATH,
-                                                                                     CS_INTERFACE,
-                                                                                     &error);
-                if (presence->priv->screensaver_proxy != NULL) {
-                        g_signal_connect (presence->priv->screensaver_proxy,
-                                          "destroy",
-                                          G_CALLBACK (on_screensaver_proxy_destroy),
-                                          presence);
-                        dbus_g_proxy_add_signal (presence->priv->screensaver_proxy,
-                                                 "ActiveChanged",
-                                                 G_TYPE_BOOLEAN,
-                                                 G_TYPE_INVALID);
-                        dbus_g_proxy_connect_signal (presence->priv->screensaver_proxy,
-                                                     "ActiveChanged",
-                                                     G_CALLBACK (on_screensaver_active_changed),
-                                                     presence,
-                                                     NULL);
-                } else {
-                        g_warning ("Unable to get screensaver proxy: %s", error->message);
-                        g_error_free (error);
-                }
-        }
+static gboolean
+csm_presence_set_status_dbus (CsmExportedPresence   *skeleton,
+                              GDBusMethodInvocation *invocation,
+                              guint                  status,
+                              CsmPresence           *presence)
+{
+        csm_presence_set_status (presence, status);
+        csm_exported_presence_complete_set_status (skeleton, invocation);
+        return TRUE;
 }
 
 static gboolean
 register_presence (CsmPresence *presence)
 {
+        CsmExportedPresence *skeleton;
         GError *error;
 
         error = NULL;
-        presence->priv->bus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (presence->priv->bus_connection == NULL) {
+        presence->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+        if (presence->priv->connection == NULL) {
                 if (error != NULL) {
                         g_critical ("error getting session bus: %s", error->message);
                         g_error_free (error);
@@ -270,7 +301,32 @@ register_presence (CsmPresence *presence)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (presence->priv->bus_connection, CSM_PRESENCE_DBUS_PATH, G_OBJECT (presence));
+        skeleton = csm_exported_presence_skeleton_new ();
+        presence->priv->skeleton = skeleton;
+
+        g_debug ("exporting presence proxy");
+
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          presence->priv->connection,
+                                          CSM_PRESENCE_DBUS_PATH,
+                                          &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting presence: %s", error->message);
+                g_error_free (error);
+
+                return FALSE;
+        }
+
+        g_signal_connect (skeleton,
+                          "handle-set-status",
+                          G_CALLBACK (csm_presence_set_status_dbus),
+                          presence);
+
+        g_signal_connect (skeleton,
+                          "handle-set-status-text",
+                          G_CALLBACK (csm_presence_set_status_text_dbus),
+                          presence);
 
         return TRUE;
 }
@@ -281,7 +337,9 @@ csm_presence_constructor (GType                  type,
                           GObjectConstructParam *construct_properties)
 {
         CsmPresence *presence;
-        gboolean     res;
+        GError *error;
+        gboolean res;
+
 
         presence = CSM_PRESENCE (G_OBJECT_CLASS (csm_presence_parent_class)->constructor (type,
                                                                                              n_construct_properties,
@@ -292,22 +350,28 @@ csm_presence_constructor (GType                  type,
                 g_warning ("Unable to register presence with session bus");
         }
 
-        presence->priv->bus_proxy = dbus_g_proxy_new_for_name (presence->priv->bus_connection,
-                                                               DBUS_SERVICE_DBUS,
-                                                               DBUS_PATH_DBUS,
-                                                               DBUS_INTERFACE_DBUS);
-        if (presence->priv->bus_proxy != NULL) {
-                dbus_g_proxy_add_signal (presence->priv->bus_proxy,
-                                         "NameOwnerChanged",
-                                         G_TYPE_STRING,
-                                         G_TYPE_STRING,
-                                         G_TYPE_STRING,
-                                         G_TYPE_INVALID);
-                dbus_g_proxy_connect_signal (presence->priv->bus_proxy,
-                                             "NameOwnerChanged",
-                                             G_CALLBACK (on_bus_name_owner_changed),
-                                             presence,
-                                             NULL);
+        presence->priv->screensaver_proxy = g_dbus_proxy_new_sync (presence->priv->connection,
+                                                                   G_DBUS_PROXY_FLAGS_NONE,
+                                                                   NULL,
+                                                                   CS_NAME,
+                                                                   CS_PATH,
+                                                                   CS_INTERFACE,
+                                                                   NULL,
+                                                                   &error);
+
+        if (presence->priv->screensaver_proxy != NULL) {
+                g_signal_connect (presence->priv->screensaver_proxy,
+                                  "g-signal",
+                                  G_CALLBACK (on_screensaver_g_signal),
+                                  presence);
+
+                g_signal_connect (presence->priv->screensaver_proxy,
+                                  "notify::g-name-owner",
+                                  G_CALLBACK (on_screensaver_name_owner_changed),
+                                  presence);
+        } else {
+                g_warning ("Unable to get screensaver proxy: %s", error->message);
+                g_error_free (error);
         }
 
         return G_OBJECT (presence);
@@ -335,50 +399,6 @@ csm_presence_set_idle_enabled (CsmPresence  *presence,
         }
 }
 
-gboolean
-csm_presence_set_status_text (CsmPresence  *presence,
-                              const char   *status_text,
-                              GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_PRESENCE (presence), FALSE);
-
-        g_free (presence->priv->status_text);
-        presence->priv->status_text = NULL;
-
-        /* check length */
-        if (status_text != NULL && strlen (status_text) > MAX_STATUS_TEXT) {
-                g_set_error (error,
-                             CSM_PRESENCE_ERROR,
-                             CSM_PRESENCE_ERROR_GENERAL,
-                             "Status text too long");
-                return FALSE;
-        }
-
-        if (status_text != NULL) {
-                presence->priv->status_text = g_strdup (status_text);
-        }
-
-        g_object_notify (G_OBJECT (presence), "status-text");
-        g_signal_emit (presence, signals[STATUS_TEXT_CHANGED], 0,
-                       presence->priv->status_text ? presence->priv->status_text : "");
-        return TRUE;
-}
-
-gboolean
-csm_presence_set_status (CsmPresence  *presence,
-                         guint         status,
-                         GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_PRESENCE (presence), FALSE);
-
-        if (status != presence->priv->status) {
-                presence->priv->status = status;
-                g_object_notify (G_OBJECT (presence), "status");
-                g_signal_emit (presence, signals[STATUS_CHANGED], 0, presence->priv->status);
-        }
-        return TRUE;
-}
-
 void
 csm_presence_set_idle_timeout (CsmPresence  *presence,
                                guint         timeout)
@@ -404,7 +424,7 @@ csm_presence_set_property (GObject       *object,
 
         switch (prop_id) {
         case PROP_STATUS:
-                csm_presence_set_status (self, g_value_get_uint (value), NULL);
+                csm_presence_set_status (self, g_value_get_uint (value));
                 break;
         case PROP_STATUS_TEXT:
                 csm_presence_set_status_text (self, g_value_get_string (value), NULL);
@@ -494,33 +514,7 @@ csm_presence_class_init (CsmPresenceClass *klass)
                               g_cclosure_marshal_VOID__UINT,
                               G_TYPE_NONE,
                               1, G_TYPE_UINT);
-        signals [STATUS_TEXT_CHANGED] =
-                g_signal_new ("status-text-changed",
-                              G_TYPE_FROM_CLASS (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmPresenceClass, status_text_changed),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__STRING,
-                              G_TYPE_NONE,
-                              1, G_TYPE_STRING);
 
-        g_object_class_install_property (object_class,
-                                         PROP_STATUS,
-                                         g_param_spec_uint ("status",
-                                                            "status",
-                                                            "status",
-                                                            0,
-                                                            G_MAXINT,
-                                                            0,
-                                                            G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-        g_object_class_install_property (object_class,
-                                         PROP_STATUS_TEXT,
-                                         g_param_spec_string ("status-text",
-                                                              "status text",
-                                                              "status text",
-                                                              "",
-                                                              G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
         g_object_class_install_property (object_class,
                                          PROP_IDLE_ENABLED,
                                          g_param_spec_boolean ("idle-enabled",
@@ -538,8 +532,6 @@ csm_presence_class_init (CsmPresenceClass *klass)
                                                             300000,
                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
-        dbus_g_object_type_install_info (CSM_TYPE_PRESENCE, &dbus_glib_csm_presence_object_info);
-        dbus_g_error_domain_register (CSM_PRESENCE_ERROR, NULL, CSM_PRESENCE_TYPE_ERROR);
         g_type_class_add_private (klass, sizeof (CsmPresencePrivate));
 }
 

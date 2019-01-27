@@ -125,17 +125,6 @@ gboolean         csm_app_has_autostart_condition        (CsmApp     *app,
 void             csm_app_registered                     (CsmApp     *app);
 int              csm_app_peek_autostart_delay           (CsmApp     *app);
 
-/* exported to bus */
-gboolean         csm_app_get_app_id                     (CsmApp     *app,
-                                                         char      **id,
-                                                         GError    **error);
-gboolean         csm_app_get_startup_id                 (CsmApp     *app,
-                                                         char      **id,
-                                                         GError    **error);
-gboolean         csm_app_get_phase                      (CsmApp     *app,
-                                                         guint      *phase,
-                                                         GError    **error);
-
 G_END_DECLS
 
 #endif /* __CSM_APP_H__ */
