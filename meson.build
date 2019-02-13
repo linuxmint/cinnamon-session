@@ -43,12 +43,6 @@ xau         = dependency('xau')
 xcomposite  = dependency('xcomposite')
 gl          = dependency('gl')
 
-# We only support old upower
-# https://bugzilla.gnome.org/show_bug.cgi?id=710383
-upower_old  = dependency('upower-glib', version: '<0.99.0', required: false)
-conf.set('HAVE_OLD_UPOWER', upower_old.found())
-
-
 if get_option('with-gconf')
   gconf     = dependency('gconf-2.0')
 else
@@ -196,7 +190,6 @@ message('\n'.join([
 '        Backtrace support:        @0@'.format(backtrace.found()),
 '        XRender support:          @0@'.format(xrender.found()),
 '        XTest support:            @0@'.format(xtest.found()),
-'        Legacy UPower backend:    @0@'.format(upower_old.found()),
 '        Build documentation:      @0@'.format(docbook_enabled),
 '',
 ]))

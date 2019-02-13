@@ -26,10 +26,6 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#ifdef HAVE_OLD_UPOWER
-#define UPOWER_ENABLE_DEPRECATED 1
-#include <upower.h>
-#endif
 
 #include <libxapp/xapp-gtk-window.h>
 
@@ -52,9 +48,6 @@ struct _CsmLogoutDialogPrivate
 {
         CsmDialogLogoutType  type;
 
-#ifdef HAVE_OLD_UPOWER
-        UpClient            *up_client;
-#endif
         CsmSystem           *system;
         GtkWidget           *progressbar;
 
@@ -148,10 +141,6 @@ csm_logout_dialog_init (CsmLogoutDialog *logout_dialog)
         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_stick (GTK_WINDOW (logout_dialog));
 
-#ifdef HAVE_OLD_UPOWER
-        logout_dialog->priv->up_client = up_client_new ();
-#endif
-
         logout_dialog->priv->system = csm_get_system ();
 
         g_signal_connect (logout_dialog,
@@ -173,13 +162,6 @@ csm_logout_dialog_destroy (CsmLogoutDialog *logout_dialog,
                 g_source_remove (logout_dialog->priv->timeout_id);
                 logout_dialog->priv->timeout_id = 0;
         }
-
-#ifdef HAVE_OLD_UPOWER 
-        if (logout_dialog->priv->up_client) {
-                g_object_unref (logout_dialog->priv->up_client);
-                logout_dialog->priv->up_client = NULL;
-        }
-#endif
 
         g_clear_object (&logout_dialog->priv->system);
 
