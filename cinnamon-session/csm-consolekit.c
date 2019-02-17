@@ -758,12 +758,6 @@ csm_consolekit_is_login_session (CsmSystem *system)
 }
 
 static gboolean
-csm_consolekit_can_hybrid_sleep (CsmSystem *system)
-{
-        return FALSE;
-}
-
-static gboolean
 csm_consolekit_can_sleep (CsmSystem *system, const gchar *method)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
@@ -815,9 +809,10 @@ csm_consolekit_can_hibernate (CsmSystem *system)
         return csm_consolekit_can_sleep(system, "CanHibernate");
 }
 
-static void
-csm_consolekit_hybrid_sleep (CsmSystem *system)
+static gboolean
+csm_consolekit_can_hybrid_sleep (CsmSystem *system)
 {
+        return csm_consolekit_can_sleep(system, "CanHybridSleep");
 }
 
 static void
@@ -863,6 +858,12 @@ static void
 csm_consolekit_hibernate (CsmSystem *system)
 {
         csm_consolekit_attempt_sleep (system, "Hibernate");
+}
+
+static void
+csm_consolekit_hybrid_sleep (CsmSystem *system)
+{
+        csm_consolekit_attempt_sleep (system, "HybridSleep");
 }
 
 static void
