@@ -31,11 +31,6 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#ifdef HAVE_OLD_UPOWER
-#define UPOWER_ENABLE_DEPRECATED 1
-#include <upower.h>
-#endif
-
 #include "csm-system.h"
 #include "csm-consolekit.h"
 
@@ -58,9 +53,6 @@ struct _CsmConsolekitPrivate
         DBusGConnection *dbus_connection;
         DBusGProxy      *bus_proxy;
         DBusGProxy      *ck_proxy;
-#ifdef HAVE_OLD_UPOWER
-        UpClient        *up_client;
-#endif
 };
 
 static void     csm_consolekit_finalize     (GObject            *object);
@@ -185,11 +177,6 @@ csm_consolekit_ensure_ck_connection (CsmConsolekit  *manager,
                 }
         }
 
-#ifdef HAVE_OLD_UPOWER
-        g_clear_object (&manager->priv->up_client);
-        manager->priv->up_client = up_client_new ();
-#endif
-
         is_connected = TRUE;
 
  out:
@@ -253,9 +240,6 @@ csm_consolekit_free_dbus (CsmConsolekit *manager)
 {
         g_clear_object (&manager->priv->bus_proxy);
         g_clear_object (&manager->priv->ck_proxy);
-#ifdef HAVE_OLD_UPOWER
-        g_clear_object (&manager->priv->up_client);
-#endif
 
         if (manager->priv->dbus_connection != NULL) {
                 DBusConnection *connection;
@@ -774,71 +758,112 @@ csm_consolekit_is_login_session (CsmSystem *system)
 }
 
 static gboolean
-csm_consolekit_can_hybrid_sleep (CsmSystem *system)
+csm_consolekit_can_sleep (CsmSystem *system, const gchar *method)
 {
-        return FALSE;
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        gboolean res;
+        gchar *can_string;
+        GError *error;
+
+        error = NULL;
+
+        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              method,
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_INVALID,
+                                              G_TYPE_STRING, &can_string,
+                                              G_TYPE_INVALID);
+
+        if (!res) {
+                g_warning ("Could not query %s from ConsoleKit: %s",
+                           method, error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        /* If yes or challenge then we can sleep, it just might take a password */
+        if (g_strcmp0 (can_string, "yes") == 0 || g_strcmp0 (can_string, "challenge") == 0) {
+              return TRUE;
+        } else {
+              return FALSE;
+        } 
 }
 
 static gboolean
 csm_consolekit_can_suspend (CsmSystem *system)
 {
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-
-#ifdef HAVE_OLD_UPOWER
-        return up_client_get_can_suspend (consolekit->priv->up_client);
-#else
-        return FALSE;
-#endif
+        return csm_consolekit_can_sleep(system, "CanSuspend");
 }
 
 static gboolean
 csm_consolekit_can_hibernate (CsmSystem *system)
 {
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
+        return csm_consolekit_can_sleep(system, "CanHibernate");
+}
 
-#ifdef HAVE_OLD_UPOWER
-        return up_client_get_can_hibernate (consolekit->priv->up_client);
-#else
-        return FALSE;
-#endif
-
+static gboolean
+csm_consolekit_can_hybrid_sleep (CsmSystem *system)
+{
+        return csm_consolekit_can_sleep(system, "CanHybridSleep");
 }
 
 static void
-csm_consolekit_hybrid_sleep (CsmSystem *system)
+csm_consolekit_attempt_sleep (CsmSystem *system, const gchar *method)
 {
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        gboolean res;
+        GError *error;
+
+        error = NULL;
+
+        g_warning ("Attempting to %s using consolekit...", method);
+
+        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
+                g_error_free (error);
+                return ;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              method,
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_BOOLEAN, TRUE,
+                                              G_TYPE_INVALID);
+
+        if (!res) {
+                g_warning ("Unable to %s via consolekit: %s", method, error->message);
+                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
+                g_error_free (error);
+        }
 }
 
 static void
 csm_consolekit_suspend (CsmSystem *system)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        GError *error = NULL;
-        gboolean ret;
-
-        ret = up_client_suspend_sync (consolekit->priv->up_client, NULL, &error);
-        if (!ret) {
-                g_warning ("Unexpected suspend failure: %s", error->message);
-                g_error_free (error);
-        }
-#endif
+        csm_consolekit_attempt_sleep (system, "Suspend");
 }
 
 static void
 csm_consolekit_hibernate (CsmSystem *system)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        GError *error = NULL;
-        gboolean ret;
+        csm_consolekit_attempt_sleep (system, "Hibernate");
+}
 
-        ret = up_client_hibernate_sync (consolekit->priv->up_client, NULL, &error);
-        if (!ret) {
-                g_warning ("Unexpected hibernate failure: %s", error->message);
-                g_error_free (error);
-        }
-#endif
+static void
+csm_consolekit_hybrid_sleep (CsmSystem *system)
+{
+        csm_consolekit_attempt_sleep (system, "HybridSleep");
 }
 
 static void
