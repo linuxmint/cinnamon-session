@@ -15,11 +15,7 @@ install_data([
 )
 
 install_data(
-  configure_file(
-    input : 'org.cinnamon.SessionManager.gschema.xml.in',
-    output: 'org.cinnamon.SessionManager.gschema.xml',
-    configuration: configuration_data(),
-  ),
+  'org.cinnamon.SessionManager.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
