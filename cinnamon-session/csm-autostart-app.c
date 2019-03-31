@@ -94,7 +94,10 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 #define CSM_AUTOSTART_APP_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), CSM_TYPE_AUTOSTART_APP, CsmAutostartAppPrivate))
 
-G_DEFINE_TYPE (CsmAutostartApp, csm_autostart_app, CSM_TYPE_APP)
+static void csm_autostart_app_initable_iface_init (GInitableIface *iface);
+
+G_DEFINE_TYPE_WITH_CODE (CsmAutostartApp, csm_autostart_app, CSM_TYPE_APP,
+    G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE, csm_autostart_app_initable_iface_init))
 
 static void
 csm_autostart_app_init (CsmAutostartApp *app)
@@ -732,16 +735,39 @@ load_desktop_file (CsmAutostartApp *app)
         return TRUE;
 }
 
-static void
-csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
-                                        const char      *desktop_filename)
+static gboolean
+csm_autostart_app_initable_init (GInitable *initable,
+                                 GCancellable *cancellable,
+                                 GError  **error)
 {
-        GError *error;
+        CsmAutostartApp *app = CSM_AUTOSTART_APP (initable);
+
+        g_return_val_if_fail (app->priv->desktop_filename != NULL, FALSE);
 
         if (app->priv->desktop_file != NULL) {
                 egg_desktop_file_free (app->priv->desktop_file);
                 app->priv->desktop_file = NULL;
-                g_free (app->priv->desktop_id);
+        }
+
+        app->priv->desktop_file = egg_desktop_file_new (app->priv->desktop_filename,
+                                                        error);
+        if (app->priv->desktop_file == NULL) {
+                return FALSE;
+        }
+
+        load_desktop_file (app);
+
+        return TRUE;
+}
+
+static void
+csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
+                                        const char      *desktop_filename)
+{
+        if (app->priv->desktop_file != NULL) {
+                g_clear_pointer (&app->priv->desktop_file, egg_desktop_file_free);
+                g_clear_pointer (&app->priv->desktop_id, g_free);
+                g_clear_pointer (&app->priv->desktop_filename, g_free);
         }
 
         if (desktop_filename == NULL) {
@@ -749,16 +775,7 @@ csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
         }
 
         app->priv->desktop_id = g_path_get_basename (desktop_filename);
-
-        error = NULL;
-        app->priv->desktop_file = egg_desktop_file_new (desktop_filename, &error);
-        if (app->priv->desktop_file == NULL) {
-                g_warning ("Could not parse desktop file %s: %s",
-                           desktop_filename,
-                           error->message);
-                g_error_free (error);
-                return;
-        }
+        app->priv->desktop_filename = g_strdup (desktop_filename);
 }
 
 static void
@@ -1416,23 +1433,10 @@ csm_autostart_app_peek_autostart_delay (CsmApp *app)
         return aapp->priv->autostart_delay;
 }
 
-static GObject *
-csm_autostart_app_constructor (GType                  type,
-                               guint                  n_construct_properties,
-                               GObjectConstructParam *construct_properties)
+static void
+csm_autostart_app_initable_iface_init (GInitableIface  *iface)
 {
-        CsmAutostartApp *app;
-
-        app = CSM_AUTOSTART_APP (G_OBJECT_CLASS (csm_autostart_app_parent_class)->constructor (type,
-                                                                                               n_construct_properties,
-                                                                                               construct_properties));
-
-        if (! load_desktop_file (app)) {
-                g_object_unref (app);
-                app = NULL;
-        }
-
-        return G_OBJECT (app);
+        iface->init = csm_autostart_app_initable_init;
 }
 
 static void
@@ -1444,7 +1448,6 @@ csm_autostart_app_class_init (CsmAutostartAppClass *klass)
         object_class->set_property = csm_autostart_app_set_property;
         object_class->get_property = csm_autostart_app_get_property;
         object_class->dispose = csm_autostart_app_dispose;
-        object_class->constructor = csm_autostart_app_constructor;
 
         app_class->impl_is_disabled = is_disabled;
         app_class->impl_is_conditionally_disabled = is_conditionally_disabled;
@@ -1484,10 +1487,19 @@ CsmApp *
 csm_autostart_app_new (const char *desktop_file)
 {
         CsmAutostartApp *app;
+        GError *error;
 
-        app = g_object_new (CSM_TYPE_AUTOSTART_APP,
-                            "desktop-filename", desktop_file,
-                            NULL);
+        error = NULL;
+
+        app = g_initable_new (CSM_TYPE_AUTOSTART_APP,
+                              NULL, &error,
+                              "desktop-filename", desktop_file,
+                              NULL);
+
+        if (error != NULL) {
+                g_warning ("Could not read %s: %s", desktop_file, error->message);
+                g_clear_error (&error);
+        }
 
         return CSM_APP (app);
 }

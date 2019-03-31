@@ -4032,8 +4032,8 @@ add_autostart_app_internal (CsmManager *manager,
         }
 
         app = csm_autostart_app_new (path);
+
         if (app == NULL) {
-                g_warning ("could not read %s", path);
                 return FALSE;
         }
 
