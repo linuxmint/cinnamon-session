@@ -1029,6 +1029,10 @@ csm_manager_is_logout_inhibited (CsmManager *manager)
 {
         CsmInhibitor *inhibitor;
 
+        if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
+                return FALSE;
+        }
+
         if (manager->priv->inhibitors == NULL) {
                 return FALSE;
         }
