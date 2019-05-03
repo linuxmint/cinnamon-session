@@ -106,6 +106,48 @@ on_props_changed (GDBusProxy *proxy,
         }
 }
 
+static void
+on_signal_emitted (GDBusProxy *proxy,
+                   gchar      *sender_name,
+                   gchar      *signal_name,
+                   GVariant   *parameters,
+                   gpointer    user_data)
+{
+        g_printerr ("Signal received...\n");
+
+        if (g_strcmp0 (signal_name, "InhibitorAdded") == 0) {
+                const gchar *id;
+                GVariant *v;
+
+                v = g_dbus_proxy_get_cached_property (proxy, "InhibitedActions");
+
+                g_variant_get (parameters, "(o)",
+                               &id);
+
+                g_printerr ("signal: InhibitorAdded - %s - InhibitedActions is %u\n",
+                            id,
+                            g_variant_get_uint32 (v));
+
+                g_variant_unref (v);
+        }
+
+        if (g_strcmp0 (signal_name, "InhibitorRemoved") == 0) {
+                const gchar *id;
+                GVariant *v;
+
+                v = g_dbus_proxy_get_cached_property (proxy, "InhibitedActions");
+
+                g_variant_get (parameters, "(o)",
+                               &id);
+
+                g_printerr ("signal: InhibitorRemoved - %s - InhibitedActions is %u\n",
+                            id,
+                            g_variant_get_uint32 (v));
+
+                g_variant_unref (v);
+        }
+}
+
 int
 main (int   argc,
       char *argv[])
@@ -125,6 +167,10 @@ main (int   argc,
                           G_CALLBACK (on_props_changed),
                           NULL);
 
+        g_signal_connect (sm_proxy,
+                          "g-signal",
+                          G_CALLBACK (on_signal_emitted),
+                          NULL);
 
         main_loop = g_main_loop_new (NULL, FALSE);
 

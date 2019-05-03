@@ -3297,6 +3297,8 @@ update_inhibited_actions (CsmManager *manager,
 
         csm_exported_manager_set_inhibited_actions (manager->priv->skeleton,
                                                     manager->priv->inhibited_actions);
+
+        g_dbus_interface_skeleton_flush (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton));
 }
 
 static void
