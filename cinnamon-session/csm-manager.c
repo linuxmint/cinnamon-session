@@ -978,7 +978,7 @@ do_phase_exit (CsmManager *manager)
                                    (CsmStoreFunc)_client_stop,
                                    NULL);
         }
-        maybe_restart_user_bus (manager);
+        // maybe_restart_user_bus (manager);
         end_phase (manager);
 }
 
