@@ -29,15 +29,10 @@
 #include <errno.h>
 
 #include <glib/gi18n.h>
+#include <glib-unix.h>
 #include <glib.h>
 #include <gtk/gtk.h>
 
-#include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-bindings.h>
-#include <dbus/dbus-glib-lowlevel.h>
-
-#include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
 #include "csm-util.h"
@@ -53,122 +48,93 @@ static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean please_fail = FALSE;
+static const char *session_name = NULL;
 
-static DBusGProxy *bus_proxy = NULL;
 
-static void shutdown_cb (gpointer data);
+static CsmManager *manager = NULL;
 
 static void
-on_bus_name_lost (DBusGProxy *bus_proxy,
-                  const char *name,
-                  gpointer    data)
+on_name_lost (GDBusConnection *connection,
+              const char *name,
+              gpointer    data)
 {
-        g_warning ("Lost name on bus: %s, exiting", name);
-        exit (1);
+        if (connection == NULL) {
+                g_warning ("Lost name on bus: %s", name);
+                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
+        } else {
+                g_debug ("Calling name lost callback function");
+
+                /*
+                 * When the signal handler gets a shutdown signal, it calls
+                 * this function to inform CsmManager to not restart
+                 * applications in the off chance a handler is already queued
+                 * to dispatch following the below call to gtk_main_quit.
+                 */
+                csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
+
+                gtk_main_quit ();
+        }
+}
+
+static void
+on_name_acquired (GDBusConnection *connection,
+                  const char *name,
+                  gpointer data)
+{
+        g_debug ("main: Name acquired");
+
+        csm_manager_start (manager);
 }
 
 static gboolean
-acquire_name_on_proxy (DBusGProxy *bus_proxy,
-                       const char *name)
+term_or_int_signal_cb (gpointer data)
 {
-        GError     *error;
-        guint       result;
-        gboolean    res;
-        gboolean    ret;
+        CsmManager *manager = (CsmManager *)data;
 
-        ret = FALSE;
+        /* let the fatal signals interrupt us */
+        g_debug ("Caught SIGINT/SIGTERM, shutting down normally.");
 
-        if (bus_proxy == NULL) {
-                goto out;
+        csm_manager_logout (manager, CSM_MANAGER_LOGOUT_MODE_FORCE, NULL);
+
+        return FALSE;
+}
+
+static void
+on_bus_acquired (GDBusConnection *connection,
+                 const char *name,
+                 gpointer data)
+{
+        CsmStore *client_store;
+
+        g_debug ("main: Bus acquired");
+
+        client_store = csm_store_new ();
+
+        manager = csm_manager_new (client_store, failsafe);
+
+        g_object_unref (client_store);
+
+        g_unix_signal_add (SIGTERM, term_or_int_signal_cb, manager);
+        g_unix_signal_add (SIGINT, term_or_int_signal_cb, manager);
+
+        if (IS_STRING_EMPTY (session_name))
+                session_name = _csm_manager_get_default_session (manager);
+
+        if (!csm_session_fill (manager, session_name)) {
+                csm_util_init_error (TRUE, "Failed to load session \"%s\"", session_name ? session_name : "(null)");
         }
-
-        error = NULL;
-        res = dbus_g_proxy_call (bus_proxy,
-                                 "RequestName",
-                                 &error,
-                                 G_TYPE_STRING, name,
-                                 G_TYPE_UINT, 0,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, &result,
-                                 G_TYPE_INVALID);
-        if (! res) {
-                if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", name, error->message);
-                        g_error_free (error);
-                } else {
-                        g_warning ("Failed to acquire %s", name);
-                }
-                goto out;
-        }
-
-        if (result != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) {
-                if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", name, error->message);
-                        g_error_free (error);
-                } else {
-                        g_warning ("Failed to acquire %s", name);
-                }
-                goto out;
-        }
-
-        /* register for name lost */
-        dbus_g_proxy_add_signal (bus_proxy,
-                                 "NameLost",
-                                 G_TYPE_STRING,
-                                 G_TYPE_INVALID);
-        dbus_g_proxy_connect_signal (bus_proxy,
-                                     "NameLost",
-                                     G_CALLBACK (on_bus_name_lost),
-                                     NULL,
-                                     NULL);
-
-
-        ret = TRUE;
-
- out:
-        return ret;
 }
 
 static gboolean
 acquire_name (void)
 {
-        GError          *error;
-        DBusGConnection *connection;
-
-        error = NULL;
-        connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (connection == NULL) {
-                csm_util_init_error (TRUE,
-                                     "Could not connect to session bus: %s",
-                                     error->message);
-                return FALSE;
-        }
-
-        bus_proxy = dbus_g_proxy_new_for_name_owner (connection,
-                                                     DBUS_SERVICE_DBUS,
-                                                     DBUS_PATH_DBUS,
-                                                     DBUS_INTERFACE_DBUS,
-                                                     &error);
-        if (error != NULL) {
-                csm_util_init_error (TRUE,
-                                     "Could not connect to session bus: %s",
-                                     error->message);
-                return FALSE;
-        }
-
-        g_signal_connect_swapped (bus_proxy,
-                                  "destroy",
-                                  G_CALLBACK (shutdown_cb),
-                                  NULL);
-
-        if (! acquire_name_on_proxy (bus_proxy, CSM_DBUS_NAME) ) {
-                csm_util_init_error (TRUE,
-                                     "%s",
-                                     "Could not acquire name on session bus");
-                return FALSE;
-        }
-
-        return TRUE;
+        return g_bus_own_name (G_BUS_TYPE_SESSION,
+                               CSM_DBUS_NAME,
+                               G_BUS_NAME_OWNER_FLAGS_NONE,
+                               on_bus_acquired,
+                               on_name_acquired,
+                               on_name_lost,
+                               NULL, NULL);
 }
 
 static void
@@ -235,10 +201,9 @@ main (int argc, char **argv)
         struct sigaction  sa;
         GError           *error;
         char             *display_str;
-        CsmManager       *manager;
         CsmStore         *client_store;
+        guint             name_owner_id;
         static char     **override_autostart_dirs = NULL;
-        static char      *session_name = NULL;
         static GOptionEntry entries[] = {
                 { "autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), N_("AUTOSTART_DIR") },
                 { "session", 0, 0, G_OPTION_ARG_STRING, &session_name, N_("Session to use"), N_("SESSION_NAME") },
@@ -350,7 +315,7 @@ main (int argc, char **argv)
 
         g_clear_object (&settings);
 
-        client_store = csm_store_new ();
+        csm_util_set_autostart_dirs (override_autostart_dirs);
 
         /* Talk to logind before acquiring a name, since it does synchronous
          * calls at initialization time that invoke a main loop and if we
@@ -359,24 +324,7 @@ main (int argc, char **argv)
          */
         g_object_unref (csm_get_system ());
 
-        if (!acquire_name ()) {
-                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
-                gtk_main ();
-                exit (1);
-        }
-
-        manager = csm_manager_new (client_store, failsafe);
-
-        if (IS_STRING_EMPTY (session_name))
-                session_name = _csm_manager_get_default_session (manager);
-
-        csm_util_set_autostart_dirs (override_autostart_dirs);
-
-        if (!csm_session_fill (manager, session_name)) {
-                csm_util_init_error (TRUE, "Failed to load session \"%s\"", session_name ? session_name : "(null)");
-        }
-
-        csm_manager_start (manager);
+        name_owner_id = acquire_name ();
 
         gtk_main ();
 
@@ -385,13 +333,7 @@ main (int argc, char **argv)
                 g_object_unref (manager);
         }
 
-        if (client_store != NULL) {
-                g_object_unref (client_store);
-        }
-
-        if (bus_proxy != NULL) {
-                g_object_unref (bus_proxy);
-        }
+        g_bus_unown_name (name_owner_id);
 
         mdm_log_shutdown ();
 

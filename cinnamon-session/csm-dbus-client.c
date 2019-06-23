@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street - Suite 500, Boston, MA
- * 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -27,13 +25,10 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <gio/gio.h>
 
-#include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
-
+#include "csm-exported-client-private.h"
 #include "csm-dbus-client.h"
-#include "csm-marshal.h"
 
 #include "csm-manager.h"
 #include "csm-util.h"
@@ -49,7 +44,10 @@ struct CsmDBusClientPrivate
         char                 *bus_name;
         GPid                  caller_pid;
         CsmClientRestartStyle restart_style_hint;
-        DBusConnection       *connection;
+
+        GDBusConnection      *connection;
+        CsmExportedClientPrivate *skeleton;
+        guint                 watch_id;
 };
 
 enum {
@@ -59,176 +57,37 @@ enum {
 
 G_DEFINE_TYPE (CsmDBusClient, csm_dbus_client, CSM_TYPE_CLIENT)
 
-GQuark
-csm_dbus_client_error_quark (void)
-{
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("csm_dbus_client_error");
-        }
-
-        return ret;
-}
-
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-csm_dbus_client_error_get_type (void)
-{
-        static GType etype = 0;
-
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (CSM_DBUS_CLIENT_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (CSM_DBUS_CLIENT_ERROR_NOT_CLIENT, "NotClient"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (CSM_DBUS_CLIENT_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("CsmDbusClientError", values);
-        }
-
-        return etype;
-}
-
 static gboolean
 setup_connection (CsmDBusClient *client)
 {
-        DBusError error;
-
-        dbus_error_init (&error);
+        GError *error = NULL;
 
         if (client->priv->connection == NULL) {
-                client->priv->connection = dbus_bus_get (DBUS_BUS_SESSION, &error);
-                if (client->priv->connection == NULL) {
-                        if (dbus_error_is_set (&error)) {
-                                g_debug ("CsmDbusClient: Couldn't connect to session bus: %s",
-                                         error.message);
-                                dbus_error_free (&error);
-                        }
+                client->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+                if (error != NULL) {
+                        g_debug ("CsmDbusClient: Couldn't connect to session bus: %s",
+                                 error->message);
+                        g_error_free (error);
                         return FALSE;
                 }
-
-                dbus_connection_setup_with_g_main (client->priv->connection, NULL);
-                dbus_connection_set_exit_on_disconnect (client->priv->connection, FALSE);
         }
 
         return TRUE;
 }
 
-static void
-raise_error (DBusConnection *connection,
-             DBusMessage    *in_reply_to,
-             const char     *error_name,
-             char           *format, ...)
+static gboolean
+handle_end_session_response (CsmExportedClientPrivate *skeleton,
+                             GDBusMethodInvocation    *invocation,
+                             gboolean                  is_ok,
+                             const char               *reason,
+                             CsmDBusClient            *client)
 {
-        char         buf[512];
-        DBusMessage *reply;
-
-        va_list args;
-        va_start (args, format);
-        vsnprintf (buf, sizeof (buf), format, args);
-        va_end (args);
-
-        reply = dbus_message_new_error (in_reply_to, error_name, buf);
-        if (reply == NULL) {
-                g_error ("No memory");
-        }
-        if (! dbus_connection_send (connection, reply, NULL)) {
-                g_error ("No memory");
-        }
-
-        dbus_message_unref (reply);
-}
-
-static void
-handle_end_session_response (CsmDBusClient *client,
-                             DBusMessage   *message)
-{
-        const char     *sender;
-        DBusMessage    *reply;
-        DBusError       error;
-        dbus_bool_t     is_ok;
-        const char     *reason;
-
-        dbus_error_init (&error);
-        if (! dbus_message_get_args (message, &error,
-                                     DBUS_TYPE_BOOLEAN, &is_ok,
-                                     DBUS_TYPE_STRING, &reason,
-                                     DBUS_TYPE_INVALID)) {
-                if (dbus_error_is_set (&error)) {
-                        g_warning ("Invalid method call: %s", error.message);
-                        dbus_error_free (&error);
-                }
-                raise_error (client->priv->connection,
-                             message,
-                             DBUS_ERROR_FAILED,
-                             "There is a syntax error in the invocation of the method EndSessionResponse");
-                return;
-        }
-
         g_debug ("CsmDBusClient: got EndSessionResponse is-ok:%d reason=%s", is_ok, reason);
-
-        /* make sure it is from our client */
-        sender = dbus_message_get_sender (message);
-        if (sender == NULL
-            || IS_STRING_EMPTY (client->priv->bus_name)
-            || strcmp (sender, client->priv->bus_name) != 0) {
-
-                raise_error (client->priv->connection,
-                             message,
-                             DBUS_ERROR_FAILED,
-                             "Caller not recognized as the client");
-                return;
-        }
-
-        reply = dbus_message_new_method_return (message);
-        if (reply == NULL) {
-                g_error ("No memory");
-        }
-
         csm_client_end_session_response (CSM_CLIENT (client),
                                          is_ok, FALSE, FALSE, reason);
 
-
-        if (! dbus_connection_send (client->priv->connection, reply, NULL)) {
-                g_error ("No memory");
-        }
-
-        dbus_message_unref (reply);
-}
-
-static DBusHandlerResult
-client_dbus_filter_function (DBusConnection *connection,
-                             DBusMessage    *message,
-                             void           *user_data)
-{
-        CsmDBusClient *client = CSM_DBUS_CLIENT (user_data);
-        const char    *path;
-
-        g_return_val_if_fail (connection != NULL, DBUS_HANDLER_RESULT_NOT_YET_HANDLED);
-        g_return_val_if_fail (message != NULL, DBUS_HANDLER_RESULT_NOT_YET_HANDLED);
-
-        path = dbus_message_get_path (message);
-
-        // g_debug ("CsmDBusClient: obj_path=%s interface=%s method=%s",
-        //          dbus_message_get_path (message),
-        //          dbus_message_get_interface (message),
-        //          dbus_message_get_member (message));
-
-        if (dbus_message_is_method_call (message, SM_DBUS_CLIENT_PRIVATE_INTERFACE, "EndSessionResponse")) {
-                g_assert (csm_client_peek_id (CSM_CLIENT (client)) != NULL);
-
-                if (path != NULL && strcmp (path, csm_client_peek_id (CSM_CLIENT (client))) != 0) {
-                        /* Different object path */
-                        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
-                }
-                handle_end_session_response (client, message);
-                return DBUS_HANDLER_RESULT_HANDLED;
-        }
-
-        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+        csm_exported_client_private_complete_end_session_response (skeleton, invocation);
+        return TRUE;
 }
 
 static GObject *
@@ -237,6 +96,8 @@ csm_dbus_client_constructor (GType                  type,
                              GObjectConstructParam *construct_properties)
 {
         CsmDBusClient *client;
+        GError *error = NULL;
+        CsmExportedClientPrivate *skeleton;
 
         client = CSM_DBUS_CLIENT (G_OBJECT_CLASS (csm_dbus_client_parent_class)->constructor (type,
                                                                                               n_construct_properties,
@@ -247,8 +108,23 @@ csm_dbus_client_constructor (GType                  type,
                 return NULL;
         }
 
-        /* Object path is already registered by base class */
-        dbus_connection_add_filter (client->priv->connection, client_dbus_filter_function, client, NULL);
+        skeleton = csm_exported_client_private_skeleton_new ();
+        client->priv->skeleton = skeleton;
+        g_debug ("exporting dbus client to object path: %s", csm_client_peek_id (CSM_CLIENT (client)));
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          client->priv->connection,
+                                          csm_client_peek_id (CSM_CLIENT (client)),
+                                          &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting client private on session bus: %s", error->message);
+                g_error_free (error);
+                g_object_unref (client);
+                return NULL;
+        }
+
+        g_signal_connect (skeleton, "handle-end-session-response",
+                          G_CALLBACK (handle_end_session_response), client);
 
         return G_OBJECT (client);
 }
@@ -263,77 +139,105 @@ csm_dbus_client_init (CsmDBusClient *client)
 static gboolean
 get_caller_info (CsmDBusClient *client,
                  const char    *sender,
-                 uid_t         *calling_uid,
-                 pid_t         *calling_pid)
+                 uid_t         *calling_uid_out,
+                 pid_t         *calling_pid_out)
 {
-        gboolean         res;
+        GDBusConnection *connection;
+        gboolean         retval;
         GError          *error;
-        DBusGConnection *connection;
-        DBusGProxy      *bus_proxy;
+        GVariant        *uid_variant, *pid_variant;
+        uid_t            uid;
+        pid_t            pid;
 
-        res = FALSE;
-        bus_proxy = NULL;
+        retval = FALSE;
+        connection = NULL;
+        uid_variant = pid_variant = NULL;
 
         if (sender == NULL) {
                 goto out;
         }
 
         error = NULL;
-        connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (connection == NULL) {
-                if (error != NULL) {
-                        g_warning ("error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
+        if (error != NULL) {
+                g_warning ("error getting session bus: %s", error->message);
+                g_error_free (error);
                 goto out;
         }
 
-        bus_proxy = dbus_g_proxy_new_for_name (connection,
-                                               DBUS_SERVICE_DBUS,
-                                               DBUS_PATH_DBUS,
-                                               DBUS_INTERFACE_DBUS);
+        uid_variant = g_dbus_connection_call_sync (connection,
+                                                   "org.freedesktop.DBus",
+                                                   "/org/freedesktop/DBus",
+                                                   "org.freedesktop.DBus",
+                                                   "GetConnectionUnixUser",
+                                                   g_variant_new ("(s)", sender),
+                                                   G_VARIANT_TYPE ("(u)"),
+                                                   G_DBUS_CALL_FLAGS_NONE,
+                                                   -1, NULL, &error);
 
-        error = NULL;
-        if (! dbus_g_proxy_call (bus_proxy, "GetConnectionUnixUser", &error,
-                                 G_TYPE_STRING, sender,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, calling_uid,
-                                 G_TYPE_INVALID)) {
+        if (error != NULL) {
                 g_debug ("GetConnectionUnixUser() failed: %s", error->message);
                 g_error_free (error);
                 goto out;
         }
 
-        error = NULL;
-        if (! dbus_g_proxy_call (bus_proxy, "GetConnectionUnixProcessID", &error,
-                                 G_TYPE_STRING, sender,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, calling_pid,
-                                 G_TYPE_INVALID)) {
+        pid_variant = g_dbus_connection_call_sync (connection,
+                                                   "org.freedesktop.DBus",
+                                                   "/org/freedesktop/DBus",
+                                                   "org.freedesktop.DBus",
+                                                   "GetConnectionUnixProcessID",
+                                                   g_variant_new ("(s)", sender),
+                                                   G_VARIANT_TYPE ("(u)"),
+                                                   G_DBUS_CALL_FLAGS_NONE,
+                                                   -1, NULL, &error);
+
+        if (error != NULL) {
                 g_debug ("GetConnectionUnixProcessID() failed: %s", error->message);
                 g_error_free (error);
                 goto out;
         }
 
-        res = TRUE;
+        g_variant_get (uid_variant, "(u)", &uid);
+        g_variant_get (pid_variant, "(u)", &pid);
 
-        g_debug ("uid = %d", *calling_uid);
-        g_debug ("pid = %d", *calling_pid);
+        if (calling_uid_out != NULL) {
+                *calling_uid_out = uid;
+        }
+        if (calling_pid_out != NULL) {
+                *calling_pid_out = pid;
+        }
+
+        retval = TRUE;
+
+        g_debug ("uid = %d", uid);
+        g_debug ("pid = %d", pid);
 
 out:
-        if (bus_proxy != NULL) {
-                g_object_unref (bus_proxy);
-        }
-        return res;
+        g_clear_pointer (&uid_variant, (GDestroyNotify) g_variant_unref);
+        g_clear_pointer (&pid_variant, (GDestroyNotify) g_variant_unref);
+        g_clear_object (&connection);
+
+        return retval;
+}
+
+static void
+on_client_vanished (GDBusConnection *connection,
+                    const char      *name,
+                    gpointer         user_data)
+{
+        CsmDBusClient  *client = user_data;
+
+        g_bus_unwatch_name (client->priv->watch_id);
+        client->priv->watch_id = 0;
+
+        csm_client_disconnected (CSM_CLIENT (client));
 }
 
 static void
 csm_dbus_client_set_bus_name (CsmDBusClient  *client,
                               const char     *bus_name)
 {
-        uid_t    uid;
-        pid_t    pid;
-
         g_return_if_fail (CSM_IS_DBUS_CLIENT (client));
 
         g_free (client->priv->bus_name);
@@ -341,17 +245,17 @@ csm_dbus_client_set_bus_name (CsmDBusClient  *client,
         client->priv->bus_name = g_strdup (bus_name);
         g_object_notify (G_OBJECT (client), "bus-name");
 
-        if (client->priv->bus_name != NULL) {
-                gboolean res;
-
-                res = get_caller_info (client, bus_name, &uid, &pid);
-                if (! res) {
-                        pid = 0;
-                }
-        } else {
-                pid = 0;
+        if (!get_caller_info (client, bus_name, NULL, &client->priv->caller_pid)) {
+                client->priv->caller_pid = 0;
         }
-        client->priv->caller_pid = pid;
+
+        client->priv->watch_id = g_bus_watch_name (G_BUS_TYPE_SESSION,
+                                                   bus_name,
+                                                   G_BUS_NAME_WATCHER_FLAGS_NONE,
+                                                   NULL,
+                                                   on_client_vanished,
+                                                   client,
+                                                   NULL);
 }
 
 const char *
@@ -409,6 +313,17 @@ csm_dbus_client_finalize (GObject *object)
 
         g_free (client->priv->bus_name);
 
+        if (client->priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (client->priv->skeleton),
+                                                                    client->priv->connection);
+                g_clear_object (&client->priv->skeleton);
+        }
+
+        g_clear_object (&client->priv->connection);
+
+        if (client->priv->watch_id != 0)
+                g_bus_unwatch_name (client->priv->watch_id);
+
         G_OBJECT_CLASS (csm_dbus_client_parent_class)->finalize (object);
 }
 
@@ -430,34 +345,8 @@ dbus_client_stop (CsmClient *client,
                   GError   **error)
 {
         CsmDBusClient  *dbus_client = (CsmDBusClient *) client;
-        DBusMessage    *message;
-        gboolean        ret;
-
-        ret = FALSE;
-
-        /* unicast the signal to only the registered bus name */
-        message = dbus_message_new_signal (csm_client_peek_id (client),
-                                           SM_DBUS_CLIENT_PRIVATE_INTERFACE,
-                                           "Stop");
-        if (message == NULL) {
-                goto out;
-        }
-        if (!dbus_message_set_destination (message, dbus_client->priv->bus_name)) {
-                goto out;
-        }
-
-        if (!dbus_connection_send (dbus_client->priv->connection, message, NULL)) {
-                goto out;
-        }
-
-        ret = TRUE;
-
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-
-        return ret;
+        csm_exported_client_private_emit_stop (dbus_client->priv->skeleton);
+        return TRUE;
 }
 
 static char *
@@ -480,16 +369,11 @@ dbus_client_get_unix_process_id (CsmClient *client)
 }
 
 static gboolean
-dbus_client_query_end_session (CsmClient *client,
-                               guint      flags,
-                               GError   **error)
+dbus_client_query_end_session (CsmClient                *client,
+                               CsmClientEndSessionFlag   flags,
+                               GError                  **error)
 {
         CsmDBusClient  *dbus_client = (CsmDBusClient *) client;
-        DBusMessage    *message;
-        DBusMessageIter iter;
-        gboolean        ret;
-
-        ret = FALSE;
 
         if (dbus_client->priv->bus_name == NULL) {
                 g_set_error (error,
@@ -501,95 +385,19 @@ dbus_client_query_end_session (CsmClient *client,
 
         g_debug ("CsmDBusClient: sending QueryEndSession signal to %s", dbus_client->priv->bus_name);
 
-        /* unicast the signal to only the registered bus name */
-        message = dbus_message_new_signal (csm_client_peek_id (client),
-                                           SM_DBUS_CLIENT_PRIVATE_INTERFACE,
-                                           "QueryEndSession");
-        if (message == NULL) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send QueryEndSession message");
-                goto out;
-        }
-        if (!dbus_message_set_destination (message, dbus_client->priv->bus_name)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send QueryEndSession message");
-                goto out;
-        }
-
-        dbus_message_iter_init_append (message, &iter);
-        dbus_message_iter_append_basic (&iter, DBUS_TYPE_UINT32, &flags);
-
-        if (!dbus_connection_send (dbus_client->priv->connection, message, NULL)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send QueryEndSession message");
-                goto out;
-        }
-
-        ret = TRUE;
-
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-
-        return ret;
+        csm_exported_client_private_emit_query_end_session (dbus_client->priv->skeleton, flags);
+        return TRUE;
 }
 
 static gboolean
-dbus_client_end_session (CsmClient *client,
-                         guint      flags,
-                         GError   **error)
+dbus_client_end_session (CsmClient                *client,
+                         CsmClientEndSessionFlag   flags,
+                         GError                  **error)
 {
         CsmDBusClient  *dbus_client = (CsmDBusClient *) client;
-        DBusMessage    *message;
-        DBusMessageIter iter;
-        gboolean        ret;
 
-        ret = FALSE;
-
-        /* unicast the signal to only the registered bus name */
-        message = dbus_message_new_signal (csm_client_peek_id (client),
-                                           SM_DBUS_CLIENT_PRIVATE_INTERFACE,
-                                           "EndSession");
-        if (message == NULL) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send EndSession message");
-                goto out;
-        }
-        if (!dbus_message_set_destination (message, dbus_client->priv->bus_name)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send EndSession message");
-                goto out;
-        }
-
-        dbus_message_iter_init_append (message, &iter);
-        dbus_message_iter_append_basic (&iter, DBUS_TYPE_UINT32, &flags);
-
-        if (!dbus_connection_send (dbus_client->priv->connection, message, NULL)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send EndSession message");
-                goto out;
-        }
-
-        ret = TRUE;
-
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-        return ret;
+        csm_exported_client_private_emit_end_session (dbus_client->priv->skeleton, flags);
+        return TRUE;
 }
 
 static gboolean
@@ -597,59 +405,8 @@ dbus_client_cancel_end_session (CsmClient *client,
                                 GError   **error)
 {
         CsmDBusClient  *dbus_client = (CsmDBusClient *) client;
-        DBusMessage    *message;
-        gboolean        ret = FALSE;
-
-        /* unicast the signal to only the registered bus name */
-        message = dbus_message_new_signal (csm_client_peek_id (client),
-                                           SM_DBUS_CLIENT_PRIVATE_INTERFACE,
-                                           "CancelEndSession");
-        if (message == NULL) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send CancelEndSession message");
-                goto out;
-        }
-        if (!dbus_message_set_destination (message, dbus_client->priv->bus_name)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send CancelEndSession message");
-                goto out;
-        }
-
-        if (!dbus_connection_send (dbus_client->priv->connection, message, NULL)) {
-                g_set_error (error,
-                             CSM_CLIENT_ERROR,
-                             CSM_CLIENT_ERROR_NOT_REGISTERED,
-                             "Unable to send CancelEndSession message");
-                goto out;
-        }
-
-        ret = TRUE;
-
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-
-        return ret;
-}
-
-static void
-csm_dbus_client_dispose (GObject *object)
-{
-        CsmDBusClient *client;
-
-        g_return_if_fail (object != NULL);
-        g_return_if_fail (CSM_IS_DBUS_CLIENT (object));
-
-        client = CSM_DBUS_CLIENT (object);
-
-        dbus_connection_remove_filter (client->priv->connection, client_dbus_filter_function, client);
-
-        G_OBJECT_CLASS (csm_dbus_client_parent_class)->dispose (object);
+        csm_exported_client_private_emit_cancel_end_session (dbus_client->priv->skeleton);
+        return TRUE;
 }
 
 static void
@@ -662,7 +419,6 @@ csm_dbus_client_class_init (CsmDBusClientClass *klass)
         object_class->constructor          = csm_dbus_client_constructor;
         object_class->get_property         = csm_dbus_client_get_property;
         object_class->set_property         = csm_dbus_client_set_property;
-        object_class->dispose              = csm_dbus_client_dispose;
 
         client_class->impl_save                   = dbus_client_save;
         client_class->impl_stop                   = dbus_client_stop;

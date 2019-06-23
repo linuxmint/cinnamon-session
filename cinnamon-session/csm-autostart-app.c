@@ -78,9 +78,6 @@ struct _CsmAutostartAppPrivate {
         int                   launch_type;
         GPid                  pid;
         guint                 child_watch_id;
-
-        DBusGProxy           *proxy;
-        DBusGProxyCall       *proxy_call;
 };
 
 enum {
@@ -97,7 +94,10 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 #define CSM_AUTOSTART_APP_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), CSM_TYPE_AUTOSTART_APP, CsmAutostartAppPrivate))
 
-G_DEFINE_TYPE (CsmAutostartApp, csm_autostart_app, CSM_TYPE_APP)
+static void csm_autostart_app_initable_iface_init (GInitableIface *iface);
+
+G_DEFINE_TYPE_WITH_CODE (CsmAutostartApp, csm_autostart_app, CSM_TYPE_APP,
+    G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE, csm_autostart_app_initable_iface_init))
 
 static void
 csm_autostart_app_init (CsmAutostartApp *app)
@@ -375,7 +375,7 @@ setup_gsettings_condition_monitor (CsmAutostartApp *app,
         GSettingsSchema *schema;
         GSettings *settings;
         char **elems;
-        gboolean retval = FALSE;
+        gboolean retval;
         char *signal;
 
         retval = FALSE;
@@ -624,7 +624,9 @@ setup_condition_monitor (CsmAutostartApp *app)
 
         g_free (key);
 
-        /* FIXME: cache the disabled value? */
+        if (disabled) {
+                /* FIXME: cache the disabled value? */
+        }
 }
 
 static gboolean
@@ -733,16 +735,39 @@ load_desktop_file (CsmAutostartApp *app)
         return TRUE;
 }
 
-static void
-csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
-                                        const char      *desktop_filename)
+static gboolean
+csm_autostart_app_initable_init (GInitable *initable,
+                                 GCancellable *cancellable,
+                                 GError  **error)
 {
-        GError *error;
+        CsmAutostartApp *app = CSM_AUTOSTART_APP (initable);
+
+        g_return_val_if_fail (app->priv->desktop_filename != NULL, FALSE);
 
         if (app->priv->desktop_file != NULL) {
                 egg_desktop_file_free (app->priv->desktop_file);
                 app->priv->desktop_file = NULL;
-                g_free (app->priv->desktop_id);
+        }
+
+        app->priv->desktop_file = egg_desktop_file_new (app->priv->desktop_filename,
+                                                        error);
+        if (app->priv->desktop_file == NULL) {
+                return FALSE;
+        }
+
+        load_desktop_file (app);
+
+        return TRUE;
+}
+
+static void
+csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
+                                        const char      *desktop_filename)
+{
+        if (app->priv->desktop_file != NULL) {
+                g_clear_pointer (&app->priv->desktop_file, egg_desktop_file_free);
+                g_clear_pointer (&app->priv->desktop_id, g_free);
+                g_clear_pointer (&app->priv->desktop_filename, g_free);
         }
 
         if (desktop_filename == NULL) {
@@ -750,16 +775,7 @@ csm_autostart_app_set_desktop_filename (CsmAutostartApp *app,
         }
 
         app->priv->desktop_id = g_path_get_basename (desktop_filename);
-
-        error = NULL;
-        app->priv->desktop_file = egg_desktop_file_new (desktop_filename, &error);
-        if (app->priv->desktop_file == NULL) {
-                g_warning ("Could not parse desktop file %s: %s",
-                           desktop_filename,
-                           error->message);
-                g_error_free (error);
-                return;
-        }
+        app->priv->desktop_filename = g_strdup (desktop_filename);
 }
 
 static void
@@ -846,16 +862,6 @@ csm_autostart_app_dispose (GObject *object)
         if (priv->child_watch_id > 0) {
                 g_source_remove (priv->child_watch_id);
                 priv->child_watch_id = 0;
-        }
-
-        if (priv->proxy_call != NULL) {
-                dbus_g_proxy_cancel_call (priv->proxy, priv->proxy_call);
-                priv->proxy_call = NULL;
-        }
-
-        if (priv->proxy != NULL) {
-                g_object_unref (priv->proxy);
-                priv->proxy = NULL;
         }
 
         if (priv->condition_monitor) {
@@ -996,7 +1002,7 @@ static int
 _signal_pid (int pid,
              int signal)
 {
-        int status = -1;
+        int status;
 
         /* perhaps block sigchld */
         g_debug ("CsmAutostartApp: sending signal %d to process %d", signal, pid);
@@ -1137,21 +1143,19 @@ autostart_app_start_spawn (CsmAutostartApp *app,
 }
 
 static void
-start_notify (DBusGProxy      *proxy,
-              DBusGProxyCall  *call,
+start_notify (GObject *source,
+              GAsyncResult *result,
               CsmAutostartApp *app)
 {
-        gboolean res;
         GError  *error;
 
         error = NULL;
-        res = dbus_g_proxy_end_call (proxy,
-                                     call,
-                                     &error,
-                                     G_TYPE_INVALID);
-        app->priv->proxy_call = NULL;
 
-        if (! res) {
+        g_dbus_connection_call_finish (G_DBUS_CONNECTION (source),
+                                       result,
+                                       &error);
+
+        if (error != NULL) {
                 g_warning ("CsmAutostartApp: Error starting application: %s", error->message);
                 g_error_free (error);
         } else {
@@ -1166,11 +1170,11 @@ autostart_app_start_activate (CsmAutostartApp  *app,
         const char      *name;
         char            *path;
         char            *arguments;
-        DBusGConnection *bus;
+        GDBusConnection *bus;
         GError          *local_error;
 
         local_error = NULL;
-        bus = dbus_g_bus_get (DBUS_BUS_SESSION, &local_error);
+        bus = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &local_error);
         if (bus == NULL) {
                 if (local_error != NULL) {
                         g_warning ("error getting session bus: %s", local_error->message);
@@ -1194,34 +1198,18 @@ autostart_app_start_activate (CsmAutostartApp  *app,
                                                  CSM_AUTOSTART_APP_DBUS_ARGS_KEY,
                                                  NULL);
 
-        app->priv->proxy = dbus_g_proxy_new_for_name (bus,
-                                                      name,
-                                                      path,
-                                                      CSM_SESSION_CLIENT_DBUS_INTERFACE);
-        if (app->priv->proxy == NULL) {
-                g_set_error (error,
-                             CSM_APP_ERROR,
-                             CSM_APP_ERROR_START,
-                             "Unable to start application: unable to create proxy for client");
-                return FALSE;
-        }
+        g_dbus_connection_call (bus,
+                                name,
+                                path,
+                                CSM_SESSION_CLIENT_DBUS_INTERFACE,
+                                "Start",
+                                g_variant_new ("(s)", arguments),
+                                NULL,
+                                G_DBUS_CALL_FLAGS_NONE,
+                                -1, NULL,
+                                (GAsyncReadyCallback) start_notify, app);
 
-        app->priv->proxy_call = dbus_g_proxy_begin_call (app->priv->proxy,
-                                                         "Start",
-                                                         (DBusGProxyCallNotify)start_notify,
-                                                         app,
-                                                         NULL,
-                                                         G_TYPE_STRING, arguments,
-                                                         G_TYPE_INVALID);
-        if (app->priv->proxy_call == NULL) {
-                g_object_unref (app->priv->proxy);
-                app->priv->proxy = NULL;
-                g_set_error (error,
-                             CSM_APP_ERROR,
-                             CSM_APP_ERROR_START,
-                             "Unable to start application: unable to call Start on client");
-                return FALSE;
-        }
+        g_object_unref (bus);
 
         return TRUE;
 }
@@ -1445,23 +1433,10 @@ csm_autostart_app_peek_autostart_delay (CsmApp *app)
         return aapp->priv->autostart_delay;
 }
 
-static GObject *
-csm_autostart_app_constructor (GType                  type,
-                               guint                  n_construct_properties,
-                               GObjectConstructParam *construct_properties)
+static void
+csm_autostart_app_initable_iface_init (GInitableIface  *iface)
 {
-        CsmAutostartApp *app;
-
-        app = CSM_AUTOSTART_APP (G_OBJECT_CLASS (csm_autostart_app_parent_class)->constructor (type,
-                                                                                               n_construct_properties,
-                                                                                               construct_properties));
-
-        if (! load_desktop_file (app)) {
-                g_object_unref (app);
-                app = NULL;
-        }
-
-        return G_OBJECT (app);
+        iface->init = csm_autostart_app_initable_init;
 }
 
 static void
@@ -1473,7 +1448,6 @@ csm_autostart_app_class_init (CsmAutostartAppClass *klass)
         object_class->set_property = csm_autostart_app_set_property;
         object_class->get_property = csm_autostart_app_get_property;
         object_class->dispose = csm_autostart_app_dispose;
-        object_class->constructor = csm_autostart_app_constructor;
 
         app_class->impl_is_disabled = is_disabled;
         app_class->impl_is_conditionally_disabled = is_conditionally_disabled;
@@ -1513,10 +1487,19 @@ CsmApp *
 csm_autostart_app_new (const char *desktop_file)
 {
         CsmAutostartApp *app;
+        GError *error;
 
-        app = g_object_new (CSM_TYPE_AUTOSTART_APP,
-                            "desktop-filename", desktop_file,
-                            NULL);
+        error = NULL;
+
+        app = g_initable_new (CSM_TYPE_AUTOSTART_APP,
+                              NULL, &error,
+                              "desktop-filename", desktop_file,
+                              NULL);
+
+        if (error != NULL) {
+                g_warning ("Could not read %s: %s", desktop_file, error->message);
+                g_clear_error (&error);
+        }
 
         return CSM_APP (app);
 }

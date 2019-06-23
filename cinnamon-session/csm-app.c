@@ -27,7 +27,7 @@
 #include <string.h>
 
 #include "csm-app.h"
-#include "csm-app-glue.h"
+#include "csm-exported-app.h"
 
 #define CSM_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_APP, CsmAppPrivate))
 
@@ -42,7 +42,8 @@ struct _CsmAppPrivate
         char            *startup_id;
         gboolean         ever_started;
         GTimeVal         last_restart_time;
-        DBusGConnection *connection;
+        CsmExportedApp  *skeleton;
+        GDBusConnection *connection;
 };
 
 
@@ -79,6 +80,49 @@ csm_app_error_quark (void)
 
 }
 
+static gboolean
+csm_app_get_app_id (CsmExportedApp        *skeleton,
+                    GDBusMethodInvocation *invocation,
+                    CsmApp                *app)
+{
+        const gchar *id;
+
+        id = CSM_APP_GET_CLASS (app)->impl_get_app_id (app);
+
+        csm_exported_app_complete_get_app_id (skeleton,
+                                              invocation,
+                                              id);
+
+        return TRUE;
+}
+
+static gboolean
+csm_app_get_startup_id (CsmExportedApp        *skeleton,
+                        GDBusMethodInvocation *invocation,
+                        CsmApp                *app)
+{
+        const gchar *id;
+
+        id = g_strdup (app->priv->startup_id);
+
+        csm_exported_app_complete_get_startup_id (skeleton,
+                                                  invocation,
+                                                  id);
+
+        return TRUE;
+}
+
+static gboolean
+csm_app_get_phase (CsmExportedApp        *skeleton,
+                   GDBusMethodInvocation *invocation,
+                   CsmApp                *app)
+{
+        csm_exported_app_complete_get_phase (skeleton,
+                                             invocation,
+                                             app->priv->phase);
+        return TRUE;
+}
+
 static guint32
 get_next_app_serial (void)
 {
@@ -93,13 +137,16 @@ get_next_app_serial (void)
         return serial;
 }
 
+
 static gboolean
 register_app (CsmApp *app)
 {
+        CsmExportedApp *skeleton;
         GError *error;
 
         error = NULL;
-        app->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        app->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
         if (app->priv->connection == NULL) {
                 if (error != NULL) {
                         g_critical ("error getting session bus: %s", error->message);
@@ -108,7 +155,26 @@ register_app (CsmApp *app)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (app->priv->connection, app->priv->id, G_OBJECT (app));
+        skeleton = csm_exported_app_skeleton_new ();
+        app->priv->skeleton = skeleton;
+
+        g_debug ("exporting app to object path: %s", app->priv->id);
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          app->priv->connection,
+                                          app->priv->id, &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting app on session bus: %s", error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        g_signal_connect (skeleton, "handle-get-app-id",
+                          G_CALLBACK (csm_app_get_app_id), app);
+        g_signal_connect (skeleton, "handle-get-startup-id",
+                          G_CALLBACK (csm_app_get_startup_id), app);
+        g_signal_connect (skeleton, "handle-get-phase",
+                          G_CALLBACK (csm_app_get_phase), app);
 
         return TRUE;
 }
@@ -233,6 +299,14 @@ csm_app_dispose (GObject *object)
         g_free (app->priv->id);
         app->priv->id = NULL;
 
+        if (app->priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (app->priv->skeleton),
+                                                                    app->priv->connection);
+                g_clear_object (&app->priv->skeleton);
+        }
+
+        g_clear_object (&app->priv->connection);
+
         G_OBJECT_CLASS (csm_app_parent_class)->dispose (object);
 }
 
@@ -283,8 +357,7 @@ csm_app_class_init (CsmAppClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmAppClass, exited),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__UCHAR,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_UCHAR);
         signals[DIED] =
@@ -292,8 +365,7 @@ csm_app_class_init (CsmAppClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmAppClass, died),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__INT,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_INT);
 
@@ -302,13 +374,11 @@ csm_app_class_init (CsmAppClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmAppClass, registered),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               0);
 
         g_type_class_add_private (klass, sizeof (CsmAppPrivate));
-        dbus_g_object_type_install_info (CSM_TYPE_APP, &dbus_glib_csm_app_object_info);
 }
 
 const char *
@@ -499,34 +569,4 @@ csm_app_died (CsmApp *app,
         g_return_if_fail (CSM_IS_APP (app));
 
         g_signal_emit (app, signals[DIED], 0, signal);
-}
-
-gboolean
-csm_app_get_app_id (CsmApp     *app,
-                    char      **id,
-                    GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_APP (app), FALSE);
-        *id = g_strdup (CSM_APP_GET_CLASS (app)->impl_get_app_id (app));
-        return TRUE;
-}
-
-gboolean
-csm_app_get_startup_id (CsmApp     *app,
-                        char      **id,
-                        GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_APP (app), FALSE);
-        *id = g_strdup (app->priv->startup_id);
-        return TRUE;
-}
-
-gboolean
-csm_app_get_phase (CsmApp     *app,
-                   guint      *phase,
-                   GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_APP (app), FALSE);
-        *phase = app->priv->phase;
-        return TRUE;
 }

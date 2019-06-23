@@ -3,7 +3,6 @@ executable('cinnamon-session-quit',
   'cinnamon-session-quit.c',
   dependencies: [
     gtk3,
-    dbus_glib,
     gconf,
     sm,
     ice,

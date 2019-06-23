@@ -35,15 +35,13 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <glib-object.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 
 #include <gtk/gtk.h> /* for logout dialog */
 
 #include <canberra.h>
 
 #include "csm-manager.h"
-#include "csm-manager-glue.h"
+#include "csm-exported-manager.h"
 
 #include "csm-store.h"
 #include "csm-inhibitor.h"
@@ -157,9 +155,13 @@ struct CsmManagerPrivate
         GSettings              *lockdown_settings;
 
         CsmSystem              *system;
-        DBusGProxy             *bus_proxy;
-        DBusGConnection        *connection;
+
+        GDBusProxy             *bus_proxy;
+        GDBusConnection        *connection;
+        CsmExportedManager     *skeleton;
+
         gboolean                dbus_disconnected : 1;
+        guint                   name_owner_id;
 
         ca_context             *ca;
         gboolean               logout_sound_is_playing;
@@ -169,7 +171,6 @@ struct CsmManagerPrivate
 enum {
         PROP_0,
         PROP_CLIENT_STORE,
-        PROP_INHIBITED_ACTIONS,
         PROP_SESSION_NAME,
         PROP_FALLBACK,
         PROP_FAILSAFE
@@ -177,18 +178,23 @@ enum {
 
 enum {
         PHASE_CHANGED,
-        CLIENT_ADDED,
-        CLIENT_REMOVED,
-        INHIBITOR_ADDED,
-        INHIBITOR_REMOVED,
-        SESSION_RUNNING,
-        SESSION_OVER,
         LAST_SIGNAL
 };
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
 static void     csm_manager_finalize    (GObject         *object);
+
+static void     show_fallback_shutdown_dialog (CsmManager *manager,
+                                               gboolean    is_reboot);
+
+static void     show_fallback_logout_dialog   (CsmManager *manager);
+
+static void     user_logout (CsmManager           *manager,
+                             CsmManagerLogoutMode  mode);
+static void     request_shutdown (CsmManager *manager);
+static void     request_reboot (CsmManager *manager);
+
 
 static void     maybe_save_session   (CsmManager *manager);
 static void     maybe_play_logout_sound (CsmManager *manager);
@@ -206,42 +212,29 @@ static gpointer manager_object = NULL;
 
 G_DEFINE_TYPE (CsmManager, csm_manager, G_TYPE_OBJECT)
 
+#define CSM_MANAGER_DBUS_IFACE "org.gnome.SessionManager"
+
+static const GDBusErrorEntry csm_manager_error_entries[] = {
+        { CSM_MANAGER_ERROR_GENERAL,               CSM_MANAGER_DBUS_IFACE ".GeneralError" },
+        { CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION, CSM_MANAGER_DBUS_IFACE ".NotInInitialization" },
+        { CSM_MANAGER_ERROR_NOT_IN_RUNNING,        CSM_MANAGER_DBUS_IFACE ".NotInRunning" },
+        { CSM_MANAGER_ERROR_ALREADY_REGISTERED,    CSM_MANAGER_DBUS_IFACE ".AlreadyRegistered" },
+        { CSM_MANAGER_ERROR_NOT_REGISTERED,        CSM_MANAGER_DBUS_IFACE ".NotRegistered" },
+        { CSM_MANAGER_ERROR_INVALID_OPTION,        CSM_MANAGER_DBUS_IFACE ".InvalidOption" },
+        { CSM_MANAGER_ERROR_LOCKED_DOWN,           CSM_MANAGER_DBUS_IFACE ".LockedDown" }
+};
+
 GQuark
 csm_manager_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("csm_manager_error");
-        }
+        static volatile gsize quark_volatile = 0;
 
-        return ret;
-}
+        g_dbus_error_register_error_domain ("csm_manager_error",
+                                            &quark_volatile,
+                                            csm_manager_error_entries,
+                                            G_N_ELEMENTS (csm_manager_error_entries));
 
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-csm_manager_error_get_type (void)
-{
-        static GType etype = 0;
-
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION, "NotInInitialization"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_NOT_IN_RUNNING, "NotInRunning"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_ALREADY_REGISTERED, "AlreadyRegistered"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_NOT_REGISTERED, "NotRegistered"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_INVALID_OPTION, "InvalidOption"),
-                        ENUM_ENTRY (CSM_MANAGER_ERROR_LOCKED_DOWN, "LockedDown"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (CSM_MANAGER_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("CsmManagerError", values);
-        }
-
-        return etype;
+        return quark_volatile;
 }
 
 static gboolean
@@ -957,6 +950,8 @@ maybe_restart_user_bus (CsmManager *manager)
         if (!csm_system_is_last_session_for_user (system))
                 return;
 
+        g_debug ("CsmManager: restarting user bus");
+
         reply = g_dbus_connection_call_sync (manager->priv->connection,
                                              "org.freedesktop.systemd1",
                                              "/org/freedesktop/systemd1",
@@ -970,7 +965,8 @@ maybe_restart_user_bus (CsmManager *manager)
                                              &error);
 
         if (error != NULL) {
-                g_debug ("CsmManager: reloading user bus failed: %s", error->message);
+                g_debug ("CsmManager: restarting user bus failed: %s", error->message);
+                g_error_free (error);
         }
 }
 
@@ -982,7 +978,7 @@ do_phase_exit (CsmManager *manager)
                                    (CsmStoreFunc)_client_stop,
                                    NULL);
         }
-        maybe_restart_user_bus (manager);
+        // maybe_restart_user_bus (manager);
         end_phase (manager);
 }
 
@@ -1587,7 +1583,7 @@ start_phase (CsmManager *manager)
                 break;
         case CSM_MANAGER_PHASE_RUNNING:
                 csm_xsmp_server_start_accepting_new_clients (manager->priv->xsmp_server);
-                g_signal_emit (manager, signals[SESSION_RUNNING], 0);
+                csm_exported_manager_emit_session_running (manager->priv->skeleton);
                 update_idle (manager);
                 break;
         case CSM_MANAGER_PHASE_QUERY_END_SESSION:
@@ -1671,6 +1667,9 @@ _csm_manager_set_active_session (CsmManager     *manager,
         g_free (manager->priv->session_name);
         manager->priv->session_name = g_strdup (session_name);
         manager->priv->is_fallback_session = is_fallback;
+
+        csm_exported_manager_set_session_name (manager->priv->skeleton,
+                                               session_name);
 }
 
 static gboolean
@@ -1768,6 +1767,659 @@ find_app_for_startup_id (CsmManager *manager,
         }
  out:
         return found_app;
+}
+
+static gboolean
+csm_manager_setenv (CsmExportedManager    *skeleton,
+                    GDBusMethodInvocation *invocation,
+                    const gchar           *variable,
+                    const gchar           *value,
+                    CsmManager            *manager)
+{
+        if (!CSM_IS_MANAGER (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "CSM_IS_MANAGER failed on csm_manager_setenv");
+
+                return TRUE;
+        }
+
+        if (manager->priv->phase > CSM_MANAGER_PHASE_INITIALIZATION) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION,
+                                                       "Setenv interface is only available during the Initialization phase");
+
+                return TRUE;
+        }
+
+        csm_util_setenv (variable, value);
+
+        csm_exported_manager_complete_setenv (skeleton, invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_initialization_error (CsmExportedManager    *skeleton,
+                                  GDBusMethodInvocation *invocation,
+                                  const char            *message,
+                                  gboolean               fatal,
+                                  CsmManager            *manager)
+{
+        if (!CSM_IS_MANAGER (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "CSM_IS_MANAGER failed on csm_manager_initialization_error");
+
+                return TRUE;
+        }
+
+        if (manager->priv->phase > CSM_MANAGER_PHASE_INITIALIZATION) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION,
+                                                       "InitializationError interface is only available during the Initialization phase");
+
+                return TRUE;
+        }
+
+        csm_util_init_error (fatal, "%s", message);
+
+        csm_exported_manager_complete_initialization_error (skeleton, invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_register_client (CsmExportedManager      *skeleton,
+                             GDBusMethodInvocation   *invocation,
+                             const char              *app_id,
+                             const char              *startup_id,
+                             CsmManager              *manager)
+{
+        char      *new_startup_id;
+        const char *sender;
+        CsmClient *client;
+        CsmApp    *app;
+
+        if (!CSM_IS_MANAGER (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "CSM_IS_MANAGER failed on csm_manager_register_client");
+
+                return TRUE;
+        }
+
+        app = NULL;
+        client = NULL;
+
+        g_debug ("CsmManager: RegisterClient %s", startup_id);
+
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION) {
+                g_debug ("Unable to register client: shutting down");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "Unable to register client");
+
+                return TRUE;
+        }
+
+        if (IS_STRING_EMPTY (startup_id)) {
+                new_startup_id = csm_util_generate_startup_id ();
+        } else {
+                client = (CsmClient *)csm_store_find (manager->priv->clients,
+                                                      (CsmStoreFunc)_client_has_startup_id,
+                                                      (char *)startup_id);
+                /* We can't have two clients with the same startup id. */
+                if (client != NULL) {
+                        g_debug ("Unable to register client: already registered");
+
+                        g_dbus_method_invocation_return_error (invocation,
+                                                               CSM_MANAGER_ERROR,
+                                                               CSM_MANAGER_ERROR_ALREADY_REGISTERED,
+                                                               "Unable to register client");
+
+                        return TRUE;
+                }
+
+                new_startup_id = g_strdup (startup_id);
+        }
+
+        g_debug ("CsmManager: Adding new client %s to session", new_startup_id);
+
+        if (app == NULL && !IS_STRING_EMPTY (startup_id)) {
+                app = find_app_for_startup_id (manager, startup_id);
+        }
+        if (app == NULL && !IS_STRING_EMPTY (app_id)) {
+                /* try to associate this app id with a known app */
+                app = find_app_for_app_id (manager, app_id);
+        }
+
+        sender = g_dbus_method_invocation_get_sender (invocation);
+        client = csm_dbus_client_new (new_startup_id, sender);
+
+        if (client == NULL) {
+                g_debug ("Unable to create client");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Unable to register client");
+
+                return TRUE;
+        }
+
+        csm_store_add (manager->priv->clients, csm_client_peek_id (client), G_OBJECT (client));
+        /* the store will own the ref */
+        g_object_unref (client);
+
+        if (app != NULL) {
+                csm_client_set_app_id (client, csm_app_peek_app_id (app));
+                csm_app_registered (app);
+        } else {
+                /* if an app id is specified store it in the client
+                   so we can save it later */
+                csm_client_set_app_id (client, app_id);
+        }
+
+        csm_client_set_status (client, CSM_CLIENT_REGISTERED);
+
+        g_assert (new_startup_id != NULL);
+        g_free (new_startup_id);
+
+        csm_exported_manager_complete_register_client (skeleton,
+                                                       invocation,
+                                                       csm_client_peek_id (client));
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_unregister_client (CsmExportedManager     *skeleton,
+                               GDBusMethodInvocation  *invocation,
+                               const char             *client_id,
+                               CsmManager             *manager)
+{
+        CsmClient *client;
+
+        if (!CSM_IS_MANAGER (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "CSM_IS_MANAGER failed on csm_manager_register_client");
+
+                return TRUE;
+        }
+
+        g_debug ("CsmManager: UnregisterClient %s", client_id);
+
+        client = (CsmClient *)csm_store_lookup (manager->priv->clients, client_id);
+        if (client == NULL) {
+                g_debug ("Unable to unregister client: not registered");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_REGISTERED,
+                                                       "Unable to unregister client");
+
+                return TRUE;
+        }
+
+        /* don't disconnect client here, only change the status.
+           Wait until it leaves the bus before disconnecting it */
+        csm_client_set_status (client, CSM_CLIENT_UNREGISTERED);
+
+        csm_exported_manager_complete_unregister_client (skeleton,
+                                                         invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_inhibit (CsmExportedManager      *skeleton,
+                     GDBusMethodInvocation   *invocation,
+                     const char              *app_id,
+                     guint                    toplevel_xid,
+                     const char              *reason,
+                     guint                    flags,
+                     CsmManager              *manager)
+{
+        CsmInhibitor *inhibitor;
+        guint         cookie;
+
+        g_debug ("CsmManager: Inhibit xid=%u app_id=%s reason=%s flags=%u",
+                 toplevel_xid,
+                 app_id,
+                 reason,
+                 flags);
+
+        if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
+                g_debug ("CsmManager: Unable to inhibit: Forced logout cannot be inhibited");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Forced logout cannot be inhibited");
+
+                return TRUE;
+        }
+
+        if (IS_STRING_EMPTY (app_id)) {
+                g_debug ("CsmManager: Unable to inhibit: Application ID not specified");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Application ID not specified");
+
+                return TRUE;
+        }
+
+        if (IS_STRING_EMPTY (reason)) {
+                g_debug ("CsmManager: Unable to inhibit: Reason not specific");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Reason not specified");
+
+                return TRUE;
+        }
+
+        if (flags == 0) {
+                g_debug ("CsmManager: Unable to inhibit: Invalid inhibit flags");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Invalid inhibit flags");
+
+                return TRUE;
+        }
+
+        cookie = _generate_unique_cookie (manager);
+        inhibitor = csm_inhibitor_new (app_id,
+                                       toplevel_xid,
+                                       flags,
+                                       reason,
+                                       g_dbus_method_invocation_get_sender (invocation),
+                                       cookie);
+        csm_store_add (manager->priv->inhibitors, csm_inhibitor_peek_id (inhibitor), G_OBJECT (inhibitor));
+        g_object_unref (inhibitor);
+
+        csm_exported_manager_complete_inhibit (skeleton,
+                                               invocation,
+                                               cookie);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_uninhibit (CsmExportedManager    *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       guint                  cookie,
+                       CsmManager            *manager)
+{
+        CsmInhibitor *inhibitor;
+
+        g_debug ("CsmManager: Uninhibit %u", cookie);
+
+        inhibitor = (CsmInhibitor *)csm_store_find (manager->priv->inhibitors,
+                                                    (CsmStoreFunc)_find_by_cookie,
+                                                    &cookie);
+        if (inhibitor == NULL) {
+                g_debug ("Unable to uninhibit: Invalid cookie");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_GENERAL,
+                                                       "Unable to uninhibit: Invalid cookie");
+
+                return TRUE;
+        }
+
+        g_debug ("CsmManager: removing inhibitor %s %u reason '%s' %u connection %s",
+                 csm_inhibitor_peek_app_id (inhibitor),
+                 csm_inhibitor_peek_toplevel_xid (inhibitor),
+                 csm_inhibitor_peek_reason (inhibitor),
+                 csm_inhibitor_peek_flags (inhibitor),
+                 csm_inhibitor_peek_bus_name (inhibitor));
+
+        csm_store_remove (manager->priv->inhibitors, csm_inhibitor_peek_id (inhibitor));
+
+        csm_exported_manager_complete_uninhibit (skeleton,
+                                                 invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_is_inhibited (CsmExportedManager    *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          guint                  flags,
+                          CsmManager            *manager)
+{
+        gboolean is_inhibited;
+
+        is_inhibited = FALSE;
+
+        if (manager->priv->inhibitors == NULL
+            || csm_store_size (manager->priv->inhibitors) == 0) {
+                is_inhibited = FALSE;
+        } else {
+                CsmInhibitor *inhibitor;
+
+                inhibitor = (CsmInhibitor *) csm_store_find (manager->priv->inhibitors,
+                                                             (CsmStoreFunc)inhibitor_has_flag,
+                                                             GUINT_TO_POINTER (flags));
+
+                is_inhibited = inhibitor != NULL;
+        }
+
+        csm_exported_manager_complete_is_inhibited (skeleton,
+                                                    invocation,
+                                                    is_inhibited);
+
+        return TRUE;
+}
+
+static gboolean
+listify_store_ids (char       *id,
+                   GObject    *object,
+                   GPtrArray **array)
+{
+        g_ptr_array_add (*array, g_strdup (id));
+        return FALSE;
+}
+
+static gboolean
+csm_manager_get_clients (CsmExportedManager     *skeleton,
+                         GDBusMethodInvocation  *invocation,
+                         CsmManager             *manager)
+{
+        GPtrArray *clients;
+
+        clients = g_ptr_array_new_with_free_func (g_free);
+
+        csm_store_foreach (manager->priv->clients,
+                           (CsmStoreFunc)listify_store_ids,
+                           &clients);
+
+        g_ptr_array_add (clients, NULL);
+
+        csm_exported_manager_complete_get_clients (skeleton,
+                                                   invocation,
+                                                   (const gchar * const *) clients->pdata);
+        g_ptr_array_unref (clients);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_get_inhibitors (CsmExportedManager     *skeleton,
+                            GDBusMethodInvocation  *invocation,
+                            CsmManager             *manager)
+{
+        GPtrArray *inhibitors;
+
+        inhibitors = g_ptr_array_new_with_free_func (g_free);
+
+        csm_store_foreach (manager->priv->inhibitors,
+                           (CsmStoreFunc)listify_store_ids,
+                           &inhibitors);
+
+        g_ptr_array_add (inhibitors, NULL);
+
+        csm_exported_manager_complete_get_inhibitors (skeleton,
+                                                      invocation,
+                                                      (const gchar * const *) inhibitors->pdata);
+        g_ptr_array_unref (inhibitors);
+
+        return TRUE;
+}
+
+static gboolean
+_app_has_autostart_condition (const char *id,
+                              CsmApp     *app,
+                              const char *condition)
+{
+        gboolean has;
+        gboolean disabled;
+
+        has = csm_app_has_autostart_condition (app, condition);
+        disabled = csm_app_peek_is_disabled (app);
+
+        return has && !disabled;
+}
+
+static gboolean
+csm_manager_is_autostart_condition_handled (CsmExportedManager    *skeleton,
+                                            GDBusMethodInvocation *invocation,
+                                            const char            *condition,
+                                            CsmManager            *manager)
+{
+        CsmApp *app;
+        gboolean handled;
+
+        app = (CsmApp *) csm_store_find (manager->priv->apps,(
+                                         CsmStoreFunc) _app_has_autostart_condition,
+                                         (char *)condition);
+
+        if (app != NULL) {
+                handled = TRUE;
+        } else {
+                handled = FALSE;
+        }
+
+        csm_exported_manager_complete_is_autostart_condition_handled (skeleton,
+                                                                      invocation,
+                                                                      handled);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_shutdown (CsmExportedManager    *skeleton,
+                      GDBusMethodInvocation *invocation,
+                      CsmManager            *manager)
+{
+        g_debug ("CsmManager: Shutdown called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "Shutdown interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        if (_log_out_is_locked_down (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_LOCKED_DOWN,
+                                                       "Logout has been locked down");
+
+                return TRUE;
+        }
+
+        show_fallback_shutdown_dialog (manager, FALSE);
+
+        csm_exported_manager_complete_shutdown (skeleton,
+                                                invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_reboot (CsmExportedManager     *skeleton,
+                    GDBusMethodInvocation  *invocation,
+                    CsmManager  *manager)
+{
+        g_debug ("CsmManager: Reboot called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "Reboot interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        if (_log_out_is_locked_down (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_LOCKED_DOWN,
+                                                       "Logout has been locked down");
+
+                return TRUE;
+        }
+ 
+        show_fallback_shutdown_dialog (manager, TRUE);
+
+        csm_exported_manager_complete_reboot (skeleton,
+                                              invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_can_shutdown (CsmExportedManager    *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          CsmManager            *manager)
+{
+        gboolean shutdown_available;
+
+        g_debug ("CsmManager: CanShutdown called");
+
+        shutdown_available = !_log_out_is_locked_down (manager) &&
+                             (csm_system_can_stop (manager->priv->system)
+                              || csm_system_can_restart (manager->priv->system)
+                              || csm_system_can_suspend (manager->priv->system)
+                              || csm_system_can_hibernate (manager->priv->system));
+
+        csm_exported_manager_complete_can_shutdown (skeleton,
+                                                    invocation,
+                                                    shutdown_available);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_logout_dbus (CsmExportedManager    *skeleton,
+                         GDBusMethodInvocation *invocation,
+                         guint                  logout_mode,
+                         CsmManager            *manager)
+{
+        g_debug ("CsmManager: Logout called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "Logout interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        if (_log_out_is_locked_down (manager)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_LOCKED_DOWN,
+                                                       "Logout has been locked down");
+
+                return TRUE;
+        }
+
+        switch (logout_mode) {
+        case CSM_MANAGER_LOGOUT_MODE_NORMAL:
+        case CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION:
+        case CSM_MANAGER_LOGOUT_MODE_FORCE:
+                user_logout (manager, logout_mode);
+                break;
+        default:
+                g_debug ("Unknown logout mode option");
+
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_INVALID_OPTION,
+                                                       "Unknown logout mode flag");
+
+                return TRUE;
+        }
+
+        csm_exported_manager_complete_logout (skeleton,
+                                              invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_is_session_running (CsmExportedManager    *skeleton,
+                                GDBusMethodInvocation *invocation,
+                                CsmManager            *manager)
+{
+
+        csm_exported_manager_complete_is_session_running (skeleton,
+                                                          invocation,
+                                                          (manager->priv->phase == CSM_MANAGER_PHASE_RUNNING));
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_request_shutdown (CsmExportedManager    *skeleton,
+                              GDBusMethodInvocation *invocation,
+                              CsmManager            *manager)
+{
+        g_debug ("CsmManager: RequestShutdown called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "RequestShutdown interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        request_shutdown (manager);
+
+        csm_exported_manager_complete_request_shutdown (skeleton,
+                                                        invocation);
+
+        return TRUE;
+}
+
+static gboolean
+csm_manager_request_reboot (CsmExportedManager     *skeleton,
+                            GDBusMethodInvocation  *invocation,
+                            CsmManager *manager)
+{
+        g_debug ("CsmManager: RequestReboot called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "RequestReboot interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        request_reboot (manager);
+
+        csm_exported_manager_complete_request_reboot (skeleton,
+                                                      invocation);
+
+        return TRUE;
 }
 
 static void
@@ -1980,55 +2632,95 @@ remove_inhibitors_for_connection (CsmManager *manager,
 }
 
 static void
-bus_name_owner_changed (DBusGProxy  *bus_proxy,
-                        const char  *service_name,
-                        const char  *old_service_name,
-                        const char  *new_service_name,
-                        CsmManager  *manager)
+on_dbus_proxy_signal (GDBusProxy *proxy,
+                      gchar      *sender_name,
+                      gchar      *signal_name,
+                      GVariant   *parameters,
+                      gpointer    user_data)
 {
-        if (strlen (new_service_name) == 0
-            && strlen (old_service_name) > 0) {
-                /* service removed */
-                remove_inhibitors_for_connection (manager, old_service_name);
-                remove_clients_for_connection (manager, old_service_name);
-        } else if (strlen (old_service_name) == 0
-                   && strlen (new_service_name) > 0) {
-                /* service added */
+    CsmManager *manager;
+    gchar *name, *old_owner, *new_owner;
 
-                /* use this if we support automatically registering
-                 * well known bus names */
-        }
+    manager = CSM_MANAGER (user_data);
+
+    if (g_strcmp0 (signal_name, "NameOwnerChanged") != 0) {
+            return;
+    }
+
+    g_variant_get (parameters, "(sss)",
+                   &name,
+                   &old_owner,
+                   &new_owner);
+
+    if (strlen (new_owner) == 0 && strlen (old_owner) > 0) {
+                /* service removed */
+                remove_inhibitors_for_connection (manager, old_owner);
+                remove_clients_for_connection (manager, old_owner);
+    } else if (strlen (old_owner) == 0 && strlen (new_owner) > 0) {
+            /* service added */
+
+            /* use this if we support automatically registering
+             * well known bus names */
+    }
+
+    g_free (name);
+    g_free (old_owner);
+    g_free (new_owner);
 }
 
-static DBusHandlerResult
-csm_manager_bus_filter (DBusConnection *connection,
-                        DBusMessage    *message,
-                        void           *user_data)
+static void
+on_bus_connection_closed (GDBusConnection *connection,
+                          gboolean         remote_peer_vanished,
+                          GError          *error,
+                          gpointer         user_data)
 {
         CsmManager *manager;
 
         manager = CSM_MANAGER (user_data);
 
-        if (dbus_message_is_signal (message,
-                                    DBUS_INTERFACE_LOCAL, "Disconnected") &&
-            strcmp (dbus_message_get_path (message), DBUS_PATH_LOCAL) == 0) {
-                g_debug ("CsmManager: dbus disconnected; disconnecting dbus clients...");
-                manager->priv->dbus_disconnected = TRUE;
-                remove_clients_for_connection (manager, NULL);
-                /* let other filters get this disconnected signal, so that they
-                 * can handle it too */
-        }
+        g_debug ("CsmManager: dbus disconnected; disconnecting dbus clients...");
 
-        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+        manager->priv->dbus_disconnected = TRUE;
+        remove_clients_for_connection (manager, NULL);
 }
+
+typedef struct
+{
+    const gchar  *signal_name;
+    gpointer      callback;
+} SkeletonSignal;
+
+static SkeletonSignal skeleton_signals[] = {
+    // signal name                              callback
+    { "handle-setenv",                          csm_manager_setenv },
+    { "handle-initialization-error",            csm_manager_initialization_error },
+    { "handle-register-client",                 csm_manager_register_client },
+    { "handle-unregister-client",               csm_manager_unregister_client },
+    { "handle-inhibit",                         csm_manager_inhibit },
+    { "handle-uninhibit",                       csm_manager_uninhibit },
+    { "handle-is-inhibited",                    csm_manager_is_inhibited },
+    { "handle-get-clients",                     csm_manager_get_clients },
+    { "handle-get-inhibitors",                  csm_manager_get_inhibitors },
+    { "handle-is-autostart-condition-handled",  csm_manager_is_autostart_condition_handled },
+    { "handle-shutdown",                        csm_manager_shutdown },
+    { "handle-reboot",                          csm_manager_reboot },
+    { "handle-can-shutdown",                    csm_manager_can_shutdown },
+    { "handle-logout",                          csm_manager_logout_dbus },
+    { "handle-is-session-running",              csm_manager_is_session_running },
+    { "handle-request-shutdown",                csm_manager_request_shutdown },
+    { "handle-request-reboot",                  csm_manager_request_reboot }
+};
+
 static gboolean
 register_manager (CsmManager *manager)
 {
+        CsmExportedManager *skeleton;
         GError *error = NULL;
-        DBusConnection *connection;
+        GDBusConnection *connection;
+        gint i;
 
         error = NULL;
-        manager->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        manager->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
         if (manager->priv->connection == NULL) {
                 if (error != NULL) {
                         g_critical ("error getting session bus: %s", error->message);
@@ -2037,32 +2729,56 @@ register_manager (CsmManager *manager)
                 exit (1);
         }
 
-        connection = dbus_g_connection_get_connection (manager->priv->connection);
-        dbus_connection_add_filter (connection,
-                                    csm_manager_bus_filter,
-                                    manager, NULL);
+        g_signal_connect (manager->priv->connection,
+                          "closed",
+                          G_CALLBACK (on_bus_connection_closed),
+                           manager);
+
         manager->priv->dbus_disconnected = FALSE;
 
-        manager->priv->bus_proxy = dbus_g_proxy_new_for_name (manager->priv->connection,
-                                                              DBUS_SERVICE_DBUS,
-                                                              DBUS_PATH_DBUS,
-                                                              DBUS_INTERFACE_DBUS);
-        dbus_g_proxy_add_signal (manager->priv->bus_proxy,
-                                 "NameOwnerChanged",
-                                 G_TYPE_STRING,
-                                 G_TYPE_STRING,
-                                 G_TYPE_STRING,
-                                 G_TYPE_INVALID);
-        dbus_g_proxy_connect_signal (manager->priv->bus_proxy,
-                                     "NameOwnerChanged",
-                                     G_CALLBACK (bus_name_owner_changed),
-                                     manager,
-                                     NULL);
+        manager->priv->bus_proxy = g_dbus_proxy_new_sync (manager->priv->connection,
+                                                          G_DBUS_PROXY_FLAGS_NONE,
+                                                          NULL,
+                                                          "org.freedesktop.DBus",
+                                                          "/org/freedesktop/DBus",
+                                                          "org.freedesktop.DBus",
+                                                          NULL,
+                                                          &error);
 
-        dbus_g_connection_register_g_object (manager->priv->connection, CSM_MANAGER_DBUS_PATH, G_OBJECT (manager));
+        g_signal_connect (manager->priv->bus_proxy,
+                          "g-signal",
+                          G_CALLBACK (on_dbus_proxy_signal),
+                          manager);
+
+        skeleton = csm_exported_manager_skeleton_new ();
+        manager->priv->skeleton = skeleton;
+
+        g_debug ("exporting manager skeleton");
+
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          manager->priv->connection,
+                                          CSM_MANAGER_DBUS_PATH,
+                                          &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting manager skeleton: %s", error->message);
+                g_error_free (error);
+
+                exit(1);
+        }
+
+        for (i = 0; i < G_N_ELEMENTS (skeleton_signals); i++) {
+                SkeletonSignal sig = skeleton_signals[i];
+
+                g_signal_connect (skeleton,
+                                  sig.signal_name,
+                                  G_CALLBACK (sig.callback),
+                                  manager);
+        }
 
         return TRUE;
 }
+
 
 static void
 csm_manager_set_failsafe (CsmManager *manager,
@@ -2334,6 +3050,52 @@ on_client_end_session_response (CsmClient  *client,
                                              reason);
 }
 
+gboolean
+csm_manager_logout (CsmManager *manager,
+                    guint       logout_mode,
+                    GError    **error)
+{
+        g_debug ("CsmManager: Logout called");
+
+        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_set_error (error,
+                             CSM_MANAGER_ERROR,
+                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                             "Logout interface is only available during the Running phase");
+                return FALSE;
+        }
+
+        if (_log_out_is_locked_down (manager)) {
+                g_set_error (error,
+                             CSM_MANAGER_ERROR,
+                             CSM_MANAGER_ERROR_LOCKED_DOWN,
+                             "Logout has been locked down");
+                return FALSE;
+        }
+
+        switch (logout_mode) {
+        case CSM_MANAGER_LOGOUT_MODE_NORMAL:
+        case CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION:
+        case CSM_MANAGER_LOGOUT_MODE_FORCE:
+                user_logout (manager, logout_mode);
+                break;
+
+        default:
+                g_debug ("Unknown logout mode option");
+
+                g_set_error (error,
+                             CSM_MANAGER_ERROR,
+                             CSM_MANAGER_ERROR_INVALID_OPTION,
+                             "Unknown logout mode flag");
+                return FALSE;
+        }
+
+        return TRUE;
+}
+
+
 static void
 on_xsmp_client_logout_request (CsmXSMPClient *client,
                                gboolean       show_dialog,
@@ -2349,6 +3111,7 @@ on_xsmp_client_logout_request (CsmXSMPClient *client,
         }
 
         error = NULL;
+
         csm_manager_logout (manager, logout_mode, &error);
         if (error != NULL) {
                 g_warning ("Unable to logout: %s", error->message);
@@ -2389,7 +3152,7 @@ on_store_client_added (CsmStore   *store,
                           G_CALLBACK (on_client_disconnected),
                           manager);
 
-        g_signal_emit (manager, signals [CLIENT_ADDED], 0, id);
+        csm_exported_manager_emit_client_added (manager->priv->skeleton, id);
 }
 
 static void
@@ -2399,7 +3162,7 @@ on_store_client_removed (CsmStore   *store,
 {
         g_debug ("CsmManager: Client removed: %s", id);
 
-        g_signal_emit (manager, signals [CLIENT_REMOVED], 0, id);
+        csm_exported_manager_emit_client_removed (manager->priv->skeleton, id);
 }
 
 static void
@@ -2494,9 +3257,6 @@ csm_manager_get_property (GObject    *object,
         case PROP_CLIENT_STORE:
                 g_value_set_object (value, self->priv->clients);
                 break;
-        case PROP_INHIBITED_ACTIONS:
-                g_value_set_uint (value, self->priv->inhibited_actions);
-                break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
                 break;
@@ -2528,49 +3288,17 @@ static void
 update_inhibited_actions (CsmManager *manager,
                           CsmInhibitorFlag new_inhibited_actions)
 {
-        DBusGConnection *gconnection;
-        DBusConnection *connection;
-        DBusMessage *message;
-        DBusMessageIter iter;
-        DBusMessageIter subiter;
-        DBusMessageIter dict_iter;
-        DBusMessageIter v_iter;
-        const char *iface_name = CSM_MANAGER_DBUS_NAME;
-        const char *prop_name = "InhibitedActions";
-
         if (manager->priv->inhibited_actions == new_inhibited_actions)
                 return;
 
         manager->priv->inhibited_actions = new_inhibited_actions;
-        g_object_notify (G_OBJECT (manager), "inhibited-actions");
 
-        /* Now, the following bits emit the PropertiesChanged signal
-         * that GDBus expects.  This code should just die in a port to
-         * GDBus.
-         */
-        gconnection = dbus_g_bus_get (DBUS_BUS_SESSION, NULL);
-        g_assert (gconnection);
-        connection = dbus_g_connection_get_connection (gconnection);
-        message = dbus_message_new_signal (CSM_MANAGER_DBUS_PATH, "org.freedesktop.DBus.Properties",
-                                           "PropertiesChanged");
-        g_assert (message != NULL);
-        dbus_message_iter_init_append (message, &iter);
-        dbus_message_iter_append_basic (&iter, DBUS_TYPE_STRING, &iface_name);
-        /* changed */
-        dbus_message_iter_open_container (&iter, DBUS_TYPE_ARRAY, "{sv}", &subiter);
-        dbus_message_iter_open_container (&subiter, DBUS_TYPE_DICT_ENTRY, NULL, &dict_iter);
-        dbus_message_iter_append_basic (&dict_iter, DBUS_TYPE_STRING, &prop_name);
-        dbus_message_iter_open_container (&dict_iter, DBUS_TYPE_VARIANT, "u", &v_iter);
-        dbus_message_iter_append_basic (&v_iter, DBUS_TYPE_UINT32, &new_inhibited_actions);
-        dbus_message_iter_close_container (&dict_iter, &v_iter);
-        dbus_message_iter_close_container (&subiter, &dict_iter);
-        dbus_message_iter_close_container (&iter, &subiter);
-        /* invalidated */
-        dbus_message_iter_open_container (&iter, DBUS_TYPE_ARRAY, "s", &subiter);
-        dbus_message_iter_close_container (&iter, &subiter);
+        g_debug ("CsmManager: new inhibit flag: %d", new_inhibited_actions);
 
-        dbus_connection_send (connection, message, NULL);
-        dbus_message_unref (message);
+        csm_exported_manager_set_inhibited_actions (manager->priv->skeleton,
+                                                    manager->priv->inhibited_actions);
+
+        g_dbus_interface_skeleton_flush (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton));
 }
 
 static void
@@ -2590,7 +3318,7 @@ on_store_inhibitor_added (CsmStore   *store,
         new_inhibited_actions = manager->priv->inhibited_actions | csm_inhibitor_peek_flags (i);
         update_inhibited_actions (manager, new_inhibited_actions);
 
-        g_signal_emit (manager, signals [INHIBITOR_ADDED], 0, id);
+        csm_exported_manager_emit_inhibitor_added (manager->priv->skeleton, id);
 
         update_idle (manager);
 }
@@ -2624,7 +3352,7 @@ on_store_inhibitor_removed (CsmStore   *store,
                            &new_inhibited_actions);
         update_inhibited_actions (manager, new_inhibited_actions);
 
-        g_signal_emit (manager, signals [INHIBITOR_REMOVED], 0, id);
+        csm_exported_manager_emit_inhibitor_removed (manager->priv->skeleton, id);
 
         update_idle (manager);
 }
@@ -2637,6 +3365,8 @@ csm_manager_dispose (GObject *object)
         g_debug ("CsmManager: disposing manager");
 
         g_clear_object (&manager->priv->xsmp_server);
+
+        g_clear_object (&manager->priv->bus_proxy);
 
         if (manager->priv->clients != NULL) {
                 g_signal_handlers_disconnect_by_func (manager->priv->clients,
@@ -2724,67 +3454,6 @@ csm_manager_class_init (CsmManagerClass *klass)
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
 
-        signals [SESSION_RUNNING] =
-                g_signal_new ("session-running",
-                              G_OBJECT_CLASS_TYPE (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, session_running),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__VOID,
-                              G_TYPE_NONE,
-                              0);
-
-        signals [SESSION_OVER] =
-                g_signal_new ("session-over",
-                              G_OBJECT_CLASS_TYPE (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, session_over),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
-                              G_TYPE_NONE,
-                              0);
-        signals [CLIENT_ADDED] =
-                g_signal_new ("client-added",
-                              G_TYPE_FROM_CLASS (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, client_added),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__BOXED,
-                              G_TYPE_NONE,
-                              1, DBUS_TYPE_G_OBJECT_PATH);
-        signals [CLIENT_REMOVED] =
-                g_signal_new ("client-removed",
-                              G_TYPE_FROM_CLASS (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, client_removed),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__BOXED,
-                              G_TYPE_NONE,
-                              1, DBUS_TYPE_G_OBJECT_PATH);
-        signals [INHIBITOR_ADDED] =
-                g_signal_new ("inhibitor-added",
-                              G_TYPE_FROM_CLASS (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, inhibitor_added),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__BOXED,
-                              G_TYPE_NONE,
-                              1, DBUS_TYPE_G_OBJECT_PATH);
-        signals [INHIBITOR_REMOVED] =
-                g_signal_new ("inhibitor-removed",
-                              G_TYPE_FROM_CLASS (object_class),
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmManagerClass, inhibitor_removed),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__BOXED,
-                              G_TYPE_NONE,
-                              1, DBUS_TYPE_G_OBJECT_PATH);
-
         g_object_class_install_property (object_class,
                                          PROP_FAILSAFE,
                                          g_param_spec_boolean ("failsafe",
@@ -2793,21 +3462,6 @@ csm_manager_class_init (CsmManagerClass *klass)
                                                                FALSE,
                                                                G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
-        /**
-         * CsmManager::inhibited-actions
-         *
-         * A bitmask of flags to indicate which actions are inhibited. See the Inhibit()
-         * function's description for a list of possible values.
-         */
-        g_object_class_install_property (object_class,
-                                         PROP_INHIBITED_ACTIONS,
-                                         g_param_spec_uint ("inhibited-actions",
-                                                            NULL,
-                                                            NULL,
-                                                            0,
-                                                            G_MAXUINT,
-                                                            0,
-                                                            G_PARAM_READABLE));
         /**
          * CsmManager::session-name
          *
@@ -2846,9 +3500,6 @@ csm_manager_class_init (CsmManagerClass *klass)
                                                               G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
         g_type_class_add_private (klass, sizeof (CsmManagerPrivate));
-
-        dbus_g_object_type_install_info (CSM_TYPE_MANAGER, &dbus_glib_csm_manager_object_info);
-        dbus_g_error_domain_register (CSM_MANAGER_ERROR, NULL, CSM_MANAGER_TYPE_ERROR);
 }
 
 static void
@@ -2930,6 +3581,14 @@ csm_manager_finalize (GObject *object)
 
         g_return_if_fail (manager->priv != NULL);
 
+        if (manager->priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton),
+                                                                    manager->priv->connection);
+                g_clear_object (&manager->priv->skeleton);
+        }
+
+        g_clear_object (&manager->priv->connection);
+
         G_OBJECT_CLASS (csm_manager_parent_class)->finalize (object);
 }
 
@@ -2963,48 +3622,6 @@ csm_manager_new (CsmStore *client_store,
         }
 
         return CSM_MANAGER (manager_object);
-}
-
-gboolean
-csm_manager_setenv (CsmManager  *manager,
-                    const char  *variable,
-                    const char  *value,
-                    GError     **error)
-{
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase > CSM_MANAGER_PHASE_INITIALIZATION) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION,
-                             "Setenv interface is only available during the Initialization phase");
-                return FALSE;
-        }
-
-        csm_util_setenv (variable, value);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_initialization_error (CsmManager  *manager,
-                                  const char  *message,
-                                  gboolean     fatal,
-                                  GError     **error)
-{
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase > CSM_MANAGER_PHASE_INITIALIZATION) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION,
-                             "InitializationError interface is only available during the Initialization phase");
-                return FALSE;
-        }
-
-        csm_util_init_error (fatal, "%s", message);
-
-        return TRUE;
 }
 
 static gboolean
@@ -3330,540 +3947,6 @@ _switch_user_is_locked_down (CsmManager *manager)
                                        KEY_DISABLE_USER_SWITCHING);
 }
 
-gboolean
-csm_manager_request_shutdown (CsmManager *manager,
-                              GError    **error)
-{
-        g_debug ("CsmManager: RequestShutdown called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                             "RequestShutdown interface is only available during the Running phase");
-                return FALSE;
-        }
-
-        request_shutdown (manager);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_request_reboot (CsmManager *manager,
-                            GError    **error)
-{
-        g_debug ("CsmManager: RequestReboot called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                             "RequestReboot interface is only available during the Running phase");
-                return FALSE;
-        }
-
-        request_reboot (manager);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_shutdown (CsmManager *manager,
-                      GError    **error)
-{
-        g_debug ("CsmManager: Shutdown called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                             "Shutdown interface is only available during the Running phase");
-                return FALSE;
-        }
-
-        if (_log_out_is_locked_down (manager)) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_LOCKED_DOWN,
-                             "Logout has been locked down");
-                return FALSE;
-        }
-
-        show_fallback_shutdown_dialog (manager, FALSE);
-        return TRUE;
-}
-
-gboolean
-csm_manager_reboot (CsmManager  *manager,
-                    GError     **error)
-{
-        g_debug ("CsmManager: Reboot called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                             "Reboot interface is only available during the Running phase");
-                return FALSE;
-        }
-
-        if (_log_out_is_locked_down (manager)) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_LOCKED_DOWN,
-                             "Logout has been locked down");
-                return FALSE;
-        }
- 
-        show_fallback_shutdown_dialog (manager, TRUE);
-
-        return TRUE;
-}
-
-
-gboolean
-csm_manager_can_shutdown (CsmManager *manager,
-                          gboolean   *shutdown_available,
-                          GError    **error)
-{
-        g_debug ("CsmManager: CanShutdown called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        *shutdown_available = !_log_out_is_locked_down (manager) &&
-                              (csm_system_can_stop (manager->priv->system)
-                               || csm_system_can_restart (manager->priv->system)
-                               || csm_system_can_suspend (manager->priv->system)
-                               || csm_system_can_hibernate (manager->priv->system));
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_logout (CsmManager *manager,
-                    guint       logout_mode,
-                    GError    **error)
-{
-        g_debug ("CsmManager: Logout called");
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                             "Logout interface is only available during the Running phase");
-                return FALSE;
-        }
-
-        if (_log_out_is_locked_down (manager)) {
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_LOCKED_DOWN,
-                             "Logout has been locked down");
-                return FALSE;
-        }
-
-        switch (logout_mode) {
-        case CSM_MANAGER_LOGOUT_MODE_NORMAL:
-        case CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION:
-        case CSM_MANAGER_LOGOUT_MODE_FORCE:
-                user_logout (manager, logout_mode);
-                break;
-
-        default:
-                g_debug ("Unknown logout mode option");
-
-                g_set_error (error,
-                             CSM_MANAGER_ERROR,
-                             CSM_MANAGER_ERROR_INVALID_OPTION,
-                             "Unknown logout mode flag");
-                return FALSE;
-        }
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_register_client (CsmManager            *manager,
-                             const char            *app_id,
-                             const char            *startup_id,
-                             DBusGMethodInvocation *context)
-{
-        char      *new_startup_id;
-        char      *sender;
-        CsmClient *client;
-        CsmApp    *app;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        app = NULL;
-        client = NULL;
-
-        g_debug ("CsmManager: RegisterClient %s", startup_id);
-
-        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION) {
-                GError *new_error;
-
-                g_debug ("Unable to register client: shutting down");
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_NOT_IN_RUNNING,
-                                         "Unable to register client");
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        if (IS_STRING_EMPTY (startup_id)) {
-                new_startup_id = csm_util_generate_startup_id ();
-        } else {
-
-                client = (CsmClient *)csm_store_find (manager->priv->clients,
-                                                      (CsmStoreFunc)_client_has_startup_id,
-                                                      (char *)startup_id);
-                /* We can't have two clients with the same startup id. */
-                if (client != NULL) {
-                        GError *new_error;
-
-                        g_debug ("Unable to register client: already registered");
-
-                        new_error = g_error_new (CSM_MANAGER_ERROR,
-                                                 CSM_MANAGER_ERROR_ALREADY_REGISTERED,
-                                                 "Unable to register client");
-                        dbus_g_method_return_error (context, new_error);
-                        g_error_free (new_error);
-                        return FALSE;
-                }
-
-                new_startup_id = g_strdup (startup_id);
-        }
-
-        g_debug ("CsmManager: Adding new client %s to session", new_startup_id);
-
-        if (app == NULL && !IS_STRING_EMPTY (startup_id)) {
-                app = find_app_for_startup_id (manager, startup_id);
-        }
-        if (app == NULL && !IS_STRING_EMPTY (app_id)) {
-                /* try to associate this app id with a known app */
-                app = find_app_for_app_id (manager, app_id);
-        }
-
-        sender = dbus_g_method_get_sender (context);
-        client = csm_dbus_client_new (new_startup_id, sender);
-        g_free (sender);
-        if (client == NULL) {
-                GError *new_error;
-
-                g_debug ("Unable to create client");
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Unable to register client");
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        csm_store_add (manager->priv->clients, csm_client_peek_id (client), G_OBJECT (client));
-        /* the store will own the ref */
-        g_object_unref (client);
-
-        if (app != NULL) {
-                csm_client_set_app_id (client, csm_app_peek_app_id (app));
-                csm_app_registered (app);
-        } else {
-                /* if an app id is specified store it in the client
-                   so we can save it later */
-                csm_client_set_app_id (client, app_id);
-        }
-
-        csm_client_set_status (client, CSM_CLIENT_REGISTERED);
-
-        g_assert (new_startup_id != NULL);
-        g_free (new_startup_id);
-
-        dbus_g_method_return (context, csm_client_peek_id (client));
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_unregister_client (CsmManager            *manager,
-                               const char            *client_id,
-                               DBusGMethodInvocation *context)
-{
-        CsmClient *client;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        g_debug ("CsmManager: UnregisterClient %s", client_id);
-
-        client = (CsmClient *)csm_store_lookup (manager->priv->clients, client_id);
-        if (client == NULL) {
-                GError *new_error;
-
-                g_debug ("Unable to unregister client: not registered");
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_NOT_REGISTERED,
-                                         "Unable to unregister client");
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        /* don't disconnect client here, only change the status.
-           Wait until it leaves the bus before disconnecting it */
-        csm_client_set_status (client, CSM_CLIENT_UNREGISTERED);
-
-        dbus_g_method_return (context);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_inhibit (CsmManager            *manager,
-                     const char            *app_id,
-                     guint                  toplevel_xid,
-                     const char            *reason,
-                     guint                  flags,
-                     DBusGMethodInvocation *context)
-{
-        CsmInhibitor *inhibitor;
-        guint         cookie;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        g_debug ("CsmManager: Inhibit xid=%u app_id=%s reason=%s flags=%u",
-                 toplevel_xid,
-                 app_id,
-                 reason,
-                 flags);
-
-        if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
-                GError *new_error;
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Forced logout cannot be inhibited");
-                g_debug ("CsmManager: Unable to inhibit: %s", new_error->message);
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        if (IS_STRING_EMPTY (app_id)) {
-                GError *new_error;
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Application ID not specified");
-                g_debug ("CsmManager: Unable to inhibit: %s", new_error->message);
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        if (IS_STRING_EMPTY (reason)) {
-                GError *new_error;
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Reason not specified");
-                g_debug ("CsmManager: Unable to inhibit: %s", new_error->message);
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        if (flags == 0) {
-                GError *new_error;
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Invalid inhibit flags");
-                g_debug ("CsmManager: Unable to inhibit: %s", new_error->message);
-                dbus_g_method_return_error (context, new_error);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        cookie = _generate_unique_cookie (manager);
-        inhibitor = csm_inhibitor_new (app_id,
-                                       toplevel_xid,
-                                       flags,
-                                       reason,
-                                       dbus_g_method_get_sender (context),
-                                       cookie);
-        csm_store_add (manager->priv->inhibitors, csm_inhibitor_peek_id (inhibitor), G_OBJECT (inhibitor));
-        g_object_unref (inhibitor);
-
-        dbus_g_method_return (context, cookie);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_uninhibit (CsmManager            *manager,
-                       guint                  cookie,
-                       DBusGMethodInvocation *context)
-{
-        CsmInhibitor *inhibitor;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        g_debug ("CsmManager: Uninhibit %u", cookie);
-
-        inhibitor = (CsmInhibitor *)csm_store_find (manager->priv->inhibitors,
-                                                    (CsmStoreFunc)_find_by_cookie,
-                                                    &cookie);
-        if (inhibitor == NULL) {
-                GError *new_error;
-
-                new_error = g_error_new (CSM_MANAGER_ERROR,
-                                         CSM_MANAGER_ERROR_GENERAL,
-                                         "Unable to uninhibit: Invalid cookie");
-                dbus_g_method_return_error (context, new_error);
-                g_debug ("Unable to uninhibit: %s", new_error->message);
-                g_error_free (new_error);
-                return FALSE;
-        }
-
-        g_debug ("CsmManager: removing inhibitor %s %u reason '%s' %u connection %s",
-                 csm_inhibitor_peek_app_id (inhibitor),
-                 csm_inhibitor_peek_toplevel_xid (inhibitor),
-                 csm_inhibitor_peek_reason (inhibitor),
-                 csm_inhibitor_peek_flags (inhibitor),
-                 csm_inhibitor_peek_bus_name (inhibitor));
-
-        csm_store_remove (manager->priv->inhibitors, csm_inhibitor_peek_id (inhibitor));
-
-        dbus_g_method_return (context);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_is_inhibited (CsmManager *manager,
-                          guint       flags,
-                          gboolean   *is_inhibited,
-                          GError     *error)
-{
-        CsmInhibitor *inhibitor;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (manager->priv->inhibitors == NULL
-            || csm_store_size (manager->priv->inhibitors) == 0) {
-                *is_inhibited = FALSE;
-                return TRUE;
-        }
-
-        inhibitor = (CsmInhibitor *) csm_store_find (manager->priv->inhibitors,
-                                                     (CsmStoreFunc)inhibitor_has_flag,
-                                                     GUINT_TO_POINTER (flags));
-        if (inhibitor == NULL) {
-                *is_inhibited = FALSE;
-        } else {
-                *is_inhibited = TRUE;
-        }
-
-        return TRUE;
-
-}
-
-static gboolean
-listify_store_ids (char       *id,
-                   GObject    *object,
-                   GPtrArray **array)
-{
-        g_ptr_array_add (*array, g_strdup (id));
-        return FALSE;
-}
-
-gboolean
-csm_manager_get_clients (CsmManager *manager,
-                         GPtrArray **clients,
-                         GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (clients == NULL) {
-                return FALSE;
-        }
-
-        *clients = g_ptr_array_new ();
-        csm_store_foreach (manager->priv->clients, (CsmStoreFunc)listify_store_ids, clients);
-
-        return TRUE;
-}
-
-gboolean
-csm_manager_get_inhibitors (CsmManager *manager,
-                            GPtrArray **inhibitors,
-                            GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        if (inhibitors == NULL) {
-                return FALSE;
-        }
-
-        *inhibitors = g_ptr_array_new ();
-        csm_store_foreach (manager->priv->inhibitors,
-                           (CsmStoreFunc) listify_store_ids,
-                           inhibitors);
-
-        return TRUE;
-}
-
-
-static gboolean
-_app_has_autostart_condition (const char *id,
-                              CsmApp     *app,
-                              const char *condition)
-{
-        gboolean has;
-        gboolean disabled;
-
-        has = csm_app_has_autostart_condition (app, condition);
-        disabled = csm_app_peek_is_disabled (app);
-
-        return has && !disabled;
-}
-
-gboolean
-csm_manager_is_autostart_condition_handled (CsmManager *manager,
-                                            const char *condition,
-                                            gboolean   *handled,
-                                            GError    **error)
-{
-        CsmApp *app;
-
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        app = (CsmApp *) csm_store_find (manager->priv->apps,(
-                                         CsmStoreFunc) _app_has_autostart_condition,
-                                         (char *)condition);
-
-        if (app != NULL) {
-                *handled = TRUE;
-        } else {
-                *handled = FALSE;
-        }
-
-        return TRUE;
-}
 
 static void
 append_app (CsmManager *manager,
@@ -3955,8 +4038,8 @@ add_autostart_app_internal (CsmManager *manager,
         }
 
         app = csm_autostart_app_new (path);
+
         if (app == NULL) {
-                g_warning ("could not read %s", path);
                 return FALSE;
         }
 
@@ -4072,16 +4155,6 @@ csm_manager_add_autostart_apps_from_dir (CsmManager *manager,
         return TRUE;
 }
 
-gboolean
-csm_manager_is_session_running (CsmManager *manager,
-                                gboolean   *running,
-                                GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
-
-        *running = (manager->priv->phase == CSM_MANAGER_PHASE_RUNNING);
-        return TRUE;
-}
 
 gboolean
 csm_manager_get_app_is_blacklisted (CsmManager *manager,

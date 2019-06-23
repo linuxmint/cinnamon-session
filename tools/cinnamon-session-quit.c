@@ -30,9 +30,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
-
 #define CSM_SERVICE_DBUS   "org.gnome.SessionManager"
 #define CSM_PATH_DBUS      "/org/gnome/SessionManager"
 #define CSM_INTERFACE_DBUS "org.gnome.SessionManager"
@@ -64,38 +61,19 @@ display_error (const char *message)
         g_printerr ("%s\n", message);
 }
 
-static DBusGConnection *
-get_session_bus (void)
-{
-        DBusGConnection *bus;
-        GError *error = NULL;
-
-        bus = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-
-        if (bus == NULL) {
-                g_warning ("Couldn't connect to session bus: %s", error->message);
-                g_error_free (error);
-        }
-
-        return bus;
-}
-
-static DBusGProxy *
+static GDBusProxy *
 get_sm_proxy (void)
 {
-        DBusGConnection *connection;
-        DBusGProxy      *sm_proxy;
+        GDBusProxy      *sm_proxy;
 
-        connection = get_session_bus ();
-        if (connection == NULL) {
-                display_error (_("Could not connect to the session manager"));
-                return NULL;
-        }
-
-        sm_proxy = dbus_g_proxy_new_for_name (connection,
-                                               CSM_SERVICE_DBUS,
-                                               CSM_PATH_DBUS,
-                                               CSM_INTERFACE_DBUS);
+        sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                  G_DBUS_PROXY_FLAGS_NONE,
+                                                  NULL,
+                                                  CSM_SERVICE_DBUS,
+                                                  CSM_PATH_DBUS,
+                                                  CSM_INTERFACE_DBUS,
+                                                  NULL,
+                                                  NULL);
 
         if (sm_proxy == NULL) {
                 display_error (_("Could not connect to the session manager"));
@@ -108,9 +86,9 @@ get_sm_proxy (void)
 static void
 do_logout (unsigned int mode)
 {
-        DBusGProxy *sm_proxy;
+        GDBusProxy *sm_proxy;
         GError     *error;
-        gboolean    res;
+        GVariant   *res;
 
         sm_proxy = get_sm_proxy ();
         if (sm_proxy == NULL) {
@@ -118,12 +96,14 @@ do_logout (unsigned int mode)
         }
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Logout",
-                                 &error,
-                                 G_TYPE_UINT, mode,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
+
+        res = g_dbus_proxy_call_sync (sm_proxy,
+                                      "Logout",
+                                      g_variant_new_uint32 (mode),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
 
         if (!res) {
                 if (error != NULL) {
@@ -135,6 +115,8 @@ do_logout (unsigned int mode)
                 }
         }
 
+        g_variant_unref (res);
+
         if (sm_proxy != NULL) {
                 g_object_unref (sm_proxy);
         }
@@ -143,9 +125,9 @@ do_logout (unsigned int mode)
 static void
 do_power_off (const char *action)
 {
-        DBusGProxy *sm_proxy;
+        GDBusProxy *sm_proxy;
         GError     *error;
-        gboolean    res;
+        GVariant   *res;
 
         sm_proxy = get_sm_proxy ();
         if (sm_proxy == NULL) {
@@ -153,11 +135,14 @@ do_power_off (const char *action)
         }
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 action,
-                                 &error,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
+
+        res = g_dbus_proxy_call_sync (sm_proxy,
+                                      action,
+                                      NULL,
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
 
         if (!res) {
                 if (error != NULL) {
@@ -168,6 +153,8 @@ do_power_off (const char *action)
                         g_warning ("Failed to call %s", action);
                 }
         }
+
+        g_variant_unref (res);
 
         if (sm_proxy != NULL) {
                 g_object_unref (sm_proxy);

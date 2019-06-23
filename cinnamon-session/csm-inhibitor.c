@@ -26,10 +26,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "csm-inhibitor.h"
-#include "csm-inhibitor-glue.h"
+#include "csm-exported-inhibitor.h"
 
 #include "csm-util.h"
 
@@ -47,7 +45,8 @@ struct CsmInhibitorPrivate
         guint flags;
         guint toplevel_xid;
         guint cookie;
-        DBusGConnection *connection;
+        GDBusConnection *connection;
+        CsmExportedInhibitor *skeleton;
 };
 
 enum {
@@ -63,37 +62,103 @@ enum {
 
 G_DEFINE_TYPE (CsmInhibitor, csm_inhibitor, G_TYPE_OBJECT)
 
+#define CSM_INHIBITOR_DBUS_IFACE "org.gnome.SessionManager.Inhibitor"
+
+static const GDBusErrorEntry csm_inhibitor_error_entries[] = {
+        { CSM_INHIBITOR_ERROR_GENERAL, CSM_INHIBITOR_DBUS_IFACE ".GeneralError" },
+        { CSM_INHIBITOR_ERROR_NOT_SET, CSM_INHIBITOR_DBUS_IFACE ".NotSet" }
+};
+
 GQuark
 csm_inhibitor_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("csm_inhibitor_error");
-        }
+        static volatile gsize quark_volatile = 0;
 
-        return ret;
+        g_dbus_error_register_error_domain ("csm_inhibitor_error",
+                                            &quark_volatile,
+                                            csm_inhibitor_error_entries,
+                                            G_N_ELEMENTS (csm_inhibitor_error_entries));
+
+        return quark_volatile;
 }
 
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-csm_inhibitor_error_get_type (void)
+static gboolean
+csm_inhibitor_get_app_id (CsmExportedInhibitor  *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          CsmInhibitor          *inhibitor)
 {
-        static GType etype = 0;
+        const gchar *id;
 
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (CSM_INHIBITOR_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (CSM_INHIBITOR_ERROR_NOT_SET, "NotSet"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (CSM_INHIBITOR_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("CsmInhibitorError", values);
+        if (inhibitor->priv->app_id != NULL) {
+                id = inhibitor->priv->app_id;
+        } else {
+                id = "";
         }
 
-        return etype;
+        csm_exported_inhibitor_complete_get_app_id (skeleton, invocation, id);
+
+        return TRUE;
+}
+
+static gboolean
+csm_inhibitor_get_client_id (CsmExportedInhibitor  *skeleton,
+                             GDBusMethodInvocation *invocation,
+                             CsmInhibitor          *inhibitor)
+{
+        /* object paths are not allowed to be NULL or blank */
+        if (IS_STRING_EMPTY (inhibitor->priv->client_id)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_INHIBITOR_ERROR,
+                                                       CSM_INHIBITOR_ERROR_NOT_SET,
+                                                       "Value is not set");
+
+                return TRUE;
+        }
+
+        csm_exported_inhibitor_complete_get_client_id (skeleton, invocation, inhibitor->priv->client_id);
+
+        g_debug ("CsmInhibitor: getting client-id = '%s'", inhibitor->priv->client_id);
+
+        return TRUE;
+}
+
+static gboolean
+csm_inhibitor_get_reason (CsmExportedInhibitor  *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          CsmInhibitor          *inhibitor)
+{
+        const gchar *reason;
+
+        if (inhibitor->priv->reason != NULL) {
+                reason = inhibitor->priv->reason;
+        } else {
+                reason = "";
+        }
+
+        csm_exported_inhibitor_complete_get_reason (skeleton, invocation, reason);
+
+        return TRUE;
+}
+
+static gboolean
+csm_inhibitor_get_flags (CsmExportedInhibitor  *skeleton,
+                         GDBusMethodInvocation *invocation,
+                         CsmInhibitor          *inhibitor)
+{
+        csm_exported_inhibitor_complete_get_flags (skeleton, invocation, inhibitor->priv->flags);
+
+        return TRUE;
+}
+
+static gboolean
+csm_inhibitor_get_toplevel_xid (CsmExportedInhibitor  *skeleton,
+                                GDBusMethodInvocation *invocation,
+                                CsmInhibitor          *inhibitor)
+{
+
+        csm_exported_inhibitor_complete_get_toplevel_xid (skeleton, invocation, inhibitor->priv->toplevel_xid);
+
+        return TRUE;
 }
 
 static guint32
@@ -114,18 +179,39 @@ static gboolean
 register_inhibitor (CsmInhibitor *inhibitor)
 {
         GError *error;
+        CsmExportedInhibitor *skeleton;
 
         error = NULL;
-        inhibitor->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (inhibitor->priv->connection == NULL) {
-                if (error != NULL) {
-                        g_critical ("error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
+        inhibitor->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
+        if (error != NULL) {
+                g_critical ("error getting session bus: %s", error->message);
+                g_error_free (error);
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (inhibitor->priv->connection, inhibitor->priv->id, G_OBJECT (inhibitor));
+        skeleton = csm_exported_inhibitor_skeleton_new ();
+        inhibitor->priv->skeleton = skeleton;
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          inhibitor->priv->connection,
+                                          inhibitor->priv->id, &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting inhibitor on session bus: %s", error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        g_signal_connect (skeleton, "handle-get-app-id",
+                          G_CALLBACK (csm_inhibitor_get_app_id), inhibitor);
+        g_signal_connect (skeleton, "handle-get-client-id",
+                          G_CALLBACK (csm_inhibitor_get_client_id), inhibitor);
+        g_signal_connect (skeleton, "handle-get-flags",
+                          G_CALLBACK (csm_inhibitor_get_flags), inhibitor);
+        g_signal_connect (skeleton, "handle-get-reason",
+                          G_CALLBACK (csm_inhibitor_get_reason), inhibitor);
+        g_signal_connect (skeleton, "handle-get-toplevel-xid",
+                          G_CALLBACK (csm_inhibitor_get_toplevel_xid), inhibitor);
 
         return TRUE;
 }
@@ -262,85 +348,6 @@ csm_inhibitor_peek_bus_name (CsmInhibitor  *inhibitor)
         g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), NULL);
 
         return inhibitor->priv->bus_name;
-}
-
-gboolean
-csm_inhibitor_get_app_id (CsmInhibitor *inhibitor,
-                          char        **id,
-                          GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        if (inhibitor->priv->app_id != NULL) {
-                *id = g_strdup (inhibitor->priv->app_id);
-        } else {
-                *id = g_strdup ("");
-        }
-
-        return TRUE;
-}
-
-gboolean
-csm_inhibitor_get_client_id (CsmInhibitor *inhibitor,
-                             char        **id,
-                             GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        /* object paths are not allowed to be NULL or blank */
-        if (IS_STRING_EMPTY (inhibitor->priv->client_id)) {
-                g_set_error (error,
-                             CSM_INHIBITOR_ERROR,
-                             CSM_INHIBITOR_ERROR_NOT_SET,
-                             "Value is not set");
-                return FALSE;
-        }
-
-        *id = g_strdup (inhibitor->priv->client_id);
-
-        g_debug ("CsmInhibitor: getting client-id = '%s'", *id);
-
-        return TRUE;
-}
-
-gboolean
-csm_inhibitor_get_reason (CsmInhibitor *inhibitor,
-                          char        **reason,
-                          GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        if (inhibitor->priv->reason != NULL) {
-                *reason = g_strdup (inhibitor->priv->reason);
-        } else {
-                *reason = g_strdup ("");
-        }
-
-        return TRUE;
-}
-
-gboolean
-csm_inhibitor_get_flags (CsmInhibitor *inhibitor,
-                         guint        *flags,
-                         GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        *flags = inhibitor->priv->flags;
-
-        return TRUE;
-}
-
-gboolean
-csm_inhibitor_get_toplevel_xid (CsmInhibitor *inhibitor,
-                                guint        *xid,
-                                GError      **error)
-{
-        g_return_val_if_fail (CSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        *xid = inhibitor->priv->toplevel_xid;
-
-        return TRUE;
 }
 
 const char *
@@ -486,6 +493,14 @@ csm_inhibitor_finalize (GObject *object)
         g_free (inhibitor->priv->client_id);
         g_free (inhibitor->priv->reason);
 
+        if (inhibitor->priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (inhibitor->priv->skeleton),
+                                                                    inhibitor->priv->connection);
+                g_clear_object (&inhibitor->priv->skeleton);
+        }
+
+        g_clear_object (&inhibitor->priv->connection);
+
         G_OBJECT_CLASS (csm_inhibitor_parent_class)->finalize (object);
 }
 
@@ -555,8 +570,6 @@ csm_inhibitor_class_init (CsmInhibitorClass *klass)
                                                             0,
                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
-        dbus_g_object_type_install_info (CSM_TYPE_INHIBITOR, &dbus_glib_csm_inhibitor_object_info);
-        dbus_g_error_domain_register (CSM_INHIBITOR_ERROR, NULL, CSM_INHIBITOR_TYPE_ERROR);
         g_type_class_add_private (klass, sizeof (CsmInhibitorPrivate));
 }
 

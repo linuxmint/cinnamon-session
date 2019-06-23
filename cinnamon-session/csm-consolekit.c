@@ -13,61 +13,63 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street - Suite 500, Boston, MA
- * 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
 
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 #include <glib.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
+#include <gio/gunixfdlist.h>
 
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
+#ifdef HAVE_OLD_UPOWER
+#define UPOWER_ENABLE_DEPRECATED 1
+#include <upower.h>
+#endif
 
 #include "csm-system.h"
 #include "csm-consolekit.h"
 
 #define CK_NAME      "org.freedesktop.ConsoleKit"
-#define CK_PATH      "/org/freedesktop/ConsoleKit"
-#define CK_INTERFACE "org.freedesktop.ConsoleKit"
 
-#define CK_MANAGER_PATH      "/org/freedesktop/ConsoleKit/Manager"
-#define CK_MANAGER_INTERFACE "org.freedesktop.ConsoleKit.Manager"
-#define CK_SEAT_INTERFACE    "org.freedesktop.ConsoleKit.Seat"
-#define CK_SESSION_INTERFACE "org.freedesktop.ConsoleKit.Session"
+#define CK_MANAGER_PATH         "/org/freedesktop/ConsoleKit/Manager"
+#define CK_MANAGER_INTERFACE    CK_NAME ".Manager"
+#define CK_SEAT_INTERFACE       CK_NAME ".Seat"
+#define CK_SESSION_INTERFACE    CK_NAME ".Session"
 
-#define CSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW "LoginWindow"
-
-#define CSM_CONSOLEKIT_GET_PRIVATE(o)                                   \
-        (G_TYPE_INSTANCE_GET_PRIVATE ((o), CSM_TYPE_CONSOLEKIT, CsmConsolekitPrivate))
 
 struct _CsmConsolekitPrivate
 {
-        DBusGConnection *dbus_connection;
-        DBusGProxy      *bus_proxy;
-        DBusGProxy      *ck_proxy;
+        GDBusProxy      *ck_proxy;
+        GDBusProxy      *ck_session_proxy;
+#ifdef HAVE_OLD_UPOWER
+        UpClient        *up_client;
+#endif
+        char            *session_id;
+        gchar           *session_path;
+
+        GSList          *inhibitors;
+        gint             inhibit_fd;
+
+        gboolean         is_active;
+
+        gint             delay_inhibit_fd;
+        gboolean         prepare_for_shutdown_expected;
 };
 
-static void     csm_consolekit_finalize     (GObject            *object);
-
-static void     csm_consolekit_free_dbus    (CsmConsolekit      *manager);
-
-static DBusHandlerResult csm_consolekit_dbus_filter (DBusConnection *connection,
-                                                     DBusMessage    *message,
-                                                     void           *user_data);
-
-static void     csm_consolekit_on_name_owner_changed (DBusGProxy        *bus_proxy,
-                                                      const char        *name,
-                                                      const char        *prev_owner,
-                                                      const char        *new_owner,
-                                                      CsmConsolekit   *manager);
+enum {
+        PROP_0,
+        PROP_ACTIVE
+};
 
 static void csm_consolekit_system_init (CsmSystemInterface *iface);
 
@@ -76,197 +78,279 @@ G_DEFINE_TYPE_WITH_CODE (CsmConsolekit, csm_consolekit, G_TYPE_OBJECT,
                                                 csm_consolekit_system_init))
 
 static void
-csm_consolekit_class_init (CsmConsolekitClass *manager_class)
+drop_system_inhibitor (CsmConsolekit *manager)
 {
-        GObjectClass *object_class;
-
-        object_class = G_OBJECT_CLASS (manager_class);
-
-        object_class->finalize = csm_consolekit_finalize;
-
-        g_type_class_add_private (manager_class, sizeof (CsmConsolekitPrivate));
-}
-
-static DBusHandlerResult
-csm_consolekit_dbus_filter (DBusConnection *connection,
-                            DBusMessage    *message,
-                            void           *user_data)
-{
-        CsmConsolekit *manager;
-
-        manager = CSM_CONSOLEKIT (user_data);
-
-        if (dbus_message_is_signal (message,
-                                    DBUS_INTERFACE_LOCAL, "Disconnected") &&
-            strcmp (dbus_message_get_path (message), DBUS_PATH_LOCAL) == 0) {
-                csm_consolekit_free_dbus (manager);
-                /* let other filters get this disconnected signal, so that they
-                 * can handle it too */
-        }
-
-        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
-}
-
-static gboolean
-csm_consolekit_ensure_ck_connection (CsmConsolekit  *manager,
-                                     GError        **error)
-{
-        GError  *connection_error;
-        gboolean is_connected;
-
-        connection_error = NULL;
-
-        if (manager->priv->dbus_connection == NULL) {
-                DBusConnection *connection;
-
-                manager->priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM,
-                                                                 &connection_error);
-
-                if (manager->priv->dbus_connection == NULL) {
-                        g_propagate_error (error, connection_error);
-                        is_connected = FALSE;
-                        goto out;
-                }
-
-                connection = dbus_g_connection_get_connection (manager->priv->dbus_connection);
-                dbus_connection_set_exit_on_disconnect (connection, FALSE);
-                dbus_connection_add_filter (connection,
-                                            csm_consolekit_dbus_filter,
-                                            manager, NULL);
-        }
-
-        if (manager->priv->bus_proxy == NULL) {
-                manager->priv->bus_proxy =
-                        dbus_g_proxy_new_for_name_owner (manager->priv->dbus_connection,
-                                                         DBUS_SERVICE_DBUS,
-                                                         DBUS_PATH_DBUS,
-                                                         DBUS_INTERFACE_DBUS,
-                                                         &connection_error);
-
-                if (manager->priv->bus_proxy == NULL) {
-                        g_propagate_error (error, connection_error);
-                        is_connected = FALSE;
-                        goto out;
-                }
-
-                dbus_g_proxy_add_signal (manager->priv->bus_proxy,
-                                         "NameOwnerChanged",
-                                         G_TYPE_STRING,
-                                         G_TYPE_STRING,
-                                         G_TYPE_STRING,
-                                         G_TYPE_INVALID);
-
-                dbus_g_proxy_connect_signal (manager->priv->bus_proxy,
-                                             "NameOwnerChanged",
-                                             G_CALLBACK (csm_consolekit_on_name_owner_changed),
-                                             manager, NULL);
-        }
-
-        if (manager->priv->ck_proxy == NULL) {
-                manager->priv->ck_proxy =
-                        dbus_g_proxy_new_for_name_owner (manager->priv->dbus_connection,
-                                                         "org.freedesktop.ConsoleKit",
-                                                         "/org/freedesktop/ConsoleKit/Manager",
-                                                         "org.freedesktop.ConsoleKit.Manager",
-                                                         &connection_error);
-
-                if (manager->priv->ck_proxy == NULL) {
-                        g_propagate_error (error, connection_error);
-                        is_connected = FALSE;
-                        goto out;
-                }
-        }
-
-        is_connected = TRUE;
-
- out:
-        if (!is_connected) {
-                if (manager->priv->dbus_connection == NULL) {
-                        if (manager->priv->bus_proxy != NULL) {
-                                g_object_unref (manager->priv->bus_proxy);
-                                manager->priv->bus_proxy = NULL;
-                        }
-
-                        if (manager->priv->ck_proxy != NULL) {
-                                g_object_unref (manager->priv->ck_proxy);
-                                manager->priv->ck_proxy = NULL;
-                        }
-                } else if (manager->priv->bus_proxy == NULL) {
-                        if (manager->priv->ck_proxy != NULL) {
-                                g_object_unref (manager->priv->ck_proxy);
-                                manager->priv->ck_proxy = NULL;
-                        }
-                }
-        }
-
-        return is_connected;
-}
-
-static void
-csm_consolekit_on_name_owner_changed (DBusGProxy    *bus_proxy,
-                                      const char    *name,
-                                      const char    *prev_owner,
-                                      const char    *new_owner,
-                                      CsmConsolekit *manager)
-{
-        if (name != NULL && strcmp (name, "org.freedesktop.ConsoleKit") != 0) {
-                return;
-        }
-
-        g_clear_object (&manager->priv->ck_proxy);
-
-        csm_consolekit_ensure_ck_connection (manager, NULL);
-
-}
-
-static void
-csm_consolekit_init (CsmConsolekit *manager)
-{
-        GError *error;
-
-        manager->priv = CSM_CONSOLEKIT_GET_PRIVATE (manager);
-
-        error = NULL;
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
+        if (manager->priv->inhibit_fd != -1) {
+                g_debug ("CsmConsolekit: Dropping system inhibitor");
+                close (manager->priv->inhibit_fd);
+                manager->priv->inhibit_fd = -1;
         }
 }
 
 static void
-csm_consolekit_free_dbus (CsmConsolekit *manager)
+drop_delay_inhibitor (CsmConsolekit *manager)
 {
-        g_clear_object (&manager->priv->bus_proxy);
-        g_clear_object (&manager->priv->ck_proxy);
-
-        if (manager->priv->dbus_connection != NULL) {
-                DBusConnection *connection;
-                connection = dbus_g_connection_get_connection (manager->priv->dbus_connection);
-                dbus_connection_remove_filter (connection,
-                                               csm_consolekit_dbus_filter,
-                                               manager);
-
-                dbus_g_connection_unref (manager->priv->dbus_connection);
-                manager->priv->dbus_connection = NULL;
+        if (manager->priv->delay_inhibit_fd != -1) {
+                g_debug ("CsmConsolekit: Dropping delay inhibitor");
+                close (manager->priv->delay_inhibit_fd);
+                manager->priv->delay_inhibit_fd = -1;
         }
 }
 
 static void
 csm_consolekit_finalize (GObject *object)
 {
-        CsmConsolekit *manager;
-        GObjectClass  *parent_class;
+        CsmConsolekit *consolekit = CSM_CONSOLEKIT (object);
 
-        manager = CSM_CONSOLEKIT (object);
+        g_clear_object (&consolekit->priv->ck_proxy);
+        g_clear_object (&consolekit->priv->ck_session_proxy);
+        free (consolekit->priv->session_id);
+        g_free (consolekit->priv->session_path);
 
-        parent_class = G_OBJECT_CLASS (csm_consolekit_parent_class);
+        if (consolekit->priv->inhibitors != NULL) {
+                g_slist_free_full (consolekit->priv->inhibitors, g_free);
+        }
+        drop_system_inhibitor (consolekit);
+        drop_delay_inhibitor (consolekit);
 
-        csm_consolekit_free_dbus (manager);
+#ifdef HAVE_OLD_UPOWER
+        g_clear_object (&manager->priv->up_client);
+#endif
 
-        if (parent_class->finalize != NULL) {
-                parent_class->finalize (object);
+        G_OBJECT_CLASS (csm_consolekit_parent_class)->finalize (object);
+}
+
+static void
+csm_consolekit_set_property (GObject      *object,
+                             guint         prop_id,
+                             const GValue *value,
+                             GParamSpec   *pspec)
+{
+        CsmConsolekit *self = CSM_CONSOLEKIT (object);
+
+        switch (prop_id) {
+        case PROP_ACTIVE:
+                self->priv->is_active = g_value_get_boolean (value);
+                break;
+        default:
+                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+        }
+}
+
+static void
+csm_consolekit_get_property (GObject    *object,
+                             guint       prop_id,
+                             GValue     *value,
+                             GParamSpec *pspec)
+{
+        CsmConsolekit *self = CSM_CONSOLEKIT (object);
+
+        switch (prop_id) {
+        case PROP_ACTIVE:
+                g_value_set_boolean (value, self->priv->is_active);
+                break;
+        default:
+                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+                break;
+        }
+}
+
+static void
+csm_consolekit_class_init (CsmConsolekitClass *manager_class)
+{
+        GObjectClass *object_class;
+
+        object_class = G_OBJECT_CLASS (manager_class);
+
+        object_class->get_property = csm_consolekit_get_property;
+        object_class->set_property = csm_consolekit_set_property;
+        object_class->finalize = csm_consolekit_finalize;
+
+        g_object_class_override_property (object_class, PROP_ACTIVE, "active");
+
+        g_type_class_add_private (manager_class, sizeof (CsmConsolekitPrivate));
+}
+
+static void ck_session_proxy_signal_cb (GDBusProxy  *proxy,
+                                        const gchar *sender_name,
+                                        const gchar *signal_name,
+                                        GVariant    *parameters,
+                                        gpointer     user_data);
+
+static void ck_proxy_signal_cb (GDBusProxy  *proxy,
+                                const gchar *sender_name,
+                                const gchar *signal_name,
+                                GVariant    *parameters,
+                                gpointer     user_data);
+
+static void
+ck_pid_get_session (CsmConsolekit *manager,
+                    pid_t          pid,
+                    gchar        **session_id)
+{
+        GVariant *res;
+
+        *session_id = NULL;
+
+        if (pid < 0) {
+                g_warning ("Calling GetSessionForUnixProcess failed."
+                           "Invalid pid.");
+                return;
+        }
+
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "GetSessionForUnixProcess",
+                                      g_variant_new ("(u)", pid),
+                                      0,
+                                      -1,
+                                      NULL,
+                                      NULL);
+        if (!res) {
+                g_warning ("Calling GetSessionForUnixProcess failed."
+                           "Check that ConsoleKit is properly installed.");
+                return;
+        }
+
+        g_variant_get (res, "(o)", session_id);
+        g_variant_unref (res);
+}
+
+static void
+csm_consolekit_init (CsmConsolekit *manager)
+{
+        GError *error = NULL;
+        GDBusConnection *bus;
+        GVariant *res;
+
+        manager->priv = G_TYPE_INSTANCE_GET_PRIVATE (manager,
+                                                     CSM_TYPE_CONSOLEKIT,
+                                                     CsmConsolekitPrivate);
+
+        manager->priv->inhibit_fd = -1;
+        manager->priv->delay_inhibit_fd = -1;
+
+        bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
+        if (bus == NULL)
+                g_error ("Failed to connect to system bus: %s",
+                         error->message);
+        manager->priv->ck_proxy =
+                g_dbus_proxy_new_sync (bus,
+                                       0,
+                                       NULL,
+                                       CK_NAME,
+                                       CK_MANAGER_PATH,
+                                       CK_MANAGER_INTERFACE,
+                                       NULL,
+                                       &error);
+        if (manager->priv->ck_proxy == NULL) {
+                g_warning ("Failed to connect to consolekit: %s",
+                           error->message);
+                g_clear_error (&error);
+        }
+
+        g_signal_connect (manager->priv->ck_proxy, "g-signal",
+                          G_CALLBACK (ck_proxy_signal_cb), manager);
+
+        ck_pid_get_session (manager, getpid (), &manager->priv->session_id);
+
+        if (manager->priv->session_id == NULL) {
+                g_warning ("Could not get session id for session. Check that ConsoleKit is "
+                           "properly installed.");
+                return;
+        }
+
+        /* in ConsoleKit, the session id is the session path */
+        manager->priv->session_path = g_strdup (manager->priv->session_id);
+
+        manager->priv->ck_session_proxy =
+                g_dbus_proxy_new_sync (bus,
+                                       0,
+                                       NULL,
+                                       CK_NAME,
+                                       manager->priv->session_path,
+                                       CK_SESSION_INTERFACE,
+                                       NULL,
+                                       &error);
+        if (manager->priv->ck_proxy == NULL) {
+                g_warning ("Failed to connect to consolekit session: %s",
+                           error->message);
+                g_clear_error (&error);
+        }
+
+        g_signal_connect (manager->priv->ck_session_proxy, "g-signal",
+                          G_CALLBACK (ck_session_proxy_signal_cb), manager);
+
+#ifdef HAVE_OLD_UPOWER
+        g_clear_object (&manager->priv->up_client);
+        manager->priv->up_client = up_client_new ();
+#endif
+
+        g_object_unref (bus);
+}
+
+static void
+emit_restart_complete (CsmConsolekit *manager,
+                       GError     *error)
+{
+        GError *call_error;
+
+        call_error = NULL;
+
+        if (error != NULL) {
+                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
+                                                  CSM_SYSTEM_ERROR_RESTARTING,
+                                                  error->message);
+        }
+
+        g_signal_emit_by_name (G_OBJECT (manager),
+                               "request_completed", call_error);
+
+        if (call_error != NULL) {
+                g_error_free (call_error);
+        }
+}
+
+static void
+emit_stop_complete (CsmConsolekit *manager,
+                    GError     *error)
+{
+        GError *call_error;
+
+        call_error = NULL;
+
+        if (error != NULL) {
+                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
+                                                  CSM_SYSTEM_ERROR_STOPPING,
+                                                  error->message);
+        }
+
+        g_signal_emit_by_name (G_OBJECT (manager),
+                               "request_completed", call_error);
+
+        if (call_error != NULL) {
+                g_error_free (call_error);
+        }
+}
+
+static void
+restart_done (GObject      *source,
+              GAsyncResult *result,
+              gpointer      user_data)
+{
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        CsmConsolekit *manager = user_data;
+        GError *error = NULL;
+        GVariant *res;
+
+        res = g_dbus_proxy_call_finish (proxy, result, &error);
+
+        if (!res) {
+                g_warning ("Unable to restart system: %s", error->message);
+                emit_restart_complete (manager, error);
+                g_error_free (error);
+        } else {
+                emit_restart_complete (manager, NULL);
+                g_variant_unref (res);
         }
 }
 
@@ -274,31 +358,38 @@ static void
 csm_consolekit_attempt_restart (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-        GError  *error;
 
-        error = NULL;
+        /* Use Restart instead of Reboot because it will work on
+         * both CK and CK2 */
+        g_dbus_proxy_call (manager->priv->ck_proxy,
+                           "Restart",
+                           g_variant_new ("()"),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           restart_done,
+                           manager);
+}
 
-        g_warning ("Attempting to restart using consolekit...");
+static void
+stop_done (GObject      *source,
+           GAsyncResult *result,
+           gpointer      user_data)
+{
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        CsmConsolekit *manager = user_data;
+        GError *error = NULL;
+        GVariant *res;
 
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
-                g_error_free (error);
-                return;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              "Restart",
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_INVALID,
-                                              G_TYPE_INVALID);
+        res = g_dbus_proxy_call_finish (proxy, result, &error);
 
         if (!res) {
-                g_warning ("Unable to restart system via consolekit: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
+                g_warning ("Unable to stop system: %s", error->message);
+                emit_stop_complete (manager, error);
                 g_error_free (error);
+        } else {
+                emit_stop_complete (manager, NULL);
+                g_variant_unref (res);
         }
 }
 
@@ -306,577 +397,454 @@ static void
 csm_consolekit_attempt_stop (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-        GError  *error;
 
-        error = NULL;
-
-        g_warning ("Attempting to shutdown using consolekit...");
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
-                g_error_free (error);
-                return;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              "Stop",
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_INVALID,
-                                              G_TYPE_INVALID);
-
-        if (!res) {
-                g_warning ("Unable to stop system via consolekit: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
-                g_error_free (error);
-        }
-}
-
-static gboolean
-get_current_session_id (DBusConnection *connection,
-                        char          **session_id)
-{
-        DBusError       local_error;
-        DBusMessage    *message;
-        DBusMessage    *reply;
-        gboolean        ret;
-        DBusMessageIter iter;
-        const char     *value;
-
-        ret = FALSE;
-        reply = NULL;
-
-        dbus_error_init (&local_error);
-        message = dbus_message_new_method_call (CK_NAME,
-                                                CK_MANAGER_PATH,
-                                                CK_MANAGER_INTERFACE,
-                                                "GetCurrentSession");
-        if (message == NULL) {
-                goto out;
-        }
-
-        dbus_error_init (&local_error);
-        reply = dbus_connection_send_with_reply_and_block (connection,
-                                                           message,
-                                                           -1,
-                                                           &local_error);
-        if (reply == NULL) {
-                if (dbus_error_is_set (&local_error)) {
-                        g_warning ("Unable to determine session: %s", local_error.message);
-                        dbus_error_free (&local_error);
-                        goto out;
-                }
-        }
-
-        dbus_message_iter_init (reply, &iter);
-        dbus_message_iter_get_basic (&iter, &value);
-        if (session_id != NULL) {
-                *session_id = g_strdup (value);
-        }
-
-        ret = TRUE;
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-        if (reply != NULL) {
-                dbus_message_unref (reply);
-        }
-
-        return ret;
-}
-
-static gboolean
-get_seat_id_for_session (DBusConnection *connection,
-                         const char     *session_id,
-                         char          **seat_id)
-{
-        DBusError       local_error;
-        DBusMessage    *message;
-        DBusMessage    *reply;
-        gboolean        ret;
-        DBusMessageIter iter;
-        const char     *value;
-
-        ret = FALSE;
-        reply = NULL;
-
-        dbus_error_init (&local_error);
-        message = dbus_message_new_method_call (CK_NAME,
-                                                session_id,
-                                                CK_SESSION_INTERFACE,
-                                                "GetSeatId");
-        if (message == NULL) {
-                goto out;
-        }
-
-        dbus_error_init (&local_error);
-        reply = dbus_connection_send_with_reply_and_block (connection,
-                                                           message,
-                                                           -1,
-                                                           &local_error);
-        if (reply == NULL) {
-                if (dbus_error_is_set (&local_error)) {
-                        g_warning ("Unable to determine seat: %s", local_error.message);
-                        dbus_error_free (&local_error);
-                        goto out;
-                }
-        }
-
-        dbus_message_iter_init (reply, &iter);
-        dbus_message_iter_get_basic (&iter, &value);
-        if (seat_id != NULL) {
-                *seat_id = g_strdup (value);
-        }
-
-        ret = TRUE;
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-        if (reply != NULL) {
-                dbus_message_unref (reply);
-        }
-
-        return ret;
-}
-
-static char *
-get_current_seat_id (DBusConnection *connection)
-{
-        gboolean res;
-        char    *session_id;
-        char    *seat_id;
-
-        session_id = NULL;
-        seat_id = NULL;
-
-        res = get_current_session_id (connection, &session_id);
-        if (res) {
-                res = get_seat_id_for_session (connection, session_id, &seat_id);
-        }
-        g_free (session_id);
-
-        return seat_id;
+        /* Use Stop insetad of PowerOff because it will work with
+         * Ck and CK2. */
+        g_dbus_proxy_call (manager->priv->ck_proxy,
+                           "Stop",
+                           g_variant_new ("()"),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           stop_done,
+                           manager);
 }
 
 static void
 csm_consolekit_set_session_idle (CsmSystem *system,
-                                 gboolean   is_idle)
+                              gboolean   is_idle)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean        res;
-        GError         *error;
-        char           *session_id;
-        DBusMessage    *message;
-        DBusMessage    *reply;
-        DBusError       dbus_error;
-        DBusMessageIter iter;
 
-        error = NULL;
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
-                return;
-        }
-
-        session_id = NULL;
-        res = get_current_session_id (dbus_g_connection_get_connection (manager->priv->dbus_connection),
-                                      &session_id);
-        if (!res) {
-                goto out;
-        }
-
-
-        g_debug ("Updating ConsoleKit idle status: %d", is_idle);
-        message = dbus_message_new_method_call (CK_NAME,
-                                                session_id,
-                                                CK_SESSION_INTERFACE,
-                                                "SetIdleHint");
-        if (message == NULL) {
-                g_debug ("Couldn't allocate the D-Bus message");
-                return;
-        }
-
-        dbus_message_iter_init_append (message, &iter);
-        dbus_message_iter_append_basic (&iter, DBUS_TYPE_BOOLEAN, &is_idle);
-
-        /* FIXME: use async? */
-        dbus_error_init (&dbus_error);
-        reply = dbus_connection_send_with_reply_and_block (dbus_g_connection_get_connection (manager->priv->dbus_connection),
-                                                           message,
-                                                           -1,
-                                                           &dbus_error);
-        dbus_message_unref (message);
-
-        if (reply != NULL) {
-                dbus_message_unref (reply);
-        }
-
-        if (dbus_error_is_set (&dbus_error)) {
-                g_debug ("%s raised:\n %s\n\n", dbus_error.name, dbus_error.message);
-                dbus_error_free (&dbus_error);
-        }
-
-out:
-        g_free (session_id);
+        g_debug ("Updating consolekit idle status: %d", is_idle);
+        g_dbus_proxy_call_sync (manager->priv->ck_session_proxy,
+                                "SetIdleHint",
+                                g_variant_new ("(b)", is_idle),
+                                0,
+                                G_MAXINT,
+                                NULL, NULL);
 }
 
-static gboolean
-seat_can_activate_sessions (DBusConnection *connection,
-                            const char     *seat_id)
+static void
+ck_session_get_seat (CsmConsolekit *manager,
+                     gchar        **seat)
 {
-        DBusError       local_error;
-        DBusMessage    *message;
-        DBusMessage    *reply;
-        DBusMessageIter iter;
-        gboolean        can_activate;
+        GVariant *res;
 
-        can_activate = FALSE;
-        reply = NULL;
+        *seat = NULL;
 
-        dbus_error_init (&local_error);
-        message = dbus_message_new_method_call (CK_NAME,
-                                                seat_id,
-                                                CK_SEAT_INTERFACE,
-                                                "CanActivateSessions");
-        if (message == NULL) {
-                goto out;
+        res = g_dbus_proxy_call_sync (manager->priv->ck_session_proxy,
+                                      "GetSeatId",
+                                      g_variant_new ("()"),
+                                      0,
+                                      -1,
+                                      NULL, NULL);
+        if (!res) {
+                g_warning ("CsmConsoleKit: Calling GetSeatId failed.");
+                return;
         }
 
-        dbus_error_init (&local_error);
-        reply = dbus_connection_send_with_reply_and_block (connection,
-                                                           message,
-                                                           -1,
-                                                           &local_error);
-        if (reply == NULL) {
-                if (dbus_error_is_set (&local_error)) {
-                        g_warning ("Unable to activate session: %s", local_error.message);
-                        dbus_error_free (&local_error);
-                        goto out;
-                }
+        g_variant_get (res, "(o)", seat);
+        g_variant_unref (res);
+}
+
+/* returns -1 on failure
+ *          0 seat is multi-session
+ *          1 seat is not multi-session
+ */
+static gint
+ck_seat_can_multi_session (CsmConsolekit *manager,
+                           const gchar   *seat)
+{
+        GDBusConnection *bus;
+        GVariant *res;
+        gboolean  can_activate;
+
+
+        bus = g_dbus_proxy_get_connection (manager->priv->ck_proxy);
+        res = g_dbus_connection_call_sync (bus,
+                                           CK_NAME,
+                                           seat,
+                                           CK_SEAT_INTERFACE,
+                                           "CanActivateSessions",
+                                           g_variant_new ("()"),
+                                           G_VARIANT_TYPE_BOOLEAN,
+                                           0,
+                                           -1,
+                                           NULL, NULL);
+        if (!res) {
+                g_warning ("CsmConsoleKit: Calling GetSeatId failed.");
+                return -1;
         }
 
-        dbus_message_iter_init (reply, &iter);
-        dbus_message_iter_get_basic (&iter, &can_activate);
+        g_variant_get (res, "(b)", &can_activate);
+        g_variant_unref (res);
 
- out:
-        if (message != NULL) {
-                dbus_message_unref (message);
-        }
-        if (reply != NULL) {
-                dbus_message_unref (reply);
-        }
-
-        return can_activate;
+        return can_activate == TRUE ? 1 : 0;
 }
 
 static gboolean
 csm_consolekit_can_switch_user (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        GError  *error;
-        char    *seat_id;
-        gboolean ret;
+        gchar *seat;
+        gint ret;
 
-        error = NULL;
+        ck_session_get_seat (manager, &seat);
+        ret = ck_seat_can_multi_session (manager, seat);
+        free (seat);
 
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
-                return FALSE;
-        }
-
-        seat_id = get_current_seat_id (dbus_g_connection_get_connection (manager->priv->dbus_connection));
-        if (seat_id == NULL || seat_id[0] == '\0') {
-                g_debug ("seat id is not set; can't switch sessions");
-                return FALSE;
-        }
-
-        ret = seat_can_activate_sessions (dbus_g_connection_get_connection (manager->priv->dbus_connection),
-                                          seat_id);
-        g_free (seat_id);
-
-        return ret;
+        return ret > 0;
 }
 
 static gboolean
 csm_consolekit_can_restart (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-	gboolean can_restart;
-        GError  *error;
+        GVariant *res;
+        gboolean can_restart;
 
-        error = NULL;
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
-                return FALSE;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              "CanRestart",
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_INVALID,
-                                              G_TYPE_BOOLEAN, &can_restart,
-                                              G_TYPE_INVALID);
-
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "CanRestart",
+                                      g_variant_new ("()"),
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
         if (!res) {
-                g_warning ("Could not query CanRestart from ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
+                g_warning ("Calling CanRestart failed. Check that ConsoleKit is "
+                           "properly installed.");
                 return FALSE;
         }
 
-	return can_restart;
+        g_variant_get (res, "(b)", &can_restart);
+        g_variant_unref (res);
+
+        return can_restart;
 }
 
 static gboolean
 csm_consolekit_can_stop (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-	gboolean can_stop;
-        GError  *error;
+        GVariant *res;
+        gboolean can_stop;
 
-        error = NULL;
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
-                return FALSE;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              "CanStop",
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_INVALID,
-                                              G_TYPE_BOOLEAN, &can_stop,
-                                              G_TYPE_INVALID);
-
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "CanStop",
+                                      g_variant_new ("()"),
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
         if (!res) {
-                g_warning ("Could not query CanStop from ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
+                g_warning ("Calling CanStop failed. Check that ConsoleKit is "
+                           "properly installed.");
                 return FALSE;
         }
-	return can_stop;
+
+        g_variant_get (res, "(b)", &can_stop);
+        g_variant_unref (res);
+
+        return can_stop;
 }
 
-static gchar *
-csm_consolekit_get_current_session_type (CsmConsolekit *manager)
+/* returns -1 on failure, 0 on success */
+static gint
+ck_session_get_class (CsmConsolekit *manager,
+                      gchar        **session_class)
 {
-        GError *gerror;
-	DBusConnection *connection;
-	DBusError error;
-	DBusMessage *message = NULL;
-	DBusMessage *reply = NULL;
-	gchar *session_id;
-	gchar *ret;
-	DBusMessageIter iter;
-	const char *value;
+        GVariant *res;
 
-	session_id = NULL;
-	ret = NULL;
-        gerror = NULL;
+        *session_class = NULL;
 
-        if (!csm_consolekit_ensure_ck_connection (manager, &gerror)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           gerror->message);
-                g_error_free (gerror);
-		goto out;
+        res = g_dbus_proxy_call_sync (manager->priv->ck_session_proxy,
+                                      "GetSessionClass",
+                                      g_variant_new ("()"),
+                                      0,
+                                      -1,
+                                      NULL, NULL);
+        if (!res) {
+                g_warning ("CsmConsoleKit: Calling GetSessionClass failed.");
+                return -1;
         }
 
-	connection = dbus_g_connection_get_connection (manager->priv->dbus_connection);
-	if (!get_current_session_id (connection, &session_id)) {
-		goto out;
-	}
+        g_variant_get (res, "(s)", session_class);
+        g_variant_unref (res);
 
-	dbus_error_init (&error);
-	message = dbus_message_new_method_call (CK_NAME,
-						session_id,
-						CK_SESSION_INTERFACE,
-						"GetSessionType");
-	if (message == NULL) {
-		goto out;
-	}
-
-	reply = dbus_connection_send_with_reply_and_block (connection,
-							   message,
-							   -1,
-							   &error);
-
-	if (reply == NULL) {
-		if (dbus_error_is_set (&error)) {
-			g_warning ("Unable to determine session type: %s", error.message);
-			dbus_error_free (&error);
-		}
-		goto out;
-	}
-
-	dbus_message_iter_init (reply, &iter);
-	dbus_message_iter_get_basic (&iter, &value);
-	ret = g_strdup (value);
-
-out:
-	if (message != NULL) {
-		dbus_message_unref (message);
-	}
-	if (reply != NULL) {
-		dbus_message_unref (reply);
-	}
-	g_free (session_id);
-
-	return ret;
+        return 0;
 }
 
 static gboolean
 csm_consolekit_is_login_session (CsmSystem *system)
 {
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        char *session_type;
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        int res;
         gboolean ret;
+        gchar *session_class = NULL;
 
-        session_type = csm_consolekit_get_current_session_type (consolekit);
+        ret = FALSE;
 
-        ret = (g_strcmp0 (session_type, CSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) == 0);
+        if (manager->priv->session_id == NULL) {
+                return ret;
+        }
 
-        g_free (session_type);
+        res = ck_session_get_class (manager, &session_class);
+        if (res < 0) {
+                g_warning ("Could not get session class: %s", strerror (-res));
+                return FALSE;
+        }
+        ret = (g_strcmp0 (session_class, "greeter") == 0);
+        g_free (session_class);
 
         return ret;
 }
 
 static gboolean
-csm_consolekit_can_sleep (CsmSystem *system, const gchar *method)
-{
-        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-        gchar *can_string;
-        GError *error;
-
-        error = NULL;
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_error_free (error);
-                return FALSE;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              method,
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_INVALID,
-                                              G_TYPE_STRING, &can_string,
-                                              G_TYPE_INVALID);
-
-        if (!res) {
-                g_warning ("Could not query %s from ConsoleKit: %s",
-                           method, error->message);
-                g_error_free (error);
-                return FALSE;
-        }
-
-        /* If yes or challenge then we can sleep, it just might take a password */
-        if (g_strcmp0 (can_string, "yes") == 0 || g_strcmp0 (can_string, "challenge") == 0) {
-              return TRUE;
-        } else {
-              return FALSE;
-        } 
-}
-
-static gboolean
 csm_consolekit_can_suspend (CsmSystem *system)
 {
-        return csm_consolekit_can_sleep(system, "CanSuspend");
+#ifdef HAVE_OLD_UPOWER
+        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
+        return up_client_get_can_suspend (consolekit->priv->up_client);
+#else
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        gchar *rv;
+        GVariant *res;
+        gboolean can_suspend;
+
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "CanSuspend",
+                                      NULL,
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
+        if (!res) {
+                g_warning ("Calling CanSuspend failed. Check that ConsoleKit is "
+                           "properly installed.");
+                return FALSE;
+        }
+
+        g_variant_get (res, "(s)", &rv);
+        g_variant_unref (res);
+
+        can_suspend = g_strcmp0 (rv, "yes") == 0 ||
+                      g_strcmp0 (rv, "challenge") == 0;
+
+        g_free (rv);
+
+        return can_suspend;
+#endif
 }
 
 static gboolean
 csm_consolekit_can_hibernate (CsmSystem *system)
 {
-        return csm_consolekit_can_sleep(system, "CanHibernate");
-}
+#ifdef HAVE_OLD_UPOWER
+        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
+        return up_client_get_can_hibernate (consolekit->priv->up_client);
+#else
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        gchar *rv;
+        GVariant *res;
+        gboolean can_hibernate;
 
-static gboolean
-csm_consolekit_can_hybrid_sleep (CsmSystem *system)
-{
-        return csm_consolekit_can_sleep(system, "CanHybridSleep");
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "CanHibernate",
+                                      NULL,
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
+        if (!res) {
+                g_warning ("Calling CanHibernate failed. Check that ConsoleKit is "
+                           "properly installed.");
+                return FALSE;
+        }
+
+        g_variant_get (res, "(s)", &rv);
+        g_variant_unref (res);
+
+        can_hibernate = g_strcmp0 (rv, "yes") == 0 ||
+                        g_strcmp0 (rv, "challenge") == 0;
+
+        g_free (rv);
+
+        return can_hibernate;
+#endif
 }
 
 static void
-csm_consolekit_attempt_sleep (CsmSystem *system, const gchar *method)
+suspend_done (GObject      *source,
+              GAsyncResult *result,
+              gpointer      user_data)
 {
-        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
-        gboolean res;
-        GError *error;
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        GError *error = NULL;
+        GVariant *res;
 
-        error = NULL;
-
-        g_warning ("Attempting to %s using consolekit...", method);
-
-        if (!csm_consolekit_ensure_ck_connection (manager, &error)) {
-                g_warning ("Could not connect to ConsoleKit: %s",
-                           error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
-                g_error_free (error);
-                return ;
-        }
-
-        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
-                                              method,
-                                              INT_MAX,
-                                              &error,
-                                              G_TYPE_BOOLEAN, TRUE,
-                                              G_TYPE_INVALID);
+        res = g_dbus_proxy_call_finish (proxy, result, &error);
 
         if (!res) {
-                g_warning ("Unable to %s via consolekit: %s", method, error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
+                g_warning ("Unable to suspend system: %s", error->message);
                 g_error_free (error);
+        } else {
+                g_variant_unref (res);
+        }
+}
+
+static void
+hibernate_done (GObject      *source,
+                GAsyncResult *result,
+                gpointer      user_data)
+{
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        GError *error = NULL;
+        GVariant *res;
+
+        res = g_dbus_proxy_call_finish (proxy, result, &error);
+
+        if (!res) {
+                g_warning ("Unable to hibernate system: %s", error->message);
+                g_error_free (error);
+        } else {
+                g_variant_unref (res);
         }
 }
 
 static void
 csm_consolekit_suspend (CsmSystem *system)
 {
-        csm_consolekit_attempt_sleep (system, "Suspend");
+#ifdef HAVE_OLD_UPOWER
+        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
+        GError *error = NULL;
+        gboolean ret;
+
+        ret = up_client_suspend_sync (consolekit->priv->up_client, NULL, &error);
+        if (!ret) {
+                g_warning ("Unexpected suspend failure: %s", error->message);
+                g_error_free (error);
+        }
+#else
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+
+        g_dbus_proxy_call (manager->priv->ck_proxy,
+                           "Suspend",
+                           g_variant_new ("(b)", TRUE),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           suspend_done,
+                           manager);
+#endif
 }
 
 static void
 csm_consolekit_hibernate (CsmSystem *system)
 {
-        csm_consolekit_attempt_sleep (system, "Hibernate");
+#ifdef HAVE_OLD_UPOWER
+        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
+        GError *error = NULL;
+        gboolean ret;
+
+        ret = up_client_hibernate_sync (consolekit->priv->up_client, NULL, &error);
+        if (!ret) {
+                g_warning ("Unexpected hibernate failure: %s", error->message);
+                g_error_free (error);
+        }
+#else
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+
+        g_dbus_proxy_call (manager->priv->ck_proxy,
+                           "Hibernate",
+                           g_variant_new ("(b)", TRUE),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           hibernate_done,
+                           manager);
+#endif
 }
 
 static void
-csm_consolekit_hybrid_sleep (CsmSystem *system)
+inhibit_done (GObject      *source,
+              GAsyncResult *result,
+              gpointer      user_data)
 {
-        csm_consolekit_attempt_sleep (system, "HybridSleep");
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        CsmConsolekit *manager = CSM_CONSOLEKIT (user_data);
+        GError *error = NULL;
+        GVariant *res;
+        GUnixFDList *fd_list = NULL;
+        gint idx;
+
+        res = g_dbus_proxy_call_with_unix_fd_list_finish (proxy, &fd_list, result, &error);
+
+        if (!res) {
+                g_warning ("Unable to inhibit system: %s", error->message);
+                g_error_free (error);
+        } else {
+                g_variant_get (res, "(h)", &idx);
+                manager->priv->inhibit_fd = g_unix_fd_list_get (fd_list, idx, &error);
+                if (manager->priv->inhibit_fd == -1) {
+                        g_warning ("Failed to receive system inhibitor fd: %s", error->message);
+                        g_error_free (error);
+                }
+                g_debug ("System inhibitor fd is %d", manager->priv->inhibit_fd);
+                g_object_unref (fd_list);
+                g_variant_unref (res);
+        }
+
+        if (manager->priv->inhibitors == NULL) {
+                drop_system_inhibitor (manager);
+        }
 }
 
 static void
 csm_consolekit_add_inhibitor (CsmSystem        *system,
-                              const gchar      *id,
-                              CsmInhibitorFlag  flag)
+                           const gchar      *id,
+                           CsmInhibitorFlag  flag)
 {
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+
+        if ((flag & CSM_INHIBITOR_FLAG_SUSPEND) == 0)
+                return;
+
+        if (manager->priv->inhibitors == NULL) {
+                g_debug ("Adding system inhibitor");
+                g_dbus_proxy_call_with_unix_fd_list (manager->priv->ck_proxy,
+                                                     "Inhibit",
+                                                     g_variant_new ("(ssss)",
+                                                                    "sleep:shutdown",
+                                                                    g_get_user_name (),
+                                                                    "user session inhibited",
+                                                                    "block"),
+                                                     0,
+                                                     G_MAXINT,
+                                                     NULL,
+                                                     NULL,
+                                                     inhibit_done,
+                                                     manager);
+        }
+        manager->priv->inhibitors = g_slist_prepend (manager->priv->inhibitors, g_strdup (id));
 }
 
 static void
 csm_consolekit_remove_inhibitor (CsmSystem   *system,
-                                 const gchar *id)
+                              const gchar *id)
 {
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        GSList *l;
+
+        l = g_slist_find_custom (manager->priv->inhibitors, id, (GCompareFunc)g_strcmp0);
+        if (l == NULL)
+                return;
+
+        g_free (l->data);
+        manager->priv->inhibitors = g_slist_delete_link (manager->priv->inhibitors, l);
+        if (manager->priv->inhibitors == NULL) {
+                drop_system_inhibitor (manager);
+        }
 }
 
 static gboolean
@@ -891,12 +859,10 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->can_switch_user = csm_consolekit_can_switch_user;
         iface->can_stop = csm_consolekit_can_stop;
         iface->can_restart = csm_consolekit_can_restart;
-        iface->can_hybrid_sleep = csm_consolekit_can_hybrid_sleep;
         iface->can_suspend = csm_consolekit_can_suspend;
         iface->can_hibernate = csm_consolekit_can_hibernate;
         iface->attempt_stop = csm_consolekit_attempt_stop;
         iface->attempt_restart = csm_consolekit_attempt_restart;
-        iface->hybrid_sleep = csm_consolekit_hybrid_sleep;
         iface->suspend = csm_consolekit_suspend;
         iface->hibernate = csm_consolekit_hibernate;
         iface->set_session_idle = csm_consolekit_set_session_idle;
@@ -914,4 +880,59 @@ csm_consolekit_new (void)
         manager = g_object_new (CSM_TYPE_CONSOLEKIT, NULL);
 
         return manager;
+}
+
+static void
+ck_proxy_signal_cb (GDBusProxy  *proxy,
+                    const gchar *sender_name,
+                    const gchar *signal_name,
+                    GVariant    *parameters,
+                    gpointer     user_data)
+{
+        CsmConsolekit *consolekit = user_data;
+        gboolean is_about_to_shutdown;
+
+        g_debug ("CsmConsolekit: received ConsoleKit signal: %s", signal_name);
+
+        if (g_strcmp0 (signal_name, "PrepareForShutdown") != 0) {
+                g_debug ("CsmConsolekit: ignoring %s signal", signal_name);
+                return;
+        }
+
+        g_variant_get (parameters, "(b)", &is_about_to_shutdown);
+        if (!is_about_to_shutdown) {
+                g_debug ("CsmConsolekit: ignoring %s signal since about-to-shutdown is FALSE", signal_name);
+                return;
+        }
+
+        if (consolekit->priv->prepare_for_shutdown_expected) {
+                g_debug ("CsmConsolekit: shutdown successfully prepared");
+                g_signal_emit_by_name (consolekit, "shutdown-prepared", TRUE);
+                consolekit->priv->prepare_for_shutdown_expected = FALSE;
+        }
+}
+
+static void
+ck_session_proxy_signal_cb (GDBusProxy  *proxy,
+                            const gchar *sender_name,
+                            const gchar *signal_name,
+                            GVariant    *parameters,
+                            gpointer     user_data)
+{
+        CsmConsolekit *consolekit = user_data;
+        gboolean is_active;
+
+        g_debug ("CsmConsolekit: received ConsoleKit signal: %s", signal_name);
+
+        if (g_strcmp0 (signal_name, "ActiveChanged") != 0) {
+                g_debug ("CsmConsolekit: ignoring %s signal", signal_name);
+                return;
+        }
+
+        g_variant_get (parameters, "(b)", &is_active);
+        if (consolekit->priv->is_active != is_active) {
+                g_debug ("CsmConsolekit: session state changed");
+                consolekit->priv->is_active = is_active;
+                g_object_notify (G_OBJECT (consolekit), "active");
+        }
 }

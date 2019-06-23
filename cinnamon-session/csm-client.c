@@ -21,13 +21,11 @@
 
 #include "config.h"
 
-#include <dbus/dbus-glib.h>
-
 #include "eggdesktopfile.h"
 
 #include "csm-marshal.h"
 #include "csm-client.h"
-#include "csm-client-glue.h"
+#include "csm-exported-client.h"
 
 static guint32 client_serial = 1;
 
@@ -35,11 +33,12 @@ static guint32 client_serial = 1;
 
 struct CsmClientPrivate
 {
-        char            *id;
-        char            *startup_id;
-        char            *app_id;
-        guint            status;
-        DBusGConnection *connection;
+        char              *id;
+        char              *startup_id;
+        char              *app_id;
+        guint              status;
+        CsmExportedClient *skeleton;
+        GDBusConnection   *connection;
 };
 
 enum {
@@ -60,37 +59,23 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 G_DEFINE_ABSTRACT_TYPE (CsmClient, csm_client, G_TYPE_OBJECT)
 
+#define CSM_CLIENT_DBUS_IFACE "org.gnome.SessionManager.Client"
+
+static const GDBusErrorEntry csm_client_error_entries[] = {
+        { CSM_CLIENT_ERROR_GENERAL, CSM_CLIENT_DBUS_IFACE ".GeneralError" },
+        { CSM_CLIENT_ERROR_NOT_REGISTERED, CSM_CLIENT_DBUS_IFACE ".NotRegistered" }
+};
+
 GQuark
 csm_client_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("csm_client_error");
-        }
+        static volatile gsize quark_volatile = 0;
 
-        return ret;
-}
-
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-csm_client_error_get_type (void)
-{
-        static GType etype = 0;
-
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (CSM_CLIENT_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (CSM_CLIENT_ERROR_NOT_REGISTERED, "NotRegistered"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (CSM_CLIENT_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("CsmClientError", values);
-        }
-
-        return etype;
+        g_dbus_error_register_error_domain ("csm_client_error",
+                                            &quark_volatile,
+                                            csm_client_error_entries,
+                                            G_N_ELEMENTS (csm_client_error_entries));
+        return quark_volatile;
 }
 
 static guint32
@@ -108,12 +93,92 @@ get_next_client_serial (void)
 }
 
 static gboolean
+csm_client_get_startup_id (CsmExportedClient     *skeleton,
+                           GDBusMethodInvocation *invocation,
+                           CsmClient             *client)
+{
+        csm_exported_client_complete_get_startup_id (skeleton,
+                                                     invocation,
+                                                     client->priv->startup_id);
+        return TRUE;
+}
+
+static gboolean
+csm_client_get_app_id (CsmExportedClient     *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       CsmClient             *client)
+{
+        csm_exported_client_complete_get_app_id (skeleton,
+                                                 invocation,
+                                                 client->priv->app_id);
+        return TRUE;
+}
+
+static gboolean
+csm_client_get_restart_style_hint (CsmExportedClient     *skeleton,
+                                   GDBusMethodInvocation *invocation,
+                                   CsmClient             *client)
+{
+        guint hint;
+
+        hint = CSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
+        csm_exported_client_complete_get_restart_style_hint (skeleton,
+                                                             invocation,
+                                                             hint);
+        return TRUE;
+}
+
+static gboolean
+csm_client_get_status (CsmExportedClient     *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       CsmClient             *client)
+{
+        csm_exported_client_complete_get_status (skeleton,
+                                                 invocation,
+                                                 client->priv->status);
+        return TRUE;
+}
+
+static gboolean
+csm_client_get_unix_process_id (CsmExportedClient     *skeleton,
+                                GDBusMethodInvocation *invocation,
+                                CsmClient             *client)
+{
+        guint pid;
+
+        pid = CSM_CLIENT_GET_CLASS (client)->impl_get_unix_process_id (client);
+        csm_exported_client_complete_get_unix_process_id (skeleton,
+                                                          invocation,
+                                                          pid);
+        return TRUE;
+}
+
+static gboolean
+csm_client_stop_dbus (CsmExportedClient     *skeleton,
+                      GDBusMethodInvocation *invocation,
+                      CsmClient             *client)
+{
+        GError *error = NULL;
+        csm_client_stop (client, &error);
+
+        if (error != NULL) {
+                g_dbus_method_invocation_take_error (invocation, error);
+        } else {
+                csm_exported_client_complete_stop (skeleton, invocation);
+        }
+
+        return TRUE;
+}
+
+static gboolean
 register_client (CsmClient *client)
 {
+        CsmExportedClient *skeleton;
         GError *error;
 
         error = NULL;
-        client->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        client->priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
         if (client->priv->connection == NULL) {
                 if (error != NULL) {
                         g_critical ("error getting session bus: %s", error->message);
@@ -122,7 +187,32 @@ register_client (CsmClient *client)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (client->priv->connection, client->priv->id, G_OBJECT (client));
+        skeleton = csm_exported_client_skeleton_new ();
+        client->priv->skeleton = skeleton;
+
+        g_debug ("exporting client to object path: %s", client->priv->id);
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          client->priv->connection,
+                                          client->priv->id, &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting client on session bus: %s", error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        g_signal_connect (skeleton, "handle-get-app-id",
+                          G_CALLBACK (csm_client_get_app_id), client);
+        g_signal_connect (skeleton, "handle-get-restart-style-hint",
+                          G_CALLBACK (csm_client_get_restart_style_hint), client);
+        g_signal_connect (skeleton, "handle-get-startup-id",
+                          G_CALLBACK (csm_client_get_startup_id), client);
+        g_signal_connect (skeleton, "handle-get-status",
+                          G_CALLBACK (csm_client_get_status), client);
+        g_signal_connect (skeleton, "handle-get-unix-process-id",
+                          G_CALLBACK (csm_client_get_unix_process_id), client);
+        g_signal_connect (skeleton, "handle-stop",
+                          G_CALLBACK (csm_client_stop_dbus), client);
 
         return TRUE;
 }
@@ -171,6 +261,14 @@ csm_client_finalize (GObject *object)
         g_free (client->priv->id);
         g_free (client->priv->startup_id);
         g_free (client->priv->app_id);
+
+        if (client->priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (client->priv->skeleton),
+                                                                    client->priv->connection);
+                g_clear_object (&client->priv->skeleton);
+        }
+
+        g_clear_object (&client->priv->connection);
 
         G_OBJECT_CLASS (csm_client_parent_class)->finalize (object);
 }
@@ -314,8 +412,7 @@ csm_client_class_init (CsmClientClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmClientClass, disconnected),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               0);
         signals[END_SESSION_RESPONSE] =
@@ -323,8 +420,7 @@ csm_client_class_init (CsmClientClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (CsmClientClass, end_session_response),
-                              NULL, NULL,
-                              csm_marshal_VOID__BOOLEAN_BOOLEAN_BOOLEAN_STRING,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               4, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_STRING);
 
@@ -353,8 +449,6 @@ csm_client_class_init (CsmClientClass *klass)
                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
         g_type_class_add_private (klass, sizeof (CsmClientPrivate));
-
-        dbus_g_object_type_install_info (CSM_TYPE_CLIENT, &dbus_glib_csm_client_object_info);
 }
 
 const char *
@@ -405,66 +499,6 @@ csm_client_peek_restart_style_hint (CsmClient *client)
         g_return_val_if_fail (CSM_IS_CLIENT (client), CSM_CLIENT_RESTART_NEVER);
 
         return CSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
-}
-
-gboolean
-csm_client_get_startup_id (CsmClient *client,
-                           char     **id,
-                           GError   **error)
-{
-        g_return_val_if_fail (CSM_IS_CLIENT (client), FALSE);
-
-        *id = g_strdup (client->priv->startup_id);
-
-        return TRUE;
-}
-
-gboolean
-csm_client_get_app_id (CsmClient *client,
-                       char     **id,
-                       GError   **error)
-{
-        g_return_val_if_fail (CSM_IS_CLIENT (client), FALSE);
-
-        *id = g_strdup (client->priv->app_id);
-
-        return TRUE;
-}
-
-gboolean
-csm_client_get_restart_style_hint (CsmClient *client,
-                                   guint     *hint,
-                                   GError   **error)
-{
-        g_return_val_if_fail (CSM_IS_CLIENT (client), FALSE);
-
-        *hint = CSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
-
-        return TRUE;
-}
-
-gboolean
-csm_client_get_status (CsmClient *client,
-                       guint     *status,
-                       GError   **error)
-{
-        g_return_val_if_fail (CSM_IS_CLIENT (client), FALSE);
-
-        *status = client->priv->status;
-
-        return TRUE;
-}
-
-gboolean
-csm_client_get_unix_process_id (CsmClient  *client,
-                                guint      *pid,
-                                GError    **error)
-{
-        g_return_val_if_fail (CSM_IS_CLIENT (client), FALSE);
-
-        *pid = CSM_CLIENT_GET_CLASS (client)->impl_get_unix_process_id (client);
-
-        return TRUE;
 }
 
 /**

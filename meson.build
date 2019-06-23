@@ -30,7 +30,6 @@ endif
 gio         = dependency('gio-2.0')
 gtk3        = dependency('gtk+-3.0',    version: '>=3.0.0')
 glib        = dependency('glib-2.0',    version: '>=2.37.3')
-dbus_glib   = dependency('dbus-glib-1', version: '>=0.88')
 libcanberra = dependency('libcanberra')
 pango       = dependency('pango')
 pangoxft    = dependency('pangoxft', required: false)

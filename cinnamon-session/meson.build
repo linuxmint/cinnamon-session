@@ -5,26 +5,24 @@ csm_marshal_sources = gnome.genmarshal(
   sources: 'csm-marshal.list',
 )
 
-gdbus_bindings = [
-  [ 'manager',    'org.gnome.SessionManager.xml'            ],
-  [ 'client',     'org.gnome.SessionManager.Client.xml'     ],
-  [ 'app',        'org.gnome.SessionManager.App.xml'        ],
-  [ 'inhibitor',  'org.gnome.SessionManager.Inhibitor.xml'  ],
-  [ 'presence',   'org.gnome.SessionManager.Presence.xml'   ],
+gdbus_ifaces = [
+  ['exported-manager', 'org.gnome.SessionManager', 'ExportedManager'],
+  ['exported-client', 'org.gnome.SessionManager.Client', 'ExportedClient'],
+  ['exported-client-private', 'org.gnome.SessionManager.ClientPrivate', 'ExportedClientPrivate'],
+  ['exported-app', 'org.gnome.SessionManager.App', 'ExportedApp'],
+  ['exported-inhibitor', 'org.gnome.SessionManager.Inhibitor', 'ExportedInhibitor'],
+  ['exported-presence', 'org.gnome.SessionManager.Presence', 'ExportedPresence']
 ]
+
 gdbus_sources = []
 
-foreach binding: gdbus_bindings
-  gdbus_sources += custom_target('csm-@0@-glue.h'.format(binding[0]),
-    input : binding[1],
-    output: 'csm-@0@-glue.h'.format(binding[0]),
-    command: [
-      'dbus-binding-tool',
-      '--mode=glib-server',
-      '--prefix=csm_' + binding[0],
-      '--output=@OUTPUT@',
-      '@INPUT@',
-    ]
+foreach iface: gdbus_ifaces
+  gdbus_sources += gnome.gdbus_codegen(
+    'csm-' + iface[0],
+    iface[1] + '.xml',
+    interface_prefix: iface[1] + '.',
+    namespace: 'Csm',
+    annotations: [iface[1], 'org.gtk.GDBus.C.Name', iface[2]]
   )
 endforeach
 
@@ -61,7 +59,6 @@ cinnamon_session_sources = [
 executable('cinnamon-session',
   cinnamon_session_sources,
   dependencies: [
-    dbus_glib,
     execinfo,
     gconf,
     gio,
@@ -86,20 +83,19 @@ executable('cinnamon-session',
   install: true,
 )
 
+units = [
+  ['test-inhibit', [], [gio, glib, gtk3]],
+  ['test-client-dbus', [], [gio]],
+  ['test-process-helper', files('csm-process-helper.c'), [gio]],
+  ['test-session-proxy-monitor', [], [gio]]
+]
 
+foreach unit: units
+  executable(
+    unit[0],
+    [unit[0] + '.c'] + unit[1],
+    include_directories: rootInclude,
+    dependencies: unit[2]
+  )
+endforeach
 
-# test('inhibit',
-#   executable('test-inhibit',
-#     'test-inhibit.c',
-#   )
-# )
-# test('client-dbus',
-#   executable('test-client-dbus',
-#     'test-client-dbus.c',
-#   )
-# )
-# test('process-helper',
-#   executable('test-process-helper',
-#     'test-process-helper.c',
-#   )
-# )

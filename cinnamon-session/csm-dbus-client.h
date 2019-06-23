@@ -48,20 +48,6 @@ struct _CsmDBusClientClass
         CsmClientClass parent_class;
 };
 
-typedef enum
-{
-        CSM_DBUS_CLIENT_ERROR_GENERAL = 0,
-        CSM_DBUS_CLIENT_ERROR_NOT_CLIENT,
-        CSM_DBUS_CLIENT_NUM_ERRORS
-} CsmDBusClientError;
-
-#define CSM_DBUS_CLIENT_ERROR csm_dbus_client_error_quark ()
-
-GType          csm_dbus_client_error_get_type     (void);
-#define CSM_DBUS_CLIENT_TYPE_ERROR (csm_dbus_client_error_get_type ())
-
-GQuark         csm_dbus_client_error_quark        (void);
-
 GType          csm_dbus_client_get_type           (void) G_GNUC_CONST;
 
 CsmClient *    csm_dbus_client_new                (const char     *startup_id,

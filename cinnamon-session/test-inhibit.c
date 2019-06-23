@@ -13,9 +13,7 @@
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street - Suite 500, Boston, MA
- * 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -28,26 +26,25 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-#include <dbus/dbus-glib.h>
 
 #define SM_DBUS_NAME      "org.gnome.SessionManager"
 #define SM_DBUS_PATH      "/org/gnome/SessionManager"
 #define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
-static DBusGConnection *bus_connection = NULL;
-static DBusGProxy      *sm_proxy = NULL;
+static GDBusConnection *connection = NULL;
+static GDBusProxy      *sm_proxy = NULL;
 static guint            cookie = 0;
 
 static gboolean
 session_manager_connect (void)
 {
 
-        if (bus_connection == NULL) {
+        if (connection == NULL) {
                 GError *error;
 
                 error = NULL;
-                bus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-                if (bus_connection == NULL) {
+                connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+                if (connection == NULL) {
                         g_message ("Failed to connect to the session bus: %s",
                                    error->message);
                         g_error_free (error);
@@ -55,10 +52,13 @@ session_manager_connect (void)
                 }
         }
 
-        sm_proxy = dbus_g_proxy_new_for_name (bus_connection,
-                                              SM_DBUS_NAME,
-                                              SM_DBUS_PATH,
-                                              SM_DBUS_INTERFACE);
+        sm_proxy = g_dbus_proxy_new_sync (connection,
+                                          G_DBUS_PROXY_FLAGS_NONE,
+                                          NULL,
+                                          SM_DBUS_NAME,
+                                          SM_DBUS_PATH,
+                                          SM_DBUS_INTERFACE,
+                                          NULL, NULL);
         return (sm_proxy != NULL);
 }
 
@@ -66,13 +66,13 @@ typedef enum {
         CSM_INHIBITOR_FLAG_LOGOUT      = 1 << 0,
         CSM_INHIBITOR_FLAG_SWITCH_USER = 1 << 1,
         CSM_INHIBITOR_FLAG_SUSPEND     = 1 << 2
-} CsmInhibitFlag;
+} GsmInhibitFlag;
 
 static gboolean
 do_inhibit_for_window (GdkWindow *window)
 {
         GError     *error;
-        gboolean    res;
+        GVariant   *cookie_variant;
         const char *app_id;
         const char *reason;
         guint       toplevel_xid;
@@ -91,33 +91,33 @@ do_inhibit_for_window (GdkWindow *window)
                 | CSM_INHIBITOR_FLAG_SUSPEND;
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Inhibit",
-                                 &error,
-                                 G_TYPE_STRING, app_id,
-                                 G_TYPE_UINT, toplevel_xid,
-                                 G_TYPE_STRING, reason,
-                                 G_TYPE_UINT, flags,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, &cookie,
-                                 G_TYPE_INVALID);
-        if (! res) {
+        cookie_variant = g_dbus_proxy_call_sync (sm_proxy,
+                                                 "Inhibit",
+                                                 g_variant_new ("(susu)",
+                                                                app_id,
+                                                                toplevel_xid,
+                                                                reason,
+                                                                flags),
+                                                 G_DBUS_CALL_FLAGS_NONE,
+                                                 -1, NULL, &error);
+
+        if (error != NULL) {
                 g_warning ("Failed to inhibit: %s", error->message);
                 g_error_free (error);
                 return FALSE;
         }
 
+        g_variant_get (cookie_variant, "(u)", &cookie);
         g_debug ("Inhibiting session manager: %u", cookie);
+        g_variant_unref (cookie_variant);
 
         return TRUE;
 }
 static gboolean
 session_manager_disconnect (void)
 {
-        if (sm_proxy != NULL) {
-                g_object_unref (sm_proxy);
-                sm_proxy = NULL;
-        }
+        g_clear_object (&sm_proxy);
+        g_clear_object (&connection);
 
         return TRUE;
 }
@@ -126,20 +126,21 @@ static gboolean
 do_uninhibit (void)
 {
         GError  *error;
-        gboolean res;
+        GVariant *reply;
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Uninhibit",
-                                 &error,
-                                 G_TYPE_UINT, cookie,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
-        if (! res) {
+        reply = g_dbus_proxy_call_sync (sm_proxy,
+                                        "Uninhibit",
+                                        g_variant_new ("(u)", cookie),
+                                        G_DBUS_CALL_FLAGS_NONE,
+                                        -1, NULL, &error);
+        if (error != NULL) {
                 g_warning ("Failed to uninhibit: %s", error->message);
                 g_error_free (error);
                 return FALSE;
         }
+
+        g_variant_unref (reply);
 
         cookie = 0;
 
