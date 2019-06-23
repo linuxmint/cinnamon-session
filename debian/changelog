@@ -1,3 +1,14 @@
+cinnamon-session (4.2.0) tina; urgency=medium
+
+  [ montagdude ]
+  * Implement suspend/hibernate via consolekit (#123)
+
+  [ Michael Webster ]
+  * csm-manager.c: Don't let inhibitors stop a forced logout.
+  * Port to gdbus (#125)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 23 Jun 2019 17:37:09 +0200
+
 cinnamon-session (4.0.0) tessa; urgency=medium
 
   [ Michael Webster ]

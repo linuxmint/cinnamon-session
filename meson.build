@@ -1,7 +1,7 @@
 # https://github.com/linuxmint/cinnamon-session
 project('cinnamon-session',
   [ 'c', ],
-  version: '4.0.0',
+  version: '4.2.0',
   meson_version: '>=0.37.0',
 )
 
