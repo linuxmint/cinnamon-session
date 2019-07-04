@@ -1,3 +1,13 @@
+cinnamon-session (4.2.1) tina; urgency=medium
+
+  [ Michael Webster ]
+  * meson: Add missing gschema compile script.
+
+  [ yparitcher ]
+  * Fix wrong parameter type on gdbus logout call (#128)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 04 Jul 2019 10:21:02 +0200
+
 cinnamon-session (4.2.0) tina; urgency=medium
 
   [ montagdude ]
