@@ -99,7 +99,7 @@ do_logout (unsigned int mode)
 
         res = g_dbus_proxy_call_sync (sm_proxy,
                                       "Logout",
-                                      g_variant_new_uint32 (mode),
+                                      g_variant_new ("(u)", mode),
                                       G_DBUS_CALL_FLAGS_NONE,
                                       -1,
                                       NULL,
