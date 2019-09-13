@@ -12,7 +12,7 @@ cc = meson.get_compiler('c')
 conf = configuration_data()
 project_cflags = []
 
-if not get_option('with-frequent-warnings')
+if not get_option('frequent_warnings')
   warnflags = [
     '-Wno-deprecated-declarations',
     '-Wno-unused',
@@ -42,7 +42,7 @@ xau         = dependency('xau')
 xcomposite  = dependency('xcomposite')
 gl          = dependency('gl')
 
-if get_option('with-gconf')
+if get_option('gconf')
   gconf     = dependency('gconf-2.0')
 else
   gconf     = dependency('', required: false)
@@ -78,7 +78,7 @@ conf.set('HAVE_XTEST', xtest.found())
 xrender = dependency('xrender', required: false)
 conf.set('HAVE_XRENDER', xrender.found())
 
-docbook_enabled = get_option('with-docbook')
+docbook_enabled = get_option('docbook')
 if docbook_enabled
   xmlto = find_program('xmlto')
 endif
@@ -93,7 +93,7 @@ execinfo  = cc.find_library('execinfo',   required: false)
 
 # Check for X transport interface - allows to disable ICE Transports
 # See also https://bugzilla.gnome.org/show_bug.cgi?id=725100
-if get_option('with-xtrans')
+if get_option('xtrans')
   xtrans = dependency('xtrans')
 else
   xtrans = dependency('', required: false)
@@ -103,7 +103,7 @@ conf.set10('HAVE_XTRANS', xtrans.found())
 # Check whether IPv6 is enabled on the system...
 have_ipv6 = false
 ipv6_libs = []
-if get_option('with-ipv6')
+if get_option('ipv6')
   if cc.compiles('''
     #include <sys/types.h>
     #include <sys/socket.h>
