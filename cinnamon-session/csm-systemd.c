@@ -739,7 +739,7 @@ csm_systemd_new (void)
         CsmSystemd *manager;
 
         /* logind is not running ? */
-        if (access("/run/systemd/seats/", F_OK) < 0)
+        if (access("/run/systemd/system/", F_OK) < 0) // sd_booted ()
                 return NULL;
 
         manager = g_object_new (CSM_TYPE_SYSTEMD, NULL);
@@ -747,7 +747,7 @@ csm_systemd_new (void)
         return manager;
 }
 
-#else
+#else /* HAVE_LOGIND */
 
 CsmSystemd *
 csm_systemd_new (void)
@@ -755,4 +755,4 @@ csm_systemd_new (void)
         return NULL;
 }
 
-#endif
+#endif /* HAVE_LOGIND */
