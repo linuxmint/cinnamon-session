@@ -170,22 +170,20 @@ csm_get_system (void)
         static CsmSystem *system = NULL;
 
         if (system == NULL) {
-                GSettings *session_settings = g_settings_new ("org.cinnamon.desktop.session");
-                if (g_settings_get_boolean (session_settings, "session-manager-uses-logind")) {
-                  // Use logind
-                  system = CSM_SYSTEM (csm_systemd_new ());
-                  if (system != NULL) {
+                // Use logind
+                system = CSM_SYSTEM (csm_systemd_new ());
+
+                if (system != NULL) {
                         g_debug ("Using systemd for session tracking");
-                  }
                 }
                 else {
-                  // Use consolekit
-                  system = CSM_SYSTEM (csm_consolekit_new ());
-                  if (system != NULL) {
-                        g_debug ("Using ConsoleKit for session tracking");
-                  }
+                        // Use consolekit
+                        system = CSM_SYSTEM (csm_consolekit_new ());
+
+                        if (system != NULL) {
+                                g_debug ("Using ConsoleKit for session tracking");
+                        }
                 }
-                g_object_unref (session_settings);
         }
 
         return g_object_ref (system);
