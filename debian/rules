@@ -10,11 +10,11 @@ override_dh_auto_configure:
 		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
 		--libexecdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
 		--buildtype=plain \
-		-Dwith-docbook=true \
-		-Dwith-frequent-warnings=true \
-		-Dwith-gconf=false \
-		-Dwith-ipv6=true \
-		-Dwith-xtrans=true
+		-Ddocbook=true \
+		-Dfrequent_warnings=true \
+		-Dgconf=false \
+		-Dipv6=true \
+		-Dxtrans=true
 
 override_dh_auto_build:
 	ninja -C debian/build
