@@ -1,3 +1,13 @@
+cinnamon-session (4.4.0) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * csm-system: Check for logind and fall back to consolekit, instead of using a gsettings key to determine which to use.
+
+  [ Soapux ]
+  * meson: Update style of build options (#129)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 16 Nov 2019 15:12:52 +0100
+
 cinnamon-session (4.2.1) tina; urgency=medium
 
   [ Michael Webster ]
