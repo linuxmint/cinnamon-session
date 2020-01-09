@@ -32,8 +32,6 @@
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "csm-util.h"
 
 static gchar *_saved_session_dir = NULL;
