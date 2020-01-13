@@ -351,7 +351,7 @@ csm_presence_constructor (GType                  type,
         }
 
         presence->priv->screensaver_proxy = g_dbus_proxy_new_sync (presence->priv->connection,
-                                                                   G_DBUS_PROXY_FLAGS_NONE,
+                                                                   G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
                                                                    NULL,
                                                                    CS_NAME,
                                                                    CS_PATH,
