@@ -5,6 +5,11 @@
       <summary>Show debug info</summary>
       <description>If enabled, cinnamon-session will output debug information.</description>
     </key>
+    <key name="x-sync" type="b">
+      <default>false</default>
+      <summary>Start the session with GDK_SYNCHRONIZE=1</summary>
+      <description>If enabled, cinnamon-session and all (gtk) children will make all X requests synchronously, for debugging x errors.</description>
+    </key>
     <key name="auto-save-session" type="b">
       <default>false</default>
       <summary>Save sessions</summary>

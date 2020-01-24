@@ -215,6 +215,13 @@ main (int argc, char **argv)
                 { NULL, 0, 0, 0, NULL, NULL, NULL }
         };
 
+        GSettings *settings;
+        settings = g_settings_new ("org.cinnamon.SessionManager");
+
+        if (g_settings_get_boolean (settings, "x-sync")) {
+            csm_util_setenv ("GDK_SYNCHRONIZE", "1");
+        }
+
         /* Make sure that we have a session bus */
         if (!require_dbus_session (argc, argv, &error)) {
                 csm_util_init_error (TRUE, "%s", error->message);
@@ -224,9 +231,6 @@ main (int argc, char **argv)
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         textdomain (GETTEXT_PACKAGE);
 
-        GSettings *settings;
-
-        settings = g_settings_new ("org.cinnamon.SessionManager");
         if (g_settings_get_boolean (settings, "debug")) {
             debug = TRUE;
         }
