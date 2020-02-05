@@ -28,7 +28,6 @@ Build-Depends:
  xsltproc,
  xtrans-dev,
 Standards-Version: 3.9.6
-Homepage: http://cinnamon.linuxmint.com
 
 Package: cinnamon-session
 Architecture: any
