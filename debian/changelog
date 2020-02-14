@@ -1,3 +1,23 @@
+cinnamon-session (4.4.1) tricia; urgency=medium
+
+  [ Eli Schwartz ]
+  * build: don't try to configure a data file that has nothing to configure
+
+  [ Michael Webster ]
+  * csm-systemd.c: Restore old check for logind.
+
+  [ Sparky Bluefang ]
+  * Clean-up remaining dbus-glib references after removal in #125
+
+  [ Michael Webster ]
+  * csm-presence.c: Don't start cinnamon-screensaver during construction.
+  * main.c: Add a setting to run the session with GDK_SYNCHRONIZE=1, which allows XErrors to be backtraced.
+
+  [ Clement Lefebvre ]
+  * Package: Remove URL
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 14 Feb 2020 08:53:57 +0000
+
 cinnamon-session (4.4.0) tricia; urgency=medium
 
   [ Michael Webster ]
