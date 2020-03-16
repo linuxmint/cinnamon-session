@@ -2470,7 +2470,8 @@ _disconnect_client (CsmManager *manager,
                 }
         }
 
-        if (manager->priv->phase == CSM_MANAGER_PHASE_QUERY_END_SESSION) {
+        switch (manager->priv->phase) {
+            case CSM_MANAGER_PHASE_QUERY_END_SESSION:
                 /* Instead of answering our end session query, the client just exited.
                  * Treat that as an "okay, end the session" answer.
                  *
@@ -2486,6 +2487,32 @@ _disconnect_client (CsmManager *manager,
                                                      "query end session phase "
                                                      "instead of end session "
                                                      "phase");
+                break;
+            case CSM_MANAGER_PHASE_END_SESSION:
+                if (! g_slist_find (manager->priv->query_clients, client)) {
+                        /* the client sent its EndSessionResponse and we already
+                         * processed it.
+                         */
+                        break;
+                }
+
+                /* Client exited without sending EndSessionResponse.
+                 * The likely reason is that its exit code is written in a way
+                 * that never returns, and sending EndSessionResponse is handled
+                 * in library code after the callback. Or maybe the application
+                 * crashed while handling EndSession. Or it was lazy.
+                 */
+                _handle_client_end_session_response (manager,
+                                                     client,
+                                                     TRUE,
+                                                     FALSE,
+                                                     FALSE,
+                                                     "Client exited in "
+                                                     "end session phase without "
+                                                     "sending EndSessionResponse");
+        default:
+                /* do nothing */
+                break;
         }
 
         if (manager->priv->dbus_disconnected && CSM_IS_DBUS_CLIENT (client)) {
