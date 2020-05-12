@@ -1,3 +1,10 @@
+cinnamon-session (4.6.0) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Don't let programs that exit without responding to cinnamon-session's request delay the shutdown.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 May 2020 13:59:00 +0100
+
 cinnamon-session (4.4.1) tricia; urgency=medium
 
   [ Eli Schwartz ]
