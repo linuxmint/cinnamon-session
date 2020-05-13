@@ -23,7 +23,7 @@
 #include "config.h"
 #include "csm-systemd.h"
 
-#ifdef HAVE_LOGIND
+#if defined(HAVE_LOGIND) || defined(HAVE_ELOGIND)
 
 #include <errno.h>
 #include <string.h>

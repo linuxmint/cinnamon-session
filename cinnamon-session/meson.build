@@ -74,7 +74,7 @@ executable('cinnamon-session',
     xext,
     xrender,
     xtest,
-    # elogind,
+    elogind,
   ],
   link_with: [
     libegg,
