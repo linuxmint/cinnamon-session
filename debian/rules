@@ -1,27 +1,21 @@
 #!/usr/bin/make -f
 
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
 %:
 	dh $@
 
 override_dh_auto_configure:
-	mkdir -p debian/build
-	meson debian/build \
-		--prefix=/usr \
-		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+	dh_auto_configure -- \
 		--libexecdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
-		--buildtype=plain \
 		-Ddocbook=true \
 		-Dfrequent_warnings=true \
 		-Dgconf=false \
 		-Dipv6=true \
 		-Dxtrans=true
 
-override_dh_auto_build:
-	ninja -C debian/build
+# --list-missing will be default in compat 12
+override_dh_missing:
+	dh_missing --list-missing
 
-override_dh_auto_test:
-	ninja -C debian/build test
-
-override_dh_auto_install:
-	DESTDIR=${CURDIR}/debian/tmp \
-	ninja -C debian/build install
