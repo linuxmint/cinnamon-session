@@ -70,6 +70,7 @@ struct _CsmAutostartAppPrivate {
         gboolean              condition;
         gboolean              autorestart;
         int                   autostart_delay;
+        char                 *working_dir;
 
         GFileMonitor         *condition_monitor;
         guint                 condition_notify_id;
@@ -108,6 +109,7 @@ csm_autostart_app_init (CsmAutostartApp *app)
         app->priv->condition_monitor = NULL;
         app->priv->condition = FALSE;
         app->priv->autostart_delay = -1;
+        app->priv->working_dir = NULL;
 }
 
 static gboolean
@@ -722,6 +724,10 @@ load_desktop_file (CsmAutostartApp *app)
                                    csm_app_peek_id (CSM_APP (app)));
                         app->priv->autostart_delay = -1;
                 }
+
+                app->priv->working_dir = egg_desktop_file_get_string (app->priv->desktop_file,
+                                                                      EGG_DESKTOP_FILE_KEY_PATH,
+                                                                      NULL);
         }
 
         g_object_set (app,
@@ -858,6 +864,8 @@ csm_autostart_app_dispose (GObject *object)
                 g_free (priv->desktop_id);
                 priv->desktop_id = NULL;
         }
+
+        g_clear_pointer (&priv->working_dir, g_free);
 
         if (priv->child_watch_id > 0) {
                 g_source_remove (priv->child_watch_id);
@@ -1123,6 +1131,7 @@ autostart_app_start_spawn (CsmAutostartApp *app,
                                            EGG_DESKTOP_FILE_LAUNCH_FLAGS, G_SPAWN_DO_NOT_REAP_CHILD,
                                            EGG_DESKTOP_FILE_LAUNCH_RETURN_PID, &app->priv->pid,
                                            EGG_DESKTOP_FILE_LAUNCH_RETURN_STARTUP_ID, &app->priv->startup_id,
+                                           EGG_DESKTOP_FILE_LAUNCH_DIRECTORY, app->priv->working_dir,
                                            NULL);
         g_free (env[0]);
 
