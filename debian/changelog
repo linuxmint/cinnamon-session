@@ -1,3 +1,13 @@
+cinnamon-session (4.6.2) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * csm-autostart-app.c: Respect the Path key in desktop files.
+
+  [ Clement Lefebvre ]
+  * CI: Update targets
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Aug 2020 12:40:31 +0100
+
 cinnamon-session (4.6.1) ulyana; urgency=medium
 
   [ Garry Filakhtov ]
