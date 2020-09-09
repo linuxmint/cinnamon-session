@@ -58,7 +58,8 @@ struct _CsmSystemInterface
         void     (* attempt_stop)     (CsmSystem *system);
         void     (* attempt_restart)  (CsmSystem *system);
         void     (* hybrid_sleep)     (CsmSystem *system);
-        void     (* suspend)          (CsmSystem *system);
+        void     (* suspend)          (CsmSystem *system,
+				       gboolean suspend_then_hibernate);
         void     (* hibernate)        (CsmSystem *system);
         void     (* set_session_idle) (CsmSystem *system,
                                        gboolean   is_idle);
@@ -100,7 +101,8 @@ void       csm_system_attempt_restart  (CsmSystem *system);
 
 void       csm_system_hybrid_sleep     (CsmSystem *system);
 
-void       csm_system_suspend          (CsmSystem *system);
+void       csm_system_suspend          (CsmSystem *system,
+					gboolean suspend_then_hibernate);
 
 void       csm_system_hibernate        (CsmSystem *system);
 

@@ -542,12 +542,18 @@ csm_systemd_hybrid_sleep (CsmSystem *system)
 }
 
 static void
-csm_systemd_suspend (CsmSystem *system)
+csm_systemd_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
 {
+	gchar *method = "Suspend";
+	if (suspend_then_hibernate && csm_systemd_can_suspend (system) && csm_systemd_can_hibernate (system)) {
+		method = "SuspendThenHibernate";
+	}
+	g_debug ("Suspend using: %s", method);
+
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
         g_dbus_proxy_call (manager->priv->sd_proxy,
-                           "Suspend",
+                           method,
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,
