@@ -93,6 +93,7 @@
 #define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
 #define KEY_BLACKLIST             "autostart-blacklist"
 #define KEY_PREFER_HYBRID_SLEEP   "prefer-hybrid-sleep"
+#define KEY_SUSPEND_HIBERNATE     "suspend-then-hibernate"
 
 #define POWER_SETTINGS_SCHEMA     "org.cinnamon.settings-daemon.plugins.power"
 #define KEY_LOCK_ON_SUSPEND       "lock-on-suspend"
@@ -1287,7 +1288,7 @@ manager_attempt_suspend (CsmManager *manager)
             csm_system_can_hybrid_sleep (manager->priv->system)) {
                 csm_system_hybrid_sleep (manager->priv->system);
         } else if (csm_system_can_suspend (manager->priv->system)) {
-                csm_system_suspend (manager->priv->system);
+                csm_system_suspend (manager->priv->system, g_settings_get_boolean (manager->priv->settings, KEY_SUSPEND_HIBERNATE));
         }
 }
 

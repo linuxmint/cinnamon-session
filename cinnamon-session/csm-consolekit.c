@@ -713,7 +713,7 @@ hibernate_done (GObject      *source,
 }
 
 static void
-csm_consolekit_suspend (CsmSystem *system)
+csm_consolekit_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
 {
 #ifdef HAVE_OLD_UPOWER
         CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
@@ -728,8 +728,14 @@ csm_consolekit_suspend (CsmSystem *system)
 #else
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
 
+	gchar *method = "Suspend";
+	if (suspend_then_hibernate && csm_consolekit_can_suspend (system) && csm_consolekit_can_hibernate (system)) {
+		method = "SuspendThenHibernate";
+	}
+	g_debug ("Suspend using: %s", method);
+
         g_dbus_proxy_call (manager->priv->ck_proxy,
-                           "Suspend",
+                           method,
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,

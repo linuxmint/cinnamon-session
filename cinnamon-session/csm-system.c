@@ -119,9 +119,9 @@ csm_system_hybrid_sleep (CsmSystem *system)
 }
 
 void
-csm_system_suspend (CsmSystem *system)
+csm_system_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
 {
-        CSM_SYSTEM_GET_IFACE (system)->suspend (system);
+        CSM_SYSTEM_GET_IFACE (system)->suspend (system, suspend_then_hibernate);
 }
 
 void
