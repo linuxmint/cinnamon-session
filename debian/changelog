@@ -1,3 +1,14 @@
+cinnamon-session (4.8.0) ulyssa; urgency=medium
+
+  [ miniskipper ]
+  * implement suspend-then-hibernate (issue #237)
+  * respect suspend-then-hibernate setting when suspending from menu
+
+  [ Fabio Fantoni ]
+  * use debhelper 11 for integrated meson support
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 25 Nov 2020 14:19:53 +0000
+
 cinnamon-session (4.6.2) ulyana; urgency=medium
 
   [ Michael Webster ]
