@@ -181,7 +181,7 @@ egg_desktop_file_new_from_key_file (GKeyFile    *key_file,
 	  g_warning ("Invalid Version string '%s' in %s",
 		     version, source ? source : "(unknown)");
 	}
-      else if (version_num > 1.0)
+      else if (version_num > 1.4)
 	{
 	  g_set_error (error, EGG_DESKTOP_FILE_ERROR,
 		       EGG_DESKTOP_FILE_ERROR_INVALID,
