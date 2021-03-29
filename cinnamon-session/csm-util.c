@@ -36,6 +36,13 @@
 
 static gchar *_saved_session_dir = NULL;
 
+static const char * const variable_blacklist[] = {
+    "XDG_SEAT",
+    "XDG_SESSION_ID",
+    "XDG_VTNR",
+    NULL
+};
+
 char *
 csm_util_find_desktop_file_for_app_name (const char *name,
                                          gboolean    look_in_saved_session,
@@ -577,6 +584,9 @@ csm_util_export_activation_environment (GError     **error)
                 const char *entry_name = entry_names[i];
                 const char *entry_value = g_getenv (entry_name);
 
+                if (g_strv_contains (variable_blacklist, entry_name))
+                    continue;
+
                 if (!g_utf8_validate (entry_name, -1, NULL))
                     continue;
 
@@ -643,8 +653,13 @@ csm_util_export_user_environment (GError     **error)
                 return FALSE;
         }
 
+        entries = g_get_environ ();
+
+        for (; variable_blacklist[i] != NULL; i++)
+                entries = g_environ_unsetenv (entries, variable_blacklist[i]);
+
         g_variant_builder_init (&builder, G_VARIANT_TYPE ("as"));
-        for (entries = g_get_environ (); entries[i] != NULL; i++) {
+        for (i = 0; entries[i] != NULL; i++) {
                 const char *entry = entries[i];
 
                 if (!g_utf8_validate (entry, -1, NULL))
