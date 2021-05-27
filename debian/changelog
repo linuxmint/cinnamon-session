@@ -1,3 +1,13 @@
+cinnamon-session (5.0.0) uma; urgency=medium
+
+  [ Leigh Scott ]
+  * Accept Desktop Entry Specification v1.4
+  * util: Blacklist some session-specific variables
+  * util: Blacklist NOTIFY_SOCKET
+  * Fix libexec path for cinnamon-session-check-accelerated-helper
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 27 May 2021 15:35:11 +0100
+
 cinnamon-session (4.8.0) ulyssa; urgency=medium
 
   [ miniskipper ]
