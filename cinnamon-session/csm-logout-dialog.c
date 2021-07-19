@@ -322,6 +322,14 @@ csm_logout_dialog_set_timeout (CsmLogoutDialog *logout_dialog)
                                                          logout_dialog);
 }
 
+static gboolean
+on_map_event (GtkWidget *widget, GdkEvent *event, gpointer user_data)
+{
+    gdk_window_focus (gtk_widget_get_window (widget), GDK_CURRENT_TIME);
+
+    return GDK_EVENT_PROPAGATE;
+}
+
 static GtkWidget *
 csm_get_dialog (CsmDialogLogoutType type,
                 GdkScreen          *screen,
@@ -456,6 +464,8 @@ csm_get_dialog (CsmDialogLogoutType type,
                                          logout_dialog->priv->default_response);
 
         gtk_window_set_screen (GTK_WINDOW (logout_dialog), screen);
+
+        g_signal_connect (logout_dialog, "map-event", G_CALLBACK (on_map_event), NULL);
 
         g_object_unref(settings);
 
