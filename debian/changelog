@@ -1,3 +1,10 @@
+cinnamon-session (5.0.1) uma; urgency=medium
+
+  [ Michael Webster ]
+  * csm-logout-dialog.c: Grab focus after the widget is shown.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 23 Jul 2021 12:25:29 +0100
+
 cinnamon-session (5.0.0) uma; urgency=medium
 
   [ Leigh Scott ]
