@@ -2937,10 +2937,6 @@ maybe_play_logout_sound (CsmManager *manager)
         }
         g_free(sound);
         g_object_unref (settings);    
-
-        while (manager->priv->logout_sound_is_playing) {
-            sleep(1);
-        }
 }
 
 static void
