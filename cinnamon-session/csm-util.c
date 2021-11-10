@@ -41,6 +41,22 @@ static const char * const variable_blacklist[] = {
     "XDG_SEAT",
     "XDG_SESSION_ID",
     "XDG_VTNR",
+
+    /* None of the LC_* variables should survive a logout/login */
+    "LC_CTYPE",
+    "LC_NUMERIC",
+    "LC_TIME",
+    "LC_COLLATE",
+    "LC_MONETARY",
+    "LC_MESSAGES",
+    "LC_PAPER",
+    "LC_NAME",
+    "LC_ADDRESS",
+    "LC_TELEPHONE",
+    "LC_MEASUREMENT",
+    "LC_IDENTIFICATION",
+    "LC_ALL",
+
     NULL
 };
 
