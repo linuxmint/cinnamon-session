@@ -1,3 +1,10 @@
+cinnamon-session (5.2.0) una; urgency=medium
+
+  [ Joshua Peisach ]
+  * util: Unset LC_* variables (#145)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 15 Nov 2021 12:44:32 +0000
+
 cinnamon-session (5.0.1) uma; urgency=medium
 
   [ Michael Webster ]
