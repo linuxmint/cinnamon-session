@@ -27,7 +27,7 @@ Build-Depends:
  xmlto,
  xsltproc,
  xtrans-dev,
-Standards-Version: 3.9.6
+Standards-Version: 4.5.0
 
 Package: cinnamon-session
 Architecture: any
