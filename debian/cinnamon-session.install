@@ -1,6 +1,5 @@
 usr/bin/cinnamon-session*
 usr/lib/*/cinnamon-session*
 usr/share/cinnamon-session
-usr/share/doc/cinnamon-session/dbus/cinnamon-session.html
 usr/share/glib-2.0/schemas/org.cinnamon.SessionManager.gschema.xml
 usr/share/man/*/cinnamon-session*

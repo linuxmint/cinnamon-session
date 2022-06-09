@@ -29,10 +29,6 @@
 #include <glib.h>
 #include <gio/gio.h>
 
-#ifdef HAVE_GCONF
-#include <gconf/gconf-client.h>
-#endif
-
 #include "csm-autostart-app.h"
 #include "csm-util.h"
 
@@ -45,9 +41,6 @@ enum {
         CSM_CONDITION_NONE           = 0,
         CSM_CONDITION_IF_EXISTS      = 1,
         CSM_CONDITION_UNLESS_EXISTS  = 2,
-#ifdef HAVE_GCONF
-        CSM_CONDITION_GNOME          = 3,
-#endif
         CSM_CONDITION_GSETTINGS      = 4,
         CSM_CONDITION_IF_SESSION     = 5,
         CSM_CONDITION_UNLESS_SESSION = 6,
@@ -185,10 +178,6 @@ parse_condition_string (const char *condition_string,
                 kind = CSM_CONDITION_IF_EXISTS;
         } else if (!g_ascii_strncasecmp (condition_string, "unless-exists", len) && key) {
                 kind = CSM_CONDITION_UNLESS_EXISTS;
-#ifdef HAVE_GCONF
-        } else if (!g_ascii_strncasecmp (condition_string, "GNOME", len)) {
-                kind = CSM_CONDITION_GNOME;
-#endif
         } else if (!g_ascii_strncasecmp (condition_string, "GSettings", len)) {
                 kind = CSM_CONDITION_GSETTINGS;
         } else if (!g_ascii_strncasecmp (condition_string, "GNOME3", len)) {
@@ -282,40 +271,6 @@ unless_exists_condition_cb (GFileMonitor     *monitor,
                 g_signal_emit (app, signals[CONDITION_CHANGED], 0, condition);
         }
 }
-
-#ifdef HAVE_GCONF
-static void
-gconf_condition_cb (GConfClient *client,
-                    guint        cnxn_id,
-                    GConfEntry  *entry,
-                    gpointer     user_data)
-{
-        CsmApp                 *app;
-        CsmAutostartAppPrivate *priv;
-        gboolean                condition;
-
-        g_return_if_fail (CSM_IS_APP (user_data));
-
-        app = CSM_APP (user_data);
-
-        priv = CSM_AUTOSTART_APP (app)->priv;
-
-        condition = FALSE;
-        if (entry->value != NULL && entry->value->type == GCONF_VALUE_BOOL) {
-                condition = gconf_value_get_bool (entry->value);
-        }
-
-        g_debug ("CsmAutostartApp: app:%s condition changed condition:%d",
-                 csm_app_peek_id (app),
-                 condition);
-
-        /* Emit only if the condition actually changed */
-        if (condition != priv->condition) {
-                priv->condition = condition;
-                g_signal_emit (app, signals[CONDITION_CHANGED], 0, condition);
-        }
-}
-#endif
 
 static void
 gsettings_condition_cb (GSettings  *settings,
@@ -505,16 +460,6 @@ setup_condition_monitor (CsmAutostartApp *app)
                 g_file_monitor_cancel (app->priv->condition_monitor);
         }
 
-#ifdef HAVE_GCONF
-        if (app->priv->condition_notify_id > 0) {
-                GConfClient *client;
-                client = gconf_client_get_default ();
-                gconf_client_notify_remove (client,
-                                            app->priv->condition_notify_id);
-                app->priv->condition_notify_id = 0;
-        }
-#endif
-
         if (app->priv->condition_string == NULL) {
                 return;
         }
@@ -569,29 +514,6 @@ setup_condition_monitor (CsmAutostartApp *app)
 
                 g_object_unref (file);
                 g_free (file_path);
-#ifdef HAVE_GCONF
-        } else if (kind == CSM_CONDITION_GNOME) {
-                GConfClient *client;
-                char        *dir;
-
-                client = gconf_client_get_default ();
-                g_assert (GCONF_IS_CLIENT (client));
-
-                disabled = !gconf_client_get_bool (client, key, NULL);
-
-                dir = g_path_get_dirname (key);
-
-                gconf_client_add_dir (client,
-                                      dir,
-                                      GCONF_CLIENT_PRELOAD_NONE, NULL);
-                g_free (dir);
-
-                app->priv->condition_notify_id = gconf_client_notify_add (client,
-                                                                          key,
-                                                                          gconf_condition_cb,
-                                                                          app, NULL, NULL);
-                g_object_unref (client);
-#endif
         } else if (kind == CSM_CONDITION_GSETTINGS) {
                 disabled = !setup_gsettings_condition_monitor (app, key);
         } else if (kind == CSM_CONDITION_IF_SESSION) {
@@ -935,14 +857,6 @@ is_conditionally_disabled (CsmApp *app)
                 file_path = g_build_filename (g_get_user_config_dir (), key, NULL);
                 disabled = g_file_test (file_path, G_FILE_TEST_EXISTS);
                 g_free (file_path);
-#ifdef HAVE_GCONF
-        } else if (kind == CSM_CONDITION_GNOME) {
-                GConfClient *client;
-                client = gconf_client_get_default ();
-                g_assert (GCONF_IS_CLIENT (client));
-                disabled = !gconf_client_get_bool (client, key, NULL);
-                g_object_unref (client);
-#endif
         } else if (kind == CSM_CONDITION_GSETTINGS &&
                    priv->condition_settings != NULL) {
                 char **elems;

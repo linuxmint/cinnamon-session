@@ -19,7 +19,6 @@ Files: cinnamon-session/csm-inhibit-dialog.*
        cinnamon-session/csm-manager.h
        cinnamon-session/csm-xsmp-server.h
        cinnamon-session/csm-system.h
-       doc/dbus/spec-to-docbook.xsl
 Copyright: 2007-2008, William Jon McCann <jmccann@redhat.com>
 License: GPL-2+
 
@@ -81,10 +80,6 @@ Files: po/Makefile.in.in
 Copyright: 2004-2008, Rodney Dawes <dobey.pwns@gmail.com>
            1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
 License: Permissive
-
-Files: doc/dbus/spec-to-docbook.xsl
-Copyright: 2007-2008, William Jon McCann
-License: GPL
 
 Files: debian/*
 Copyright: 2013-2014, Linux Mint Project <root@linuxmint.com>

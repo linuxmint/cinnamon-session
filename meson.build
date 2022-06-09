@@ -42,14 +42,6 @@ xau         = dependency('xau')
 xcomposite  = dependency('xcomposite')
 gl          = dependency('gl')
 
-if get_option('gconf')
-  gconf     = dependency('gconf-2.0')
-else
-  gconf     = dependency('', required: false)
-endif
-conf.set('HAVE_GCONF', gconf.found())
-
-
 gio_unix    = dependency('gio-unix-2.0',      required: false)
 libelogind  = dependency('libelogind',        required: false)
 libsystemdl = dependency('libsystemd-login',  required: false)
@@ -77,13 +69,6 @@ conf.set('HAVE_XTEST', xtest.found())
 
 xrender = dependency('xrender', required: false)
 conf.set('HAVE_XRENDER', xrender.found())
-
-docbook_enabled = get_option('docbook')
-if docbook_enabled
-  xmlto = find_program('xmlto')
-endif
-conf.set('DOCBOOK_DOCS_ENABLED', docbook_enabled)
-
 
 # Execinfo support
 conf.set10('HAVE_EXECINFO_H', cc.has_header('execinfo.h'))
@@ -183,12 +168,10 @@ message('\n'.join([
 #'        Maintainer mode:          @0@'.format(USE_MAINTAINER_MODE),
 #'        Use *_DISABLE_DEPRECATED: @0@'.format(enable_deprecation_flags),
 '',
-'        GConf support:            @0@'.format(gconf.found()),
 '        Logind support:           @0@'.format(logind.found()),
 '        IPv6 support:             @0@'.format(have_ipv6),
 '        Backtrace support:        @0@'.format(backtrace.found()),
 '        XRender support:          @0@'.format(xrender.found()),
 '        XTest support:            @0@'.format(xtest.found()),
-'        Build documentation:      @0@'.format(docbook_enabled),
 '',
 ]))

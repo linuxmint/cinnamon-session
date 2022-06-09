@@ -60,7 +60,6 @@ executable('cinnamon-session',
   cinnamon_session_sources,
   dependencies: [
     execinfo,
-    gconf,
     gio,
     glib,
     gtk3,

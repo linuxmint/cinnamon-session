@@ -1,2 +1,1 @@
-subdir('dbus')
 subdir('man')

@@ -21,7 +21,6 @@
 /cinnamon-session/csm-marshal.c
 /cinnamon-session/csm-marshal.h
 /omf.make
-/xmldocs.make
 Makefile.in
 
 

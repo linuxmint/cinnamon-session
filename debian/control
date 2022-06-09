@@ -24,8 +24,6 @@ Build-Depends:
  libxt-dev,
  libxtst-dev,
  meson,
- xmlto,
- xsltproc,
  xtrans-dev,
 Standards-Version: 3.9.6
 

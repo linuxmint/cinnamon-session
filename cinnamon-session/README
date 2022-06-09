@@ -12,7 +12,7 @@ represents an app resumed from the previous saved session.)
 Startup is divided into 7 phases (CsmSessionPhase):
 
     * CSM_SESSION_PHASE_STARTUP covers cinnamon-session's internal
-      startup, which also includes starting gconfd and dbus-daemon (if
+      startup, which also includes starting dbus-daemon (if
       it's not already running). Gnome-session starts up those
       explicitly because it needs them for its own purposes.
 
