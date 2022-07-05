@@ -41,3 +41,12 @@ Makefile.in
 .idea
 CMakeLists.txt
 
+## build files ##
+debian/*.debhelper.log
+debian/*.substvars
+debian/.debhelper/
+debian/cinnamon-session-common/
+debian/cinnamon-session/
+debian/debhelper-build-stamp
+debian/files
+debian/tmp/
