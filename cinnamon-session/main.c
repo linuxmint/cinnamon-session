@@ -308,17 +308,6 @@ main (int argc, char **argv)
          */
         csm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
 
-        /* GTK Overlay scrollbars */
-        settings = g_settings_new ("org.cinnamon.desktop.interface");
-
-        if (g_settings_get_boolean (settings, "gtk-overlay-scrollbars")) {
-            csm_util_setenv ("GTK_OVERLAY_SCROLLING", "1");
-        } else {
-            csm_util_setenv ("GTK_OVERLAY_SCROLLING", "0");
-        }
-
-        g_clear_object (&settings);
-
         csm_util_set_autostart_dirs (override_autostart_dirs);
 
         /* Talk to logind before acquiring a name, since it does synchronous
