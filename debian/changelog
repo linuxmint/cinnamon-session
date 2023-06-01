@@ -1,3 +1,11 @@
+cinnamon-session (5.8.0) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * main.c: Don't set GTK_OVERLAY_SCROLLING.
+  * github workflow: Add optional ssh session.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 Jun 2023 14:03:37 +0100
+
 cinnamon-session (5.6.0) vera; urgency=medium
 
   [ Rick Calixte ]
