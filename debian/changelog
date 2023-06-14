@@ -1,3 +1,10 @@
+cinnamon-session (5.8.1) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * Block touchegg from autostarting.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 14 Jun 2023 09:28:39 +0200
+
 cinnamon-session (5.8.0) victoria; urgency=medium
 
   [ Michael Webster ]
