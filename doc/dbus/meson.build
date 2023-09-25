@@ -14,7 +14,7 @@ if docbook_enabled
     spec_xml_files += custom_target(prefix +'.ref.xml',
       input : [
         'spec-to-docbook.xsl',
-        join_paths(meson.source_root(), 'cinnamon-session', prefix + '.xml'),
+        join_paths(meson.project_source_root(), 'cinnamon-session', prefix + '.xml'),
       ],
       output: prefix + '.ref.xml',
       command: [

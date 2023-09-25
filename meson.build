@@ -2,7 +2,7 @@
 project('cinnamon-session',
   [ 'c', ],
   version: '5.8.1',
-  meson_version: '>=0.37.0',
+  meson_version: '>=0.56.0',
 )
 
 ################################################################################
@@ -162,7 +162,7 @@ message('\n'.join([
 '        sysconfdir:               @0@'.format(get_option('sysconfdir')),
 '        localstatedir:            @0@'.format(get_option('localstatedir')),
 '        datadir:                  @0@'.format(get_option('datadir')),
-'        source code location:     @0@'.format(meson.source_root()),
+'        source code location:     @0@'.format(meson.project_source_root()),
 '        compiler:                 @0@'.format(cc.get_id()),
 '        cflags:                   @0@'.format(project_cflags),
 #'        Maintainer mode:          @0@'.format(USE_MAINTAINER_MODE),
