@@ -71,6 +71,8 @@ typedef enum {
         CSM_MANAGER_PHASE_EARLY_INITIALIZATION,
         /* gnome-keyring-daemon */
         CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER,
+        /* wayland */
+        CSM_MANAGER_PHASE_DISPLAY_SERVER,
         /* xrandr setup, gnome-settings-daemon, etc */
         CSM_MANAGER_PHASE_INITIALIZATION,
         /* window/compositing managers */

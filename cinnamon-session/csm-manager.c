@@ -417,6 +417,9 @@ phase_num_to_name (guint phase)
         case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
                 name = "PRE_DISPLAY_SERVER";
                 break;
+        case CSM_MANAGER_PHASE_DISPLAY_SERVER:
+                name = "DISPLAY_SERVER";
+                break;
         case CSM_MANAGER_PHASE_INITIALIZATION:
                 name = "INITIALIZATION";
                 break;
@@ -539,6 +542,7 @@ end_phase (CsmManager *manager)
         case CSM_MANAGER_PHASE_STARTUP:
         case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
         case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
+        case CSM_MANAGER_PHASE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -675,6 +679,7 @@ on_phase_timeout (CsmManager *manager)
         case CSM_MANAGER_PHASE_STARTUP:
         case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
         case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
+        case CSM_MANAGER_PHASE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -1575,6 +1580,7 @@ start_phase (CsmManager *manager)
         case CSM_MANAGER_PHASE_STARTUP:
         case CSM_MANAGER_PHASE_EARLY_INITIALIZATION:
         case CSM_MANAGER_PHASE_PRE_DISPLAY_SERVER:
+        case CSM_MANAGER_PHASE_DISPLAY_SERVER:
         case CSM_MANAGER_PHASE_INITIALIZATION:
         case CSM_MANAGER_PHASE_WINDOW_MANAGER:
         case CSM_MANAGER_PHASE_PANEL:
@@ -1818,7 +1824,7 @@ csm_manager_initialization_error (CsmExportedManager    *skeleton,
                 return TRUE;
         }
 
-        if (manager->priv->phase > CSM_MANAGER_PHASE_INITIALIZATION) {
+        if (manager->priv->phase != CSM_MANAGER_PHASE_INITIALIZATION) {
                 g_dbus_method_invocation_return_error (invocation,
                                                        CSM_MANAGER_ERROR,
                                                        CSM_MANAGER_ERROR_NOT_IN_INITIALIZATION,
