@@ -31,7 +31,6 @@
 #include <glib/gi18n.h>
 #include <glib-unix.h>
 #include <glib.h>
-#include <gtk/gtk.h>
 
 #include "mdm-log.h"
 
@@ -41,6 +40,7 @@
 #include "csm-store.h"
 #include "csm-system.h"
 #include "csm-fail-whale-dialog.h"
+#include <systemd/sd-journal.h>
 
 #define CSM_DBUS_NAME "org.gnome.SessionManager"
 
@@ -52,6 +52,24 @@ static const char *session_name = NULL;
 
 
 static CsmManager *manager = NULL;
+
+static GMainLoop *loop;
+
+void
+csm_quit (void)
+{
+        g_main_loop_quit (loop);
+}
+
+static void
+csm_main (void)
+{
+        if (loop == NULL)
+                loop = g_main_loop_new (NULL, TRUE);
+
+        g_main_loop_run (loop);
+}
+
 
 static void
 on_name_lost (GDBusConnection *connection,
@@ -68,11 +86,11 @@ on_name_lost (GDBusConnection *connection,
                  * When the signal handler gets a shutdown signal, it calls
                  * this function to inform CsmManager to not restart
                  * applications in the off chance a handler is already queued
-                 * to dispatch following the below call to gtk_main_quit.
+                 * to dispatch following the below call to csm_quit.
                  */
                 csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
 
-                gtk_main_quit ();
+                csm_quit ();
         }
 }
 
@@ -147,11 +165,11 @@ shutdown_cb (gpointer data)
          * When the signal handler gets a shutdown signal, it calls
          * this function to inform CsmManager to not restart
          * applications in the off chance a handler is already queued
-         * to dispatch following the below call to gtk_main_quit.
+         * to dispatch following the below call to csm_quit.
          */
         if (manager) {
             csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
-            gtk_main_quit ();
+            csm_quit ();
         }
 }
 
@@ -200,10 +218,10 @@ main (int argc, char **argv)
 {
         struct sigaction  sa;
         GError           *error;
-        char             *display_str;
         CsmStore         *client_store;
         guint             name_owner_id;
         static char     **override_autostart_dirs = NULL;
+        GOptionContext   *options;
         static GOptionEntry entries[] = {
                 { "autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), N_("AUTOSTART_DIR") },
                 { "session", 0, 0, G_OPTION_ARG_STRING, &session_name, N_("Session to use"), N_("SESSION_NAME") },
@@ -242,14 +260,16 @@ main (int argc, char **argv)
         sigaction (SIGPIPE, &sa, 0);
 
         error = NULL;
-        gtk_init_with_args (&argc, &argv,
-                            (char *) _(" - the Cinnamon session manager"),
-                            entries, GETTEXT_PACKAGE,
-                            &error);
+        options = g_option_context_new (_(" - the Cinnamon session manager"));
+        g_option_context_add_main_entries (options, entries, GETTEXT_PACKAGE);
+        g_option_context_parse (options, &argc, &argv, &error);
+
         if (error != NULL) {
                 g_warning ("%s", error->message);
                 exit (1);
         }
+
+        g_option_context_free (options);
 
         if (show_version) {
                 g_print ("%s %s\n", argv [0], VERSION);
@@ -258,50 +278,24 @@ main (int argc, char **argv)
 
         if (please_fail) {
                 csm_fail_whale_dialog_we_failed (TRUE, TRUE);
-                gtk_main ();
                 exit (1);
         }
 
         csm_util_export_activation_environment (NULL);
         csm_util_export_user_environment (NULL);
 
+        if (!debug) {
+                int journalfd;
+
+                journalfd = sd_journal_stream_fd (PACKAGE, LOG_INFO, 0);
+                if (journalfd >= 0) {
+                        dup2(journalfd, 1);
+                        dup2(journalfd, 2);
+                }
+        }
+
         mdm_log_init ();
         mdm_log_set_debug (debug);
-
-        /* Set DISPLAY explicitly for all our children, in case --display
-         * was specified on the command line.
-         */
-        display_str = gdk_get_display ();
-        csm_util_setenv ("DISPLAY", display_str);
-        g_free (display_str);
-
-        const gchar *gtk_modules;
-        gchar *new_gtk_modules = NULL;
-
-        gtk_modules = g_getenv ("GTK_MODULES");
-
-        if (gtk_modules != NULL && g_strstr_len (gtk_modules, -1, "overlay-scrollbar")) {
-            int i = 0;
-            new_gtk_modules = g_strconcat ("", NULL);
-
-            gchar **module_list = g_strsplit (gtk_modules, ":", -1);
-
-            for (i = 0; i < g_strv_length (module_list); i++) {
-                if (!g_strstr_len (module_list[i], -1, "overlay-scrollbar")) {
-                    gchar *tmp = new_gtk_modules;
-                    new_gtk_modules = g_strconcat (tmp, ":", module_list[i], NULL);
-                    g_free (tmp);
-                }
-            }
-
-            g_strfreev (module_list);
-        }
-
-        if (new_gtk_modules) {
-            csm_util_setenv ("GTK_MODULES", new_gtk_modules);
-        }
-
-        g_free (new_gtk_modules);
 
         /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
          * detect if GNOME is running. We keep this for compatibility reasons.
@@ -319,7 +313,7 @@ main (int argc, char **argv)
 
         name_owner_id = acquire_name ();
 
-        gtk_main ();
+        csm_main ();
 
         if (manager != NULL) {
                 g_debug ("Unreffing manager");
