@@ -25,8 +25,6 @@
 #include <glib-object.h>
 #include <sys/types.h>
 
-#include "eggdesktopfile.h"
-
 #include "csm-manager.h"
 #include "csm-client.h"
 

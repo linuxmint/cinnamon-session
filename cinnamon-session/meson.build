@@ -75,10 +75,7 @@ executable('cinnamon-session',
     xtest,
     elogind,
   ],
-  link_with: [
-    libegg,
-  ],
-  include_directories: [ rootInclude, eggInclude, ],
+  include_directories: [ rootInclude ],
   install: true,
 )
 

@@ -21,8 +21,6 @@
 
 #include "config.h"
 
-#include "eggdesktopfile.h"
-
 #include "csm-marshal.h"
 #include "csm-client.h"
 #include "csm-exported-client.h"

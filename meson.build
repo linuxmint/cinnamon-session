@@ -142,7 +142,6 @@ add_project_arguments(project_cflags,
   language: 'c',
 )
 
-subdir('egg')
 subdir('cinnamon-session')
 subdir('data')
 subdir('doc')
