@@ -27,7 +27,6 @@ foreach iface: gdbus_ifaces
 endforeach
 
 cinnamon_session_sources = [
-  'cs-idle-monitor.c',
   'csm-app.c',
   'csm-autostart-app.c',
   'csm-client.c',
@@ -59,6 +58,7 @@ cinnamon_session_sources = [
 executable('cinnamon-session',
   cinnamon_session_sources,
   dependencies: [
+    cinnamon_desktop,
     execinfo,
     gio,
     glib,

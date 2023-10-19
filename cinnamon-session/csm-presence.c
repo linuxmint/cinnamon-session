@@ -26,7 +26,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "cs-idle-monitor.h"
+#define GNOME_DESKTOP_USE_UNSTABLE_API
+#include <libcinnamon-desktop/gnome-idle-monitor.h>
 
 #include "csm-presence.h"
 #include "csm-exported-presence.h"
@@ -48,16 +49,16 @@
 
 struct CsmPresencePrivate
 {
-        guint            status;
-        guint            saved_status;
-        char            *status_text;
-        gboolean         idle_enabled;
-        CSIdleMonitor   *idle_monitor;
-        guint            idle_watch_id;
-        guint            idle_timeout;
-        gboolean         screensaver_active;
-        GDBusConnection *connection;
-        GDBusProxy      *screensaver_proxy;
+        guint             status;
+        guint             saved_status;
+        char             *status_text;
+        gboolean          idle_enabled;
+        GnomeIdleMonitor *idle_monitor;
+        guint             idle_watch_id;
+        guint             idle_timeout;
+        gboolean          screensaver_active;
+        GDBusConnection  *connection;
+        GDBusProxy       *screensaver_proxy;
         CsmExportedPresence *skeleton;
 };
 
@@ -171,10 +172,10 @@ set_session_idle (CsmPresence   *presence,
 }
 
 static gboolean
-on_idle_timeout (CSIdleMonitor *monitor,
-                 guint          id,
-                 gboolean       condition,
-                 CsmPresence   *presence)
+on_idle_timeout (GnomeIdleMonitor *monitor,
+                 guint             id,
+                 gboolean          condition,
+                 CsmPresence      *presence)
 {
         gboolean handled;
 
@@ -193,18 +194,19 @@ reset_idle_watch (CsmPresence  *presence)
 
         if (presence->priv->idle_watch_id > 0) {
                 g_debug ("CsmPresence: removing idle watch (%i)", presence->priv->idle_watch_id);
-                cs_idle_monitor_remove_watch (presence->priv->idle_monitor,
-                                              presence->priv->idle_watch_id);
+                gnome_idle_monitor_remove_watch (presence->priv->idle_monitor,
+                                                 presence->priv->idle_watch_id);
                 presence->priv->idle_watch_id = 0;
         }
 
         if (! presence->priv->screensaver_active
             && presence->priv->idle_enabled
             && presence->priv->idle_timeout > 0) {
-                presence->priv->idle_watch_id = cs_idle_monitor_add_watch (presence->priv->idle_monitor,
-                                                                           presence->priv->idle_timeout,
-                                                                           (CSIdleMonitorWatchFunc)on_idle_timeout,
-                                                                           presence);
+                presence->priv->idle_watch_id = gnome_idle_monitor_add_idle_watch (presence->priv->idle_monitor,
+                                                                                   presence->priv->idle_timeout,
+                                                                                   (GnomeIdleMonitorWatchFunc) on_idle_timeout,
+                                                                                   presence,
+                                                                                   NULL);
                 g_debug ("CsmPresence: adding idle watch (%i) for %d secs",
                          presence->priv->idle_watch_id,
                          presence->priv->idle_timeout / 1000);
@@ -218,7 +220,6 @@ on_screensaver_g_signal (GDBusProxy  *proxy,
                          GVariant    *parameters,
                          CsmPresence *presence)
 {
-        GError *error;
         gboolean is_active;
 
         if (signal_name == NULL || g_strcmp0 (signal_name, "ActiveChanged") != 0) {
@@ -382,7 +383,7 @@ csm_presence_init (CsmPresence *presence)
 {
         presence->priv = CSM_PRESENCE_GET_PRIVATE (presence);
 
-        presence->priv->idle_monitor = cs_idle_monitor_new ();
+        presence->priv->idle_monitor = gnome_idle_monitor_new ();
 }
 
 void
@@ -476,8 +477,8 @@ csm_presence_finalize (GObject *object)
         CsmPresence *presence = (CsmPresence *) object;
 
         if (presence->priv->idle_watch_id > 0) {
-                cs_idle_monitor_remove_watch (presence->priv->idle_monitor,
-                                              presence->priv->idle_watch_id);
+                gnome_idle_monitor_remove_watch (presence->priv->idle_monitor,
+                                                 presence->priv->idle_watch_id);
                 presence->priv->idle_watch_id = 0;
         }
 
