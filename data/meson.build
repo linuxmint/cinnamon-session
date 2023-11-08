@@ -8,7 +8,6 @@ foreach size: [ '16x16', '22x22', '24x24', '32x32', '48x48', 'scalable', ]
 endforeach
 
 install_data([
-    'csm-inhibit-dialog.glade',
     'hardware-compatibility',
   ],
   install_dir: join_paths(get_option('datadir'), meson.project_name())

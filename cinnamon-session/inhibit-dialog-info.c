@@ -29,13 +29,9 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gio/gdesktopappinfo.h>
-#include <gtk/gtk.h>
-#include <gdk/gdkx.h>
-#include <cairo-xlib.h>
 
 #include "csm-store.h"
 #include "csm-client.h"
-#include "csm-icon-names.h"
 #include "csm-inhibitor.h"
 #include "csm-util.h"
 #include "inhibit-dialog-info.h"

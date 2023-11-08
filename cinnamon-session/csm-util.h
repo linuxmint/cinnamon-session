@@ -21,7 +21,6 @@
 #define __CSM_UTIL_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
@@ -58,8 +57,6 @@ gboolean    csm_util_export_user_environment        (GError     **error);
 
 void        csm_util_setenv                         (const char *variable,
                                                      const char *value);
-
-GtkIconSize csm_util_get_computer_fail_icon_size    (void);
 
 // main.c, exit mainloop
 void        csm_quit                                (void);

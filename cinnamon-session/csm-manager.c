@@ -36,8 +36,6 @@
 #include <glib/gstdio.h>
 #include <glib-object.h>
 
-#include <gtk/gtk.h> /* for logout dialog */
-
 #include <canberra.h>
 
 #include "csm-manager.h"
@@ -55,8 +53,6 @@
 
 #include "csm-util.h"
 #include "mdm.h"
-#include "csm-fail-whale-dialog.h"
-#include "csm-icon-names.h"
 #include "csm-system.h"
 #include "csm-session-save.h"
 #include "inhibit-dialog-info.h"
