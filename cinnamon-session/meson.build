@@ -32,7 +32,6 @@ cinnamon_session_sources = [
   'csm-client.c',
   'csm-consolekit.c',
   'csm-dbus-client.c',
-  'csm-fail-whale-dialog.c',
   'csm-inhibitor.c',
   'csm-manager.c',
   'csm-presence.c',

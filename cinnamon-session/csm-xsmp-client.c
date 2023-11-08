@@ -36,7 +36,6 @@
 
 #include "csm-util.h"
 #include "csm-autostart-app.h"
-#include "csm-icon-names.h"
 #include "csm-manager.h"
 
 #define CsmDesktopFile "_CSM_DesktopFile"
@@ -575,7 +574,7 @@ set_desktop_file_keys_from_client (CsmClient *client,
         g_key_file_set_string (keyfile,
                                G_KEY_FILE_DESKTOP_GROUP,
                                G_KEY_FILE_DESKTOP_KEY_ICON,
-                               CSM_ICON_XSMP_DEFAULT);
+                               "system-run");
 
         g_key_file_set_string (keyfile,
                                G_KEY_FILE_DESKTOP_GROUP,

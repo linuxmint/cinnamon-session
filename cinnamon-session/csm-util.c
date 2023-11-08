@@ -30,7 +30,6 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
-#include <gtk/gtk.h>
 
 #include "csm-util.h"
 
@@ -752,15 +751,4 @@ csm_util_setenv (const char *variable,
                 g_debug ("Could not make systemd aware of %s=%s environment variable: %s", variable, value, error->message);
                 g_clear_error (&error);
         }
-}
-
-GtkIconSize
-csm_util_get_computer_fail_icon_size (void)
-{
-        static GtkIconSize icon_size = 0;
-
-        if (icon_size == 0)
-                icon_size = gtk_icon_size_register ("cinnamon-session-computer-fail", 128, 128);
-
-        return icon_size;
 }
