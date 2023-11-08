@@ -1,16 +1,3 @@
-
-executable('cinnamon-session-quit',
-  'cinnamon-session-quit.c',
-  dependencies: [
-    gtk3,
-    sm,
-    ice,
-  ],
-  include_directories: rootInclude,
-  install: true,
-  install_dir: get_option('bindir'),
-)
-
 executable('cinnamon-session-check-accelerated',
   'cinnamon-session-check-accelerated.c',
   dependencies: [

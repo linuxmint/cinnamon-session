@@ -71,6 +71,8 @@ csm_store_error_quark (void)
 guint
 csm_store_size (CsmStore    *store)
 {
+        g_return_val_if_fail (store != NULL, 0);
+
         return g_hash_table_size (store->priv->objects);
 }
 
