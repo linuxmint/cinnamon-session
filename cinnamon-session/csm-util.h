@@ -61,6 +61,9 @@ void        csm_util_setenv                         (const char *variable,
 
 GtkIconSize csm_util_get_computer_fail_icon_size    (void);
 
+// main.c, exit mainloop
+void        csm_quit                                (void);
+
 G_END_DECLS
 
 #endif /* __CSM_UTIL_H__ */

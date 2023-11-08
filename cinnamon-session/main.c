@@ -155,24 +155,6 @@ acquire_name (void)
                                NULL, NULL);
 }
 
-static void
-shutdown_cb (gpointer data)
-{
-        CsmManager *manager = (CsmManager *)data;
-        g_debug ("Calling shutdown callback function");
-
-        /*
-         * When the signal handler gets a shutdown signal, it calls
-         * this function to inform CsmManager to not restart
-         * applications in the off chance a handler is already queued
-         * to dispatch following the below call to csm_quit.
-         */
-        if (manager) {
-            csm_manager_set_phase (manager, CSM_MANAGER_PHASE_EXIT);
-            csm_quit ();
-        }
-}
-
 static gboolean
 require_dbus_session (int      argc,
                       char   **argv,
@@ -218,7 +200,6 @@ main (int argc, char **argv)
 {
         struct sigaction  sa;
         GError           *error;
-        CsmStore         *client_store;
         guint             name_owner_id;
         static char     **override_autostart_dirs = NULL;
         GOptionContext   *options;
@@ -284,7 +265,8 @@ main (int argc, char **argv)
         csm_util_export_activation_environment (NULL);
         csm_util_export_user_environment (NULL);
 
-        if (!debug) {
+        const gchar *session = g_getenv ("XDG_SESSION_TYPE");
+        if (!debug && g_strcmp0 ("wayland", session) == 0) {
                 int journalfd;
 
                 journalfd = sd_journal_stream_fd (PACKAGE, LOG_INFO, 0);

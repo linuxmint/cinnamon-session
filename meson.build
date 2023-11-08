@@ -122,13 +122,18 @@ conf.set('ENABLE_IPV6', have_ipv6)
 
 rootInclude = include_directories('.')
 
-conf.set_quoted('PKGDATADIR',         join_paths(get_option('prefix'), get_option('datadir'), meson.project_name()))
+dialog_dbus_address = 'unix:abstract=cinnamon-session-quit-dialog'
+pkg_datadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+
+conf.set_quoted('PKGDATADIR',         pkg_datadir)
 conf.set_quoted('LIBEXECDIR',         join_paths(get_option('prefix'), get_option('libexecdir')))
 conf.set_quoted('LOCALE_DIR',         join_paths(get_option('prefix'), get_option('localedir')))
 
 conf.set_quoted('PACKAGE', meson.project_name())
 conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf.set_quoted('DBUS_ADDRESS', dialog_dbus_address)
+
 
 configure_file(
   output: 'config.h',
@@ -148,6 +153,7 @@ subdir('data')
 subdir('doc')
 subdir('po')
 subdir('tools')
+subdir('cinnamon-session-quit')
 
 message('\n'.join([
 '',
