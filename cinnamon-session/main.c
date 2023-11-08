@@ -58,7 +58,10 @@ static GMainLoop *loop;
 void
 csm_quit (void)
 {
-        g_main_loop_quit (loop);
+        if (loop != NULL)
+                g_main_loop_quit (loop);
+        else
+                exit(0);
 }
 
 static void
@@ -77,8 +80,7 @@ on_name_lost (GDBusConnection *connection,
               gpointer    data)
 {
         if (connection == NULL) {
-                g_warning ("Lost name on bus: %s", name);
-                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
+                csm_util_init_error (TRUE, "Lost name on bus: org.gnome.SessionManager");
         } else {
                 g_debug ("Calling name lost callback function");
 
@@ -258,8 +260,7 @@ main (int argc, char **argv)
         }
 
         if (please_fail) {
-                csm_fail_whale_dialog_we_failed (TRUE, TRUE);
-                exit (1);
+                csm_util_init_error (TRUE, "Testing the fail whale");
         }
 
         csm_util_export_activation_environment (NULL);

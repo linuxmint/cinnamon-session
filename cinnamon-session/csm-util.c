@@ -416,52 +416,21 @@ csm_util_text_is_blank (const char *str)
  * itself, since no window manager will be running yet.)
  **/
 void
-csm_util_init_error (gboolean    fatal,
+csm_util_init_error (gboolean    kill_session,
                      const char *format, ...)
 {
-        GtkButtonsType  buttons;
-        GtkWidget      *dialog;
-        char           *msg;
+        gchar           *msg;
         va_list         args;
 
         va_start (args, format);
         msg = g_strdup_vprintf (format, args);
         va_end (args);
 
-        /* If option parsing failed, Gtk won't have been initialized... */
-        if (!gdk_display_get_default ()) {
-                if (!gtk_init_check (NULL, NULL)) {
-                        /* Oh well, no X for you! */
-                        g_printerr (_("Unable to start login session (and unable to connect to the X server)"));
-                        g_printerr ("%s", msg);
-                        exit (1);
-                }
-        }
 
-        if (fatal)
-                buttons = GTK_BUTTONS_NONE;
-        else
-                buttons = GTK_BUTTONS_CLOSE;
+        g_critical ("Unable to start session: %s", msg);
 
-        dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
-                                         buttons, "%s", msg);
-
-        if (fatal)
-                gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                       _("_Log Out"), GTK_RESPONSE_CLOSE);
-
-        g_free (msg);
-
-        gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-        gtk_dialog_run (GTK_DIALOG (dialog));
-
-        gtk_widget_destroy (dialog);
-
-        if (fatal) {
-                if (gtk_main_level () > 0)
-                        gtk_main_quit ();
-                else
-                        exit (1);
+        if (kill_session) {
+                csm_quit ();
         }
 }
 
