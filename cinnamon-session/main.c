@@ -266,17 +266,6 @@ main (int argc, char **argv)
         csm_util_export_activation_environment (NULL);
         csm_util_export_user_environment (NULL);
 
-        const gchar *session = g_getenv ("XDG_SESSION_TYPE");
-        if (!debug && g_strcmp0 ("wayland", session) == 0) {
-                int journalfd;
-
-                journalfd = sd_journal_stream_fd (PACKAGE, LOG_INFO, 0);
-                if (journalfd >= 0) {
-                        dup2(journalfd, 1);
-                        dup2(journalfd, 2);
-                }
-        }
-
         mdm_log_init ();
         mdm_log_set_debug (debug);
 
