@@ -558,7 +558,6 @@ end_phase (CsmManager *manager)
         case CSM_MANAGER_PHASE_QUERY_END_SESSION:
                 break;
         case CSM_MANAGER_PHASE_END_SESSION:
-                terminate_dialog ();
                 maybe_play_logout_sound (manager);
                 maybe_save_session (manager);
                 break;
@@ -860,6 +859,8 @@ do_phase_end_session (CsmManager *manager)
 
         data.manager = manager;
         data.flags = 0;
+
+        terminate_dialog ();
 
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
