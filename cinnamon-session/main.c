@@ -31,6 +31,7 @@
 #include <glib/gi18n.h>
 #include <glib-unix.h>
 #include <glib.h>
+#include <gio/gio.h>
 
 #include "mdm-log.h"
 
