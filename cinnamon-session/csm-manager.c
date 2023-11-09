@@ -273,7 +273,8 @@ on_required_app_failure (CsmManager  *manager,
                 allow_logout = !_log_out_is_locked_down (manager);
         }
 
-        csm_util_init_error (FALSE, "A program required by the session failed to start: %s",
+        csm_util_init_error (FALSE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'.",
+                             csm_app_peek_app_id (app),
                              csm_app_peek_startup_id (app));
 }
 
