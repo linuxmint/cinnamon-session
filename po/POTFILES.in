@@ -1,15 +1,11 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-[type: gettext/glade]data/csm-inhibit-dialog.glade
-egg/eggdesktopfile.c
-egg/eggsmclient.c
-cinnamon-session/csm-inhibit-dialog.c
-cinnamon-session/csm-logout-dialog.c
-cinnamon-session/csm-fail-whale-dialog.c
+cinnamon-session/inhibit-dialog-info.c
 cinnamon-session/csm-process-helper.c
 cinnamon-session/csm-manager.c
 cinnamon-session/csm-xsmp-client.c
 cinnamon-session/csm-xsmp-server.c
 cinnamon-session/csm-util.c
 cinnamon-session/main.c
-tools/cinnamon-session-quit.c
+[type: gettext/glade]cinnamon-session-quit/cinnamon-session-quit.glade
+cinnamon-session-quit/cinnamon-session-quit.py

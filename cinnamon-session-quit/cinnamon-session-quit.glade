@@ -225,7 +225,6 @@
                   </object>
                   <packing>
                     <property name="name">prompt</property>
-                    <property name="title" translatable="yes">page1</property>
                   </packing>
                 </child>
                 <child>
@@ -238,7 +237,7 @@
                       <object class="GtkLabel" id="header-label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Some programs are still running</property>
+                        <property name="label" translatable="yes">Some programs are still running:</property>
                         <property name="wrap">True</property>
                         <property name="xalign">0</property>
                         <attributes>
@@ -256,7 +255,7 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Waiting for them to finish.  Interrupting the program may cause you to lose work.</property>
+                        <property name="label" translatable="yes">Waiting for programs to finish.  Interrupting these programs may cause you to lose work.</property>
                         <property name="wrap">True</property>
                         <property name="xalign">0</property>
                         <attributes>
@@ -287,7 +286,6 @@
                             </child>
                             <child>
                               <object class="GtkTreeViewColumn">
-                                <property name="title" translatable="yes">name</property>
                                 <child>
                                   <object class="GtkCellRendererText" id="name_cell">
                                     <property name="cell-background-gdk">#000000000000</property>
@@ -309,7 +307,6 @@
                             </child>
                             <child>
                               <object class="GtkTreeViewColumn">
-                                <property name="title" translatable="yes">reason</property>
                                 <child>
                                   <object class="GtkCellRendererText" id="reason_cell">
                                     <property name="cell-background-gdk">#000000000000</property>
@@ -341,7 +338,6 @@
                   </object>
                   <packing>
                     <property name="name">inhibit</property>
-                    <property name="title" translatable="yes">page0</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
@@ -365,7 +361,6 @@
                   </object>
                   <packing>
                     <property name="name">busy</property>
-                    <property name="title" translatable="yes">page0</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
