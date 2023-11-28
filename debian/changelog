@@ -1,3 +1,11 @@
+cinnamon-session (6.0.1) virginia; urgency=medium
+
+  [ Leigh Scott ]
+  * autostart-app: don't try to add child watch to dbus activated (#158)
+  * util: Unset some environment variables on systemd (#159)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 28 Nov 2023 11:38:15 +0000
+
 cinnamon-session (6.0.0) virginia; urgency=medium
 
   [ Rick Calixte ]
