@@ -1056,10 +1056,12 @@ autostart_app_start_spawn (CsmAutostartApp *app,
         g_signal_handler_disconnect (ctx, handler);
 
         if (success) {
-                g_debug ("CsmAutostartApp: started pid:%d", app->priv->pid);
-                app->priv->child_watch_id = g_child_watch_add (app->priv->pid,
-                                                               (GChildWatchFunc)app_exited,
-                                                               app);
+                if (app->priv->pid > 0) {
+                        g_debug ("CsmAutostartApp: started pid:%d", app->priv->pid);
+                        app->priv->child_watch_id = g_child_watch_add (app->priv->pid,
+                                                                       (GChildWatchFunc)app_exited,
+                                                                       app);
+                }
         } else {
                 g_set_error (error,
                              CSM_APP_ERROR,
