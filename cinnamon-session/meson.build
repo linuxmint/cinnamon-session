@@ -53,7 +53,7 @@ cinnamon_session_sources = [
   gdbus_sources,
 ]
 
-executable('cinnamon-session',
+executable('cinnamon-session-binary',
   cinnamon_session_sources,
   dependencies: [
     cinnamon_desktop,
@@ -75,6 +75,18 @@ executable('cinnamon-session',
   ],
   include_directories: [ rootInclude ],
   install: true,
+  install_dir: get_option('libexecdir'),
+)
+
+script_conf = configuration_data()
+script_conf.set('libexecdir', get_option('prefix') / get_option('libexecdir'))
+
+configure_file(
+  input: 'cinnamon-session.in',
+  output: 'cinnamon-session',
+  install: true,
+  install_dir: get_option('bindir'),
+  configuration: script_conf
 )
 
 units = [
