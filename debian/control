@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
  debhelper (>= 11.1~),
+ dh-sequence-python3,
  gnome-pkg-tools (>= 0.13),
  intltool (>= 0.40.6),
  libcanberra-dev,
@@ -34,8 +35,15 @@ Depends:
  cinnamon-desktop-data (>= 6.0),
  cinnamon-session-common (= ${source:Version}),
  default-dbus-session-bus | dbus-session-bus,
+ gir1.2-glib-2.0,
+ gir1.2-gtk-3.0,
+ gir1.2-xapp-1.0,
+ python3-gi,
+ python3-setproctitle,
  upower (>= 0.9.0),
+ ${gir:Depends},
  ${misc:Depends},
+ ${python3:Depends},
  ${shlibs:Depends},
 Recommends: cinnamon-l10n
 Breaks: cinnamon-session-common (<< 2.2.2-5~)
