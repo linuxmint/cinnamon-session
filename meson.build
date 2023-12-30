@@ -41,7 +41,7 @@ xapp        = dependency('xapp', version: '>=1.0.4')
 xau         = dependency('xau')
 xcomposite  = dependency('xcomposite')
 gl          = dependency('gl')
-cinnamon_desktop = dependency('cinnamon-desktop', version: '>=5.8.0')
+cinnamon_desktop = dependency('cinnamon-desktop', version: '>=6.0.0')
 
 gio_unix    = dependency('gio-unix-2.0',      required: false)
 libelogind  = dependency('libelogind',        required: false)
