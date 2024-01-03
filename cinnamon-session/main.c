@@ -40,7 +40,6 @@
 #include "csm-session-fill.h"
 #include "csm-store.h"
 #include "csm-system.h"
-#include <systemd/sd-journal.h>
 
 #define CSM_DBUS_NAME "org.gnome.SessionManager"
 
