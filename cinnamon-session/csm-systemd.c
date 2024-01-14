@@ -718,6 +718,26 @@ csm_systemd_is_last_session_for_user (CsmSystem *system)
         return is_last_session;
 }
 
+static gchar *
+csm_systemd_get_session_type (CsmSystem *system)
+{
+    gchar *type = NULL;
+    g_autofree gchar *session = NULL;
+    gint ret = 0;
+
+    ret = sd_pid_get_session (getpid (), &session);
+
+    if (ret >= 0) {
+        ret = sd_session_get_type (session, &type);
+
+        if (ret >= 0) {
+            return type;
+        }
+    }
+
+    return g_strdup ("x11");
+}
+
 static void
 csm_systemd_system_init (CsmSystemInterface *iface)
 {
@@ -737,6 +757,7 @@ csm_systemd_system_init (CsmSystemInterface *iface)
         iface->add_inhibitor = csm_systemd_add_inhibitor;
         iface->remove_inhibitor = csm_systemd_remove_inhibitor;
         iface->is_last_session_for_user = csm_systemd_is_last_session_for_user;
+        iface->get_session_type = csm_systemd_get_session_type;
 }
 
 CsmSystemd *
