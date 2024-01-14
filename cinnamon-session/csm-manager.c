@@ -2331,6 +2331,14 @@ csm_manager_logout_dbus (CsmExportedManager    *skeleton,
 {
         g_debug ("CsmManager: Logout called");
 
+        if (csm_system_session_is_wayland () && !g_settings_get_boolean (manager->priv->settings, "debug")) {
+            g_message ("Logout dialog requested, but logout is currently disabled in Wayland sessions, requesting restart instead.");
+
+            //  We don't need to run csm_exported_manager_complete_logout() because csm_manager_reboot
+            //  calls csm_exported_manager_complete_reboot(), which is identical.
+            return csm_manager_reboot (skeleton, invocation, manager);
+        }
+
         if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
                 g_dbus_method_invocation_return_error (invocation,
                                                        CSM_MANAGER_ERROR,
