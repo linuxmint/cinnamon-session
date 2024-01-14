@@ -70,6 +70,7 @@ struct _CsmSystemInterface
         void     (* remove_inhibitor) (CsmSystem        *system,
                                        const gchar      *id);
         gboolean (* is_last_session_for_user) (CsmSystem *system);
+        gchar *    (* get_session_type)  (CsmSystem *system);
 };
 
 enum _CsmSystemError {
@@ -119,6 +120,10 @@ void       csm_system_add_inhibitor    (CsmSystem        *system,
 
 void       csm_system_remove_inhibitor (CsmSystem        *system,
                                         const gchar      *id);
+
+gchar     *csm_system_get_session_type (CsmSystem *system);
+
+gboolean   csm_system_session_is_wayland (void);
 
 G_END_DECLS
 

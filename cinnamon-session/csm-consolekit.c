@@ -859,6 +859,12 @@ csm_consolekit_is_last_session_for_user (CsmSystem *system)
         return FALSE;
 }
 
+static gchar *
+csm_consolekit_get_session_type (CsmSystem *system)
+{
+    return g_strdup ("x11");
+}
+
 static void
 csm_consolekit_system_init (CsmSystemInterface *iface)
 {
@@ -876,6 +882,7 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->add_inhibitor = csm_consolekit_add_inhibitor;
         iface->remove_inhibitor = csm_consolekit_remove_inhibitor;
         iface->is_last_session_for_user = csm_consolekit_is_last_session_for_user;
+        iface->get_session_type = csm_consolekit_get_session_type;
 }
 
 CsmConsolekit *

@@ -188,3 +188,30 @@ csm_get_system (void)
 
         return g_object_ref (system);
 }
+
+gchar *
+csm_system_get_session_type (CsmSystem *system)
+{
+        return CSM_SYSTEM_GET_IFACE (system)->get_session_type (system);
+}
+
+gboolean
+csm_system_session_is_wayland (void)
+{
+    CsmSystem *system = NULL;
+
+    system = csm_get_system ();
+
+    if (system != NULL) {
+        g_autofree gchar *type = NULL;
+
+        type = csm_system_get_session_type (system);
+        g_object_unref (system);
+
+        if (g_strcmp0 (type, "wayland") == 0) {
+                return TRUE;
+        }
+    }
+
+    return FALSE;
+}
