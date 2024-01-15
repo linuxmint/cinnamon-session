@@ -64,6 +64,7 @@ class QuitDialog:
         parser.add_argument("--no-prompt", dest="no_prompt", action='store_true',
                             help=_("Don't prompt for user confirmation"))
         parser.add_argument("--sm-owned", action="store_true", help=argparse.SUPPRESS)
+        parser.add_argument("--sm-bus-id", dest="bus_id", action="store", help=argparse.SUPPRESS)
         args = parser.parse_args()
 
         self.dialog_response = ResponseCode.NONE
@@ -75,6 +76,11 @@ class QuitDialog:
         self.force = args.force
         self.no_prompt = args.no_prompt
         self.sm_owned = args.sm_owned
+
+        if self.sm_owned:
+            self.bus_id = args.bus_id
+        else:
+            self.bus_id = None
 
         self.proxy = None
         self.signal_handler_id = 0
@@ -164,7 +170,7 @@ class QuitDialog:
 
         try:
             connection = Gio.DBusConnection.new_for_address_sync(
-                config.DBUS_ADDRESS,
+                self.bus_id,
                 Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT,
                 None, None
             )

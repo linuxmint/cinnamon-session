@@ -125,6 +125,7 @@ struct CsmManagerPrivate
         GDBusServer            *dialog_server;
         guint                   dialog_reg_id;
         CsmLogoutAction         dialog_action;
+        gchar                  *dialog_bus_address;
 
         char                   *session_name;
         gboolean                is_fallback_session : 1;
@@ -2917,7 +2918,10 @@ register_manager (CsmManager *manager)
 
         // Set up private controller interface for dialog
         gchar *guid = g_dbus_generate_guid ();
-        GDBusServer *server = g_dbus_server_new_sync (DBUS_ADDRESS,
+        manager->priv->dialog_bus_address = g_strdup_printf ("%s-%s", DBUS_ADDRESS, guid);
+        g_debug ("Dialog server address: %s", manager->priv->dialog_bus_address);
+
+        GDBusServer *server = g_dbus_server_new_sync (manager->priv->dialog_bus_address,
                                                       G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER,
                                                       guid,
                                                       NULL, NULL, &error);
@@ -3537,6 +3541,9 @@ csm_manager_dispose (GObject *object)
                 manager->priv->dialog_reg_id = 0;
                 g_dbus_node_info_unref (introspection_data);
                 g_dbus_server_stop (manager->priv->dialog_server);
+                g_object_unref (manager->priv->dialog_server);
+                g_object_unref (manager->priv->dialog_connection);
+                g_free (manager->priv->dialog_bus_address);
         }
 
         if (manager->priv->clients != NULL) {
@@ -3927,6 +3934,34 @@ on_dialog_exited (GObject *source,
 }
 
 static void
+on_dialog_read (GObject *source,
+                GAsyncResult *result,
+                gpointer user_data)
+{
+    GInputStream *stream = G_INPUT_STREAM (source);
+
+    g_debug ("Session quit dialog read output");
+
+    gssize read = g_input_stream_read_finish (stream, result, NULL);
+    if (read > 0) {
+        g_debug ("Session quit dialog (self-owned) output: %.*s", (gint) read, (gchar *) user_data);
+    } else {
+        g_debug ("Session quit dialog (self-owned) stdout closed");
+        g_free (user_data);
+        g_input_stream_close (stream, NULL, NULL);
+        return;
+    }
+
+    g_input_stream_read_async (stream,
+                               user_data,
+                               1024,
+                               G_PRIORITY_DEFAULT,
+                               NULL,
+                               (GAsyncReadyCallback) on_dialog_read,
+                               user_data);
+}
+
+static void
 terminate_dialog (void)
 {
     if (dialog_process == NULL) {
@@ -3959,12 +3994,13 @@ launch_dialog (CsmManager *manager, const gchar *flag)
     const gchar *argv[] = {
         "cinnamon-session-quit",
         "--sm-owned",
+        "--sm-bus-id", manager->priv->dialog_bus_address,
         flag,
         NULL
     };
 
     error = NULL;
-    dialog_process = g_subprocess_newv (argv, G_SUBPROCESS_FLAGS_NONE, &error);
+    dialog_process = g_subprocess_newv (argv, G_SUBPROCESS_FLAGS_STDERR_MERGE | G_SUBPROCESS_FLAGS_STDOUT_PIPE, &error);
 
     if (dialog_process == NULL) {
         if (error != NULL) {
@@ -3973,6 +4009,16 @@ launch_dialog (CsmManager *manager, const gchar *flag)
             return;
         }
     }
+
+    GInputStream *stdout = g_subprocess_get_stdout_pipe (dialog_process);
+    guint8 *buffer = g_malloc (1024);
+    g_input_stream_read_async (G_INPUT_STREAM (stdout),
+                               buffer,
+                               1024,
+                               G_PRIORITY_DEFAULT,
+                               NULL,
+                               (GAsyncReadyCallback) on_dialog_read,
+                               buffer);
 
     dialog_cancellable = g_cancellable_new ();
 
