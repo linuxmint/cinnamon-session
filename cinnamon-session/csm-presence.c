@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street - Suite 500, Boston, MA
- * 02110-1335, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -64,16 +62,12 @@ struct CsmPresencePrivate
 
 enum {
         PROP_0,
-        PROP_STATUS,
-        PROP_STATUS_TEXT,
         PROP_IDLE_ENABLED,
         PROP_IDLE_TIMEOUT,
 };
 
-
 enum {
         STATUS_CHANGED,
-        STATUS_TEXT_CHANGED,
         LAST_SIGNAL
 };
 
@@ -99,6 +93,10 @@ csm_presence_error_quark (void)
         return quark_volatile;
 }
 
+static void idle_became_active_cb (GnomeIdleMonitor *idle_monitor,
+                                   guint             id,
+                                   gpointer          user_data);
+
 static gboolean
 csm_presence_set_status_text (CsmPresence  *presence,
                               const char   *status_text,
@@ -120,6 +118,8 @@ csm_presence_set_status_text (CsmPresence  *presence,
 
         if (status_text != NULL) {
                 presence->priv->status_text = g_strdup (status_text);
+        } else {
+                presence->priv->status_text = g_strdup ("");
         }
 
         csm_exported_presence_set_status_text (presence->priv->skeleton, presence->priv->status_text);
@@ -128,11 +128,11 @@ csm_presence_set_status_text (CsmPresence  *presence,
         return TRUE;
 }
 
-static gboolean
+static void
 csm_presence_set_status (CsmPresence  *presence,
                          guint         status)
 {
-        g_return_val_if_fail (CSM_IS_PRESENCE (presence), FALSE);
+        g_return_if_fail (CSM_IS_PRESENCE (presence));
 
         if (status != presence->priv->status) {
                 presence->priv->status = status;
@@ -140,7 +140,6 @@ csm_presence_set_status (CsmPresence  *presence,
                 csm_exported_presence_emit_status_changed (presence->priv->skeleton, presence->priv->status);
                 g_signal_emit (presence, signals[STATUS_CHANGED], 0, presence->priv->status);
         }
-        return TRUE;
 }
 
 static void
@@ -158,6 +157,11 @@ set_session_idle (CsmPresence   *presence,
                 /* save current status */
                 presence->priv->saved_status = presence->priv->status;
                 csm_presence_set_status (presence, CSM_PRESENCE_STATUS_IDLE);
+
+                gnome_idle_monitor_add_user_active_watch (presence->priv->idle_monitor,
+                                                          idle_became_active_cb,
+                                                          presence,
+                                                          NULL);
         } else {
                 if (presence->priv->status != CSM_PRESENCE_STATUS_IDLE) {
                         g_debug ("CsmPresence: already not idle, ignoring");
@@ -171,27 +175,27 @@ set_session_idle (CsmPresence   *presence,
         }
 }
 
-static gboolean
-on_idle_timeout (GnomeIdleMonitor *monitor,
-                 guint             id,
-                 gboolean          condition,
-                 CsmPresence      *presence)
+static void
+idle_became_idle_cb (GnomeIdleMonitor *idle_monitor,
+                     guint             id,
+                     gpointer          user_data)
 {
-        gboolean handled;
+        CsmPresence *presence = user_data;
+        set_session_idle (presence, TRUE);
+}
 
-        handled = TRUE;
-        set_session_idle (presence, condition);
-
-        return handled;
+static void
+idle_became_active_cb (GnomeIdleMonitor *idle_monitor,
+                       guint             id,
+                       gpointer          user_data)
+{
+        CsmPresence *presence = user_data;
+        set_session_idle (presence, FALSE);
 }
 
 static void
 reset_idle_watch (CsmPresence  *presence)
 {
-        if (presence->priv->idle_monitor == NULL) {
-                return;
-        }
-
         if (presence->priv->idle_watch_id > 0) {
                 g_debug ("CsmPresence: removing idle watch (%i)", presence->priv->idle_watch_id);
                 gnome_idle_monitor_remove_watch (presence->priv->idle_monitor,
@@ -199,12 +203,11 @@ reset_idle_watch (CsmPresence  *presence)
                 presence->priv->idle_watch_id = 0;
         }
 
-        if (! presence->priv->screensaver_active
-            && presence->priv->idle_enabled
+        if (presence->priv->idle_enabled
             && presence->priv->idle_timeout > 0) {
                 presence->priv->idle_watch_id = gnome_idle_monitor_add_idle_watch (presence->priv->idle_monitor,
                                                                                    presence->priv->idle_timeout,
-                                                                                   (GnomeIdleMonitorWatchFunc) on_idle_timeout,
+                                                                                   idle_became_idle_cb,
                                                                                    presence,
                                                                                    NULL);
                 g_debug ("CsmPresence: adding idle watch (%i) for %d secs",
@@ -229,11 +232,36 @@ on_screensaver_g_signal (GDBusProxy  *proxy,
         g_variant_get (parameters,
                        "(b)", &is_active);
 
-        g_debug ("screensaver status changed: %d", is_active);
-
         if (presence->priv->screensaver_active != is_active) {
                 presence->priv->screensaver_active = is_active;
-                reset_idle_watch (presence);
+                set_session_idle (presence, is_active);
+        }
+}
+
+static void
+screensaver_get_active_cb (GDBusProxy  *screensaver_proxy,
+                           GAsyncResult *res,
+                           CsmPresence *presence)
+{
+        g_autoptr(GVariant) data = NULL;
+        g_autoptr(GError) error = NULL;
+        gboolean is_active;
+
+        data = g_dbus_proxy_call_finish (screensaver_proxy, res, &error);
+        if (!data) {
+                if (error) {
+                        g_warning ("Could not retrieve current screensaver active state: %s",
+                                   error->message);
+                } else {
+                        g_warning ("Could not retrieve current screensaver active state!");
+                }
+
+                return;
+        }
+
+        g_variant_get (data, "(b)", &is_active);
+        if (presence->priv->screensaver_active != is_active) {
+                presence->priv->screensaver_active = is_active;
                 set_session_idle (presence, is_active);
         }
 }
@@ -248,14 +276,25 @@ on_screensaver_name_owner_changed (GDBusProxy *proxy,
 
         presence = CSM_PRESENCE (user_data);
         name_owner = g_dbus_proxy_get_name_owner (proxy);
+        if (name_owner == NULL) {
+                g_debug ("Detected that screensaver has left the bus");
 
-        if (name_owner && g_strcmp0 (name_owner, CS_NAME)) {
-                g_warning ("Detected that screensaver has appeared on the bus");
-        } else {
-                g_warning ("Detected that screensaver has left the bus");
+                presence->priv->screensaver_active = FALSE;
                 set_session_idle (presence, FALSE);
-                reset_idle_watch (presence);
+        } else {
+                g_debug ("Detected that screensaver has aquired the bus");
+
+                g_dbus_proxy_call (presence->priv->screensaver_proxy,
+                                   "GetActive",
+                                   NULL,
+                                   G_DBUS_CALL_FLAGS_NO_AUTO_START,
+                                   1000,
+                                   NULL,
+                                   (GAsyncReadyCallback) screensaver_get_active_cb,
+                                   presence);
         }
+
+        g_free (name_owner);
 }
 
 static gboolean
@@ -352,7 +391,8 @@ csm_presence_constructor (GType                  type,
         }
 
         presence->priv->screensaver_proxy = g_dbus_proxy_new_sync (presence->priv->connection,
-                                                                   G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                                                   G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START |
+                                                                   G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
                                                                    NULL,
                                                                    CS_NAME,
                                                                    CS_PATH,
@@ -424,12 +464,6 @@ csm_presence_set_property (GObject       *object,
         self = CSM_PRESENCE (object);
 
         switch (prop_id) {
-        case PROP_STATUS:
-                csm_presence_set_status (self, g_value_get_uint (value));
-                break;
-        case PROP_STATUS_TEXT:
-                csm_presence_set_status_text (self, g_value_get_string (value), NULL);
-                break;
         case PROP_IDLE_ENABLED:
                 csm_presence_set_idle_enabled (self, g_value_get_boolean (value));
                 break;
@@ -453,12 +487,6 @@ csm_presence_get_property (GObject    *object,
         self = CSM_PRESENCE (object);
 
         switch (prop_id) {
-        case PROP_STATUS:
-                g_value_set_uint (value, self->priv->status);
-                break;
-        case PROP_STATUS_TEXT:
-                g_value_set_string (value, self->priv->status_text ? self->priv->status_text : "");
-                break;
         case PROP_IDLE_ENABLED:
                 g_value_set_boolean (value, self->priv->idle_enabled);
                 break;
@@ -482,15 +510,9 @@ csm_presence_finalize (GObject *object)
                 presence->priv->idle_watch_id = 0;
         }
 
-        if (presence->priv->status_text != NULL) {
-                g_free (presence->priv->status_text);
-                presence->priv->status_text = NULL;
-        }
-
-        if (presence->priv->idle_monitor != NULL) {
-                g_object_unref (presence->priv->idle_monitor);
-                presence->priv->idle_monitor = NULL;
-        }
+        g_clear_pointer (&presence->priv->status_text, g_free);
+        g_clear_object (&presence->priv->idle_monitor);
+        g_clear_object (&presence->priv->screensaver_proxy);
 
         G_OBJECT_CLASS (csm_presence_parent_class)->finalize (object);
 }
