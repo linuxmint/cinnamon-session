@@ -942,6 +942,41 @@ _client_stop (const char *id,
 }
 
 static void
+maybe_restart_user_bus (CsmManager *manager)
+{
+        CsmSystem *system;
+        g_autoptr(GVariant) reply = NULL;
+        g_autoptr(GError) error = NULL;
+
+        if (manager->priv->dbus_disconnected)
+                return;
+
+        system = csm_get_system ();
+
+        if (!csm_system_is_last_session_for_user (system))
+                return;
+
+        g_debug ("CsmManager: reloading user bus");
+
+        reply = g_dbus_connection_call_sync (manager->priv->connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "StopUnit",
+                                             g_variant_new ("(ss)", "dbus.service", "fail"),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1,
+                                             NULL,
+                                             &error);
+
+        if (error != NULL) {
+                g_debug ("CsmManager: reloading user bus failed: %s", error->message);
+                g_clear_error (&error);
+        }
+}
+
+static void
 do_phase_exit (CsmManager *manager)
 {
         if (csm_store_size (manager->priv->clients) > 0) {
@@ -949,6 +984,7 @@ do_phase_exit (CsmManager *manager)
                                    (CsmStoreFunc)_client_stop,
                                    NULL);
         }
+        maybe_restart_user_bus (manager);
         end_phase (manager);
 }
 
