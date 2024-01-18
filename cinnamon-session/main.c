@@ -292,6 +292,8 @@ main (int argc, char **argv)
                 g_object_unref (manager);
         }
 
+        csm_util_export_activation_environment (NULL);
+
         g_bus_unown_name (name_owner_id);
 
         mdm_log_shutdown ();
