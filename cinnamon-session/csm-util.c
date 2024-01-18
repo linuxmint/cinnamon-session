@@ -673,6 +673,8 @@ csm_util_export_user_environment (GError     **error)
         g_variant_builder_open (&builder, G_VARIANT_TYPE ("as"));
         for (i = 0; variable_unsetlist[i] != NULL; i++)
                 g_variant_builder_add (&builder, "s", variable_unsetlist[i]);
+        for (i = 0; variable_blacklist[i] != NULL; i++)
+                g_variant_builder_add (&builder, "s", variable_blacklist[i]);
         g_variant_builder_close (&builder);
 
         g_variant_builder_open (&builder, G_VARIANT_TYPE ("as"));
