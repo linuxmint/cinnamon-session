@@ -50,9 +50,6 @@ struct _CsmPresenceClass
 
         void          (* status_changed)        (CsmPresence     *presence,
                                                  guint            status);
-        void          (* status_text_changed)   (CsmPresence     *presence,
-                                                 const char      *status_text);
-
 };
 
 typedef enum {
@@ -69,9 +66,6 @@ typedef enum
 } CsmPresenceError;
 
 #define CSM_PRESENCE_ERROR csm_presence_error_quark ()
-GType          csm_presence_error_get_type       (void);
-#define CSM_PRESENCE_TYPE_ERROR (csm_presence_error_get_type ())
-
 GQuark         csm_presence_error_quark          (void);
 
 GType          csm_presence_get_type             (void) G_GNUC_CONST;
