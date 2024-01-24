@@ -1,3 +1,17 @@
+cinnamon-session (6.0.2) virginia; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Packaging: Add missing build-dep on cinnamon-desktop
+
+  [ Fabio Fantoni ]
+  * Fix dependencies (#160)
+
+  [ Michael Webster ]
+  * session-quit: Use a unique dialog server address for each session.
+  * cinnamon-session-quit.py: Try the old fixed server address if the session manager doesn't provide the "sm-bus-id" argument.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 24 Jan 2024 18:35:52 +0000
+
 cinnamon-session (6.0.1) virginia; urgency=medium
 
   [ Leigh Scott ]
