@@ -64,7 +64,7 @@ class QuitDialog:
         parser.add_argument("--no-prompt", dest="no_prompt", action='store_true',
                             help=_("Don't prompt for user confirmation"))
         parser.add_argument("--sm-owned", action="store_true", help=argparse.SUPPRESS)
-        parser.add_argument("--sm-bus-id", dest="bus_id", action="store", help=argparse.SUPPRESS)
+        parser.add_argument("--sm-bus-id", dest="bus_id", action="store", help=argparse.SUPPRESS, default=config.DBUS_ADDRESS)
         args = parser.parse_args()
 
         self.dialog_response = ResponseCode.NONE
