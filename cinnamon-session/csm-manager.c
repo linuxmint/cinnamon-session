@@ -2911,15 +2911,30 @@ register_manager (CsmManager *manager)
 
         // Set up private controller interface for dialog
         gchar *guid = g_dbus_generate_guid ();
-        manager->priv->dialog_bus_address = g_strdup_printf ("%s-%s", DBUS_ADDRESS, guid);
-        g_debug ("Dialog server address: %s", manager->priv->dialog_bus_address);
+        gchar *address;
 
-        GDBusServer *server = g_dbus_server_new_sync (manager->priv->dialog_bus_address,
+        // Detect guest sessions.
+        if (g_str_has_prefix (g_get_home_dir (), "/tmp")) {
+            address = g_strdup ("unix:tmpdir=/tmp");
+        }
+        else {
+            address = g_strdup_printf ("%s-%s", DBUS_ADDRESS, guid);
+        }
+
+        GDBusServer *server = g_dbus_server_new_sync (address,
                                                       G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER,
                                                       guid,
                                                       NULL, NULL, &error);
         g_dbus_server_start (server);
+
+        // In normal sessions, this address will be the same as what we provided for g_dbus_server_new_sync.
+        // In guest sessions, an abstract address will be generated, so use what the server returns, not
+        // what we gave it as an address.
+        manager->priv->dialog_bus_address = g_strdup (g_dbus_server_get_client_address (server));
+        g_debug ("Dialog server address: %s", manager->priv->dialog_bus_address);
+
         g_free (guid);
+        g_free (address);
 
         if (server == NULL) {
             g_critical ("Error creating private dialog server. Logout, shutdown, restart will "
@@ -3970,6 +3985,7 @@ static void
 launch_dialog (CsmManager *manager, const gchar *flag)
 {
     GError *error;
+    g_debug ("Trying to launch session-manager dialog - 'cinnamon-session-quit --sm-owned --sm-bus-id %s'", manager->priv->dialog_bus_address);
 
     if (dialog_process != NULL) {
         g_debug ("There's already a session-manager dialog");
