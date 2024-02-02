@@ -285,6 +285,9 @@ class QuitDialog:
 
         self.window.set_default_response(self.default_response)
         self.window.connect("response", self.handle_response)
+
+        self.window.set_keep_above(True)
+        self.window.stick()
         self.window.present_with_time(0)
 
     def get_session_capabilities(self):
