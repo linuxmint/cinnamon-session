@@ -1,3 +1,10 @@
+cinnamon-session (6.0.4) virginia; urgency=medium
+
+  [ Michael Webster ]
+  * cinnamon-session-quit.py: Set logout window to keep-above and all- workspaces.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 08 Feb 2024 14:12:41 +0000
+
 cinnamon-session (6.0.3) virginia; urgency=medium
 
   [ Michael Webster ]
