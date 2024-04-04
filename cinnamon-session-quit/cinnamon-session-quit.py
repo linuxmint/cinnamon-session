@@ -253,6 +253,7 @@ class QuitDialog:
             self.button_logout.set_visible(True)
             default_button = self.button_logout
             self.action_icon.set_from_icon_name("system-log-out-symbolic", Gtk.IconSize.DIALOG)
+            self.window.set_icon_name("system-log-out")
         elif self.mode == Action.SHUTDOWN:
             self.dialog_label.set_text(_("Shut down this system now?"))
             self.button_suspend.set_visible(can_suspend)
@@ -261,6 +262,7 @@ class QuitDialog:
             self.button_shutdown.set_visible(can_stop)
             default_button = self.button_shutdown
             self.action_icon.set_from_icon_name("system-shutdown-symbolic", Gtk.IconSize.DIALOG)
+            self.window.set_icon_name("system-shutdown")
         elif self.mode == Action.RESTART:
             if not can_restart:
                 print("Restart not available")
@@ -270,6 +272,7 @@ class QuitDialog:
             self.button_restart.set_visible(True)
             default_button = self.button_restart
             self.action_icon.set_from_icon_name("system-reboot-symbolic", Gtk.IconSize.DIALOG)
+            self.window.set_icon_name("system-reboot")
 
         default_button.get_style_context().add_class("destructive-action")
 
