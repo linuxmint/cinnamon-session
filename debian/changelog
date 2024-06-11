@@ -1,3 +1,23 @@
+cinnamon-session (6.2.0) wilma; urgency=medium
+
+  [ Bobby Rong ]
+  * cinnamon-session: make sure wayland sessions get a login shell (#161)
+
+  [ Matt Turnbull ]
+  * Remove orphaned include (#164)
+
+  [ Michael Webster ]
+  * cinnamon-session-quit.py: Set logout window to keep-above and all- workspaces.
+  * cs-presence.c: Fix CsmPresence idle handling.
+  * csm-manager.c: Stop the user dbus-daemon at the end of the session.
+  * main.c: Reset the activation environment at the end of the session.
+  * csm-manager.c: Unset WAYLAND_DISPLAY during shutdown in a wayland session.
+
+  [ fredcw ]
+  * cinnamon-session-quit.py: add missing window icon (#170)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Jun 2024 15:41:40 +0100
+
 cinnamon-session (6.0.3) virginia; urgency=medium
 
   [ Michael Webster ]
