@@ -951,36 +951,6 @@ maybe_restart_user_bus (CsmManager *manager)
         if (manager->priv->dbus_disconnected)
                 return;
 
-        if (g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0) {
-            g_debug ("CsmManager: Unsetting environment GNOME_SETUP_DISPLAY WAYLAND_DISPLAY DISPLAY XAUTHORITY");
-
-            GVariantBuilder builder;
-            g_variant_builder_init (&builder, G_VARIANT_TYPE ("as"));
-            g_variant_builder_add (&builder, "s", "GNOME_SETUP_DISPLAY");
-            g_variant_builder_add (&builder, "s", "WAYLAND_DISPLAY");
-            g_variant_builder_add (&builder, "s", "DISPLAY");
-            g_variant_builder_add (&builder, "s", "XAUTHORITY");
-
-            reply = g_dbus_connection_call_sync (manager->priv->connection,
-                                                 "org.freedesktop.systemd1",
-                                                 "/org/freedesktop/systemd1",
-                                                 "org.freedesktop.systemd1.Manager",
-                                                 "UnsetEnvironment",
-                                                 g_variant_new ("(@as)",
-                                                                g_variant_builder_end (&builder)),
-                                                 NULL,
-                                                 G_DBUS_CALL_FLAGS_NONE,
-                                                 -1, NULL, &error);
-
-            if (error != NULL) {
-                    g_debug ("CsmManager: unsetting environment failed: %s", error->message);
-                    g_clear_error (&error);
-            }
-            else {
-                g_variant_unref (reply);
-            }
-        }
-
         system = csm_get_system ();
 
         if (!csm_system_is_last_session_for_user (system))
