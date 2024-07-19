@@ -1,3 +1,10 @@
+cinnamon-session (6.2.1) wilma; urgency=medium
+
+  [ Leigh Scott ]
+  * Fix restart and shutdown (#172)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 19 Jul 2024 14:51:34 +0100
+
 cinnamon-session (6.2.0) wilma; urgency=medium
 
   [ Bobby Rong ]
