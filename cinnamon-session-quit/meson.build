@@ -4,7 +4,6 @@ csq_conf.set_quoted('LOCALE_DIR', join_paths(get_option('prefix'), get_option('l
 csq_conf.set_quoted('PACKAGE', meson.project_name())
 csq_conf.set_quoted('VERSION', meson.project_version())
 csq_conf.set_quoted('PKG_DATADIR', pkg_datadir)
-csq_conf.set_quoted('DBUS_ADDRESS', dialog_dbus_address)
 
 config_py = configure_file(
   output: 'config.py',

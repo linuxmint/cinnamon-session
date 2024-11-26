@@ -40,6 +40,7 @@
 
 #include "csm-manager.h"
 #include "csm-exported-manager.h"
+#include "csm-exported-dialog.h"
 
 #include "csm-store.h"
 #include "csm-inhibitor.h"
@@ -85,7 +86,7 @@
 #define CSM_MANAGER_SCHEMA        "org.cinnamon.SessionManager"
 #define KEY_AUTOSAVE              "auto-save-session"
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
-#define KEY_SHOW_FALLBACK_WARNING "show-fallback-warning"
+#define KEY_FORCE_GTK_END_SESSION "force-gtk-end-session-dialog"
 #define KEY_BLACKLIST             "autostart-blacklist"
 #define KEY_PREFER_HYBRID_SLEEP   "prefer-hybrid-sleep"
 #define KEY_SUSPEND_HIBERNATE     "suspend-then-hibernate"
@@ -122,12 +123,6 @@ struct CsmManagerPrivate
         CsmPresence            *presence;
         CsmXsmpServer          *xsmp_server;
 
-        GDBusConnection        *dialog_connection;
-        GDBusServer            *dialog_server;
-        guint                   dialog_reg_id;
-        CsmLogoutAction         dialog_action;
-        gchar                  *dialog_bus_address;
-
         char                   *session_name;
         gboolean                is_fallback_session : 1;
 
@@ -160,6 +155,10 @@ struct CsmManagerPrivate
         GDBusProxy             *bus_proxy;
         GDBusConnection        *connection;
         CsmExportedManager     *skeleton;
+        CsmExportedDialog      *dialog_skeleton;
+        GDBusProxy             *cinnamon_proxy;
+
+        CsmLogoutAction         dialog_action;
 
         gboolean                dbus_disconnected : 1;
         guint                   name_owner_id;
@@ -182,11 +181,17 @@ enum {
         LAST_SIGNAL
 };
 
+typedef enum {
+        DIALOG_MODE_REBOOT,
+        DIALOG_MODE_SHUTDOWN,
+        DIALOG_MODE_LOGOUT
+} DialogMode;
+
 static guint signals [LAST_SIGNAL] = { 0 };
 
 static void     show_shutdown_dialog (CsmManager *manager,
                                       gboolean    is_reboot);
-static void     terminate_dialog     (void);
+static void     close_end_session_dialog     (CsmManager *manager);
 static void     show_logout_dialog   (CsmManager *manager);
 
 static void     user_logout (CsmManager           *manager,
@@ -267,14 +272,6 @@ static void
 on_required_app_failure (CsmManager  *manager,
                          CsmApp      *app)
 {
-        gboolean allow_logout;
-
-        if (csm_system_is_login_session (manager->priv->system)) {
-                allow_logout = FALSE;
-        } else {
-                allow_logout = !_log_out_is_locked_down (manager);
-        }
-
         csm_util_init_error (FALSE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'.",
                              csm_app_peek_app_id (app),
                              csm_app_peek_startup_id (app));
@@ -519,7 +516,7 @@ end_phase (CsmManager *manager)
 {
         gboolean start_next_phase = TRUE;
 
-        g_debug ("CsmManager: ending phase %s\n",
+        g_debug ("CsmManager: ending phase %s",
                  phase_num_to_name (manager->priv->phase));
 
         g_slist_free (manager->priv->pending_apps);
@@ -862,7 +859,7 @@ do_phase_end_session (CsmManager *manager)
         data.manager = manager;
         data.flags = 0;
 
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
@@ -1077,7 +1074,7 @@ cancel_end_session (CsmManager *manager)
         /* remove the dialog before we remove the inhibitors, else the dialog
          * will activate itself automatically when the last inhibitor will be
          * removed */
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         /* clear all JIT inhibitors */
         csm_store_foreach_remove (manager->priv->inhibitors,
@@ -1166,7 +1163,7 @@ flexiserver_launch (const gchar **argv)
 static void
 manager_switch_user (CsmManager *manager)
 {
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         /* We have to do this here and in request_switch_user() because this
          * function can be called at a later time, not just directly after
@@ -1237,7 +1234,7 @@ manager_attempt_hibernate (CsmManager *manager)
          * (if preferences dictate it) */
         manager_perhaps_lock (manager);
 
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         if (csm_system_can_hibernate (manager->priv->system)) {
                 csm_system_hibernate (manager->priv->system);
@@ -1251,7 +1248,7 @@ manager_attempt_suspend (CsmManager *manager)
          * (if preferences dictate it) */
         manager_perhaps_lock (manager);
 
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         if (g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
             csm_system_can_hybrid_sleep (manager->priv->system)) {
@@ -1294,30 +1291,14 @@ emit_inhibitor_info_to_dialog (CsmManager *manager, CsmLogoutAction action)
     if (action == CSM_LOGOUT_ACTION_UNDEFINED) {
         return;
     }
-
+    g_debug ("Sending inhibitor info to end-session dialog");
     manager->priv->dialog_action = action;
 
     GVariant *dialog_inhibit_info = build_inhibitor_list_for_dialog (manager->priv->inhibitors,
                                                                      manager->priv->clients,
                                                                      action);
 
-    if (manager->priv->dialog_connection != NULL) {
-        GError *error = NULL;
-
-        if (!g_dbus_connection_emit_signal (manager->priv->dialog_connection,
-                                            NULL,
-                                            "/org/gnome/SessionManager",
-                                            "org.cinnamon.SessionManager.DialogPrivate",
-                                            "InhibitorsChanged",
-                                            dialog_inhibit_info,
-                                            &error)) {
-            if (error) {
-                g_critical ("Could not send inhibit list to dialog: %s", error->message);
-                g_clear_error (&error);
-
-            }
-        }
-    }
+    csm_exported_dialog_emit_inhibitors_changed (manager->priv->dialog_skeleton, dialog_inhibit_info);
 }
 
 static void
@@ -1494,7 +1475,7 @@ static void
 start_phase (CsmManager *manager)
 {
 
-        g_debug ("CsmManager: starting phase %s\n",
+        g_debug ("CsmManager: starting phase %s",
                  phase_num_to_name (manager->priv->phase));
 
         /* reset state */
@@ -2625,14 +2606,21 @@ on_dbus_proxy_signal (GDBusProxy *proxy,
                    &new_owner);
 
     if (strlen (new_owner) == 0 && strlen (old_owner) > 0) {
-                /* service removed */
-                remove_inhibitors_for_connection (manager, old_owner);
-                remove_clients_for_connection (manager, old_owner);
-    } else if (strlen (old_owner) == 0 && strlen (new_owner) > 0) {
-            /* service added */
+        /* service removed */
+        remove_inhibitors_for_connection (manager, old_owner);
+        remove_clients_for_connection (manager, old_owner);
 
-            /* use this if we support automatically registering
-             * well known bus names */
+        if (g_strcmp0 (name, "org.Cinnamon") == 0) {
+            g_debug ("org.Cinnamon has lost its owner (Cinnamon is not running)");
+        }
+    } else if (strlen (old_owner) == 0 && strlen (new_owner) > 0) {
+        /* service added */
+        if (g_strcmp0 (name, "org.Cinnamon") == 0) {
+            g_debug ("org.Cinnamon has an owner (Cinnamon is running)");
+        }
+
+        /* use this if we support automatically registering
+         * well known bus names */
     }
 
     g_free (name);
@@ -2659,42 +2647,44 @@ on_bus_connection_closed (GDBusConnection *connection,
 static gboolean csm_manager_is_switch_user_inhibited (CsmManager *manager);
 static gboolean csm_manager_is_suspend_inhibited (CsmManager *manager);
 
-static void
-handle_dialog_method_call (GDBusConnection       *connection,
-                           const gchar           *sender,
-                           const gchar           *object_path,
-                           const gchar           *interface_name,
-                           const gchar           *method_name,
-                           GVariant              *parameters,
+static gboolean
+handle_dialog_method_call (CsmExportedDialog     *dialog_skeleton,
                            GDBusMethodInvocation *invocation,
                            gpointer               user_data)
 {
     CsmManager *manager = CSM_MANAGER (user_data);
+    const gchar *method_name = g_dbus_method_invocation_get_method_name (invocation);
 
-    g_debug("Dialog method received: %s\n", method_name);
+    g_debug("Dialog method received: %s", method_name);
 
     if (g_strcmp0 (method_name, "Suspend") == 0) {
         request_suspend (manager);
+        csm_exported_dialog_complete_suspend (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "Hibernate") == 0) {
         request_hibernate (manager);
+        csm_exported_dialog_complete_hibernate (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "Restart") == 0) {
         request_reboot (manager);
+        csm_exported_dialog_complete_restart (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "Shutdown") == 0) {
         request_shutdown (manager);
+        csm_exported_dialog_complete_shutdown (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "SwitchUser") == 0) {
         request_switch_user (manager);
+        csm_exported_dialog_complete_switch_user (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "Logout") == 0) {
         request_logout (manager, CSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION);
+        csm_exported_dialog_complete_logout (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "Cancel") == 0) {
@@ -2707,12 +2697,14 @@ handle_dialog_method_call (GDBusConnection       *connection,
             g_debug ("session-manager dialog was cancelled");
         }
 
-        terminate_dialog ();
+        close_end_session_dialog (manager);
+        csm_exported_dialog_complete_logout (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "IgnoreInhibitors") == 0) {
-        terminate_dialog ();
+        close_end_session_dialog (manager);
         do_inhibit_dialog_action (manager);
+        csm_exported_dialog_complete_ignore_inhibitors (dialog_skeleton, invocation);
     }
     else
     if (g_strcmp0 (method_name, "GetCapabilities") == 0) {
@@ -2720,7 +2712,7 @@ handle_dialog_method_call (GDBusConnection       *connection,
         gboolean can_hybrid_sleep = g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
                               csm_system_can_hybrid_sleep (manager->priv->system);
 
-        ret = g_variant_new ("((bbbbbbb))",
+        ret = g_variant_new ("(bbbbbbb)",
                              !(_switch_user_is_locked_down (manager) || csm_manager_is_switch_user_inhibited (manager)),
                              (!_log_out_is_locked_down (manager)) && csm_system_can_stop (manager->priv->system),
                              (!_log_out_is_locked_down (manager)) && csm_system_can_restart (manager->priv->system),
@@ -2729,93 +2721,16 @@ handle_dialog_method_call (GDBusConnection       *connection,
                              (!csm_manager_is_suspend_inhibited (manager)) && csm_system_can_hibernate (manager->priv->system),
                              (!csm_manager_is_logout_inhibited (manager)));
 
-        g_dbus_method_invocation_return_value (invocation, ret);
-        return;
+        csm_exported_dialog_complete_get_capabilities (dialog_skeleton, invocation, ret);
     }
     else {
-        g_warning ("Unknown method name %s\n", method_name);
+        g_warning ("Unknown method name %s", method_name);
         g_dbus_method_invocation_return_error (invocation,
                                                CSM_MANAGER_ERROR,
                                                CSM_MANAGER_ERROR_INVALID_METHOD,
                                                "Unknown method name %s",
                                                method_name);
-        return;
     }
-
-    g_dbus_method_invocation_return_value (invocation, NULL);
-}
-
-static GDBusNodeInfo *introspection_data = NULL;
-
-/* Introspection data for the service we are exporting */
-static const gchar introspection_xml[] =
-  "<node>"
-  "  <interface name='org.cinnamon.SessionManager.DialogPrivate'>"
-  "    <method name='Suspend'/>"
-  "    <method name='Hibernate'/>"
-  "    <method name='Restart'/>"
-  "    <method name='Shutdown'/>"
-  "    <method name='SwitchUser'/>"
-  "    <method name='Logout'/>"
-  "    <method name='Cancel'/>"
-  "    <method name='IgnoreInhibitors'/>"
-  "    <method name='GetCapabilities'>"
-  "      <arg type='(bbbbbbb)' name='capabilities' direction='out'/>"
-  "    </method>"
-  "    <method name='GetInhibitorInfo'>"
-  "    </method>"
-  "    <signal name='InhibitorsChanged'>"
-  "      <arg type='a(ssss)' name='capabilities'/>"
-  "    </signal>"
-  "  </interface>"
-  "</node>";
-
-static const GDBusInterfaceVTable interface_vtable =
-{
-  handle_dialog_method_call,
-  NULL,
-  NULL,
-  { 0 }
-};
-
-static void
-on_dialog_connection_closed (GDBusConnection *connection,
-                             gboolean         vanished,
-                             GError          *error,
-                             gpointer         user_data)
-{
-    CsmManager *manager = CSM_MANAGER (user_data);
-    g_debug ("Dialog disconnected\n");
-
-    g_dbus_connection_unregister_object (connection, manager->priv->dialog_reg_id);
-    manager->priv->dialog_reg_id = 0;
-
-    g_clear_object (&manager->priv->dialog_connection);
-}
-
-static gboolean
-on_new_dialog_connection (GDBusServer *server,
-                          GDBusConnection *connection,
-                          gpointer user_data)
-{
-    CsmManager *manager = CSM_MANAGER (user_data);
-
-    if (manager->priv->dialog_reg_id > 0) {
-        g_message ("Already have a dialog connection, ignoring new one");
-        return FALSE;
-    }
-
-    g_debug ("Dialog connected.\n");
-
-    manager->priv->dialog_connection = g_object_ref (connection);
-    g_signal_connect (connection, "closed", G_CALLBACK (on_dialog_connection_closed), manager);
-    manager->priv->dialog_reg_id = g_dbus_connection_register_object (connection,
-                                                                      "/org/gnome/SessionManager",
-                                                                      introspection_data->interfaces[0],
-                                                                      &interface_vtable,
-                                                                      manager,  /* user_data */
-                                                                      NULL,  /* user_data_free_func */
-                                                                      NULL); /* GError** */
 
     return TRUE;
 }
@@ -2847,10 +2762,23 @@ static SkeletonSignal skeleton_signals[] = {
     { "handle-request-reboot",                  csm_manager_request_reboot }
 };
 
+static SkeletonSignal dialog_skeleton_signals[] = {
+    // signal name                              callback
+    { "handle-suspend",                         handle_dialog_method_call },
+    { "handle-hibernate",                       handle_dialog_method_call },
+    { "handle-restart",                         handle_dialog_method_call },
+    { "handle-shutdown",                        handle_dialog_method_call },
+    { "handle-switch-user",                     handle_dialog_method_call },
+    { "handle-logout",                          handle_dialog_method_call },
+    { "handle-cancel",                          handle_dialog_method_call },
+    { "handle-ignore-inhibitors",               handle_dialog_method_call },
+    { "handle-get-capabilities",                handle_dialog_method_call },
+};
+
 static gboolean
 register_manager (CsmManager *manager)
 {
-        CsmExportedManager *skeleton;
+        GDBusInterfaceSkeleton *skeleton;
         GError *error = NULL;
         gint i;
 
@@ -2885,10 +2813,19 @@ register_manager (CsmManager *manager)
                           G_CALLBACK (on_dbus_proxy_signal),
                           manager);
 
-        skeleton = csm_exported_manager_skeleton_new ();
-        manager->priv->skeleton = skeleton;
+        manager->priv->cinnamon_proxy = g_dbus_proxy_new_sync (manager->priv->connection,
+                                                               G_DBUS_PROXY_FLAGS_NONE,
+                                                               NULL,
+                                                               "org.Cinnamon",
+                                                               "/org/Cinnamon",
+                                                               "org.Cinnamon",
+                                                               NULL,
+                                                               &error);
 
-        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+        skeleton = G_DBUS_INTERFACE_SKELETON (csm_exported_manager_skeleton_new ());
+        manager->priv->skeleton = CSM_EXPORTED_MANAGER (skeleton);
+
+        g_dbus_interface_skeleton_export (skeleton,
                                           manager->priv->connection,
                                           CSM_MANAGER_DBUS_PATH,
                                           &error);
@@ -2909,43 +2846,22 @@ register_manager (CsmManager *manager)
                                   manager);
         }
 
-        // Set up private controller interface for dialog
-        gchar *guid = g_dbus_generate_guid ();
-        gchar *address;
+        skeleton = G_DBUS_INTERFACE_SKELETON (csm_exported_dialog_skeleton_new ());
+        manager->priv->dialog_skeleton = CSM_EXPORTED_DIALOG (skeleton);
 
-        // Detect guest sessions.
-        if (g_str_has_prefix (g_get_home_dir (), "/tmp")) {
-            address = g_strdup ("unix:tmpdir=/tmp");
+        g_dbus_interface_skeleton_export (skeleton,
+                                          manager->priv->connection,
+                                          CSM_MANAGER_DBUS_PATH,
+                                          &error);
+
+        for (i = 0; i < G_N_ELEMENTS (dialog_skeleton_signals); i++) {
+                SkeletonSignal sig = dialog_skeleton_signals[i];
+
+                g_signal_connect (skeleton,
+                                  sig.signal_name,
+                                  G_CALLBACK (sig.callback),
+                                  manager);
         }
-        else {
-            address = g_strdup_printf ("%s-%s", DBUS_ADDRESS, guid);
-        }
-
-        GDBusServer *server = g_dbus_server_new_sync (address,
-                                                      G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER,
-                                                      guid,
-                                                      NULL, NULL, &error);
-        g_dbus_server_start (server);
-
-        // In normal sessions, this address will be the same as what we provided for g_dbus_server_new_sync.
-        // In guest sessions, an abstract address will be generated, so use what the server returns, not
-        // what we gave it as an address.
-        manager->priv->dialog_bus_address = g_strdup (g_dbus_server_get_client_address (server));
-        g_debug ("Dialog server address: %s", manager->priv->dialog_bus_address);
-
-        g_free (guid);
-        g_free (address);
-
-        if (server == NULL) {
-            g_critical ("Error creating private dialog server. Logout, shutdown, restart will "
-                        "need to be performed from a terminal: %s", error->message);
-            g_clear_error (&error);
-            return TRUE;
-        }
-
-        introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
-        manager->priv->dialog_server = server;
-        g_signal_connect (server, "new-connection", G_CALLBACK (on_new_dialog_connection), manager);
 
         return TRUE;
 }
@@ -3537,22 +3453,12 @@ csm_manager_dispose (GObject *object)
 
         g_debug ("CsmManager: disposing manager");
 
-        terminate_dialog ();
+        close_end_session_dialog (manager);
 
         g_clear_object (&manager->priv->xsmp_server);
 
         g_clear_object (&manager->priv->bus_proxy);
-
-        if (manager->priv->dialog_reg_id > 0) {
-                g_dbus_connection_unregister_object (manager->priv->dialog_connection,
-                                                     manager->priv->dialog_reg_id);
-                manager->priv->dialog_reg_id = 0;
-                g_dbus_node_info_unref (introspection_data);
-                g_dbus_server_stop (manager->priv->dialog_server);
-                g_object_unref (manager->priv->dialog_server);
-                g_object_unref (manager->priv->dialog_connection);
-                g_free (manager->priv->dialog_bus_address);
-        }
+        g_clear_object (&manager->priv->cinnamon_proxy);
 
         if (manager->priv->clients != NULL) {
                 g_signal_handlers_disconnect_by_func (manager->priv->clients,
@@ -3970,22 +3876,42 @@ on_dialog_read (GObject *source,
 }
 
 static void
-terminate_dialog (void)
+close_end_session_dialog (CsmManager *manager)
 {
-    if (dialog_process == NULL) {
+    g_debug ("Closing end session dialog");
+
+    if (dialog_process != NULL) {
+        g_subprocess_send_signal (dialog_process, SIGTERM);
         return;
     }
 
-    g_debug ("Terminating cinnamon-session-quit dialog");
+    GError *error = NULL;
+    GVariant *ret = NULL;
 
-    g_subprocess_send_signal(dialog_process, SIGTERM);
+    ret = g_dbus_proxy_call_sync (manager->priv->cinnamon_proxy,
+                                  "CloseEndSessionDialog",
+                                  NULL,
+                                  G_DBUS_CALL_FLAGS_NONE,
+                                  -1,
+                                  NULL,
+                                  &error);
+    g_debug ("ret is: %p", ret);
+
+    g_variant_unref (ret);
+
+    if (error != NULL) {
+        g_critical ("Unable to close Cinnamon's end session dialog: %s", error->message);
+        g_error_free (error);
+    }
 }
 
 static void
-launch_dialog (CsmManager *manager, const gchar *flag)
+launch_gtk_dialog (CsmManager *manager,
+               DialogMode  mode)
 {
     GError *error;
-    g_debug ("Trying to launch session-manager dialog - 'cinnamon-session-quit --sm-owned --sm-bus-id %s'", manager->priv->dialog_bus_address);
+    const gchar *flag;
+    g_debug ("Trying to launch fallback (Gtk) end-session dialog");
 
     if (dialog_process != NULL) {
         g_debug ("There's already a session-manager dialog");
@@ -4000,10 +3926,25 @@ launch_dialog (CsmManager *manager, const gchar *flag)
         cancel_end_session (manager);
     }
 
+    switch (mode) {
+        case DIALOG_MODE_LOGOUT:
+            flag = "--logout";
+            break;
+        case DIALOG_MODE_REBOOT:
+            flag = "--reboot";
+            break;
+        case DIALOG_MODE_SHUTDOWN:
+            flag = "--power-off";
+            
+            break;
+        default:
+            g_warning ("Unknown dialog mode: %d", mode);
+            return;
+    }
+
     const gchar *argv[] = {
         "cinnamon-session-quit",
         "--sm-owned",
-        "--sm-bus-id", manager->priv->dialog_bus_address,
         flag,
         NULL
     };
@@ -4012,7 +3953,7 @@ launch_dialog (CsmManager *manager, const gchar *flag)
     GSubprocessFlags flags = G_SUBPROCESS_FLAGS_NONE;
 
     if (debugging) {
-        flags = G_SUBPROCESS_FLAGS_STDERR_MERGE | G_SUBPROCESS_FLAGS_STDOUT_PIPE;
+        flags = G_SUBPROCESS_FLAGS_STDERR_PIPE;
     }
 
     error = NULL;
@@ -4027,7 +3968,7 @@ launch_dialog (CsmManager *manager, const gchar *flag)
     }
 
     if (debugging) {
-        GInputStream *stdout = g_subprocess_get_stdout_pipe (dialog_process);
+        GInputStream *stdout = g_subprocess_get_stderr_pipe (dialog_process);
         guint8 *buffer = g_malloc (1024);
         g_input_stream_read_async (G_INPUT_STREAM (stdout),
                                    buffer,
@@ -4046,9 +3987,60 @@ launch_dialog (CsmManager *manager, const gchar *flag)
                               manager);
 }
 
+static gboolean
+launch_cinnamon_dialog (CsmManager  *manager,
+                        DialogMode   mode,
+                        GError     **error)
+{
+    GVariant *ret = NULL;
+
+    g_debug ("Requesting Cinnamon display its end-session dialog");
+
+    ret = g_dbus_proxy_call_sync (manager->priv->cinnamon_proxy,
+                                  "ShowEndSessionDialog",
+                                  g_variant_new ("(i)", mode),
+                                  G_DBUS_CALL_FLAGS_NONE,
+                                  -1,
+                                  NULL,
+                                  error);
+
+    if (*error != NULL) {
+        return FALSE;
+    }
+    g_debug ("launch ret is: %p", ret);
+
+    g_variant_unref (ret);
+
+    return TRUE;
+}
+
+static void
+show_end_session_dialog (CsmManager *manager,
+                         DialogMode  mode)
+{
+    GError *error = NULL;
+    
+    if (g_settings_get_boolean (manager->priv->settings, KEY_FORCE_GTK_END_SESSION)) {
+        g_debug ("Using Gtk end-session dialog based on settings.");
+        launch_gtk_dialog (manager, mode);
+        return;
+    }
+
+    if (!launch_cinnamon_dialog (manager, mode, &error)) {
+        if (error->code == G_DBUS_ERROR_NAME_HAS_NO_OWNER) {
+            g_debug ("Cinnamon is not running, falling back to Gtk end-session dialog");
+        } else {
+            g_critical ("Failed to launch Cinnamon's end session dialog, falling back to Gtk end-session dialog: %s", error->message);
+        }
+
+        g_error_free (error);
+        launch_gtk_dialog (manager, mode);
+    }
+}
+
 static void
 show_shutdown_dialog (CsmManager *manager,
-                               gboolean    is_reboot)
+                      gboolean    is_reboot)
 {
         if (manager->priv->phase > CSM_MANAGER_PHASE_QUERY_END_SESSION) {
                 /* Already shutting down, nothing more to do */
@@ -4057,7 +4049,7 @@ show_shutdown_dialog (CsmManager *manager,
 
         manager->priv->logout_mode = CSM_MANAGER_LOGOUT_MODE_NORMAL;
 
-        launch_dialog (manager, is_reboot ? "--reboot" : "--power-off");
+        show_end_session_dialog (manager, is_reboot ? DIALOG_MODE_REBOOT : DIALOG_MODE_SHUTDOWN);
 }
 
 static void
@@ -4070,7 +4062,7 @@ show_logout_dialog (CsmManager *manager)
 
         manager->priv->logout_mode = CSM_MANAGER_LOGOUT_MODE_NORMAL;
 
-        launch_dialog (manager, "--logout");
+        show_end_session_dialog (manager, DIALOG_MODE_LOGOUT);
 }
 
 static void

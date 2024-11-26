@@ -11,7 +11,8 @@ gdbus_ifaces = [
   ['exported-client-private', 'org.gnome.SessionManager.ClientPrivate', 'ExportedClientPrivate'],
   ['exported-app', 'org.gnome.SessionManager.App', 'ExportedApp'],
   ['exported-inhibitor', 'org.gnome.SessionManager.Inhibitor', 'ExportedInhibitor'],
-  ['exported-presence', 'org.gnome.SessionManager.Presence', 'ExportedPresence']
+  ['exported-presence', 'org.gnome.SessionManager.Presence', 'ExportedPresence'],
+  ['exported-dialog', 'org.cinnamon.SessionManager.EndSessionDialog', 'ExportedDialog']
 ]
 
 gdbus_sources = []

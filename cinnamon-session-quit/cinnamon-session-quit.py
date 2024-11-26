@@ -64,7 +64,10 @@ class QuitDialog:
         parser.add_argument("--no-prompt", dest="no_prompt", action='store_true',
                             help=_("Don't prompt for user confirmation"))
         parser.add_argument("--sm-owned", action="store_true", help=argparse.SUPPRESS)
-        parser.add_argument("--sm-bus-id", dest="bus_id", action="store", help=argparse.SUPPRESS, default=config.DBUS_ADDRESS)
+
+        # unused in 6.4+, kept only for upgrade session (running c-s process is previous version, dialog is new)
+        parser.add_argument("--sm-bus-id", dest="bus_id", action="store", help=argparse.SUPPRESS, default=None)
+
         args = parser.parse_args()
 
         self.dialog_response = ResponseCode.NONE
@@ -76,11 +79,7 @@ class QuitDialog:
         self.force = args.force
         self.no_prompt = args.no_prompt
         self.sm_owned = args.sm_owned
-
-        if self.sm_owned:
-            self.bus_id = args.bus_id
-        else:
-            self.bus_id = None
+        self.bus_id = args.bus_id
 
         self.proxy = None
         self.signal_handler_id = 0
@@ -118,7 +117,7 @@ class QuitDialog:
                     proxy.call_finish(res)
                     # self.quit()
                 except GLib.Error as e:
-                    print("An error occurred forwarding to the session manager: %s" % e.message)
+                    print("An error occurred forwarding to the session manager: %s" % e.message, file=sys.stderr, end=None)
 
             if self.mode == Action.LOGOUT:
                 arg = LogoutParams.NORMAL
@@ -156,7 +155,7 @@ class QuitDialog:
                 )
         except GLib.Error as e:
             if sm_proxy is None:
-                print("Could not forward to org.cinnamon.SessionManager.Manager: %s" % e.message)
+                print("Could not forward to org.cinnamon.SessionManager.Manager: %s" % e.message, file=sys.stderr, end=None)
                 sys.exit(1)
 
         sys.exit(0)
@@ -169,40 +168,52 @@ class QuitDialog:
         connection = None
 
         try:
-            connection = Gio.DBusConnection.new_for_address_sync(
-                self.bus_id,
-                Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT,
-                None, None
-            )
+            # 6.4 and later this will always be None, obsolete connection
+            if self.bus_id is not None:
+                connection = Gio.DBusConnection.new_for_address_sync(
+                    self.bus_id,
+                    Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT,
+                    None, None
+                )
 
-            self.proxy = Gio.DBusProxy.new_sync(
-                connection,
-                Gio.DBusProxyFlags.DO_NOT_AUTO_START,
-                None,
-                None,
-                "/org/gnome/SessionManager",
-                "org.cinnamon.SessionManager.DialogPrivate",
-                None
-            )
+                self.proxy = Gio.DBusProxy.new_sync(
+                    connection,
+                    Gio.DBusProxyFlags.DO_NOT_AUTO_START,
+                    None,
+                    None,
+                    "/org/gnome/SessionManager",
+                    "org.cinnamon.SessionManager.DialogPrivate",
+                    None
+                )
+            else:
+                self.proxy = Gio.DBusProxy.new_for_bus_sync(
+                    Gio.BusType.SESSION,
+                    Gio.DBusProxyFlags.DO_NOT_AUTO_START,
+                    None,
+                    "org.gnome.SessionManager",
+                    "/org/gnome/SessionManager",
+                    "org.cinnamon.SessionManager.EndSessionDialog",
+                    None
+                )
 
             self.proxy.connect("g-signal", self.inhibitor_info_received)
 
         except GLib.Error as e:
             if connection is None:
-                print("Could not connect to session dialog server: %s" % e.message)
+                print("Could not connect to session dialog server: %s" % e.message, file=sys.stderr, end=None)
                 sys.exit(1)
             if self.proxy is None:
-                print("Could not create proxy to session dialog interface: %s" % e.message)
+                print("Could not create proxy to session dialog interface: %s" % e.message, file=sys.stderr, end=None)
                 sys.exit(1)
 
     def inhibitor_info_received(self, proxy, sender, signal, params):
         inhibitors = params[0]
 
         if self.dialog_response == ResponseCode.NONE:
-            print("Ignoring inhibitor info, still waiting on initial response from user")
+            print("Ignoring inhibitor info, still waiting on initial response from user", file=sys.stderr, end=None)
             return
 
-        print("Inhibitor info received (%d inhibitors)" % len(inhibitors))
+        print("Inhibitor info received (%d inhibitors): %s" % (len(inhibitors), params), file=sys.stderr, end=None)
 
         if inhibitors:
             self.inhibited = True
@@ -243,8 +254,10 @@ class QuitDialog:
         self.view_stack = self.builder.get_object("view_stack")
         self.inhibitor_treeview = self.builder.get_object("inhibitor_treeview")
 
-        can_switch_user, can_stop, can_restart, can_hybrid_sleep, can_suspend, can_hibernate, can_logout = self.get_session_capabilities()
-
+        try:
+            can_switch_user, can_stop, can_restart, can_hybrid_sleep, can_suspend, can_hibernate, can_logout = self.get_session_capabilities()
+        except Exception as e:
+            print(e, file=sys.stderr, end=None)
         default_button = None
 
         if self.mode == Action.LOGOUT:
@@ -265,7 +278,7 @@ class QuitDialog:
             self.window.set_icon_name("system-shutdown")
         elif self.mode == Action.RESTART:
             if not can_restart:
-                print("Restart not available")
+                print("Restart not available", file=sys.stderr, end=None)
                 Gtk.main_quit()
                 return
             self.dialog_label.set_text(_("Restart this system now?"))
@@ -304,7 +317,7 @@ class QuitDialog:
             )
             return caps[0]
         except GLib.Error as e:
-            print("Could not retrieve session capabilities: %s" % e.message)
+            print("Could not retrieve session capabilities: %s" % e.message, file=sys.stderr, end=None)
 
     def start_timer(self):
         if self.timer_id > 0:
@@ -314,6 +327,11 @@ class QuitDialog:
 
         self.update_timer()
         GLib.timeout_add(1000, self.update_timer)
+
+    def stop_timer(self):
+        if self.timer_id > 0:
+            GLib.source_remove(self.timer_id)
+            self.timer_id = 0
 
     def update_timer(self):
         if self.current_time == 0:
@@ -347,15 +365,17 @@ class QuitDialog:
         return GLib.SOURCE_CONTINUE
 
     def handle_response(self, dialog, code):
+        self.stop_timer()
+
         self.view_stack.set_visible_child_name("busy")
 
         if self.inhibited:
             if code == ResponseCode.CONTINUE:
-                print("Sending ignore inhibitors")
+                print("Sending ignore inhibitors", file=sys.stderr, end=None)
                 self.send_command("IgnoreInhibitors")
                 self.finish_up()
             elif code in (ResponseCode.CANCEL, Gtk.ResponseType.NONE, Gtk.ResponseType.DELETE_EVENT):
-                print("Canceling action during inhibit phase")
+                print("Canceling action during inhibit phase", file=sys.stderr, end=None)
                 self.send_command("Cancel")
                 self.quit()
             return
@@ -378,7 +398,7 @@ class QuitDialog:
             self.send_command("Cancel")
             self.quit(0)
         else:
-            print("Invalid response code: %d" % code)
+            print("Invalid response code: %d" % code, file=sys.stderr, end=None)
 
     def send_command(self, command):
         try:
@@ -391,7 +411,7 @@ class QuitDialog:
                 None
             )
         except GLib.Error as e:
-            print("Could not send command '%s' to session manager: %s" % (str(command), e.message))
+            print("Could not send command '%s' to session manager: %s" % (str(command), e.message), file=sys.stderr, end=None)
 
         self.command_sent = True
         # wait for inhibit info
@@ -409,7 +429,7 @@ class QuitDialog:
         self.view_stack.set_visible_child_name("inhibit")
 
     def on_terminate(self, data=None):
-        print("Received SIGTERM from cinnamon-session, exiting")
+        print("Received SIGTERM from cinnamon-session, exiting", file=sys.stderr, end=None)
         self.quit(0)
 
     def finish_up(self):
