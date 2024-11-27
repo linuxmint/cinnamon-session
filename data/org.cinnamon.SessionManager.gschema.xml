@@ -20,10 +20,10 @@
       <summary>Logout prompt</summary>
       <description>If enabled, cinnamon-session will prompt the user before ending a session.</description>
     </key>
-    <key name="show-fallback-warning" type="b">
-      <default>true</default>
-      <summary>Show the fallback warning</summary>
-      <description>If enabled, cinnamon-session will display a warning dialog after login if the session was automatically fallen back.</description>
+    <key name="force-gtk-end-session-dialog" type="b">
+      <default>false</default>
+      <summary>Always use the session manager's end-session-dialog</summary>
+      <description>If enabled, cinnamon-session will not try to use Cinnamon's end-session dialog, instead preferring Gtk fallback.</description>
     </key>
     <key name="autostart-blacklist" type="as">
       <default>['gnome-settings-daemon', 'org.gnome.SettingsDaemon', 'gnome-fallback-mount-helper', 'gnome-screensaver', 'mate-screensaver', 'mate-keyring-daemon', 'indicator-session', 'gnome-initial-setup-copy-worker', 'gnome-initial-setup-first-login', 'gnome-welcome-tour', 'xscreensaver-autostart', 'nautilus-autostart', 'nm-applet', 'caja', 'xfce4-power-manager', 'touchegg']</default>

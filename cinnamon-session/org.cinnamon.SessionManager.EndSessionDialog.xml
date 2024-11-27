@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
+  <interface name='org.cinnamon.SessionManager.EndSessionDialog'>
+    <method name='Suspend'/>
+    <method name='Hibernate'/>
+    <method name='Restart'/>
+    <method name='Shutdown'/>
+    <method name='SwitchUser'/>
+    <method name='Logout'/>
+    <method name='Cancel'/>
+    <method name='IgnoreInhibitors'/>
+    <method name='GetCapabilities'>
+      <arg type='(bbbbbbb)' name='capabilities' direction='out'/>
+    </method>
+    <signal name='InhibitorsChanged'>
+      <arg type='a(ssss)' name='capabilities'/>
+    </signal>
+  </interface>
+</node>

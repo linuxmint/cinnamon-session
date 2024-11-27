@@ -138,16 +138,13 @@ add_inhibitor (InhibitDialogInfo *info,
             gicon_string = g_icon_to_string (gicon);
         }
         
-        // g_variant_builder_open (info->builder, G_VARIANT_TYPE_ARRAY);
+        g_debug ("Adding %s to dialog inhibitor list", name);
+        g_variant_builder_add (info->builder, "(ssss)",
+                               name ? name : "none",
+                               gicon_string ? gicon_string : "none",
+                               csm_inhibitor_peek_reason (inhibitor) ? csm_inhibitor_peek_reason (inhibitor) : "none",
+                               csm_inhibitor_peek_id (inhibitor) ? csm_inhibitor_peek_id (inhibitor) : "none");
 
-        GVariant *item = g_variant_new ("(ssss)",
-                                        name ? name : "none",
-                                        gicon_string ? gicon_string : "none",
-                                        csm_inhibitor_peek_reason (inhibitor) ? csm_inhibitor_peek_reason (inhibitor) : "none",
-                                        csm_inhibitor_peek_id (inhibitor) ? csm_inhibitor_peek_id (inhibitor) : "none");
-
-        g_variant_builder_add_value (info->builder, item);
-        // g_variant_builder_close (info->builder);
         info->count++;
 
         g_free (gicon_string);
@@ -161,7 +158,31 @@ add_to_builder (const char        *id,
                 CsmInhibitor      *inhibitor,
                 InhibitDialogInfo *info)
 {
-        add_inhibitor (info, inhibitor);
+        CsmInhibitorFlag flags = csm_inhibitor_peek_flags (inhibitor);
+
+        switch (info->action) {
+            case CSM_LOGOUT_ACTION_LOGOUT:
+            case CSM_LOGOUT_ACTION_SHUTDOWN:
+            case CSM_LOGOUT_ACTION_REBOOT:
+                    if (flags & CSM_INHIBITOR_FLAG_LOGOUT) {
+                            add_inhibitor (info, inhibitor);
+                    }
+                    break;
+            case CSM_LOGOUT_ACTION_SWITCH_USER:
+                    if (flags & CSM_INHIBITOR_FLAG_SWITCH_USER) {
+                            add_inhibitor (info, inhibitor);
+                    }
+                    break;
+            case CSM_LOGOUT_ACTION_HIBERNATE:
+            case CSM_LOGOUT_ACTION_SLEEP:
+                    if (flags & CSM_INHIBITOR_FLAG_SUSPEND) {
+                            add_inhibitor (info, inhibitor);
+                    }
+                    break;
+            default:
+                    break;
+        }
+
         return FALSE;
 }
 
@@ -178,30 +199,24 @@ build_inhibitor_list_for_dialog (CsmStore *inhibitors,
                                  CsmStore *clients,
                                  int       action)
 {
-    GVariantBuilder builder;
+    g_autoptr(GVariantBuilder) builder = g_variant_builder_new (G_VARIANT_TYPE ("a(ssss)"));
 
-    g_variant_builder_init (&builder, G_VARIANT_TYPE_TUPLE);
-    g_variant_builder_open (&builder, G_VARIANT_TYPE ("a(ssss)"));
-
-    InhibitDialogInfo *info = g_new0 (InhibitDialogInfo, 1);
-    info->action = action;
-    info->builder = &builder;
+    InhibitDialogInfo info;
+    info.action = action;
+    info.builder = builder;
 
     if (clients != NULL) {
-        info->clients = g_object_ref (clients);
+        info.clients = g_object_ref (clients);
     }
 
     if (inhibitors != NULL) {
-        info->inhibitors = g_object_ref (inhibitors);
+        info.inhibitors = g_object_ref (inhibitors);
     }
 
-    populate_builder (info);
+    populate_builder (&info);
 
-    g_variant_builder_close (&builder);
+    g_object_unref (info.clients);
+    g_object_unref (info.inhibitors);
 
-    g_object_unref (info->clients);
-    g_object_unref (info->inhibitors);
-
-    g_free (info);
-    return g_variant_builder_end (&builder);
+    return g_variant_builder_end (builder);
 }

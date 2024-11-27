@@ -45,6 +45,7 @@ CMakeLists.txt
 debian/*.debhelper.log
 debian/*.substvars
 debian/.debhelper/
+debian/*.debhelper
 debian/cinnamon-session-common/
 debian/cinnamon-session/
 debian/debhelper-build-stamp
