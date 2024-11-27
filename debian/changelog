@@ -1,3 +1,13 @@
+cinnamon-session (6.4.0) xia; urgency=medium
+
+  [ Clement Lefebvre ]
+  * autostart: Blacklist nm-applet
+
+  [ Michael Webster ]
+  * Refactor/simplify end-session dialog handling to use a native- (#177)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 27 Nov 2024 09:23:18 +0000
+
 cinnamon-session (6.2.1) wilma; urgency=medium
 
   [ Leigh Scott ]
