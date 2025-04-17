@@ -60,7 +60,7 @@ class QuitDialog:
         group.add_argument("--reboot", dest="mode", action='store_const', const=Action.RESTART,
                             help="Log out")
         parser.add_argument("--force", dest="force", action="store_true",
-                            help=_("Ignoring any existing inhibitors"))
+                            help=_("Ignoring any existing inhibitors. Implies --no-prompt"))
         parser.add_argument("--no-prompt", dest="no_prompt", action='store_true',
                             help=_("Don't prompt for user confirmation"))
         parser.add_argument("--sm-owned", action="store_true", help=argparse.SUPPRESS)
@@ -76,8 +76,13 @@ class QuitDialog:
         self.mode = args.mode
         self.default_response = ResponseCode(int(self.mode))
 
-        self.force = args.force
-        self.no_prompt = args.no_prompt
+        if args.force:
+            self.LogoutMode = LogoutParams.FORCE
+        elif args.no_prompt:
+            self.LogoutMode = LogoutParams.NO_PROMPT
+        else:
+            self.LogoutMode = LogoutParams.NORMAL
+
         self.sm_owned = args.sm_owned
         self.bus_id = args.bus_id
 
@@ -120,16 +125,10 @@ class QuitDialog:
                     print("An error occurred forwarding to the session manager: %s" % e.message, file=sys.stderr, end=None)
 
             if self.mode == Action.LOGOUT:
-                arg = LogoutParams.NORMAL
-
-                if self.no_prompt:
-                    arg |= LogoutParams.NO_PROMPT
-                if self.force:
-                    arg |= LogoutParams.FORCE
 
                 sm_proxy.call(
                     "Logout",
-                    GLib.Variant("(u)", [arg]),
+                    GLib.Variant("(u)", [self.LogoutMode]),
                     Gio.DBusCallFlags.NO_AUTO_START,
                     -1,
                     None,
