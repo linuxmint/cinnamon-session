@@ -164,6 +164,12 @@ csm_system_is_last_session_for_user (CsmSystem *system)
         return CSM_SYSTEM_GET_IFACE (system)->is_last_session_for_user (system);
 }
 
+gchar *
+csm_system_get_login_session_id (CsmSystem    *system)
+{
+        return CSM_SYSTEM_GET_IFACE (system)->get_login_session_id (system);
+}
+
 CsmSystem *
 csm_get_system (void)
 {

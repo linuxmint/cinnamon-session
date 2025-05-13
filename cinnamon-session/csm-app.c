@@ -510,18 +510,23 @@ csm_app_restart (CsmApp  *app,
         GTimeVal current_time;
         g_debug ("Re-starting app: %s", app->priv->id);
 
-        g_get_current_time (&current_time);
-        if (app->priv->last_restart_time.tv_sec > 0
-            && (current_time.tv_sec - app->priv->last_restart_time.tv_sec) < _CSM_APP_RESPAWN_RATELIMIT_SECONDS) {
-                g_warning ("App '%s' respawning too quickly", csm_app_peek_app_id (app));
-                g_set_error (error,
-                             CSM_APP_ERROR,
-                             CSM_APP_ERROR_RESTART_LIMIT,
-                             "Component '%s' crashing too quickly",
-                             csm_app_peek_app_id (app));
-                return FALSE;
+        // Cinnamon is *not* autorestart, we will only force it to via dbus RestartCinnamonLauncher
+        // and don't want that to be skipped for some reason if it happens multiple times within a minute.
+        // (This shouldn't ever happen anyhow).
+        if (g_strcmp0 (app->priv->app_id, "cinnamon.desktop") != 0) {
+                g_get_current_time (&current_time);
+                if (app->priv->last_restart_time.tv_sec > 0
+                    && (current_time.tv_sec - app->priv->last_restart_time.tv_sec) < _CSM_APP_RESPAWN_RATELIMIT_SECONDS) {
+                        g_warning ("App '%s' respawning too quickly", csm_app_peek_app_id (app));
+                        g_set_error (error,
+                                     CSM_APP_ERROR,
+                                     CSM_APP_ERROR_RESTART_LIMIT,
+                                     "Component '%s' crashing too quickly",
+                                     csm_app_peek_app_id (app));
+                        return FALSE;
+                }
+                app->priv->last_restart_time = current_time;
         }
-        app->priv->last_restart_time = current_time;
 
         return CSM_APP_GET_CLASS (app)->impl_restart (app, error);
 }

@@ -143,6 +143,8 @@ void                _csm_manager_set_active_session            (CsmManager     *
                                                                 const char     *session_name,
                                                                 gboolean        is_fallback);
 
+void                _csm_manager_export_login_session_id       (CsmManager     *manager);
+
 gboolean            csm_manager_set_phase                      (CsmManager     *manager,
                                                                 CsmManagerPhase phase);
 

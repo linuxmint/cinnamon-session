@@ -431,5 +431,20 @@
       </doc:doc>
     </property>
 
+    <property name="SessionId" type="s" access="read">
+      <doc:doc>
+        <doc:description>
+          <doc:para>The login session ID of cinnamon-session.</doc:para>
+        </doc:description>
+      </doc:doc>
+    </property>
+
+    <method name="RestartCinnamonLauncher">
+      <doc:doc>
+        <doc:description>
+          <doc:para>Launches cinnamon-launcher for current session.</doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
   </interface>
 </node>

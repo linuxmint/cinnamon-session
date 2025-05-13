@@ -1598,6 +1598,17 @@ _csm_manager_set_active_session (CsmManager     *manager,
                                                session_name);
 }
 
+void
+_csm_manager_export_login_session_id (CsmManager *manager)
+{
+        g_autofree gchar *session_id = NULL;
+
+        session_id = csm_system_get_login_session_id (manager->priv->system);
+
+        csm_exported_manager_set_session_id (manager->priv->skeleton,
+                                             session_id);
+}
+
 static gboolean
 _app_has_app_id (const char   *id,
                  CsmApp       *app,
@@ -1693,6 +1704,29 @@ find_app_for_startup_id (CsmManager *manager,
         }
  out:
         return found_app;
+}
+
+static gboolean
+restart_cinnamon_launcher (CsmManager *manager)
+{
+    CsmApp *app;
+
+    app = find_app_for_app_id (manager, "cinnamon.desktop");
+
+    if (app) {
+        GError *error = NULL;
+
+        g_debug ("CsmManager: Restarting cinnamon-launcher");
+
+        if (!csm_app_restart (app, &error)) {
+            g_warning ("CsmManager: Unable to restart cinnamon-launcher: %s", error->message);
+            g_error_free (error);
+        }
+    } else {
+        g_warning ("CsmManager: Unable to find the cinnamon-launcher");
+    }
+
+    return G_SOURCE_REMOVE;
 }
 
 static gboolean
@@ -2348,6 +2382,30 @@ csm_manager_request_reboot (CsmExportedManager     *skeleton,
         return TRUE;
 }
 
+static gboolean
+csm_manager_restart_cinnamon_launcher (CsmExportedManager     *skeleton,
+                                       GDBusMethodInvocation  *invocation,
+                                       CsmManager             *manager)
+{
+        g_debug ("CsmManager: RestartCinnamonLauncher called");
+
+        if (manager->priv->phase != CSM_MANAGER_PHASE_RUNNING) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       CSM_MANAGER_ERROR,
+                                                       CSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                                                       "RestartCinnamonLauncher interface is only available during the Running phase");
+
+                return TRUE;
+        }
+
+        g_idle_add ((GSourceFunc)restart_cinnamon_launcher, manager);
+
+        csm_exported_manager_complete_restart_cinnamon_launcher (skeleton,
+                                                                 invocation);
+
+        return TRUE;
+}
+
 static void
 _disconnect_client (CsmManager *manager,
                     CsmClient  *client)
@@ -2759,7 +2817,8 @@ static SkeletonSignal skeleton_signals[] = {
     { "handle-logout",                          csm_manager_logout_dbus },
     { "handle-is-session-running",              csm_manager_is_session_running },
     { "handle-request-shutdown",                csm_manager_request_shutdown },
-    { "handle-request-reboot",                  csm_manager_request_reboot }
+    { "handle-request-reboot",                  csm_manager_request_reboot },
+    { "handle-restart-cinnamon-launcher",       csm_manager_restart_cinnamon_launcher }
 };
 
 static SkeletonSignal dialog_skeleton_signals[] = {
