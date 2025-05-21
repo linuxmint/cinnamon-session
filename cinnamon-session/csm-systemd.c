@@ -718,6 +718,26 @@ csm_systemd_is_last_session_for_user (CsmSystem *system)
         return is_last_session;
 }
 
+static gchar *
+csm_systemd_get_login_session_id (CsmSystem *system)
+{
+        CsmSystemd *manager = CSM_SYSTEMD (system);
+
+        gchar *pid_session;
+        gint ret;
+
+        ret = sd_pid_get_session (getpid (), &pid_session);
+
+        if (ret < 0) {
+            g_printerr ("can't get login session id for cinnamon-session. errno: %d\n", -ret);
+            return NULL;
+        }
+
+        g_debug ("Login session ID is: %s\n", pid_session);
+
+        return pid_session;
+}
+
 static void
 csm_systemd_system_init (CsmSystemInterface *iface)
 {
@@ -737,6 +757,7 @@ csm_systemd_system_init (CsmSystemInterface *iface)
         iface->add_inhibitor = csm_systemd_add_inhibitor;
         iface->remove_inhibitor = csm_systemd_remove_inhibitor;
         iface->is_last_session_for_user = csm_systemd_is_last_session_for_user;
+        iface->get_login_session_id = csm_systemd_get_login_session_id;
 }
 
 CsmSystemd *

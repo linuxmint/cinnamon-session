@@ -70,6 +70,7 @@ struct _CsmSystemInterface
         void     (* remove_inhibitor) (CsmSystem        *system,
                                        const gchar      *id);
         gboolean (* is_last_session_for_user) (CsmSystem *system);
+        gchar *  (* get_login_session_id) (CsmSystem *system);
 };
 
 enum _CsmSystemError {
@@ -119,7 +120,7 @@ void       csm_system_add_inhibitor    (CsmSystem        *system,
 
 void       csm_system_remove_inhibitor (CsmSystem        *system,
                                         const gchar      *id);
-
+gchar     *csm_system_get_login_session_id (CsmSystem    *system);
 G_END_DECLS
 
 #endif /* __CSM_SYSTEM_H__ */

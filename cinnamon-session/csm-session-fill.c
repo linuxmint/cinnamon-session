@@ -496,6 +496,7 @@ csm_session_fill (CsmManager  *manager,
         }
 
         _csm_manager_set_active_session (manager, actual_session, is_fallback);
+        _csm_manager_export_login_session_id (manager);
 
         g_free (actual_session);
 
