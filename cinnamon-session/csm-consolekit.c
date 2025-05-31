@@ -31,10 +31,6 @@
 #include <gio/gio.h>
 #include <gio/gunixfdlist.h>
 
-#ifdef HAVE_OLD_UPOWER
-#define UPOWER_ENABLE_DEPRECATED 1
-#include <upower.h>
-#endif
 
 #include "csm-system.h"
 #include "csm-consolekit.h"
@@ -51,9 +47,6 @@ struct _CsmConsolekitPrivate
 {
         GDBusProxy      *ck_proxy;
         GDBusProxy      *ck_session_proxy;
-#ifdef HAVE_OLD_UPOWER
-        UpClient        *up_client;
-#endif
         char            *session_id;
         gchar           *session_path;
 
@@ -113,9 +106,6 @@ csm_consolekit_finalize (GObject *object)
         drop_system_inhibitor (consolekit);
         drop_delay_inhibitor (consolekit);
 
-#ifdef HAVE_OLD_UPOWER
-        g_clear_object (&manager->priv->up_client);
-#endif
 
         G_OBJECT_CLASS (csm_consolekit_parent_class)->finalize (object);
 }
@@ -280,10 +270,6 @@ csm_consolekit_init (CsmConsolekit *manager)
         g_signal_connect (manager->priv->ck_session_proxy, "g-signal",
                           G_CALLBACK (ck_session_proxy_signal_cb), manager);
 
-#ifdef HAVE_OLD_UPOWER
-        g_clear_object (&manager->priv->up_client);
-        manager->priv->up_client = up_client_new ();
-#endif
 
         g_object_unref (bus);
 }
@@ -603,10 +589,6 @@ csm_consolekit_is_login_session (CsmSystem *system)
 static gboolean
 csm_consolekit_can_suspend (CsmSystem *system)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        return up_client_get_can_suspend (consolekit->priv->up_client);
-#else
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
         gchar *rv;
         GVariant *res;
@@ -634,16 +616,11 @@ csm_consolekit_can_suspend (CsmSystem *system)
         g_free (rv);
 
         return can_suspend;
-#endif
 }
 
 static gboolean
 csm_consolekit_can_hibernate (CsmSystem *system)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        return up_client_get_can_hibernate (consolekit->priv->up_client);
-#else
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
         gchar *rv;
         GVariant *res;
@@ -671,7 +648,6 @@ csm_consolekit_can_hibernate (CsmSystem *system)
         g_free (rv);
 
         return can_hibernate;
-#endif
 }
 
 static void
@@ -715,17 +691,6 @@ hibernate_done (GObject      *source,
 static void
 csm_consolekit_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        GError *error = NULL;
-        gboolean ret;
-
-        ret = up_client_suspend_sync (consolekit->priv->up_client, NULL, &error);
-        if (!ret) {
-                g_warning ("Unexpected suspend failure: %s", error->message);
-                g_error_free (error);
-        }
-#else
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
 
 	gchar *method = "Suspend";
@@ -742,23 +707,11 @@ csm_consolekit_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
                            NULL,
                            suspend_done,
                            manager);
-#endif
 }
 
 static void
 csm_consolekit_hibernate (CsmSystem *system)
 {
-#ifdef HAVE_OLD_UPOWER
-        CsmConsolekit *consolekit = CSM_CONSOLEKIT (system);
-        GError *error = NULL;
-        gboolean ret;
-
-        ret = up_client_hibernate_sync (consolekit->priv->up_client, NULL, &error);
-        if (!ret) {
-                g_warning ("Unexpected hibernate failure: %s", error->message);
-                g_error_free (error);
-        }
-#else
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
 
         g_dbus_proxy_call (manager->priv->ck_proxy,
@@ -769,7 +722,6 @@ csm_consolekit_hibernate (CsmSystem *system)
                            NULL,
                            hibernate_done,
                            manager);
-#endif
 }
 
 static void
