@@ -2775,8 +2775,8 @@ handle_dialog_method_call (CsmExportedDialog     *dialog_skeleton,
                              (!_log_out_is_locked_down (manager)) && csm_system_can_stop (manager->priv->system),
                              (!_log_out_is_locked_down (manager)) && csm_system_can_restart (manager->priv->system),
                              can_hybrid_sleep,
-                             (!csm_manager_is_suspend_inhibited (manager)) && csm_system_can_suspend (manager->priv->system),
-                             (!csm_manager_is_suspend_inhibited (manager)) && csm_system_can_hibernate (manager->priv->system),
+                             csm_system_can_suspend (manager->priv->system),
+                             csm_system_can_hibernate (manager->priv->system),
                              (!csm_manager_is_logout_inhibited (manager)));
 
         csm_exported_dialog_complete_get_capabilities (dialog_skeleton, invocation, ret);
