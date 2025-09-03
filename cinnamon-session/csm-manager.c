@@ -473,6 +473,8 @@ csm_manager_quit (CsmManager *manager)
         /* See the comment in request_reboot() for some more details about how
          * this works. */
 
+        csm_store_clear (manager->priv->inhibitors);
+
         switch (manager->priv->logout_type) {
         case CSM_MANAGER_LOGOUT_LOGOUT:
                 csm_quit ();
