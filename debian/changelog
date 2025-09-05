@@ -1,3 +1,10 @@
+cinnamon-session (6.4.1) gigi; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Clear system inhibitors before attempting to restart or shutdown using systemd.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 05 Sep 2025 16:42:40 +0100
+
 cinnamon-session (6.4.0) xia; urgency=medium
 
   [ Clement Lefebvre ]
