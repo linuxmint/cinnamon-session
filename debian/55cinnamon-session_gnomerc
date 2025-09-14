@@ -11,12 +11,8 @@ case "$BASESTARTUP" in
     if [ -r "$GNOMERC" ]; then
       . "$GNOMERC"
     fi
-    # We prepend /usr/share/gnome since its defaults.list actually points
-    # to /etc so it is configurable.
     if [ -z "$XDG_DATA_DIRS" ]; then
-      XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/
-    else
-      XDG_DATA_DIRS=/usr/share/gnome:"$XDG_DATA_DIRS"
+      XDG_DATA_DIRS=/usr/local/share/:/usr/share/
     fi
     export XDG_DATA_DIRS
     ;;
