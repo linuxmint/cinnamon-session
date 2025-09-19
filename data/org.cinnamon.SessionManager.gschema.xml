@@ -53,5 +53,10 @@
       <summary>The system is suspended and put into hibernation after being suspended for a certain time. (Defaults to 2h, see systemd-sleep.conf)</summary>
       <description>Whether or not to attempt to use suspend-then-hibernate. If it is unsupported, normal suspend will be used instead</description>
     </key>
+    <key name="shutdown-dialog-default-actions" type="as">
+      <default>['shutdown', 'cancel', 'suspend', 'hibernate', 'restart']</default>
+      <summary>Determines the default action of the shutdown dialog.</summary>
+      <description>A list of actions ('cancel', 'shutdown', 'restart', 'suspend' and 'hibernate') that determines the default action of the shutdown dialog. The first action that is actually usable is selected.</description>
+    </key>
   </schema>
 </schemalist>
