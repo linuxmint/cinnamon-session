@@ -193,7 +193,7 @@
                             <property name="can-focus">False</property>
                             <property name="halign">end</property>
                             <property name="margin-start">20</property>
-                            <property name="icon-name">system-shutdown-symbolic</property>
+                            <property name="icon-name">xapp-shutdown-symbolic</property>
                             <property name="icon_size">6</property>
                           </object>
                           <packing>
