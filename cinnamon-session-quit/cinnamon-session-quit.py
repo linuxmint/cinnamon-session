@@ -264,7 +264,7 @@ class QuitDialog:
             self.button_switchuser.set_visible(can_switch_user)
             self.button_logout.set_visible(True)
             default_button = self.button_logout
-            self.action_icon.set_from_icon_name("xapp-log-out-symbolic", Gtk.IconSize.DIALOG)
+            self.action_icon.set_from_icon_name("xsi-log-out-symbolic", Gtk.IconSize.DIALOG)
             self.window.set_icon_name("system-log-out")
         elif self.mode == Action.SHUTDOWN:
             self.dialog_label.set_text(_("Shut down this system now?"))
@@ -273,7 +273,7 @@ class QuitDialog:
             self.button_restart.set_visible(can_restart)
             self.button_shutdown.set_visible(can_stop)
             default_button = self.button_shutdown
-            self.action_icon.set_from_icon_name("xapp-shutdown-symbolic", Gtk.IconSize.DIALOG)
+            self.action_icon.set_from_icon_name("xsi-shutdown-symbolic", Gtk.IconSize.DIALOG)
             self.window.set_icon_name("system-shutdown")
         elif self.mode == Action.RESTART:
             if not can_restart:
@@ -283,7 +283,7 @@ class QuitDialog:
             self.dialog_label.set_text(_("Restart this system now?"))
             self.button_restart.set_visible(True)
             default_button = self.button_restart
-            self.action_icon.set_from_icon_name("xapp-reboot-symbolic", Gtk.IconSize.DIALOG)
+            self.action_icon.set_from_icon_name("xsi-reboot-symbolic", Gtk.IconSize.DIALOG)
             self.window.set_icon_name("system-reboot")
 
         default_button.get_style_context().add_class("destructive-action")
