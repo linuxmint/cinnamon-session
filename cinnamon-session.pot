@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-19 14:25+0000\n"
+"POT-Creation-Date: 2025-11-25 14:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,48 +27,48 @@ msgid "Power off"
 msgstr ""
 
 #: cinnamon-session-quit/cinnamon-session-quit.py:63
-msgid "Ignoring any existing inhibitors"
+msgid "Ignoring any existing inhibitors. Implies --no-prompt"
 msgstr ""
 
 #: cinnamon-session-quit/cinnamon-session-quit.py:65
 msgid "Don't prompt for user confirmation"
 msgstr ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:245
+#: cinnamon-session-quit/cinnamon-session-quit.py:263
 msgid "Log out of this system now?"
 msgstr ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:251
+#: cinnamon-session-quit/cinnamon-session-quit.py:270
 msgid "Shut down this system now?"
 msgstr ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:263
+#: cinnamon-session-quit/cinnamon-session-quit.py:283
 #: cinnamon-session-quit/cinnamon-session-quit.glade.h:10
 msgid "Restart this system now?"
 msgstr ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:312
+#: cinnamon-session-quit/cinnamon-session-quit.py:341
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be logged out in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:318
+#: cinnamon-session-quit/cinnamon-session-quit.py:347
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be shut down in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cinnamon-session-quit/cinnamon-session-quit.py:324
+#: cinnamon-session-quit/cinnamon-session-quit.py:353
 #, c-format
 msgid "This system will be automatically restarted in %d second."
 msgid_plural "This system will be restarted in %d seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cinnamon-session/csm-manager.c:1436 cinnamon-session/csm-manager.c:3146
+#: cinnamon-session/csm-manager.c:1421 cinnamon-session/csm-manager.c:3143
 msgid "Not responding"
 msgstr ""
 
@@ -110,39 +110,39 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: cinnamon-session/main.c:209
+#: cinnamon-session/main.c:208
 msgid "Override standard autostart directories"
 msgstr ""
 
-#: cinnamon-session/main.c:209
+#: cinnamon-session/main.c:208
 msgid "AUTOSTART_DIR"
 msgstr ""
 
-#: cinnamon-session/main.c:210
+#: cinnamon-session/main.c:209
 msgid "Session to use"
 msgstr ""
 
-#: cinnamon-session/main.c:210
+#: cinnamon-session/main.c:209
 msgid "SESSION_NAME"
 msgstr ""
 
-#: cinnamon-session/main.c:211
+#: cinnamon-session/main.c:210
 msgid "Enable debugging code"
 msgstr ""
 
-#: cinnamon-session/main.c:212
+#: cinnamon-session/main.c:211
 msgid "Do not load user-specified applications"
 msgstr ""
 
-#: cinnamon-session/main.c:213
+#: cinnamon-session/main.c:212
 msgid "Version of this application"
 msgstr ""
 
-#: cinnamon-session/main.c:215
+#: cinnamon-session/main.c:214
 msgid "Show the fail whale dialog for testing"
 msgstr ""
 
-#: cinnamon-session/main.c:246
+#: cinnamon-session/main.c:245
 msgid " - the Cinnamon session manager"
 msgstr ""
 
