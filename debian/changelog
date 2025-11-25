@@ -1,3 +1,26 @@
+cinnamon-session (6.6.0) zena; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Add functionality to restart the cinnamon-launcher (#184)
+
+  [ SimonBenito ]
+  * Fixes cinnamon-session-quit --logout --no-prompt --force not working (#183)
+
+  [ Leigh Scott ]
+  * Remove old upower support to match c-s-d commits (#185)
+
+  [ Michael Webster ]
+  * csm-manager.c: Don't consider suspend inhibitors when gathering capabilities for the logout dialog.
+  * csm-manager.c: Clear system inhibitors before attempting to restart or shutdown using systemd.
+
+  [ Clement Lefebvre ]
+  * XDG_DATA_DIRS: Do not include /usr/share/gnome
+  * Switch to XApp symbolic icons
+  * Switch to xapp-symbolic-icons (XSI)
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 25 Nov 2025 14:20:08 +0000
+
 cinnamon-session (6.4.0) xia; urgency=medium
 
   [ Clement Lefebvre ]
