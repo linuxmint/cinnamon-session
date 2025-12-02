@@ -265,6 +265,30 @@ main (int argc, char **argv)
         csm_util_export_activation_environment (NULL);
         csm_util_export_user_environment (NULL);
 
+        {
+                gchar *ibus_path;
+
+                ibus_path = g_find_program_in_path("ibus-daemon");
+
+                if (ibus_path) {
+                        const gchar *p;
+                        p = g_getenv ("QT_IM_MODULES");
+                        if (!p || !*p)
+                                p = "wayland;ibus";
+                        csm_util_setenv ("QT_IM_MODULES", p);
+                        p = g_getenv ("QT_IM_MODULE");
+                        if (!p || !*p)
+                                p = "ibus";
+                        csm_util_setenv ("QT_IM_MODULE", p);
+                        p = g_getenv ("XMODIFIERS");
+                        if (!p || !*p)
+                                p = "@im=ibus";
+                        csm_util_setenv ("XMODIFIERS", p);
+                }
+
+                g_free (ibus_path);
+        }
+
         mdm_log_init ();
         mdm_log_set_debug (debug);
 
