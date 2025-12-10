@@ -1,3 +1,10 @@
+cinnamon-session (6.6.1) zena; urgency=medium
+
+  [ Leigh Scott ]
+  * Set env for qt ibus (#191)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 10 Dec 2025 14:28:33 +0000
+
 cinnamon-session (6.6.0) zena; urgency=medium
 
   [ Michael Webster ]
