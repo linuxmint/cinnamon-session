@@ -3835,7 +3835,7 @@ request_suspend (CsmManager *manager)
                 return;
         }
 
-        emit_inhibitor_info_to_dialog (manager, CSM_LOGOUT_ACTION_HIBERNATE);
+        emit_inhibitor_info_to_dialog (manager, CSM_LOGOUT_ACTION_SLEEP);
 }
 
 static void
