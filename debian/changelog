@@ -1,3 +1,10 @@
+cinnamon-session (6.6.2) zena; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Fix the suspend action enum when blocked by an inhibitor.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 09 Feb 2026 16:24:32 +0000
+
 cinnamon-session (6.6.1) zena; urgency=medium
 
   [ Leigh Scott ]
