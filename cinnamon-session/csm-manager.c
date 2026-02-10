@@ -1232,11 +1232,11 @@ manager_switch_user (CsmManager *manager)
 static void
 manager_attempt_hibernate (CsmManager *manager)
 {
+        close_end_session_dialog (manager);
+
         /* lock the screen before we try anything.  If it all fails, at least the screen is locked
          * (if preferences dictate it) */
         manager_perhaps_lock (manager);
-
-        close_end_session_dialog (manager);
 
         if (csm_system_can_hibernate (manager->priv->system)) {
                 csm_system_hibernate (manager->priv->system);
@@ -1246,11 +1246,11 @@ manager_attempt_hibernate (CsmManager *manager)
 static void
 manager_attempt_suspend (CsmManager *manager)
 {
+        close_end_session_dialog (manager);
+
         /* lock the screen before we try anything.  If it all fails, at least the screen is locked
          * (if preferences dictate it) */
         manager_perhaps_lock (manager);
-
-        close_end_session_dialog (manager);
 
         if (g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
             csm_system_can_hybrid_sleep (manager->priv->system)) {
