@@ -1,3 +1,11 @@
+cinnamon-session (6.6.3) zena; urgency=medium
+
+  [ Michael Webster ]
+  * .github/workflows: Update build.yml with generate-test-packages.
+  * csm-manager.c: Close the end-session dialog before trying to lock (#199)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Feb 2026 16:26:06 +0000
+
 cinnamon-session (6.6.2) zena; urgency=medium
 
   [ Michael Webster ]
