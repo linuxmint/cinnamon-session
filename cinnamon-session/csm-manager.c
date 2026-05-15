@@ -272,9 +272,19 @@ static void
 on_required_app_failure (CsmManager  *manager,
                          CsmApp      *app)
 {
-        csm_util_init_error (FALSE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'.",
-                             csm_app_peek_app_id (app),
-                             csm_app_peek_startup_id (app));
+        if (g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0) {
+                /* In Wayland, if cinnamon-wayland fails to start (required component), there's no compositor.
+                So if a required component fails, we want to terminate the session and go back to the DM. */
+                csm_util_init_error (TRUE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'. The session will be terminated.",
+                                     csm_app_peek_app_id (app),
+                                     csm_app_peek_startup_id (app));
+        } else {
+                /* In Xorg, even if Cinnamon fails to start we want to show nemo-desktop and cinnamon-killer-daemon.
+                So if a required component fails, we still keep the session alive. */
+                csm_util_init_error (FALSE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'.",
+                                     csm_app_peek_app_id (app),
+                                     csm_app_peek_startup_id (app));
+        }
 }
 
 static gboolean
