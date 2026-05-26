@@ -58,6 +58,13 @@ gboolean    csm_util_export_user_environment        (GError     **error);
 void        csm_util_setenv                         (const char *variable,
                                                      const char *value);
 
+gboolean    csm_util_start_systemd_unit             (const char  *unit,
+                                                     const char  *mode,
+                                                     GError     **error);
+gboolean    csm_util_stop_systemd_unit              (const char  *unit,
+                                                     const char  *mode,
+                                                     GError     **error);
+
 // main.c, exit mainloop
 void        csm_quit                                (void);
 
