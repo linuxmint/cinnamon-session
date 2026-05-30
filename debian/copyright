@@ -4,21 +4,26 @@ Upstream-Contact: Linux Mint Project <root@linuxmint.com>
 Source: https://github.com/linuxmint/cinnamon-session
 
 Files: *
-           1998-2012, Free Software Foundation, Inc
+Copyright: 1998-2012, Free Software Foundation, Inc
+           2002-2003, George Lebl
+           2008, Lucas Rocha
            2000, Miguel de Icaza <miguel@helixcode.com>
-           2006-2011, Novell, Inc
+           2006-2010, Novell, Inc
+           2001, Queen of England
+           2005, Raffaele Sandrini
            2005-2012, Red Hat, Inc
            2009-2010, Vincent Untz <vuntz@gnome.org>
+           2007-2008, William Jon McCann <jmccann@redhat.com>
 License: GPL-2+
 
-Files: cinnamon-session/csm-inhibit-dialog.*
-       cinnamon-session/csm-store.*
+Files: cinnamon-session/csm-store.*
        cinnamon-session/mdm-log.*
        cinnamon-session/mdm-signal-handler.h
        cinnamon-session/csm-consolekit.*
        cinnamon-session/csm-manager.h
        cinnamon-session/csm-xsmp-server.h
        cinnamon-session/csm-system.h
+       doc/dbus/spec-to-docbook.xsl
 Copyright: 2007-2008, William Jon McCann <jmccann@redhat.com>
 License: GPL-2+
 
@@ -41,95 +46,31 @@ Copyright: 2007, Novell, Inc
            2008, William Jon McCann <jmccann@redhat.com>
 License: GPL-2+
 
-Files: cinnamon-session/csm-logout-dialog.c
-Copyright: 2006, Vincent Untz
-           2008, Red Hat, Inc
-License: GPL-2+
-
-Files: tools/cinnamon-session-quit.c
-Copyright: 1998, Tom Tromey
-           2008, Red Hat, Inc
-License: GPL-2+
-
 Files: cinnamon-session/mdm-signal-handler.c
 Copyright: 2006, Red Hat, Inc
            2007, William Jon McCann <mccann@jhu.edu>
 License: GPL-2+
 
-Files: cinnamon-session/csm-logout-dialog.h
-Copyright: 2006, Vincent Untz
-License: GPL-2+
-
-Files: egg/*
-Copyright: 2007, Novell, Inc
-License: LGPL-2+
-
-Files: egg/eggsmclient-xsmp.c
-Copyright: 1998, Carsten Schaar, and twm
-           1998, The Open Group
-           2007, Novell, Inc
-License: LGPL-2+
-
-Files: egg/eggdesktopfile.c
-Copyright: 1999-2000, Red Hat Inc
-           2001, George Lebl
-           2007, Novell, Inc
-License: LGPL-2+
-
-Files: po/Makefile.in.in
-Copyright: 2004-2008, Rodney Dawes <dobey.pwns@gmail.com>
-           1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
-License: Permissive
-
 Files: debian/*
 Copyright: 2013-2014, Linux Mint Project <root@linuxmint.com>
-           2014-2018, Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+           2014-2026, Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
 License: GPL-2+
 
-License: GPL
- This file is distributed under the terms of GNU General Public License (GPL)
+License: GPL-2+
+ SPDX "GPL-2.0-or-later": https://spdx.org/licenses/GPL-2.0-or-later.html
  .
- On Debian systems, the complete text of the GNU General Public License can be
- found in `/usr/share/common-licenses/GPL'.
-
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
+ This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
  .
- This package is distributed in the hope that it will be useful,
+ This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this package; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
  .
  On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-
-License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
- .
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- Lesser General Public License for more details.
- .
- You should have received a copy of the GNU Lesser General Public
- License along with this library; if not, write to the
- Free Software Foundation, Inc., 51 Franklin Street - Suite 500,
- Boston, MA 02110-1335, USA.
- .
- On Debian systems, the complete text of the GNU Lesser General Public License
- version 2 can be found in `/usr/share/common-licenses/LGPL-2'.
-
-License: Permissive
- This file is free software; the Free Software Foundation gives
- unlimited permission to copy and/or distribute it, with or without
- modifications, as long as this notice is preserved.
+ version 2 can be found in /usr/share/common-licenses/GPL-2.
