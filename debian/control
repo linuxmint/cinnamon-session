@@ -11,6 +11,7 @@ Build-Depends:
  libglib2.0-dev (>= 2.37.3),
  libgtk-3-dev (>= 3.0.0),
  libice-dev,
+ libpango1.0-dev,
  libsm-dev,
  libsystemd-dev [linux-any],
  libx11-dev,
