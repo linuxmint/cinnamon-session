@@ -24,6 +24,7 @@ Build-Depends:
  meson,
  xtrans-dev,
 Standards-Version: 3.9.6
+Homepage: https://github.com/linuxmint/cinnamon-session
 
 Package: cinnamon-session
 Architecture: any
