@@ -7,7 +7,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		--libexecdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		--libexecdir=/usr/lib/$(DEB_HOST_MULTIARCH)/cinnamon-session \
 		-Dfrequent_warnings=true \
 		-Dipv6=true \
 		-Dxtrans=true
