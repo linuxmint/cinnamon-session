@@ -13,7 +13,3 @@ override_dh_auto_configure:
 		-Dipv6=true \
 		-Dxtrans=true
 
-# keep the lenient --list-missing instead of compat 13's default --fail-missing
-override_dh_missing:
-	dh_missing --list-missing
-
