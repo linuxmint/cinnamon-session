@@ -45,8 +45,6 @@ Depends:
  ${python3:Depends},
  ${shlibs:Depends},
 Recommends: cinnamon-l10n
-Breaks: cinnamon-session-common (<< 2.2.2-5~)
-Replaces: cinnamon-session-common (<< 2.2.2-5~)
 Provides: x-session-manager
 Description: Cinnamon Session Manager - Minimal runtime
  The Cinnamon Session Manager is in charge of starting the core components
