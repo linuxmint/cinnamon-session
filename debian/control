@@ -5,7 +5,6 @@ Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
  debhelper (>= 11.1~),
  dh-sequence-python3,
- gnome-pkg-tools (>= 0.13),
  libcanberra-dev,
  libcinnamon-desktop-dev (>= 6.0),
  libgl1-mesa-dev,
