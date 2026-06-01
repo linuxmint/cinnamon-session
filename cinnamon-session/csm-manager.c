@@ -873,6 +873,8 @@ do_phase_end_session (CsmManager *manager)
 
         close_end_session_dialog (manager);
 
+        csm_util_stop_systemd_unit ("cinnamon-session.target", "replace", NULL);
+
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
@@ -1523,6 +1525,7 @@ start_phase (CsmManager *manager)
                 csm_xsmp_server_start_accepting_new_clients (manager->priv->xsmp_server);
                 csm_exported_manager_emit_session_running (manager->priv->skeleton);
                 update_idle (manager);
+                csm_util_start_systemd_unit ("cinnamon-session.target", "replace", NULL);
                 break;
         case CSM_MANAGER_PHASE_QUERY_END_SESSION:
                 csm_xsmp_server_stop_accepting_new_clients (manager->priv->xsmp_server);

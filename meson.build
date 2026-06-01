@@ -58,6 +58,23 @@ else
 endif
 conf.set('HAVE_LOGIND', logind.found())
 
+systemd_opt = get_option('systemd')
+systemd_dep = dependency('libsystemd', required: systemd_opt.enabled())
+if systemd_dep.found()
+  systemduserunitdir = systemd_dep.get_variable(
+    pkgconfig: 'systemduserunitdir',
+    default_value: join_paths(get_option('prefix'), 'lib', 'systemd', 'user')
+  )
+  enable_systemd = true
+else
+  enable_systemd = systemd_dep.found() and not systemd_opt.disabled()
+  systemduserunitdir = join_paths(get_option('prefix'), 'lib', 'systemd', 'user')
+endif
+
+message('Systemd integration: ' + (enable_systemd ? 'enabled' : 'disabled'))
+message('Systemd user unit dir: ' + systemduserunitdir)
+
+
 if gio_unix.found() and libelogind.found()
   elogind = declare_dependency(dependencies: [ gio_unix, libelogind ])
 else

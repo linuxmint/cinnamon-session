@@ -1,3 +1,5 @@
 option('frequent_warnings',  type: 'boolean', value: false)
 option('ipv6',               type: 'boolean', value: true)
 option('xtrans',             type: 'boolean', value: true)
+option('systemd',            type: 'feature', value: 'auto')
+
