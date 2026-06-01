@@ -20,3 +20,6 @@ install_data(
 
 # Re-compile gsettings
 meson.add_install_script('meson_install_schemas.py')
+
+subdir('systemd/user')
+

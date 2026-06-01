@@ -763,6 +763,72 @@ csm_util_update_user_environment (const char  *variable,
         return environment_updated;
 }
 
+gboolean
+csm_util_start_systemd_unit (const char  *unit,
+                             const char  *mode,
+                             GError     **error)
+{
+        g_autoptr(GDBusConnection) connection = NULL;
+        g_autoptr(GVariant)        reply = NULL;
+        GError          *bus_error = NULL;
+
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL)
+                return FALSE;
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "StartUnit",
+                                             g_variant_new ("(ss)",
+                                                            unit, mode),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+                return FALSE;
+        }
+
+        return TRUE;
+}
+
+gboolean
+csm_util_stop_systemd_unit (const char  *unit,
+                             const char  *mode,
+                             GError     **error)
+{
+        g_autoptr(GDBusConnection) connection = NULL;
+        g_autoptr(GVariant)        reply = NULL;
+        GError          *bus_error = NULL;
+
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL)
+                return FALSE;
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "StopUnit",
+                                             g_variant_new ("(ss)",
+                                                            unit, mode),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+                return FALSE;
+        }
+
+        return TRUE;
+}
+
 void
 csm_util_setenv (const char *variable,
                  const char *value)

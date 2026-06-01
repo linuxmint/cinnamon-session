@@ -1,0 +1,14 @@
+[Unit]
+Description=Cinnamon graphical session
+Documentation=man:systemd.special(7)
+
+Wants=graphical-session.target
+Before=graphical-session.target
+
+Wants=graphical-session-pre.target
+After=graphical-session-pre.target
+
+PropagatesStopTo=graphical-session.target
+PropagatesStopTo=graphical-session-pre.target
+
+CollectMode=inactive-or-failed
