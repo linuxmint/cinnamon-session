@@ -267,10 +267,27 @@ main (int argc, char **argv)
 
         {
                 gchar *ibus_path;
+                gchar *fcitx_path;
+                gboolean fcitx_active;
 
-                ibus_path = g_find_program_in_path("ibus-daemon");
+                ibus_path = g_find_program_in_path ("ibus-daemon");
+                fcitx_path = g_find_program_in_path ("fcitx5");
 
-                if (ibus_path) {
+                /* When fcitx is the active framework, it owns the Qt input env;
+                 * don't override it with the ibus QT_IM_MODULES list (Qt6 prefers that
+                 * list over QT_IM_MODULE and would try ibus first). On Wayland we always
+                 * assume ibus (there is no fcitx path there currently). Mirrors
+                 * js/misc/imFramework.js. */
+                {
+                        gboolean is_wayland = g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0;
+                        const gchar *gtk_im = g_getenv ("GTK_IM_MODULE");
+                        const gchar *xmod = g_getenv ("XMODIFIERS");
+                        gboolean fcitx_env = (gtk_im && g_strrstr (gtk_im, "fcitx")) ||
+                                             (xmod && g_strrstr (xmod, "fcitx"));
+                        fcitx_active = !is_wayland && fcitx_env && (fcitx_path != NULL);
+                }
+
+                if (ibus_path && !fcitx_active) {
                         const gchar *p;
                         p = g_getenv ("QT_IM_MODULES");
                         if (!p || !*p)
@@ -287,6 +304,7 @@ main (int argc, char **argv)
                 }
 
                 g_free (ibus_path);
+                g_free (fcitx_path);
         }
 
         mdm_log_init ();
