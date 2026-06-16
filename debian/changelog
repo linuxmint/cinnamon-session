@@ -1,3 +1,17 @@
+cinnamon-session (6.7.2) alfa; urgency=medium
+
+  [ Leigh Scott ]
+  * Add  xfce4-notifyd to -blacklist in SessionManager schema (#203)
+  * session: Add graphical-session.target support (#204)
+
+  [ Michael Webster ]
+  * main.c: Don't override QT_IM_MODULE and QT_IM_MODULES if fcitx5 is installed and selected.
+
+  [ Leigh Scott ]
+  * Man page renames (#206)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 16 Jun 2026 18:02:19 +0200
+
 cinnamon-session (6.7.1) unstable; urgency=medium
 
   * wayland: Terminate the session if cinnamon-wayland fails to load
