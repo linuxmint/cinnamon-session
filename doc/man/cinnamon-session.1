@@ -3,20 +3,20 @@
 .\" (C) 2000 Miguel de Icaza (miguel@helixcode.com)
 .\" (C) 2009-2010 Vincent Untz (vuntz@gnome.org)
 .\"
-.TH GNOME-SESSION 1 "GNOME"
+.TH CINNAMON-SESSION 1 "CINNAMON"
 .SH NAME
-cinnamon-session \- Start the GNOME desktop environment
+cinnamon-session \- Start the Cinnamon desktop environment
 .SH SYNOPSIS
 .B cinnamon-session [\-a|\-\-autostart=DIR] [\-\-session=SESSION] [\-\-failsafe|\-f] [\-\-debug] [\-\-whale]
 .SH DESCRIPTION
-The \fIcinnamon-session\fP program starts up the GNOME desktop
+The \fIcinnamon-session\fP program starts up the Cinnamon desktop
 environment. This command is typically executed by your login manager
 (either mdm, xdm, or from your X startup scripts). It will load
 either your saved session, or it will provide a default session for the
-user as defined by the system administrator (or the default GNOME
+user as defined by the system administrator (or the default Cinnamon
 installation on your system).
 .PP
-The default session is defined in \fBgnome.session\fP, a .desktop-like
+The default session is defined in \fBcinnamon.session\fP, a .desktop-like
 file that is looked for in
 \fB$XDG_CONFIG_HOME/cinnamon-session/sessions\fP,
 \fB$XDG_CONFIG_DIRS/cinnamon-session/sessions\fP and
@@ -26,19 +26,19 @@ When saving a session, \fIcinnamon-session\fP saves the currently running
 applications in the \fB$XDG_CONFIG_HOME/cinnamon-session/saved-session\fP
 directory.
 .PP
-\fIcinnamon-session\fP is an X11R6 session manager. It can manage GNOME
+\fIcinnamon-session\fP is an X11R6 session manager. It can manage Cinnamon
 applications as well as any X11R6 SM compliant application.
 .SH OPTIONS
 The following options are supported:
 .TP
 .I "--autostart=DIR"
 Start all applications defined in \fIDIR\fP, instead of starting the
-applications defined in \fBgnome.session\fP, or via the \fI--session\fP
+applications defined in \fBcinnamon.session\fP, or via the \fI--session\fP
 option. Multiple \fI--autostart\fP options can be passed.
 .TP
 .I "--session=SESSION"
 Use the applications defined in \fBSESSION.session\fP. If not specified,
-\fBgnome.session\fP will be used.
+\fBcinnamon.session\fP will be used.
 .TP
 .I "--failsafe"
 Run in fail-safe mode. User-specified applications will not be started.
@@ -50,7 +50,7 @@ Enable debugging code.
 Show the fail whale in a dialog for debugging it.
 .SH SESSION DEFINITION
 Sessions are defined in \fB.session\fP files, that are using a .desktop-like
-format, with the following keys in the \fBGNOME Session\fP group:
+format, with the following keys in the \fBCinnamon Session\fP group:
 .TP
 .I Name
 Name of the session. This can be localized.
@@ -68,9 +68,9 @@ Here is an example of a session definition:
 .PP
 .in +4n
 .nf
-[GNOME Session]
-Name=GNOME fallback
-RequiredComponents=gnome-panel;metacity;gnome-settings-daemon;
+[Cinnamon Session]
+Name=Cinnamon fallback
+RequiredComponents=cinnamon-panel;metacity;cinnamon-settings-daemon;
 RequiredProviders=notifications;
 DefaultProvider-notifications=notification-daemon
 .in
@@ -99,7 +99,7 @@ when cinnamon-session is invoked.
 .PP
 .B $XDG_CONFIG_HOME/config/autostart
 .B $XDG_CONFIG_DIRS/config/autostart
-.B /usr/share/gnome/autostart
+.B /usr/share/cinnamon/autostart
 .IP
 The applications defined in those directories will be started on login.
 \fIcinnamon-settings(1)\fP can be used to easily configure them.
