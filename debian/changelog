@@ -1,3 +1,14 @@
+cinnamon-session (6.6.4) zena; urgency=medium
+
+  [ Clement Lefebvre ]
+  * wayland: Terminate the session if cinnamon-wayland fails to load
+
+  [ Leigh Scott ]
+  * Add  xfce4-notifyd to -blacklist in SessionManager schema (#203)
+  * session: Add graphical-session.target support (#204)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 18 Jun 2026 16:34:49 +0200
+
 cinnamon-session (6.6.3) zena; urgency=medium
 
   [ Michael Webster ]
