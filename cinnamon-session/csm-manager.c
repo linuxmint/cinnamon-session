@@ -272,7 +272,7 @@ static void
 on_required_app_failure (CsmManager  *manager,
                          CsmApp      *app)
 {
-        if (g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0) {
+        if (csm_util_is_wayland_session ()) {
                 /* In Wayland, if cinnamon-wayland fails to start (required component), there's no compositor.
                 So if a required component fails, we want to terminate the session and go back to the DM. */
                 csm_util_init_error (TRUE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'. The session will be terminated.",
@@ -611,6 +611,18 @@ _restart_app (CsmManager *manager,
               CsmApp     *app)
 {
         GError *error = NULL;
+
+        /* In a Wayland session, Cinnamon is the compositor and display server.
+        Restarting it after a crash would leave a bare compositor running while
+        everything that depended on the display server (apps, the settings daemon,
+        etc.) is already dead. Terminate the session instead and return the user
+        to the login manager. */
+        if (csm_util_is_wayland_session () && csm_app_provides (app, "windowmanager")) {
+                csm_util_init_error (TRUE,
+                                     "Cinnamon ('%s') exited unexpectedly. The session will be terminated.",
+                                     csm_app_peek_app_id (app));
+                return;
+        }
 
         if (!csm_app_restart (app, &error)) {
                 if (is_app_required (manager, app)) {

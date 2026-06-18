@@ -279,7 +279,7 @@ main (int argc, char **argv)
                  * assume ibus (there is no fcitx path there currently). Mirrors
                  * js/misc/imFramework.js. */
                 {
-                        gboolean is_wayland = g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0;
+                        gboolean is_wayland = csm_util_is_wayland_session ();
                         const gchar *gtk_im = g_getenv ("GTK_IM_MODULE");
                         const gchar *xmod = g_getenv ("XMODIFIERS");
                         gboolean fcitx_env = (gtk_im && g_strrstr (gtk_im, "fcitx")) ||

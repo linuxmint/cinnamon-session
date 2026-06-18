@@ -46,6 +46,8 @@ const char *csm_util_get_current_desktop            (void);
 
 gboolean    csm_util_text_is_blank                  (const char *str);
 
+gboolean    csm_util_is_wayland_session             (void);
+
 void        csm_util_init_error                     (gboolean    fatal,
                                                      const char *format, ...);
 

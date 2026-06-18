@@ -426,6 +426,12 @@ csm_util_text_is_blank (const char *str)
         return TRUE;
 }
 
+gboolean
+csm_util_is_wayland_session (void)
+{
+        return g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0;
+}
+
 /**
  * csm_util_init_error:
  * @fatal: whether or not the error is fatal to the login session
