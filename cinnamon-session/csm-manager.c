@@ -618,9 +618,9 @@ _restart_app (CsmManager *manager,
         etc.) is already dead. Terminate the session instead and return the user
         to the login manager. */
         if (csm_util_is_wayland_session () && csm_app_provides (app, "windowmanager")) {
-                csm_util_init_error (TRUE,
-                                     "Cinnamon ('%s') exited unexpectedly. The session will be terminated.",
-                                     csm_app_peek_app_id (app));
+                g_critical ("Cinnamon ('%s') exited unexpectedly. Terminating the session.",
+                            csm_app_peek_app_id (app));
+                csm_quit ();
                 return;
         }
 
@@ -3971,6 +3971,17 @@ close_end_session_dialog (CsmManager *manager)
         return;
     }
 
+    // If Cinnamon has already left the bus (e.g. it crashed and we're tearing
+    // down), there's nothing to close. This uses cinnamon_proxy's cached name
+    // owner, which may lag behind a NameOwnerChanged we haven't dispatched yet -
+    // that's fine here, the session is ending regardless.
+    gchar *owner = g_dbus_proxy_get_name_owner (manager->priv->cinnamon_proxy);
+    if (owner == NULL) {
+        g_debug ("Cinnamon is not on the bus, nothing to close");
+        return;
+    }
+    g_free (owner);
+
     GError *error = NULL;
     GVariant *ret = NULL;
 
@@ -3981,13 +3992,12 @@ close_end_session_dialog (CsmManager *manager)
                                   -1,
                                   NULL,
                                   &error);
-    g_debug ("ret is: %p", ret);
-
-    g_variant_unref (ret);
 
     if (error != NULL) {
         g_critical ("Unable to close Cinnamon's end session dialog: %s", error->message);
         g_error_free (error);
+    } else {
+        g_variant_unref (ret);
     }
 }
 
