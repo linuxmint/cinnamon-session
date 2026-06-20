@@ -1,3 +1,12 @@
+cinnamon-session (6.7.3) alfa; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Don't try to restart the cinnamon CsmApp in Wayland sessions.
+  * csm-manager.c: Clean up some end-session warnings.
+  * csm-manager.c: Emit the SessionOver signal.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 20 Jun 2026 15:36:24 +0200
+
 cinnamon-session (6.7.2) alfa; urgency=medium
 
   [ Leigh Scott ]
