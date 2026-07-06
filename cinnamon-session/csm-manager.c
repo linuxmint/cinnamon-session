@@ -99,6 +99,10 @@
 #define KEY_DISABLE_LOG_OUT       "disable-log-out"
 #define KEY_DISABLE_USER_SWITCHING "disable-user-switching"
 
+#define CINNAMON_SCHEMA           "org.cinnamon"
+#define KEY_ENABLE_POLKIT_AGENT   "enable-polkit-agent"
+#define POLKIT_MATE_AGENT_ID      "polkit-mate-authentication-agent-1"
+
 static void app_registered (CsmApp     *app, CsmManager *manager);
 
 typedef enum
@@ -4429,11 +4433,36 @@ csm_manager_add_autostart_apps_from_dir (CsmManager *manager,
 }
 
 
+static gboolean
+mate_polkit_agent_should_be_skipped (const char *name)
+{
+    /* /etc/xdg/autostart launches the MATE polkit agent unconditionally, but
+     * it only makes sense as an X11 fallback when our own agent is disabled.
+     * Otherwise it just races Cinnamon's internal agent, gets rejected by
+     * polkitd, and adds log noise at startup; on Wayland it's useless either
+     * way. cinnamon-launcher still starts it by hand when it drops to the
+     * fallback MATE panel, then kills it when restarting Cinnamon. */
+    if (g_strstr_len (name, -1, POLKIT_MATE_AGENT_ID) == NULL)
+        return FALSE;
+
+    if (csm_util_is_wayland_session ())
+        return TRUE;
+
+    GSettings *settings = g_settings_new (CINNAMON_SCHEMA);
+    gboolean internal_agent_enabled = g_settings_get_boolean (settings, KEY_ENABLE_POLKIT_AGENT);
+    g_object_unref (settings);
+
+    return internal_agent_enabled;
+}
+
 gboolean
 csm_manager_get_app_is_blacklisted (CsmManager *manager,
                                     const char *name)
 {
     g_return_val_if_fail (CSM_IS_MANAGER (manager), FALSE);
+
+    if (mate_polkit_agent_should_be_skipped (name))
+        return TRUE;
 
     gchar **gs_blacklist = g_settings_get_strv(manager->priv->settings, KEY_BLACKLIST);
     GList *list = NULL;
