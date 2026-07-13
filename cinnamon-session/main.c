@@ -196,6 +196,46 @@ require_dbus_session (int      argc,
         return TRUE;
 }
 
+/* Whether ~/.xinputrc (written by im-config / mintlocale-im) selects fcitx5.
+ * On Wayland this is the source of truth, since we do not export
+ * GTK_IM_MODULE=fcitx there (apps use text-input-v3 via the compositor).
+ * Mirrors js/misc/imFramework.js.
+ *
+ * The "run_im fcitx5" prefix match (with '#'-comment skip) is duplicated in
+ * muffin src/core/meta-im-mode.c (we run before muffin exists, so we can't
+ * ask it) and cinnamon's cinnamon-settings bin/util.py. If im-config ever
+ * changes its line format, all three must change together. */
+static gboolean
+xinputrc_selects_fcitx (void)
+{
+        gchar *path;
+        gchar *contents = NULL;
+        gboolean found = FALSE;
+
+        path = g_build_filename (g_get_home_dir (), ".xinputrc", NULL);
+        if (g_file_get_contents (path, &contents, NULL, NULL)) {
+                gchar **lines = g_strsplit (contents, "\n", -1);
+                int i;
+
+                for (i = 0; lines[i]; i++) {
+                        const gchar *line = g_strchug (lines[i]);
+
+                        if (line[0] == '#')
+                                continue;
+                        if (g_str_has_prefix (line, "run_im fcitx5")) {
+                                found = TRUE;
+                                break;
+                        }
+                }
+                g_strfreev (lines);
+        }
+
+        g_free (contents);
+        g_free (path);
+
+        return found;
+}
+
 int
 main (int argc, char **argv)
 {
@@ -268,6 +308,8 @@ main (int argc, char **argv)
         {
                 gchar *ibus_path;
                 gchar *fcitx_path;
+                gboolean is_wayland;
+                gboolean fcitx_selected;
                 gboolean fcitx_active;
 
                 ibus_path = g_find_program_in_path ("ibus-daemon");
@@ -275,16 +317,65 @@ main (int argc, char **argv)
 
                 /* When fcitx is the active framework, it owns the Qt input env;
                  * don't override it with the ibus QT_IM_MODULES list (Qt6 prefers that
-                 * list over QT_IM_MODULE and would try ibus first). On Wayland we always
-                 * assume ibus (there is no fcitx path there currently). Mirrors
-                 * js/misc/imFramework.js. */
-                {
-                        gboolean is_wayland = csm_util_is_wayland_session ();
+                 * list over QT_IM_MODULE and would try ibus first). Detection follows
+                 * js/misc/imFramework.js: env on X11, ~/.xinputrc on Wayland (where we
+                 * do not set GTK_IM_MODULE=fcitx). */
+                is_wayland = csm_util_is_wayland_session ();
+
+                if (is_wayland) {
+                        fcitx_selected = xinputrc_selects_fcitx ();
+                } else {
                         const gchar *gtk_im = g_getenv ("GTK_IM_MODULE");
                         const gchar *xmod = g_getenv ("XMODIFIERS");
-                        gboolean fcitx_env = (gtk_im && g_strrstr (gtk_im, "fcitx")) ||
-                                             (xmod && g_strrstr (xmod, "fcitx"));
-                        fcitx_active = !is_wayland && fcitx_env && (fcitx_path != NULL);
+                        fcitx_selected = (gtk_im && g_strrstr (gtk_im, "fcitx")) ||
+                                         (xmod && g_strrstr (xmod, "fcitx"));
+                }
+                fcitx_active = fcitx_selected && (fcitx_path != NULL);
+
+                /* On Wayland, apps receive input methods through the compositor
+                 * (text-input-v3), not client-side IM modules. Clear any client-side
+                 * IM env up front - including values leaked from an earlier same-boot
+                 * X11 session via the persistent systemd/D-Bus activation environment,
+                 * which would otherwise force apps off text-input-v3 (e.g. a stale
+                 * GTK_IM_MODULE=ibus routes GTK to the client-side ibus module, whose
+                 * candidate popup can't be positioned on Wayland). Passing "" unsets
+                 * each var (csm_util_setenv treats an empty value as unset). The block
+                 * below re-establishes just what this session needs. X11 is left
+                 * untouched: there the client-side modules are the input path. */
+                if (is_wayland) {
+                        const gchar *im_vars[] = {
+                                "GTK_IM_MODULE", "CLUTTER_IM_MODULE", "QT_IM_MODULE",
+                                "QT_IM_MODULES", "XMODIFIERS", "SDL_IM_MODULE",
+                        };
+                        guint i;
+
+                        for (i = 0; i < G_N_ELEMENTS (im_vars); i++)
+                                csm_util_setenv (im_vars[i], "");
+                }
+
+                /* SDL_IM_MODULE is the one client-side IM var fcitx sets that ibus
+                 * never does (im-config's 21_ibus.rc deliberately skips it, Debian
+                 * #1008481), so a fcitx value survives a fcitx->ibus switch via the
+                 * activation environment. Clear it whenever fcitx is not active - on
+                 * X11 too, since ibus has no SDL module and SDL defaults to ibus when
+                 * the var is unset. (Wayland already cleared it above.) */
+                if (!is_wayland && !fcitx_active)
+                        csm_util_setenv ("SDL_IM_MODULE", "");
+
+                /* XWayland clients cannot reach fcitx through the compositor
+                 * (text-input-v3 stops at the Wayland boundary), so they need
+                 * the classic client-side paths back: XMODIFIERS drives XIM for
+                 * Xlib and GTK X11 apps, and Qt tries the QT_IM_MODULES list in
+                 * order, keeping native Qt apps on the compositor's text-input
+                 * while xcb apps fall through to the fcitx plugin (Qt5 has only
+                 * the singular and loads the fcitx plugin everywhere - fcitx
+                 * still draws, mirroring im-config's X11 setup). GTK Wayland
+                 * apps keep using text-input-v3: GTK_IM_MODULE stays unset. */
+                if (is_wayland && fcitx_active) {
+                        csm_util_setenv ("XMODIFIERS", "@im=fcitx");
+                        csm_util_setenv ("QT_IM_MODULES", "wayland;fcitx");
+                        csm_util_setenv ("QT_IM_MODULE", "fcitx");
+                        csm_util_setenv ("SDL_IM_MODULE", "fcitx");
                 }
 
                 if (ibus_path && !fcitx_active) {

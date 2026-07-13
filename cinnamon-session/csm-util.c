@@ -835,11 +835,75 @@ csm_util_stop_systemd_unit (const char  *unit,
         return TRUE;
 }
 
+static gboolean
+csm_util_unset_user_environment (const char  *variable,
+                                 GError     **error)
+{
+        GDBusConnection *connection;
+        gboolean         environment_updated;
+        GVariantBuilder  builder;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
+
+        environment_updated = FALSE;
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL) {
+                return FALSE;
+        }
+
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("as"));
+        g_variant_builder_add (&builder, "s", variable);
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "UnsetEnvironment",
+                                             g_variant_new ("(@as)",
+                                                            g_variant_builder_end (&builder)),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
+        }
+
+        g_clear_object (&connection);
+
+        return environment_updated;
+}
+
 void
 csm_util_setenv (const char *variable,
                  const char *value)
 {
         GError *error = NULL;
+
+        /* An empty value means "unset". Genuinely remove the variable from the
+         * process and systemd environments; the D-Bus activation environment has
+         * no unset operation (only set), so it is cleared to the empty string
+         * there, which is equivalent to unset for its consumers.
+         */
+        if (value == NULL || *value == '\0') {
+                g_unsetenv (variable);
+
+                if (!csm_util_update_activation_environment (variable, "", &error)) {
+                        g_warning ("Could not clear %s from the activation environment: %s", variable, error->message);
+                        g_clear_error (&error);
+                }
+
+                if (!csm_util_unset_user_environment (variable, &error)) {
+                        g_debug ("Could not make systemd unset the %s environment variable: %s", variable, error->message);
+                        g_clear_error (&error);
+                }
+
+                return;
+        }
 
         g_setenv (variable, value, TRUE);
 
