@@ -59,7 +59,7 @@ endif
 conf.set('HAVE_LOGIND', logind.found())
 
 systemd_opt = get_option('systemd')
-systemd_dep = dependency('libsystemd', required: systemd_opt.enabled())
+systemd_dep = dependency('systemd', required: systemd_opt.enabled())
 if systemd_dep.found()
   systemduserunitdir = systemd_dep.get_variable(
     pkgconfig: 'systemduserunitdir',
