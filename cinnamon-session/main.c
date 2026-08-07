@@ -162,10 +162,22 @@ require_dbus_session (int      argc,
                       GError **error)
 {
         char **new_argv;
+        char  *address;
         int    i;
 
         if (g_getenv ("DBUS_SESSION_BUS_ADDRESS"))
                 return TRUE;
+
+        /* Use the bus the user session already has (GDBus looks for the
+         * well-known socket at $XDG_RUNTIME_DIR/bus), rather than starting a
+         * second one that activated services and portals would be split
+         * across.  Exporting the address keeps all our children on it. */
+        address = g_dbus_address_get_for_bus_sync (G_BUS_TYPE_SESSION, NULL, NULL);
+        if (address != NULL) {
+                g_setenv ("DBUS_SESSION_BUS_ADDRESS", address, TRUE);
+                g_free (address);
+                return TRUE;
+        }
 
         /* Just a sanity check to prevent infinite recursion if
          * dbus-launch fails to set DBUS_SESSION_BUS_ADDRESS 
