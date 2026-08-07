@@ -195,17 +195,15 @@ require_dbus_session (int      argc,
 	}
         new_argv[i + 2] = NULL;
         
-        if (!execvp ("dbus-launch", new_argv)) {
-                g_set_error (error, 
-                             G_SPAWN_ERROR,
-                             G_SPAWN_ERROR_FAILED,
-                             "No session bus and could not exec dbus-launch: %s",
-                             g_strerror (errno));
-                return FALSE;
-        }
+        /* execvp() only returns on failure */
+        execvp ("dbus-launch", new_argv);
 
-        /* Should not be reached */
-        return TRUE;
+        g_set_error (error,
+                     G_SPAWN_ERROR,
+                     G_SPAWN_ERROR_FAILED,
+                     "No session bus and could not exec dbus-launch: %s",
+                     g_strerror (errno));
+        return FALSE;
 }
 
 /* Whether ~/.xinputrc (written by im-config / mintlocale-im) selects fcitx5.
