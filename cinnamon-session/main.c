@@ -195,17 +195,15 @@ require_dbus_session (int      argc,
 	}
         new_argv[i + 2] = NULL;
         
-        if (!execvp ("dbus-launch", new_argv)) {
-                g_set_error (error, 
-                             G_SPAWN_ERROR,
-                             G_SPAWN_ERROR_FAILED,
-                             "No session bus and could not exec dbus-launch: %s",
-                             g_strerror (errno));
-                return FALSE;
-        }
+        /* execvp() only returns on failure */
+        execvp ("dbus-launch", new_argv);
 
-        /* Should not be reached */
-        return TRUE;
+        g_set_error (error,
+                     G_SPAWN_ERROR,
+                     G_SPAWN_ERROR_FAILED,
+                     "No session bus and could not exec dbus-launch: %s",
+                     g_strerror (errno));
+        return FALSE;
 }
 
 /* Whether ~/.xinputrc (written by im-config / mintlocale-im) selects fcitx5.
@@ -275,6 +273,7 @@ main (int argc, char **argv)
         }
 
         /* Make sure that we have a session bus */
+        error = NULL;
         if (!require_dbus_session (argc, argv, &error)) {
                 csm_util_init_error (TRUE, "%s", error->message);
         }
@@ -293,7 +292,6 @@ main (int argc, char **argv)
         sigemptyset (&sa.sa_mask);
         sigaction (SIGPIPE, &sa, 0);
 
-        error = NULL;
         options = g_option_context_new (_(" - the Cinnamon session manager"));
         g_option_context_add_main_entries (options, entries, GETTEXT_PACKAGE);
         g_option_context_parse (options, &argc, &argv, &error);
