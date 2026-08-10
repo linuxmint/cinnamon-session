@@ -1337,7 +1337,6 @@ end_session_or_report_inhibitors (CsmManager *manager)
         CsmLogoutAction action;
 
         if (! csm_manager_is_logout_inhibited (manager)) {
-                csm_exported_manager_emit_session_over (manager->priv->skeleton);
                 end_phase (manager);
                 return;
         }
@@ -1549,6 +1548,7 @@ start_phase (CsmManager *manager)
                 do_phase_query_end_session (manager);
                 break;
         case CSM_MANAGER_PHASE_END_SESSION:
+                csm_exported_manager_emit_session_over (manager->priv->skeleton);
                 do_phase_end_session (manager);
                 break;
         case CSM_MANAGER_PHASE_EXIT:
