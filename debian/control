@@ -22,6 +22,7 @@ Build-Depends:
  libxrender-dev,
  libxtst-dev,
  meson,
+ systemd-dev (>= 253-2~) [linux-any] | systemd (<< 253-2~) [linux-any],
  xtrans-dev,
 Standards-Version: 4.7.0
 Homepage: https://github.com/linuxmint/cinnamon-session
