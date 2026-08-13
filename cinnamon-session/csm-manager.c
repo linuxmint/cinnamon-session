@@ -276,9 +276,11 @@ static void
 on_required_app_failure (CsmManager  *manager,
                          CsmApp      *app)
 {
-        if (csm_util_is_wayland_session ()) {
-                /* In Wayland, if cinnamon-wayland fails to start (required component), there's no compositor.
-                So if a required component fails, we want to terminate the session and go back to the DM. */
+        if (csm_util_is_wayland_session () && csm_app_provides (app, "windowmanager")) {
+                /* In Wayland, if cinnamon-wayland fails to start there's no compositor, so there's
+                nothing left to keep the session up for - terminate it and go back to the DM. Any
+                other required component failing is survivable, and killing the session over it
+                loses the user's work. */
                 csm_util_init_error (TRUE, "A program required by the session failed to start. App ID: '%s'. Startup ID: '%s'. The session will be terminated.",
                                      csm_app_peek_app_id (app),
                                      csm_app_peek_startup_id (app));
