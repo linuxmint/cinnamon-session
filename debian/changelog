@@ -1,3 +1,20 @@
+cinnamon-session (6.7.4) alfa; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Block mate's polkit helper autostarting except in x11 sessions where Cinnamon's internal helper is disabled.
+  * main.c: Clear IM-related environment values between sessions, don't set anything for fcitx-wayland.
+  * csm-manager.c: Move SessionOver emission to a more common location.
+  * csm-manager.c: Don't end the session once it's running if a required component fails, as long as it's not Cinnamon.
+  * debian/control: Update build deps to reliably fetch the 'systemduserunitdir' variable.
+
+  [ Fabio Fantoni ]
+  * Debian packaging improvements (#205)
+
+  [ Pierre Lejeune ]
+  * pkg-config variable systemduserunitdir belongs to package systemd
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 15 Aug 2026 12:40:15 +0200
+
 cinnamon-session (6.7.3) alfa; urgency=medium
 
   [ Michael Webster ]
