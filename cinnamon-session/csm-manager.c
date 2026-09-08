@@ -53,7 +53,6 @@
 #include "csm-autostart-app.h"
 
 #include "csm-util.h"
-#include "mdm.h"
 #include "csm-system.h"
 #include "csm-session-save.h"
 #include "inhibit-dialog-info.h"
@@ -72,9 +71,6 @@
  * let's make this fairly long.
  */
 #define CSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
-
-#define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
-#define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
 #define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
 #define GDM_FLEXISERVER_ARGS    "--startnew Standard"
@@ -111,10 +107,8 @@ typedef enum
         CSM_MANAGER_LOGOUT_LOGOUT,
         CSM_MANAGER_LOGOUT_REBOOT,
         CSM_MANAGER_LOGOUT_REBOOT_INTERACT,
-        CSM_MANAGER_LOGOUT_REBOOT_MDM,
         CSM_MANAGER_LOGOUT_SHUTDOWN,
-        CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT,
-        CSM_MANAGER_LOGOUT_SHUTDOWN_MDM
+        CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT
 } CsmManagerLogoutType;
 
 struct CsmManagerPrivate
@@ -473,17 +467,6 @@ phase_num_to_name (guint phase)
 static void start_phase (CsmManager *manager);
 
 static void
-quit_request_failed (CsmSystem *system,
-                        GError    *error,
-                        gpointer   user_data)
-{
-        g_warning ("Using an MDM logout action to shutdown/reboot the system.");
-        MdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
-        mdm_set_logout_action (fallback_action);
-        csm_quit ();
-}
-
-static void
 csm_manager_quit (CsmManager *manager)
 {
         /* See the comment in request_reboot() for some more details about how
@@ -498,30 +481,12 @@ csm_manager_quit (CsmManager *manager)
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
                 g_warning ("Requesting system restart...");
-                mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
-                g_signal_connect (manager->priv->system,
-                                  "request-failed",
-                                  G_CALLBACK (quit_request_failed),
-                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
                 csm_system_attempt_restart (manager->priv->system);
                 break;
-        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
-                mdm_set_logout_action (MDM_LOGOUT_ACTION_REBOOT);
-                csm_quit ();
-                break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:  
+        case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
                 g_warning ("Requesting system shutdown...");
-                mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
-                g_signal_connect (manager->priv->system,
-                                  "request-failed",
-                                  G_CALLBACK (quit_request_failed),
-                                  GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
                 csm_system_attempt_stop (manager->priv->system);
-                break;
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
-                mdm_set_logout_action (MDM_LOGOUT_ACTION_SHUTDOWN);
-                csm_quit ();
                 break;
         default:
                 g_assert_not_reached ();
@@ -1121,7 +1086,6 @@ cancel_end_session (CsmManager *manager)
         manager->priv->logout_mode = CSM_MANAGER_LOGOUT_MODE_NORMAL;
 
         manager->priv->logout_type = CSM_MANAGER_LOGOUT_NONE;
-        mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
         manager->priv->dialog_action = CSM_LOGOUT_ACTION_UNDEFINED;
 
@@ -1186,7 +1150,7 @@ flexiserver_launch (const gchar **argv)
                             NULL,
                             &error)) {
                 if (error) {
-                        g_debug ("CsmManager: Unable to start MDM greeter: %s", error->message);
+                        g_debug ("CsmManager: Unable to start greeter: %s", error->message);
                         g_error_free (error);
                 }
         }
@@ -1205,15 +1169,7 @@ manager_switch_user (CsmManager *manager)
                 return;
         }
 
-        if (process_is_running ("mdm")) {
-                const gchar *command[] = {
-                     MDM_FLEXISERVER_COMMAND,
-                     MDM_FLEXISERVER_ARGS,
-                     NULL
-                };
-
-                flexiserver_launch (command);
-        } else if (process_is_running("gdm") || process_is_running("gdm3")) {
+        if (process_is_running("gdm") || process_is_running("gdm3")) {
                 const gchar *command[] = {
                      GDM_FLEXISERVER_COMMAND,
                      GDM_FLEXISERVER_ARGS,
@@ -1349,12 +1305,10 @@ end_session_or_report_inhibitors (CsmManager *manager)
                 break;
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
-        case CSM_MANAGER_LOGOUT_REBOOT_MDM:
                 action = CSM_LOGOUT_ACTION_REBOOT;
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
         case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
-        case CSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
                 action = CSM_LOGOUT_ACTION_SHUTDOWN;
                 break;
         default:
