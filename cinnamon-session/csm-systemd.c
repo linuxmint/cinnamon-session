@@ -61,9 +61,17 @@ struct _CsmSystemdPrivate
 
         GSList          *inhibitors;
         gint             inhibit_fd;
+        gint             shutdown_inhibit_fd;
+        gboolean         prepare_for_shutdown_expected;
 };
 
 static void csm_systemd_system_init (CsmSystemInterface *iface);
+
+static void sd_proxy_signal_cb (GDBusProxy  *proxy,
+                                const gchar *sender_name,
+                                const gchar *signal_name,
+                                GVariant    *parameters,
+                                gpointer     user_data);
 
 G_DEFINE_TYPE_WITH_CODE (CsmSystemd, csm_systemd, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (CSM_TYPE_SYSTEM,
@@ -92,6 +100,9 @@ csm_systemd_finalize (GObject *object)
                 g_slist_free_full (systemd->priv->inhibitors, g_free);
         }
         drop_system_inhibitor (systemd);
+        if (systemd->priv->shutdown_inhibit_fd != -1) {
+                close (systemd->priv->shutdown_inhibit_fd);
+        }
 
         G_OBJECT_CLASS (csm_systemd_parent_class)->finalize (object);
 }
@@ -120,6 +131,7 @@ csm_systemd_init (CsmSystemd *manager)
                                                      CsmSystemdPrivate);
 
         manager->priv->inhibit_fd = -1;
+        manager->priv->shutdown_inhibit_fd = -1;
 
         error = NULL;
 
@@ -143,6 +155,9 @@ csm_systemd_init (CsmSystemd *manager)
                         g_warning ("Failed to connect to systemd: %s",
                                    error->message);
                         g_error_free (error);
+                } else {
+                        g_signal_connect (manager->priv->sd_proxy, "g-signal",
+                                          G_CALLBACK (sd_proxy_signal_cb), manager);
                 }
 
                 g_object_unref (bus);
@@ -174,21 +189,62 @@ csm_systemd_init (CsmSystemd *manager)
 }
 
 static void
-restart_done (GObject      *source,
-              GAsyncResult *result,
-              gpointer      user_data)
+take_shutdown_inhibitor (CsmSystemd *manager)
 {
-        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        GVariant *res;
+        GUnixFDList *fd_list = NULL;
+        GError *error = NULL;
+        gint idx;
+
+        if (manager->priv->shutdown_inhibit_fd != -1)
+                return;
+
+        res = g_dbus_proxy_call_with_unix_fd_list_sync (manager->priv->sd_proxy,
+                                                        "Inhibit",
+                                                        g_variant_new ("(ssss)",
+                                                                       "shutdown",
+                                                                       g_get_user_name (),
+                                                                       "Ensuring session exits cleanly before shutdown",
+                                                                       "delay"),
+                                                        0,
+                                                        G_MAXINT,
+                                                        NULL,
+                                                        &fd_list,
+                                                        NULL,
+                                                        &error);
+        if (res == NULL) {
+                g_warning ("Unable to inhibit shutdown: %s", error->message);
+                g_error_free (error);
+                return;
+        }
+
+        g_variant_get (res, "(h)", &idx);
+        manager->priv->shutdown_inhibit_fd = g_unix_fd_list_get (fd_list, idx, &error);
+        if (manager->priv->shutdown_inhibit_fd == -1) {
+                g_warning ("Failed to receive shutdown inhibitor fd: %s", error->message);
+                g_error_free (error);
+        }
+
+        g_object_unref (fd_list);
+        g_variant_unref (res);
+}
+
+static void
+reboot_or_poweroff_done (GObject      *source,
+                         GAsyncResult *result,
+                         gpointer      user_data)
+{
         CsmSystemd *manager = user_data;
         GError *error = NULL;
         GVariant *res;
 
-        res = g_dbus_proxy_call_finish (proxy, result, &error);
+        res = g_dbus_proxy_call_finish (G_DBUS_PROXY (source), result, &error);
 
-        if (!res) {
-                g_warning ("Unable to restart system via systemd: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);
+        if (res == NULL) {
+                g_warning ("Unable to shutdown/restart system via systemd: %s", error->message);
                 g_error_free (error);
+                manager->priv->prepare_for_shutdown_expected = FALSE;
+                g_signal_emit_by_name (manager, "shutdown-prepared", FALSE);
         } else {
                 g_variant_unref (res);
         }
@@ -201,35 +257,18 @@ csm_systemd_attempt_restart (CsmSystem *system)
 
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
+        drop_system_inhibitor (manager);
+        take_shutdown_inhibitor (manager);
+        manager->priv->prepare_for_shutdown_expected = TRUE;
+
         g_dbus_proxy_call (manager->priv->sd_proxy,
                            "Reboot",
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,
                            NULL,
-                           restart_done,
+                           reboot_or_poweroff_done,
                            manager);
-}
-
-static void
-stop_done (GObject      *source,
-           GAsyncResult *result,
-           gpointer      user_data)
-{
-        GDBusProxy *proxy = G_DBUS_PROXY (source);
-        CsmSystemd *manager = user_data;
-        GError *error = NULL;
-        GVariant *res;
-
-        res = g_dbus_proxy_call_finish (proxy, result, &error);
-
-        if (!res) {
-                g_warning ("Unable to stop system via systemd: %s", error->message);
-                g_signal_emit_by_name (G_OBJECT (manager), "request-failed", NULL);                
-                g_error_free (error);
-        } else {                
-                g_variant_unref (res);
-        }
 }
 
 static void
@@ -239,14 +278,42 @@ csm_systemd_attempt_stop (CsmSystem *system)
 
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
+        drop_system_inhibitor (manager);
+        take_shutdown_inhibitor (manager);
+        manager->priv->prepare_for_shutdown_expected = TRUE;
+
         g_dbus_proxy_call (manager->priv->sd_proxy,
                            "PowerOff",
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,
                            NULL,
-                           stop_done,
+                           reboot_or_poweroff_done,
                            manager);
+}
+
+static void
+sd_proxy_signal_cb (GDBusProxy  *proxy,
+                    const gchar *sender_name,
+                    const gchar *signal_name,
+                    GVariant    *parameters,
+                    gpointer     user_data)
+{
+        CsmSystemd *manager = user_data;
+        gboolean is_about_to_shutdown;
+
+        if (g_strcmp0 (signal_name, "PrepareForShutdown") != 0)
+                return;
+
+        g_variant_get (parameters, "(b)", &is_about_to_shutdown);
+        if (!is_about_to_shutdown)
+                return;
+
+        if (manager->priv->prepare_for_shutdown_expected) {
+                g_debug ("Shutdown successfully prepared");
+                manager->priv->prepare_for_shutdown_expected = FALSE;
+                g_signal_emit_by_name (manager, "shutdown-prepared", TRUE);
+        }
 }
 
 static void

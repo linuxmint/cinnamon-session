@@ -467,6 +467,20 @@ phase_num_to_name (guint phase)
 static void start_phase (CsmManager *manager);
 
 static void
+on_shutdown_prepared (CsmSystem *system,
+                      gboolean   success,
+                      gpointer   user_data)
+{
+        g_signal_handlers_disconnect_by_func (system, on_shutdown_prepared, user_data);
+
+        if (!success) {
+                g_warning ("Shutdown/restart was not confirmed by logind");
+        }
+
+        csm_quit ();
+}
+
+static void
 csm_manager_quit (CsmManager *manager)
 {
         /* See the comment in request_reboot() for some more details about how
@@ -481,11 +495,19 @@ csm_manager_quit (CsmManager *manager)
         case CSM_MANAGER_LOGOUT_REBOOT:
         case CSM_MANAGER_LOGOUT_REBOOT_INTERACT:
                 g_warning ("Requesting system restart...");
+                g_signal_connect (manager->priv->system,
+                                  "shutdown-prepared",
+                                  G_CALLBACK (on_shutdown_prepared),
+                                  manager);
                 csm_system_attempt_restart (manager->priv->system);
                 break;
         case CSM_MANAGER_LOGOUT_SHUTDOWN:
         case CSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
                 g_warning ("Requesting system shutdown...");
+                g_signal_connect (manager->priv->system,
+                                  "shutdown-prepared",
+                                  G_CALLBACK (on_shutdown_prepared),
+                                  manager);
                 csm_system_attempt_stop (manager->priv->system);
                 break;
         default:
