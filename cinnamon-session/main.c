@@ -162,10 +162,22 @@ require_dbus_session (int      argc,
                       GError **error)
 {
         char **new_argv;
+        char  *address;
         int    i;
 
         if (g_getenv ("DBUS_SESSION_BUS_ADDRESS"))
                 return TRUE;
+
+        /* Use the bus the user session already has (GDBus looks for the
+         * well-known socket at $XDG_RUNTIME_DIR/bus), rather than starting a
+         * second one that activated services and portals would be split
+         * across.  Exporting the address keeps all our children on it. */
+        address = g_dbus_address_get_for_bus_sync (G_BUS_TYPE_SESSION, NULL, NULL);
+        if (address != NULL) {
+                g_setenv ("DBUS_SESSION_BUS_ADDRESS", address, TRUE);
+                g_free (address);
+                return TRUE;
+        }
 
         /* Just a sanity check to prevent infinite recursion if
          * dbus-launch fails to set DBUS_SESSION_BUS_ADDRESS 
@@ -183,17 +195,15 @@ require_dbus_session (int      argc,
 	}
         new_argv[i + 2] = NULL;
         
-        if (!execvp ("dbus-launch", new_argv)) {
-                g_set_error (error, 
-                             G_SPAWN_ERROR,
-                             G_SPAWN_ERROR_FAILED,
-                             "No session bus and could not exec dbus-launch: %s",
-                             g_strerror (errno));
-                return FALSE;
-        }
+        /* execvp() only returns on failure */
+        execvp ("dbus-launch", new_argv);
 
-        /* Should not be reached */
-        return TRUE;
+        g_set_error (error,
+                     G_SPAWN_ERROR,
+                     G_SPAWN_ERROR_FAILED,
+                     "No session bus and could not exec dbus-launch: %s",
+                     g_strerror (errno));
+        return FALSE;
 }
 
 /* Whether ~/.xinputrc (written by im-config / mintlocale-im) selects fcitx5.
@@ -263,6 +273,7 @@ main (int argc, char **argv)
         }
 
         /* Make sure that we have a session bus */
+        error = NULL;
         if (!require_dbus_session (argc, argv, &error)) {
                 csm_util_init_error (TRUE, "%s", error->message);
         }
@@ -281,7 +292,6 @@ main (int argc, char **argv)
         sigemptyset (&sa.sa_mask);
         sigaction (SIGPIPE, &sa, 0);
 
-        error = NULL;
         options = g_option_context_new (_(" - the Cinnamon session manager"));
         g_option_context_add_main_entries (options, entries, GETTEXT_PACKAGE);
         g_option_context_parse (options, &argc, &argv, &error);
