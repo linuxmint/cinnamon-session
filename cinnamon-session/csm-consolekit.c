@@ -275,50 +275,6 @@ csm_consolekit_init (CsmConsolekit *manager)
 }
 
 static void
-emit_restart_complete (CsmConsolekit *manager,
-                       GError     *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_RESTARTING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
-emit_stop_complete (CsmConsolekit *manager,
-                    GError     *error)
-{
-        GError *call_error;
-
-        call_error = NULL;
-
-        if (error != NULL) {
-                call_error = g_error_new_literal (CSM_SYSTEM_ERROR,
-                                                  CSM_SYSTEM_ERROR_STOPPING,
-                                                  error->message);
-        }
-
-        g_signal_emit_by_name (G_OBJECT (manager),
-                               "request_completed", call_error);
-
-        if (call_error != NULL) {
-                g_error_free (call_error);
-        }
-}
-
-static void
 restart_done (GObject      *source,
               GAsyncResult *result,
               gpointer      user_data)
@@ -327,17 +283,19 @@ restart_done (GObject      *source,
         CsmConsolekit *manager = user_data;
         GError *error = NULL;
         GVariant *res;
+        gboolean success;
 
         res = g_dbus_proxy_call_finish (proxy, result, &error);
+        success = res != NULL;
 
-        if (!res) {
+        if (!success) {
                 g_warning ("Unable to restart system: %s", error->message);
-                emit_restart_complete (manager, error);
                 g_error_free (error);
         } else {
-                emit_restart_complete (manager, NULL);
                 g_variant_unref (res);
         }
+
+        g_signal_emit_by_name (manager, "shutdown-prepared", success);
 }
 
 static void
@@ -366,17 +324,19 @@ stop_done (GObject      *source,
         CsmConsolekit *manager = user_data;
         GError *error = NULL;
         GVariant *res;
+        gboolean success;
 
         res = g_dbus_proxy_call_finish (proxy, result, &error);
+        success = res != NULL;
 
-        if (!res) {
+        if (!success) {
                 g_warning ("Unable to stop system: %s", error->message);
-                emit_stop_complete (manager, error);
                 g_error_free (error);
         } else {
-                emit_stop_complete (manager, NULL);
                 g_variant_unref (res);
         }
+
+        g_signal_emit_by_name (manager, "shutdown-prepared", success);
 }
 
 static void

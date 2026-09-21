@@ -29,8 +29,7 @@
 #include "csm-systemd.h"
 
 enum {
-        REQUEST_FAILED = 0,
-        SHUTDOWN_PREPARED,
+        SHUTDOWN_PREPARED = 0,
         LAST_SIGNAL
 };
 
@@ -41,17 +40,6 @@ G_DEFINE_INTERFACE (CsmSystem, csm_system, G_TYPE_OBJECT)
 static void
 csm_system_default_init (CsmSystemInterface *iface)
 {
-        signals [REQUEST_FAILED] =
-                g_signal_new ("request-failed",
-                              CSM_TYPE_SYSTEM,
-                              G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (CsmSystemInterface, request_completed),
-                              NULL,
-                              NULL,
-                              g_cclosure_marshal_VOID__POINTER,
-                              G_TYPE_NONE,
-                              1, G_TYPE_POINTER);
-
         signals [SHUTDOWN_PREPARED] =
                 g_signal_new ("shutdown-prepared",
                               CSM_TYPE_SYSTEM,
@@ -62,18 +50,6 @@ csm_system_default_init (CsmSystemInterface *iface)
                               g_cclosure_marshal_VOID__BOOLEAN,
                               G_TYPE_NONE,
                               1, G_TYPE_BOOLEAN);
-}
-
-GQuark
-csm_system_error_quark (void)
-{
-        static GQuark error_quark = 0;
-
-        if (error_quark == 0) {
-                error_quark = g_quark_from_static_string ("csm-system-error");
-        }
-
-        return error_quark;
 }
 
 gboolean

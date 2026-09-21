@@ -36,18 +36,13 @@ G_BEGIN_DECLS
 #define CSM_SYSTEM_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), CSM_TYPE_SYSTEM, CsmSystemInterface))
 #define CSM_IS_SYSTEM(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CSM_TYPE_SYSTEM))
 #define CSM_SYSTEM_GET_IFACE(obj)   (G_TYPE_INSTANCE_GET_INTERFACE((obj), CSM_TYPE_SYSTEM, CsmSystemInterface))
-#define CSM_SYSTEM_ERROR            (csm_system_error_quark ())
 
 typedef struct _CsmSystem          CsmSystem;
 typedef struct _CsmSystemInterface CsmSystemInterface;
-typedef enum   _CsmSystemError     CsmSystemError;
 
 struct _CsmSystemInterface
 {
         GTypeInterface base_interface;
-
-        void (* request_completed)    (CsmSystem *system,
-                                       GError    *error);
 
         gboolean (* can_switch_user)  (CsmSystem *system);
         gboolean (* can_stop)         (CsmSystem *system);
@@ -73,14 +68,7 @@ struct _CsmSystemInterface
         gchar *  (* get_login_session_id) (CsmSystem *system);
 };
 
-enum _CsmSystemError {
-        CSM_SYSTEM_ERROR_RESTARTING = 0,
-        CSM_SYSTEM_ERROR_STOPPING
-};
-
 GType      csm_system_get_type         (void);
-
-GQuark     csm_system_error_quark      (void);
 
 CsmSystem *csm_get_system              (void);
 
