@@ -30,6 +30,7 @@
 
 enum {
         REQUEST_FAILED = 0,
+        SHUTDOWN_PREPARED,
         LAST_SIGNAL
 };
 
@@ -50,6 +51,17 @@ csm_system_default_init (CsmSystemInterface *iface)
                               g_cclosure_marshal_VOID__POINTER,
                               G_TYPE_NONE,
                               1, G_TYPE_POINTER);
+
+        signals [SHUTDOWN_PREPARED] =
+                g_signal_new ("shutdown-prepared",
+                              CSM_TYPE_SYSTEM,
+                              G_SIGNAL_RUN_LAST,
+                              0,
+                              NULL,
+                              NULL,
+                              g_cclosure_marshal_VOID__BOOLEAN,
+                              G_TYPE_NONE,
+                              1, G_TYPE_BOOLEAN);
 }
 
 GQuark

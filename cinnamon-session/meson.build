@@ -49,7 +49,6 @@ cinnamon_session_sources = [
   'main.c',
   'mdm-log.c',
   'mdm-signal-handler.c',
-  'mdm.c',
   csm_marshal_sources,
   gdbus_sources,
 ]
