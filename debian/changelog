@@ -1,3 +1,16 @@
+cinnamon-session (6.7.5) adrien; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Use the existing user D-Bus session bus instead of spawning dbus-launch (#212)
+
+  [ Leigh Scott ]
+  * csm-systemd: wait for logind's PrepareForShutdown before quitting (#215)
+
+  [ Michael Webster ]
+  * csm-consolekit.c: Some signal cleanup, use shutdown-prepared
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 22 Sep 2026 10:12:06 +0100
+
 cinnamon-session (6.7.4) alfa; urgency=medium
 
   [ Michael Webster ]

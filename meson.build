@@ -2,7 +2,7 @@
 project(
   'cinnamon-session',
   ['c'],
-version : '6.7.4',
+version : '6.7.5',
   meson_version : '>=0.56.0'
 )
 
