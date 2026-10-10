@@ -30,6 +30,9 @@
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 
+#define GNOME_DESKTOP_USE_UNSTABLE_API
+#include <libcinnamon-desktop/gnome-systemd.h>
+
 #include "csm-autostart-app.h"
 #include "csm-util.h"
 
@@ -1019,6 +1022,12 @@ app_launched (GAppLaunchContext *ctx,
         g_variant_lookup (platform_data, "startup-notification-id", "s", &sn_id);
         priv->pid = pid;
         priv->startup_id = sn_id;
+
+        // Regular autostart apps get the same per-app scope cinnamon gives launched applications.
+        if (pid > 0 && csm_app_peek_phase (CSM_APP (app)) == CSM_MANAGER_PHASE_APPLICATION) {
+                gnome_start_systemd_scope (g_app_info_get_id (appinfo),
+                                           pid, NULL, NULL, NULL, NULL, NULL);
+        }
 }
 
 static gboolean
