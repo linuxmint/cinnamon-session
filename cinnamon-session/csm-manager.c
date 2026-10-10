@@ -878,8 +878,6 @@ do_phase_end_session (CsmManager *manager)
 
         close_end_session_dialog (manager);
 
-        csm_util_stop_systemd_unit ("cinnamon-session.target", "replace", NULL);
-
         if (manager->priv->logout_mode == CSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= CSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
@@ -960,6 +958,10 @@ _client_stop (const char *id,
 static void
 do_phase_exit (CsmManager *manager)
 {
+        /* Clients have all responded to EndSession (or timed out) by now, so
+         * services and app scopes tied to graphical-session.target can go. */
+        csm_util_stop_systemd_unit ("cinnamon-session.target", "replace", NULL);
+
         if (csm_store_size (manager->priv->clients) > 0) {
                 csm_store_foreach (manager->priv->clients,
                                    (CsmStoreFunc)_client_stop,
