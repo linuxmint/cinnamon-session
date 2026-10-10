@@ -29,6 +29,7 @@
 #include <errno.h>
 
 #include <glib/gi18n.h>
+#include <glib/gstdio.h>
 #include <glib-unix.h>
 #include <glib.h>
 #include <gio/gio.h>
@@ -246,12 +247,41 @@ xinputrc_selects_fcitx (void)
         return found;
 }
 
+/* Drop-in merged into the app-cinnamon-*.scope units that applications are
+ * launched in. Lives in the runtime dir so it is recreated from the setting
+ * at every login. */
+static void
+apply_oomd_exemption (gboolean exempt)
+{
+        g_autofree char *dir = NULL;
+        g_autofree char *path = NULL;
+        g_autoptr(GError) error = NULL;
+
+        dir = g_build_filename (g_get_user_runtime_dir (), "systemd", "user", "app-cinnamon-.scope.d", NULL);
+        path = g_build_filename (dir, "oomd.conf", NULL);
+
+        if (exempt) {
+                g_mkdir_with_parents (dir, 0700);
+
+                if (!g_file_set_contents (path, "[Scope]\nManagedOOMPreference=omit\n", -1, &error)) {
+                        g_warning ("Could not write %s: %s", path, error->message);
+                        return;
+                }
+        } else if (g_unlink (path) != 0) {
+                return;
+        }
+
+        if (!csm_util_reload_systemd (&error))
+                g_warning ("Could not reload systemd user units: %s", error->message);
+}
+
 int
 main (int argc, char **argv)
 {
         struct sigaction  sa;
         GError           *error;
         guint             name_owner_id;
+        gboolean          exempt_apps_from_oomd;
         static char     **override_autostart_dirs = NULL;
         GOptionContext   *options;
         static GOptionEntry entries[] = {
@@ -285,6 +315,7 @@ main (int argc, char **argv)
         if (g_settings_get_boolean (settings, "debug")) {
             debug = TRUE;
         }
+        exempt_apps_from_oomd = g_settings_get_boolean (settings, "exempt-apps-from-oomd");
         g_clear_object (&settings);
 
         sa.sa_handler = SIG_IGN;
@@ -314,6 +345,7 @@ main (int argc, char **argv)
 
         csm_util_export_activation_environment (NULL);
         csm_util_export_user_environment (NULL);
+        apply_oomd_exemption (exempt_apps_from_oomd);
 
         {
                 gchar *ibus_path;

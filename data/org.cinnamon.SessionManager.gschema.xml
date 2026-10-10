@@ -10,6 +10,11 @@
       <summary>Start the session with GDK_SYNCHRONIZE=1</summary>
       <description>If enabled, cinnamon-session and all (gtk) children will make all X requests synchronously, for debugging x errors.</description>
     </key>
+    <key name="exempt-apps-from-oomd" type="b">
+      <default>false</default>
+      <summary>Keep systemd-oomd from killing applications</summary>
+      <description>If enabled, applications launched by Cinnamon are excluded as candidates when systemd-oomd relieves memory pressure. Applied at login.</description>
+    </key>
     <key name="auto-save-session" type="b">
       <default>false</default>
       <summary>Save sessions</summary>

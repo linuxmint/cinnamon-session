@@ -66,6 +66,7 @@ gboolean    csm_util_start_systemd_unit             (const char  *unit,
 gboolean    csm_util_stop_systemd_unit              (const char  *unit,
                                                      const char  *mode,
                                                      GError     **error);
+gboolean    csm_util_reload_systemd                 (GError     **error);
 
 // main.c, exit mainloop
 void        csm_quit                                (void);

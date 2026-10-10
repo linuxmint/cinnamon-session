@@ -769,14 +769,17 @@ csm_util_update_user_environment (const char  *variable,
         return environment_updated;
 }
 
-gboolean
-csm_util_start_systemd_unit (const char  *unit,
-                             const char  *mode,
-                             GError     **error)
+static gboolean
+call_systemd_manager (const char  *method,
+                      GVariant    *parameters,
+                      GError     **error)
 {
         g_autoptr(GDBusConnection) connection = NULL;
         g_autoptr(GVariant)        reply = NULL;
-        GError          *bus_error = NULL;
+        g_autoptr(GVariant)        params = NULL;
+
+        if (parameters != NULL)
+                params = g_variant_ref_sink (parameters);
 
         connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
 
@@ -787,19 +790,21 @@ csm_util_start_systemd_unit (const char  *unit,
                                              "org.freedesktop.systemd1",
                                              "/org/freedesktop/systemd1",
                                              "org.freedesktop.systemd1.Manager",
-                                             "StartUnit",
-                                             g_variant_new ("(ss)",
-                                                            unit, mode),
+                                             method,
+                                             params,
                                              NULL,
                                              G_DBUS_CALL_FLAGS_NONE,
-                                             -1, NULL, &bus_error);
+                                             -1, NULL, error);
 
-        if (bus_error != NULL) {
-                g_propagate_error (error, bus_error);
-                return FALSE;
-        }
+        return reply != NULL;
+}
 
-        return TRUE;
+gboolean
+csm_util_start_systemd_unit (const char  *unit,
+                             const char  *mode,
+                             GError     **error)
+{
+        return call_systemd_manager ("StartUnit", g_variant_new ("(ss)", unit, mode), error);
 }
 
 gboolean
@@ -807,32 +812,13 @@ csm_util_stop_systemd_unit (const char  *unit,
                              const char  *mode,
                              GError     **error)
 {
-        g_autoptr(GDBusConnection) connection = NULL;
-        g_autoptr(GVariant)        reply = NULL;
-        GError          *bus_error = NULL;
+        return call_systemd_manager ("StopUnit", g_variant_new ("(ss)", unit, mode), error);
+}
 
-        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
-
-        if (connection == NULL)
-                return FALSE;
-
-        reply = g_dbus_connection_call_sync (connection,
-                                             "org.freedesktop.systemd1",
-                                             "/org/freedesktop/systemd1",
-                                             "org.freedesktop.systemd1.Manager",
-                                             "StopUnit",
-                                             g_variant_new ("(ss)",
-                                                            unit, mode),
-                                             NULL,
-                                             G_DBUS_CALL_FLAGS_NONE,
-                                             -1, NULL, &bus_error);
-
-        if (bus_error != NULL) {
-                g_propagate_error (error, bus_error);
-                return FALSE;
-        }
-
-        return TRUE;
+gboolean
+csm_util_reload_systemd (GError **error)
+{
+        return call_systemd_manager ("Reload", NULL, error);
 }
 
 static gboolean
