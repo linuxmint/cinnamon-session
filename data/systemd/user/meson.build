@@ -13,4 +13,12 @@ install_data(
   ],
   install_dir: systemduserunitdir / 'app-cinnamon-.scope.d',
 )
+
+# The session bus and the D-Bus activated helpers it forks must never be an oomd candidate
+install_data(
+  [
+    'dbus-override.service.conf',
+  ],
+  install_dir: systemduserunitdir / 'dbus.service.d',
+)
 endif

@@ -2,6 +2,7 @@ usr/bin/cinnamon-session*
 usr/lib/*/cinnamon-session*
 usr/lib/systemd/user/app-cinnamon-.scope.d/app-override.scope.conf
 usr/lib/systemd/user/cinnamon-session.target
+usr/lib/systemd/user/dbus.service.d/dbus-override.service.conf
 usr/share/cinnamon-session
 usr/share/glib-2.0/schemas/org.cinnamon.SessionManager.gschema.xml
 usr/share/man/*/cinnamon-session*
