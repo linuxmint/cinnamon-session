@@ -1,3 +1,17 @@
+cinnamon-session (6.7.6) adrien; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Stop cinnamon-session.target in the exit phase, not before EndSession
+  * csm-autostart-app.c: Put application-phase autostart applications in their own systemd scope.
+  * Add exempt-apps-from-oomd setting
+  * systemd: Exclude dbus.service from oomd coverage.
+  * systemd: Keep dbus.service running when the kernel OOM-kills one of its processes
+
+  [ Fabio Fantoni ]
+  * session: Add a drop-in for the application scopes cinnamon creates (#213)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 13 Oct 2026 13:27:01 +0100
+
 cinnamon-session (6.7.5) adrien; urgency=medium
 
   [ Fabio Fantoni ]
