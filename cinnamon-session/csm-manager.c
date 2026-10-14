@@ -163,7 +163,7 @@ struct CsmManagerPrivate
 
         ca_context             *ca;
         gboolean               logout_sound_is_playing;
-
+        gboolean               is_quitting;
 };
 
 enum {
@@ -486,6 +486,12 @@ csm_manager_quit (CsmManager *manager)
         /* See the comment in request_reboot() for some more details about how
          * this works. */
 
+        if (manager->priv->is_quitting) {
+                g_debug ("CsmManager: quit already in progress, ignoring re-entry");
+                return;
+        }
+        manager->priv->is_quitting = TRUE;
+
         csm_store_clear (manager->priv->inhibitors);
 
         switch (manager->priv->logout_type) {
@@ -636,6 +642,13 @@ app_died (CsmApp     *app,
 {
         g_warning ("Application '%s' killed by signal %d", csm_app_peek_app_id (app), signal);
 
+        /* Do not restart apps when the session is ending or quitting */
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_END_SESSION || manager->priv->is_quitting) {
+                g_debug ("Component '%s' died during session shutdown, ignoring",
+                         csm_app_peek_app_id (app));
+                return;
+        }
+
         if (csm_app_peek_autorestart (app)) {
                 g_debug ("Component '%s' is autorestart, ignoring died signal",
                          csm_app_peek_app_id (app));
@@ -660,6 +673,13 @@ app_exited (CsmApp     *app,
             CsmManager *manager)
 {
         g_debug ("App %s exited with %d", csm_app_peek_app_id (app), exit_code);
+
+        /* Do not restart apps when the session is ending or quitting */
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_END_SESSION || manager->priv->is_quitting) {
+                g_debug ("Component '%s' exited during session shutdown, ignoring",
+                         csm_app_peek_app_id (app));
+                return;
+        }
 
         /* Consider that non-success exit status means "crash" for required components */
         if (exit_code != 0 && is_app_required (manager, app)) {
@@ -3815,6 +3835,11 @@ request_reboot (CsmManager *manager)
 {
         g_debug ("CsmManager: requesting reboot");
 
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION || manager->priv->is_quitting) {
+                g_debug ("CsmManager: shutdown/logout already in progress, ignoring reboot request");
+                return;
+        }
+
         /* FIXME: We need to support a more structured shutdown here,
          * but that's blocking on an improved ConsoleKit api.
          *
@@ -3828,6 +3853,11 @@ static void
 request_shutdown (CsmManager *manager)
 {
         g_debug ("CsmManager: requesting shutdown");
+
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION || manager->priv->is_quitting) {
+                g_debug ("CsmManager: shutdown/logout already in progress, ignoring shutdown request");
+                return;
+        }
 
         /* See the comment in request_reboot() for some more details about
          * what work needs to be done here. */
@@ -3867,6 +3897,11 @@ request_logout (CsmManager           *manager,
                 CsmManagerLogoutMode  mode)
 {
         g_debug ("CsmManager: requesting logout");
+
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION || manager->priv->is_quitting) {
+                g_debug ("CsmManager: shutdown/logout already in progress, ignoring logout request");
+                return;
+        }
 
         manager->priv->logout_mode = mode;
         manager->priv->logout_type = CSM_MANAGER_LOGOUT_LOGOUT;
