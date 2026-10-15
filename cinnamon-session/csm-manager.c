@@ -187,6 +187,10 @@ typedef enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
+static GSubprocess *dialog_process = NULL;
+static GCancellable *dialog_cancellable = NULL;
+static gboolean cinnamon_dialog_shown = FALSE;
+
 static void     show_shutdown_dialog (CsmManager *manager,
                                       gboolean    is_reboot);
 static void     close_end_session_dialog     (CsmManager *manager);
@@ -3530,7 +3534,9 @@ csm_manager_dispose (GObject *object)
 
         g_debug ("CsmManager: disposing manager");
 
-        close_end_session_dialog (manager);
+        if (dialog_process != NULL) {
+                g_subprocess_send_signal (dialog_process, SIGTERM);
+        }
 
         g_clear_object (&manager->priv->xsmp_server);
 
@@ -3900,9 +3906,6 @@ request_switch_user (CsmManager *manager)
     emit_inhibitor_info_to_dialog (manager, CSM_LOGOUT_ACTION_SWITCH_USER);
 }
 
-static GSubprocess *dialog_process = NULL;
-static GCancellable *dialog_cancellable = NULL;
-
 static void
 on_dialog_exited (GObject *source,
                   GAsyncResult *result,
@@ -3961,6 +3964,12 @@ close_end_session_dialog (CsmManager *manager)
         g_subprocess_send_signal (dialog_process, SIGTERM);
         return;
     }
+
+    if (!cinnamon_dialog_shown) {
+        return;
+    }
+
+    cinnamon_dialog_shown = FALSE;
 
     // If Cinnamon has already left the bus (e.g. it crashed and we're tearing
     // down), there's nothing to close. This uses cinnamon_proxy's cached name
@@ -4097,6 +4106,8 @@ launch_cinnamon_dialog (CsmManager  *manager,
     g_debug ("launch ret is: %p", ret);
 
     g_variant_unref (ret);
+
+    cinnamon_dialog_shown = TRUE;
 
     return TRUE;
 }
