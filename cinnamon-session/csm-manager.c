@@ -605,6 +605,12 @@ _restart_app (CsmManager *manager,
 {
         GError *error = NULL;
 
+        if (manager->priv->phase >= CSM_MANAGER_PHASE_QUERY_END_SESSION) {
+                g_debug ("CsmManager: not restarting '%s' during session end",
+                         csm_app_peek_app_id (app));
+                return;
+        }
+
         /* In a Wayland session, Cinnamon is the compositor and display server.
         Restarting it after a crash would leave a bare compositor running while
         everything that depended on the display server (apps, the settings daemon,
