@@ -684,19 +684,27 @@ csm_systemd_add_inhibitor (CsmSystem        *system,
                            CsmInhibitorFlag  flag)
 {
         CsmSystemd *manager = CSM_SYSTEMD (system);
+        GVariant *block_weak;
+        const gchar *mode;
 
         if ((flag & CSM_INHIBITOR_FLAG_SUSPEND) == 0)
                 return;
 
         if (manager->priv->inhibitors == NULL) {
-                g_debug ("Adding system inhibitor");
+                /* Since 257, logind obeys "block" even for the user holding it;
+                 * older versions don't know "block-weak" nor this property. */
+                block_weak = g_dbus_proxy_get_cached_property (manager->priv->sd_proxy, "BlockWeakInhibited");
+                mode = block_weak != NULL ? "block-weak" : "block";
+                g_clear_pointer (&block_weak, g_variant_unref);
+
+                g_debug ("Adding system inhibitor (%s)", mode);
                 g_dbus_proxy_call_with_unix_fd_list (manager->priv->sd_proxy,
                                                      "Inhibit",
                                                      g_variant_new ("(ssss)",
                                                                     "sleep:shutdown",
                                                                     g_get_user_name (),
                                                                     "user session inhibited",
-                                                                    "block"),
+                                                                    mode),
                                                      0,
                                                      G_MAXINT,
                                                      NULL,
