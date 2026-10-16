@@ -11,4 +11,10 @@ After=graphical-session-pre.target
 PropagatesStopTo=graphical-session.target
 PropagatesStopTo=graphical-session-pre.target
 
+# waybar.service declares WantedBy=graphical-session.target with no
+# compositor scoping, so it gets pulled in under any session that wants
+# graphical-session.target - including Cinnamon, which it doesn't support.
+Conflicts=waybar.service
+Before=waybar.service
+
 CollectMode=inactive-or-failed
