@@ -536,6 +536,38 @@ csm_systemd_can_hibernate (CsmSystem *system)
         return can_hibernate;
 }
 
+static gboolean
+csm_systemd_can_suspend_then_hibernate (CsmSystem *system)
+{
+        CsmSystemd *manager = CSM_SYSTEMD (system);
+        gchar *rv;
+        GVariant *res;
+        gboolean can_suspend_then_hibernate;
+
+        res = g_dbus_proxy_call_sync (manager->priv->sd_proxy,
+                                      "CanSuspendThenHibernate",
+                                      NULL,
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
+        if (!res) {
+                g_warning ("Calling CanSuspendThenHibernate failed. Check that logind is "
+                           "properly installed and pam_systemd is getting used at login.");
+                return FALSE;
+        }
+
+        g_variant_get (res, "(s)", &rv);
+        g_variant_unref (res);
+
+        can_suspend_then_hibernate = g_strcmp0 (rv, "yes") == 0 ||
+                                     g_strcmp0 (rv, "challenge") == 0;
+
+        g_free (rv);
+
+        return can_suspend_then_hibernate;
+}
+
 static void
 hybrid_sleep_done (GObject      *source,
                    GAsyncResult *result,
@@ -609,23 +641,32 @@ csm_systemd_hybrid_sleep (CsmSystem *system)
 }
 
 static void
-csm_systemd_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
+csm_systemd_suspend (CsmSystem *system)
 {
-	gchar *method = "Suspend";
-	if (suspend_then_hibernate && csm_systemd_can_suspend (system) && csm_systemd_can_hibernate (system)) {
-		method = "SuspendThenHibernate";
-	}
-	g_debug ("Suspend using: %s", method);
-
         CsmSystemd *manager = CSM_SYSTEMD (system);
 
         g_dbus_proxy_call (manager->priv->sd_proxy,
-                           method,
+                           "Suspend",
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,
                            NULL,
-                           hibernate_done,
+                           suspend_done,
+                           manager);
+}
+
+static void
+csm_systemd_suspend_then_hibernate (CsmSystem *system)
+{
+        CsmSystemd *manager = CSM_SYSTEMD (system);
+
+        g_dbus_proxy_call (manager->priv->sd_proxy,
+                           "SuspendThenHibernate",
+                           g_variant_new ("(b)", TRUE),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           suspend_done,
                            manager);
 }
 
@@ -640,7 +681,7 @@ csm_systemd_hibernate (CsmSystem *system)
                            0,
                            G_MAXINT,
                            NULL,
-                           suspend_done,
+                           hibernate_done,
                            manager);
 }
 
@@ -821,11 +862,13 @@ csm_systemd_system_init (CsmSystemInterface *iface)
         iface->can_restart = csm_systemd_can_restart;
         iface->can_hybrid_sleep = csm_systemd_can_hybrid_sleep;
         iface->can_suspend = csm_systemd_can_suspend;
+        iface->can_suspend_then_hibernate = csm_systemd_can_suspend_then_hibernate;
         iface->can_hibernate = csm_systemd_can_hibernate;
         iface->attempt_stop = csm_systemd_attempt_stop;
         iface->attempt_restart = csm_systemd_attempt_restart;
         iface->hybrid_sleep = csm_systemd_hybrid_sleep;
         iface->suspend = csm_systemd_suspend;
+        iface->suspend_then_hibernate = csm_systemd_suspend_then_hibernate;
         iface->hibernate = csm_systemd_hibernate;
         iface->set_session_idle = csm_systemd_set_session_idle;
         iface->is_login_session = csm_systemd_is_login_session;

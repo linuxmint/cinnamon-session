@@ -11,7 +11,7 @@
     <method name='Cancel'/>
     <method name='IgnoreInhibitors'/>
     <method name='GetCapabilities'>
-      <arg type='(bbbbbbb)' name='capabilities' direction='out'/>
+      <arg type='(bbbbbbbb)' name='capabilities' direction='out'/>
     </method>
     <signal name='InhibitorsChanged'>
       <arg type='a(ssss)' name='capabilities'/>

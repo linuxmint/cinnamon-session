@@ -50,11 +50,12 @@ struct _CsmSystemInterface
         gboolean (* can_hybrid_sleep) (CsmSystem *system);
         gboolean (* can_suspend)      (CsmSystem *system);
         gboolean (* can_hibernate)    (CsmSystem *system);
+        gboolean (* can_suspend_then_hibernate) (CsmSystem *system);
         void     (* attempt_stop)     (CsmSystem *system);
         void     (* attempt_restart)  (CsmSystem *system);
         void     (* hybrid_sleep)     (CsmSystem *system);
-        void     (* suspend)          (CsmSystem *system,
-				       gboolean suspend_then_hibernate);
+        void     (* suspend)          (CsmSystem *system);
+        void     (* suspend_then_hibernate) (CsmSystem *system);
         void     (* hibernate)        (CsmSystem *system);
         void     (* set_session_idle) (CsmSystem *system,
                                        gboolean   is_idle);
@@ -84,14 +85,17 @@ gboolean   csm_system_can_suspend      (CsmSystem *system);
 
 gboolean   csm_system_can_hibernate    (CsmSystem *system);
 
+gboolean   csm_system_can_suspend_then_hibernate (CsmSystem *system);
+
 void       csm_system_attempt_stop     (CsmSystem *system);
 
 void       csm_system_attempt_restart  (CsmSystem *system);
 
 void       csm_system_hybrid_sleep     (CsmSystem *system);
 
-void       csm_system_suspend          (CsmSystem *system,
-					gboolean suspend_then_hibernate);
+void       csm_system_suspend          (CsmSystem *system);
+
+void       csm_system_suspend_then_hibernate (CsmSystem *system);
 
 void       csm_system_hibernate        (CsmSystem *system);
 

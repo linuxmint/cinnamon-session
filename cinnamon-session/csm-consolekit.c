@@ -610,6 +610,45 @@ csm_consolekit_can_hibernate (CsmSystem *system)
         return can_hibernate;
 }
 
+static gboolean
+csm_consolekit_can_hybrid_sleep (CsmSystem *system)
+{
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+        gchar *rv;
+        GVariant *res;
+        gboolean can_hybrid_sleep;
+
+        res = g_dbus_proxy_call_sync (manager->priv->ck_proxy,
+                                      "CanHybridSleep",
+                                      NULL,
+                                      0,
+                                      G_MAXINT,
+                                      NULL,
+                                      NULL);
+        if (!res) {
+                g_warning ("Calling CanHybridSleep failed. Check that ConsoleKit is "
+                           "properly installed.");
+                return FALSE;
+        }
+
+        g_variant_get (res, "(s)", &rv);
+        g_variant_unref (res);
+
+        can_hybrid_sleep = g_strcmp0 (rv, "yes") == 0 ||
+                           g_strcmp0 (rv, "challenge") == 0;
+
+        g_free (rv);
+
+        return can_hybrid_sleep;
+}
+
+static gboolean
+csm_consolekit_can_suspend_then_hibernate (CsmSystem *system)
+{
+        /* ConsoleKit has no suspend-then-hibernate */
+        return FALSE;
+}
+
 static void
 suspend_done (GObject      *source,
               GAsyncResult *result,
@@ -649,24 +688,59 @@ hibernate_done (GObject      *source,
 }
 
 static void
-csm_consolekit_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
+csm_consolekit_suspend (CsmSystem *system)
 {
         CsmConsolekit *manager = CSM_CONSOLEKIT (system);
 
-	gchar *method = "Suspend";
-	if (suspend_then_hibernate && csm_consolekit_can_suspend (system) && csm_consolekit_can_hibernate (system)) {
-		method = "SuspendThenHibernate";
-	}
-	g_debug ("Suspend using: %s", method);
-
         g_dbus_proxy_call (manager->priv->ck_proxy,
-                           method,
+                           "Suspend",
                            g_variant_new ("(b)", TRUE),
                            0,
                            G_MAXINT,
                            NULL,
                            suspend_done,
                            manager);
+}
+
+static void
+hybrid_sleep_done (GObject      *source,
+                   GAsyncResult *result,
+                   gpointer      user_data)
+{
+        GDBusProxy *proxy = G_DBUS_PROXY (source);
+        GError *error = NULL;
+        GVariant *res;
+
+        res = g_dbus_proxy_call_finish (proxy, result, &error);
+
+        if (!res) {
+                g_warning ("Unable to send system to hybrid sleep: %s", error->message);
+                g_error_free (error);
+        } else {
+                g_variant_unref (res);
+        }
+}
+
+static void
+csm_consolekit_hybrid_sleep (CsmSystem *system)
+{
+        CsmConsolekit *manager = CSM_CONSOLEKIT (system);
+
+        g_dbus_proxy_call (manager->priv->ck_proxy,
+                           "HybridSleep",
+                           g_variant_new ("(b)", TRUE),
+                           0,
+                           G_MAXINT,
+                           NULL,
+                           hybrid_sleep_done,
+                           manager);
+}
+
+static void
+csm_consolekit_suspend_then_hibernate (CsmSystem *system)
+{
+        /* Not supported by ConsoleKit (see csm_consolekit_can_suspend_then_hibernate), suspend instead */
+        csm_consolekit_suspend (system);
 }
 
 static void
@@ -783,11 +857,15 @@ csm_consolekit_system_init (CsmSystemInterface *iface)
         iface->can_switch_user = csm_consolekit_can_switch_user;
         iface->can_stop = csm_consolekit_can_stop;
         iface->can_restart = csm_consolekit_can_restart;
+        iface->can_hybrid_sleep = csm_consolekit_can_hybrid_sleep;
         iface->can_suspend = csm_consolekit_can_suspend;
         iface->can_hibernate = csm_consolekit_can_hibernate;
+        iface->can_suspend_then_hibernate = csm_consolekit_can_suspend_then_hibernate;
         iface->attempt_stop = csm_consolekit_attempt_stop;
         iface->attempt_restart = csm_consolekit_attempt_restart;
+        iface->hybrid_sleep = csm_consolekit_hybrid_sleep;
         iface->suspend = csm_consolekit_suspend;
+        iface->suspend_then_hibernate = csm_consolekit_suspend_then_hibernate;
         iface->hibernate = csm_consolekit_hibernate;
         iface->set_session_idle = csm_consolekit_set_session_idle;
         iface->is_login_session = csm_consolekit_is_login_session;

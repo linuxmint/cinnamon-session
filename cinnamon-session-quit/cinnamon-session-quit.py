@@ -254,7 +254,7 @@ class QuitDialog:
         self.inhibitor_treeview = self.builder.get_object("inhibitor_treeview")
 
         try:
-            can_switch_user, can_stop, can_restart, can_hybrid_sleep, can_suspend, can_hibernate, can_logout = self.get_session_capabilities()
+            can_switch_user, can_stop, can_restart, can_hybrid_sleep, can_suspend_then_hibernate, can_suspend, can_hibernate, can_logout = self.get_session_capabilities()
         except Exception as e:
             print(e, file=sys.stderr, end=None)
         default_button = None

@@ -48,15 +48,25 @@
       <summary>The time delay before quitting the system automatically</summary>
       <description>The time delay before the shutdown/logout dialogue quits the system automatically</description>
     </key>
+    <key name="suspend-action" type="s">
+      <choices>
+        <choice value="suspend"/>
+        <choice value="suspend-then-hibernate"/>
+        <choice value="hybrid-sleep"/>
+      </choices>
+      <default>"suspend"</default>
+      <summary>What to do when the computer is suspended</summary>
+      <description>Whether suspending uses a plain suspend, suspend-then-hibernate or hybrid sleep. If the chosen action is unsupported, normal suspend will be used instead.</description>
+    </key>
     <key name="prefer-hybrid-sleep" type="b">
       <default>false</default>
-      <summary>If your hardware and login service supports 'Hybrid Sleep' then use it instead of normal Suspend</summary>
-      <description>Whether or not to attempt to use hybrid sleep mode for suspend.  If it is unsupported, normal sleep will be used instead</description>
+      <summary>Deprecated, no longer used. See suspend-action</summary>
+      <description></description>
     </key>
     <key name="suspend-then-hibernate" type="b">
       <default>false</default>
-      <summary>The system is suspended and put into hibernation after being suspended for a certain time. (Defaults to 2h, see systemd-sleep.conf)</summary>
-      <description>Whether or not to attempt to use suspend-then-hibernate. If it is unsupported, normal suspend will be used instead</description>
+      <summary>Deprecated, no longer used. See suspend-action</summary>
+      <description></description>
     </key>
   </schema>
 </schemalist>

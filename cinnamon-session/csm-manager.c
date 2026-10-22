@@ -84,8 +84,7 @@
 #define KEY_LOGOUT_PROMPT         "logout-prompt"
 #define KEY_FORCE_GTK_END_SESSION "force-gtk-end-session-dialog"
 #define KEY_BLACKLIST             "autostart-blacklist"
-#define KEY_PREFER_HYBRID_SLEEP   "prefer-hybrid-sleep"
-#define KEY_SUSPEND_HIBERNATE     "suspend-then-hibernate"
+#define KEY_SUSPEND_ACTION        "suspend-action"
 #define KEY_DEBUG                 "debug"
 
 #define POWER_SETTINGS_SCHEMA     "org.cinnamon.settings-daemon.plugins.power"
@@ -1263,6 +1262,29 @@ manager_attempt_hibernate (CsmManager *manager)
         }
 }
 
+typedef enum {
+        SUSPEND_ACTION_SUSPEND,
+        SUSPEND_ACTION_SUSPEND_THEN_HIBERNATE,
+        SUSPEND_ACTION_HYBRID_SLEEP
+} SuspendAction;
+
+static SuspendAction
+get_suspend_action (CsmManager *manager)
+{
+        SuspendAction result = SUSPEND_ACTION_SUSPEND;
+        gchar *action = g_settings_get_string (manager->priv->settings, KEY_SUSPEND_ACTION);
+
+        if (g_strcmp0 (action, "hybrid-sleep") == 0) {
+                result = SUSPEND_ACTION_HYBRID_SLEEP;
+        } else if (g_strcmp0 (action, "suspend-then-hibernate") == 0) {
+                result = SUSPEND_ACTION_SUSPEND_THEN_HIBERNATE;
+        }
+
+        g_free (action);
+
+        return result;
+}
+
 static void
 manager_attempt_suspend (CsmManager *manager)
 {
@@ -1272,11 +1294,26 @@ manager_attempt_suspend (CsmManager *manager)
          * (if preferences dictate it) */
         manager_perhaps_lock (manager);
 
-        if (g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
-            csm_system_can_hybrid_sleep (manager->priv->system)) {
-                csm_system_hybrid_sleep (manager->priv->system);
-        } else if (csm_system_can_suspend (manager->priv->system)) {
-                csm_system_suspend (manager->priv->system, g_settings_get_boolean (manager->priv->settings, KEY_SUSPEND_HIBERNATE));
+        switch (get_suspend_action (manager)) {
+                case SUSPEND_ACTION_HYBRID_SLEEP:
+                        if (csm_system_can_hybrid_sleep (manager->priv->system)) {
+                                csm_system_hybrid_sleep (manager->priv->system);
+                                return;
+                        }
+                        break;
+                case SUSPEND_ACTION_SUSPEND_THEN_HIBERNATE:
+                        if (csm_system_can_suspend_then_hibernate (manager->priv->system)) {
+                                csm_system_suspend_then_hibernate (manager->priv->system);
+                                return;
+                        }
+                        break;
+                case SUSPEND_ACTION_SUSPEND:
+                        break;
+        }
+
+        /* Plain suspend, also used when the chosen action is not supported */
+        if (csm_system_can_suspend (manager->priv->system)) {
+                csm_system_suspend (manager->priv->system);
         }
 }
 
@@ -2789,14 +2826,13 @@ handle_dialog_method_call (CsmExportedDialog     *dialog_skeleton,
     else
     if (g_strcmp0 (method_name, "GetCapabilities") == 0) {
         GVariant *ret;
-        gboolean can_hybrid_sleep = g_settings_get_boolean (manager->priv->settings, KEY_PREFER_HYBRID_SLEEP) &&
-                              csm_system_can_hybrid_sleep (manager->priv->system);
 
-        ret = g_variant_new ("(bbbbbbb)",
+        ret = g_variant_new ("(bbbbbbbb)",
                              !(_switch_user_is_locked_down (manager) || csm_manager_is_switch_user_inhibited (manager)),
                              (!_log_out_is_locked_down (manager)) && csm_system_can_stop (manager->priv->system),
                              (!_log_out_is_locked_down (manager)) && csm_system_can_restart (manager->priv->system),
-                             can_hybrid_sleep,
+                             csm_system_can_hybrid_sleep (manager->priv->system),
+                             csm_system_can_suspend_then_hibernate (manager->priv->system),
                              csm_system_can_suspend (manager->priv->system),
                              csm_system_can_hibernate (manager->priv->system),
                              (!csm_manager_is_logout_inhibited (manager)));

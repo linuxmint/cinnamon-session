@@ -88,6 +88,12 @@ csm_system_can_hibernate (CsmSystem *system)
         return CSM_SYSTEM_GET_IFACE (system)->can_hibernate (system);
 }
 
+gboolean
+csm_system_can_suspend_then_hibernate (CsmSystem *system)
+{
+        return CSM_SYSTEM_GET_IFACE (system)->can_suspend_then_hibernate (system);
+}
+
 void
 csm_system_attempt_stop (CsmSystem *system)
 {
@@ -107,9 +113,15 @@ csm_system_hybrid_sleep (CsmSystem *system)
 }
 
 void
-csm_system_suspend (CsmSystem *system, gboolean suspend_then_hibernate)
+csm_system_suspend (CsmSystem *system)
 {
-        CSM_SYSTEM_GET_IFACE (system)->suspend (system, suspend_then_hibernate);
+        CSM_SYSTEM_GET_IFACE (system)->suspend (system);
+}
+
+void
+csm_system_suspend_then_hibernate (CsmSystem *system)
+{
+        CSM_SYSTEM_GET_IFACE (system)->suspend_then_hibernate (system);
 }
 
 void
