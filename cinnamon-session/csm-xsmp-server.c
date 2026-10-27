@@ -94,6 +94,8 @@ typedef struct {
 typedef struct {
         guint watch_id;
         guint protocol_timeout;
+        /* Set once a CsmXSMPClient owns the connection */
+        gboolean handed_over;
 } CsmIceConnectionWatch;
 
 static void
@@ -128,6 +130,7 @@ ice_protocol_timeout (IceConn ice_conn)
                  ice_conn, IceConnectionStatus (ice_conn));
 
         data = ice_conn->context;
+        ice_conn->context = NULL;
 
         free_ice_connection_watch (data);
         disconnect_ice_connection (ice_conn);
@@ -143,15 +146,26 @@ auth_iochannel_watch (GIOChannel   *source,
 
         CsmIceConnectionWatch *data;
         gboolean               keep_going;
+        IceProcessMessagesStatus status;
 
         data = ice_conn->context;
 
-        switch (IceProcessMessages (ice_conn, NULL, NULL)) {
+        status = IceProcessMessages (ice_conn, NULL, NULL);
+
+        if (data->handed_over) {
+                /* The sources were removed by accept_xsmp_connection(), and
+                 * the CsmXSMPClient owns the connection now. */
+                g_free (data);
+                return FALSE;
+        }
+
+        switch (status) {
         case IceProcessMessagesSuccess:
                 keep_going = TRUE;
                 break;
         case IceProcessMessagesIOError:
                 g_debug ("CsmXsmpServer: IceProcessMessages returned IceProcessMessagesIOError");
+                ice_conn->context = NULL;
                 free_ice_connection_watch (data);
                 disconnect_ice_connection (ice_conn);
                 keep_going = FALSE;
@@ -344,8 +358,25 @@ accept_xsmp_connection (SmsConn        sms_conn,
         ice_conn = SmsGetIceConnection (sms_conn);
         data = ice_conn->context;
 
+        if (data == NULL) {
+                /* Already handed over to a CsmXSMPClient. */
+                g_debug ("CsmXsmpServer: connection already handed over, rejecting");
+
+                *failure_reason_ret = strdup ("Refusing a second client setup on the same connection\n");
+                return FALSE;
+        }
+
         /* Each CsmXSMPClient has its own IceConn watcher */
-        free_ice_connection_watch (data);
+        if (data->watch_id) {
+                g_source_remove (data->watch_id);
+                data->watch_id = 0;
+        }
+        if (data->protocol_timeout) {
+                g_source_remove (data->protocol_timeout);
+                data->protocol_timeout = 0;
+        }
+        data->handed_over = TRUE;
+        ice_conn->context = NULL;
 
         client = csm_xsmp_client_new (ice_conn);
 
@@ -370,17 +401,6 @@ ice_error_handler (IceConn       conn,
         g_debug ("CsmXsmpServer: ice_error_handler (%p, %s, %d, %lx, %d, %d)",
                  conn, swap ? "TRUE" : "FALSE", offending_minor_opcode,
                  offending_sequence, error_class, severity);
-
-        if (severity == IceCanContinue) {
-                return;
-        }
-
-        /* FIXME: the ICElib docs are completely vague about what we're
-         * supposed to do in this case. Need to verify that calling
-         * IceCloseConnection() here is guaranteed to cause neither
-         * free-memory-reads nor leaks.
-         */
-        IceCloseConnection (conn);
 }
 
 static void
