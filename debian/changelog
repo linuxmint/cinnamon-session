@@ -1,3 +1,23 @@
+cinnamon-session (6.8.0) adrien; urgency=medium
+
+  [ Michael Webster ]
+  * csm-manager.c: Don't restart session components once the session is ending.
+  * csm-manager.c: Track logout dialog usage so shutdown avoids any unnecessary dbus roundtrips.
+
+  [ Fabio Fantoni ]
+  * csm-systemd.c: Take the session's logind inhibitor in block-weak mode when available. (#219)
+
+  [ Clement Lefebvre ]
+  * Implement suspend action
+
+  [ Marvin Friedrich ]
+  * Fix building with -Dsystemd=disabled (#223)
+
+  [ Michael Rozshko ]
+  * csm-xsmp-server.c: Close an ICE connection only once when a client fails during setup (#220)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Oct 2026 11:46:42 +0000
+
 cinnamon-session (6.7.6) adrien; urgency=medium
 
   [ Michael Webster ]
