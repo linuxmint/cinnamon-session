@@ -59,7 +59,7 @@ endif
 conf.set('HAVE_LOGIND', logind.found())
 
 systemd_opt = get_option('systemd')
-systemd_dep = dependency('systemd', required: systemd_opt.enabled())
+systemd_dep = dependency('systemd', required: systemd_opt)
 if systemd_dep.found()
   systemduserunitdir = systemd_dep.get_variable(
     pkgconfig: 'systemduserunitdir',
@@ -67,7 +67,7 @@ if systemd_dep.found()
   )
   enable_systemd = true
 else
-  enable_systemd = systemd_dep.found() and not systemd_opt.disabled()
+  enable_systemd = false
   systemduserunitdir = join_paths(get_option('prefix'), 'lib', 'systemd', 'user')
 endif
 
